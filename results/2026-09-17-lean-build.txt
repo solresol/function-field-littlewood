@@ -1,0 +1,13 @@
+ℹ [1125/1127] Built FunctionFieldLittlewood.Examples (7.6s)
+info: FunctionFieldLittlewood/Examples.lean:47:0: 'FunctionFieldLittlewood.certificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:48:0: 'FunctionFieldLittlewood.certificate_congr_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:49:0: 'FunctionFieldLittlewood.hankel_kernel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:50:0: 'FunctionFieldLittlewood.checkCertificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:51:0: 'FunctionFieldLittlewood.binary_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:52:0: 'FunctionFieldLittlewood.comparison_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:53:0: 'FunctionFieldLittlewood.comparison_first_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [1126/1127] Built FunctionFieldLittlewood (1.5s)
+Build completed successfully (1127 jobs).
+real 11.85
+user 2.73
+sys 2.68

@@ -1,0 +1,4 @@
+.lake/
+.research/
+__pycache__/
+*.pyc

@@ -1,0 +1,136 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "method": "exhaustive normalised coefficient enumeration",
+  "r1": [
+    {
+      "p": 3,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    },
+    {
+      "p": 7,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    },
+    {
+      "p": 11,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    },
+    {
+      "p": 19,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    },
+    {
+      "p": 23,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    },
+    {
+      "p": 31,
+      "R": [
+        1,
+        0,
+        1
+      ],
+      "m": 2,
+      "j": 6,
+      "defect": 4
+    }
+  ],
+  "boxes": [
+    {
+      "p": 5,
+      "N": 4,
+      "max_degree": 5,
+      "max_m": 24,
+      "best": [
+        4,
+        5,
+        0,
+        21,
+        [
+          1
+        ],
+        4
+      ],
+      "checked": 78125,
+      "unresolved": 0,
+      "first_unresolved": null,
+      "limit": 10000
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "max_degree": 4,
+      "max_m": 24,
+      "best": [
+        4,
+        13,
+        0,
+        21,
+        [
+          1
+        ],
+        4
+      ],
+      "checked": 714025,
+      "unresolved": 0,
+      "first_unresolved": null,
+      "limit": 10000
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "max_degree": 3,
+      "max_m": 24,
+      "best": [
+        15,
+        17,
+        0,
+        17,
+        [
+          1
+        ],
+        15
+      ],
+      "checked": 122825,
+      "unresolved": 0,
+      "first_unresolved": null,
+      "limit": 10000
+    }
+  ],
+  "runtime_seconds": 5.639237542
+}
