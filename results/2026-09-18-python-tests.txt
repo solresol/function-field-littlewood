@@ -1,0 +1,18 @@
+test_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok
+test_every_tiny_stream (test_finite_rank.RankTests) ... ok
+test_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok
+test_invalid_input (test_finite_rank.RankTests) ... ok
+test_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok
+test_saved_certificates (test_finite_rank.RankTests) ... ok
+test_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok
+test_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok
+test_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok
+test_invalid_input (test_lai_sprang.SearchTests) ... ok
+test_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok
+test_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok
+test_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 2.086s
+
+OK

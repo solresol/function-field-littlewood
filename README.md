@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (17 Sep 2026)
+## Status update (18 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 17 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 18 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -51,7 +51,45 @@ The verified 17 September run finds no violation in the boxes below. The analogo
 
 All indices were resolved within cutoff 10,000; finite agreement is not a global bound. Exact witnesses, runtime and counts are in `results/2026-09-17-exact-search.json`; the audit is in `results/2026-09-17-certificate-foundation.md`.
 
-The first-run audit found that the formerly linked 14 September bound-search report was absent and the advertised Gaussian elimination was not implemented. Those historical computation claims had no retained output. The table above is a new reproducible run; a rank solver remains future work. Cutoff exhaustion now increments an explicit unresolved count instead of disappearing from the result.
+The first-run audit found that the formerly linked 14 September bound-search report was absent and the advertised Gaussian elimination was not implemented. Those historical computation claims had no retained output. The table above is a new reproducible run; the endpoint-aware rank solver was added on 18 September (below). Cutoff exhaustion now increments an explicit unresolved count instead of disappearing from the result.
+
+## Endpoint-aware rank experiments (18 September)
+
+`search/finite_rank.py` now works with arbitrary prime-field coefficient streams,
+including characteristic 2. It optimises the vanishing prefix over all normalised
+multipliers at each degree and shift using exact affine elimination. Both endpoints
+are enforced. Each resolved result includes a multiplier and a dual linear
+combination proving that no admissible multiplier can vanish one coefficient
+further. A separate dot-product checker verifies both without elimination.
+Cutoff exhaustion remains an unresolved prefix, never an exact index.
+
+For **every degree 0–16 and shift 0–64**, with cutoff 128:
+
+| stream | field | maximum defect | auxiliary N |
+|---|---|---:|---:|
+| Lai–Sprang | F_5 | 4 | 4 |
+| Lai–Sprang | F_13 | 4 | 4 |
+| Lai–Sprang | F_17 | 15 | 16 |
+| Lai–Sprang | F_41 | 8 | 8 |
+| Thue–Morse | F_2 | 15 | — |
+| regular paperfolding | F_2 | 8 | — |
+| Rudin–Shapiro | F_2 | 7 | — |
+
+All 7,735 degree/shift optima have independently checked primal and dual
+certificates, with no unresolved cases. Binary stream conventions, exact witnesses,
+commands and limits are in `results/2026-09-18-rank-experiments.md`; all certificates
+are retained in JSONL. The odd-characteristic boxes support the auxiliary bound
+only finitely; the p=17 box still does not attain N. The binary streams are baseline
+experiments, not established main-conjecture counterexamples. No infinite bounded
+or unbounded defect conclusion follows from these boxes.
+
+```sh
+python3 -m search.run_rank_experiments /tmp/littlewood-rank-search.jsonl
+python3 -m search.run_rank_experiments results/2026-09-18-rank-search.jsonl --verify
+```
+
+The run refuses to overwrite an existing output JSONL. It checkpoints each degree.
+Python 3.9+ standard library only; deterministic, with no random seed.
 
 ## Verified finite certificate foundation
 
@@ -72,11 +110,11 @@ python3 search/lai_sprang_finite_search.py
 python3 -m unittest discover -s tests -v
 ```
 
-The tests independently expand the original root sums for 2,560 coefficients and check saved witnesses. They also check that a cutoff is unresolved, scalar normalisation preserves the index, and malformed inputs are rejected.
+The original tests independently expand the original root sums for 2,560 coefficients and check saved witnesses. They also check that a cutoff is unresolved, scalar normalisation preserves the index, and malformed inputs are rejected.
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: implement an endpoint-aware exact affine solver, compare it exhaustively with the enumerator, and use the common coefficient interface for characteristic-2 experiments. On the next formalisation day, prove the polynomial-degree and Laurent-coefficient bridge before interpreting certificates as Littlewood products.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the dual obstruction checker and the polynomial-degree bridge. Computationally, investigate the binary witnesses at dyadic scales using recurrence identities, and seek a structural explanation for the auxiliary Lai–Sprang bound. See the roadmap for precise next experiments.
 
 ## References
 
