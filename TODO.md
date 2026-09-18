@@ -11,23 +11,34 @@
 - Use the certified defect profiles to guide an explicit number-wall experiment;
   singularity alone does not guarantee both multiplier endpoints.
 
-## Next formalisation (Saturday)
+## Next formalisation (Tuesday)
 
 - Connect `Fin (d+1)` multipliers with mathlib polynomials, proving degree `d`
   and nonzero constant term from the certificate endpoints.
 - Connect `fractionalCoeff` to actual Laurent-series multiplication and later
   the norm/product exponent. Avoid assuming that bridge as an axiom.
 - Formalise the Lai–Sprang coefficient stream and identify the tested prefix.
-- Formalise soundness of the dual obstruction formats in `search/finite_rank.py`:
-  a linear combination of `r_0=1` and zero-prefix equations gives either
-  `0=c!=0` or `r_d=0`. Combine with the existing exact-index certificate to
-  prove finite optimality without formalising Gaussian elimination first.
+- Prove scalar normalisation over fields to extend the normalised finite-optimum
+  theorem to all multipliers with nonzero constant coefficient.
+- Identify the recorded binary prefix with an infinite Thue–Morse definition in
+  Lean; generated finite lists alone do not formalise that identity.
 
 ## Sunday integration
 
 - Rerun small Python and Lean checks; review claims against saved certificates.
 - Retire failed auxiliary hypotheses explicitly and record exact violating witnesses.
 - Recheck primary literature before promoting a claim of novelty or openness.
+
+## Completed on 2026-09-19
+
+- Lean soundness of inconsistency and forced-zero-leading-coefficient duals,
+  combined primal/dual optimality checker, first-index upper bound, and locality
+  through the inclusive m+d+j prefix. Generic commutative-semiring proofs.
+- Kernel-checked three selected saved prime-field certificates and five negative
+  controls, including degree zero and a forced endpoint. Deterministic exporter
+  independently regenerates coefficients; all 13 existing Python tests pass.
+- Literature versions rechecked; no new infinite or novelty claim. Polynomial
+  and Laurent-series bridges remain unfinished.
 
 ## Completed on 2026-09-18
 

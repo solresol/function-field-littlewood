@@ -51,3 +51,30 @@ Detailed inputs, stream conventions, commands, runtimes and limitations are in
 `results/2026-09-18-rank-experiments.md`; JSONL retains every certificate.
 Next: formalise dual soundness/polynomial endpoints, then investigate dyadic
 binary witness families and p=17 coefficient gaps. No Lean changes this run.
+
+## 2026-09-19 (Saturday, Australia/Sydney) — Lean dual soundness
+
+Started 08:21:19 AEST on clean main at df2ae5f; origin verified, fetched and
+fast-forward-only checked, already current. No concurrent-run marker. Read
+prior records and actual sources; revalidated inclusive cutoff, endpoint and
+rank/certificate semantics. Corrected one stale enumerator module comment.
+
+Proved both dual obstruction formats sound over a commutative semiring. The
+combined checker proves attainment and a nonzero coefficient by j for every
+normalised admissible multiplier at fixed d,m; tail locality extends the result
+to all streams agreeing through m+d+j. Gaussian elimination is not trusted.
+Kernel-checked three saved instances (binary optimum, forced endpoint, F_17
+degree-zero gap), five negative controls, and their arbitrary-tail extensions.
+All 18 printed axiom reports use standard axioms only; no sorry, new axioms or
+native_decide. Lean build succeeds (1,129 jobs); all 13 Python tests pass
+(0.839 s), including all saved certificates and the r=1 comparison. Deterministic
+export regeneration matches all three Lean fixtures.
+
+Rechecked Lai–Sprang v1, Badziahin–Pavlenkov–Zorin v1 and Robertson v3; no later
+characteristic-two resolution found in searched primary sources. No new infinite
+conclusion: this certifies finite optima, not a main-conjecture counterexample or
+the auxiliary N-bound. Named infinite stream identity, scalar normalisation,
+polynomial degree and Laurent-series bridges remain unfinished. Detailed commands,
+versions, module runtimes and scope are in
+results/2026-09-19-dual-certificate-soundness.md. Next formal increment: scalar
+normalisation and polynomial endpoints; Sunday integrates the current evidence.

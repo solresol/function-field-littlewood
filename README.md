@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (18 Sep 2026)
+## Status update (19 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 18 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 19 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -97,6 +97,20 @@ Python 3.9+ standard library only; deterministic, with no random seed.
 
 `FunctionFieldLittlewood/Examples.lean` includes kernel-checked examples over `ZMod 2` and `ZMod 3`, plus invalid-index and invalid-endpoint controls. The binary example is a finite infrastructure fixture, not a main-conjecture candidate. The ternary example checks a recorded prefix; its identity with the infinite Lai–Sprang stream is tested independently in Python, not proved in Lean. No Laurent-series norm theorem or global sharp bound has been formalised.
 
+`FunctionFieldLittlewood/DualCertificate.lean` now proves soundness of both dual
+obstruction formats and of a combined primal/dual checker. Acceptance proves an
+attained first index j and a nonzero coefficient by j for **every normalised**
+multiplier at the fixed degree and shift. Tail replacement beyond m+d+j preserves
+acceptance. This proof uses finite sums; it does not trust the solver or its rank.
+
+`SavedCertificates.lean` kernel-checks three exported records: the Thue–Morse
+F_2 case (d,m,j)=(9,15,24), an F_2 forced-endpoint obstruction, and the Lai–Sprang
+F_17 degree-zero gap (0,17,15). Each theorem applies to every stream agreeing
+with its recorded prefix; identification with the named infinite stream remains
+a Python check, not a Lean theorem. Only these three saved records have been
+instantiated in Lean, not all 7,735 records. Details and limits are in
+`results/2026-09-19-dual-certificate-soundness.md`.
+
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
 ```sh
@@ -108,13 +122,14 @@ lake build
 # Python 3.9+ standard library only; no random seed
 python3 search/lai_sprang_finite_search.py
 python3 -m unittest discover -s tests -v
+python3 -m search.export_lean_certificates --check
 ```
 
 The original tests independently expand the original root sums for 2,560 coefficients and check saved witnesses. They also check that a cutoff is unresolved, scalar normalisation preserves the index, and malformed inputs are rejected.
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the dual obstruction checker and the polynomial-degree bridge. Computationally, investigate the binary witnesses at dyadic scales using recurrence identities, and seek a structural explanation for the auxiliary Lai–Sprang bound. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise scalar normalisation, the polynomial-degree bridge, and named stream identities. Computationally, investigate the binary witnesses at dyadic scales using recurrence identities, and seek a structural explanation for the auxiliary Lai–Sprang bound. See the roadmap for precise next experiments.
 
 ## References
 

@@ -8,7 +8,7 @@ For R(t)=sum_{i=0}^d r_i t^i with r_0 != 0 and m>=0, the coefficient
 of t^{-j} in t^m R Lambda is sum_i r_i a_{m+i+j}.  The defect j-d
 controls the Littlewood product: |Q| |Q|_t <Q Lambda> = 2^(d-j).
 
-We enumerate normalised coefficient vectors over F_p (no rank solver yet).
+This module enumerates normalised vectors; finite_rank.py is the separate affine solver.
 A cutoff without a nonzero coefficient is unresolved, never an exact index.
 This finite search does not prove a global bound.
 """
