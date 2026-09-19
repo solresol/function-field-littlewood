@@ -6,8 +6,11 @@
   and `R=(1+t)(1+t^8)` at dyadic scales. Test exact recurrence identities
   before claiming unbounded defects or any novelty; check prior primary work
   on these named streams. Current binary boxes give no infinite conclusion.
-- Extend the p=17 shift range first to seek defect 16 (currently maximum 15).
-  Study degree-zero coefficient gaps and retain the r=1 comparison.
+- Degree-zero gaps are settled by the 20 September proof: maximum N at
+  m=5N+1, including p=17,m=81. Do not repeat that search. For p=17,
+  next test d=1,...,16,m=65,...,256 with cutoff 128, retaining certificates
+  and unresolved counts; seek positive-degree structure or an N-bound violation.
+  Retain the r=1 comparison.
 - Use the certified defect profiles to guide an explicit number-wall experiment;
   singularity alone does not guarantee both multiplier endpoints.
 
@@ -17,17 +20,25 @@
   and nonzero constant term from the certificate endpoints.
 - Connect `fractionalCoeff` to actual Laurent-series multiplication and later
   the norm/product exponent. Avoid assuming that bridge as an axiom.
-- Formalise the Lai–Sprang coefficient stream and identify the tested prefix.
+- Formalise the Lai–Sprang coefficient stream and identify the tested prefix;
+  then prove the all-shift degree-zero bound and m=5N+1 attainment from
+  the support formula (ordinary proof now recorded).
 - Prove scalar normalisation over fields to extend the normalised finite-optimum
   theorem to all multipliers with nonzero constant coefficient.
 - Identify the recorded binary prefix with an infinite Thue–Morse definition in
   Lean; generated finite lists alone do not formalise that identity.
 
-## Sunday integration
+## Completed on 2026-09-20 (Sunday integration)
 
-- Rerun small Python and Lean checks; review claims against saved certificates.
-- Retire failed auxiliary hypotheses explicitly and record exact violating witnesses.
-- Recheck primary literature before promoting a claim of novelty or openness.
+- Proved on paper that the degree-zero maximum is exactly N for every r>=2;
+  sharp witness R=1,m=5N+1. This is not yet a Lean theorem or an all-degree bound.
+- Independently checked seven prescribed field witnesses (r=2,...,8) and the
+  exhaustive p=17,d=0,m<=128 box; p=17 first attains 16 at m=81.
+- Integrated the week's finite/formal evidence, retained the failed r=1 bound
+  explicitly, and rechecked current primary-source versions. The binary
+  main-conjecture frontier remains unresolved in the sources checked.
+- Reran Python, saved-certificate and Lean checks; detailed outputs and timings
+  are retained with the dated integration report.
 
 ## Completed on 2026-09-19
 

@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (19 Sep 2026)
+## Status update (20 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 19 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 20 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -79,7 +79,7 @@ All 7,735 degree/shift optima have independently checked primal and dual
 certificates, with no unresolved cases. Binary stream conventions, exact witnesses,
 commands and limits are in `results/2026-09-18-rank-experiments.md`; all certificates
 are retained in JSONL. The odd-characteristic boxes support the auxiliary bound
-only finitely; the p=17 box still does not attain N. The binary streams are baseline
+only finitely; that p=17 box does not attain N (a later witness below does). The binary streams are baseline
 experiments, not established main-conjecture counterexamples. No infinite bounded
 or unbounded defect conclusion follows from these boxes.
 
@@ -90,6 +90,26 @@ python3 -m search.run_rank_experiments results/2026-09-18-rank-search.jsonl --ve
 
 The run refuses to overwrite an existing output JSONL. It checkpoints each degree.
 Python 3.9+ standard library only; deterministic, with no random seed.
+
+## Degree-zero sharp constant (20 September)
+
+For every odd prime with r>=2, the degree-zero maximum defect over **all shifts**
+is exactly N. Every N consecutive indices contain a nonzero coefficient at an
+index congruent to 1 modulo N. Conversely, the support formula gives N-1 zeros
+immediately after m=5N+1, followed by a nonzero coefficient: R=1 attains j=N.
+An elementary proof, not yet formalised in Lean, is in
+`results/2026-09-20-sunday-integration.md`.
+
+In particular, p=17 attains defect 16 at m=81, outside the old shift box.
+Seven prescribed witnesses for r=2,...,8 and all 129 degree-zero shifts m<=128
+for p=17 pass independent root-sum checks; exact certificates are retained in
+`results/2026-09-20-degree-zero-gaps.json`. This settles only degree zero.
+The auxiliary all-degree upper bound N and characteristic-2 main frontier
+remain separate unfinished questions. No novelty claim is made.
+
+```sh
+python3 -m search.degree_zero_gaps results/2026-09-20-degree-zero-gaps.json --verify
+```
 
 ## Verified finite certificate foundation
 

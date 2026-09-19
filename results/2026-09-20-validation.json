@@ -1,0 +1,110 @@
+{
+  "time": "2026-09-20T08:25:19.261171+10:00",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 1.275701667,
+      "output": "test_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 1.215s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.degree_zero_gaps",
+        "results/2026-09-20-degree-zero-gaps.json",
+        "--verify"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.18876066700000016,
+      "output": "{\n  \"witnesses_verified\": 7,\n  \"shifts_verified\": 129,\n  \"unresolved\": 0,\n  \"p17_max_index\": 16,\n  \"p17_first_attaining_shift\": 81\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.run_rank_experiments",
+        "results/2026-09-18-rank-search.jsonl",
+        "--verify"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.43115950000000014,
+      "output": "{\n  \"verified\": 7735,\n  \"unresolved\": 0,\n  \"runtime_seconds\": 0.38116475\n}\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.export_lean_certificates",
+        "--check"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.085417042,
+      "output": "3 independently checked saved certificates match the Lean fixtures\n"
+    },
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 4.874080458,
+      "output": "\u2139 [1126/1129] Replayed FunctionFieldLittlewood.Examples\ninfo: FunctionFieldLittlewood/Examples.lean:47:0: 'FunctionFieldLittlewood.certificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:48:0: 'FunctionFieldLittlewood.certificate_congr_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:49:0: 'FunctionFieldLittlewood.hankel_kernel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:50:0: 'FunctionFieldLittlewood.checkCertificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:51:0: 'FunctionFieldLittlewood.binary_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:52:0: 'FunctionFieldLittlewood.comparison_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/Examples.lean:53:0: 'FunctionFieldLittlewood.comparison_first_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\n\u2139 [1127/1129] Replayed FunctionFieldLittlewood.SavedCertificates\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:35:0: 'FunctionFieldLittlewood.Saved.thueMorse_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:36:0: 'FunctionFieldLittlewood.Saved.thueMorse_optimal_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:63:0: 'FunctionFieldLittlewood.Saved.forcedEndpoint_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:64:0: 'FunctionFieldLittlewood.Saved.forcedEndpoint_optimal_of_prefix' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:91:0: 'FunctionFieldLittlewood.Saved.laiSprang17_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:92:0: 'FunctionFieldLittlewood.Saved.laiSprang17_optimal_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:108:0: 'FunctionFieldLittlewood.dualRow_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:109:0: 'FunctionFieldLittlewood.dualObstruction_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:110:0: 'FunctionFieldLittlewood.checkOptimalCertificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:111:0: 'FunctionFieldLittlewood.optimal_first_le' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/SavedCertificates.lean:112:0: 'FunctionFieldLittlewood.checkOptimalCertificate_congr_prefix' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nBuild completed successfully (1129 jobs).\n"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.7332234999999994,
+      "output": "Lean (version 4.27.0, arm64-apple-darwin24.6.0, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)\n"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        ".lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.0066379580000006655,
+      "output": "a3a10db0e9d66acbebf76c5e6a135066525ac900\n"
+    },
+    {
+      "command": [
+        "shasum",
+        "-a",
+        "256",
+        "-c",
+        "results/2026-09-18-sha256.txt"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.0886532080000002,
+      "output": "search/finite_rank.py: OK\nsearch/run_rank_experiments.py: OK\ntests/test_finite_rank.py: OK\nresults/2026-09-18-python-tests.txt: OK\nresults/2026-09-18-rank-experiments.md: OK\nresults/2026-09-18-rank-search.json: OK\nresults/2026-09-18-rank-search.jsonl: OK\n"
+    },
+    {
+      "command": [
+        "shasum",
+        "-a",
+        "256",
+        "-c",
+        "results/2026-09-19-sha256.txt"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.018969292000000415,
+      "output": "FunctionFieldLittlewood.lean: OK\nFunctionFieldLittlewood/Certificate.lean: OK\nFunctionFieldLittlewood/DualCertificate.lean: OK\nFunctionFieldLittlewood/SavedCertificates.lean: OK\nsearch/lai_sprang_finite_search.py: OK\nsearch/finite_rank.py: OK\nsearch/export_lean_certificates.py: OK\nlean-toolchain: OK\nlakefile.toml: OK\nlake-manifest.json: OK\nresults/2026-09-18-rank-search.jsonl: OK\nresults/2026-09-19-dual-certificate-soundness.md: OK\n"
+    }
+  ]
+}

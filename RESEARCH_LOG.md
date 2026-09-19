@@ -78,3 +78,32 @@ polynomial degree and Laurent-series bridges remain unfinished. Detailed command
 versions, module runtimes and scope are in
 results/2026-09-19-dual-certificate-soundness.md. Next formal increment: scalar
 normalisation and polynomial endpoints; Sunday integrates the current evidence.
+
+## 2026-09-20 (Sunday, Australia/Sydney) — integration and sharp degree-zero gaps
+
+Started 08:20:39 AEST on clean main at d11a5d2; verified origin, fetched and
+fast-forward-only checked, already current. No prior run lock. Audited actual
+source, endpoint/cutoff/rank semantics, dated results and finite Lean scope.
+
+Recorded an elementary proof from the coefficient support formula that for
+every r>=2 the maximum degree-zero defect over all shifts is exactly N:
+the upper bound follows from supported indices 1 modulo N, and R=1,m=5N+1
+attains j=N. For p=17 this is m=81,j=16, outside the previous shift box.
+This is an ordinary proof, not yet formalised in Lean; the all-degree auxiliary
+upper bound remains a hypothesis, and no novelty is claimed.
+
+Added a deterministic exact witness runner and independent root-sum readback.
+Seven prescribed primes cover r=2,...,8; exhaustive p=17,d=0,m<=128 checks all
+129 shifts with no unresolved cases, first attainment at 81. Runtime 0.146 s.
+Retained the six r=1 comparisons. All 15 Python tests pass (1.215s), including
+new cutoff and certificate-mutation controls; all 7,735 prior certificates verify.
+Lean build passes (1129 cached/replayed jobs, 4.874 s); three exports still match,
+18 standard-only axiom reports, and both recent hash manifests pass 19 entries.
+
+Rechecked Lai–Sprang v1, Badziahin–Pavlenkov–Zorin v1 and Robertson v3; no later
+characteristic-two resolution found in the searched primary sources. Integrated
+finite/formal limits and retired the now-unneeded degree-zero shift search.
+Next: characteristic-2 dyadic recurrences and p17 positive-degree shifts 65..256;
+formal scalar normalisation/polynomial degree, then named-stream gap lemma.
+Full proof, commands, ranges, limits and retained validation output accompany
+results/2026-09-20-sunday-integration.md.
