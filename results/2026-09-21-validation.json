@@ -1,0 +1,25 @@
+{
+  "recorded_at": "2026-09-21T08:27:15.878656+10:00",
+  "evidence": "Observed command outcomes from this run; experiment timing is also in its output JSON",
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "count": 19,
+    "runtime_seconds": 1.519
+  },
+  "independent_readback": {
+    "command": "python3 -m search.thue_morse_dyadic results/2026-09-21-thue-morse-dyadic.json --verify",
+    "exit_code": 0,
+    "witnesses_verified": 13,
+    "optima_verified": 6,
+    "unresolved": 0,
+    "max_defect": 8191,
+    "max_inclusive_coefficient": 24576
+  },
+  "lean_export": {
+    "command": "python3 -m search.export_lean_certificates --check",
+    "exit_code": 0,
+    "fixtures": 3
+  },
+  "lean_build": "not run; no Lean source or dependency changes"
+}

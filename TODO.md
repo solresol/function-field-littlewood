@@ -1,11 +1,13 @@
 # Research roadmap
 
-## Next computation (Monday)
+## Next computation (Wednesday)
 
-- Probe the Thue–Morse witness family suggested by `(d,m,j)=(9,15,24)`
-  and `R=(1+t)(1+t^8)` at dyadic scales. Test exact recurrence identities
-  before claiming unbounded defects or any novelty; check prior primary work
-  on these named streams. Current binary boxes give no infinite conclusion.
+- Thue–Morse is retired as a candidate: the 21 September all-scale proof gives
+  defect 2^(k+1)-1. Retain its sparse family as a regression fixture. Do not
+  repeat scale expansion as evidence for an already proved unboundedness result.
+- For binary paperfolding and Rudin–Shapiro, test explicit dyadic recurrences
+  or exact number-wall profiles; check named-stream literature first. Prior
+  number-wall work already reports unbounded windows for binary paperfolding.
 - Degree-zero gaps are settled by the 20 September proof: maximum N at
   m=5N+1, including p=17,m=81. Do not repeat that search. For p=17,
   next test d=1,...,16,m=65,...,256 with cutoff 128, retaining certificates
@@ -26,7 +28,22 @@
 - Prove scalar normalisation over fields to extend the normalised finite-optimum
   theorem to all multipliers with nonzero constant coefficient.
 - Identify the recorded binary prefix with an infinite Thue–Morse definition in
-  Lean; generated finite lists alone do not formalise that identity.
+  Lean; generated finite lists alone do not formalise that identity. The new
+  adjacent-difference identity a_n+a_(n+1)=1+v2(n+1) mod 2 is a concrete next
+  stream lemma, after the polynomial endpoint/normalisation foundation.
+
+## Completed on 2026-09-21 (Monday computation)
+
+- Proved by binary carries that R=(1+t)(1+t^(2^k)), m=2^(k+1)-1 has
+  j=3*2^k for every k>=0 in the binary digit-parity stream. Its defect is
+  unbounded, ruling out this stream as a t-adic counterexample. Ordinary proof,
+  not Lean; no novelty claim and no general characteristic-2 resolution.
+- Exact witnesses at k=0,...,12, independent recurrence readback, and six
+  primal/dual optimum certificates for k<=5. All 19 Python tests pass,
+  including cutoff, endpoint, duplicate/missing-input and corruption controls.
+- Rechecked primary versions and identified relevant existing Thue–Morse
+  number-wall discussion; distinguished digit parity from multiplicative
+  generalised Thue–Morse products. No new odd-characteristic search this run.
 
 ## Completed on 2026-09-20 (Sunday integration)
 

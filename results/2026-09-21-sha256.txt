@@ -1,0 +1,5 @@
+d6fb1f67bb9097d0d4099ea9360abebc7fb0a5923928a05199b658d4cf095a96  search/thue_morse_dyadic.py
+547f4e0b31262e09e45999244d7f3e6c22dd352cb4e5487ea8455813452b9b5b  tests/test_thue_morse_dyadic.py
+4b90ec353cfeb806d9c1a726a9996f75ec0471c5232f10074c0c8e39dc6f20e9  results/2026-09-21-thue-morse-dyadic.json
+661b0bc60c5e86dcd008b49f6e16d9840cbfed712169062841fa9d7f1ce48e0d  results/2026-09-21-thue-morse-dyadic.md
+b7833d4ca0920e69ddf7d3bfd6686e44a75a3e750b35c57fd42ee432082c04a3  results/2026-09-21-validation.json

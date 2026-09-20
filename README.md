@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (20 Sep 2026)
+## Status update (21 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 20 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 21 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -81,7 +81,8 @@ commands and limits are in `results/2026-09-18-rank-experiments.md`; all certifi
 are retained in JSONL. The odd-characteristic boxes support the auxiliary bound
 only finitely; that p=17 box does not attain N (a later witness below does). The binary streams are baseline
 experiments, not established main-conjecture counterexamples. No infinite bounded
-or unbounded defect conclusion follows from these boxes.
+or unbounded defect conclusion follows from these boxes alone. The later
+Thue–Morse recurrence proof below rules out that particular stream.
 
 ```sh
 python3 -m search.run_rank_experiments /tmp/littlewood-rank-search.jsonl
@@ -109,6 +110,31 @@ remain separate unfinished questions. No novelty claim is made.
 
 ```sh
 python3 -m search.degree_zero_gaps results/2026-09-20-degree-zero-gaps.json --verify
+```
+
+## Binary Thue–Morse baseline retired (21 September)
+
+For the stream a_n = binary digit sum of n modulo 2, let L=2^k for any k>=0.
+The multiplier R=(1+t)(1+t^L), with d=L+1 and m=2L-1, has first nonzero
+fractional index j=3L. Thus its defect is 2L-1, unbounded with k, and its
+Littlewood product is 2^(1-2L), tending to zero. This stream therefore satisfies
+the t-adic Littlewood condition; it cannot be a counterexample.
+
+The all-scale conclusion follows from a binary-carry proof, **not** finite
+agreement. The proof is not yet formalised in Lean, and no novelty is claimed:
+prior number-wall literature already describes unbounded Thue–Morse windows.
+The current characteristic-2 main frontier remains separate and unresolved in
+the primary sources checked. The auxiliary odd-characteristic N-bound is unchanged.
+
+`search/thue_morse_dyadic.py` retains exact sparse witnesses for k=0,...,12
+(maximum defect 8191) and independently checked affine optimality certificates
+for k=0,...,5 only. At k=0 the two t terms cancel, giving R=1+t^2.
+The report `results/2026-09-21-thue-morse-dyadic.md` gives the proof, input ranges,
+source versions, independent checks and limitations. Thue–Morse remains useful
+as a growing-defect regression fixture, rather than a candidate to search further.
+
+```sh
+python3 -m search.thue_morse_dyadic results/2026-09-21-thue-morse-dyadic.json --verify
 ```
 
 ## Verified finite certificate foundation
@@ -149,7 +175,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise scalar normalisation, the polynomial-degree bridge, and named stream identities. Computationally, investigate the binary witnesses at dyadic scales using recurrence identities, and seek a structural explanation for the auxiliary Lai–Sprang bound. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise scalar normalisation, the polynomial-degree bridge, and named stream identities. Computationally, extend the positive-degree p=17 shift box and investigate the remaining binary baselines with explicit recurrence or number-wall checks; the Thue–Morse dyadic family is now settled. See the roadmap for precise next experiments.
 
 ## References
 

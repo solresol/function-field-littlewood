@@ -107,3 +107,31 @@ Next: characteristic-2 dyadic recurrences and p17 positive-degree shifts 65..256
 formal scalar normalisation/polynomial degree, then named-stream gap lemma.
 Full proof, commands, ranges, limits and retained validation output accompany
 results/2026-09-20-sunday-integration.md.
+
+## 2026-09-21 (Monday, Australia/Sydney) — Thue–Morse dyadic family
+
+Started approximately 08:21:51 AEST on clean main at 4b4be05. Origin verified,
+fetch/fast-forward-only check current, no concurrent marker or experiment.
+Read prior records and audited enumerator/affine/certificate semantics: both
+endpoints, inclusive cutoff, unresolved prefixes and independently checked duals.
+
+Proved by binary carries that for L=2^k, R=(1+t)(1+t^L), m=2L-1,
+the first index is exactly j=3L for every k>=0. Thus defects 2L-1 diverge
+and products 2^(1-2L) tend to zero. This binary Thue–Morse stream is retired
+as a t-adic counterexample candidate. Ordinary proof, not yet Lean; no novelty
+claim, consistent with prior number-wall literature. The general characteristic-2
+frontier and auxiliary odd-characteristic all-degree N-bound remain unfinished.
+
+Added checkpointed sparse witnesses k=0,...,12, independent recursive readback,
+and six affine optimum certificates k<=5. All 13 witnesses resolve, maximum
+defect 8191; runtime 0.096070s, Python 3.9.6, no randomness. All 19 tests pass in 1.519s,
+including the prior 7735 certificates and r=1 comparisons, plus adjacent identities,
+sparse/dense/cutoff checks and 10 corruption controls. Three existing Lean exports
+match; no Lean source changes or build today. Primary versions rechecked, no
+later characteristic-2 resolution found in the scoped searches. Related product
+series were explicitly distinguished from the digit-parity encoding.
+
+Full proof, sources, ranges, limitations and commands are in
+results/2026-09-21-thue-morse-dyadic.md, with JSON witnesses/validation.
+Next: Tuesday polynomial endpoints/scalar normalisation; Wednesday p17 positive
+degrees and larger shifts, then informative remaining binary recurrence profiles.
