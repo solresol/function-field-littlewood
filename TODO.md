@@ -16,21 +16,27 @@
 - Use the certified defect profiles to guide an explicit number-wall experiment;
   singularity alone does not guarantee both multiplier endpoints.
 
-## Next formalisation (Tuesday)
+## Next formalisation (Thursday)
 
-- Connect `Fin (d+1)` multipliers with mathlib polynomials, proving degree `d`
-  and nonzero constant term from the certificate endpoints.
 - Connect `fractionalCoeff` to actual Laurent-series multiplication and later
   the norm/product exponent. Avoid assuming that bridge as an axiom.
 - Formalise the Lai–Sprang coefficient stream and identify the tested prefix;
   then prove the all-shift degree-zero bound and m=5N+1 attainment from
   the support formula (ordinary proof now recorded).
-- Prove scalar normalisation over fields to extend the normalised finite-optimum
-  theorem to all multipliers with nonzero constant coefficient.
 - Identify the recorded binary prefix with an infinite Thue–Morse definition in
   Lean; generated finite lists alone do not formalise that identity. The new
   adjacent-difference identity a_n+a_(n+1)=1+v2(n+1) mod 2 is a concrete next
-  stream lemma, after the polynomial endpoint/normalisation foundation.
+  stream lemma; the polynomial endpoint/normalisation foundation is now proved.
+
+## Completed on 2026-09-22 (Tuesday formalisation)
+
+- Nonzero scalar invariance of exact certificates and first indices over every
+  field; the finite optimum now bounds all vectors with both endpoints nonzero.
+- Polynomial reconstruction, degree and nonzero constant-term bridge, including
+  degree zero. Checked optima now quantify over actual degree-d polynomials.
+- Kernel-checked F_3 scaling and zero-scalar negative control, and saved F_2/F_17
+  polynomial optimum corollaries. No Laurent-series or named-stream identification
+  was assumed. Existing Python algorithms and finite search boxes are unchanged.
 
 ## Completed on 2026-09-21 (Monday computation)
 

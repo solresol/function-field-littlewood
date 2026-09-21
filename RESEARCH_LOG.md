@@ -135,3 +135,34 @@ Full proof, sources, ranges, limitations and commands are in
 results/2026-09-21-thue-morse-dyadic.md, with JSON witnesses/validation.
 Next: Tuesday polynomial endpoints/scalar normalisation; Wednesday p17 positive
 degrees and larger shifts, then informative remaining binary recurrence profiles.
+
+## 2026-09-22 (Tuesday, Australia/Sydney) — polynomial normalisation
+
+Started approximately 08:22:21 AEST on clean main at d3f259f. Verified origin,
+fetched and fast-forward-only checked (already current); no competing lock or
+experiment. Audited the actual enumerator, affine solver, independent checker,
+truncation/endpoints, prior results, tests and Lean sources.
+
+Proved nonzero scalar invariance of exact certificates and first indices over
+all fields. Normalising the constant term to 1 now formally extends a checked
+optimum to every multiplier with both endpoints nonzero. Built the mathlib
+polynomial bridge: coefficient recovery, degree, exclusion of X divisibility,
+reconstruction of every bounded-degree polynomial, and optimality quantified
+over actual degree-d polynomials. Includes degree zero and characteristic two.
+Kernel-checked F_3 scaling/zero-scalar controls and saved F_2/F_17 polynomial
+corollaries. No Laurent or infinite-stream identification is assumed.
+
+Final lake build passes (1322 jobs, 17.559s); 30 axiom reports use only propext,
+Classical.choice and Quot.sound. No sorry, admit, added axioms or native_decide.
+Lean/mathlib v4.27.0 pins unchanged; reused sources and Apache-2.0 licence read.
+All 19 Python tests pass (1.604s), including all 7735 saved dual certificates,
+root-sum validation, r=1 comparisons and prior regression families. Three Lean
+exports match. No new search boxes were run or infinite claims inferred.
+
+Rechecked primary Lai–Sprang v1, Badziahin–Pavlenkov–Zorin v1 and Robertson v3.
+No later characteristic-two resolution found in scoped searches; odd main case
+remains settled, auxiliary all-degree N-bound remains a hypothesis. Report,
+source/version boundaries and command output are retained under
+results/2026-09-22-polynomial-normalisation.md and accompanying JSON/text files.
+Next: Wednesday p17 positive-degree shift extension; Thursday named stream
+identities and Laurent coefficients. Polynomial endpoints/normalisation are done.

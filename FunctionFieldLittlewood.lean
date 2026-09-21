@@ -1,4 +1,7 @@
 import FunctionFieldLittlewood.Certificate
 import FunctionFieldLittlewood.DualCertificate
+import FunctionFieldLittlewood.Normalisation
+import FunctionFieldLittlewood.PolynomialBridge
 import FunctionFieldLittlewood.Examples
 import FunctionFieldLittlewood.SavedCertificates
+import FunctionFieldLittlewood.BridgeExamples

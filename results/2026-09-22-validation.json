@@ -1,0 +1,48 @@
+{
+  "time": "2026-09-22T08:27:02.237825+10:00",
+  "python": "3.9.6",
+  "seed": null,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 1.8154465419999999,
+      "output": "test_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 1.604s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.export_lean_certificates",
+        "--check"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.21673279199999998,
+      "output": "3 independently checked saved certificates match the Lean fixtures\n"
+    },
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 17.559340083000002,
+      "output_file": "results/2026-09-22-lean-build.txt",
+      "axiom_reports": 30,
+      "allowed_axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "completed_at": "2026-09-22T08:28:43.270580+10:00"
+}

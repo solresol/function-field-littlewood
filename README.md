@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (21 Sep 2026)
+## Status update (22 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 21 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 22 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -157,6 +157,29 @@ a Python check, not a Lean theorem. Only these three saved records have been
 instantiated in Lean, not all 7,735 records. Details and limits are in
 `results/2026-09-19-dual-certificate-soundness.md`.
 
+## Polynomial endpoints and scalar normalisation (22 September)
+
+`Normalisation.lean` proves over every field that nonzero scalar multiplication
+preserves exact certificates and first nonzero indices. Dividing by the constant
+coefficient gives constant term 1 without changing the leading endpoint.
+The new `checkOptimalCertificate_sound_all` therefore bounds **all multipliers
+with both endpoints nonzero**, removing the normalisation restriction from the
+semantic conclusion of the existing checker.
+
+`PolynomialBridge.lean` assembles vectors as mathlib polynomials, recovers every
+coefficient, proves the actual degree from the leading endpoint, and excludes
+an X factor from the nonzero constant term. Every polynomial of degree at most d
+is reconstructed from its vector. `optimal_polynomial_nonzero` consequently
+bounds the finite coefficient sum for every degree-d polynomial with nonzero
+constant term. This includes degree zero and characteristic two.
+
+`BridgeExamples.lean` checks nontrivial F_3 scaling, rejection of zero scaling,
+degree-zero endpoints, and the saved F_2/F_17 optima with polynomial quantifiers.
+These are kernel-checked finite statements. The actual Laurent-series product,
+norm exponent and named infinite-stream identities are still unformalised;
+no global auxiliary bound or characteristic-2 counterexample follows. See
+`results/2026-09-22-polynomial-normalisation.md` for validation and source details.
+
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
 ```sh
@@ -175,7 +198,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise scalar normalisation, the polynomial-degree bridge, and named stream identities. Computationally, extend the positive-degree p=17 shift box and investigate the remaining binary baselines with explicit recurrence or number-wall checks; the Thue–Morse dyadic family is now settled. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise named stream identities and the Laurent-series coefficient bridge; scalar normalisation and polynomial endpoints are now proved. Computationally, extend the positive-degree p=17 shift box and investigate the remaining binary baselines with explicit recurrence or number-wall checks; the Thue–Morse dyadic family is now settled. See the roadmap for precise next experiments.
 
 ## References
 
