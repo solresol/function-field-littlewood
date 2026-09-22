@@ -1,0 +1,42 @@
+[
+  {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "returncode": 0,
+    "runtime_seconds": 1.4961964579997584,
+    "stdout": "",
+    "stderr": "test_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests.test_corruption_and_completeness) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests.test_exact_cutoff_and_locality_for_both_streams) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests.test_saved_without_solver) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests.test_endpoint_obstruction_and_mutations) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests.test_every_tiny_stream) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests.test_inclusive_prefix_and_tail_invariance) ... ok\ntest_invalid_input (test_finite_rank.RankTests.test_invalid_input) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests.test_lai_sprang_tiny_boxes) ... ok\ntest_saved_certificates (test_finite_rank.RankTests.test_saved_certificates) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests.test_unresolved_is_only_a_prefix) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests.test_coefficients_against_original_root_sum) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests.test_cutoff_is_not_an_exact_index) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests.test_degree_zero_sharp_gaps_and_cutoffs) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests.test_invalid_input) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests.test_r1_comparison_and_certificate_mutations) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests.test_recorded_results_if_present) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests.test_saved_degree_zero_certificates_and_mutations) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests.test_small_box_and_scaling) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests.test_adjacent_difference_identity) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests.test_invalid_inputs) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests.test_saved_witnesses_without_elimination) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests.test_sparse_dense_cutoff_and_inclusive_locality) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 1.372s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-m",
+      "search.export_lean_certificates",
+      "--check"
+    ],
+    "returncode": 0,
+    "runtime_seconds": 0.0790312500030268,
+    "stdout": "3 independently checked saved certificates match the Lean fixtures\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-m",
+      "search.extended_rank_boxes",
+      "results/2026-09-23-extended-rank.jsonl",
+      "--verify"
+    ],
+    "returncode": 0,
+    "runtime_seconds": 0.5416136670028209,
+    "stdout": "{\n  \"verified\": 5136,\n  \"boxes\": {\n    \"lai_sprang_F17\": {\n      \"checked\": 3072,\n      \"unresolved\": 0,\n      \"best\": {\n        \"d\": 16,\n        \"m\": 147,\n        \"defect\": 16,\n        \"R\": [\n          1,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          16,\n          1\n        ],\n        \"j\": 32,\n        \"zero_prefix\": 31,\n        \"rank\": 17,\n        \"obstruction\": {\n          \"kind\": \"inconsistent\",\n          \"weights\": [\n            8,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            1,\n            1,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            1\n          ]\n        }\n      },\n      \"max_defect_by_degree\": {\n        \"1\": 14,\n        \"2\": 12,\n        \"3\": 10,\n        \"4\": 8,\n        \"5\": 6,\n        \"6\": 4,\n        \"7\": 3,\n        \"8\": 2,\n        \"9\": 4,\n        \"10\": 2,\n        \"11\": 2,\n        \"12\": 3,\n        \"13\": 2,\n        \"14\": 2,\n        \"15\": 3,\n        \"16\": 16\n      },\n      \"obstructions\": {\n        \"inconsistent\": 1818,\n        \"leading_zero\": 1254\n      },\n      \"attaining_best\": 1,\n      \"largest_prefix_index\": 289\n    },\n    \"rudin_shapiro_F2\": {\n      \"checked\": 2064,\n      \"unresolved\": 0,\n      \"best\": {\n        \"d\": 25,\n        \"m\": 111,\n        \"defect\": 15,\n        \"R\": [\n          1,\n          1,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          1,\n          1,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          1,\n          1,\n          0,\n          0,\n          0,\n          0,\n          0,\n          0,\n          1,\n          1\n        ],\n        \"j\": 40,\n        \"zero_prefix\": 39,\n        \"rank\": 26,\n        \"obstruction\": {\n          \"kind\": \"inconsistent\",\n          \"weights\": [\n            1,\n            1,\n            1,\n            0,\n            0,\n            1,\n            0,\n            0,\n            1,\n            0,\n            0,\n            0,\n            1,\n            0,\n            0,\n            0,\n            0,\n            1,\n            1,\n            0,\n            1,\n            1,\n            0,\n            0,\n            1,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            0,\n            1\n          ]\n        }\n      },\n      \"max_defect_by_degree\": {\n        \"17\": 4,\n        \"18\": 5,\n        \"19\": 5,\n        \"20\": 5,\n        \"21\": 5,\n        \"22\": 5,\n        \"23\": 4,\n        \"24\": 5,\n        \"25\": 15,\n        \"26\": 13,\n        \"27\": 11,\n        \"28\": 9,\n        \"29\": 7,\n        \"30\": 5,\n        \"31\": 5,\n        \"32\": 5\n      },\n      \"obstructions\": {\n        \"inconsistent\": 1363,\n        \"leading_zero\": 701\n      },\n      \"attaining_best\": 1,\n      \"largest_prefix_index\": 191\n    }\n  },\n  \"runtime_seconds\": 0.49775904200214427\n}\n",
+    "stderr": ""
+  }
+]

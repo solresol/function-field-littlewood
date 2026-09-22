@@ -1,20 +1,20 @@
 # Research roadmap
 
-## Next computation (Wednesday)
+## Next computation (Friday)
 
-- Thue–Morse is retired as a candidate: the 21 September all-scale proof gives
-  defect 2^(k+1)-1. Retain its sparse family as a regression fixture. Do not
-  repeat scale expansion as evidence for an already proved unboundedness result.
-- For binary paperfolding and Rudin–Shapiro, test explicit dyadic recurrences
-  or exact number-wall profiles; check named-stream literature first. Prior
-  number-wall work already reports unbounded windows for binary paperfolding.
-- Degree-zero gaps are settled by the 20 September proof: maximum N at
-  m=5N+1, including p=17,m=81. Do not repeat that search. For p=17,
-  next test d=1,...,16,m=65,...,256 with cutoff 128, retaining certificates
-  and unresolved counts; seek positive-degree structure or an N-bound violation.
-  Retain the r=1 comparison.
-- Use the certified defect profiles to guide an explicit number-wall experiment;
-  singularity alone does not guarantee both multiplier endpoints.
+- Test the binary Rudin–Shapiro family suggested by the L=4 and L=8 witnesses:
+  L=2^k, R=(1+t)(1+t^L+t^(2L)+t^(3L)), m=14L-1, candidate j=5L.
+  Check bounded scales and exceptions, then seek a recurrence proof. Two scales
+  do not prove unbounded defects; verify the exact binary encoding in literature.
+- The planned p17 box d=1,...,16,m=65,...,256 is complete, maximum N=16,
+  with positive-degree witness R=1-t^15+t^16,m=147,j=32. Investigate whether
+  d=N,m=9N+3,R=1-t^(N-1)+t^N generalises to other r>=2; only N=16 is
+  established here. Keep the r=1 comparison and all-degree N-bound distinction.
+- Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
+  is settled. Do not repeat their expansions as new evidence. Binary paperfolding
+  already has unbounded-window literature; check sources before new work.
+- Use certificates to guide number-wall work; singularity alone does not
+  guarantee nonzero multiplier endpoints.
 
 ## Next formalisation (Thursday)
 
@@ -27,6 +27,18 @@
   Lean; generated finite lists alone do not formalise that identity. The new
   adjacent-difference identity a_n+a_(n+1)=1+v2(n+1) mod 2 is a concrete next
   stream lemma; the polynomial endpoint/normalisation foundation is now proved.
+
+## Completed on 2026-09-23 (Wednesday computation)
+
+- Certified 3072 positive-degree p17 optima and 2064 binary Rudin–Shapiro
+  optima in disjoint extensions of the old boxes; no unresolved cases.
+- p17 maximum defect 16 attained at d16,m147,j32 with a three-term witness;
+  binary maximum 15 at d25,m111,j40 suggests a dyadic family, still unproved.
+- Independent root-sum/recursive readback of all records, ten corruption and
+  completeness controls, cutoff/locality tests and elimination-disabled readback.
+  All 22 Python tests pass; existing Lean exports match. No new Lean theorem.
+- Primary frontier rechecked; no later characteristic-2 resolution found in
+  scoped searches. Finite agreement supplies no global auxiliary bound.
 
 ## Completed on 2026-09-22 (Tuesday formalisation)
 

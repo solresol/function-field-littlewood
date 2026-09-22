@@ -166,3 +166,30 @@ source/version boundaries and command output are retained under
 results/2026-09-22-polynomial-normalisation.md and accompanying JSON/text files.
 Next: Wednesday p17 positive-degree shift extension; Thursday named stream
 identities and Laurent coefficients. Polynomial endpoints/normalisation are done.
+
+## 2026-09-23 (Wednesday, Australia/Sydney) — certified rank extensions
+
+Started approximately 08:20:29 AEST on clean main at f60f3de; verified origin,
+fetched/fast-forward-only checked, no competing lock/process. Read prior records
+and actual enumerator/affine/checker source. Inclusive cutoffs, unresolved
+accounting, normalisation, both endpoints and independent dual semantics verified.
+
+New checkpointed experiment checks p17 d1..16,m65..256 (3072 optima) and binary
+Rudin–Shapiro d17..32,m0..128 (2064), cutoff128. All 5136 independently verified,
+none unresolved. p17 maximum16 at d16,m147,j32, R=1-t^15+t^16; no finite violation
+of N-bound. Binary maximum15 at d25,m111,j40, R=(1+t)(1+t^8+t^16+t^24),
+suggesting a dyadic family with the prior spacing4 witness. No all-scale claim.
+
+Python3.11.6, no randomness, standard library; search5.495118s, initial
+readback0.518003s. All22 tests pass1.372s, including old7735 certificates,
+root sums, r1 comparisons, ten new corruption/completeness controls, exact cutoff
+versus unresolved cutoff and readback with elimination disabled. Three Lean
+exports match; no Lean changes/build today. Complete records/report/validation
+retained under results/2026-09-23-extended-rank*, with a SHA256 manifest.
+
+Primary Lai–Sprangv1, BPZv1, Robertsonv3 and Garrett–Robertsonv2 refreshed;
+no later characteristic2 main resolution found in scoped primary searches.
+Odd main case remains settled; auxiliary global N-bound remains a hypothesis.
+Next: Thursday stream identities/Laurent bridge; Friday bounded tests and
+recurrence derivation for the proposed Rudin–Shapiro family, then investigate
+whether the p17 three-term witness extends to other N. No novelty claimed.

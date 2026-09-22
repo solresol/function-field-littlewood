@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (22 Sep 2026)
+## Status update (23 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 22 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 23 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -137,6 +137,27 @@ as a growing-defect regression fixture, rather than a candidate to search furthe
 python3 -m search.thue_morse_dyadic results/2026-09-21-thue-morse-dyadic.json --verify
 ```
 
+## Extended positive-degree and binary boxes (23 September)
+
+All 5,136 new degree/shift optima have independently checked primal/dual
+certificates, with no unresolved inputs at cutoff 128:
+
+- Lai–Sprang F_17, d=1,...,16 and m=65,...,256: maximum defect 16=N.
+  R=1-t^15+t^16 at m=147 has exact j=32, giving positive-degree attainment.
+  No violation of the auxiliary bound occurs in this finite box.
+- Binary Rudin–Shapiro, d=17,...,32 and m=0,...,128: maximum defect 15.
+  R=(1+t)(1+t^8+t^16+t^24) at m=111 has j=40. The earlier box maximum
+  was 7. These witnesses suggest a dyadic family, but prove no infinite bound
+  or unboundedness and do not resolve the characteristic-2 main conjecture.
+
+`results/2026-09-23-extended-rank.md` records exact witnesses, profiles, literature
+boundaries and reproducible checks. JSONL retains every certificate; independent
+readback checks completeness and regenerates coefficients without elimination.
+
+```sh
+python3 -m search.extended_rank_boxes results/2026-09-23-extended-rank.jsonl --verify
+```
+
 ## Verified finite certificate foundation
 
 `FunctionFieldLittlewood/Certificate.lean` defines coefficient streams, shifted multiplication, a Hankel matrix, and an exact-index certificate. It proves that the zero-prefix equations equal a matrix kernel condition, that an accepted certificate gives the first nonzero index, and that only coefficients through `m+d+j` affect the certificate. Both constant and leading multiplier coefficients must be nonzero.
@@ -198,7 +219,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise named stream identities and the Laurent-series coefficient bridge; scalar normalisation and polynomial endpoints are now proved. Computationally, extend the positive-degree p=17 shift box and investigate the remaining binary baselines with explicit recurrence or number-wall checks; the Thue–Morse dyadic family is now settled. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise named stream identities and the Laurent-series coefficient bridge; scalar normalisation and polynomial endpoints are now proved. Computationally, test and derive the proposed binary Rudin–Shapiro dyadic recurrence; the planned positive-degree p=17 box is now checked, and the Thue–Morse dyadic family is settled. See the roadmap for precise next experiments.
 
 ## References
 
