@@ -193,3 +193,32 @@ Odd main case remains settled; auxiliary global N-bound remains a hypothesis.
 Next: Thursday stream identities/Laurent bridge; Friday bounded tests and
 recurrence derivation for the proposed Rudin–Shapiro family, then investigate
 whether the p17 three-term witness extends to other N. No novelty claimed.
+
+## 2026-09-24 (Thursday, Australia/Sydney) — named binary stream
+
+Started approximately 08:21 AEST on clean main at 7bbd69c. Origin verified;
+fetched and fast-forward-only checked; no competing lock/process. Read the
+roadmap, recent records and actual enumerator/affine/checker/stream code.
+Inclusive truncation, both endpoints and independent dual semantics validated.
+
+Added BinaryStream.lean: infinite binary digit parity using mathlib Nat.digits,
+even/odd recurrences, uniqueness, and adjacent-difference recurrences for all n.
+Proved the saved degree-nine prefix agrees through inclusive index48; transferred
+its checked exact index24 and optimum at shift15 to the infinite named stream,
+including arbitrary endpoint-nonzero vectors and actual degree-nine polynomials.
+Convention controls check a0=0 and disagreement with the padded prefix at49.
+No all-scale dyadic, valuation-expression or Laurent norm theorem is claimed.
+
+Final lake build passes1324 jobs20.250s with no warnings. All39 axiom reports
+(nine new) use only propext/Classical.choice/Quot.sound. No sorry/admit/added
+axioms/native_decide. Pins remain Lean/mathlib4.27.0; digit sources and Apache2
+licence inspected. All22 Python regressions pass1.355s; three saved Lean exports
+match0.095s. Python3.11.6, no randomness. No new search boxes or solver changes.
+Report/build/validation/hash retained under results/2026-09-24-*.
+
+Primary Lai–Sprangv1, BPZv1, Robertsonv3 and Garrett–Robertsonv2 rechecked;
+no later characteristic-two main resolution found in scoped searches. This is
+formal progress on a retired binary regression baseline, not a new counterexample
+or proof of the auxiliary odd-characteristic global N-bound. Next Friday:
+bounded Rudin–Shapiro dyadic family; Saturday named Lai–Sprang/Laurent bridge,
+or derive the binary valuation identity from today's recurrences.

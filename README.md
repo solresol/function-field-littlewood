@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (23 Sep 2026)
+## Status update (24 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 23 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 24 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -173,8 +173,9 @@ acceptance. This proof uses finite sums; it does not trust the solver or its ran
 `SavedCertificates.lean` kernel-checks three exported records: the Thue–Morse
 F_2 case (d,m,j)=(9,15,24), an F_2 forced-endpoint obstruction, and the Lai–Sprang
 F_17 degree-zero gap (0,17,15). Each theorem applies to every stream agreeing
-with its recorded prefix; identification with the named infinite stream remains
-a Python check, not a Lean theorem. Only these three saved records have been
+with its recorded prefix; the Thue–Morse degree-nine prefix is now identified
+with the infinite stream in `BinaryStream.lean` (24 September, below). The other two named-stream
+identifications remain Python checks. Only these three saved records have been
 instantiated in Lean, not all 7,735 records. Details and limits are in
 `results/2026-09-19-dual-certificate-soundness.md`.
 
@@ -196,10 +197,31 @@ constant term. This includes degree zero and characteristic two.
 
 `BridgeExamples.lean` checks nontrivial F_3 scaling, rejection of zero scaling,
 degree-zero endpoints, and the saved F_2/F_17 optima with polynomial quantifiers.
-These are kernel-checked finite statements. The actual Laurent-series product,
-norm exponent and named infinite-stream identities are still unformalised;
-no global auxiliary bound or characteristic-2 counterexample follows. See
+These are kernel-checked finite statements. The actual Laurent-series product
+and norm exponent are still unformalised. The later binary identification is below.
+No global auxiliary bound or characteristic-2 counterexample follows. See
 `results/2026-09-22-polynomial-normalisation.md` for validation and source details.
+
+## Named binary stream (24 September)
+
+`BinaryStream.lean` defines the infinite Thue–Morse stream as the sum of
+`Nat.digits 2 n`, reduced in `ZMod 2`. It proves the even/odd recurrences and
+uniqueness from those recurrences. For D(n)=a(n)+a(n+1), it proves
+D(2n)=1 and D(2n+1)=1+D(n) for every n.
+
+The saved prefix through inclusive index 48 is now kernel-proved to agree
+with this definition. The existing primal/dual certificate consequently proves
+exact j=24 for R=(1+t)(1+t^8), m=15, and an upper bound of 24 for every
+degree-nine multiplier with nonzero endpoints on the **infinite named stream**.
+A polynomial corollary removes the coefficient-vector representation from the
+quantifier. The finite prefix is not equated to the entire stream: they differ
+at index 49, as a checked control records.
+
+This closes one named-stream identification gap. It does not formalise the
+all-scale dyadic witness, the valuation formula for D, or the Laurent norm
+bridge. Thue–Morse remains a retired candidate and a regression baseline.
+No characteristic-2 counterexample or global auxiliary N-bound follows.
+See `results/2026-09-24-named-binary-stream.md` for checks and source versions.
 
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
@@ -219,7 +241,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise named stream identities and the Laurent-series coefficient bridge; scalar normalisation and polynomial endpoints are now proved. Computationally, test and derive the proposed binary Rudin–Shapiro dyadic recurrence; the planned positive-degree p=17 box is now checked, and the Thue–Morse dyadic family is settled. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the Lai–Sprang stream identity and the Laurent-series coefficient bridge; the binary degree-nine prefix, scalar normalisation and polynomial endpoints are now proved. Computationally, test and derive the proposed binary Rudin–Shapiro dyadic recurrence; the planned positive-degree p=17 box is now checked, and the Thue–Morse dyadic family is settled. See the roadmap for precise next experiments.
 
 ## References
 

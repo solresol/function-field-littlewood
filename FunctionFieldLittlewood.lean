@@ -5,3 +5,4 @@ import FunctionFieldLittlewood.PolynomialBridge
 import FunctionFieldLittlewood.Examples
 import FunctionFieldLittlewood.SavedCertificates
 import FunctionFieldLittlewood.BridgeExamples
+import FunctionFieldLittlewood.BinaryStream

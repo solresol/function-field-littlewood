@@ -16,17 +16,28 @@
 - Use certificates to guide number-wall work; singularity alone does not
   guarantee nonzero multiplier endpoints.
 
-## Next formalisation (Thursday)
+## Next formalisation (Saturday)
 
 - Connect `fractionalCoeff` to actual Laurent-series multiplication and later
   the norm/product exponent. Avoid assuming that bridge as an axiom.
 - Formalise the Lai–Sprang coefficient stream and identify the tested prefix;
   then prove the all-shift degree-zero bound and m=5N+1 attainment from
   the support formula (ordinary proof now recorded).
-- Identify the recorded binary prefix with an infinite Thue–Morse definition in
-  Lean; generated finite lists alone do not formalise that identity. The new
-  adjacent-difference identity a_n+a_(n+1)=1+v2(n+1) mod 2 is a concrete next
-  stream lemma; the polynomial endpoint/normalisation foundation is now proved.
+- The binary degree-nine prefix is now identified with the infinite digit-parity
+  stream; even/odd recurrences and their uniqueness are proved. Next derive
+  a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
+  the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-24 (Thursday formalisation)
+
+- Defined infinite binary digit parity using mathlib digits, proved even/odd
+  recurrences, uniqueness, and adjacent-difference recurrences at all indices.
+- Kernel-identified the saved prefix through index 48, transferring the degree-9,
+  shift-15 exact index 24 and optimality to the actual infinite named stream.
+  Includes arbitrary endpoint-nonzero vectors and degree-nine polynomials.
+- Checked convention controls at zero and at the first index beyond the prefix.
+  The global dyadic theorem, valuation identity and Laurent bridge remain open
+  formalisation tasks. No new search box or main-conjecture result claimed.
 
 ## Completed on 2026-09-23 (Wednesday computation)
 

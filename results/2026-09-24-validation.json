@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-24",
+  "weekday": "Thursday",
+  "timezone": "Australia/Sydney",
+  "seed": null,
+  "python": "3.11.6",
+  "checks": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 20.249917208013358,
+      "axiom_reports": 39,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.export_lean_certificates",
+        "--check"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.0954796249861829,
+      "output": "3 independently checked saved certificates match the Lean fixtures\n"
+    }
+  ],
+  "python_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 22,
+    "reported_runtime_seconds": 1.355
+  }
+}
