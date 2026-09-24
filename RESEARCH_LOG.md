@@ -222,3 +222,35 @@ formal progress on a retired binary regression baseline, not a new counterexampl
 or proof of the auxiliary odd-characteristic global N-bound. Next Friday:
 bounded Rudin–Shapiro dyadic family; Saturday named Lai–Sprang/Laurent bridge,
 or derive the binary valuation identity from today's recurrences.
+
+## 2026-09-25 (Friday, Australia/Sydney) — Rudin–Shapiro dyadic family
+
+Started approximately 08:20:30 AEST on clean main at cdff75f. Verified origin,
+fetched/fast-forward-only checked, no competing marker/process. Read prior
+records and actual enumerator/affine/checker sources; both endpoints, inclusive
+truncation, unresolved accounting and independent dual semantics remain valid.
+
+Proved by binary-block concatenation that R=(1+t)(1+t^L+t^(2L)+t^(3L)),
+m=14L-1 has exact j=5L for every L=2^k, k>=0. Four blocks cancel their internal
+and boundary contributions; adjacent differencing reduces to five binary pairs.
+Defect 2L-1 is unbounded, so this binary Rudin–Shapiro stream is retired as a
+t-adic counterexample candidate. Ordinary proof, not Lean, with no novelty claim.
+At L=1 the polynomial cancels to 1+t^4. Complemented encoding also works;
+signed Rudin–Shapiro reduced modulo 2 would be a different, constant stream.
+
+Checkpointed 13 sparse witnesses k=0..12 and five exact affine optima k=0..4,
+independently read back using recursive coefficients and primal/dual checks.
+All resolve; largest defect 8191 and inclusive index 90112. Python 3.9.6, standard
+library, no randomness; generation 0.246678s/readback 0.110007s. All 27 tests pass
+2.376s, including all 12871 old optimality certificates, root sums/r1 comparisons,
+new block identities, cutoffs, locality and 11 corruption controls. Readback
+passes with generation/elimination disabled; three Lean exports match. No Lean
+changes/build today. Full proof, exact data, validation and SHA256 manifest are
+retained under results/2026-09-25-*.
+
+Primary Lai–Sprang v1, BPZ v1, Robertson v3, Garrett–Robertson v2 rechecked;
+Sobolewski 2204.05287v2 verifies the binary pattern-parity encoding. No later
+characteristic-two main resolution found in scoped searches. The auxiliary
+all-degree Lai–Sprang N-bound is unchanged. Next Saturday: named Lai–Sprang or
+Laurent coefficient bridge; next computation: test the p17-inspired three-term
+family at other N. Do not repeat retired TM/RS scale expansion as new research.

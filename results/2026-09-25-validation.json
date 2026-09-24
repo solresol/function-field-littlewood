@@ -1,0 +1,47 @@
+{
+  "time": "2026-09-25T08:23:39.407031+10:00",
+  "python": "3.9.6",
+  "seed": null,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "runtime_seconds": 2.49576175,
+      "stdout": "",
+      "stderr": "test_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 2.376s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.export_lean_certificates",
+        "--check"
+      ],
+      "returncode": 0,
+      "runtime_seconds": 0.09620687500000003,
+      "stdout": "3 independently checked saved certificates match the Lean fixtures\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.rudin_shapiro_dyadic",
+        "results/2026-09-25-rudin-shapiro-dyadic.json",
+        "--verify"
+      ],
+      "returncode": 0,
+      "runtime_seconds": 0.1608583750000001,
+      "stdout": "{\n  \"witnesses_verified\": 13,\n  \"optima_verified\": 5,\n  \"unresolved\": 0,\n  \"max_defect\": 8191,\n  \"max_inclusive_coefficient\": 90112\n}\n",
+      "stderr": ""
+    }
+  ]
+}

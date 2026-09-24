@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (24 Sep 2026)
+## Status update (25 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 24 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 25 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -147,8 +147,8 @@ certificates, with no unresolved inputs at cutoff 128:
   No violation of the auxiliary bound occurs in this finite box.
 - Binary Rudin–Shapiro, d=17,...,32 and m=0,...,128: maximum defect 15.
   R=(1+t)(1+t^8+t^16+t^24) at m=111 has j=40. The earlier box maximum
-  was 7. These witnesses suggest a dyadic family, but prove no infinite bound
-  or unboundedness and do not resolve the characteristic-2 main conjecture.
+  was 7. These finite witnesses suggested the dyadic family proved on 25 September
+  below. The box alone proves no infinite conclusion or main-conjecture result.
 
 `results/2026-09-23-extended-rank.md` records exact witnesses, profiles, literature
 boundaries and reproducible checks. JSONL retains every certificate; independent
@@ -157,6 +157,33 @@ readback checks completeness and regenerates coefficients without elimination.
 ```sh
 python3 -m search.extended_rank_boxes results/2026-09-23-extended-rank.jsonl --verify
 ```
+
+## Binary Rudin–Shapiro baseline retired (25 September)
+
+For b(n) equal to the parity of overlapping `11` occurrences in the binary
+expansion of n, let L=2^k, k>=0. Then R=(1+t)(1+t^L+t^(2L)+t^(3L)),
+m=14L-1 has exact first index j=5L and degree 3L+1. Its defect 2L-1 is
+unbounded, so this stream satisfies the t-adic Littlewood condition and cannot
+be a counterexample. At k=0 the polynomial simplifies to 1+t^4.
+
+An ordinary all-scale proof uses binary-block concatenation: summing four
+L-spaced coefficients cancels the low block and its boundary contribution;
+the adjacent difference reduces the claim to five explicit binary pairs.
+This is **not a Lean theorem**, and no novelty is claimed. The binary encoding
+agrees with Sobolewski's arXiv:2204.05287v2; reducing signed Rudin–Shapiro modulo
+2 would instead give a constant stream.
+
+`search/rudin_shapiro_dyadic.py` retains independently checked sparse witnesses
+k=0,...,12 (maximum defect 8191) and five primal/dual optimum certificates for
+k<=4. No larger-scale optimality is claimed. The proof, source versions, exact
+ranges and checks are in `results/2026-09-25-rudin-shapiro-dyadic.md`.
+
+```sh
+python3 -m search.rudin_shapiro_dyadic results/2026-09-25-rudin-shapiro-dyadic.json --verify
+```
+
+The characteristic-two main frontier remains unresolved in the checked sources;
+the auxiliary odd-characteristic all-degree N-bound is unchanged.
 
 ## Verified finite certificate foundation
 
@@ -241,7 +268,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the Lai–Sprang stream identity and the Laurent-series coefficient bridge; the binary degree-nine prefix, scalar normalisation and polynomial endpoints are now proved. Computationally, test and derive the proposed binary Rudin–Shapiro dyadic recurrence; the planned positive-degree p=17 box is now checked, and the Thue–Morse dyadic family is settled. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the Lai–Sprang stream identity and the Laurent-series coefficient bridge; the binary degree-nine prefix, scalar normalisation and polynomial endpoints are now proved. Computationally, test whether the p=17 three-term sharp witness extends to other N. Both binary Thue–Morse and Rudin–Shapiro dyadic families now have ordinary all-scale proofs and are retired as counterexample candidates. See the roadmap for precise next experiments.
 
 ## References
 

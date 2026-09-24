@@ -1,11 +1,11 @@
 # Research roadmap
 
-## Next computation (Friday)
+## Next computation (Monday)
 
-- Test the binary Rudin–Shapiro family suggested by the L=4 and L=8 witnesses:
-  L=2^k, R=(1+t)(1+t^L+t^(2L)+t^(3L)), m=14L-1, candidate j=5L.
-  Check bounded scales and exceptions, then seek a recurrence proof. Two scales
-  do not prove unbounded defects; verify the exact binary encoding in literature.
+- Binary Rudin–Shapiro is now retired as a counterexample candidate: the
+  four-block concatenation argument proves j=5L and unbounded defect 2L-1
+  at all dyadic scales. Keep its exact certificates as regressions; do not
+  repeat scale expansion as new research. No all-scale optimality was proved.
 - The planned p17 box d=1,...,16,m=65,...,256 is complete, maximum N=16,
   with positive-degree witness R=1-t^15+t^16,m=147,j=32. Investigate whether
   d=N,m=9N+3,R=1-t^(N-1)+t^N generalises to other r>=2; only N=16 is
@@ -27,6 +27,19 @@
   stream; even/odd recurrences and their uniqueness are proved. Next derive
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-25 (Friday computation)
+
+- Ordinary proof for every k>=0 of the proposed Rudin–Shapiro family, including
+  cancellation at k=0. Defect 2L-1 is unbounded; retire this binary candidate.
+- Retained 13 exact sparse witnesses and five independently checked small
+  primal/dual optima. No unresolved scales; maximum retained defect 8191.
+- All 27 Python tests pass, including independent recurrence readback with
+  generation/elimination disabled, cutoff/locality and corruption controls.
+  Three Lean exports match. No Lean source changes or build today.
+- Primary frontier and binary encoding rechecked. No novelty, characteristic-two
+  main resolution or global Lai–Sprang N-bound claimed. Future finite formal
+  lemma: binary-block identity and cancellation of four boundary terms.
 
 ## Completed on 2026-09-24 (Thursday formalisation)
 
