@@ -48,6 +48,23 @@ Primary sources accessed **25 September 2026**, with current versions checked:
   occurrences, distinct from the usual signed encoding. This verifies our stream
   convention; its arithmetic-progression results are not Littlewood conclusions.
 
+## Attribution correction added 26 September 2026
+
+The qualitative t-LC conclusion is already a consequence of established results.
+Merta, [arXiv:1810.03533v3, §3.1, equation (8)](https://arxiv.org/html/1810.03533v3#S3.SS1),
+published in DMTCS 22:1 (2020), gives
+(1+x)^5 R^2+(1+x)^4 R+x^3=0 for the complemented binary encoding.
+Our generating function B=R+1/(1+x) satisfies the same equation: the two added
+terms are both (1+x)^3 and cancel in F_2. Substituting x=t^(-1) preserves
+algebraic degree at most two. Rational series satisfy t-LC directly, and
+[Adiceam–Nesharim–Lunnon, arXiv:1806.04478v2, §7.2](https://arxiv.org/html/1806.04478v2#S7.SS2)
+recall de Mathan–Teulié's quadratic irrational power-series theorem (2004,
+DOI 10.1007/s00605-003-0199-y). Thus no new qualitative t-LC result is claimed.
+The proof below remains an independent explicit-family derivation; novelty of
+that particular formula or argument has not been established. The earlier
+scoped literature search missed this general quadratic-series route. Both
+primary texts and the encoding conversion were rechecked on 26 September.
+
 ## All-scale proof
 
 Let b(n) in F_2 count the overlapping `11` occurrences in the binary expansion

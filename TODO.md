@@ -2,6 +2,11 @@
 
 ## Next computation (Monday)
 
+- Screen new binary streams for rational/quadratic generating series and existing
+  unbounded-window results before treating them as open candidates. The known
+  quadratic-series route already handles binary Rudin–Shapiro; see the
+  26 September attribution correction.
+
 - Binary Rudin–Shapiro is now retired as a counterexample candidate: the
   four-block concatenation argument proves j=5L and unbounded defect 2L-1
   at all dyadic scales. Keep its exact certificates as regressions; do not
@@ -16,17 +21,29 @@
 - Use certificates to guide number-wall work; singularity alone does not
   guarantee nonzero multiplier endpoints.
 
-## Next formalisation (Saturday)
+## Next formalisation (Tuesday)
 
 - Connect `fractionalCoeff` to actual Laurent-series multiplication and later
   the norm/product exponent. Avoid assuming that bridge as an axiom.
-- Formalise the Lai–Sprang coefficient stream and identify the tested prefix;
-  then prove the all-shift degree-zero bound and m=5N+1 attainment from
-  the support formula (ordinary proof now recorded).
+- The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
+  F_17/F_3 exact witnesses are now formalised. Prove the all-shift degree-zero
+  bound and generic m=5N+1 attainment; identify the support formula with the
+  original root-sum expression. None of these remaining bridges is assumed.
 - The binary degree-nine prefix is now identified with the infinite digit-parity
   stream; even/odd recurrences and their uniqueness are proved. Next derive
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-26 (Saturday formalisation)
+
+- Defined the infinite Lai–Sprang support-formula stream, proved odd-part and
+  dyadic invariance, and transferred the saved F_17 optimum to that stream.
+- Kernel-checked F_17 R=1,m=81,j=16 and F_3 R=1+t^2,m=2,j=6 directly.
+  Root-sum equality, all-shift/global bounds and Laurent norms remain unproved.
+- Corrected Rudin–Shapiro attribution: qualitative t-LC follows from published
+  quadratic-series results; explicit-family novelty remains unestablished.
+- Next Sunday: integrate these proof boundaries and check small certificates;
+  retain the three-term odd-characteristic experiment for Monday.
 
 ## Completed on 2026-09-25 (Friday computation)
 

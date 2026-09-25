@@ -1,0 +1,57 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "seconds": 3.23593,
+      "output": "test_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 3.072s\n\nOK\n"
+    },
+    {
+      "command": "python3 -m search.export_lean_certificates --check",
+      "exit_code": 0,
+      "seconds": 0.132499,
+      "output": "3 independently checked saved certificates match the Lean fixtures\n"
+    },
+    {
+      "command": "shasum -a 256 -c results/2026-09-25-sha256.txt",
+      "exit_code": 0,
+      "seconds": 0.09532,
+      "output": "README.md: OK\nTODO.md: OK\nRESEARCH_LOG.md: OK\nsearch/rudin_shapiro_dyadic.py: OK\nsearch/finite_rank.py: OK\nsearch/run_rank_experiments.py: OK\nsearch/thue_morse_dyadic.py: OK\nsearch/lai_sprang_finite_search.py: OK\ntests/test_rudin_shapiro_dyadic.py: OK\nresults/2026-09-25-rudin-shapiro-dyadic.md: OK\nresults/2026-09-25-rudin-shapiro-dyadic.json: OK\nresults/2026-09-25-validation.json: OK\n",
+      "phase": "Before current run documentation changes"
+    },
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "seconds": 16.001997,
+      "output_file": "results/2026-09-26-lean-build.txt"
+    }
+  ],
+  "axiom_reports": 48,
+  "axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "forbidden_proof_tokens": [],
+  "historical_snapshot_check": {
+    "manifest": "results/2026-09-25-sha256.txt",
+    "unchanged_files_verified": [
+      "search/rudin_shapiro_dyadic.py",
+      "search/finite_rank.py",
+      "search/run_rank_experiments.py",
+      "search/thue_morse_dyadic.py",
+      "search/lai_sprang_finite_search.py",
+      "tests/test_rudin_shapiro_dyadic.py",
+      "results/2026-09-25-rudin-shapiro-dyadic.json",
+      "results/2026-09-25-validation.json"
+    ],
+    "expected_amended_documents": [
+      "README.md",
+      "TODO.md",
+      "RESEARCH_LOG.md",
+      "results/2026-09-25-rudin-shapiro-dyadic.md"
+    ]
+  }
+}

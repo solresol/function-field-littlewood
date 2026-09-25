@@ -254,3 +254,24 @@ characteristic-two main resolution found in scoped searches. The auxiliary
 all-degree Lai–Sprang N-bound is unchanged. Next Saturday: named Lai–Sprang or
 Laurent coefficient bridge; next computation: test the p17-inspired three-term
 family at other N. Do not repeat retired TM/RS scale expansion as new research.
+
+## 2026-09-26 (Saturday, Australia/Sydney): named Lai–Sprang support stream
+
+- Clean main at f4c3a4d fetched/FF-only checked against the correct origin; no
+  competing run. Read prior records and actual enumerator, rank, independent
+  checker and Lean sources. Truncation, endpoints and dual semantics remain valid.
+- Added LaiSprangStream.lean: total odd-part function, all-index dyadic invariance,
+  saved F_17 prefix identity and optimum at d=0,m=17,j=15. Kernel-checked sharp
+  F_17 R=1,m=81,j=16 and r=1 F_3 R=1+t^2,m=2,j=6 directly. Root-sum equality,
+  Laurent norms and all-shift/global bounds remain separate formal obligations.
+- Corrected README and yesterday's report: Rudin–Shapiro's qualitative t-LC
+  follows from published quadratic-series results. Primary versions rechecked;
+  no later characteristic-2 resolution found in scoped queries, no novelty claim.
+  Added rational/quadratic screening to roadmap; historical hash snapshot retained.
+- Full Lean build passes in 16.001997s, 1325 jobs, no warnings; 48 standard-only
+  axiom reports, nine new, no proof bypasses. All 27 Python tests pass in 3.072s,
+  including 12,871 retained optima, root sums and r=1 controls. Three exports
+  match; all 12 old hashes passed before today's edits. Pins unchanged at 4.27.0.
+- Report/build/validation/hashes retained as results/2026-09-26-*. Next: Sunday
+  integration, then generic degree-zero/Laurent bridge and Monday's three-term
+  auxiliary experiment. No new finite search boxes.

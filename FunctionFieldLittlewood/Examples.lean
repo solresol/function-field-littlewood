@@ -15,8 +15,8 @@ theorem binary_first : FirstNonzero binaryFixture binaryMultiplier 0 3 :=
   certificate_sound _ _ _ _ binary_certificate
 
 /-- Recorded Lai--Sprang F_3 coefficients through index 10, padded with zero.
-Agreement with the infinite Lai--Sprang stream is independently checked in Python;
-that agreement is not yet formalised in Lean. -/
+This file proves a prefix statement. LaiSprangStream.lean additionally checks the
+corresponding certificate directly on the infinite support-formula stream. -/
 def ternaryPrefix (n : ℕ) : ZMod 3 :=
   match n with
   | 1 => 1 | 2 => 1 | 3 => 2 | 4 => 1 | 5 => 1

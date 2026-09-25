@@ -6,3 +6,4 @@ import FunctionFieldLittlewood.Examples
 import FunctionFieldLittlewood.SavedCertificates
 import FunctionFieldLittlewood.BridgeExamples
 import FunctionFieldLittlewood.BinaryStream
+import FunctionFieldLittlewood.LaiSprangStream

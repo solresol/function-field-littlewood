@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (25 Sep 2026)
+## Status update (26 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 25 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 26 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -173,6 +173,17 @@ This is **not a Lean theorem**, and no novelty is claimed. The binary encoding
 agrees with Sobolewski's arXiv:2204.05287v2; reducing signed Rudin–Shapiro modulo
 2 would instead give a constant stream.
 
+The qualitative conclusion was already available from published results.
+[Merta, arXiv:1810.03533v3, §3.1 equation (8)](https://arxiv.org/html/1810.03533v3#S3.SS1)
+gives a quadratic equation for the complemented binary generating series;
+adding 1/(1+x) gives our encoding and preserves that equation.
+[Adiceam–Nesharim–Lunnon, §7.2](https://arxiv.org/html/1806.04478v2#S7.SS2)
+recall de Mathan–Teulié's theorem that quadratic irrational power series satisfy
+t-LC (rational cases are immediate). Our explicit dyadic family supplies a
+separate exact derivation and regression certificates. Novelty of its particular
+formula has not been established. This attribution was added on 26 September;
+the previous scoped search missed the quadratic-series route.
+
 `search/rudin_shapiro_dyadic.py` retains independently checked sparse witnesses
 k=0,...,12 (maximum defect 8191) and five primal/dual optimum certificates for
 k<=4. No larger-scale optimality is claimed. The proof, source versions, exact
@@ -189,7 +200,7 @@ the auxiliary odd-characteristic all-degree N-bound is unchanged.
 
 `FunctionFieldLittlewood/Certificate.lean` defines coefficient streams, shifted multiplication, a Hankel matrix, and an exact-index certificate. It proves that the zero-prefix equations equal a matrix kernel condition, that an accepted certificate gives the first nonzero index, and that only coefficients through `m+d+j` affect the certificate. Both constant and leading multiplier coefficients must be nonzero.
 
-`FunctionFieldLittlewood/Examples.lean` includes kernel-checked examples over `ZMod 2` and `ZMod 3`, plus invalid-index and invalid-endpoint controls. The binary example is a finite infrastructure fixture, not a main-conjecture candidate. The ternary example checks a recorded prefix; its identity with the infinite Lai–Sprang stream is tested independently in Python, not proved in Lean. No Laurent-series norm theorem or global sharp bound has been formalised.
+`FunctionFieldLittlewood/Examples.lean` includes kernel-checked examples over `ZMod 2` and `ZMod 3`, plus invalid-index and invalid-endpoint controls. The binary example is a finite infrastructure fixture, not a main-conjecture candidate. The ternary example originally checked a recorded prefix; `LaiSprangStream.lean` now also proves its certificate directly for the infinite support-formula stream. No Laurent-series norm theorem or global sharp bound has been formalised.
 
 `FunctionFieldLittlewood/DualCertificate.lean` now proves soundness of both dual
 obstruction formats and of a combined primal/dual checker. Acceptance proves an
@@ -201,8 +212,10 @@ acceptance. This proof uses finite sums; it does not trust the solver or its ran
 F_2 case (d,m,j)=(9,15,24), an F_2 forced-endpoint obstruction, and the Lai–Sprang
 F_17 degree-zero gap (0,17,15). Each theorem applies to every stream agreeing
 with its recorded prefix; the Thue–Morse degree-nine prefix is now identified
-with the infinite stream in `BinaryStream.lean` (24 September, below). The other two named-stream
-identifications remain Python checks. Only these three saved records have been
+with the infinite stream in `BinaryStream.lean` (24 September, below). The F_17
+prefix is now identified with the infinite support-formula stream
+in `LaiSprangStream.lean` (26 September); the forced-endpoint binary fixture
+remains a finite-prefix statement here. Only these three saved records have been
 instantiated in Lean, not all 7,735 records. Details and limits are in
 `results/2026-09-19-dual-certificate-soundness.md`.
 
@@ -250,6 +263,22 @@ bridge. Thue–Morse remains a retired candidate and a regression baseline.
 No characteristic-2 counterexample or global auxiliary N-bound follows.
 See `results/2026-09-24-named-binary-stream.md` for checks and source versions.
 
+## Named Lai–Sprang support stream (26 September)
+
+`LaiSprangStream.lean` defines the infinite support formula with explicit p,r
+parameters and a total odd-part function. It proves dyadic index invariance for
+all indices and identifies the saved F_17 prefix through index 32. The saved
+degree-zero certificate at m=17 therefore gives exact j=15 and its optimum on
+this infinite stream, including all nonzero scalar multipliers.
+
+The module also kernel-checks R=1,m=81,j=16 in F_17 and the r=1 comparison
+R=1+t^2,m=2,j=6 in F_3 directly on the named streams. These are finite exact
+certificates about infinite streams. They do not prove the all-shift degree-zero
+bound, the all-degree N-bound, or equality with the original infinite root-sum
+Laurent expression. That equality and the Laurent coefficient/norm bridge remain
+separate formal obligations. No characteristic-2 counterexample follows.
+See `results/2026-09-26-named-lai-sprang-stream.md` for validation and attribution.
+
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
 ```sh
@@ -268,7 +297,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: formalise the Lai–Sprang stream identity and the Laurent-series coefficient bridge; the binary degree-nine prefix, scalar normalisation and polynomial endpoints are now proved. Computationally, test whether the p=17 three-term sharp witness extends to other N. Both binary Thue–Morse and Rudin–Shapiro dyadic families now have ordinary all-scale proofs and are retired as counterexample candidates. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: connect the Lai–Sprang support formula to the original root-sum expression and formalise the Laurent-series coefficient bridge; named binary and Lai–Sprang prefixes, scalar normalisation and polynomial endpoints are now proved. Computationally, test whether the p=17 three-term sharp witness extends to other N. Both binary Thue–Morse and Rudin–Shapiro dyadic families now have ordinary all-scale proofs and are retired as counterexample candidates. See the roadmap for precise next experiments.
 
 ## References
 
