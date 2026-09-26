@@ -17,7 +17,7 @@
   established here. Keep the r=1 comparison and all-degree N-bound distinction.
 - Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
   is settled. Do not repeat their expansions as new evidence. Binary paperfolding
-  already has unbounded-window literature; check sources before new work.
+  is also retired: its exact recurrence proves a quadratic equation (27 September).
 - Use certificates to guide number-wall work; singularity alone does not
   guarantee nonzero multiplier endpoints.
 
@@ -34,6 +34,21 @@
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
 
+## Completed on 2026-09-27 (Sunday integration)
+
+- Added an exact F_2 supplied-relation screen modulo x^M, with independent
+  recursive-stream/full-convolution readback. Five encoding cases through
+  coefficient 1023; signed Rudin–Shapiro fails at coefficient 3.
+- Derived the three baseline quadratic equations from their exact recurrences,
+  with primary attribution. Paperfolding is now explicitly retired alongside
+  Thue–Morse and Rudin–Shapiro via the known quadratic-series t-LC result.
+- Finite agreement alone does not prove a relation. A delayed-tail mutation
+  passes at precision 64 and fails at 65. This is a reusable screening primitive,
+  not an exhaustive algebraicity search or a new main-conjecture result.
+- Integrated finite/formal boundaries and reran Python, saved exports and Lean.
+  Next Monday: three-term Lai–Sprang witness across other N; next Tuesday:
+  Laurent coefficient bridge, then generic degree-zero support/attainment.
+
 ## Completed on 2026-09-26 (Saturday formalisation)
 
 - Defined the infinite Lai–Sprang support-formula stream, proved odd-part and
@@ -42,8 +57,8 @@
   Root-sum equality, all-shift/global bounds and Laurent norms remain unproved.
 - Corrected Rudin–Shapiro attribution: qualitative t-LC follows from published
   quadratic-series results; explicit-family novelty remains unestablished.
-- Next Sunday: integrate these proof boundaries and check small certificates;
-  retain the three-term odd-characteristic experiment for Monday.
+- Sunday integration completed on 27 September; the three-term experiment
+  remains queued for Monday.
 
 ## Completed on 2026-09-25 (Friday computation)
 

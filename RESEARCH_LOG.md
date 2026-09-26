@@ -275,3 +275,29 @@ family at other N. Do not repeat retired TM/RS scale expansion as new research.
 - Report/build/validation/hashes retained as results/2026-09-26-*. Next: Sunday
   integration, then generic degree-zero/Laurent bridge and Monday's three-term
   auxiliary experiment. No new finite search boxes.
+
+## 2026-09-27 (Sunday, Australia/Sydney): quadratic screening integration
+
+- Started approximately 08:20 AEST on clean main at a1d683c. Correct origin,
+  fetch/FF-only current, no competing marker/process. Re-read enumerator,
+  affine solver, independent oracles and finite/named Lean sources; inclusive
+  truncation, both endpoints, unresolved cutoffs and dual semantics remain sound.
+- Added exact supplied-quadratic-relation screening modulo x^M over F_2.
+  Five encoding cases through index1023 independently read back using recursive
+  coefficients and full Cauchy convolution. Four zero residuals; signed RS
+  reduction rejected at coefficient3. No infinite identity follows from a prefix.
+- Recorded ordinary all-index recurrence derivations for TM, paperfolding and
+  RS, and the published quadratic-series exclusion. Explicitly retire paperfolding
+  alongside TM/RS. This is integration of known results, not a novelty claim.
+  A flipped coefficient64 passes precision64 and fails precision65 in tests.
+- All31 Python tests pass2.976s, including1920 exhaustive tiny residual comparisons,
+  corruption/completeness controls and12871 saved optima. Three exports match.
+  Cached/replayed Lean build passes1325 jobs6.723141s;48 standard-only axiom
+  reports, no proof bypasses, pins unchanged. Python3.9.6, seed null; screen
+  generation0.005052s/readback0.199281s. All15 prior hashes passed before edits.
+- Primary frontier and quadratic sources refreshed; no later characteristic-two
+  resolution found in scoped primary searches. Finite/formal status table and
+  exact output/validation/build/hash retained under results/2026-09-27-*.
+  Auxiliary global N-bound unchanged, r1 comparisons retained. Next Monday:
+  three-term Lai–Sprang family at other N; Tuesday: Laurent coefficient bridge
+  then generic degree-zero support/attainment. Do not expand retired baselines.

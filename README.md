@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (26 Sep 2026)
+## Status update (27 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 26 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 27 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -196,6 +196,34 @@ python3 -m search.rudin_shapiro_dyadic results/2026-09-25-rudin-shapiro-dyadic.j
 The characteristic-two main frontier remains unresolved in the checked sources;
 the auxiliary odd-characteristic all-degree N-bound is unchanged.
 
+## Binary quadratic screening and weekly integration (27 September)
+
+All three binary baselines now have a known reason to satisfy t-LC and are
+retired as counterexample candidates. In particular, for the repository's
+paperfolding convention P(x)=sum_{n>=1} a_n x^n, the recurrence gives
+`(1+x^4)(P^2+P)+x=0`. The published theorem for quadratic irrational
+series applies; rational series satisfy t-LC immediately. This is an ordinary
+argument using a known theorem, not a conclusion inferred from finite checks.
+
+`search/binary_quadratic_screen.py` tests supplied relations
+`A(x)Y^2+B(x)Y+C(x)` exactly modulo x^M over F_2. The retained M=1024
+checks cover Thue–Morse, paperfolding, Rudin–Shapiro and its complement;
+the signed Rudin–Shapiro reduction fails the same equation at coefficient 3.
+Independent readback uses recursive streams and full Cauchy convolution.
+A zero residual is only finite agreement; it neither proves algebraicity nor
+licenses excluding a new candidate. A nonzero residual refutes only the supplied
+relation. The checker does not search all quadratic or rational relations.
+
+```sh
+python3 -m search.binary_quadratic_screen results/2026-09-27-binary-quadratic-screen.json --verify
+```
+
+The dated report `results/2026-09-27-sunday-integration.md` gives the three
+ordinary recurrence derivations, current primary references, a finite/formal
+status table and the validation record. No new main-conjecture result or global
+auxiliary N-bound is claimed. The next computational experiment remains the
+three-term Lai–Sprang family; all three binary baselines remain regressions.
+
 ## Verified finite certificate foundation
 
 `FunctionFieldLittlewood/Certificate.lean` defines coefficient streams, shifted multiplication, a Hankel matrix, and an exact-index certificate. It proves that the zero-prefix equations equal a matrix kernel condition, that an accepted certificate gives the first nonzero index, and that only coefficients through `m+d+j` affect the certificate. Both constant and leading multiplier coefficients must be nonzero.
@@ -297,7 +325,7 @@ The original tests independently expand the original root sums for 2,560 coeffic
 
 ## Near-term programme
 
-See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: connect the Lai–Sprang support formula to the original root-sum expression and formalise the Laurent-series coefficient bridge; named binary and Lai–Sprang prefixes, scalar normalisation and polynomial endpoints are now proved. Computationally, test whether the p=17 three-term sharp witness extends to other N. Both binary Thue–Morse and Rudin–Shapiro dyadic families now have ordinary all-scale proofs and are retired as counterexample candidates. See the roadmap for precise next experiments.
+See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records. Next: connect the Lai–Sprang support formula to the original root-sum expression and formalise the Laurent-series coefficient bridge; named binary and Lai–Sprang prefixes, scalar normalisation and polynomial endpoints are now proved. Computationally, test whether the p=17 three-term sharp witness extends to other N. The binary Thue–Morse and Rudin–Shapiro dyadic families have ordinary all-scale proofs; quadratic-series screening now retires all three binary baselines, including paperfolding, as counterexample candidates. See the roadmap for precise next experiments.
 
 ## References
 

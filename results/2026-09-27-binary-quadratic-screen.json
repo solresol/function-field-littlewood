@@ -1,0 +1,153 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "records": [
+    {
+      "case": "thue_morse",
+      "precision": 1024,
+      "A": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        1
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "prefix_sha256": "321cb08068197857421cc193538ea19b38b066d3029973fe5909cfc81afb549f",
+      "residual_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "first_nonzero_residual": null,
+      "zero_mod_x_power": true,
+      "infinite_identity_proved_by_check": false
+    },
+    {
+      "case": "paperfolding",
+      "precision": 1024,
+      "A": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "C": [
+        0,
+        1
+      ],
+      "prefix_sha256": "793dc7429b08dcb65b046f332f3cf2d3767f71ec6d47122f7f56830cfab89af7",
+      "residual_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "first_nonzero_residual": null,
+      "zero_mod_x_power": true,
+      "infinite_identity_proved_by_check": false
+    },
+    {
+      "case": "rudin_shapiro",
+      "precision": 1024,
+      "A": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "C": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "prefix_sha256": "d2eb2e8000e2473d4aed32b8a300af7c636138445a882a13420a2a4e1f02063c",
+      "residual_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "first_nonzero_residual": null,
+      "zero_mod_x_power": true,
+      "infinite_identity_proved_by_check": false
+    },
+    {
+      "case": "rudin_shapiro_complement",
+      "precision": 1024,
+      "A": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "C": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "prefix_sha256": "74bf1d3cecaf0da88689a2c26bfb8b05bb630687a0a86ebbd775963db2459edf",
+      "residual_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+      "first_nonzero_residual": null,
+      "zero_mod_x_power": true,
+      "infinite_identity_proved_by_check": false
+    },
+    {
+      "case": "signed_rudin_shapiro_mod2",
+      "precision": 1024,
+      "A": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "C": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "prefix_sha256": "5a648d8015900d89664e00e125df179636301a2d8fa191c1aa2bd9358ea53a69",
+      "residual_sha256": "f0c191de310f2be834fe7d39907aafa603fd2f688458ee4fc112814c3f85ade7",
+      "first_nonzero_residual": 3,
+      "zero_mod_x_power": false,
+      "infinite_identity_proved_by_check": false
+    }
+  ],
+  "runtime_seconds": 0.005052000000000001,
+  "independent_readback": {
+    "records_verified": 5,
+    "coefficients_per_record": 1024,
+    "runtime_seconds": 0.199280958
+  }
+}

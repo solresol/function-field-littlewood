@@ -1,0 +1,43 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "seconds": 3.101627,
+      "output": "test_all_small_prefixes_and_relations (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_invalid_inputs_and_polynomial_truncation (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_saved_independent_readback_and_corruption (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_tail_and_inclusive_endpoint (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 31 tests in 2.976s\n\nOK\n"
+    },
+    {
+      "command": "python3 -m search.export_lean_certificates --check",
+      "exit_code": 0,
+      "seconds": 0.106132,
+      "output": "3 independently checked saved certificates match the Lean fixtures\n"
+    },
+    {
+      "command": "python3 -m search.binary_quadratic_screen results/2026-09-27-binary-quadratic-screen.json --verify",
+      "exit_code": 0,
+      "seconds": 0.264718,
+      "output": "{\n  \"records_verified\": 5,\n  \"coefficients_per_record\": 1024,\n  \"runtime_seconds\": 0.20300975000000002\n}\n"
+    },
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "seconds": 6.723141,
+      "output_file": "results/2026-09-27-lean-build.txt"
+    }
+  ],
+  "axiom_reports": 48,
+  "axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "forbidden_proof_tokens": [],
+  "prior_manifest_check": {
+    "manifest": "results/2026-09-26-sha256.txt",
+    "entries": 15,
+    "all_passed": true,
+    "phase": "Before current documentation edits; historical snapshots preserved"
+  }
+}
