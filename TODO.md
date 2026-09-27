@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Next computation (Monday)
+## Next computation (Wednesday)
 
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
@@ -11,10 +11,12 @@
   four-block concatenation argument proves j=5L and unbounded defect 2L-1
   at all dyadic scales. Keep its exact certificates as regressions; do not
   repeat scale expansion as new research. No all-scale optimality was proved.
-- The planned p17 box d=1,...,16,m=65,...,256 is complete, maximum N=16,
-  with positive-degree witness R=1-t^15+t^16,m=147,j=32. Investigate whether
-  d=N,m=9N+3,R=1-t^(N-1)+t^N generalises to other r>=2; only N=16 is
-  established here. Keep the r=1 comparison and all-degree N-bound distinction.
+- The three-term family R=1-t^(N-1)+t^N,m=9N+3 fails for every r=2:
+  its first coefficient is -2. Retire the proposed all-r>=2 extension.
+  Finite j=2N attainment now spans N=8,...,256; derive or refute the generic
+  r>=3 support identity in the 28 September report instead of expanding scales.
+  Only eight fixed degree/shift optima are certified, all at N<=32. The
+  all-degree auxiliary N-bound remains a hypothesis; keep the r=1 comparison.
 - Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
   is settled. Do not repeat their expansions as new evidence. Binary paperfolding
   is also retired: its exact recurrence proves a quadratic equation (27 September).
@@ -33,6 +35,17 @@
   stream; even/odd recurrences and their uniqueness are proved. Next derive
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-28 (Monday computation)
+
+- Tested the three-term family in 11 prescribed fields with exact root-sum
+  readback; retained six r=1 comparisons and eight primal/dual fixed-input optima.
+- N=4 failure has an ordinary all-r=2 explanation; at p=5,13,29 even the
+  optimal degree-four multiplier at m=39 has j=4. The auxiliary N-bound survives.
+- At N=8,...,256 the prescribed family attains j=2N. This is finite evidence,
+  not a proof for all r>=3, all-prime optimality or a new main-conjecture result.
+- All36 Python tests and three saved exports pass. Primary literature refreshed;
+  no later characteristic-two resolution found in scoped searches. No Lean edits.
 
 ## Completed on 2026-09-27 (Sunday integration)
 

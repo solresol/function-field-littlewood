@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (27 Sep 2026)
+## Status update (28 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 27 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 28 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -221,8 +221,32 @@ python3 -m search.binary_quadratic_screen results/2026-09-27-binary-quadratic-sc
 The dated report `results/2026-09-27-sunday-integration.md` gives the three
 ordinary recurrence derivations, current primary references, a finite/formal
 status table and the validation record. No new main-conjecture result or global
-auxiliary N-bound is claimed. The next computational experiment remains the
-three-term Lai–Sprang family; all three binary baselines remain regressions.
+auxiliary N-bound is claimed. The three-term Lai–Sprang experiment is now recorded below; all three binary
+baselines remain regressions.
+
+## Three-term family exception and finite attainment (28 September)
+
+For R=1-t^(N-1)+t^N at m=9N+3, exact checks give j=2N (defect N)
+for p=41,73,17,113,97,193,641,257, spanning N=8,...,256. Independent
+primal/dual certificates establish optimality at this degree and shift for
+N<=32 among those fields; larger N has witness evidence only.
+
+The proposed extension to all r>=2 is **false**. At N=4, j=1: the first
+coefficient is a_40-a_43+a_44=-2 for every prime with r=2. At p=5,13,29,
+the certified optimum at d=4,m=39 is j=4, so changing coefficients at that
+fixed degree/shift cannot attain defect 4. This does not refute the auxiliary
+upper bound N. Its known degree-zero attainment uses a different shift.
+
+`search/lai_sprang_three_term.py` retains 17 exact witnesses (including six
+r=1 comparisons), eight fixed-input optima and independent root-sum readback.
+See `results/2026-09-28-three-term.md` for the failure explanation, exact ranges,
+checks and primary literature. The r>=3 pattern is still finite evidence; its
+generic support identity is the next computational objective. No global bound,
+new Lean theorem, novelty or characteristic-two resolution is claimed.
+
+```sh
+python3 -m search.lai_sprang_three_term results/2026-09-28-three-term.jsonl --verify
+```
 
 ## Verified finite certificate foundation
 

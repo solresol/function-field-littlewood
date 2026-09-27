@@ -301,3 +301,27 @@ family at other N. Do not repeat retired TM/RS scale expansion as new research.
   Auxiliary global N-bound unchanged, r1 comparisons retained. Next Monday:
   three-term Lai–Sprang family at other N; Tuesday: Laurent coefficient bridge
   then generic degree-zero support/attainment. Do not expand retired baselines.
+
+## 2026-09-28 (Monday, Australia/Sydney): three-term family and exception
+
+- Clean main at 302575f; correct origin, fetched/FF-only current, no competing
+  run marker/process. Audited enumerator, affine solver, independent root sums
+  and cutoff/endpoint/dual semantics; no existing solver changes were needed.
+- Added checkpointed sparse-family experiment in 11 prescribed r>=2 fields,
+  six r=1 comparisons and eight fixed degree/shift primal/dual optima. Independent
+  dense root-sum readback verifies all17 witnesses/eight optima; no unresolved.
+- R=1-t^(N-1)+t^N,m=9N+3 fails at N4 with j1; a_40-a_43+a_44=-2 proves
+  failure for every r2 prime (ordinary argument, not Lean). At p5,13,29 the
+  fixed d4,m39 optimum is j4. Retire the all-r>=2 family extension only.
+- Eight prescribed r>=3 fields spanning N8..256 attain j2N and defectN.
+  Optima certified only at N<=32; no all-r identity or global auxiliary bound.
+  Kept p3,7,11,19,23,31 comparison defect4. No main-conjecture novelty claimed.
+- All36 tests pass3.571s (3.721549s subprocess), including12871 old optima,
+  512 tiny new cases, cutoffs/locality and15 corruption/coverage controls.
+  Three Lean exports match0.090563s. Python3.9.6, seed null, generation0.024602s,
+  independent readback0.441491s. No Lean source changes/build today.
+- Primary Lai–Sprang2606.00633v1, BPZ2608.22078v1 and Robertson2307.00955v3
+  rechecked28Sep; no later characteristic-two resolution found in scoped searches.
+  Report, raw evidence, validation and hashes retained under results/2026-09-28-*.
+  Next: generic r>=3 support identity; Tuesday Laurent coefficient bridge then
+  generic degree-zero support. Global N-bound and characteristic2 remain separate.

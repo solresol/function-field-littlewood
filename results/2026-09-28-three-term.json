@@ -1,0 +1,201 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "method": "prescribed sparse witnesses; selected exact affine optima",
+  "generation_seconds": 0.024601666999999994,
+  "independent_readback": {
+    "witnesses_verified": 17,
+    "optima_verified": 8,
+    "unresolved": 0,
+    "cases": [
+      {
+        "kind": "three_term",
+        "p": 5,
+        "N": 4,
+        "d": 4,
+        "m": 39,
+        "j": 1,
+        "defect": -3,
+        "optimum_checked": true,
+        "optimum_j": 4
+      },
+      {
+        "kind": "three_term",
+        "p": 13,
+        "N": 4,
+        "d": 4,
+        "m": 39,
+        "j": 1,
+        "defect": -3,
+        "optimum_checked": true,
+        "optimum_j": 4
+      },
+      {
+        "kind": "three_term",
+        "p": 29,
+        "N": 4,
+        "d": 4,
+        "m": 39,
+        "j": 1,
+        "defect": -3,
+        "optimum_checked": true,
+        "optimum_j": 4
+      },
+      {
+        "kind": "three_term",
+        "p": 41,
+        "N": 8,
+        "d": 8,
+        "m": 75,
+        "j": 16,
+        "defect": 8,
+        "optimum_checked": true,
+        "optimum_j": 16
+      },
+      {
+        "kind": "three_term",
+        "p": 73,
+        "N": 8,
+        "d": 8,
+        "m": 75,
+        "j": 16,
+        "defect": 8,
+        "optimum_checked": true,
+        "optimum_j": 16
+      },
+      {
+        "kind": "three_term",
+        "p": 17,
+        "N": 16,
+        "d": 16,
+        "m": 147,
+        "j": 32,
+        "defect": 16,
+        "optimum_checked": true,
+        "optimum_j": 32
+      },
+      {
+        "kind": "three_term",
+        "p": 113,
+        "N": 16,
+        "d": 16,
+        "m": 147,
+        "j": 32,
+        "defect": 16,
+        "optimum_checked": true,
+        "optimum_j": 32
+      },
+      {
+        "kind": "three_term",
+        "p": 97,
+        "N": 32,
+        "d": 32,
+        "m": 291,
+        "j": 64,
+        "defect": 32,
+        "optimum_checked": true,
+        "optimum_j": 64
+      },
+      {
+        "kind": "three_term",
+        "p": 193,
+        "N": 64,
+        "d": 64,
+        "m": 579,
+        "j": 128,
+        "defect": 64,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "three_term",
+        "p": 641,
+        "N": 128,
+        "d": 128,
+        "m": 1155,
+        "j": 256,
+        "defect": 128,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "three_term",
+        "p": 257,
+        "N": 256,
+        "d": 256,
+        "m": 2307,
+        "j": 512,
+        "defect": 256,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 3,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 7,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 11,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 19,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 23,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      },
+      {
+        "kind": "r1_comparison",
+        "p": 31,
+        "N": 2,
+        "d": 2,
+        "m": 2,
+        "j": 6,
+        "defect": 4,
+        "optimum_checked": false,
+        "optimum_j": null
+      }
+    ],
+    "runtime_seconds": 0.44149129099999995
+  }
+}
