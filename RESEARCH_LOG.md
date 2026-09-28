@@ -325,3 +325,28 @@ family at other N. Do not repeat retired TM/RS scale expansion as new research.
   Report, raw evidence, validation and hashes retained under results/2026-09-28-*.
   Next: generic r>=3 support identity; Tuesday Laurent coefficient bridge then
   generic degree-zero support. Global N-bound and characteristic2 remain separate.
+
+## 2026-09-29 (Tuesday, Australia/Sydney): actual Laurent coefficient bridge
+
+- Clean main at 6a71610; origin verified, fetched/FF-only current, no competing
+  run. Audited actual enumerator, affine solver, independent readback and tests;
+  inclusive cutoff, endpoints, unresolved and diagnostic-rank semantics valid.
+- Added LaurentBridge.lean: embed streams in mathlib Laurent series with x=t^(-1),
+  prove actual product coefficients equal the finite formula, identify polynomial
+  evaluation, transport exact certificates/Hankel equations and all-polynomial
+  optimality. Generic coefficient identity over commutative semirings.
+- LaurentExamples.lean transports named binary j=24, F_17 j=16 and F_3 r1 j=6;
+  binary degree-nine polynomial optimum and five boundary/convention controls.
+  No full-product order, norm exponent or original root-sum equality assumed.
+- Full Lean build: 2,206 jobs passes in 30.620815s, no warnings;
+  60 axiom reports (12 new), standard axioms only, no proof bypasses. Pins unchanged
+  4.27.0; inspected mathlib Laurent/Hahn/polynomial sources and Apache 2.0 licence.
+- All 36 Python tests pass in 3.572842s subprocess, Python 3.9.6;
+  three saved exports match in 0.094519s. No new search boxes,
+  seed null. All 12 previous hashes passed before edits; historical manifest kept.
+- Primary LS 2606.00633v1, BPZ 2608.22078v1, Robertson 2307.00955v3 refreshed;
+  no later characteristic-two resolution found in scoped searches. No global
+  auxiliary N-bound or novelty claim. Report/build/validation/hash retained.
+- Next computation: prove/refute r>=3 three-term cancellation, retaining r2 failure.
+  Next Lean: strictly positive fractional-part order, then norm/product exponent;
+  generic degree-zero support and root-sum identification remain separate.

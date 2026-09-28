@@ -5,7 +5,8 @@ The support-formula coefficient stream used by the exact Python experiments.
 For its Lai--Sprang interpretation, p is an odd prime and r = v_2(p-1).
 The definition is total for all parameters; no interpretation is asserted for
 other parameters. Identification with the original infinite root-sum Laurent
-series, and the Laurent coefficient/norm bridge, remain separate obligations.
+series and the Laurent norm bridge remain separate obligations. The generic
+coefficient bridge is proved separately in LaurentBridge.lean.
 -/
 
 namespace FunctionFieldLittlewood

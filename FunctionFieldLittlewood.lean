@@ -7,3 +7,5 @@ import FunctionFieldLittlewood.SavedCertificates
 import FunctionFieldLittlewood.BridgeExamples
 import FunctionFieldLittlewood.BinaryStream
 import FunctionFieldLittlewood.LaiSprangStream
+import FunctionFieldLittlewood.LaurentBridge
+import FunctionFieldLittlewood.LaurentExamples

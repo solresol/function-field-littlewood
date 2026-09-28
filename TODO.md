@@ -23,10 +23,12 @@
 - Use certificates to guide number-wall work; singularity alone does not
   guarantee nonzero multiplier endpoints.
 
-## Next formalisation (Tuesday)
+## Next formalisation (Thursday)
 
-- Connect `fractionalCoeff` to actual Laurent-series multiplication and later
-  the norm/product exponent. Avoid assuming that bridge as an axiom.
+- The actual Laurent coefficient and polynomial-evaluation bridge is proved
+  (29 September). Define the strictly positive fractional part, prove its order
+  from `LaurentFirstPositive`, then connect the norm/product exponent. The full
+  product can have poles; do not identify its order with the fractional index.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are now formalised. Prove the all-shift degree-zero
   bound and generic m=5N+1 attainment; identify the support formula with the
@@ -35,6 +37,17 @@
   stream; even/odd recurrences and their uniqueness are proved. Next derive
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-29 (Tuesday formalisation)
+
+- Proved the generic coefficient identity for actual mathlib Laurent products
+  in x=t^(-1), polynomial evaluation, Hankel equivalence and certificate transport.
+- Transferred named binary j=24, F_17 j=16 and F_3 r1 j=6 witnesses, and the binary
+  optimum for every degree-nine polynomial with nonzero constant term.
+- Kernel-checked shift-sign, zero-index, a_0 and terminal-boundary controls.
+  Norm/product exponent and original Lai–Sprang root-sum equality remain unproved.
+- Full Lean build and all 36 Python tests pass; three saved exports match.
+  No new finite box, global bound, novelty claim or characteristic-two resolution.
 
 ## Completed on 2026-09-28 (Monday computation)
 
