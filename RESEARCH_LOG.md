@@ -350,3 +350,26 @@ family at other N. Do not repeat retired TM/RS scale expansion as new research.
 - Next computation: prove/refute r>=3 three-term cancellation, retaining r2 failure.
   Next Lean: strictly positive fractional-part order, then norm/product exponent;
   generic degree-zero support and root-sum identification remain separate.
+
+## 2026-09-30 (Wednesday, Australia/Sydney): generic three-term attainment
+
+- Clean main at 3aaf7e7; correct origin, fetched/FF-only current, no competing
+  run marker/process. Audited actual enumerator, affine solver, independent root
+  sums and tests; inclusive cutoff, endpoints, dual and unresolved semantics hold.
+- Ordinary proof for every r>=3: exactly five support points in [9N+4,12N+3]
+  yield four cancellations and terminal -N/2. R=1-t^(N-1)+t^N,m=9N+3 has
+  exact j=2N and defect N. Not Lean, global upper bound, generic optimality,
+  characteristic-two progress or established novelty. r=2 failure retained.
+- Added integer interval enumeration and complete cancellation records. Independent
+  dense readback checks seven existing scales; root sums check every interval
+  coefficient in 11 existing fields. No expansion of the old witness search.
+- All 41 Python tests pass in 3.448s (3.560635s subprocess), including 3,280 tiny
+  support intervals, nine corruption controls, 12,871 old rank optima, r=1 comparisons.
+  Three saved Lean exports match in 0.093744s. New readback 0.046398s; old 17 witnesses
+  and 8 optima readback 0.485012s. Python 3.9.6, seed null; no Lean edits/build.
+- Primary LS 2606.00633v1, BPZ 2608.22078v1, Robertson 2307.00955v3 refreshed;
+  no later characteristic-two resolution found in scoped searches. Report,
+  partitions, validation and hashes retained as results/2026-09-30-*.
+- Next computation: exact binary number-wall profiles, independent tiny determinant
+  checks and comparison to endpoint-aware rank certificates. Thursday: fractional
+  part order/norm bridge. No need for more three-term scale expansion.

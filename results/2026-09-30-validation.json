@@ -1,0 +1,60 @@
+{
+  "run_time": "2026-09-30T08:24:20.039298+10:00",
+  "python": "3.9.6",
+  "seed": null,
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 3.560635,
+      "stdout": "",
+      "stderr": "test_all_small_prefixes_and_relations (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_invalid_inputs_and_polynomial_truncation (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_saved_independent_readback_and_corruption (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_tail_and_inclusive_endpoint (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_five_support_points_and_cancellation (test_lai_sprang_support.SupportTests) ... ok\ntest_invalid_intervals (test_lai_sprang_support.SupportTests) ... ok\ntest_original_root_sums_on_whole_intervals (test_lai_sprang_support.SupportTests) ... ok\ntest_saved_readback_independent_and_corruption (test_lai_sprang_support.SupportTests) ... ok\ntest_small_intervals_exhaustively (test_lai_sprang_support.SupportTests) ... ok\ntest_corrupt_or_incomplete_records_rejected (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_exhaustive_tiny_generic_streams (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_invalid_inputs_and_no_overwrites (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_saved_readback_without_generation (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_sparse_dense_cutoffs_and_tail_locality (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 3.448s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.export_lean_certificates",
+        "--check"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.09374379199999971,
+      "stdout": "3 independently checked saved certificates match the Lean fixtures\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.lai_sprang_support",
+        "results/2026-09-30-support-partition.json",
+        "--verify"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.04639754199999979,
+      "stdout": "{\"partitions_checked\": 7, \"first_indices\": [1, 16, 32, 64, 128, 256, 512]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.lai_sprang_three_term",
+        "results/2026-09-28-three-term.jsonl",
+        "--verify"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 0.4850119159999995,
+      "stdout": "{\n  \"witnesses_verified\": 17,\n  \"optima_verified\": 8,\n  \"unresolved\": 0,\n  \"cases\": [\n    {\n      \"kind\": \"three_term\",\n      \"p\": 5,\n      \"N\": 4,\n      \"d\": 4,\n      \"m\": 39,\n      \"j\": 1,\n      \"defect\": -3,\n      \"optimum_checked\": true,\n      \"optimum_j\": 4\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 13,\n      \"N\": 4,\n      \"d\": 4,\n      \"m\": 39,\n      \"j\": 1,\n      \"defect\": -3,\n      \"optimum_checked\": true,\n      \"optimum_j\": 4\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 29,\n      \"N\": 4,\n      \"d\": 4,\n      \"m\": 39,\n      \"j\": 1,\n      \"defect\": -3,\n      \"optimum_checked\": true,\n      \"optimum_j\": 4\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 41,\n      \"N\": 8,\n      \"d\": 8,\n      \"m\": 75,\n      \"j\": 16,\n      \"defect\": 8,\n      \"optimum_checked\": true,\n      \"optimum_j\": 16\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 73,\n      \"N\": 8,\n      \"d\": 8,\n      \"m\": 75,\n      \"j\": 16,\n      \"defect\": 8,\n      \"optimum_checked\": true,\n      \"optimum_j\": 16\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 17,\n      \"N\": 16,\n      \"d\": 16,\n      \"m\": 147,\n      \"j\": 32,\n      \"defect\": 16,\n      \"optimum_checked\": true,\n      \"optimum_j\": 32\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 113,\n      \"N\": 16,\n      \"d\": 16,\n      \"m\": 147,\n      \"j\": 32,\n      \"defect\": 16,\n      \"optimum_checked\": true,\n      \"optimum_j\": 32\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 97,\n      \"N\": 32,\n      \"d\": 32,\n      \"m\": 291,\n      \"j\": 64,\n      \"defect\": 32,\n      \"optimum_checked\": true,\n      \"optimum_j\": 64\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 193,\n      \"N\": 64,\n      \"d\": 64,\n      \"m\": 579,\n      \"j\": 128,\n      \"defect\": 64,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 641,\n      \"N\": 128,\n      \"d\": 128,\n      \"m\": 1155,\n      \"j\": 256,\n      \"defect\": 128,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"three_term\",\n      \"p\": 257,\n      \"N\": 256,\n      \"d\": 256,\n      \"m\": 2307,\n      \"j\": 512,\n      \"defect\": 256,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 3,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 7,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 11,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 19,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 23,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    },\n    {\n      \"kind\": \"r1_comparison\",\n      \"p\": 31,\n      \"N\": 2,\n      \"d\": 2,\n      \"m\": 2,\n      \"j\": 6,\n      \"defect\": 4,\n      \"optimum_checked\": false,\n      \"optimum_j\": null\n    }\n  ],\n  \"runtime_seconds\": 0.431658583\n}\n",
+      "stderr": ""
+    }
+  ]
+}

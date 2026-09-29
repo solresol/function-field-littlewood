@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (29 Sep 2026)
+## Status update (30 Sep 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -23,7 +23,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 29 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 30 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -240,13 +240,28 @@ upper bound N. Its known degree-zero attainment uses a different shift.
 `search/lai_sprang_three_term.py` retains 17 exact witnesses (including six
 r=1 comparisons), eight fixed-input optima and independent root-sum readback.
 See `results/2026-09-28-three-term.md` for the failure explanation, exact ranges,
-checks and primary literature. The r>=3 pattern is still finite evidence; its
-generic support identity is the next computational objective. No global bound,
+checks and primary literature. These 28 September computations were finite evidence; the all-r>=3
+support identity is now proved by the ordinary argument below. No global bound,
 new Lean theorem, novelty or characteristic-two resolution is claimed.
 
 ```sh
 python3 -m search.lai_sprang_three_term results/2026-09-28-three-term.jsonl --verify
 ```
+
+## Three-term attainment for every r>=3 (30 September)
+
+For every odd prime with r=v_2(p-1)>=3, the same family
+R=1-t^(N-1)+t^N at m=9N+3 has exact j=2N and terminal coefficient -N/2.
+Its defect is exactly N. An ordinary proof classifies all five supported indices
+in [9N+4,12N+3] and cancels the four earlier contribution pairs. The r=2
+exception survives; no all-degree upper bound or general optimality is proved.
+
+`search/lai_sprang_support.py` enumerates exact integer support intervals and
+retains all cancellation events. Independent dense readback and original root
+sums verify the tables at the existing scales; no finite-scale expansion is used
+as proof. See `results/2026-09-30-three-term-support-proof.md` for the complete
+all-r argument, checks and literature boundary. This is not yet a Lean theorem,
+not a characteristic-two result, and not a claim of novelty.
 
 ## Verified finite certificate foundation
 
@@ -377,8 +392,9 @@ See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
 Next formal work: the positive fractional part's order and norm/product exponent,
 then generic degree-zero support/attainment and original root-sum identification.
 The Laurent coefficient bridge, named prefixes, scalar normalisation and
-polynomial endpoints are proved. Computationally, derive or refute the three-term
-support identity for r>=3; its r=2 extension failed on 28 September. The three
+polynomial endpoints are proved. The three-term support identity for r>=3 now
+has an ordinary proof; its r=2 extension failed. Next computation: exact binary
+number-wall profiles checked against direct determinants and rank certificates. The three
 binary baselines remain retired via known quadratic-series results and serve as
 regressions. New binary candidates need a literature/algebraicity screen first.
 

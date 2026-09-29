@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Next computation (Wednesday)
+## Next computation (Friday)
 
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
@@ -13,15 +13,18 @@
   repeat scale expansion as new research. No all-scale optimality was proved.
 - The three-term family R=1-t^(N-1)+t^N,m=9N+3 fails for every r=2:
   its first coefficient is -2. Retire the proposed all-r>=2 extension.
-  Finite j=2N attainment now spans N=8,...,256; derive or refute the generic
-  r>=3 support identity in the 28 September report instead of expanding scales.
+  The 30 September support classification proves j=2N for every r>=3
+  by an ordinary argument; do not repeat scale expansion. Formalising the
+  five-point support classification is a bounded future lemma.
   Only eight fixed degree/shift optima are certified, all at N<=32. The
   all-degree auxiliary N-bound remains a hypothesis; keep the r=1 comparison.
 - Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
   is settled. Do not repeat their expansions as new evidence. Binary paperfolding
   is also retired: its exact recurrence proves a quadratic equation (27 September).
-- Use certificates to guide number-wall work; singularity alone does not
-  guarantee nonzero multiplier endpoints.
+- Build exact finite number-wall profiles for arbitrary binary prefixes; verify
+  tiny determinants independently by permutations and compare zero windows with
+  endpoint-aware rank certificates. Use retired streams as regressions only.
+  Singularity alone does not guarantee nonzero multiplier endpoints.
 
 ## Next formalisation (Thursday)
 
@@ -37,6 +40,17 @@
   stream; even/odd recurrences and their uniqueness are proved. Next derive
   a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
   the already recorded all-scale dyadic witness without new scale searches.
+
+## Completed on 2026-09-30 (Wednesday computation)
+
+- Ordinary complete support proof: R=1-t^(N-1)+t^N,m=9N+3 has j=2N,
+  terminal -N/2 and defect N for every r>=3. Retained the r=2 failure and
+  r=1 comparisons. No all-degree bound, generic optimum or novelty claim.
+- Added exact support-interval enumeration and cancellation partitions, with
+  independent dense and root-sum checks. Seven old scales validate the proof
+  tables; no search expansion or new Lean theorem is claimed.
+- All 41 Python tests and three Lean exports pass. Primary sources refreshed;
+  no later characteristic-two resolution found in scoped searches.
 
 ## Completed on 2026-09-29 (Tuesday formalisation)
 
