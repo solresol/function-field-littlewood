@@ -373,3 +373,16 @@ family at other N. Do not repeat retired TM/RS scale expansion as new research.
 - Next computation: exact binary number-wall profiles, independent tiny determinant
   checks and comparison to endpoint-aware rank certificates. Thursday: fractional
   part order/norm bridge. No need for more three-term scale expansion.
+
+## 2026-09-30 follow-up: research direction revised
+
+At the user's request, updated the automation prompt and repository roadmap
+following the progress assessment. Prioritise structural progress on the all-degree
+N-bound or literature-screened characteristic-two constructions. Require an exact
+question and a decision-relevant outcome before new tooling or formalisation.
+Removed the daily artifact quota; a bounded unsuccessful attempt should be reported
+as such. Separate mathematics from verification/infrastructure and maintenance.
+Number-wall tooling is conditional, and more attainment/retired-stream examples
+are not standalone objectives. Schedule, model and weekly work pattern remain.
+This is a planning change, not a mathematical increment; documentation diff and
+automation readback were checked. No code or proof changed; tests were not rerun.

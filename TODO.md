@@ -1,5 +1,34 @@
 # Research roadmap
 
+## Research priorities and progress criteria (30 September review)
+
+The verified search and Lean foundations are useful, but they have not yet
+resolved the auxiliary upper bound or materially advanced the characteristic-two
+frontier. Judge the next work against two mathematical outcomes:
+
+1. A structural lemma towards proving or refuting j-d<=N for all degrees and
+   shifts in the Lai–Sprang stream, for r>=2.
+2. A characteristic-two construction or stronger intermediate statement whose
+   behaviour is not already explained by the primary literature.
+
+Before implementing an experiment or formal lemma, state the exact question,
+the unresolved step, and which possible outcomes would change the next decision.
+A failed hypothesis is useful when it rules out a meaningful approach or exposes
+structure. More examples of attainment, larger routine boxes, certificate exports
+and generic tooling are not sufficient research outcomes by themselves.
+
+Make a bounded serious attempt; there is no daily artifact or commit quota.
+If it yields no useful increment, record the obstacle and inconclusive attempts
+briefly and report that explicitly. Do not invent maintenance work to fill the
+run. Distinguish mathematical progress, verification/infrastructure progress and
+no useful increment in the daily account. On Sundays, assess these separately
+and redirect work that repeatedly yields only infrastructure or maintenance.
+
+The existing degree-zero attainment already shows why an N upper bound would
+be sharp. The three-term positive-degree family adds structure but does not
+prove that upper bound. Further scale checks of these families are unnecessary.
+The three retired binary baselines remain regression inputs only.
+
 ## Next computation (Friday)
 
 - Screen new binary streams for rational/quadratic generating series and existing
@@ -21,12 +50,18 @@
 - Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
   is settled. Do not repeat their expansions as new evidence. Binary paperfolding
   is also retired: its exact recurrence proves a quadratic equation (27 September).
-- Build exact finite number-wall profiles for arbitrary binary prefixes; verify
-  tiny determinants independently by permutations and compare zero windows with
-  endpoint-aware rank certificates. Use retired streams as regressions only.
-  Singularity alone does not guarantee nonzero multiplier endpoints.
+- First choose a structural upper-bound lemma or a literature-screened binary
+  candidate and specify the discriminating calculation. Build number-wall
+  profiles only if needed for that question; compare against existing rank
+  certificates and independently check tiny determinants. Tool construction alone
+  is not the objective. Singularity does not guarantee nonzero endpoints.
 
 ## Next formalisation (Thursday)
+
+Choose a lemma on an explicit proof path to the priorities above and name the
+downstream theorem it enables. Completing an essential bridge is legitimate
+verification progress; avoid an indefinite sequence of bridges or formalised
+retired examples that never reaches the substantive question.
 
 - The actual Laurent coefficient and polynomial-evaluation bridge is proved
   (29 September). Define the strictly positive fractional part, prove its order
@@ -36,10 +71,11 @@
   F_17/F_3 exact witnesses are now formalised. Prove the all-shift degree-zero
   bound and generic m=5N+1 attainment; identify the support formula with the
   original root-sum expression. None of these remaining bridges is assumed.
-- The binary degree-nine prefix is now identified with the infinite digit-parity
-  stream; even/odd recurrences and their uniqueness are proved. Next derive
-  a_n+a_(n+1)=1+v2(n+1) mod 2 from the adjacent recurrences, then formalise
-  the already recorded all-scale dyadic witness without new scale searches.
+- Defer further formalisation of the retired binary dyadic examples unless a
+  selected structural argument needs the lemma. The adjacent-difference identity
+  and all-scale witness remain available as optional regression/formal targets,
+  not default daily work. The named prefix and basic recurrences already suffice
+  for the existing certificate regressions.
 
 ## Completed on 2026-09-30 (Wednesday computation)
 

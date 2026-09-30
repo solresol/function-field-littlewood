@@ -393,10 +393,19 @@ Next formal work: the positive fractional part's order and norm/product exponent
 then generic degree-zero support/attainment and original root-sum identification.
 The Laurent coefficient bridge, named prefixes, scalar normalisation and
 polynomial endpoints are proved. The three-term support identity for r>=3 now
-has an ordinary proof; its r=2 extension failed. Next computation: exact binary
-number-wall profiles checked against direct determinants and rank certificates. The three
-binary baselines remain retired via known quadratic-series results and serve as
+has an ordinary proof; its r=2 extension failed. Prioritise a structural lemma
+towards the all-degree upper bound or a literature-screened characteristic-two
+construction. Number-wall tooling is conditional on a specific discriminating
+question. The three binary baselines remain retired via known quadratic-series
+results and serve as
 regressions. New binary candidates need a literature/algebraicity screen first.
+
+The 30 September research review replaces the daily artifact quota with a
+mathematical progress criterion. Each run should identify the unresolved question
+and explain how its result changes the next decision. Report mathematical and
+verification/infrastructure progress separately; a bounded attempt with no useful
+increment is acceptable. More attainment examples or routine search expansion
+are insufficient by themselves. The detailed criteria are in `TODO.md`.
 
 ## References
 
