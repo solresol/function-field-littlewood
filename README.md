@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (30 Sep 2026)
+## Status update (1 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -267,7 +267,7 @@ not a characteristic-two result, and not a claim of novelty.
 
 `FunctionFieldLittlewood/Certificate.lean` defines coefficient streams, shifted multiplication, a Hankel matrix, and an exact-index certificate. It proves that the zero-prefix equations equal a matrix kernel condition, that an accepted certificate gives the first nonzero index, and that only coefficients through `m+d+j` affect the certificate. Both constant and leading multiplier coefficients must be nonzero.
 
-`FunctionFieldLittlewood/Examples.lean` includes kernel-checked examples over `ZMod 2` and `ZMod 3`, plus invalid-index and invalid-endpoint controls. The binary example is a finite infrastructure fixture, not a main-conjecture candidate. The ternary example originally checked a recorded prefix; `LaiSprangStream.lean` now also proves its certificate directly for the infinite support-formula stream. No Laurent-series norm theorem or global sharp bound has been formalised.
+`FunctionFieldLittlewood/Examples.lean` includes kernel-checked examples over `ZMod 2` and `ZMod 3`, plus invalid-index and invalid-endpoint controls. The binary example is a finite infrastructure fixture, not a main-conjecture candidate. The ternary example originally checked a recorded prefix; `LaiSprangStream.lean` now also proves its certificate directly for the infinite support-formula stream. The fractional-size/product bridge is now formalised below; no global sharp bound is proved.
 
 `FunctionFieldLittlewood/DualCertificate.lean` now proves soundness of both dual
 obstruction formats and of a combined primal/dual checker. Acceptance proves an
@@ -305,8 +305,9 @@ constant term. This includes degree zero and characteristic two.
 `BridgeExamples.lean` checks nontrivial F_3 scaling, rejection of zero scaling,
 degree-zero endpoints, and the saved F_2/F_17 optima with polynomial quantifiers.
 These are kernel-checked finite statements. At that stage the actual Laurent-series
-product was unformalised; the 29 September bridge below now identifies its coefficients. The norm exponent
-remains unformalised. The later binary identification is below.
+product was unformalised; the 29 September bridge below identifies its coefficients.
+The 1 October bridge proves the base-two product exponent. The later binary
+identification is below.
 No global auxiliary bound or characteristic-2 counterexample follows. See
 `results/2026-09-22-polynomial-normalisation.md` for validation and source details.
 
@@ -343,8 +344,8 @@ The module also kernel-checks R=1,m=81,j=16 in F_17 and the r=1 comparison
 R=1+t^2,m=2,j=6 in F_3 directly on the named streams. These are finite exact
 certificates about infinite streams. They do not prove the all-shift degree-zero
 bound, the all-degree N-bound, or equality with the original infinite root-sum
-Laurent expression. That equality and the Laurent norm bridge remain
-separate formal obligations; the coefficient bridge is now proved below.
+Laurent expression. That equality remains a separate formal obligation; the
+coefficient and fractional-size/product bridges are now proved below.
 No characteristic-2 counterexample follows.
 See `results/2026-09-26-named-lai-sprang-stream.md` for validation and attribution.
 
@@ -363,12 +364,34 @@ Existing exact and primal/dual certificates therefore give the first nonzero
 `LaurentExamples.lean` transfers the named binary j=24, F_17 sharp j=16 and F_3
 r=1 j=6 witnesses, and quantifies binary optimality over actual degree-nine
 polynomials. Positive index is not the order of the full product, which can have
-negative powers; the norm/product exponent still needs a separate formal bridge.
+negative powers; the 1 October bridge below takes the strictly positive part
+before computing its size and the product exponent.
 
 This is a generic Lean proof, not a new search or conjecture result. The original
 Lai–Sprang root-sum equality, all-shift degree-zero theorem and all-degree N-bound
 remain separate. Validation and exact scope are recorded in
 `results/2026-09-29-laurent-coefficient-bridge.md`.
+
+## Fractional part and Littlewood product bridge (1 October)
+
+`FractionalPart.lean` removes all nonpositive x-powers and proves that an exact
+positive index j is the order of this fractional part. Its explicit base-two size
+is 2^(-j), with size zero for a zero fractional part. For endpoint-nonzero R,
+mathlib's actual polynomial degree and trailing degree identify the factors of
+Q=t^m R; an exact certificate proves the product equals 2^(d-j).
+The real-valued size is explicitly defined from order, not installed as an
+ambient norm instance.
+
+More usefully for the unresolved upper bound, the module proves, without
+assuming a first index exists, that product >= 2^(-N) is equivalent to some
+nonzero fractional coefficient among indices 1,...,d+N. This gives the exact
+formal target for a structural nonvanishing argument. It does not prove that
+target for the Lai–Sprang stream. Existing F_17 and r=1 F_3 certificates provide
+boundary regressions; no new attainment evidence or binary search is claimed.
+
+This is **verification/infrastructure progress**, with no new structural result
+on the all-degree bound or characteristic-two frontier. See
+`results/2026-10-01-fractional-product-bridge.md` for scope and validation.
 
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
@@ -389,11 +412,14 @@ The original tests independently expand the original root sums for 2,560 coeffic
 ## Near-term programme
 
 See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
-Next formal work: the positive fractional part's order and norm/product exponent,
-then generic degree-zero support/attainment and original root-sum identification.
-The Laurent coefficient bridge, named prefixes, scalar normalisation and
-polynomial endpoints are proved. The three-term support identity for r>=3 now
-has an ordinary proof; its r=2 extension failed. Prioritise a structural lemma
+Next substantive work: use dyadic coefficient splitting to attempt a recursive
+nonvanishing lemma for the first d+N rows; formalise a successful reduction.
+The positive fractional-part/product bridge is complete for Q=t^m R with
+nonzero endpoints. Original root-sum identification and generic degree-zero
+formalisation remain separate, lower-priority obligations. The Laurent coefficient
+bridge, named prefixes, scalar normalisation and polynomial endpoints are proved.
+The three-term support identity for r>=3 now has an ordinary proof; its r=2
+extension failed. Prioritise a structural lemma
 towards the all-degree upper bound or a literature-screened characteristic-two
 construction. Number-wall tooling is conditional on a specific discriminating
 question. The three binary baselines remain retired via known quadratic-series

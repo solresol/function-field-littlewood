@@ -31,6 +31,14 @@ The three retired binary baselines remain regression inputs only.
 
 ## Next computation (Friday)
 
+- Concrete first question: using a_(2n)=a_n and the sparse alternating odd
+  subsequence, can vanishing of the first d+N coefficients be reduced to a
+  smaller-degree vanishing system? Split multiplier and row indices by parity;
+  track the shifts, finite window and endpoints exactly. A valid descent would
+  support induction for the global upper bound; an explicit obstruction would
+  rule out that descent or identify the extra invariant it needs. Use bounded
+  exact checks only to distinguish those outcomes, not to expand routine boxes.
+
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
   quadratic-series route already handles binary Rudin–Shapiro; see the
@@ -56,26 +64,38 @@ The three retired binary baselines remain regression inputs only.
   certificates and independently check tiny determinants. Tool construction alone
   is not the objective. Singularity does not guarantee nonzero endpoints.
 
-## Next formalisation (Thursday)
+## Next formalisation (Saturday)
 
 Choose a lemma on an explicit proof path to the priorities above and name the
 downstream theorem it enables. Completing an essential bridge is legitimate
 verification progress; avoid an indefinite sequence of bridges or formalised
 retired examples that never reaches the substantive question.
 
-- The actual Laurent coefficient and polynomial-evaluation bridge is proved
-  (29 September). Define the strictly positive fractional part, prove its order
-  from `LaurentFirstPositive`, then connect the norm/product exponent. The full
-  product can have poles; do not identify its order with the fractional index.
+- The fractional-part order, base-two size and polynomial product bridge is now
+  proved (1 October). Product >= 2^(-N) is equivalent to a nonzero coefficient
+  among 1,...,d+N, without assuming an exact index. Do not extend bridge work
+  by default. Formalise a structural reduction from the next computation if one
+  survives; otherwise make a bounded direct attempt and report the obstacle.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
-  F_17/F_3 exact witnesses are now formalised. Prove the all-shift degree-zero
-  bound and generic m=5N+1 attainment; identify the support formula with the
-  original root-sum expression. None of these remaining bridges is assumed.
+  F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
+  and original root-sum identification remain lower-priority obligations; do not
+  let them replace the structural upper-bound question indefinitely.
 - Defer further formalisation of the retired binary dyadic examples unless a
   selected structural argument needs the lemma. The adjacent-difference identity
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-01 (Thursday formalisation)
+
+- Proved strictly positive fractional-part order and explicit base-two size;
+  identified actual polynomial degree/trailing degree for Q=t^m R and proved
+  the certificate-to-product formula 2^(d-j).
+- Product lower bound is equivalent to a nonzero coefficient by d+N, including
+  the zero fractional-part case. This exposes the structural proof obligation;
+  it does not establish the global bound. Classification: verification/infrastructure.
+- Full Lean build and boundary controls pass with standard axioms only. No new
+  search, no expanded attainment family, no retired binary example formalisation.
 
 ## Completed on 2026-09-30 (Wednesday computation)
 

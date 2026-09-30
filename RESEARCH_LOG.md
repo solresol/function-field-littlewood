@@ -386,3 +386,28 @@ Number-wall tooling is conditional, and more attainment/retired-stream examples
 are not standalone objectives. Schedule, model and weekly work pattern remain.
 This is a planning change, not a mathematical increment; documentation diff and
 automation readback were checked. No code or proof changed; tests were not rerun.
+
+## 2026-10-01 (Thursday, Australia/Sydney): fractional-part/product bridge
+
+- Stated question before implementation: transport an exact positive index to
+  fractional-part order, base-two size and polynomial Littlewood product, enabling
+  a future structural all-degree lower-bound proof. Clean main at 12e8a05;
+  origin verified, fetched/FF-only current, no competing run marker/process.
+- Proved strict positive-part order and size; actual polynomial degree/trailing
+  degree identify the factors for Q=t^m R with nonzero endpoints. Exact
+  certificates now give product 2^(d-j). Size is an explicit real function,
+  not an installed norm instance; root-sum identification remains separate.
+- Proved product >=2^(-N) iff a nonzero fractional coefficient occurs by d+N,
+  without assuming an exact index exists. This identifies the structural target;
+  it does not prove that target for Lai–Sprang. Zero-part/pole/constant/index/sign
+  controls and existing F_17 and r=1 F_3 product regressions pass.
+- Full Lean build passes 2,208 jobs in 6.881132s, no warnings; 73 axiom reports
+  (13 new), all standard-only. No proof bypass tokens; pins unchanged. Inspected
+  relevant mathlib definitions and Apache-2.0 licence. No Python/solver changes,
+  no expanded search; Python tests not rerun. Final build/validation/report saved.
+- Rechecked LS2606.00633v1 and BPZ2608.22078v1 primary pages on 1 October;
+  no new candidate or comprehensive frontier search. Odd main result remains
+  settled; characteristic two and the auxiliary all-degree bound are unchanged.
+- Classification: verification/infrastructure progress. Next: attempt parity-split
+  descent for a vanishing window of d+N rows, tracking shifts and endpoints;
+  formalise a useful structural reduction, not more routine bridge examples.

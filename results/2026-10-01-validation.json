@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-01",
+  "weekday": "Thursday",
+  "timezone": "Australia/Sydney",
+  "completed_at": "2026-10-01T08:27:04.365607+10:00",
+  "command": "lake build",
+  "exit_code": 0,
+  "runtime_seconds": 6.881132,
+  "axiom_reports": 73,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "warnings": 0,
+  "toolchain": "leanprover/lean4:v4.27.0",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "seed": null,
+  "new_search_inputs": null,
+  "python_tests": "Not rerun: no Python code or certificates changed."
+}

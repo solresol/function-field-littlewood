@@ -9,3 +9,5 @@ import FunctionFieldLittlewood.BinaryStream
 import FunctionFieldLittlewood.LaiSprangStream
 import FunctionFieldLittlewood.LaurentBridge
 import FunctionFieldLittlewood.LaurentExamples
+import FunctionFieldLittlewood.FractionalPart
+import FunctionFieldLittlewood.FractionalPartExamples
