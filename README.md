@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (1 Oct 2026)
+## Status update (2 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -40,6 +40,17 @@ The search in `search/lai_sprang_finite_search.py` exhaustively enumerates coeff
 ```text
 j - d <= N   (r >= 2).
 ```
+
+**2 October structural result:** an ordinary factor-aware parity-descent proof
+establishes this bound at **every shift for d<N(N-1)** over F_p. Any violation
+must have t^N+1 dividing R and descends to a nonzero multiple S of
+1+t+...+t^(N-1) with its first deg S+1 fractional coefficients zero.
+The proof tracks a forced factor F_s=(t^N-1)/(t^s-1) while halving s and
+the degree. It stops at s=1; the all-degree terminal statement remains unproved.
+See [the proof and precise obstruction](results/2026-10-02-parity-descent.md).
+This is mathematical progress on the auxiliary bound, not a new main-conjecture
+counterexample or a Lean theorem. The method adapts Lai–Sprang's Section 3;
+publication novelty has not been established.
 
 The verified 17 September run finds no violation in the boxes below. The analogous strengthening is false for the tested `r=1` primes `3,7,11,19,23,31`: `R(t)=1+t^2`, `m=2` gives `j=6` and defect `4=2N`. This supplies exact witnesses attaining the published bound in these cases.
 

@@ -29,15 +29,17 @@ be sharp. The three-term positive-degree family adds structure but does not
 prove that upper bound. Further scale checks of these families are unnecessary.
 The three retired binary baselines remain regression inputs only.
 
-## Next computation (Friday)
+## Next computation
 
-- Concrete first question: using a_(2n)=a_n and the sparse alternating odd
-  subsequence, can vanishing of the first d+N coefficients be reduced to a
-  smaller-degree vanishing system? Split multiplier and row indices by parity;
-  track the shifts, finite window and endpoints exactly. A valid descent would
-  support induction for the global upper bound; an explicit obstruction would
-  rule out that descent or identify the extra invariant it needs. Use bounded
-  exact checks only to distinguish those outcomes, not to expand routine boxes.
+- The 2 October factor-aware parity descent proves the all-shift N-bound for
+  d<N(N-1). A violation descends to an F_1=1+t+...+t^(N-1) multiple S with
+  deg S+1 zero rows. Can the linked terminal parity factors V_0+t V_1 and
+  V_0+V_1 recover the missing root moment for r>=2? Alternatively, can a
+  terminal counterexample expose the sibling compatibility lost by descent?
+  See results/2026-10-02-parity-descent.md for the full proof and exact windows.
+  The sufficient terminal statement survived a targeted finite screen, but is
+  unproved and is not asserted equivalent to the original all-degree bound.
+  Do not expand its boxes without a discriminating mathematical hypothesis.
 
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
@@ -74,8 +76,12 @@ retired examples that never reaches the substantive question.
 - The fractional-part order, base-two size and polynomial product bridge is now
   proved (1 October). Product >= 2^(-N) is equivalent to a nonzero coefficient
   among 1,...,d+N, without assuming an exact index. Do not extend bridge work
-  by default. Formalise a structural reduction from the next computation if one
-  survives; otherwise make a bounded direct attempt and report the obstacle.
+  by default. The 2 October structural target is now available: formalise the
+  F_s, surplus-s to F_(s/2), surplus-s/2 reduction for even s dividing N.
+  Its downstream theorem is the all-shift degree cutoff d<N(N-1). Preserve
+  arbitrary child constant coefficients and the exact shift n+epsilon*delta.
+  The full proof needs Vandermonde invertibility and primitive-root nonsquareness;
+  do not assume either or the target if an essential bridge is unfinished.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -85,6 +91,18 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-02 (Friday computation)
+
+- Ordinary factor-aware parity-descent proof: any d+N zero window forces
+  t^N+1 dividing R and d>=N(N-1). Thus the auxiliary N-bound is proved for
+  every shift below that degree threshold. Not Lean or an all-degree result.
+- The factors F_s and surplus s descend together to s=1; the terminal
+  cross-convolution can lack one Vandermonde moment. Retained the actual r=1
+  terminal violation. The r>=2 terminal screen was inconclusive, with no violation.
+- Independent root-sum parity/cross-moment checks and existing primal/dual
+  checking support the derivation. Classification: mathematical progress from
+  the ordinary structural proof, not from finite agreement or tooling.
 
 ## Completed on 2026-10-01 (Thursday formalisation)
 

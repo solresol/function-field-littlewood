@@ -411,3 +411,34 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Classification: verification/infrastructure progress. Next: attempt parity-split
   descent for a vanishing window of d+N rows, tracking shifts and endpoints;
   formalise a useful structural reduction, not more routine bridge examples.
+
+## 2026-10-02 (Friday, Australia/Sydney): factor-aware parity descent
+
+- Clean main at 6367d45; verified origin, fetched and fast-forward-only checked
+  (already current), no competing run marker/process. Read automation memory,
+  README/TODO, recent records and relevant actual stream/solver/checker sources.
+- Stated the parity-descent question and decision criteria before coding.
+  Ordinary proof: if a nonzero degree-d multiplier has d+N zero rows, then
+  t^N+1 divides it and d>=N(N-1). Thus j-d<=N holds for every shift when
+  d<N(N-1). The invariant is divisibility by F_s=(t^N-1)/(t^s-1) with
+  surplus s; both s and degree halve. No endpoint assumption on children.
+- Descent ends at an F_1-multiple with deg S+1 zero rows. The terminal
+  cross-convolution can lack one Vandermonde moment. No all-degree proof;
+  the actual r=1 violation descends to S=1+t,M=1. The r>=2 terminal statement
+  remains a sufficient, unproved target; reverse implication is not claimed.
+- Exact independent root-sum parity and cross-moment identities checked.
+  Targeted terminal screen: p=5,13,41,17, quotient e=0..2N, m=0..16N,
+  cutoff e+N+1. Every primal/dual checked independently; no violation or
+  unresolved case among 11,844 inputs. This finite agreement is inconclusive.
+  Python3.9.6, seed null, combined checker runtime17.03708225s.
+- Existing 41 Python tests pass3.543s. No solver edits, Lean edits or Lean
+  build. Full proof/checker/output retained in results/2026-10-02-* and
+  search/lai_sprang_descent_check.py; full diff inspected.
+- Primary LS2606.00633v1 Section3 and BPZ2608.22078v1 refreshed2Oct.
+  Explicit attribution to LS parity/Vandermonde/nonsquare method; novelty
+  not established. Scoped frontier search found no later characteristic-two
+  resolution; no binary candidate or retired-stream search was undertaken.
+- Classification: mathematical progress from the all-shift structural proof.
+  Next: recover the terminal missing moment using linked parity factors or
+  expose lost sibling compatibility. Formal target: factor-aware descent and
+  its degree cutoff, not another norm bridge or attainment example.

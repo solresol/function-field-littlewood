@@ -1,0 +1,115 @@
+{
+  "python": "3.9.6",
+  "seed": null,
+  "method": "exact parity identities and endpoint-aware terminal screen",
+  "parity_identities": 26482,
+  "cross_moment_identities": 11120,
+  "terminal": [
+    {
+      "p": 5,
+      "N": 4,
+      "quotient_degree": [
+        0,
+        8
+      ],
+      "shifts": [
+        0,
+        64
+      ],
+      "cutoff": "e+N+1",
+      "checked": 585,
+      "unresolved": 0,
+      "violations": 0,
+      "best": {
+        "e": 0,
+        "m": 2,
+        "j": 4,
+        "U": [
+          1
+        ],
+        "terminal_defect": 1
+      }
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "quotient_degree": [
+        0,
+        8
+      ],
+      "shifts": [
+        0,
+        64
+      ],
+      "cutoff": "e+N+1",
+      "checked": 585,
+      "unresolved": 0,
+      "violations": 0,
+      "best": {
+        "e": 0,
+        "m": 2,
+        "j": 4,
+        "U": [
+          1
+        ],
+        "terminal_defect": 1
+      }
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "quotient_degree": [
+        0,
+        16
+      ],
+      "shifts": [
+        0,
+        128
+      ],
+      "cutoff": "e+N+1",
+      "checked": 2193,
+      "unresolved": 0,
+      "violations": 0,
+      "best": {
+        "e": 0,
+        "m": 42,
+        "j": 8,
+        "U": [
+          1
+        ],
+        "terminal_defect": 1
+      }
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "quotient_degree": [
+        0,
+        32
+      ],
+      "shifts": [
+        0,
+        256
+      ],
+      "cutoff": "e+N+1",
+      "checked": 8481,
+      "unresolved": 0,
+      "violations": 0,
+      "best": {
+        "e": 0,
+        "m": 82,
+        "j": 16,
+        "U": [
+          1
+        ],
+        "terminal_defect": 1
+      }
+    }
+  ],
+  "r1_terminal_values": [
+    0,
+    0,
+    2
+  ],
+  "runtime_seconds": 17.03708225
+}
