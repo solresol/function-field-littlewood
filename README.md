@@ -2,7 +2,7 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
-## Status update (2 Oct 2026)
+## Status update (3 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -404,6 +404,23 @@ This is **verification/infrastructure progress**, with no new structural result
 on the all-degree bound or characteristic-two frontier. See
 `results/2026-10-01-fractional-product-bridge.md` for scope and validation.
 
+## Root-moment rigidity in Lean (3 October)
+
+`ParityDescent.lean` verifies the moment-to-forced-factor step in the 2 October
+ordinary proof. H consecutive moments at H distinct roots force both parity
+quotients to be divisible by t^H+1. The prime-field theorem proves nonsquareness
+from p-1=2H times an odd number, and proves that the geometric common factor
+does not vanish at those roots. It allows zero constant terms and arbitrary
+nonnegative starting exponents. An F_5 boundary example verifies that one fewer
+moment need not force the factor.
+
+This is **verification/infrastructure progress**. The generic theorem still
+requires an enumeration of H distinct roots and the full moment equations.
+Deriving those equations from the support-formula stream's parent window,
+constructing the enumeration uniformly, and completing the degree/shift descent
+remain unformalised. Neither the all-degree bound nor the terminal obstruction
+has been resolved. See [scope and validation](results/2026-10-03-moment-rigidity.md).
+
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
 ```sh
@@ -423,8 +440,11 @@ The original tests independently expand the original root sums for 2,560 coeffic
 ## Near-term programme
 
 See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
-Next substantive work: use dyadic coefficient splitting to attempt a recursive
-nonvanishing lemma for the first d+N rows; formalise a successful reduction.
+Next substantive work: recover the missing terminal root moment using the linked
+parity factors, or expose lost sibling compatibility. The ordinary reduction
+already proves the all-shift cutoff d<N(N-1). Its moment-to-factor step is now
+formalised; the parent-window calculation and complete descent remain to be checked
+in Lean.
 The positive fractional-part/product bridge is complete for Q=t^m R with
 nonzero endpoints. Original root-sum identification and generic degree-zero
 formalisation remain separate, lower-priority obligations. The Laurent coefficient

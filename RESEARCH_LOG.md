@@ -442,3 +442,34 @@ automation readback were checked. No code or proof changed; tests were not rerun
   Next: recover the terminal missing moment using linked parity factors or
   expose lost sibling compatibility. Formal target: factor-aware descent and
   its degree cutoff, not another norm bridge or attainment example.
+
+## 2026-10-03 (Saturday, Australia/Sydney): Lean root-moment rigidity
+
+- Clean main at 0b73170; correct origin, fetched and fast-forward-only current;
+  no competing lock/process. Read prior memory, roadmap, ordinary descent proof
+  and actual stream/checker/Lean sources. Stated exact moment-rigidity question
+  before implementation, with the degree cutoff as its downstream purpose.
+- ParityDescent.lean proves H consecutive root moments force t^H+1 into both
+  parity quotients. Proved prime-field nonsquareness from p-1=2H times an odd
+  number, geometric-factor nonvanishing and the resulting common child factor.
+  Arbitrary starting exponent, polynomial degrees and constant terms allowed.
+- Generic root enumeration and the moment equations remain explicit hypotheses;
+  these are discharged concretely for the F_5 instantiation, apart from its
+  moment premise. Root enumeration, odd-subsequence identity, cross-convolution,
+  exact row budgets and full iteration still need formalisation. The ordinary
+  d<N(N-1) cutoff is not yet a Lean theorem; all-degree N-bound unchanged.
+- F_5 boundary theorem: U_0=t-1,U_1=0 gives weights 1,4 at roots 2,3; moment
+  zero vanishes but moment one does not, and t^2+1 is not a factor. This only
+  refutes the weakened moment lemma, not the linked terminal stream statement.
+  The existing r=1 terminal comparison remains relevant; no binary search.
+- Full lake build passes 2,212 jobs in 10.985925s without warnings. All 85 axiom
+  reports (12 new) are standard-only; no proof bypass tokens. Pins unchanged;
+  actual mathlib sources and Apache-2.0 licence inspected. Python/certificates
+  unchanged and not rerun. No finite search, seed or timeout inference.
+- Primary LS2606.00633v1 Section 3 and BPZ2608.22078v1 refreshed 3 October;
+  no comprehensive frontier search or novelty claim. Report, build and validation
+  saved as results/2026-10-03-*. Complete source/documentation diff reviewed.
+- Classification: verification/infrastructure progress on the structural path.
+  Next formal step: derive moments from the named stream's parent window.
+  Next mathematical step: recover the terminal missing relation or expose lost
+  sibling compatibility; Sunday's review should not expand routine boxes.

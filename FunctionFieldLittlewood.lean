@@ -11,3 +11,4 @@ import FunctionFieldLittlewood.LaurentBridge
 import FunctionFieldLittlewood.LaurentExamples
 import FunctionFieldLittlewood.FractionalPart
 import FunctionFieldLittlewood.FractionalPartExamples
+import FunctionFieldLittlewood.ParityDescent

@@ -1,0 +1,123 @@
+ℹ [1131/1247] Replayed FunctionFieldLittlewood.Normalisation
+info: FunctionFieldLittlewood/Normalisation.lean:75:0: 'FunctionFieldLittlewood.exactCertificate_scale_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Normalisation.lean:76:0: 'FunctionFieldLittlewood.exactCertificate_normalise_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Normalisation.lean:77:0: 'FunctionFieldLittlewood.checkOptimalCertificate_sound_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Normalisation.lean:78:0: 'FunctionFieldLittlewood.optimal_first_le_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1315/1558] Replayed FunctionFieldLittlewood.PolynomialBridge
+info: FunctionFieldLittlewood/PolynomialBridge.lean:80:0: 'FunctionFieldLittlewood.multiplierPolynomial_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/PolynomialBridge.lean:81:0: 'FunctionFieldLittlewood.multiplierPolynomial_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/PolynomialBridge.lean:82:0: 'FunctionFieldLittlewood.multiplierPolynomial_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/PolynomialBridge.lean:83:0: 'FunctionFieldLittlewood.certificate_polynomial_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/PolynomialBridge.lean:84:0: 'FunctionFieldLittlewood.optimal_polynomial_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1316/1558] Replayed FunctionFieldLittlewood.Examples
+info: FunctionFieldLittlewood/Examples.lean:47:0: 'FunctionFieldLittlewood.certificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:48:0: 'FunctionFieldLittlewood.certificate_congr_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:49:0: 'FunctionFieldLittlewood.hankel_kernel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:50:0: 'FunctionFieldLittlewood.checkCertificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:51:0: 'FunctionFieldLittlewood.binary_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:52:0: 'FunctionFieldLittlewood.comparison_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/Examples.lean:53:0: 'FunctionFieldLittlewood.comparison_first_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1317/1558] Replayed FunctionFieldLittlewood.SavedCertificates
+info: FunctionFieldLittlewood/SavedCertificates.lean:35:0: 'FunctionFieldLittlewood.Saved.thueMorse_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:36:0: 'FunctionFieldLittlewood.Saved.thueMorse_optimal_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:63:0: 'FunctionFieldLittlewood.Saved.forcedEndpoint_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:64:0: 'FunctionFieldLittlewood.Saved.forcedEndpoint_optimal_of_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:91:0: 'FunctionFieldLittlewood.Saved.laiSprang17_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:92:0: 'FunctionFieldLittlewood.Saved.laiSprang17_optimal_of_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:108:0: 'FunctionFieldLittlewood.dualRow_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:109:0: 'FunctionFieldLittlewood.dualObstruction_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:110:0: 'FunctionFieldLittlewood.checkOptimalCertificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:111:0: 'FunctionFieldLittlewood.optimal_first_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/SavedCertificates.lean:112:0: 'FunctionFieldLittlewood.checkOptimalCertificate_congr_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [1319/1558] Replayed FunctionFieldLittlewood.BridgeExamples
+info: FunctionFieldLittlewood/BridgeExamples.lean:45:0: 'FunctionFieldLittlewood.scaled_comparison_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BridgeExamples.lean:46:0: 'FunctionFieldLittlewood.binary_polynomial_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BridgeExamples.lean:47:0: 'FunctionFieldLittlewood.odd_polynomial_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1321/1558] Replayed FunctionFieldLittlewood.BinaryStream
+info: FunctionFieldLittlewood/BinaryStream.lean:109:0: 'FunctionFieldLittlewood.thueMorse_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:110:0: 'FunctionFieldLittlewood.thueMorse_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:111:0: 'FunctionFieldLittlewood.thueMorse_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:112:0: 'FunctionFieldLittlewood.thueMorseDifference_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:113:0: 'FunctionFieldLittlewood.thueMorseDifference_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:114:0: 'FunctionFieldLittlewood.thueMorse_saved_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:115:0: 'FunctionFieldLittlewood.thueMorse_named_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:116:0: 'FunctionFieldLittlewood.thueMorse_named_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/BinaryStream.lean:117:0: 'FunctionFieldLittlewood.thueMorse_named_polynomial_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [1322/1558] Replayed FunctionFieldLittlewood.LaiSprangStream
+info: FunctionFieldLittlewood/LaiSprangStream.lean:129:0: 'FunctionFieldLittlewood.oddCore_dyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:130:0: 'FunctionFieldLittlewood.laiSprangStream_dyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:131:0: 'FunctionFieldLittlewood.laiSprang17_saved_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:132:0: 'FunctionFieldLittlewood.laiSprang17_named_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:133:0: 'FunctionFieldLittlewood.laiSprang17_named_optimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:134:0: 'FunctionFieldLittlewood.laiSprang17_sharp_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:135:0: 'FunctionFieldLittlewood.laiSprang17_sharp_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:136:0: 'FunctionFieldLittlewood.laiSprang3_comparison_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaiSprangStream.lean:137:0: 'FunctionFieldLittlewood.laiSprang3_comparison_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2203/2212] Replayed FunctionFieldLittlewood.LaurentBridge
+info: FunctionFieldLittlewood/LaurentBridge.lean:109:0: 'FunctionFieldLittlewood.streamLaurent_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:110:0: 'FunctionFieldLittlewood.shiftedLaurent_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:111:0: 'FunctionFieldLittlewood.firstNonzero_iff_laurent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:112:0: 'FunctionFieldLittlewood.certificate_laurent_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:113:0: 'FunctionFieldLittlewood.multiplierLaurent_eq_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:114:0: 'FunctionFieldLittlewood.hankel_kernel_iff_laurent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:115:0: 'FunctionFieldLittlewood.optimal_laurent_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentBridge.lean:116:0: 'FunctionFieldLittlewood.optimal_laurent_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2204/2212] Replayed FunctionFieldLittlewood.LaurentExamples
+info: FunctionFieldLittlewood/LaurentExamples.lean:60:0: 'FunctionFieldLittlewood.thueMorse_laurent_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentExamples.lean:61:0: 'FunctionFieldLittlewood.laiSprang17_laurent_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentExamples.lean:62:0: 'FunctionFieldLittlewood.laiSprang3_laurent_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/LaurentExamples.lean:63:0: 'FunctionFieldLittlewood.thueMorse_laurent_polynomial_optimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [2205/2212] Replayed FunctionFieldLittlewood.FractionalPart
+info: FunctionFieldLittlewood/FractionalPart.lean:196:0: 'FunctionFieldLittlewood.polynomialLittlewoodProduct_eq_reduced' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:197:0: 'FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:198:0: 'FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:199:0: 'FunctionFieldLittlewood.exists_laurentFirstPositive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:200:0: 'FunctionFieldLittlewood.reducedProduct_bound_iff_nonzero_prefix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:201:0: 'FunctionFieldLittlewood.shifted_factors_cancel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:202:0: 'FunctionFieldLittlewood.fractionalPart_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:203:0: 'FunctionFieldLittlewood.fractionalPart_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:204:0: 'FunctionFieldLittlewood.fractionalPart_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:205:0: 'FunctionFieldLittlewood.firstNonzero_reducedProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPart.lean:206:0: 'FunctionFieldLittlewood.reducedProduct_bound_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2206/2212] Replayed FunctionFieldLittlewood.FractionalPartExamples
+info: FunctionFieldLittlewood/FractionalPartExamples.lean:59:0: 'FunctionFieldLittlewood.laiSprang17_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/FractionalPartExamples.lean:60:0: 'FunctionFieldLittlewood.laiSprang3_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2210/2212] Built FunctionFieldLittlewood.ParityDescent (6.3s)
+info: FunctionFieldLittlewood/ParityDescent.lean:210:0: 'FunctionFieldLittlewood.ParityDescent.shifted_moments_rigid' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:211:0: 'FunctionFieldLittlewood.ParityDescent.nonsquare_pair_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:212:0: 'FunctionFieldLittlewood.ParityDescent.parity_quotients_vanish' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:213:0: 'FunctionFieldLittlewood.ParityDescent.parity_quotients_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:214:0: 'FunctionFieldLittlewood.ParityDescent.prime_root_nonsquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:215:0: 'FunctionFieldLittlewood.ParityDescent.root_product_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:216:0: 'FunctionFieldLittlewood.ParityDescent.prime_parity_binomial_dvd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:217:0: 'FunctionFieldLittlewood.ParityDescent.factor_eval_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:218:0: 'FunctionFieldLittlewood.ParityDescent.factorQuotient_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:219:0: 'FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:220:0: 'FunctionFieldLittlewood.ParityDescent.prime5_parity_binomial_dvd' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: FunctionFieldLittlewood/ParityDescent.lean:221:0: 'FunctionFieldLittlewood.ParityDescent.one_moment_insufficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [2211/2212] Built FunctionFieldLittlewood (3.1s)
+Build completed successfully (2212 jobs).

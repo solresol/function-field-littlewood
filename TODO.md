@@ -66,7 +66,7 @@ The three retired binary baselines remain regression inputs only.
   certificates and independently check tiny determinants. Tool construction alone
   is not the objective. Singularity does not guarantee nonzero endpoints.
 
-## Next formalisation (Saturday)
+## Next formalisation
 
 Choose a lemma on an explicit proof path to the priorities above and name the
 downstream theorem it enables. Completing an essential bridge is legitimate
@@ -80,8 +80,13 @@ retired examples that never reaches the substantive question.
   F_s, surplus-s to F_(s/2), surplus-s/2 reduction for even s dividing N.
   Its downstream theorem is the all-shift degree cutoff d<N(N-1). Preserve
   arbitrary child constant coefficients and the exact shift n+epsilon*delta.
-  The full proof needs Vandermonde invertibility and primitive-root nonsquareness;
-  do not assume either or the target if an essential bridge is unfinished.
+  The moment-to-forced-factor step is now kernel-checked in ParityDescent.lean
+  (3 October), including Vandermonde rigidity, prime-field nonsquareness and
+  nonvanishing of the geometric factor. Do not repeat that bridge. Next connect
+  the parent rows to the exact H moments: prove the odd-subsequence root formula,
+  construct the H-root enumeration, and verify cross-convolution and row budgets.
+  Then prove the leading-child degree/shift step and iterate to the cutoff.
+  These are outstanding proofs, not assumed consequences of the new theorem.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -91,6 +96,19 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-03 (Saturday formalisation)
+
+- Kernel-checked the full moment block forcing t^H+1 into both parity quotients,
+  and the resulting common factor in both children. Arbitrary starting exponent,
+  quotient degrees and constant terms; nonsquareness proved from Fermat's theorem.
+- Verified the geometric factor identity and nonvanishing. Generic root enumeration
+  remains an explicit hypothesis; the F_5 instantiation discharges it concretely.
+- A formal F_5 example shows that H-1 moments alone do not imply the factor. It
+  is not a counterexample to the linked terminal statement. Retain the r=1 warning.
+- Classification: verification/infrastructure progress on the structural proof path.
+  Full descent, all-degree bound and characteristic-two frontier unchanged. Sunday's
+  review should focus on the missing terminal relation, not further routine bridges.
 
 ## Completed on 2026-10-02 (Friday computation)
 
