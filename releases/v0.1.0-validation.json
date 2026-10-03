@@ -1,0 +1,147 @@
+{
+  "validated_at": "2026-10-03T17:59:15.028072+10:00",
+  "version": "0.1.0",
+  "source_base_commit": "028d39736c66a345167b7bbd3f01cea980b8bfbe",
+  "python": "3.11.6",
+  "lean": "4.27.0",
+  "mathlib": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "lean_build": "passed",
+  "axiom_reports": 85,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "python_tests": "41 passed in 17.931s",
+  "descent_check": {
+    "python": "3.11.6",
+    "seed": null,
+    "method": "exact parity identities and endpoint-aware terminal screen",
+    "parity_identities": 26482,
+    "cross_moment_identities": 11120,
+    "terminal": [
+      {
+        "p": 5,
+        "N": 4,
+        "quotient_degree": [
+          0,
+          8
+        ],
+        "shifts": [
+          0,
+          64
+        ],
+        "cutoff": "e+N+1",
+        "checked": 585,
+        "unresolved": 0,
+        "violations": 0,
+        "best": {
+          "e": 0,
+          "m": 2,
+          "j": 4,
+          "U": [
+            1
+          ],
+          "terminal_defect": 1
+        }
+      },
+      {
+        "p": 13,
+        "N": 4,
+        "quotient_degree": [
+          0,
+          8
+        ],
+        "shifts": [
+          0,
+          64
+        ],
+        "cutoff": "e+N+1",
+        "checked": 585,
+        "unresolved": 0,
+        "violations": 0,
+        "best": {
+          "e": 0,
+          "m": 2,
+          "j": 4,
+          "U": [
+            1
+          ],
+          "terminal_defect": 1
+        }
+      },
+      {
+        "p": 41,
+        "N": 8,
+        "quotient_degree": [
+          0,
+          16
+        ],
+        "shifts": [
+          0,
+          128
+        ],
+        "cutoff": "e+N+1",
+        "checked": 2193,
+        "unresolved": 0,
+        "violations": 0,
+        "best": {
+          "e": 0,
+          "m": 42,
+          "j": 8,
+          "U": [
+            1
+          ],
+          "terminal_defect": 1
+        }
+      },
+      {
+        "p": 17,
+        "N": 16,
+        "quotient_degree": [
+          0,
+          32
+        ],
+        "shifts": [
+          0,
+          256
+        ],
+        "cutoff": "e+N+1",
+        "checked": 8481,
+        "unresolved": 0,
+        "violations": 0,
+        "best": {
+          "e": 0,
+          "m": 82,
+          "j": 16,
+          "U": [
+            1
+          ],
+          "terminal_defect": 1
+        }
+      }
+    ],
+    "r1_terminal_values": [
+      0,
+      0,
+      2
+    ],
+    "runtime_seconds": 59.368958625011146
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/BinaryStream.lean": "4a6a0343d97c9ccb85764e591bc0852304b81e2fdab2b33155a00e84ddb1dfbf",
+    "FunctionFieldLittlewood/BridgeExamples.lean": "dd1f3172129f5a2b3a7b111d862cfbae519749a72f8cf7b9b0d15e7fa76a8837",
+    "FunctionFieldLittlewood/Certificate.lean": "49e69b29f73789b83285f24f72991b12ef06697d439158bea4838a0c1a4ff9f5",
+    "FunctionFieldLittlewood/DualCertificate.lean": "af7e27f22b2d5393a91d44a27d8b68eccc8004f91ce938e95e76487ee3d901d2",
+    "FunctionFieldLittlewood/Examples.lean": "6fe7328def5f277201345c202cd234c46601d4b994f826f85f109548b008cb83",
+    "FunctionFieldLittlewood/FractionalPart.lean": "14d07880c537feb8f8175475c7af80b244cf311220be1ee2a259254c2ac35668",
+    "FunctionFieldLittlewood/FractionalPartExamples.lean": "1fd978cbcf35e9a4e73c2198d3e240cc2f375ce78b6f47cf28cb96a87151c975",
+    "FunctionFieldLittlewood/LaiSprangStream.lean": "d7aa4f6c1fdcf4a5c85e0c2589e65b36389e6a5a693ab887c319b29fe61c911e",
+    "FunctionFieldLittlewood/LaurentBridge.lean": "50160d3212bea2a40379e4cbeadc207edffdeffd17a69bf5f3d74d41c83949a9",
+    "FunctionFieldLittlewood/LaurentExamples.lean": "26fe4c4820f386c83efa8a5e2f4314059b2aa074f96c77fecb956125c6435caa",
+    "FunctionFieldLittlewood/Normalisation.lean": "73c2e591f3b752a2fbdcdfe101b239fa5c11d346d51e47e3ad1f10bfb8235f11",
+    "FunctionFieldLittlewood/ParityDescent.lean": "890c965d4aaef1650c4552f312a7eb6a67161a823a1581005a7f81cd1e974ea2",
+    "FunctionFieldLittlewood/PolynomialBridge.lean": "688429f9dc3c8270e5feacce924960b53ec60fe29d2ecfb6ec31baf9e5e62130",
+    "FunctionFieldLittlewood/SavedCertificates.lean": "d4978fd837b310de30a841ed4594f23910e777a5107b336c5e8a354078ec04e4"
+  }
+}

@@ -1,0 +1,21 @@
+Root-moment rigidity for the Lai-Sprang Littlewood series in Lean 4
+Copyright 2026 Greg Baker
+
+Original project code and documentation are distributed under Apache-2.0.
+Existing third-party notices and licences remain applicable to their material.
+Mathlib and its transitive dependencies retain their respective licences;
+they are fetched using the pinned manifest and are not bundled in this archive.
+
+The mathematical construction and parity/Vandermonde/nonsquare method are
+attributed to Li Lai and Johannes Sprang, On the P(t)-adic Littlewood
+conjecture in odd characteristics, arXiv:2606.00633v1, especially Section 3.
+Other mathematical sources are credited in the dated research records.
+This release does not claim invention of their theorem, first-formalisation
+priority, a complete Lean proof of the auxiliary degree cutoff, or a solution
+to either the all-degree auxiliary bound or the characteristic-two frontier.
+
+Development used OpenAI Codex extensively to write and revise Lean proofs,
+code and documentation, and to run exact experiments. Greg Baker directed
+the research. Kernel checking and automated audits do not by themselves
+establish fidelity to the intended mathematical statement or novelty.
+No independent human peer review is claimed for this release.

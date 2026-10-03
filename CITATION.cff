@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "Please cite the specific archived release when using these proofs or experiments."
+type: software
+title: "Root-moment rigidity for the Lai-Sprang Littlewood series in Lean 4"
+authors:
+  - family-names: Baker
+    given-names: Greg
+version: 0.1.0
+doi: 10.5281/zenodo.23117611
+url: https://doi.org/10.5281/zenodo.23117611
+date-released: '2026-10-03'
+license: Apache-2.0
+repository-code: https://github.com/solresol/function-field-littlewood
+keywords:
+  - Lean 4
+  - formal verification
+  - function fields
+  - Littlewood conjecture
+  - finite fields
+  - Vandermonde matrices
+abstract: >-
+  A Lean 4 formalisation of root-moment rigidity and the forced-factor step
+  used in a parity descent for the Lai-Sprang Littlewood series. Includes
+  exact-certificate soundness, named coefficient streams, polynomial and
+  Laurent-series bridges, and reproducible exact finite-field experiments.
+  The all-shift degree cutoff d<N(N-1) has an ordinary proof in the release
+  but is not yet an end-to-end Lean theorem. The all-degree auxiliary bound
+  and characteristic-two frontier remain unresolved. The mathematical method
+  is attributed to Lai and Sprang. First-formalisation priority and independent
+  human peer review are not claimed. Development used OpenAI Codex extensively
+  under Greg Baker's research direction.

@@ -2,6 +2,12 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
+The first research software release is **Root-moment rigidity for the
+Lai–Sprang Littlewood series in Lean 4**; see [v0.1.0](releases/v0.1.0.md)
+for its exact theorem, limitations and reproduction commands. Citation metadata
+is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
+mathematical attribution and AI disclosure in [NOTICE](NOTICE).
+
 ## Status update (3 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.

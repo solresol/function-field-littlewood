@@ -1,0 +1,33 @@
+{
+  "title": "Root-moment rigidity for the Lai-Sprang Littlewood series in Lean 4",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Baker, Greg"
+    }
+  ],
+  "version": "0.1.0",
+  "publication_date": "2026-10-03",
+  "license": "Apache-2.0",
+  "description": "<p>Lean 4 formalisation of root-moment rigidity and the forced-factor step in a parity descent for the Lai-Sprang function-field Littlewood series. Includes exact-certificate soundness, named coefficient streams, polynomial/Laurent coefficient and fractional-product bridges, and reproducible exact finite-field experiments.</p><p>The included ordinary proof establishes the auxiliary all-shift bound j-d &lt;= N for d &lt; N(N-1), with N=2^v_2(p-1). This cutoff is not yet an end-to-end Lean theorem: the root enumeration, coefficient-window-to-moment derivation and complete descent remain separate obligations. The all-degree auxiliary bound and characteristic-two frontier remain unresolved.</p><p>The parity/Vandermonde/nonsquare method is attributed to Li Lai and Johannes Sprang, arXiv:2606.00633v1, Section 3. First-formalisation priority and independent human peer review are not claimed. OpenAI Codex was used extensively under Greg Baker's research direction. See NOTICE and releases/v0.1.0.md for provenance, exact hypotheses and reproduction instructions.</p>",
+  "keywords": [
+    "Lean 4",
+    "formal verification",
+    "function fields",
+    "Littlewood conjecture",
+    "finite fields",
+    "Vandermonde matrices"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.48550/arXiv.2606.00633",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/solresol/function-field-littlewood",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
