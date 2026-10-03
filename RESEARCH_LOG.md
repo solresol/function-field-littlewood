@@ -497,3 +497,34 @@ automation readback were checked. No code or proof changed; tests were not rerun
   No first-formalisation priority, full Lean degree-cutoff theorem or new
   main-conjecture result is claimed. Next research steps remain the named-stream
   window-to-moment formal bridge and the terminal missing-relation question.
+
+## 2026-10-04 (Sunday, Australia/Sydney): linked terminal obstruction
+
+- Clean main at 1555311; correct origin, fetched/FF-only current; no competing
+  run marker or repository process. Read prior automation memory, roadmap,
+  recent reports and actual stream, parity, solver/checker and Lean sources.
+  Sydney is now on AEDT (UTC+11). Stated the linked-moment question before coding.
+- Ordinary proof: terminal linked weights simplify to 2(V_0^2-t V_1^2).
+  Exact row budgets supply H moments at even shifts, forcing t^N+1 into V;
+  odd shifts m=2n+1 supply H-1 and leave V_0^2-t V_1^2=C t^(-n) modulo
+  t^H+1. The next moment is -NC. No indefinite descent or global bound follows.
+- V=1,m=1 satisfies all retained moments and has missing moment -N for every
+  r>=2. Its original first stream row is H(r-1), nonzero. This retires the
+  linkage-only completion, not the sufficient terminal-window claim. The actual
+  r=1 terminal failure remains 0,0,2 over F_3. No new characteristic-two result.
+- Small exact checker verifies linked identities, both row-budget parities,
+  the entire F_5 residue kernel for c=0,...,7, and independent root-sum readback
+  of prescribed examples. Python3.11.6, seed null; no expanded search or timeout
+  inference. All-r statements are ordinary proofs, not finite extrapolations.
+- Existing 41 Python tests pass in 6.602s (6.998537s subprocess); cached/replayed
+  full Lean build passes 2,212 jobs in 4.785360s. No Lean, dependency or solver
+  changes. Exact output and validation retained in results/2026-10-04-*.
+- Primary LS2606.00633v1 and BPZ2608.22078v1 refreshed; scoped search found no
+  later characteristic-two resolution, with noisy results and no absence claim.
+  Revisited quadratic/unbounded-window sources; retired binary streams stay
+  retired. No novelty claim. Existing Friday cutoff and Saturday formal limits
+  remain accurate; weekly evidence separated from infrastructure/dissemination.
+- Classification: modest mathematical progress on the auxiliary obstruction;
+  Sunday regressions are verification. Next: retain original parity boundary
+  rows or sibling compatibility to constrain C, not further moment-only examples.
+  Formal path: named-stream/root enumeration and parent-window moment derivation.

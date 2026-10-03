@@ -9,7 +9,7 @@ is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
 mathematical attribution and AI disclosure in [NOTICE](NOTICE). The public
 archive is [Zenodo DOI 10.5281/zenodo.23117611](https://doi.org/10.5281/zenodo.23117611).
 
-## Status update (3 Oct 2026)
+## Status update (4 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -30,7 +30,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 30 September 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 4 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -58,6 +58,15 @@ See [the proof and precise obstruction](results/2026-10-02-parity-descent.md).
 This is mathematical progress on the auxiliary bound, not a new main-conjecture
 counterexample or a Lean theorem. The method adapts Lai–Sprang's Section 3;
 publication novelty has not been established.
+
+**4 October terminal refinement:** for R=F_1 V with d+1 zero rows, an even
+shift forces t^N+1 to divide V. At an odd shift m=2n+1, the linked factors
+leave the necessary congruence V_0^2-t V_1^2=C t^(-n) modulo t^(N/2)+1.
+The missing moment is -NC. Linkage alone cannot force C=0: V=1,m=1 satisfies
+all retained moments but has a nonzero missing moment, for every r>=2.
+It fails the original stream window and does not refute the terminal statement.
+This ordinary algebraic refinement redirects work to the uncompressed rows;
+see [the proof and weekly assessment](results/2026-10-04-terminal-obstruction.md).
 
 The verified 17 September run finds no violation in the boxes below. The analogous strengthening is false for the tested `r=1` primes `3,7,11,19,23,31`: `R(t)=1+t^2`, `m=2` gives `j=6` and defect `4=2N`. This supplies exact witnesses attaining the published bound in these cases.
 
@@ -447,8 +456,9 @@ The original tests independently expand the original root sums for 2,560 coeffic
 ## Near-term programme
 
 See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
-Next substantive work: recover the missing terminal root moment using the linked
-parity factors, or expose lost sibling compatibility. The ordinary reduction
+Next substantive work: use the uncompressed terminal parity rows or sibling
+compatibility to eliminate the residual scalar C. The linked factors and H-1
+moments alone do not suffice, as proved on 4 October. The ordinary reduction
 already proves the all-shift cutoff d<N(N-1). Its moment-to-factor step is now
 formalised; the parent-window calculation and complete descent remain to be checked
 in Lean.

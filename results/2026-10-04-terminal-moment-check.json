@@ -1,0 +1,136 @@
+{
+  "python": "3.11.6",
+  "seed": null,
+  "linked_identity_checks": 68,
+  "row_budget_checks": 80,
+  "exhaustive_F5_kernel_checks": 200,
+  "examples": [
+    {
+      "p": 3,
+      "r": 1,
+      "N": 2,
+      "V": [
+        1
+      ],
+      "m": 1,
+      "retained_moments": [],
+      "missing_moment": 1,
+      "stream_rows": [
+        0,
+        0,
+        2
+      ],
+      "inclusive_original_endpoint": 5
+    },
+    {
+      "p": 5,
+      "r": 2,
+      "N": 4,
+      "V": [
+        1
+      ],
+      "m": 1,
+      "retained_moments": [
+        0
+      ],
+      "missing_moment": 1,
+      "stream_rows": [
+        2,
+        0,
+        0,
+        0,
+        4
+      ],
+      "inclusive_original_endpoint": 9
+    },
+    {
+      "p": 13,
+      "r": 2,
+      "N": 4,
+      "V": [
+        1
+      ],
+      "m": 1,
+      "retained_moments": [
+        0
+      ],
+      "missing_moment": 9,
+      "stream_rows": [
+        2,
+        0,
+        0,
+        0,
+        4
+      ],
+      "inclusive_original_endpoint": 9
+    },
+    {
+      "p": 41,
+      "r": 3,
+      "N": 8,
+      "V": [
+        1
+      ],
+      "m": 1,
+      "retained_moments": [
+        0,
+        0,
+        0
+      ],
+      "missing_moment": 33,
+      "stream_rows": [
+        8,
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ],
+      "inclusive_original_endpoint": 17
+    },
+    {
+      "p": 17,
+      "r": 4,
+      "N": 16,
+      "V": [
+        1
+      ],
+      "m": 1,
+      "retained_moments": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "missing_moment": 1,
+      "stream_rows": [
+        7,
+        16,
+        16,
+        8,
+        8,
+        8,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        16
+      ],
+      "inclusive_original_endpoint": 33
+    }
+  ],
+  "runtime_seconds": 0.0030025000451132655,
+  "scope": "identity checks; no multiplier search or infinite inference"
+}

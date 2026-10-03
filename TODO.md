@@ -31,15 +31,20 @@ The three retired binary baselines remain regression inputs only.
 
 ## Next computation
 
-- The 2 October factor-aware parity descent proves the all-shift N-bound for
-  d<N(N-1). A violation descends to an F_1=1+t+...+t^(N-1) multiple S with
-  deg S+1 zero rows. Can the linked terminal parity factors V_0+t V_1 and
-  V_0+V_1 recover the missing root moment for r>=2? Alternatively, can a
-  terminal counterexample expose the sibling compatibility lost by descent?
-  See results/2026-10-02-parity-descent.md for the full proof and exact windows.
-  The sufficient terminal statement survived a targeted finite screen, but is
-  unproved and is not asserted equivalent to the original all-degree bound.
-  Do not expand its boxes without a discriminating mathematical hypothesis.
+- The 2 October descent proves the all-shift N-bound for d<N(N-1). A violation
+  descends to an F_1 multiple S with deg S+1 zero rows. The 4 October refinement
+  identifies the missing scalar: at odd shift m=2n+1, writing S=F_1 V gives
+  V_0^2-t V_1^2=C t^(-n) modulo t^(N/2)+1, with missing moment -NC.
+  **Linkage plus H-1 moments alone cannot force C=0**: V=1,m=1 is a uniform
+  obstruction, though it fails the original stream window for r>=2.
+  Retain both uncompressed parity systems and determine whether an unused
+  boundary row or sibling compatibility kills C. A genuine terminal-window
+  witness would instead expose what descent discarded. At even shift the full
+  H moments force t^N+1 into V; this alone is not an indefinite descent proof.
+  See results/2026-10-04-terminal-obstruction.md for the exact scalar, row
+  budgets and failed implication. The terminal statement is sufficient and
+  unproved, not asserted equivalent to the original bound. Do not expand its
+  boxes or formalise more missing-moment examples without a discriminating aim.
 
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
@@ -96,6 +101,21 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-04 (Sunday integration)
+
+- Ordinary proof of the linked weight identity and one-scalar kernel; full
+  moments at even shifts force t^N+1 into the terminal quotient V.
+- V=1,m=1 disproves linkage-only recovery of the missing moment for all r>=2;
+  its first original stream row H(r-1) is nonzero. The terminal claim remains
+  open. Preserve the actual r=1 failure; do not conflate the two examples.
+- Mathematical progress this week: three-term proof, degree cutoff, terminal
+  obstruction refinement. Verification/infrastructure: Laurent/product bridges
+  and moment rigidity; dissemination: v0.1.0 archive. No characteristic-two
+  advance and no all-degree bound. Exact small checks and existing Lean/Python
+  regressions passed; these checks are not themselves mathematical progress.
+- Next formal path remains the named-stream parent-window-to-moment proof,
+  enabling the degree cutoff. No further product bridges or attainment searches.
 
 ## Completed on 2026-10-03 (Saturday formalisation)
 
