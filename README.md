@@ -6,7 +6,8 @@ The first research software release is **Root-moment rigidity for the
 Lai–Sprang Littlewood series in Lean 4**; see [v0.1.0](releases/v0.1.0.md)
 for its exact theorem, limitations and reproduction commands. Citation metadata
 is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
-mathematical attribution and AI disclosure in [NOTICE](NOTICE).
+mathematical attribution and AI disclosure in [NOTICE](NOTICE). The public
+archive is [Zenodo DOI 10.5281/zenodo.23117611](https://doi.org/10.5281/zenodo.23117611).
 
 ## Status update (3 Oct 2026)
 

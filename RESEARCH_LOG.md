@@ -473,3 +473,27 @@ automation readback were checked. No code or proof changed; tests were not rerun
   Next formal step: derive moments from the named stream's parent window.
   Next mathematical step: recover the terminal missing relation or expose lost
   sibling compatibility; Sunday's review should not expand routine boxes.
+
+## 2026-10-03 (Saturday, Australia/Sydney): archival release and project registration
+
+- Published v0.1.0, *Root-moment rigidity for the Lai-Sprang Littlewood series
+  in Lean 4*, at https://doi.org/10.5281/zenodo.23117611. Frozen source commit
+  c80ad56b177bad7eb4d91a64388f5f2a58e7a4f1; annotated tag v0.1.0 pushed.
+  The development repository remains private; the archived source is public
+  under Apache-2.0 with attribution and extensive Codex-use disclosure.
+- Release validation: full Lean build, standard-only axiom reports, 41 Python
+  tests and the existing exact descent checks passed; details and source hashes
+  are in releases/v0.1.0-validation.json. This repeated validation supports
+  publication and does not constitute new mathematical progress.
+- Confirmed the unauthenticated Zenodo API reports a submitted, open record;
+  all three public file downloads match the uploaded files byte for byte.
+  Source ZIP SHA-256: ab5876bb36945a62c35934318d0e1ec93210550c628f6cc9657d490bfb769372.
+- Lean community registration: https://github.com/leanprover-community/project-intentions/issues/49.
+  Also registered the p-adic machine-learning, Scholz-Brauer and NP-hardness
+  projects as issues 50, 51 and 52. Their public issue records exist, but the
+  registry bot did not put them on its board because the API could not apply
+  the required intention label. Maintainer assistance requested once on #49.
+- Classification: verification/infrastructure progress and dissemination.
+  No first-formalisation priority, full Lean degree-cutoff theorem or new
+  main-conjecture result is claimed. Next research steps remain the named-stream
+  window-to-moment formal bridge and the terminal missing-relation question.
