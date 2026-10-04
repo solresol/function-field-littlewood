@@ -31,20 +31,18 @@ The three retired binary baselines remain regression inputs only.
 
 ## Next computation
 
-- The 2 October descent proves the all-shift N-bound for d<N(N-1). A violation
-  descends to an F_1 multiple S with deg S+1 zero rows. The 4 October refinement
-  identifies the missing scalar: at odd shift m=2n+1, writing S=F_1 V gives
-  V_0^2-t V_1^2=C t^(-n) modulo t^(N/2)+1, with missing moment -NC.
-  **Linkage plus H-1 moments alone cannot force C=0**: V=1,m=1 is a uniform
-  obstruction, though it fails the original stream window for r>=2.
-  Retain both uncompressed parity systems and determine whether an unused
-  boundary row or sibling compatibility kills C. A genuine terminal-window
-  witness would instead expose what descent discarded. At even shift the full
-  H moments force t^N+1 into V; this alone is not an indefinite descent proof.
-  See results/2026-10-04-terminal-obstruction.md for the exact scalar, row
-  budgets and failed implication. The terminal statement is sufficient and
-  unproved, not asserted equivalent to the original bound. Do not expand its
-  boxes or formalise more missing-moment examples without a discriminating aim.
+- The 5 October reverse lift makes the terminal F_1 statement **equivalent**
+  to the auxiliary all-degree N-bound. A terminal counterexample S at M lifts
+  via R=S(t^N), m=NM to exact defect 2N. Together with the earlier descent,
+  this proves that the maximum defect is either N or 2N, without selecting one.
+  There is no remaining sibling-compatibility barrier to using a terminal witness.
+  A minimum-degree terminal counterexample must have odd shift M=2n+1 and
+  nonzero C in V_0^2-t V_1^2=C t^(-n) modulo t^(N/2)+1; its quotient V is
+  coprime to t^N+1. Test whether the **original parity rows** can coexist with
+  these conditions, or prove they cannot. Linkage plus compressed moments alone
+  still cannot kill C. See results/2026-10-05-terminal-lift.md for the proof,
+  including the use of Lai–Sprang Proposition 2.3 in the zero-sibling case.
+  Do not replace this question with expanded boxes or further moment-only examples.
 
 - Screen new binary streams for rational/quadratic generating series and existing
   unbounded-window results before treating them as open candidates. The known
@@ -101,6 +99,17 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-05 (Monday computation)
+
+- Ordinary reverse-lift identity for all F_1 multiples and scales through N;
+  terminal equivalence and the maximum-defect N-or-2N dichotomy.
+- Minimum-degree terminal counterexamples localised to odd shifts, C!=0 and
+  quotient coprime to t^N+1. The actual original rows remain unresolved.
+- Mathematical progress on the auxiliary obstruction; no selected alternative,
+  characteristic-two advance, Lean theorem or established novelty. Independent
+  root-sum checks and existing Python regressions passed; no expanded search.
+- Next formal work still supplies the named-stream/window-to-moment bridge.
 
 ## Completed on 2026-10-04 (Sunday integration)
 

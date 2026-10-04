@@ -9,7 +9,7 @@ is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
 mathematical attribution and AI disclosure in [NOTICE](NOTICE). The public
 archive is [Zenodo DOI 10.5281/zenodo.23117611](https://doi.org/10.5281/zenodo.23117611).
 
-## Status update (4 Oct 2026)
+## Status update (5 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -30,7 +30,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 4 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 5 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -67,6 +67,16 @@ all retained moments but has a nonzero missing moment, for every r>=2.
 It fails the original stream window and does not refute the terminal statement.
 This ordinary algebraic refinement redirects work to the uncompressed rows;
 see [the proof and weekly assessment](results/2026-10-04-terminal-obstruction.md).
+
+**5 October reverse lift:** for every F_1-multiple S, dilating by t->t^N
+kills all non-N-divisible rows and reproduces S on the remaining rows.
+The terminal statement is therefore **equivalent** to the auxiliary all-degree
+N-bound. A terminal failure lifts to exact defect 2N, so the maximum defect
+for each fixed prime with r>=2 is either N or 2N; this does not decide which.
+Any minimum-degree terminal counterexample must have odd shift and C!=0,
+with its quotient V coprime to t^N+1. These ordinary proofs use Lai–Sprang
+Proposition 2.3 and the preceding descent; they are not Lean theorems or a
+novelty claim. See [the proof and checks](results/2026-10-05-terminal-lift.md).
 
 The verified 17 September run finds no violation in the boxes below. The analogous strengthening is false for the tested `r=1` primes `3,7,11,19,23,31`: `R(t)=1+t^2`, `m=2` gives `j=6` and defect `4=2N`. This supplies exact witnesses attaining the published bound in these cases.
 
@@ -456,9 +466,10 @@ The original tests independently expand the original root sums for 2,560 coeffic
 ## Near-term programme
 
 See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
-Next substantive work: use the uncompressed terminal parity rows or sibling
-compatibility to eliminate the residual scalar C. The linked factors and H-1
-moments alone do not suffice, as proved on 4 October. The ordinary reduction
+Next substantive work: rule out the original odd-shift terminal parity rows
+with C!=0 and quotient coprime to t^N+1, or exhibit such a window. The reverse
+lift makes any terminal witness decisive; no sibling-compatibility barrier
+remains. Linked factors and H-1 moments alone do not suffice. The ordinary reduction
 already proves the all-shift cutoff d<N(N-1). Its moment-to-factor step is now
 formalised; the parent-window calculation and complete descent remain to be checked
 in Lean.

@@ -528,3 +528,38 @@ automation readback were checked. No code or proof changed; tests were not rerun
   Sunday regressions are verification. Next: retain original parity boundary
   rows or sibling compatibility to constrain C, not further moment-only examples.
   Formal path: named-stream/root enumeration and parent-window moment derivation.
+
+## 2026-10-05 (Monday, Australia/Sydney): reverse terminal lift
+
+- Clean main at 8941989; correct origin, fetched/FF-only current; no competing
+  lock/process. Read prior automation memory, roadmap, recent proofs and actual
+  stream, parity, affine and independent-oracle sources. Stated the original-row
+  versus missing-scalar question before coding and the reverse-lift test before
+  implementing it. No superseded odd-characteristic or retired-binary search.
+- Ordinary proof: if F_1|S, then S(t^(2^i)) has nonzero rows only at multiples
+  of 2^i, reproducing S there, for every i=0,...,r. At aligned shifts the first
+  index scales exactly. The scale endpoint and full factor are essential.
+- Lai–Sprang Proposition 2.3 implies terminal first index <=deg S+2 by applying
+  t-1; any terminal failure has equality and nonzero constant term. Its reverse
+  lift attains defect 2N. Together with 2 October descent, the terminal claim
+  is equivalent to the all-degree N-bound. For fixed p with r>=2, maximum defect
+  is either N or 2N. This constrains the optimum, not all individual defects.
+- Original parity rows plus minimal degree localise any terminal counterexample
+  to odd shift with C!=0 and quotient coprime to t^N+1. The zero odd-child
+  case uses Proposition 2.3 directly. No proof that the remaining rows force
+  C=0, no selected dichotomy branch, no characteristic-two result or Lean theorem.
+- Deterministic prescribed checks: 2,885 reverse-lift identities, five quotient
+  vectors including a zero constant, p=3,5,13,41,17, all scales through r and
+  rows 1,...,4N+1, independent root-sum readback. Negative controls exceed the
+  scale or omit factors; actual r=1 comparison retained. Maximum original
+  index 481 including controls. Python 3.9.6, seed null, no optimiser/search.
+- Existing 41 Python tests pass in 3.408s (3.515412s subprocess). Exact check output
+  and runtimes in results/2026-10-05-terminal-lift-check.json and validation JSON.
+  No Lean/dependency change or build. Complete source/proof/document diff reviewed.
+- Primary LS2606.00633v1 Proposition 2.3/Section 3 and BPZ2608.22078v1 refreshed
+  5 October, with quadratic/unbounded-window references. Scoped searches found no
+  later characteristic-two resolution but were noisy; no absence/novelty claim.
+- Classification: mathematical progress on the auxiliary proof obstruction.
+  Next: original odd-shift rows with nonzero residual scalar; a genuine terminal
+  witness now suffices without a sibling-compatibility check. Formal next step
+  remains the named-stream/window-to-moment bridge enabling the degree cutoff.

@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-04T21:28:21.369961+00:00",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "search.terminal_lift_check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.080123417,
+      "output": "results/2026-10-05-terminal-lift-check.json",
+      "summary": "exact identity checks passed"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.515412417,
+      "output": ".research/2026-10-05-tests.txt",
+      "summary": "dic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 3.408s\n\nOK\n"
+    }
+  ],
+  "lean": "not run: no Lean or dependency changes"
+}
