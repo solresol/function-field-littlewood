@@ -563,3 +563,33 @@ automation readback were checked. No code or proof changed; tests were not rerun
   Next: original odd-shift rows with nonzero residual scalar; a genuine terminal
   witness now suffices without a sibling-compatibility check. Formal next step
   remains the named-stream/window-to-moment bridge enabling the degree cutoff.
+
+## 2026-10-06 (Tuesday, Australia/Sydney): Lean named-stream root formula
+
+- Clean main at 4fcb9c0; correct origin, fetched/FF-only current, no competing
+  lock/process. Read prior automation memory, roadmap, recent ordinary proofs
+  and actual stream/descent/checker/Lean sources. Stated the exact root-formula
+  question, unresolved bridge and decision criteria before implementation.
+- RootStream.lean proves uniform primitive-root existence, H distinct roots of
+  X^H+1, their completeness and power-sum formula. It identifies every odd
+  coefficient of the named support stream with that root sum, including u=0.
+- Polynomial-filter corollary gives E_P(n)=sum_i z_i^n P(z_i) for arbitrary
+  polynomials and shifts, including zero polynomials/constant endpoints. Exact
+  inclusive index 2(n+natDegree P)+1; no truncation or finite extrapolation.
+  Only N dividing p-1 is needed here. Maximal 2-adic valuation is required
+  later for nonsquareness. The r=1 comparison remains within the theorem.
+- Full lake build passes 2,214 jobs in 18.452428167s without warnings; 95 axiom
+  reports (10 new) standard-only, project proof-bypass scan clean. Pins unchanged;
+  actual mathlib primitive-root/cyclic/evaluation sources and Apache-2.0 licence
+  inspected. No Python edits, tests rerun, finite search or certificate exports.
+- Primary LS2606.00633v1 functional equation/Section 3 and BPZ2608.22078v1
+  refreshed 6 October. No comprehensive frontier/novelty search, new binary
+  candidate or main-conjecture claim. Report/build/validation retained as
+  results/2026-10-06-*. Complete source and supporting-record diff inspected.
+- Classification: verification/infrastructure progress on the auxiliary proof
+  path. Root enumeration/formula gap closed; full window-to-moments derivation,
+  degree/shift descent and iteration still unformalised. The all-degree bound,
+  terminal scalar obstruction and N-or-2N decision remain unresolved.
+- Next formal step: parity splitting, cross-convolution and exact row budgets
+  supplying H moments. Next computation: original odd-shift terminal rows with
+  C!=0 and coprime quotient; do not repeat enumeration or routine finite boxes.

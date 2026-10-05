@@ -86,8 +86,10 @@ retired examples that never reaches the substantive question.
   The moment-to-forced-factor step is now kernel-checked in ParityDescent.lean
   (3 October), including Vandermonde rigidity, prime-field nonsquareness and
   nonvanishing of the geometric factor. Do not repeat that bridge. Next connect
-  the parent rows to the exact H moments: prove the odd-subsequence root formula,
-  construct the H-root enumeration, and verify cross-convolution and row budgets.
+  the parent rows to the exact H moments. RootStream.lean now proves the
+  uniform H-root enumeration, odd-subsequence formula and polynomial-filter
+  identity (6 October); do not repeat these. Prove the polynomial parity split,
+  cross-convolution and exact row budgets using these identities.
   Then prove the leading-child degree/shift step and iterate to the cutoff.
   These are outstanding proofs, not assumed consequences of the new theorem.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
@@ -99,6 +101,18 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-06 (Tuesday formalisation)
+
+- Kernel-checked uniform root existence, distinctness, completeness and the
+  named support stream's odd-subsequence formula, including H=1 and u=0.
+- Proved the polynomial-filter identity for arbitrary polynomials and shifts,
+  without endpoint assumptions or truncation. Only N dividing p-1 is needed.
+- Classification: verification/infrastructure progress toward the structural
+  cutoff. Full window-to-moments derivation and iterated descent remain open
+  formal work; the all-degree bound and characteristic-two frontier unchanged.
+- Next formal step: parity splitting, cross-convolution and exact row budgets.
+  Next computation remains the original odd-shift terminal rows with C!=0.
 
 ## Completed on 2026-10-05 (Monday computation)
 

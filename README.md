@@ -9,7 +9,7 @@ is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
 mathematical attribution and AI disclosure in [NOTICE](NOTICE). The public
 archive is [Zenodo DOI 10.5281/zenodo.23117611](https://doi.org/10.5281/zenodo.23117611).
 
-## Status update (5 Oct 2026)
+## Status update (6 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.
 
@@ -442,10 +442,28 @@ moment need not force the factor.
 
 This is **verification/infrastructure progress**. The generic theorem still
 requires an enumeration of H distinct roots and the full moment equations.
-Deriving those equations from the support-formula stream's parent window,
-constructing the enumeration uniformly, and completing the degree/shift descent
-remain unformalised. Neither the all-degree bound nor the terminal obstruction
+Deriving those equations from the support-formula stream's parent window
+and completing the degree/shift descent remain unformalised. The uniform
+enumeration and odd-subsequence identity were subsequently proved on 6 October
+(below). Neither the all-degree bound nor the terminal obstruction
 has been resolved. See [scope and validation](results/2026-10-03-moment-rigidity.md).
+
+## Named stream root formula in Lean (6 October)
+
+`RootStream.lean` constructs all H roots of t^H+1 in F_p and proves
+`a_(2u+1)=sum_i z_i^u` for the infinite support stream, including u=0.
+It also proves the polynomial-filter formula
+`sum_j P_j a_(2(n+j)+1)=sum_i z_i^n P(z_i)` for every polynomial P.
+The only arithmetic hypothesis is N=2H dividing p-1; maximal 2-adic valuation
+is needed later for nonsquareness, not for these identities. The r=1 case
+is included. Root existence, distinctness and completeness are proved.
+
+This is **verification/infrastructure progress**: it removes the root-formula
+gap on the path to the degree cutoff. The parent-window cross-convolution,
+exact row budgets and full descent still need formalisation. It does not
+identify the entire infinite rational-function sum, prove the all-degree
+bound, or decide the terminal N-or-2N alternative.
+See [the theorem scope and checks](results/2026-10-06-root-stream.md).
 
 Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 

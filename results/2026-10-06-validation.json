@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-06",
+  "timezone": "Australia/Sydney",
+  "classification": "verification/infrastructure progress",
+  "command": "lake build",
+  "exit_code": 0,
+  "elapsed_seconds": 18.452428167,
+  "axiom_reports": 95,
+  "new_axiom_reports": 10,
+  "nonstandard_axioms": [],
+  "prohibited_token_scan": [],
+  "warnings": [],
+  "lean_toolchain": "leanprover/lean4:v4.27.0",
+  "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "seed": null,
+  "finite_search": "none",
+  "python_tests": "not rerun; no Python source or certificate changes",
+  "sha256": {
+    "FunctionFieldLittlewood/RootStream.lean": "4a2aa6203408396d8e7fbccbaead29c7629b65c447da7fac1e0ebde1a76cd25f",
+    "FunctionFieldLittlewood.lean": "4fd9b177ac976142afac0acc8c438d4e325c997b484fb90db7b794ea2bca5e24",
+    "results/2026-10-06-lean-build.txt": "b34c1340d7c85f44f886983798257503fd1141214cba0866a49e5182b3647fdd"
+  }
+}
