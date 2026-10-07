@@ -3,8 +3,9 @@ schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
 updated: '2026-10-07'
-scope: Curated theorem groups proved in this repository; supporting lemmas remain in the source.
-  Other projects can reuse this format without changing this project scope.
+scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
+  package is verified separately; original groups retain their historical audit and archive
+  coverage.
 verification:
   proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
   lean_toolchain: leanprover/lean4:v4.27.0
@@ -13,8 +14,10 @@ verification:
   - propext
   - Classical.choice
   - Quot.sound
-  level: Lean kernel build and declaration/axiom audit; no Comparator or independent-kernel
-    certification claimed
+  level: 'Default for the original nine groups: Lean kernel build and declaration/axiom audit.
+    The additional package has separate Comparator and independent-kernel evidence in its entry.'
+  snapshot_note: The default proof/toolchain pin describes the original nine groups. Each additional
+    group records its own proof snapshot, toolchain and dependencies in evidence.
 theorems:
 - id: root-moment-rigidity
   title: Root-moment rigidity and forced factors
@@ -486,6 +489,91 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: independent-root-moment-package
+  title: Independent root enumeration and forced-factor package
+  status: kernel-checked
+  mathematical_origin: source-based adaptation and combination of existing formal steps
+  first_formalisation_priority: unestablished
+  statement: For every odd prime with p-1=2^(r+1)(2k+1) and s dividing 2^r, there is a complete
+    root enumeration representing the explicit odd coefficients and all polynomial filters;
+    a full H-moment block forces the geometric binomial factor into both parity children.
+  assumptions:
+  - Prime p>2; r,k,s natural; p-1=2^(r+1)(2k+1); s divides H=2^r.
+  - The forced-factor implication assumes all H consecutive weighted moments vanish.
+  - The coefficient sequence and geometric factor are concrete finite formulas inside the independent
+    statement.
+  limitations: This combines previously proved steps into a readable independent statement.
+    It does not derive moments from a parent window or iterate descent, and does not settle
+    an all-degree bound or claim novelty.
+  declarations:
+  - name: FunctionFieldLittlewood.Palomar.root_moment_package
+    file: Solution.lean
+    line_at_snapshot: 21
+    introduced_commit: 15ca311e989d36ead9f7eaa99bc8537a2e41ae78
+    lean_type: |-
+      FunctionFieldLittlewood.Palomar.root_moment_package {p r k s : ℕ} [Fact (Nat.Prime p)] (hp : 2 < p)
+        (horder : p - 1 = 2 ^ (r + 1) * (2 * k + 1)) (hs : s ∣ 2 ^ r) :
+        have A := fun u => if u % 2 ^ r = 0 then ↑(2 ^ r) * (-1) ^ (u / 2 ^ r) else 0;
+        have G := ∑ i ∈ Finset.range (2 ^ r / s), Polynomial.X ^ (s * i);
+        ∃ z,
+          Function.Injective z ∧
+            (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+              (∀ (x : ZMod p), x ^ 2 ^ r = -1 ↔ ∃ i, x = z i) ∧
+                (∀ (u : ℕ), A u = ∑ i, z i ^ u) ∧
+                  (∀ (P : Polynomial (ZMod p)) (n : ℕ),
+                      ∑ j ∈ Finset.range (P.natDegree + 1), P.coeff j * A (n + j) = ∑ i, z i ^ n * Polynomial.eval (z i) P) ∧
+                    ∀ (U₀ U₁ : Polynomial (ZMod p)) (n : ℕ),
+                      (∀ (j : Fin (2 ^ r)),
+                          ∑ i,
+                              z i ^ (n + ↑j) *
+                                (Polynomial.eval (z i) G *
+                                  (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+                            0) →
+                        G * (Polynomial.X ^ 2 ^ r + 1) ∣ G * U₀ ∧ G * (Polynomial.X ^ 2 ^ r + 1) ∣ G * U₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 15ca311e989d36ead9f7eaa99bc8537a2e41ae78
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-07-palomar-build.txt
+    full_build_validation: results/2026-10-07-palomar-validation.json
+    catalogue_audit: results/2026-10-07-palomar-palomar-audit.txt
+    source_sha256:
+      Challenge.lean: ec959e4e01736a64de8ce58273a37b6ed907b256da9bd3832a78239b7a7e6904
+      Solution.lean: 91ff3492b47bd4360fbd8451d732333fa86032ac71b36f10309342e81ee3299e
+      FunctionFieldLittlewood/RootStream.lean: 856169d3f9bba2d5d08b402c1ebaf5b40e07d0a00f9510bbcef856a3a270ce8d
+      FunctionFieldLittlewood/ParityDescent.lean: 35926a37fc083c9c7b9f15317bbba850d193c449dba40307ffe018c8da92ebd4
+      comparator.json: cfc3f8763847b009179bb5bb284e93013f6e0ed84255bfd561856ca27d2b6ce7
+    independent_comparison: results/2026-10-07-palomar-comparator.txt
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not included in the frozen archive.
+  palomar:
+    status: not-submitted
+    id: null
+    comparison_config: comparator.json
+    comparison:
+      status: passed
+      proof_snapshot: 15ca311e989d36ead9f7eaa99bc8537a2e41ae78
+      url: https://github.com/solresol/function-field-littlewood/actions/runs/37551138645
+      run_id: 37551138645
+      job_id: 112566648034
+      started_at: '2026-10-07T00:19:10Z'
+      completed_at: '2026-10-07T00:19:44Z'
+      elapsed_seconds: 34.0
+      kernels:
+      - Lean default
+      - NanoDa
+      - con-ron
+      sandbox: bubblewrap; no bypass
+      evidence: results/2026-10-07-palomar-comparator.txt
+      command: bash scripts/verify-palomar.sh
+      registration_boundary: Maintainer-run comparison; Palomar has not received or registered
+        this package.
 unformalised_and_open:
 - id: degree-cutoff
   status: ordinary-proof-not-lean

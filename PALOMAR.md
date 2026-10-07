@@ -48,6 +48,14 @@ No sandbox-bypass option is used. A manually dispatched GitHub Actions workflow,
 [Palomar comparison](.github/workflows/palomar.yml), supplies the Linux environment.
 Its run must be checked before reporting independent-kernel verification.
 
+Verified on 7 October 2026 at `15ca311e989d36ead9f7eaa99bc8537a2e41ae78`: the full
+Lean build and declaration audits passed, and the [Linux verification run](https://github.com/solresol/function-field-littlewood/actions/runs/37551138645)
+matched the statements and obtained acceptance from Lean’s default kernel, NanoDa
+and con-ron. The [validation record](results/2026-10-07-palomar-validation.json)
+and [comparison log](results/2026-10-07-palomar-comparator.txt) retain the evidence.
+These checks apply to the combined package, not independent comparison of every
+historical catalogue entry.
+
 ## Submission boundary
 
 Preparation and successful local/CI checks do not constitute submission or

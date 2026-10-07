@@ -83,15 +83,23 @@
     }
   },
   "linux_comparison": {
-    "status": "pending",
-    "command": "bash scripts/verify-palomar.sh",
-    "kernels_requested": [
-      "Lean",
+    "status": "passed",
+    "proof_snapshot": "15ca311e989d36ead9f7eaa99bc8537a2e41ae78",
+    "url": "https://github.com/solresol/function-field-littlewood/actions/runs/37551138645",
+    "run_id": 37551138645,
+    "job_id": 112566648034,
+    "started_at": "2026-10-07T00:19:10Z",
+    "completed_at": "2026-10-07T00:19:44Z",
+    "elapsed_seconds": 34.0,
+    "kernels": [
+      "Lean default",
       "NanoDa",
       "con-ron"
     ],
-    "sandbox_bypass": false,
-    "note": "Linux/bubblewrap unavailable on local macOS; manually dispatched GitHub Actions check will provide evidence."
+    "sandbox": "bubblewrap; no bypass",
+    "evidence": "results/2026-10-07-palomar-comparator.txt",
+    "command": "bash scripts/verify-palomar.sh",
+    "registration_boundary": "Maintainer-run comparison; Palomar has not received or registered this package."
   },
   "registration": "not-submitted",
   "archive": "v0.1.0 remains frozen on original source/toolchain; excludes this package.",
@@ -122,5 +130,7 @@
     "lake-manifest.json": "7449011a2c0f5da1303e705346f1e97cc72493a1f7f4ad4fd7038059399473b2",
     "scripts/verify-palomar.sh": "8d61625ec72762b6179af81d37b8ab098251402fb2ce8375e3024b78b753e42f",
     ".github/workflows/palomar.yml": "1a26b49ba236175bb6d66f06a42ea2ed5cf029818738029354573b7dae7722c0"
-  }
+  },
+  "proof_snapshot": "15ca311e989d36ead9f7eaa99bc8537a2e41ae78",
+  "source_hash_snapshot_check": "All recorded source and verification-script hashes match immutable commit 15ca311e989d36ead9f7eaa99bc8537a2e41ae78"
 }

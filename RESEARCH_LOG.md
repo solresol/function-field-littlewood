@@ -672,3 +672,24 @@ automation readback were checked. No code or proof changed; tests were not rerun
   result or first-formalisation claim. The original nine catalogue groups retain
   their immutable historical audit; Zenodo v0.1.0 excludes this package. Research
   priorities remain the original terminal rows and parent-window moment bridge.
+
+
+### Linux comparison completed
+
+- Manually dispatched run 37551138645 passed at immutable source
+  15ca311e989d36ead9f7eaa99bc8537a2e41ae78. Source checks, Linux full build and
+  bubblewrap sandbox setup passed; the comparison step ran for 34 seconds.
+- Actual log confirms con-ron accepted the exported proof, NanoDa accepted it,
+  Lean's default kernel accepted it, and Comparator reported the solution okay.
+  No sandbox bypass or extra submitted configuration keys. This verifies the
+  combined package and its dependencies, not separate comparison of all sixteen
+  historical catalogue declarations. Retained comparison output and updated
+  validation record identify the run, job, timestamps and exact source hashes.
+- Added the combined package as the tenth catalogue group (seventeen selected
+  declarations across both snapshots), retaining the original nine groups'
+  source pins and archive coverage. Updated public metadata and readable guides
+  with actual verification success. This completion changes documentation only;
+  all Lean sources, dependency pins and verification scripts still byte-match
+  the checked commit. Palomar intake and registration remain unperformed.
+- Classification remains verification/infrastructure progress. No novelty,
+  firstness, all-degree bound or characteristic-two conclusion follows.

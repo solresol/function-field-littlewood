@@ -24,7 +24,8 @@ Palomar registration is not yet submitted; its preparation requirements are in
 [the comparison package](PALOMAR.md).
 
 The [Palomar comparison package](PALOMAR.md) independently states and proves
-the combined root-moment component. Current development uses Lean 4.35.0-rc2;
+the combined root-moment component. Its sandboxed Comparator check and Lean,
+NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
 ## Status update (6 Oct 2026)

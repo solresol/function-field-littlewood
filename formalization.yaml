@@ -114,9 +114,10 @@ fidelity:
 review:
   status: agent-reviewed
   reviewers: []
-  notes: Lean build and standard-axiom audits passed on the migrated project. The independent
-    Challenge and Solution statements are prepared; sandboxed Comparator and independent-kernel
-    verification are pending the Linux workflow. No independent human peer review or source-author
+  notes: Lean build and standard-axiom audits passed on Lean 4.35.0-rc2. Sandboxed Comparator
+    matched the independent Challenge and Solution; Lean default, NanoDa and con-ron accepted
+    the combined package at 15ca311e989d36ead9f7eaa99bc8537a2e41ae78. This is maintainer-run
+    verification, not Palomar intake or registration. No independent human peer review or source-author
     endorsement has occurred.
 alignment:
   namespace: FunctionFieldLittlewood
@@ -160,10 +161,17 @@ registration:
       solution: Solution
       configuration: comparator.json
       theorem: FunctionFieldLittlewood.Palomar.root_moment_package
-      verification: pending
+      verification: passed
+      proof_snapshot: 15ca311e989d36ead9f7eaa99bc8537a2e41ae78
+      workflow_url: https://github.com/solresol/function-field-littlewood/actions/runs/37551138645
+      kernels:
+      - Lean default
+      - NanoDa
+      - con-ron
+      evidence: results/2026-10-07-palomar-validation.json
     remaining:
-    - Successful sandboxed Comparator and independent-kernel verification on Linux.
-    - Palomar intake and its own mechanical/editorial review; registration has not been requested.
+    - Palomar intake and its own mechanical/editorial review; no submission or registration
+      has occurred.
   zenodo:
     version: 0.1.0
     doi: 10.5281/zenodo.23117611

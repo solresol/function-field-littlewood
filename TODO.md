@@ -39,8 +39,9 @@ release. Catalogue updates support research reporting; they are not themselves
 mathematical progress or a daily work quota.
 
 The Palomar comparison package is in PALOMAR.md. Challenge/Solution modules
-and Comparator configuration are prepared; verification outcomes must be recorded
-before reporting independent-kernel certification. The source is already
+and Comparator configuration are prepared, and the sandboxed Linux comparison
+passed with Lean, NanoDa and con-ron at the recorded immutable snapshot.
+Palomar intake and its own mechanical/editorial review remain pending. The source is already
 licensed Apache-2.0 with mathematical attribution and AI-use disclosure. Do not
 claim registry verification or registration before those steps actually succeed.
 

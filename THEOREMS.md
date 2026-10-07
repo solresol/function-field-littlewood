@@ -1,7 +1,10 @@
 # Proved theorem catalogue
 
 The machine-readable register is [theorem-catalogue.yaml](theorem-catalogue.yaml).
-This catalogue pins the proved source to `a88a66bfbf75c98d279a45b40137bb5259718f10` (6 October 2026).
+The original nine groups pin their proved source to
+`a88a66bfbf75c98d279a45b40137bb5259718f10` (6 October 2026).
+The independent root-moment package has its own verified snapshot,
+`15ca311e989d36ead9f7eaa99bc8537a2e41ae78` (7 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -17,26 +20,34 @@ axiom audit, archive coverage and registry status.
 | [Littlewood product and finite nonvanishing equivalence](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/FractionalPart.lean#L187) | verification foundation | v0.1.0 |
 | [Infinite support-stream comparison witnesses](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/LaiSprangStream.lean#L99) | regression formalisation | v0.1.0 |
 | [Binary digit-parity stream recurrences](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/BinaryStream.lean#L21) | known recurrence formalised for regression | v0.1.0 |
+| [Independent root-moment package](https://github.com/solresol/function-field-littlewood/blob/15ca311e989d36ead9f7eaa99bc8537a2e41ae78/Solution.lean#L21) | independent statement and comparison of existing formal steps | Not yet archived |
 
 ## Verification boundary
 
 Every listed declaration was resolved in Lean and its axioms audited on 7 October.
-The complete pinned development built successfully on 6 October; only `propext`, `Classical.choice`
-and `Quot.sound` occur in the listed proofs. The exact audited declarations and types are in
-[the catalogue audit](results/2026-10-07-catalogue-declarations.txt).
+The historical pinned development built successfully on 6 October; only `propext`, `Classical.choice`
+and `Quot.sound` occur in the listed proofs. The historical declarations and types are in
+[the catalogue audit](results/2026-10-07-catalogue-declarations.txt); the combined package
+has a [separate declaration audit](results/2026-10-07-palomar-palomar-audit.txt).
 
-These are Lean kernel checks. Comparator and independent-kernel certification have not
-been completed, and no Palomar entry has been submitted. First-formalisation priority
-and independent human peer review remain unestablished.
+The independent package additionally passed sandboxed Comparator and proof replay
+through Lean’s default kernel, NanoDa and con-ron on 7 October; see the
+[Linux run](https://github.com/solresol/function-field-littlewood/actions/runs/37551138645) and [retained evidence](results/2026-10-07-palomar-validation.json).
+That comparison certifies the combined package and its proof dependencies; the
+historical groups retain their own recorded verification level. No Palomar entry
+has been submitted. First-formalisation priority and human peer review remain unestablished.
 
 Reproduce the declaration audit from the repository root after `lake build`:
 
 ```sh
 lake env lean verification/CatalogueAudit.lean
+lake env lean verification/PalomarAudit.lean
 ```
 
 The [publication validation record](results/2026-10-07-publication-validation.json)
 also checks YAML schema compliance, source hashes and frozen-archive coverage.
+Use each entry’s immutable commit/toolchain to reproduce a historical audit; the
+commands above audit the current development.
 
 ## Results outside the proved catalogue
 
