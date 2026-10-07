@@ -28,6 +28,17 @@ the combined root-moment component. Its sandboxed Comparator check and Lean,
 NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
+## Formal step completed on 8 October 2026
+
+[WindowMoments.lean](FunctionFieldLittlewood/WindowMoments.lean) derives the
+full root-moment block from finite parity-row windows with exact row budgets,
+then proves the geometric forced factor for the named Lai–Sprang stream.
+Zero parity quotients and shift zero are included. This is verification progress
+on the 2 October ordinary descent proof, not a new mathematical result.
+The original parent-window split, child degree/shift selection and iteration
+remain; the auxiliary all-degree bound is unresolved.
+See [the exact statement and limits](results/2026-10-08-window-moments.md).
+
 ## Status update (6 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.

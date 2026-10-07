@@ -716,3 +716,26 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Classification: literature/provenance verification; no mathematical increment.
   No proof, dependency or experiment changed. Validate records and the complete
   documentation diff; a repeated Lean build would not test these changes.
+
+## 2026-10-08 (Thursday, Australia/Sydney): finite parity windows to moments
+
+- Clean main at caa12a7 fetched and fast-forward-only current; expected origin,
+  no active run lock/process. Read current sources, roadmap, prior records and
+  primary Lai–Sprang Section 3. Stated the finite-window/moment question before
+  coding; retained odd main-theorem versus auxiliary-bound distinction.
+- Proved filter composition, support-aware cross-convolution, finite-window
+  moment extraction and four parity-budget inequalities in WindowMoments.lean.
+  Combined with existing root enumeration and forced-factor proofs for the
+  named support stream. Root moments are now conclusions from parity windows;
+  neither zero quotients nor shift zero are excluded.
+- Full pinned Lean build and separate declaration/axiom audit passed; six new
+  reports use only standard axioms. Existing Challenge placeholder is isolated;
+  no new proof placeholder or bypass. Detailed timings/evidence in the dated
+  validation/build/audit records. No Python changes/tests, finite search,
+  certificate exports, dependency update or Comparator rerun.
+- Classification: verification/infrastructure progress, no new mathematical
+  theorem or priority claim. Does not prove parent-row extraction, child degree
+  bookkeeping, iterated cutoff, auxiliary all-degree bound or a binary result.
+- Next formal step: polynomial parity split plus actual finite parent-window
+  extraction/support bounds; next computation: original odd-shift terminal
+  rows with nonzero C and coprime quotient. The terminal obstruction remains.

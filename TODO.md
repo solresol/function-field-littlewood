@@ -110,8 +110,11 @@ retired examples that never reaches the substantive question.
   nonvanishing of the geometric factor. Do not repeat that bridge. Next connect
   the parent rows to the exact H moments. RootStream.lean now proves the
   uniform H-root enumeration, odd-subsequence formula and polynomial-filter
-  identity (6 October); do not repeat these. Prove the polynomial parity split,
-  cross-convolution and exact row budgets using these identities.
+  identity (6 October); do not repeat these. WindowMoments.lean now proves
+  cross-convolution, exact finite parity-window
+  budgets, and the named-stream forced factor (8 October). Do not repeat them.
+  Prove the original parent polynomial parity split and extract its finite rows
+  and quotient support/degree bounds to discharge the new theorem hypotheses.
   Then prove the leading-child degree/shift step and iterate to the cutoff.
   These are outstanding proofs, not assumed consequences of the new theorem.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
@@ -123,6 +126,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-08 (Thursday formalisation)
+
+- Kernel-checked finite parity windows imply H consecutive root moments with
+  support-aware row budgets, including zero polynomials and zero shifts.
+- Composed with RootStream and ParityDescent to prove a forced factor for the
+  named stream without assuming root enumeration or moment vanishing.
+- Classification: verification/infrastructure progress. Parent polynomial split,
+  window extraction, child degrees/shifts and iteration remain. The all-degree
+  bound and characteristic-two frontier are unchanged; no new mathematics claim.
 
 ## Completed on 2026-10-06 (Tuesday formalisation)
 

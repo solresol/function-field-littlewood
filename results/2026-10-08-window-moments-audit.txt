@@ -1,0 +1,49 @@
+@FunctionFieldLittlewood.WindowMoments.windows_moments : ∀ {K : Type u_1} [inst : Field K] {H : ℕ} (a : ℕ → K)
+  (z : Fin H → K) (g U₀ U₁ : Polynomial K) (n delta A B : ℕ),
+  (U₁ ≠ 0 → delta + H + U₁.natDegree ≤ A) →
+    (U₀ ≠ 0 → H + U₀.natDegree ≤ B) →
+      (∀ l < A,
+          FunctionFieldLittlewood.WindowMoments.filt (g * U₀) a (n + l + 1) +
+              FunctionFieldLittlewood.WindowMoments.filt (g * U₁) (fun u => ∑ i, z i ^ u) (n + l + 1) =
+            0) →
+        (∀ l < B,
+            FunctionFieldLittlewood.WindowMoments.filt (g * U₁) a (n + delta + l + 1) +
+                FunctionFieldLittlewood.WindowMoments.filt (g * U₀) (fun u => ∑ i, z i ^ u) (n + delta + l) =
+              0) →
+          ∀ (k : Fin H),
+            ∑ i,
+                z i ^ (n + delta + ↑k) *
+                  (Polynomial.eval (z i) g * (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+              0
+@FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor : ∀ {p r k s : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    s ∣ 2 ^ r →
+      p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+        ∀ (U₀ U₁ : Polynomial (ZMod p)) (n delta A B : ℕ),
+          (U₁ ≠ 0 → delta + 2 ^ r + U₁.natDegree ≤ A) →
+            (U₀ ≠ 0 → 2 ^ r + U₀.natDegree ≤ B) →
+              (∀ l < A,
+                  FunctionFieldLittlewood.WindowMoments.filt
+                        (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀)
+                        (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + l + 1) +
+                      FunctionFieldLittlewood.WindowMoments.filt
+                        (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁)
+                        (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) (n + l + 1) =
+                    0) →
+                (∀ l < B,
+                    FunctionFieldLittlewood.WindowMoments.filt
+                          (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁)
+                          (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + delta + l + 1) +
+                        FunctionFieldLittlewood.WindowMoments.filt
+                          (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀)
+                          (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) (n + delta + l) =
+                      0) →
+                  FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * (Polynomial.X ^ 2 ^ r + 1) ∣
+                      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀ ∧
+                    FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s *
+                        (Polynomial.X ^ 2 ^ r + 1) ∣
+                      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁
+'FunctionFieldLittlewood.WindowMoments.windows_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

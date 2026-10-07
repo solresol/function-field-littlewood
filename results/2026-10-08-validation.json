@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-08",
+  "timezone": "Australia/Sydney",
+  "classification": "verification/infrastructure progress",
+  "build": {
+    "command": "lake build",
+    "exit_code": 0,
+    "elapsed_seconds": 13.022012458
+  },
+  "declaration_audit": {
+    "command": "lake env lean verification/WindowMomentsAudit.lean",
+    "exit_code": 0,
+    "elapsed_seconds": 4.785467667000001
+  },
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "new_axiom_reports": [
+    "FunctionFieldLittlewood.WindowMoments.filt_mul",
+    "FunctionFieldLittlewood.WindowMoments.cross_moment",
+    "FunctionFieldLittlewood.WindowMoments.windows_moments",
+    "FunctionFieldLittlewood.WindowMoments.parity_row_budgets",
+    "FunctionFieldLittlewood.WindowMoments.windows_forced_factor",
+    "FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor"
+  ],
+  "nonstandard_axioms": [],
+  "proof_bypass_scan": [],
+  "warnings": [
+    "warning: Challenge.lean:37:8: declaration uses `sorry`"
+  ],
+  "warning_boundary": "Existing Challenge placeholder; excluded from proved development and new theorem dependency closure.",
+  "finite_search": "none",
+  "seed": null,
+  "python_tests": "not rerun; no Python source or data changes",
+  "sha256": {
+    "FunctionFieldLittlewood/WindowMoments.lean": "bca218d86757370e4b923be831796b1b5d1ef5ed0e79fbab96684f7d652997cb",
+    "FunctionFieldLittlewood.lean": "a3609153065c442d800bad9b04b9a7b915e8053b574fb764a19d97d1815489b0",
+    "verification/WindowMomentsAudit.lean": "f5b9256ce470d5afc865d373d28c9e4aaf14453b391ddf76ef1101b7d55f4958",
+    "results/2026-10-08-lean-build.txt": "7fac286b7ec7ff12f7b3f1310b6f021b2f65eb4003ab4753eb188fa05c65b897",
+    "results/2026-10-08-window-moments-audit.txt": "ab7d806e3c838583772b8480a644ad62bd4871d36b9378beab70c68c29728d1c"
+  }
+}

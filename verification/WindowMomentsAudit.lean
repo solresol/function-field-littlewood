@@ -1,0 +1,8 @@
+module
+public import FunctionFieldLittlewood.WindowMoments
+@[expose] public section
+set_option pp.universes false
+#check @FunctionFieldLittlewood.WindowMoments.windows_moments
+#check @FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor
+#print axioms FunctionFieldLittlewood.WindowMoments.windows_moments
+#print axioms FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor
