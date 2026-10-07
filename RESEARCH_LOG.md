@@ -739,3 +739,8 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next formal step: polynomial parity split plus actual finite parent-window
   extraction/support bounds; next computation: original odd-shift terminal
   rows with nonzero C and coprime quotient. The terminal obstruction remains.
+- Proof snapshot: 931160ccf298f9d69c65f76d60e810b7a382ae24. Added the
+  new group to the catalogue with exact types, source hashes and that immutable
+  pin; all ten prior groups are unchanged. Official v0.4 metadata schema and
+  new-group provenance checks passed. This group is outside the previous
+  Comparator and Zenodo snapshots; publication/submission status is unchanged.

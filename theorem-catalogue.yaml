@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-07'
+updated: '2026-10-08'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -574,13 +574,112 @@ theorems:
       command: bash scripts/verify-palomar.sh
       registration_boundary: Maintainer-run comparison; Palomar has not received or registered
         this package.
+- id: finite-parity-windows
+  title: Finite parity windows to root moments and forced factors
+  status: kernel-checked
+  mathematical_origin: source-based adaptation
+  first_formalisation_priority: unestablished
+  statement: Finite parity-row windows with exact support-aware degree budgets imply H consecutive
+    root moments; for the named Lai-Sprang stream they force the next geometric factor.
+  assumptions:
+  - 'For windows_moments: arbitrary field, stream, H-root list and polynomials; the two finite parity
+    systems and their explicit row budgets.'
+  - 'For stream_windows_forced_factor: prime p>2, p-1=2*2^r*(2k+1), s divides 2^r, and the same windows
+    in the actual support stream with g=factorQuotient F_p (2^r) s.'
+  - The Lean r is one less than the valuation parameter. Zero polynomials and shifts are permitted;
+    degree budgets apply only to nonzero filters.
+  limitations: The original parent polynomial split, extraction of parity rows and degree budgets,
+    leading-child bookkeeping and descent iteration remain unformalised. No all-degree bound or firstness
+    claim.
+  declarations:
+  - name: FunctionFieldLittlewood.WindowMoments.windows_moments
+    file: FunctionFieldLittlewood/WindowMoments.lean
+    line_at_snapshot: 108
+    introduced_commit: 931160ccf298f9d69c65f76d60e810b7a382ae24
+    lean_type: |-
+      @FunctionFieldLittlewood.WindowMoments.windows_moments : ∀ {K : Type u_1} [inst : Field K] {H : ℕ} (a : ℕ → K)
+        (z : Fin H → K) (g U₀ U₁ : Polynomial K) (n delta A B : ℕ),
+        (U₁ ≠ 0 → delta + H + U₁.natDegree ≤ A) →
+          (U₀ ≠ 0 → H + U₀.natDegree ≤ B) →
+            (∀ l < A,
+                FunctionFieldLittlewood.WindowMoments.filt (g * U₀) a (n + l + 1) +
+                    FunctionFieldLittlewood.WindowMoments.filt (g * U₁) (fun u => ∑ i, z i ^ u) (n + l + 1) =
+                  0) →
+              (∀ l < B,
+                  FunctionFieldLittlewood.WindowMoments.filt (g * U₁) a (n + delta + l + 1) +
+                      FunctionFieldLittlewood.WindowMoments.filt (g * U₀) (fun u => ∑ i, z i ^ u) (n + delta + l) =
+                    0) →
+                ∀ (k : Fin H),
+                  ∑ i,
+                      z i ^ (n + delta + ↑k) *
+                        (Polynomial.eval (z i) g * (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+                    0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor
+    file: FunctionFieldLittlewood/WindowMoments.lean
+    line_at_snapshot: 168
+    introduced_commit: 931160ccf298f9d69c65f76d60e810b7a382ae24
+    lean_type: |-
+      @FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor : ∀ {p r k s : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          s ∣ 2 ^ r →
+            p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+              ∀ (U₀ U₁ : Polynomial (ZMod p)) (n delta A B : ℕ),
+                (U₁ ≠ 0 → delta + 2 ^ r + U₁.natDegree ≤ A) →
+                  (U₀ ≠ 0 → 2 ^ r + U₀.natDegree ≤ B) →
+                    (∀ l < A,
+                        FunctionFieldLittlewood.WindowMoments.filt
+                              (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀)
+                              (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + l + 1) +
+                            FunctionFieldLittlewood.WindowMoments.filt
+                              (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁)
+                              (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) (n + l + 1) =
+                          0) →
+                      (∀ l < B,
+                          FunctionFieldLittlewood.WindowMoments.filt
+                                (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁)
+                                (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + delta + l + 1) +
+                              FunctionFieldLittlewood.WindowMoments.filt
+                                (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀)
+                                (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) (n + delta + l) =
+                            0) →
+                        FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * (Polynomial.X ^ 2 ^ r + 1) ∣
+                            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₀ ∧
+                          FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s *
+                              (Polynomial.X ^ 2 ^ r + 1) ∣
+                            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * U₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 931160ccf298f9d69c65f76d60e810b7a382ae24
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-08-lean-build.txt
+    full_build_validation: results/2026-10-08-validation.json
+    catalogue_audit: results/2026-10-08-window-moments-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/WindowMoments.lean: bca218d86757370e4b923be831796b1b5d1ef5ed0e79fbab96684f7d652997cb
+    verification: Lean kernel and axiom/type audit; no Comparator or independent-kernel replay for
+      this increment.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: degree-cutoff
   status: ordinary-proof-not-lean
   statement: For every shift, j-d<=N when d<N(N-1).
   record: results/2026-10-02-parity-descent.md
-  remaining: Parent-window-to-moments derivation, child degree/shift bookkeeping and iterated
-    descent.
+  remaining: Original parent parity split and finite-row/degree extraction, child degree/shift
+    bookkeeping and iteration. Finite parity-windows-to-moments is now proved separately.
 - id: terminal-equivalence
   status: ordinary-proof-not-lean
   statement: Terminal F_1 nonvanishing is equivalent to the all-degree N-bound, and the maximum

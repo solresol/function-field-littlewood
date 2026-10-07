@@ -5,6 +5,8 @@ The original nine groups pin their proved source to
 `a88a66bfbf75c98d279a45b40137bb5259718f10` (6 October 2026).
 The independent root-moment package has its own verified snapshot,
 `15ca311e989d36ead9f7eaa99bc8537a2e41ae78` (7 October 2026).
+The finite parity-window group is pinned to
+`931160ccf298f9d69c65f76d60e810b7a382ae24` (8 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -21,10 +23,15 @@ axiom audit, archive coverage and registry status.
 | [Infinite support-stream comparison witnesses](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/LaiSprangStream.lean#L99) | regression formalisation | v0.1.0 |
 | [Binary digit-parity stream recurrences](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/BinaryStream.lean#L21) | known recurrence formalised for regression | v0.1.0 |
 | [Independent root-moment package](https://github.com/solresol/function-field-littlewood/blob/15ca311e989d36ead9f7eaa99bc8537a2e41ae78/Solution.lean#L21) | independent statement and comparison of existing formal steps | Not yet archived |
+| [Finite parity windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/931160ccf298f9d69c65f76d60e810b7a382ae24/FunctionFieldLittlewood/WindowMoments.lean#L168) | source-based convolution and exact row budgets | Not yet archived |
 
 ## Verification boundary
 
-Every listed declaration was resolved in Lean and its axioms audited on 7 October.
+The earlier declarations were resolved in Lean and their axioms audited on 7 October.
+The new finite-window group passed its own build and
+[declaration audit](results/2026-10-08-window-moments-audit.txt) on 8 October.
+It does not derive the finite parity rows from the original parent polynomial,
+and it is outside the older Comparator and archive snapshots.
 The historical pinned development built successfully on 6 October; only `propext`, `Classical.choice`
 and `Quot.sound` occur in the listed proofs. The historical declarations and types are in
 [the catalogue audit](results/2026-10-07-catalogue-declarations.txt); the combined package

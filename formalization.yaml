@@ -3,7 +3,8 @@ version: v0.4
 project:
   name: Lai-Sprang coefficient identities and root-moment rigidity in Lean 4
   description: Formalises root-moment rigidity, the geometric forced-factor step, uniform root
-    enumeration and the coefficient/root-sum identity for the explicit Lai-Sprang support stream.
+    enumeration, the coefficient/root-sum identity, and finite parity-window-to-moment convolution
+    for the explicit Lai-Sprang support stream.
     Includes generic exact and dual certificates and Laurent/product bridges. The parent-window
     derivation and full degree-cutoff descent are not yet assembled into a Lean theorem.
   authors:
@@ -40,7 +41,8 @@ classification:
 status:
   scope: Kernel-checked theorem groups are in theorem-catalogue.yaml. Source root enumeration
     and moment equations are explicit hypotheses of the rigidity theorem; RootStream separately
-    proves enumeration and odd/filter identities for the named support stream. The full parent-window
+    proves enumeration and odd/filter identities for the named support stream. WindowMoments derives
+    moments and the forced factor from finite parity windows with explicit row budgets. The full parent-window
     moment block, iterated degree cutoff, all-degree N-bound, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
@@ -52,6 +54,14 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor
+    file: FunctionFieldLittlewood/WindowMoments.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.Palomar.root_moment_package
     file: Solution.lean
     sorry_count: 0
@@ -118,7 +128,9 @@ review:
     matched the independent Challenge and Solution; Lean default, NanoDa and con-ron accepted
     the combined package at 15ca311e989d36ead9f7eaa99bc8537a2e41ae78. This is maintainer-run
     verification, not Palomar intake or registration. No independent human peer review or source-author
-    endorsement has occurred.
+    endorsement has occurred. The 8 October finite-window increment has a separate Lean build
+    and axiom/type audit at 931160ccf298f9d69c65f76d60e810b7a382ae24; the older Comparator
+    result does not cover it.
 alignment:
   namespace: FunctionFieldLittlewood
   statements:
