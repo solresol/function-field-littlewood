@@ -1,6 +1,10 @@
-import FunctionFieldLittlewood.LaurentBridge
-import FunctionFieldLittlewood.BinaryStream
-import FunctionFieldLittlewood.LaiSprangStream
+module
+
+public import FunctionFieldLittlewood.LaurentBridge
+public import FunctionFieldLittlewood.BinaryStream
+public import FunctionFieldLittlewood.LaiSprangStream
+
+@[expose] public section
 
 /-! Named infinite-stream witnesses transported to actual Laurent multiplication.
 These are coefficient statements, not norm or main-conjecture theorems. -/

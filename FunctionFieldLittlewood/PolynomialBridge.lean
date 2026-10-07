@@ -1,6 +1,10 @@
-import FunctionFieldLittlewood.Normalisation
-import Mathlib.Algebra.Polynomial.Degree.Lemmas
-import Mathlib.Algebra.Polynomial.Div
+module
+
+public import FunctionFieldLittlewood.Normalisation
+public import Mathlib.Algebra.Polynomial.Degree.Lemmas
+public import Mathlib.Algebra.Polynomial.Div
+
+@[expose] public section
 
 /-!
 The coefficient vectors used by the search are genuine polynomials of the

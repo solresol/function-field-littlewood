@@ -38,8 +38,9 @@ outside the proved-theorem list. A DOI covers only the source frozen in that
 release. Catalogue updates support research reporting; they are not themselves
 mathematical progress or a daily work quota.
 
-Palomar preparation requires an independent Challenge/Solution comparison,
-Comparator configuration and module-system compliance. The source is already
+The Palomar comparison package is in PALOMAR.md. Challenge/Solution modules
+and Comparator configuration are prepared; verification outcomes must be recorded
+before reporting independent-kernel certification. The source is already
 licensed Apache-2.0 with mathematical attribution and AI-use disclosure. Do not
 claim registry verification or registration before those steps actually succeed.
 

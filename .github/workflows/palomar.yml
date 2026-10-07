@@ -1,0 +1,54 @@
+name: Palomar comparison
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check source headers and limits
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess
+          for name in subprocess.check_output(['git', 'ls-files', '*.lean'], text=True).splitlines():
+              p = Path(name)
+              assert not p.is_symlink(), name
+              text = p.read_text()
+              assert text.splitlines()[0] == 'module', name
+              assert len(text.splitlines()) <= 10000, name
+          p = Path('Challenge.lean')
+          assert len(p.read_text().splitlines()) <= 300 and p.stat().st_size <= 32768
+          PY
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - name: Fetch the required Mathlib closure and build
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import subprocess
+          files = list(Path('FunctionFieldLittlewood').glob('*.lean')) + [Path('Challenge.lean')]
+          imports = sorted({name for p in files for name in
+                            re.findall(r'^(?:public )?import (Mathlib\.\S+)', p.read_text(), re.M)})
+          subprocess.run(['lake', 'exe', 'cache', 'get', *imports], check=True)
+          PY
+          lake build
+      - name: Install the Linux sandbox
+        run: |
+          sudo apt-get update -qq >/dev/null
+          sudo apt-get install -y -qq bubblewrap >/dev/null
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Compare statements and replay through independent kernels
+        run: bash scripts/verify-palomar.sh

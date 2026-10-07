@@ -1,5 +1,9 @@
-import Mathlib.Data.Matrix.Mul
-import Mathlib.Data.ZMod.Basic
+module
+
+public import Mathlib.Data.Matrix.Mul
+public import Mathlib.Data.ZMod.Basic
+
+@[expose] public section
 
 /-!
 Finite coefficient certificates for shifted polynomial multiplication.

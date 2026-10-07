@@ -1,5 +1,9 @@
-import FunctionFieldLittlewood.FractionalPart
-import FunctionFieldLittlewood.LaiSprangStream
+module
+
+public import FunctionFieldLittlewood.FractionalPart
+public import FunctionFieldLittlewood.LaiSprangStream
+
+@[expose] public section
 
 /-! Boundary controls for the product bridge. Named witnesses are existing
 regressions, not additional attainment evidence or new counterexamples. -/

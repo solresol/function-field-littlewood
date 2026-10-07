@@ -1,7 +1,11 @@
-import FunctionFieldLittlewood.SavedCertificates
-import FunctionFieldLittlewood.PolynomialBridge
-import Mathlib.Algebra.Field.ZMod
-import Mathlib.Data.Nat.Digits.Defs
+module
+
+public import FunctionFieldLittlewood.SavedCertificates
+public import FunctionFieldLittlewood.PolynomialBridge
+public import Mathlib.Algebra.Field.ZMod
+public import Mathlib.Data.Nat.Digits.Defs
+
+@[expose] public section
 
 /-!
 The infinite binary digit-parity stream and its adjacent-difference recurrences.

@@ -1,7 +1,11 @@
-import FunctionFieldLittlewood.PolynomialBridge
-import FunctionFieldLittlewood.Examples
-import FunctionFieldLittlewood.SavedCertificates
-import Mathlib.Algebra.Field.ZMod
+module
+
+public import FunctionFieldLittlewood.PolynomialBridge
+public import FunctionFieldLittlewood.Examples
+public import FunctionFieldLittlewood.SavedCertificates
+public import Mathlib.Algebra.Field.ZMod
+
+@[expose] public section
 
 namespace FunctionFieldLittlewood
 
@@ -13,7 +17,10 @@ theorem scaled_comparison_certificate :
   (exactCertificate_scale_iff _ _ _ (by decide) _ _).mpr comparison_certificate
 
 example : normaliseMultiplier (fun i => (2 : ZMod 3) * comparisonMultiplier i) =
-    comparisonMultiplier := by decide
+    comparisonMultiplier := by
+  funext i
+  fin_cases i <;> norm_num [normaliseMultiplier, comparisonMultiplier]
+  all_goals exact inv_mul_cancel₀ (by decide)
 
 /-- Zero scaling is excluded: it destroys the endpoints and terminal coefficient. -/
 example : ¬ ExactCertificate ternaryPrefix

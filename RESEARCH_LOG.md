@@ -630,3 +630,45 @@ automation readback were checked. No code or proof changed; tests were not rerun
   mathematical result or conjecture resolution. Maintain the catalogue at meaningful
   formal milestones; next substantive work remains the original odd-shift terminal
   rows, with the parent-window-to-moments bridge as the next formal step.
+
+## 2026-10-07 (Wednesday, Australia/Sydney): independent root-moment comparison
+
+- User requested the next Palomar preparation step. Read current primary
+  submission policy and template, repository sources, roadmap and prior records;
+  clean main at f5e3572 fetched/FF-only current. This is publication preparation,
+  not the scheduled computational research task or a new conjecture result.
+- Stated the exact boundary before implementation: independently expose and
+  prove uniform root enumeration, odd-coefficient/filter identities and the
+  forced-factor consequence of H moments. Parent-window moment derivation,
+  iteration and the all-degree bound remain outside the advertised statement.
+- Challenge.lean is 54 lines/2,591 bytes, imports only Mathlib and gives the
+  coefficients and geometric sum explicitly. Solution.lean has the same theorem
+  type and combines existing proofs without importing Challenge. The deliberate
+  Challenge placeholder is separate from the proved development. No new axiom,
+  assumed target, native_decide or proof bypass occurs in the Solution closure.
+- Current Palomar requires at least Lean v4.35.0-rc2, confirmed against its
+  toolchains.json. Upgraded the root pin and committed dependency manifest to
+  matching Mathlib 065356127b1dc0016f66b7283ce0ce2c4055aa55. All twenty project
+  Lean sources now use modules and public interfaces; definition bodies needed
+  by clients are exposed. Certificate export preserves its numerical data.
+- Compatibility repair: the old scalar-normalisation example no longer reduces
+  through the newer field inverse; explicit inverse cancellation proves the
+  same statement. Updated deprecated imports/lemma names. The initial old-pin
+  module check and two upgrade build attempts failed before these repairs;
+  successful final evidence is retained separately, without a success claim for
+  those attempts. Cache retrieval was limited to the needed dependency closure.
+- Full lake build passes 2,572 jobs in 27.153959s. Sixteen catalogue declarations
+  and the new combined package pass type/axiom queries (13.180482s/13.484967s).
+  Ninety-six distinct reported proof declarations use only standard axioms.
+  The sole final warning is the deliberate Challenge sorry. Metadata schema,
+  source/header/size/statement checks and saved-certificate regeneration pass.
+- Added comparator.json, a sandboxed Linux verification script and a manually
+  dispatched GitHub Actions workflow requesting Lean, NanoDa and con-ron.
+  Local macOS lacks Linux/bubblewrap; actual Comparator and independent-kernel
+  results remain pending this workflow. No sandbox bypass is used. Current
+  formalization metadata records this status, and PALOMAR.md explains the exact
+  theorem and submission boundary. No Palomar intake or registration yet.
+- Classification: verification/infrastructure progress. No new mathematical
+  result or first-formalisation claim. The original nine catalogue groups retain
+  their immutable historical audit; Zenodo v0.1.0 excludes this package. Research
+  priorities remain the original terminal rows and parent-window moment bridge.

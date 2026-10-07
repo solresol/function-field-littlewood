@@ -1,6 +1,10 @@
-import FunctionFieldLittlewood.LaiSprangStream
-import FunctionFieldLittlewood.ParityDescent
-import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
+module
+
+public import FunctionFieldLittlewood.LaiSprangStream
+public import FunctionFieldLittlewood.ParityDescent
+public import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
+
+@[expose] public section
 
 /-!
 Root enumeration and odd-subsequence identification for the support stream.
@@ -68,11 +72,11 @@ theorem oddRoot_sum (hH : 0 < H) (hξ : IsPrimitiveRoot ξ (2 * H)) (u : ℕ) :
       if u % H = 0 then (H : K) * (-1) ^ (u / H) else 0 := by
   classical
   by_cases hu : u % H = 0
-  · rw [if_pos hu]
+  · rw [ite_eq_left hu]
     have hu' : u = H * (u / H) := (Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero hu)).symm
     conv_lhs => arg 2; ext i; rw [hu', pow_mul, oddRoot_pow hH hξ]
     simp
-  · rw [if_neg hu]
+  · rw [ite_eq_right hu]
     have h2 : IsPrimitiveRoot (ξ ^ 2) H := hξ.pow (by omega) rfl
     have hx : (ξ ^ 2) ^ u ≠ 1 := by
       intro hx
@@ -102,7 +106,7 @@ theorem stream_odd (p r u : ℕ) :
       if u % (2 ^ r) = 0 then ((2 ^ r : ℕ) : ZMod p) * (-1) ^ (u / (2 ^ r)) else 0 := by
   have hpow : 2 ^ (r + 1) = 2 * 2 ^ r := by rw [pow_succ, Nat.mul_comm]
   simp only [laiSprangStream, oddCore_odd, show 2 * u + 1 ≠ 0 by omega,
-    if_false, Nat.add_sub_cancel, hpow, Nat.mul_mod_mul_left,
+    ite_false, Nat.add_sub_cancel, hpow, Nat.mul_mod_mul_left,
     Nat.mul_div_mul_left u (2 ^ r) (by decide : 0 < 2)]
   rw [show 2 * 2 ^ r / 2 = 2 ^ r by omega]
   simp only [mul_eq_zero, OfNat.ofNat_ne_zero, false_or]

@@ -1,6 +1,10 @@
-import FunctionFieldLittlewood.LaurentBridge
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Polynomial.Degree.TrailingDegree
+module
+
+public import FunctionFieldLittlewood.LaurentBridge
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Algebra.Polynomial.Degree.TrailingDegree
+
+@[expose] public section
 
 /-! Strictly positive x-part for x=t⁻¹, and the base-two size used in this
 repository. This is an explicit size function, not an ambient norm instance. -/

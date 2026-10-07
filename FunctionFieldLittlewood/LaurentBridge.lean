@@ -1,5 +1,9 @@
-import FunctionFieldLittlewood.PolynomialBridge
-import Mathlib.RingTheory.LaurentSeries
+module
+
+public import FunctionFieldLittlewood.PolynomialBridge
+public import Mathlib.RingTheory.LaurentSeries
+
+@[expose] public section
 
 /-!
 Actual Laurent multiplication in the variable x = t⁻¹. A stream gives the power
@@ -76,7 +80,7 @@ theorem multiplierLaurent_eq_eval (R : Fin (d + 1) → F) :
     multiplierLaurent R = (multiplierPolynomial R).eval₂ HahnSeries.C
       (HahnSeries.single (-1 : ℤ) 1 : LaurentSeries F) := by
   classical
-  simp [multiplierLaurent, multiplierPolynomial, Polynomial.eval₂_finset_sum,
+  simp [multiplierLaurent, multiplierPolynomial, Polynomial.eval₂_finsetSum,
     HahnSeries.single_pow, HahnSeries.C_apply, HahnSeries.single_mul_single]
 
 /-- An accepted primal/dual certificate bounds the positive Laurent index for

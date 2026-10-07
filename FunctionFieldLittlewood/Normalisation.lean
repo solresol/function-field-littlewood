@@ -1,5 +1,9 @@
-import FunctionFieldLittlewood.DualCertificate
-import Mathlib.Algebra.Field.Basic
+module
+
+public import FunctionFieldLittlewood.DualCertificate
+public import Mathlib.Algebra.Field.Basic
+
+@[expose] public section
 
 /-!
 Nonzero scalar normalisation preserves finite certificates over every field,

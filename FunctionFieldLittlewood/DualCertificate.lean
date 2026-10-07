@@ -1,4 +1,8 @@
-import FunctionFieldLittlewood.Certificate
+module
+
+public import FunctionFieldLittlewood.Certificate
+
+@[expose] public section
 
 /-!
 Soundness of the two dual formats emitted by `search/finite_rank.py`.

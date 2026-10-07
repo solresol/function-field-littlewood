@@ -21,7 +21,11 @@ The catalogue distinguishes Lean theorems from ordinary proofs and open targets.
 The published v0.1.0 DOI names the frozen 3 October source; later development,
 including the 6 October root-stream identity, is not included in that archive.
 Palomar registration is not yet submitted; its preparation requirements are in
-[the catalogue notes](THEOREMS.md#palomar-preparation).
+[the comparison package](PALOMAR.md).
+
+The [Palomar comparison package](PALOMAR.md) independently states and proves
+the combined root-moment component. Current development uses Lean 4.35.0-rc2;
+the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
 ## Status update (6 Oct 2026)
 

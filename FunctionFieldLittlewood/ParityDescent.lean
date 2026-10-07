@@ -1,9 +1,13 @@
-import Mathlib.LinearAlgebra.Vandermonde
-import Mathlib.FieldTheory.Finite.Basic
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.Algebra.Ring.GeomSum
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.NormNum
+module
+
+public import Mathlib.LinearAlgebra.Vandermonde
+public import Mathlib.FieldTheory.Finite.Basic
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.Algebra.Ring.GeomSum
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.NormNum
+
+@[expose] public section
 
 /-!
 The root-moment rigidity step in the factor-aware parity descent of
@@ -90,7 +94,7 @@ terminal case, where the full number of moments is unavailable. -/
 theorem prime_root_nonsquare {p H k : ℕ} [Fact p.Prime] (hp : 2 < p)
     (hH : 0 < H) (horder : p - 1 = 2 * H * (2 * k + 1))
     (z : ZMod p) (hz : z ^ H = -1) : z ≠ 0 ∧ ¬ IsSquare z := by
-  haveI : Fact (2 < p) := ⟨hp⟩
+  have : Fact (2 < p) := ⟨hp⟩
   have hne : z ≠ 0 := by
     intro he
     simp [he, Nat.ne_of_gt hH] at hz
@@ -117,7 +121,7 @@ theorem root_product_eq (z : Fin H → K) (hH : 0 < H)
   symm
   apply eq_of_monic_of_dvd_of_natDegree_le (monic_prod_X_sub_C z Finset.univ)
     (by simpa using (monic_X_pow_add_C (1 : K) (Nat.ne_of_gt hH))) hd
-  simp only [natDegree_finset_prod_X_sub_C_eq_card, Finset.card_univ, Fintype.card_fin]
+  simp only [natDegree_finsetProd_X_sub_C_eq_card, Finset.card_univ, Fintype.card_fin]
   exact (natDegree_add_le _ _).trans (by simp)
 
 /-- The prime-field moment block forces the binomial factor in both parity
@@ -140,7 +144,7 @@ polynomial factorisation evaluates to -2. No division by z^s-1 is needed. -/
 theorem factor_eval_ne_zero {p H s : ℕ} [Fact p.Prime] (hp : 2 < p)
     (g : (ZMod p)[X]) (hfactor : g * (X ^ s - 1) = X ^ H - 1)
     (z : ZMod p) (hz : z ^ H = -1) : g.eval z ≠ 0 := by
-  haveI : Fact (2 < p) := ⟨hp⟩
+  have : Fact (2 < p) := ⟨hp⟩
   intro hg
   have he := congrArg (fun P : (ZMod p)[X] => P.eval z) hfactor
   simp only [eval_mul, eval_sub, eval_pow, eval_X, eval_one, hg, zero_mul, hz] at he

@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Australia/Sydney",
+  "checked_at": "2026-10-07T11:16:13.135310+11:00",
+  "classification": "verification/infrastructure progress",
+  "mathematical_scope": "Combined root enumeration, explicit odd coefficients and polynomial filters, and geometric forced factors from a full H-moment block. No parent-window derivation, iteration, all-degree bound or novelty claimed.",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "local_checks": {
+    "build": {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 27.153958958922885
+    },
+    "catalogue-audit": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/CatalogueAudit.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 13.180481999996118
+    },
+    "palomar-audit": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/PalomarAudit.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 13.484966667019762
+    }
+  },
+  "axiom_audit": {
+    "distinct_reported_declarations": 96,
+    "nonstandard_axioms": [],
+    "catalogue_declarations": 16,
+    "new_package_declarations": 1
+  },
+  "challenge": {
+    "file": "Challenge.lean",
+    "lines": 54,
+    "bytes": 2591,
+    "placeholder_count": 1,
+    "imports": "Mathlib only",
+    "statement_verbatim_matches_solution": true,
+    "solution_does_not_import_challenge": true
+  },
+  "module_scan": {
+    "regular_sources": 20,
+    "all_module_headers": true,
+    "symlinks": [],
+    "oversized_sources": [],
+    "proof_bypass_tokens_outside_challenge": []
+  },
+  "warnings": [
+    "warning: Challenge.lean:37:8: declaration uses `sorry`"
+  ],
+  "compatibility_repairs": [
+    "Public module interfaces and exposed definition bodies; generated certificate values unchanged.",
+    "A scalar-normalisation regression now uses inverse cancellation instead of reduction through the newer field inverse.",
+    "Updated deprecated Mathlib imports and lemma names."
+  ],
+  "metadata_schema": "formalization.yaml v0.4; pinned upstream 99c678e569c7c4c0772db297c5ddd5e4c9b6322e; validation passed",
+  "policies_accessed": "2026-10-07",
+  "primary_policy_sources": {
+    "submission_policy": {
+      "url": "https://github.com/PalomarRegistry/PalomarPolicy/blob/96b034cc31a72a63d4f4041911dce337a85c9a04/CONTRIBUTING.md",
+      "commit": "96b034cc31a72a63d4f4041911dce337a85c9a04"
+    },
+    "template": {
+      "url": "https://github.com/PalomarRegistry/PalomarTemplate/tree/2891de4c48955af824969a263d31b25e7a9a1406",
+      "commit": "2891de4c48955af824969a263d31b25e7a9a1406"
+    },
+    "minimum_toolchain": {
+      "url": "https://github.com/PalomarRegistry/PalomarSubmission/blob/d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44/toolchains.json",
+      "minimum": "v4.35.0-rc2"
+    }
+  },
+  "linux_comparison": {
+    "status": "pending",
+    "command": "bash scripts/verify-palomar.sh",
+    "kernels_requested": [
+      "Lean",
+      "NanoDa",
+      "con-ron"
+    ],
+    "sandbox_bypass": false,
+    "note": "Linux/bubblewrap unavailable on local macOS; manually dispatched GitHub Actions check will provide evidence."
+  },
+  "registration": "not-submitted",
+  "archive": "v0.1.0 remains frozen on original source/toolchain; excludes this package.",
+  "source_sha256": {
+    "Challenge.lean": "ec959e4e01736a64de8ce58273a37b6ed907b256da9bd3832a78239b7a7e6904",
+    "Solution.lean": "91ff3492b47bd4360fbd8451d732333fa86032ac71b36f10309342e81ee3299e",
+    "verification/PalomarAudit.lean": "e3e81afa94033e53de195ca8e5306d2a5e2f3d30153058ae937057100ade8af3",
+    "FunctionFieldLittlewood.lean": "1a402fc9b8c07444ccac9d615ae93a8807a400f9f100c8eabb43b8db52cc9cfa",
+    "FunctionFieldLittlewood/BinaryStream.lean": "425672e1c441342700d82161ab95ad728f53f7946fa537dfa818f705f0399c3a",
+    "FunctionFieldLittlewood/BridgeExamples.lean": "1759ded0f9307d091c1e9ea48de6b562f36db3314285cde018cd0280d432792a",
+    "FunctionFieldLittlewood/Certificate.lean": "8e4e65a2921f113894a292295e93a0d7128ea15def832c2f1b6deea8b8f6403f",
+    "FunctionFieldLittlewood/DualCertificate.lean": "54f2fac96ce822b30cd5db49e8b4d3b5c6613d4bb84d30e30b1a4e27d94aa36a",
+    "FunctionFieldLittlewood/Examples.lean": "15b3d01d9c1626401d1f75bd60e9f6a00edb19502f823ab773251b1f3d710945",
+    "FunctionFieldLittlewood/FractionalPart.lean": "0d573b85f328216d6207cddeac9964967898ea180b3e9237a50c24d79b529d37",
+    "FunctionFieldLittlewood/FractionalPartExamples.lean": "aa812d6dd3f20fa4e932337a5171d5ea8c7c40ccdea36ee5e2b40e1502aaee2a",
+    "FunctionFieldLittlewood/LaiSprangStream.lean": "5c0c378b83880b5020b2f68cd8fd86bff8d9a12252f636a34796f4b04dcd7b3c",
+    "FunctionFieldLittlewood/LaurentBridge.lean": "e9198383867f596e2e427a69bf0d1244e8929e9387ba7186cfe61ce88df9aed2",
+    "FunctionFieldLittlewood/LaurentExamples.lean": "b908953ffc3ed18d8192304ec9ee953244954e5948cc3e0619050c3a2890854d",
+    "FunctionFieldLittlewood/Normalisation.lean": "abfa2987b5d309556ed137dc750206d7b250529bf122824f77d3a7ba798daeb2",
+    "FunctionFieldLittlewood/ParityDescent.lean": "35926a37fc083c9c7b9f15317bbba850d193c449dba40307ffe018c8da92ebd4",
+    "FunctionFieldLittlewood/PolynomialBridge.lean": "4a27c080259884847878a5e113c35843a82899ee17f04bb2c79504347021f61e",
+    "FunctionFieldLittlewood/RootStream.lean": "856169d3f9bba2d5d08b402c1ebaf5b40e07d0a00f9510bbcef856a3a270ce8d",
+    "FunctionFieldLittlewood/SavedCertificates.lean": "df77fc3d6ec23c6b9771e218e5465d319c0283916e6421e904fcffde453ffc98",
+    "verification/CatalogueAudit.lean": "1cfb3912b1d089278b5aa619668ed3b61d6e90623755674906757f3a42ca61ca",
+    "comparator.json": "cfc3f8763847b009179bb5bb284e93013f6e0ed84255bfd561856ca27d2b6ce7",
+    "lakefile.toml": "376e708a6bd84ca007451f73d23e50edcbc7909e12bcc84d9cada4b5962172fb",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lake-manifest.json": "7449011a2c0f5da1303e705346f1e97cc72493a1f7f4ad4fd7038059399473b2",
+    "scripts/verify-palomar.sh": "8d61625ec72762b6179af81d37b8ab098251402fb2ce8375e3024b78b753e42f",
+    ".github/workflows/palomar.yml": "1a26b49ba236175bb6d66f06a42ea2ed5cf029818738029354573b7dae7722c0"
+  }
+}

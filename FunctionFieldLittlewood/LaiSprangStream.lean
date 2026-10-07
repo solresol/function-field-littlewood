@@ -1,4 +1,8 @@
-import FunctionFieldLittlewood.BridgeExamples
+module
+
+public import FunctionFieldLittlewood.BridgeExamples
+
+@[expose] public section
 
 /-!
 The support-formula coefficient stream used by the exact Python experiments.

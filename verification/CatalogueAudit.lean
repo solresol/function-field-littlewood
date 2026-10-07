@@ -1,4 +1,8 @@
-import FunctionFieldLittlewood
+module
+
+public import FunctionFieldLittlewood
+
+@[expose] public section
 #check FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor
 #check FunctionFieldLittlewood.RootStream.stream_root_enumeration
 #check FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration
