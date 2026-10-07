@@ -29,6 +29,20 @@ be sharp. The three-term positive-degree family adds structure but does not
 prove that upper bound. Further scale checks of these families are unnecessary.
 The three retired binary baselines remain regression inputs only.
 
+## Keeping the proof catalogue current
+
+When completing a meaningful Lean milestone, update theorem-catalogue.yaml,
+THEOREMS.md and formalization.yaml with its exact hypotheses, declaration names,
+verified proof commit and audit evidence. Keep ordinary proofs and open targets
+outside the proved-theorem list. A DOI covers only the source frozen in that
+release. Catalogue updates support research reporting; they are not themselves
+mathematical progress or a daily work quota.
+
+Palomar preparation requires an independent Challenge/Solution comparison,
+Comparator configuration and module-system compliance. The source is already
+licensed Apache-2.0 with mathematical attribution and AI-use disclosure. Do not
+claim registry verification or registration before those steps actually succeed.
+
 ## Next computation
 
 - The 5 October reverse lift makes the terminal F_1 statement **equivalent**

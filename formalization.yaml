@@ -1,0 +1,144 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+project:
+  name: Lai-Sprang coefficient identities and root-moment rigidity in Lean 4
+  description: Formalises root-moment rigidity, the geometric forced-factor step, uniform root
+    enumeration and the coefficient/root-sum identity for the explicit Lai-Sprang support stream.
+    Includes generic exact and dual certificates and Laurent/product bridges. The parent-window
+    derivation and full degree-cutoff descent are not yet assembled into a Lean theorem.
+  authors:
+  - Greg Baker
+  responsible_maintainers:
+  - Greg Baker
+  license: Apache-2.0
+sources:
+- title: On the P(t)-adic Littlewood conjecture in odd characteristics
+  authors:
+  - Li Lai
+  - Johannes Sprang
+  id: https://arxiv.org/abs/2606.00633v1
+  type: article
+  location: Functional equation (1.2) and Section 3
+  relationship: adapts
+  author_endorsement: not-contacted
+  note: The odd-characteristic main-conjecture theorem is already proved in the source. This
+    project formalises selected coefficient and root-moment steps; it does not formalise the
+    full source theorem.
+related_formalizations:
+- id: https://github.com/leanprover-community/mathlib4/tree/a3a10db0e9d66acbebf76c5e6a135066525ac900
+  relationship: builds-on
+  note: Reuses the Apache-2.0 mathlib primitive-root, finite-field, matrix, polynomial and Laurent-series
+    libraries. Project lemmas reimplement the cited mathematical arguments; the source paper
+    is not bundled.
+classification:
+  arxiv:
+  - math.NT
+  - math.LO
+  msc2020:
+  - 11J61
+  - 03B35
+status:
+  scope: Kernel-checked theorem groups are in theorem-catalogue.yaml. Source root enumeration
+    and moment equations are explicit hypotheses of the rigidity theorem; RootStream separately
+    proves enumeration and odd/filter identities for the named support stream. The full parent-window
+    moment block, iterated degree cutoff, all-degree N-bound, terminal dichotomy and characteristic-two
+    construction are not Lean theorems of this project.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor
+    file: FunctionFieldLittlewood/ParityDescent.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.RootStream.stream_root_enumeration
+    file: FunctionFieldLittlewood/RootStream.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration
+    file: FunctionFieldLittlewood/RootStream.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+automation:
+  methods:
+  - method: agent
+    models: []
+    framework: OpenAI Codex
+    tool_setup: Lean 4/mathlib and exact Python finite-field experiments. Automated proof writing,
+      revision, builds, theorem-type and axiom audits under Greg Baker's research direction.
+    cost:
+      wall_time: Not comprehensively tracked; dated run timings retained in results.
+      spend_usd: Not tracked
+      hardware: Local macOS workstation; hosted model inference.
+    prompting_notes: Research questions, claim boundaries and priorities specified by Greg Baker;
+      agents implement proofs and bounded checks. Exact model identifiers for all historical
+      runs were not consistently recorded.
+  spend_usd: Not tracked
+  notes: Extensive AI assistance is disclosed in NOTICE and research records. Kernel checking
+    is distinguished from mathematical novelty, informal statement fidelity and human peer review.
+fidelity:
+  divergences: The mathematical parity/Vandermonde/nonsquare method is adapted from Lai-Sprang
+    Section 3. Root moments are first formalised generically with explicit hypotheses; odd/filter
+    stream identities require only N dividing p-1. The named support stream is not identified
+    with the entire infinite rational-function Laurent sum. The original paper's full odd-characteristic
+    counterexample theorem and this repository's ordinary cutoff/terminal refinements are not
+    formalised end to end. No first-formalisation claim is made.
+review:
+  status: agent-reviewed
+  reviewers: []
+  notes: Automated Lean build, exact theorem-type checks and standard-axiom audits completed.
+    Independent human peer review, source-author endorsement, Comparator verification and independent-kernel
+    replay have not been performed.
+alignment:
+  namespace: FunctionFieldLittlewood
+  statements:
+  - source: Functional equation (1.2) and Section 3
+    lean: FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor
+    module: FunctionFieldLittlewood.ParityDescent
+    status: proved
+    note: The root list and moment equations are explicit hypotheses in this theorem. It does
+      not derive them from a parent coefficient window or iterate descent.
+  - source: Functional equation (1.2) and Section 3
+    lean: FunctionFieldLittlewood.RootStream.stream_root_enumeration
+    module: FunctionFieldLittlewood.RootStream
+    status: proved
+    note: The Lean parameter r is one less than the usual valuation parameter. This does not
+      identify the entire infinite rational-function Laurent sum. No maximal-valuation hypothesis
+      is needed here.
+  - source: Functional equation (1.2) and Section 3
+    lean: FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration
+    module: FunctionFieldLittlewood.RootStream
+    status: proved
+    note: The Lean parameter r is one less than the usual valuation parameter. This does not
+      identify the entire infinite rational-function Laurent sum. No maximal-valuation hypothesis
+      is needed here.
+acknowledgements: Li Lai and Johannes Sprang for the construction and mathematical proof method;
+  Lean and mathlib contributors for the reusable libraries. Source-author participation or endorsement
+  is not claimed.
+catalogue: theorem-catalogue.yaml
+registration:
+  palomar:
+    status: not-submitted
+    remaining:
+    - Independent Challenge/Solution surface and Comparator configuration.
+    - Migration of project Lean files to the module system required by current Palomar policy.
+    - Comparator and independent-kernel verification, then editorial review.
+  zenodo:
+    version: 0.1.0
+    doi: 10.5281/zenodo.23117611
+    scope: Frozen 3 October release; excludes the 6 October RootStream increment.

@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Australia/Sydney",
+  "checked_at": "2026-10-07T11:03:25.957748+11:00",
+  "classification": "verification/infrastructure progress; publication and catalogue only",
+  "proof_snapshot": "a88a66bfbf75c98d279a45b40137bb5259718f10",
+  "proof_source_or_dependency_changes": false,
+  "declaration_audit": {
+    "command": "lake env lean verification/CatalogueAudit.lean",
+    "exit_code": 0,
+    "elapsed_seconds": 34.618572958
+  },
+  "groups": 9,
+  "declarations": 16,
+  "nonstandard_axioms": [],
+  "metadata_schema": {
+    "url": "https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json",
+    "upstream_commit": "99c678e569c7c4c0772db297c5ddd5e4c9b6322e",
+    "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+    "result": "passed",
+    "validator": "jsonschema.Draft7Validator"
+  },
+  "catalogue_consistency": {
+    "result": "passed",
+    "checks": [
+      "unique names and exact Lean-reported types",
+      "axioms match declaration output",
+      "source line numbers, SHA256 and immutable snapshot bytes",
+      "introduced commits are ancestors of proof snapshot",
+      "archive coverage against frozen source",
+      "toolchain and mathlib pin match repository",
+      "main-result metadata points to audited declarations",
+      "proof source and dependencies unchanged"
+    ]
+  },
+  "archive": {
+    "version": "0.1.0",
+    "doi": "10.5281/zenodo.23117611",
+    "source_commit": "c80ad56b177bad7eb4d91a64388f5f2a58e7a4f1",
+    "included_declarations": 14,
+    "excluded_declarations": 2
+  },
+  "history_publication_review": {
+    "reachable_objects": 312,
+    "unique_blobs": 205,
+    "total_blob_bytes": 4410122,
+    "credential_pattern_findings": [],
+    "finding_scope": "Pattern scan and tracked-path/manual review; not a guarantee of absence of sensitive material. Git author identity is already present in public release metadata.",
+    "conclusion": "No publication blocker found."
+  },
+  "dependencies": {
+    "python": "Python 3.9.6",
+    "PyYAML": "6.0.3",
+    "jsonschema": "4.25.1"
+  },
+  "full_build": "Reused successful 6 October full build at the unchanged proof snapshot; declaration audit rerun for this catalogue.",
+  "palomar": "not-submitted; no Comparator or independent-kernel certification claimed",
+  "mathematical_conclusion": "No new theorem, novelty or conjecture resolution is claimed by this catalogue.",
+  "metadata_check_elapsed_seconds": 7.930863,
+  "publication": {
+    "visibility": "public",
+    "confirmed_at": "2026-10-07T11:03:59.366470+11:00",
+    "verification": "Anonymous unauthenticated GET https://api.github.com/repos/solresol/function-field-littlewood returned private=false and visibility=public.",
+    "actions_runs": 0,
+    "open_pull_requests": 0
+  }
+}

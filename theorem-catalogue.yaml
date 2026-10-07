@@ -1,0 +1,515 @@
+# Curated proved theorem groups. See THEOREMS.md for maintenance rules.
+schema_version: 1
+project: Function-field Littlewood
+repository: https://github.com/solresol/function-field-littlewood
+updated: '2026-10-07'
+scope: Curated theorem groups proved in this repository; supporting lemmas remain in the source.
+  Other projects can reuse this format without changing this project scope.
+verification:
+  proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+  lean_toolchain: leanprover/lean4:v4.27.0
+  mathlib_commit: a3a10db0e9d66acbebf76c5e6a135066525ac900
+  allowed_axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  level: Lean kernel build and declaration/axiom audit; no Comparator or independent-kernel
+    certification claimed
+theorems:
+- id: root-moment-rigidity
+  title: Root-moment rigidity and forced factors
+  status: kernel-checked
+  mathematical_origin: source-based adaptation
+  first_formalisation_priority: unestablished
+  statement: H consecutive weighted moments at H distinct roots of z^H=-1 force the geometric
+    factor times X^H+1 to divide both parity children.
+  assumptions:
+  - Prime p>2; H>0; p-1=2H(2k+1); s divides H.
+  - The H-root list is injective and every root satisfies z^H=-1.
+  - The full H consecutive moment block vanishes; both quotient constant coefficients may be
+    zero.
+  limitations: The root list and moment equations are explicit hypotheses in this theorem. It
+    does not derive them from a parent coefficient window or iterate descent.
+  declarations:
+  - name: FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor
+    file: FunctionFieldLittlewood/ParityDescent.lean
+    line_at_snapshot: 162
+    introduced_commit: 028d39736c66a345167b7bbd3f01cea980b8bfbe
+    lean_type: |-
+      FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor {p H k s : ℕ} [Fact (Nat.Prime p)] (hp : 2 < p)
+        (hH : 0 < H) (hs : s ∣ H) (horder : p - 1 = 2 * H * (2 * k + 1)) (z : Fin H → ZMod p) (hz : Function.Injective z)
+        (hroot : ∀ (i : Fin H), z i ^ H = -1) (U₀ U₁ : Polynomial (ZMod p)) (n : ℕ)
+        (hm :
+          ∀ (j : Fin H),
+            ∑ i,
+                z i ^ (n + ↑j) *
+                  (Polynomial.eval (z i) (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s) *
+                    (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+              0) :
+        FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * (Polynomial.X ^ H + 1) ∣
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * U₀ ∧
+          FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * (Polynomial.X ^ H + 1) ∣
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * U₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/ParityDescent.lean: 890c965d4aaef1650c4552f312a7eb6a67161a823a1581005a7f81cd1e974ea2
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: support-stream-root-formula
+  title: Uniform roots and odd-coefficient identity
+  status: kernel-checked
+  mathematical_origin: known root-sum identity formalised
+  first_formalisation_priority: unestablished
+  statement: The support stream has a complete list of H roots of X^H+1, and its odd coefficients
+    and all polynomial filters equal the corresponding root moments.
+  assumptions:
+  - Prime p; N=2^(r+1) divides p-1; H=2^r.
+  - Every nonnegative coefficient/filter index and every polynomial, including zero, are covered.
+  limitations: The Lean parameter r is one less than the usual valuation parameter. This does
+    not identify the entire infinite rational-function Laurent sum. No maximal-valuation hypothesis
+    is needed here.
+  declarations:
+  - name: FunctionFieldLittlewood.RootStream.stream_root_enumeration
+    file: FunctionFieldLittlewood/RootStream.lean
+    line_at_snapshot: 113
+    introduced_commit: a88a66bfbf75c98d279a45b40137bb5259718f10
+    lean_type: |-
+      FunctionFieldLittlewood.RootStream.stream_root_enumeration {p r : ℕ} [Fact (Nat.Prime p)] (hd : 2 ^ (r + 1) ∣ p - 1) :
+        ∃ z,
+          Function.Injective z ∧
+            (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+              (∀ (x : ZMod p), x ^ 2 ^ r = -1 ↔ ∃ i, x = z i) ∧
+                ∀ (u : ℕ), FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1) = ∑ i, z i ^ u
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration
+    file: FunctionFieldLittlewood/RootStream.lean
+    line_at_snapshot: 144
+    introduced_commit: a88a66bfbf75c98d279a45b40137bb5259718f10
+    lean_type: |-
+      FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration {p r : ℕ} [Fact (Nat.Prime p)]
+        (hd : 2 ^ (r + 1) ∣ p - 1) :
+        ∃ z,
+          Function.Injective z ∧
+            (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+              ∀ (P : Polynomial (ZMod p)) (n : ℕ),
+                ∑ j ∈ Finset.range (P.natDegree + 1),
+                    P.coeff j * FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * (n + j) + 1) =
+                  ∑ i, z i ^ n * Polynomial.eval (z i) P
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/RootStream.lean: 4a2aa6203408396d8e7fbccbaead29c7629b65c447da7fac1e0ebde1a76cd25f
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not included in that DOI.
+  palomar:
+    status: not-submitted
+    id: null
+- id: certificate-soundness
+  title: Exact coefficient certificates and Hankel kernels
+  status: kernel-checked
+  mathematical_origin: verification foundation
+  first_formalisation_priority: unestablished
+  statement: A certificate proves the exact first positive nonzero coefficient; the finite vanishing-prefix
+    equations are exactly a Hankel matrix kernel condition.
+  assumptions:
+  - Commutative semiring; arbitrary coefficient stream.
+  - An ExactCertificate includes j>0, nonzero constant and leading multiplier coefficients,
+    j-1 zero rows and a nonzero j-th row.
+  limitations: Locality is through inclusive index m+d+j. A finite witness does not prove an
+    all-degree bound.
+  declarations:
+  - name: FunctionFieldLittlewood.certificate_sound
+    file: FunctionFieldLittlewood/Certificate.lean
+    line_at_snapshot: 60
+    introduced_commit: 0e1952f02373cbfdaecf7f542d61d299c2dc065d
+    lean_type: |-
+      FunctionFieldLittlewood.certificate_sound.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+        (R : Fin (d + 1) → K) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+        FunctionFieldLittlewood.FirstNonzero a R m j
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.hankel_kernel_iff
+    file: FunctionFieldLittlewood/Certificate.lean
+    line_at_snapshot: 31
+    introduced_commit: 0e1952f02373cbfdaecf7f542d61d299c2dc065d
+    lean_type: |-
+      FunctionFieldLittlewood.hankel_kernel_iff.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+        (R : Fin (d + 1) → K) (m L : ℕ) :
+        (FunctionFieldLittlewood.hankel a m d L).mulVec R = 0 ↔
+          ∀ (row : Fin L), FunctionFieldLittlewood.fractionalCoeff a R m (↑row + 1) = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/Certificate.lean: 49e69b29f73789b83285f24f72991b12ef06697d439158bea4838a0c1a4ff9f5
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: dual-optimality
+  title: Primal-dual optimum for all admissible multipliers
+  status: kernel-checked
+  mathematical_origin: verification foundation
+  first_formalisation_priority: unestablished
+  statement: Acceptance of a primal and dual certificate proves the exact first index and a
+    nonzero coefficient by that index for every multiplier of the same degree and shift with
+    both endpoints nonzero.
+  assumptions:
+  - Field with decidable equality; accepted checkOptimalCertificate.
+  - Competing multiplier constant and leading coefficients are nonzero; its constant need not
+    equal one.
+  limitations: Fixed degree and shift only; diagnostic Gaussian-elimination ranks are not trusted
+    and no global optimum is claimed.
+  declarations:
+  - name: FunctionFieldLittlewood.checkOptimalCertificate_sound_all
+    file: FunctionFieldLittlewood/Normalisation.lean
+    line_at_snapshot: 49
+    introduced_commit: f60f3de939fa2fc97bbedd780231fce00a869476
+    lean_type: |-
+      FunctionFieldLittlewood.checkOptimalCertificate_sound_all.{u_1} {K : Type u_1} [Field K] {d : ℕ} [DecidableEq K]
+        (a : ℕ → K) (R : Fin (d + 1) → K) (m j : ℕ) (w : Fin (j + 1) → K)
+        (h : FunctionFieldLittlewood.checkOptimalCertificate a R m j w = true) :
+        FunctionFieldLittlewood.FirstNonzero a R m j ∧
+          ∀ (S : Fin (d + 1) → K),
+            S 0 ≠ 0 → S (Fin.last d) ≠ 0 → ∃ k, 0 < k ∧ k ≤ j ∧ FunctionFieldLittlewood.fractionalCoeff a S m k ≠ 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/Normalisation.lean: 73c2e591f3b752a2fbdcdfe101b239fa5c11d346d51e47e3ad1f10bfb8235f11
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: polynomial-normalisation
+  title: Scalar normalisation and actual polynomial endpoints
+  status: kernel-checked
+  mathematical_origin: verification foundation
+  first_formalisation_priority: unestablished
+  statement: Normalising by a nonzero constant preserves exact certificates; checked optima
+    transfer to actual degree-d polynomials with nonzero constant coefficient.
+  assumptions:
+  - Field; nonzero multiplier constant for normalisation.
+  - Polynomial optimum uses a checked primal-dual certificate, actual natDegree=d and nonzero
+    coefficient zero.
+  limitations: No Laurent norm or global defect bound follows from this group alone.
+  declarations:
+  - name: FunctionFieldLittlewood.exactCertificate_normalise_iff
+    file: FunctionFieldLittlewood/Normalisation.lean
+    line_at_snapshot: 42
+    introduced_commit: f60f3de939fa2fc97bbedd780231fce00a869476
+    lean_type: |-
+      FunctionFieldLittlewood.exactCertificate_normalise_iff.{u_1} {K : Type u_1} [Field K] {d : ℕ} (a : ℕ → K)
+        (R : Fin (d + 1) → K) (h0 : R 0 ≠ 0) (m j : ℕ) :
+        FunctionFieldLittlewood.ExactCertificate a (FunctionFieldLittlewood.normaliseMultiplier R) m j ↔
+          FunctionFieldLittlewood.ExactCertificate a R m j
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.optimal_polynomial_nonzero
+    file: FunctionFieldLittlewood/PolynomialBridge.lean
+    line_at_snapshot: 67
+    introduced_commit: f60f3de939fa2fc97bbedd780231fce00a869476
+    lean_type: |-
+      FunctionFieldLittlewood.optimal_polynomial_nonzero.{u_1} {K : Type u_1} [Field K] {d : ℕ} [DecidableEq K] (a : ℕ → K)
+        (R : Fin (d + 1) → K) (m j : ℕ) (w : Fin (j + 1) → K)
+        (h : FunctionFieldLittlewood.checkOptimalCertificate a R m j w = true) (P : Polynomial K) (h0 : P.coeff 0 ≠ 0)
+        (hd : P.natDegree = d) : ∃ k, 0 < k ∧ k ≤ j ∧ ∑ i, P.coeff ↑i * a (m + ↑i + k) ≠ 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/Normalisation.lean: 73c2e591f3b752a2fbdcdfe101b239fa5c11d346d51e47e3ad1f10bfb8235f11
+      FunctionFieldLittlewood/PolynomialBridge.lean: 688429f9dc3c8270e5feacce924960b53ec60fe29d2ecfb6ec31baf9e5e62130
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: laurent-coefficient-bridge
+  title: Actual Laurent coefficients and certificate transport
+  status: kernel-checked
+  mathematical_origin: verification foundation
+  first_formalisation_priority: unestablished
+  statement: The shifted polynomial-Laurent product has exactly the finite convolution coefficients,
+    and a certificate gives its first positive nonzero coefficient.
+  assumptions:
+  - Commutative semiring; natural shift and coefficient index.
+  - Certificate transport requires an ExactCertificate.
+  limitations: The coordinate is x=t^(-1). The fractional part excludes the constant term; the
+    generic bridge does not identify an external named series.
+  declarations:
+  - name: FunctionFieldLittlewood.shiftedLaurent_coeff
+    file: FunctionFieldLittlewood/LaurentBridge.lean
+    line_at_snapshot: 37
+    introduced_commit: 3aaf7e73e8324d0c0ddabb734823470a9df80f3a
+    lean_type: |-
+      FunctionFieldLittlewood.shiftedLaurent_coeff.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+        (R : Fin (d + 1) → K) (m j : ℕ) :
+        (FunctionFieldLittlewood.shiftedLaurent a R m).coeff ↑j = FunctionFieldLittlewood.fractionalCoeff a R m j
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.certificate_laurent_sound
+    file: FunctionFieldLittlewood/LaurentBridge.lean
+    line_at_snapshot: 58
+    introduced_commit: 3aaf7e73e8324d0c0ddabb734823470a9df80f3a
+    lean_type: |-
+      FunctionFieldLittlewood.certificate_laurent_sound.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+        (R : Fin (d + 1) → K) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+        FunctionFieldLittlewood.LaurentFirstPositive (FunctionFieldLittlewood.shiftedLaurent a R m) j
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/LaurentBridge.lean: 50160d3212bea2a40379e4cbeadc207edffdeffd17a69bf5f3d74d41c83949a9
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: littlewood-product-bridge
+  title: Littlewood product and finite nonvanishing equivalence
+  status: kernel-checked
+  mathematical_origin: verification foundation
+  first_formalisation_priority: unestablished
+  statement: For Q=t^m R with actual degree d and nonzero endpoints, the base-two Littlewood
+    product is at least 2^(-N) exactly when a coefficient among 1,...,d+N is nonzero; an exact
+    index j gives product 2^(d-j).
+  assumptions:
+  - Field; arbitrary stream; natural d,m,N.
+  - R has nonzero constant and leading coefficients.
+  - The exact-product corollary requires an ExactCertificate with index j.
+  limitations: This is an equivalence, not a proof of a uniform lower bound. The explicit base-two
+    size handles a zero fractional part; it is not an ambient norm instance.
+  declarations:
+  - name: FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff
+    file: FunctionFieldLittlewood/FractionalPart.lean
+    line_at_snapshot: 187
+    introduced_commit: 6367d4571e0a9f5f2c69f651e3d6da94e88f0935
+    lean_type: |-
+      FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff.{u_2} {d : ℕ} {F : Type u_2} [Field F] (a : ℕ → F)
+        (R : Fin (d + 1) → F) (m N : ℕ) (h0 : R 0 ≠ 0) (hd : R (Fin.last d) ≠ 0) :
+        2 ^ (-↑N) ≤
+            FunctionFieldLittlewood.polynomialLittlewoodProduct a
+              (Polynomial.X ^ m * FunctionFieldLittlewood.multiplierPolynomial R) ↔
+          ∃ k, 0 < k ∧ k ≤ d + N ∧ FunctionFieldLittlewood.fractionalCoeff a R m k ≠ 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct
+    file: FunctionFieldLittlewood/FractionalPart.lean
+    line_at_snapshot: 178
+    introduced_commit: 6367d4571e0a9f5f2c69f651e3d6da94e88f0935
+    lean_type: |-
+      FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct.{u_2} {d : ℕ} {F : Type u_2} [Field F] (a : ℕ → F)
+        (R : Fin (d + 1) → F) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+        FunctionFieldLittlewood.polynomialLittlewoodProduct a
+            (Polynomial.X ^ m * FunctionFieldLittlewood.multiplierPolynomial R) =
+          2 ^ (↑d - ↑j)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/FractionalPart.lean: 14d07880c537feb8f8175475c7af80b244cf311220be1ee2a259254c2ac35668
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: named-lai-sprang-regressions
+  title: Infinite support-stream comparison witnesses
+  status: kernel-checked
+  mathematical_origin: regression formalisation
+  first_formalisation_priority: unestablished
+  statement: On the named infinite support streams, F_17 has exact j=16 for R=1,m=81, and the
+    retained r=1 F_3 comparison has j=6 for R=1+t^2,m=2.
+  assumptions:
+  - These are the stated concrete fields, parameters and multipliers.
+  limitations: Regression and stream-identification evidence. These individual witnesses prove
+    neither all-shift attainment nor an all-degree upper bound.
+  declarations:
+  - name: FunctionFieldLittlewood.laiSprang17_sharp_first
+    file: FunctionFieldLittlewood/LaiSprangStream.lean
+    line_at_snapshot: 99
+    introduced_commit: a1d683cf65026084f3af19f8048924f00c29c216
+    lean_type: |-
+      FunctionFieldLittlewood.laiSprang17_sharp_first :
+        FunctionFieldLittlewood.FirstNonzero (FunctionFieldLittlewood.laiSprangStream 17 4) (fun x => 1) 81 16
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.laiSprang3_comparison_first
+    file: FunctionFieldLittlewood/LaiSprangStream.lean
+    line_at_snapshot: 115
+    introduced_commit: a1d683cf65026084f3af19f8048924f00c29c216
+    lean_type: |-
+      FunctionFieldLittlewood.laiSprang3_comparison_first :
+        FunctionFieldLittlewood.FirstNonzero (FunctionFieldLittlewood.laiSprangStream 3 1)
+          FunctionFieldLittlewood.comparisonMultiplier 2 6
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/LaiSprangStream.lean: d7aa4f6c1fdcf4a5c85e0c2589e65b36389e6a5a693ab887c319b29fe61c911e
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: named-binary-recurrences
+  title: Binary digit-parity stream recurrences
+  status: kernel-checked
+  mathematical_origin: known recurrence formalised for regression
+  first_formalisation_priority: unestablished
+  statement: The binary digit-parity stream satisfies a_(2n)=a_n and a_(2n+1)=1+a_n for every
+    natural n.
+  assumptions:
+  - The repository definition of binary digit parity in ZMod 2.
+  limitations: Thue-Morse is retired as a counterexample candidate. This catalogue entry is
+    a regression; no new candidate or dyadic all-scale Lean theorem is claimed.
+  declarations:
+  - name: FunctionFieldLittlewood.thueMorse_even
+    file: FunctionFieldLittlewood/BinaryStream.lean
+    line_at_snapshot: 21
+    introduced_commit: cdff75f0e350dda809467d8822924b042f11e0eb
+    lean_type: |-
+      FunctionFieldLittlewood.thueMorse_even (n : ℕ) :
+        FunctionFieldLittlewood.thueMorse (2 * n) = FunctionFieldLittlewood.thueMorse n
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.thueMorse_odd
+    file: FunctionFieldLittlewood/BinaryStream.lean
+    line_at_snapshot: 27
+    introduced_commit: cdff75f0e350dda809467d8822924b042f11e0eb
+    lean_type: |-
+      FunctionFieldLittlewood.thueMorse_odd (n : ℕ) :
+        FunctionFieldLittlewood.thueMorse (2 * n + 1) = 1 + FunctionFieldLittlewood.thueMorse n
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a88a66bfbf75c98d279a45b40137bb5259718f10
+    full_build: results/2026-10-06-lean-build.txt
+    full_build_validation: results/2026-10-06-validation.json
+    catalogue_audit: results/2026-10-07-catalogue-declarations.txt
+    source_sha256:
+      FunctionFieldLittlewood/BinaryStream.lean: 4a6a0343d97c9ccb85764e591bc0852304b81e2fdab2b33155a00e84ddb1dfbf
+  archive:
+    zenodo_version: 0.1.0
+    zenodo_doi: 10.5281/zenodo.23117611
+    note: Included in the frozen 3 October source archive.
+  palomar:
+    status: not-submitted
+    id: null
+unformalised_and_open:
+- id: degree-cutoff
+  status: ordinary-proof-not-lean
+  statement: For every shift, j-d<=N when d<N(N-1).
+  record: results/2026-10-02-parity-descent.md
+  remaining: Parent-window-to-moments derivation, child degree/shift bookkeeping and iterated
+    descent.
+- id: terminal-equivalence
+  status: ordinary-proof-not-lean
+  statement: Terminal F_1 nonvanishing is equivalent to the all-degree N-bound, and the maximum
+    defect is N or 2N.
+  record: results/2026-10-05-terminal-lift.md
+  remaining: The dichotomy does not select either branch; reverse lift and literature-dependent
+    proof are not Lean-formalised.
+- id: all-degree-bound
+  status: open-in-project
+  statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.
+  record: TODO.md
+  remaining: Rule out or exhibit original odd-shift terminal rows with nonzero residual scalar
+    C.
+- id: characteristic-two
+  status: no-construction-proved
+  statement: A characteristic-two main-conjecture counterexample or informative stronger intermediate
+    result.
+  record: TODO.md
+  remaining: Any new candidate needs current primary-literature screening; retired binary streams
+    do not qualify.

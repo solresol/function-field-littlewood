@@ -9,6 +9,20 @@ is in [CITATION.cff](CITATION.cff), with [Apache-2.0 licensing](LICENSE) and
 mathematical attribution and AI disclosure in [NOTICE](NOTICE). The public
 archive is [Zenodo DOI 10.5281/zenodo.23117611](https://doi.org/10.5281/zenodo.23117611).
 
+## Proof catalogue and provenance
+
+[THEOREMS.md](THEOREMS.md) indexes the completed Lean theorem groups.
+[theorem-catalogue.yaml](theorem-catalogue.yaml) records their exact statements,
+assumptions, source declarations, verified commits, audits and archive coverage.
+[formalization.yaml](formalization.yaml) supplies standard project provenance,
+AI-use disclosure and the current formalisation scope.
+
+The catalogue distinguishes Lean theorems from ordinary proofs and open targets.
+The published v0.1.0 DOI names the frozen 3 October source; later development,
+including the 6 October root-stream identity, is not included in that archive.
+Palomar registration is not yet submitted; its preparation requirements are in
+[the catalogue notes](THEOREMS.md#palomar-preparation).
+
 ## Status update (6 Oct 2026)
 
 The original plan for this project was to focus on odd characteristics `ell = 1 (mod 4)`. That frontier has moved: Li Lai and Johannes Sprang, *On the P(t)-adic Littlewood conjecture in odd characteristics*, arXiv:2606.00633 (submitted 30 May 2026), prove that the conjecture fails for every irreducible `P(t)` over every ground field of odd characteristic.

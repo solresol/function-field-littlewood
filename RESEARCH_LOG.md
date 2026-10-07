@@ -593,3 +593,40 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next formal step: parity splitting, cross-convolution and exact row budgets
   supplying H moments. Next computation: original odd-shift terminal rows with
   C!=0 and coprime quotient; do not repeat enumeration or routine finite boxes.
+
+
+## 2026-10-07 (Wednesday, Australia/Sydney): user-requested proof catalogue and publication
+
+- Follow-up to the user's publication request, separate from the scheduled
+  computational run. The scheduled run stopped safely on this work's dirty
+  checkout; its blocker does not represent a failed mathematical experiment.
+- Reviewed tracked paths and all reachable history before publication:
+  312 objects, 205 unique blobs, 4,410,122 blob bytes. Credential-pattern and
+  manual content review found no publication blocker; this is not a guarantee
+  that pattern matching detects every possible secret. GitHub had no Actions
+  runs or open pull requests. Apache-2.0 licence, attribution and AI disclosure
+  already existed. Ignored local research material remains untracked.
+- Made solresol/function-field-littlewood public under the user's instruction.
+  Confirmed public visibility through the unauthenticated GitHub repository API.
+- Added formalization.yaml using upstream v0.4, theorem-catalogue.yaml and
+  THEOREMS.md. Nine curated groups cover sixteen selected declarations, with
+  assumptions, exact Lean-reported types, source commits/hashes, axioms,
+  archive coverage and explicit open/unformalised targets. No firstness claim.
+- Reproducible declaration audit: lake env lean verification/CatalogueAudit.lean
+  passed in 34.618573s. All sixteen types and axiom reports match the catalogue;
+  only propext, Classical.choice and Quot.sound occur. Reused the successful
+  6 October full build at unchanged proof snapshot a88a66b. No proof source,
+  dependency, experiment or certificate was changed.
+- Metadata passes the official v0.4 JSON Schema pinned at upstream
+  99c678e569c7c4c0772db297c5ddd5e4c9b6322e. Cross-checks confirm source locations,
+  hashes, introduced-commit ancestry, toolchain and frozen-release coverage.
+  The v0.1.0 DOI covers fourteen selected declarations; the two 6 October
+  RootStream declarations are excluded. Validation details are in
+  results/2026-10-07-publication-validation.json.
+- Palomar remains not submitted. Comparator Challenge/Solution/configuration,
+  module-system migration and independent-kernel verification are still pending;
+  the current YAML files do not imply registry certification or peer review.
+- Classification: verification/infrastructure progress and dissemination. No new
+  mathematical result or conjecture resolution. Maintain the catalogue at meaningful
+  formal milestones; next substantive work remains the original odd-shift terminal
+  rows, with the parent-window-to-moments bridge as the next formal step.
