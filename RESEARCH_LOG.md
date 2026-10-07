@@ -693,3 +693,26 @@ automation readback were checked. No code or proof changed; tests were not rerun
   the checked commit. Palomar intake and registration remain unperformed.
 - Classification remains verification/infrastructure progress. No novelty,
   firstness, all-degree bound or characteristic-two conclusion follows.
+
+## 2026-10-07 (Wednesday, Australia/Sydney): prior-formalisation search
+
+- User requested a focused priority search after setting a first-proof or
+  first-formalisation publication criterion. Clean main at 8994e608 fetched
+  and remained current by fast-forward-only update; origin verified.
+- Searched public GitHub code/repositories, Palomar's direct API, indexed
+  community/Zulip and archive pages; inspected the source paper, pinned Mathlib
+  and plausible matches. The apparent formal-database predecessor is LaTeX
+  paper text, not Lean. Other inspected hits concern real-number conjecture
+  statements, unrelated 2-adic results, Python tilings or generic libraries.
+- No earlier public Lean version of the specific root/coefficient/forced-factor
+  package found. General Vandermonde moment rigidity already exists in Mathlib;
+  this project cannot claim its first formalisation. Underlying mathematics is
+  in Lai–Sprang Section 3, so it is not a first proof.
+- Retained scoped findings, primary links and API evidence in
+  results/2026-10-07-prior-formalisation-search.{md,json}, including transient
+  rate limits, successful retries and indexing/coverage limits. No priority
+  claim, external contact or Palomar submission. Submission remains on hold;
+  full Proposition 2.3 would be a stronger formal milestone.
+- Classification: literature/provenance verification; no mathematical increment.
+  No proof, dependency or experiment changed. Validate records and the complete
+  documentation diff; a repeated Lean build would not test these changes.

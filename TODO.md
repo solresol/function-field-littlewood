@@ -45,6 +45,12 @@ Palomar intake and its own mechanical/editorial review remain pending. The sourc
 licensed Apache-2.0 with mathematical attribution and AI-use disclosure. Do not
 claim registry verification or registration before those steps actually succeed.
 
+User publication criterion (7 October): pursue submission for a first proof or
+first formalisation, not verification alone. The [prior-formalisation search](results/2026-10-07-prior-formalisation-search.md)
+found no earlier public Lean version of the specific Lai–Sprang components;
+priority remains unestablished. Keep submission on hold and retain this scoped
+finding rather than promoting it to a firstness claim.
+
 ## Next computation
 
 - The 5 October reverse lift makes the terminal F_1 statement **equivalent**

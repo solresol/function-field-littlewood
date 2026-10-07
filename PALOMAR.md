@@ -19,6 +19,12 @@ descent, prove the all-degree N-bound, or construct a characteristic-two
 counterexample. Combining the existing steps into an independently stated
 theorem is verification progress; no mathematical novelty or firstness is claimed.
 
+A [7 October prior-formalisation search](results/2026-10-07-prior-formalisation-search.md)
+found no earlier public Lean version of these specific components, while confirming
+that general Vandermonde rigidity is already in Mathlib. Priority remains
+unestablished. Submission is on hold under the user's first-proof or
+first-formalisation criterion.
+
 ## Verification
 
 The project is pinned to Lean `v4.35.0-rc2` and Mathlib commit

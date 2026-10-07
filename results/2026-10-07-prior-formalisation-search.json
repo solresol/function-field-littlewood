@@ -1,0 +1,953 @@
+{
+  "access_date_sydney": "2026-10-07",
+  "queried_at_utc": "2026-10-07T12:16:05.432041+00:00",
+  "finished_at_utc": "2026-10-07T12:19:03.546882+00:00",
+  "purpose": "Bounded public search for prior formalisation, not proof of priority",
+  "evidence_format": "Bounded query ledger; broad hit lists summarised by repository after path screening. Not an exhaustive proof-equivalence audit.",
+  "github_queries": [
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"2606.00633\"",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit",
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"Sprang\" language:Lean",
+      "page_totals": [
+        147
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "solresol/function-field-littlewood": 12,
+        "leanprover/lean4": 6,
+        "leanprover-community/mathlib4": 2,
+        "Verified-zkEVM/VCVio": 2,
+        "leanprover/verso": 3,
+        "leanprover-community/ProofWidgets4": 1,
+        "chasenorman/CanonicalLean": 2,
+        "leanprover-community/import-graph": 1,
+        "frenzymath/reap": 1,
+        "dennj/solana-lean": 7,
+        "Theophilus1030/NeoMathlib": 6,
+        "leanprover/nerodia": 1,
+        "mkaratarakis/mathlibtest": 6,
+        "leanprover/downstream-lean4": 8,
+        "umpolungfish/p4rakernel": 6,
+        "duong-ngo/mathlib4": 6,
+        "meta-introspector/lean-split-tool": 4,
+        "competemath/tengoku": 8,
+        "jcreinhold/lean-fmt": 1,
+        "briangmilnes/ScottLean4": 3,
+        "dwijayuda/pskernel": 3,
+        "rbeauchamp/regula": 1,
+        "andyprevalsky/auto-math": 3,
+        "jcreedcmu/yalep": 2,
+        "optsuite/lean-tools-mcp": 2,
+        "leemiracle/work4ai": 3
+      },
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"Littlewood\" language:Lean",
+      "page_totals": [
+        277
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "google-deepmind/formal-conjectures": 18,
+        "YaelDillies/cam-combi": 2,
+        "toshiro881967-coder/DST-Vault": 3,
+        "fpvandoorn/carleson": 3,
+        "LeanPool/lean-pool": 41,
+        "facebookresearch/atlas-lean": 1,
+        "KitaKen1/littlewood-cylinders-lean": 1,
+        "TauCetiProject/TauCeti": 1,
+        "roos-j/lean-spherical": 3,
+        "solresol/function-field-littlewood": 3,
+        "ImperialCollegeLondon/AnnalsChallenge": 2,
+        "KitaKen1/reverse-littlewood-offord-lean": 1,
+        "RexHannes/twin-prime-proof-search": 1,
+        "danlyng/Econlib": 2,
+        "jrgochan/prime": 1,
+        "competemath/emissary-archangel": 3,
+        "ailtoncnascimento/dgbozk-lean": 1,
+        "the-omega-institute/newmath": 1,
+        "primaryhosting/brockian-mathematics": 7,
+        "roos-j/lean-sparse": 1,
+        "szl-holdings/lutar-lean": 1,
+        "szl-holdings/a11oy": 1,
+        "roos-j/lean-discretesw": 1,
+        "The-Last-Math-Competition/The-Last-Math-Competition": 1
+      },
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"t-adic\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit",
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"P(t)-adic\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit",
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"number wall\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit",
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"root_moment\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"geometric_parity\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "github_search",
+      "kind": "code",
+      "query": "\"parity\" \"ZMod\" \"IsSquare\" language:Lean",
+      "page_totals": [],
+      "incomplete_results": [],
+      "retrieved_by_repository": {},
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "github_search",
+      "kind": "repositories",
+      "query": "littlewood lean",
+      "page_totals": [
+        10
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "KitaKen1/littlewood-cylinders-lean": 1,
+        "KitaKen1/reverse-littlewood-offord-lean": 1,
+        "golfbum71/HardyLittlewood": 1,
+        "solresol/function-field-littlewood": 1,
+        "hxypqr/littlewood-constant-inverse": 1,
+        "apellis/odd-lean": 1,
+        "Brsanch/sqg-lean-proofs-fourier": 1,
+        "antidepersonalizationer/some-bounds-related-to-the-2-adic-littlewood-conjecture-open-problems": 1,
+        "CoolRmal/centered-maximal-constant": 1,
+        "incrediblecrab/erdos-200": 1
+      },
+      "error": null,
+      "repository_hits": [
+        {
+          "full_name": "KitaKen1/littlewood-cylinders-lean",
+          "html_url": "https://github.com/KitaKen1/littlewood-cylinders-lean",
+          "description": "A Lean 4 proof of Littlewood's cylinder conjecture: seven mutually touching congruent infinite cylinders exist, and eight or more are impossible."
+        },
+        {
+          "full_name": "KitaKen1/reverse-littlewood-offord-lean",
+          "html_url": "https://github.com/KitaKen1/reverse-littlewood-offord-lean",
+          "description": "Lean 4 proof of the exponential rate in the reverse Littlewood–Offord problem at radius one: for odd n, F₂,₁(n)^{1/n} → 1/√2, an open problem of Hollom, Portier and Souza (arXiv:2503.24202)."
+        },
+        {
+          "full_name": "golfbum71/HardyLittlewood",
+          "html_url": "https://github.com/golfbum71/HardyLittlewood",
+          "description": "Repository for the Hardy-Littlewood Prime k-tuple Lean formalization"
+        },
+        {
+          "full_name": "solresol/function-field-littlewood",
+          "html_url": "https://github.com/solresol/function-field-littlewood",
+          "description": "Computational experiments and Lean certificates for research on the function-field P(t)-adic Littlewood conjecture."
+        },
+        {
+          "full_name": "hxypqr/littlewood-constant-inverse",
+          "html_url": "https://github.com/hxypqr/littlewood-constant-inverse",
+          "description": "Lean 4 formalization of Further remarks on the inverse Littlewood conjecture, with explicit external inputs and verification records."
+        },
+        {
+          "full_name": "apellis/odd-lean",
+          "html_url": "https://github.com/apellis/odd-lean",
+          "description": "Lean 4 formalization of odd symmetric functions: Ellis–Khovanov, Ellis–Khovanov–Lauda, and Ellis (odd Littlewood–Richardson)"
+        },
+        {
+          "full_name": "Brsanch/sqg-lean-proofs-fourier",
+          "html_url": "https://github.com/Brsanch/sqg-lean-proofs-fourier",
+          "description": "Classical Fourier analysis in Lean 4: Littlewood–Paley, paraproducts, Kato–Ponce commutator, Sobolev embeddings for 𝕋². Upstream of sqg-lean-proofs and future NS/Euler/MHD formalizations."
+        },
+        {
+          "full_name": "antidepersonalizationer/some-bounds-related-to-the-2-adic-littlewood-conjecture-open-problems",
+          "html_url": "https://github.com/antidepersonalizationer/some-bounds-related-to-the-2-adic-littlewood-conjecture-open-problems",
+          "description": "Work in progress on the open problems in Vitorino and Vukusic's Some Bounds Related to the 2-adic Littlewood Conjecture (arXiv:2506.04110). Partial Lean results; two explicitly admitted proof obligations remain."
+        },
+        {
+          "full_name": "CoolRmal/centered-maximal-constant",
+          "html_url": "https://github.com/CoolRmal/centered-maximal-constant",
+          "description": "Lean 4 proof that the weak (1,1) constant of the centred Hardy-Littlewood maximal operator over squares satisfies 1.68550999... <= c_2 <= 3.879 (and c_d <= 2^d)"
+        },
+        {
+          "full_name": "incrediblecrab/erdos-200",
+          "html_url": "https://github.com/incrediblecrab/erdos-200",
+          "description": "Erdos problem #200: does the longest arithmetic progression of primes in {1,...,N} have length o(log N)? Open. Exhaustive L(N) to N=5.73e11, a validated Hardy-Littlewood heuristic, a quantified sieve barrier, and the known upper bound machine-checked in Lean 4 with no hypotheses."
+        }
+      ]
+    },
+    {
+      "phase": "github_search",
+      "kind": "repositories",
+      "query": "littlewood function-field",
+      "page_totals": [
+        1
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "solresol/function-field-littlewood": 1
+      },
+      "error": null,
+      "repository_hits": [
+        {
+          "full_name": "solresol/function-field-littlewood",
+          "html_url": "https://github.com/solresol/function-field-littlewood",
+          "description": "Computational experiments and Lean certificates for research on the function-field P(t)-adic Littlewood conjecture."
+        }
+      ]
+    },
+    {
+      "phase": "github_search",
+      "kind": "repositories",
+      "query": "Lai Sprang",
+      "page_totals": [
+        0
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {},
+      "error": null,
+      "repository_hits": []
+    },
+    {
+      "phase": "github_search",
+      "kind": "repositories",
+      "query": "littlewood formalisation",
+      "page_totals": [
+        0
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {},
+      "error": null,
+      "repository_hits": []
+    },
+    {
+      "phase": "github_search",
+      "kind": "repositories",
+      "query": "littlewood formalization",
+      "page_totals": [
+        4
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "golfbum71/HardyLittlewood": 1,
+        "hxypqr/littlewood-constant-inverse": 1,
+        "apellis/odd-lean": 1,
+        "Brsanch/sqg-lean-proofs-fourier": 1
+      },
+      "error": null,
+      "repository_hits": [
+        {
+          "full_name": "golfbum71/HardyLittlewood",
+          "html_url": "https://github.com/golfbum71/HardyLittlewood",
+          "description": "Repository for the Hardy-Littlewood Prime k-tuple Lean formalization"
+        },
+        {
+          "full_name": "hxypqr/littlewood-constant-inverse",
+          "html_url": "https://github.com/hxypqr/littlewood-constant-inverse",
+          "description": "Lean 4 formalization of Further remarks on the inverse Littlewood conjecture, with explicit external inputs and verification records."
+        },
+        {
+          "full_name": "apellis/odd-lean",
+          "html_url": "https://github.com/apellis/odd-lean",
+          "description": "Lean 4 formalization of odd symmetric functions: Ellis–Khovanov, Ellis–Khovanov–Lauda, and Ellis (odd Littlewood–Richardson)"
+        },
+        {
+          "full_name": "Brsanch/sqg-lean-proofs-fourier",
+          "html_url": "https://github.com/Brsanch/sqg-lean-proofs-fourier",
+          "description": "Classical Fourier analysis in Lean 4: Littlewood–Paley, paraproducts, Kato–Ponce commutator, Sobolev embeddings for 𝕋². Upstream of sqg-lean-proofs and future NS/Euler/MHD formalizations."
+        }
+      ]
+    },
+    {
+      "phase": "github_retry",
+      "kind": "code",
+      "query": "\"2606.00633\"",
+      "page_totals": [
+        39
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "solresol/function-field-littlewood": 28,
+        "AlexenderSokolov/cross-theory-formal-database": 1,
+        "ehijano/rss_fetch": 2,
+        "koutya0akari/arxiv-plug-in-for-mixi2": 1,
+        "cric96/experiments-2025-collective-state-machines": 4,
+        "ShalevBenDavid/Traffic-Classification-Research": 1,
+        "AkinduH/Solar-Power-Generation-Anomaly-Detection": 1,
+        "beomjoonkim/voot": 1
+      },
+      "error": null,
+      "candidate_paths": {
+        "AlexenderSokolov/cross-theory-formal-database": [
+          "editable-corpus/sources/208301/source0.tex"
+        ]
+      }
+    },
+    {
+      "phase": "github_retry",
+      "kind": "code",
+      "query": "\"t-adic\" language:Lean",
+      "page_totals": [
+        4
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "solresol/function-field-littlewood": 1,
+        "CBirkbeck/AINTLIB": 3
+      },
+      "error": null,
+      "candidate_paths": {
+        "solresol/function-field-littlewood": [
+          "FunctionFieldLittlewood/FractionalPart.lean"
+        ],
+        "CBirkbeck/AINTLIB": [
+          "projects/HasseWeil/HasseWeil/Isogeny/FormalSeries.lean",
+          "projects/ModularCurves/ModularCurves/EllipticCurve/PoleFiltration.lean",
+          "projects/PadicLFunctions/PadicLFunctions/IwasawaProof/LogDerivative.lean"
+        ]
+      }
+    },
+    {
+      "phase": "github_retry",
+      "kind": "code",
+      "query": "\"P(t)-adic\" language:Lean",
+      "page_totals": [
+        0
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {},
+      "error": null,
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_retry",
+      "kind": "code",
+      "query": "\"number wall\" language:Lean",
+      "page_totals": [
+        0
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {},
+      "error": null,
+      "candidate_paths": {}
+    },
+    {
+      "phase": "github_retry",
+      "kind": "code",
+      "query": "\"parity\" \"ZMod\" \"IsSquare\" language:Lean",
+      "page_totals": [
+        43
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "dwrensha/compfiles": 1,
+        "solresol/function-field-littlewood": 1,
+        "LeanPool/lean-pool": 5,
+        "roed-math/gq2-lean": 2,
+        "TauCetiProject/TauCeti": 2,
+        "dzackgarza/lean-categories": 2,
+        "AxiomMath/Zeta5Irrational": 5,
+        "AxiomMath/ZeroFree": 1,
+        "mariainesdff/HassePrinciple": 1,
+        "Theophilus1030/NeoMathlib": 1,
+        "AxiomMath/BSDTamagawa": 3,
+        "mkaratarakis/mathlibtest": 1,
+        "Axiomatic-AI/mathlib4": 1,
+        "competemath/tengoku": 1,
+        "meta-introspector/lean-split-tool": 2,
+        "MichaelStollBayreuth/EllipticCurves": 1,
+        "briangmilnes/ScottLean4": 1,
+        "andyprevalsky/auto-math": 1,
+        "leemiracle/work4ai": 1,
+        "DE0CH/flt-lean": 1,
+        "gvakhrushev/d0_15": 1,
+        "vltanh/lean4-markman25-hodge-abelian-fourfolds": 5,
+        "Morten-Ness/Leaner": 1,
+        "duong-ngo/mathlib4": 1,
+        "gersh/mathlib-bonsai": 1
+      },
+      "error": null
+    },
+    {
+      "phase": "github_final",
+      "kind": "code",
+      "query": "\"Vandermonde\" \"nonsquare\" language:Lean",
+      "page_totals": [
+        8
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "Verified-zkEVM/ArkLib": 4,
+        "competemath/emissary-archangel": 3,
+        "solresol/function-field-littlewood": 1
+      },
+      "error": null,
+      "candidate_paths": {
+        "Verified-zkEVM/ArkLib": [
+          "ArkLib/Data/Matrix/Vandermonde.lean",
+          "ArkLib/Data/CodingTheory/ReedSolomon.lean",
+          "ArkLib/Data/CodingTheory/ProximityGenerator/PolynomialGenerator.lean",
+          "ArkLib/Data/CodingTheory/ProximityGap/CapacityBounds/Powers.lean"
+        ],
+        "competemath/emissary-archangel": [
+          "data/exports/arklib/ArkLib.Data.Matrix.Vandermonde.expanded.lean",
+          "data/exports/arklib/ArkLib.Data.CodingTheory.ReedSolomon.expanded.lean",
+          "data/exports/arklib/ArkLib.Data.CodingTheory.ProximityGenerator.PolynomialGenerator.expanded.lean"
+        ],
+        "solresol/function-field-littlewood": [
+          "FunctionFieldLittlewood/ParityDescent.lean"
+        ]
+      }
+    },
+    {
+      "phase": "github_final",
+      "kind": "code",
+      "query": "\"paperfolding\" language:Lean",
+      "page_totals": [
+        1
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "facebookresearch/atlas-lean": 1
+      },
+      "error": null,
+      "candidate_paths": {
+        "facebookresearch/atlas-lean": [
+          "MathlibExt/Combinatorics/InfiniteWord/CloitreSequence.lean"
+        ]
+      }
+    },
+    {
+      "phase": "github_final",
+      "kind": "code",
+      "query": "\"LaiSprang\" language:Lean",
+      "page_totals": [
+        9
+      ],
+      "incomplete_results": [
+        false
+      ],
+      "retrieved_by_repository": {
+        "solresol/function-field-littlewood": 9
+      },
+      "error": null,
+      "candidate_paths": {
+        "solresol/function-field-littlewood": [
+          "FunctionFieldLittlewood/LaiSprangStream.lean",
+          "FunctionFieldLittlewood.lean",
+          "verification/CatalogueAudit.lean",
+          "FunctionFieldLittlewood/RootStream.lean",
+          "FunctionFieldLittlewood/Examples.lean",
+          "FunctionFieldLittlewood/BridgeExamples.lean",
+          "FunctionFieldLittlewood/LaurentExamples.lean",
+          "FunctionFieldLittlewood/SavedCertificates.lean",
+          "FunctionFieldLittlewood/FractionalPartExamples.lean"
+        ]
+      }
+    },
+    {
+      "phase": "github_final",
+      "kind": "code",
+      "query": "\"Littlewood\" language:Lean",
+      "page_totals": [
+        277,
+        277
+      ],
+      "incomplete_results": [
+        false,
+        false
+      ],
+      "retrieved_by_repository": {
+        "google-deepmind/formal-conjectures": 18,
+        "YaelDillies/cam-combi": 2,
+        "toshiro881967-coder/DST-Vault": 3,
+        "fpvandoorn/carleson": 6,
+        "LeanPool/lean-pool": 51,
+        "facebookresearch/atlas-lean": 2,
+        "KitaKen1/littlewood-cylinders-lean": 1,
+        "TauCetiProject/TauCeti": 1,
+        "roos-j/lean-spherical": 33,
+        "solresol/function-field-littlewood": 16,
+        "ImperialCollegeLondon/AnnalsChallenge": 2,
+        "KitaKen1/reverse-littlewood-offord-lean": 1,
+        "RexHannes/twin-prime-proof-search": 2,
+        "danlyng/Econlib": 3,
+        "jrgochan/prime": 1,
+        "competemath/emissary-archangel": 11,
+        "ailtoncnascimento/dgbozk-lean": 1,
+        "the-omega-institute/newmath": 1,
+        "primaryhosting/brockian-mathematics": 19,
+        "roos-j/lean-sparse": 3,
+        "szl-holdings/lutar-lean": 1,
+        "szl-holdings/a11oy": 2,
+        "roos-j/lean-discretesw": 2,
+        "The-Last-Math-Competition/The-Last-Math-Competition": 1,
+        "sparckix/ztare": 1,
+        "apellis/odd-lean": 1,
+        "roos-j/lean-lt-carleson": 1,
+        "AIQ-Kitware/aiq-dkps-formalization": 7,
+        "AxiomMath/PrimeNumberTheoremAnd": 1,
+        "davidleon/Gaseous-Prime-Universe": 1,
+        "primaryhosting/riemann-corpus-data": 1,
+        "willmfeldman/aleksandrov-differentiability": 1,
+        "CitizenGardens/Foundry": 1,
+        "project-numina/LeanTriathlon": 1,
+        "teal-sea/zeta-lab": 1
+      },
+      "error": "HTTP 403: GitHub API search rate limit"
+    },
+    {
+      "phase": "page3_retry",
+      "kind": "code",
+      "query": "\"Littlewood\" language:Lean",
+      "page": 3,
+      "total_count": 277,
+      "incomplete_results": false,
+      "retrieved_count": 77,
+      "retrieved_by_repository": {
+        "primaryhosting/brockian-mathematics": 5,
+        "gobbleyourdong/open_problems": 1,
+        "danlyng/Econlib": 2,
+        "roos-j/lean-spherical": 39,
+        "solresol/function-field-littlewood": 4,
+        "AIQ-Kitware/aiq-dkps-formalization": 1,
+        "fpvandoorn/carleson": 2,
+        "LeanPool/lean-pool": 13,
+        "competemath/emissary-archangel": 3,
+        "ImperialCollegeLondon/AnnalsChallenge": 1,
+        "roos-j/lean-lt-carleson": 1,
+        "roos-j/lean-discretesw": 2,
+        "teal-sea/zeta-lab": 3
+      },
+      "error": null
+    }
+  ],
+  "initial_successful_observations": [
+    {
+      "query": "\"Lai\" \"Sprang\" language:Lean",
+      "total_count": 23,
+      "finding": "This project plus unrelated source/tooling hits; author substrings alone are noisy."
+    },
+    {
+      "query": "\"root_moment\" language:Lean",
+      "total_count": 3,
+      "repositories": [
+        "solresol/function-field-littlewood"
+      ],
+      "paths": [
+        "Solution.lean",
+        "Challenge.lean",
+        "verification/PalomarAudit.lean"
+      ]
+    },
+    {
+      "query": "\"geometric_parity\" language:Lean",
+      "total_count": 3,
+      "repositories": [
+        "solresol/function-field-littlewood"
+      ],
+      "paths": [
+        "Solution.lean",
+        "verification/CatalogueAudit.lean",
+        "FunctionFieldLittlewood/ParityDescent.lean"
+      ]
+    },
+    {
+      "query": "\"Littlewood\" language:Lean",
+      "total_count": 270,
+      "note": "Initial first-page query; later responses reported 277. Not a fixed index snapshot."
+    }
+  ],
+  "palomar_initial_errors": [
+    {
+      "query": "Littlewood",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=Littlewood",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "2606.00633",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=2606.00633",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "Lai Sprang",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=Lai+Sprang",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "root moment",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=root+moment",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "query": "parity descent",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=parity+descent",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "palomar_queries": [
+    {
+      "query": "Littlewood",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=Littlewood",
+      "request_headers": {
+        "User-Agent": "function-field-littlewood literature research",
+        "Accept": "application/json"
+      },
+      "response": {
+        "schema_version": 1,
+        "revision": 179,
+        "release": "dbbfafc99f79dc72d637f2085ab733b01694caab7829644b891800fa9de4ff6e",
+        "totals": {
+          "results": 461,
+          "projects": 374
+        },
+        "entries": [
+          {
+            "id": "PALOMAR-2026-09-23-000001",
+            "title": "Zero density theorems for short intervals",
+            "version": 1
+          }
+        ],
+        "previous": null,
+        "next": null,
+        "dropped": [],
+        "message": null
+      }
+    },
+    {
+      "query": "2606.00633",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=2606.00633",
+      "request_headers": {
+        "User-Agent": "function-field-littlewood literature research",
+        "Accept": "application/json"
+      },
+      "response": {
+        "schema_version": 1,
+        "revision": 179,
+        "release": "dbbfafc99f79dc72d637f2085ab733b01694caab7829644b891800fa9de4ff6e",
+        "totals": {
+          "results": 461,
+          "projects": 374
+        },
+        "entries": [],
+        "previous": null,
+        "next": null,
+        "dropped": [],
+        "message": null
+      }
+    },
+    {
+      "query": "Lai Sprang",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=Lai+Sprang",
+      "request_headers": {
+        "User-Agent": "function-field-littlewood literature research",
+        "Accept": "application/json"
+      },
+      "response": {
+        "schema_version": 1,
+        "revision": 179,
+        "release": "dbbfafc99f79dc72d637f2085ab733b01694caab7829644b891800fa9de4ff6e",
+        "totals": {
+          "results": 461,
+          "projects": 374
+        },
+        "entries": [
+          {
+            "id": "PALOMAR-2026-09-30-000018",
+            "title": "The 2-adic zeta value ζ₂(7) is irrational",
+            "version": 1
+          },
+          {
+            "id": "PALOMAR-2026-09-25-000026",
+            "title": "At least one of the 2-adic zeta values ζ₂(7), ζ₂(9) is irrational",
+            "version": 1
+          },
+          {
+            "id": "PALOMAR-2026-09-25-000023",
+            "title": "At least one of the 2-adic zeta values ζ₂(7), ζ₂(9), ζ₂(11) is irrational",
+            "version": 1
+          }
+        ],
+        "previous": null,
+        "next": null,
+        "dropped": [],
+        "message": null
+      }
+    },
+    {
+      "query": "root moment",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=root+moment",
+      "request_headers": {
+        "User-Agent": "function-field-littlewood literature research",
+        "Accept": "application/json"
+      },
+      "response": {
+        "schema_version": 1,
+        "revision": 179,
+        "release": "dbbfafc99f79dc72d637f2085ab733b01694caab7829644b891800fa9de4ff6e",
+        "totals": {
+          "results": 461,
+          "projects": 374
+        },
+        "entries": [
+          {
+            "id": "PALOMAR-2026-09-23-000002",
+            "title": "Positive density of Collatz convergence at every rate above 3/log(4/3)",
+            "version": 1
+          }
+        ],
+        "previous": null,
+        "next": null,
+        "dropped": [],
+        "message": null
+      }
+    },
+    {
+      "query": "parity descent",
+      "url": "https://data.palomar-registry.org/api/v1/results?q=parity+descent",
+      "request_headers": {
+        "User-Agent": "function-field-littlewood literature research",
+        "Accept": "application/json"
+      },
+      "response": {
+        "schema_version": 1,
+        "revision": 179,
+        "release": "dbbfafc99f79dc72d637f2085ab733b01694caab7829644b891800fa9de4ff6e",
+        "totals": {
+          "results": 461,
+          "projects": 374
+        },
+        "entries": [],
+        "previous": null,
+        "next": null,
+        "dropped": [],
+        "message": null
+      }
+    }
+  ],
+  "palomar_browse_index": {
+    "results": 461,
+    "schema_version": 2,
+    "versions": 524,
+    "year_path": "browse/{year}.json",
+    "years": [
+      {
+        "days": 54,
+        "results": 461,
+        "versions": 524,
+        "year": "2026"
+      }
+    ]
+  },
+  "source_inspections": [
+    {
+      "kind": "counterexample-computation",
+      "url": "https://raw.githubusercontent.com/Steven-Robertson2229/Counterexamples_to_the_p-t-_adic_Littlewood_Conjecture_Over_Small_Finite_Fields/main/README.md",
+      "sha256": "c15184286ad6deebe6832e451f95e0caf76e00a040ddcc1fc7cc550d109e170c"
+    },
+    {
+      "kind": "real-padic-project",
+      "url": "https://raw.githubusercontent.com/antidepersonalizationer/some-bounds-related-to-the-2-adic-littlewood-conjecture-open-problems/main/README.md",
+      "sha256": "31b4c2bad8da3ccd0517a282051905ef4d3e1363fd944beb2a6c73f59d82a452"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Verified-zkEVM/ArkLib/35ddcaa83f683011f944f58904be779495a5709a/ArkLib/Data/Matrix/Vandermonde.lean",
+      "sha256": "a6f1625eb22a77217576a1d6c79b63d1d5f1cce1142c3e4643bafba023f9b403",
+      "matching_line_numbers": [
+        22,
+        38,
+        41,
+        42,
+        43,
+        46,
+        47,
+        56,
+        58,
+        62,
+        64,
+        72,
+        73,
+        74,
+        85,
+        86,
+        87,
+        96,
+        97,
+        99,
+        100,
+        104,
+        106,
+        110,
+        112,
+        117
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/atlas-lean/cb2c60fdc395a3c248c8eb0c6609872476716250/MathlibExt/Combinatorics/InfiniteWord/CloitreSequence.lean",
+      "sha256": "a26b197f95af2ed3616bffb81a56cd2e79b74dd47f475ef04c4a19b4f19c621e",
+      "matching_line_numbers": [
+        23,
+        34,
+        37,
+        43,
+        53,
+        60,
+        69,
+        78
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/CBirkbeck/AINTLIB/577a8e561a2585f7c5e420952ca26f3ce7bef968/projects/HasseWeil/HasseWeil/Isogeny/FormalSeries.lean",
+      "sha256": "ee49eb60667794e812fdf1781fbe93b9333fec52ffa53fdd9dc7253cf5169f4d",
+      "matching_line_numbers": [
+        36,
+        85,
+        91,
+        116,
+        118,
+        131,
+        146,
+        153,
+        160,
+        183,
+        274,
+        297,
+        314,
+        341,
+        360,
+        389,
+        417,
+        435,
+        492,
+        527,
+        565,
+        601,
+        647,
+        663,
+        688,
+        704,
+        711,
+        722,
+        732,
+        773,
+        822,
+        923,
+        932,
+        943,
+        976,
+        1119,
+        1187,
+        1308,
+        1344,
+        1469,
+        1546,
+        1561,
+        1608,
+        1623,
+        1658,
+        1674,
+        1702,
+        1726,
+        1737,
+        1752,
+        1805
+      ]
+    }
+  ],
+  "manual_inspections": [
+    {
+      "repository": "AlexenderSokolov/cross-theory-formal-database",
+      "commit": "e2f90006c4b4cb4fcd859fc1b98654bc62a0ba30",
+      "tree_truncated": false,
+      "lean_file_count": 0,
+      "paper_id_hit": "editable-corpus/sources/208301/source0.tex",
+      "finding": "LaTeX of Badziahin-Pavlenkov-Zorin citing Lai-Sprang, not a Lean proof."
+    },
+    {
+      "repository": "google-deepmind/formal-conjectures",
+      "commit": "83397bad317ac2cf180ffd418f791b8613d1a78f",
+      "path": "FormalConjectures/Wikipedia/LittlewoodConjecture.lean",
+      "finding": "Real classical/p-adic conjecture statements with sorry; not a function-field proof."
+    },
+    {
+      "repository": "leanprover-community/mathlib4",
+      "commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+      "path": "Mathlib/LinearAlgebra/Vandermonde.lean",
+      "declaration": "Matrix.eq_zero_of_forall_pow_sum_mul_pow_eq_zero",
+      "finding": "Existing general moment rigidity reused by this project."
+    }
+  ],
+  "conclusion": "No earlier public Lean formalisation of the specific package found; priority unestablished. Underlying mathematics already proved by Lai-Sprang. No Palomar submission."
+}
