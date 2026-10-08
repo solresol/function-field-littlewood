@@ -64,6 +64,16 @@ The remaining finite-field frontier appears to be characteristic 2. This was rec
 
 ## Current computational question
 
+**9 October structural result:** the auxiliary bound holds at every shift
+for **d<N(3N/2-1)** when r>=2, improving the earlier cutoff N(N-1).
+The ordinary proof excludes terminal quotients of degree below N/2: their
+norm congruence forces a monomial, and two original adjacent stream rows
+rule out that case. A nonmonomial boundary example at quotient degree N/2
+shows where this argument stops; it is not a terminal counterexample.
+See [the proof and exact controls](results/2026-10-09-terminal-low-degree.md).
+This is auxiliary mathematical progress, not an all-degree result, Lean
+theorem or characteristic-two construction.
+
 Lai--Sprang prove a uniform positive lower bound for the Littlewood product. Their argument gives a defect bound corresponding to `2N`, where `N=2^r`. The first experiment in this repository asks whether the explicit `Lambda` has a sharper bound when `r>=2`.
 
 Write `Q=t^m R`, with `R(0) != 0`, `deg R=d`, and let `j` be the first non-zero coefficient of the fractional part of `t^m R Lambda`. The Littlewood product is `2^(d-j)`. Thus a lower bound `2^(-B)` is equivalent to

@@ -744,3 +744,38 @@ automation readback were checked. No code or proof changed; tests were not rerun
   pin; all ten prior groups are unchanged. Official v0.4 metadata schema and
   new-group provenance checks passed. This group is outside the previous
   Comparator and Zenodo snapshots; publication/submission status is unchanged.
+
+## 2026-10-09 (Friday, Australia/Sydney): all-shift low-degree terminal exclusion
+
+- Clean main at f61dac5 fetched and fast-forward-only current; expected origin,
+  no prior run lock or active research process. Read current source, recent
+  ordinary/formal results and automation memory before selecting work.
+- Asked whether the actual terminal rows exclude low-degree quotients at all
+  shifts. Proved that F=1+...+t^(N-1) has no N-row zero window for r>=2:
+  an explicit adjacent difference is nonzero, using either a supported odd
+  index or the exceptional shift's valuation-one pair.
+- The terminal norm W=V0^2-t V1^2 preserves both degree and order of V.
+  Below H=N/2 its residue congruence forces a monomial, which the original
+  rows exclude. Even shifts already force a factor too large for this degree.
+  Thus every terminal quotient has degree at least H. Combined with the
+  existing exact-degree descent, j-d<=N now holds for every shift whenever
+  d<N(3N/2-1), improving N(N-1). No endpoint assumption is needed in this proof.
+- At e=H over F_5, V=1+t+3t^2,M=1 satisfies the norm congruence with C=2
+  but has first stream row 2. Retained this boundary control and genuine r=1
+  failure; neither is misrepresented as a new counterexample for r>=2.
+- Exact polynomial product controls and independently expanded root-sum row
+  obstructions passed, including shift zero and indices beyond 2^54. Saved
+  input ranges, endpoints, outputs and runtime in the dated check JSON;
+  Python 3.9.6, standard library, no randomness. Existing Python regressions
+  passed. No optimiser, expanded box, certificate export, Lean source/build
+  or dependency change. Full proof and evidence boundaries are in
+  results/2026-10-09-terminal-low-degree.md and the dated validation record.
+- Refreshed primary Lai–Sprang v1 and BPZ v1 versions and ANL quadratic/
+  unbounded-deficiency exclusions. Scoped searches found no relevant later
+  resolution; indexing and one Garrett–Robertson content-fetch timeout limit
+  absence claims. No binary candidate proposed or retired stream expanded.
+- Classification: mathematical progress on the auxiliary bound, by ordinary
+  proof. Not an all-degree theorem, Lean result, new odd-characteristic
+  main counterexample, characteristic-two advance or established novelty.
+  Next informative question: degree-H norm solutions and their original parity
+  rows. Next Lean step remains parent-row extraction and degree bookkeeping.

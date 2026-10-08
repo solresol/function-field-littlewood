@@ -53,6 +53,16 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
+- The 9 October ordinary proof excludes all terminal S=F_1 V with
+  deg V<N/2 at every shift, improving the original degree cutoff to
+  d<N(3N/2-1). Do not rescan that range. The first unresolved quotient
+  degree is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
+  there with V(0)!=0, then test compatibility with the original parity rows.
+  The F_5 example V=1+t+3t^2,M=1 has C=2 but fails its first original row;
+  it shows why the low-degree monomial argument does not extend automatically.
+  See results/2026-10-09-terminal-low-degree.md. This boundary example is
+  not a terminal witness or a new linkage-only refutation.
+
 - The 5 October reverse lift makes the terminal F_1 statement **equivalent**
   to the auxiliary all-degree N-bound. A terminal counterexample S at M lifts
   via R=S(t^N), m=NM to exact defect 2N. Together with the earlier descent,
@@ -126,6 +136,19 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-09 (Friday computation)
+
+- Ordinary all-shift terminal exclusion for deg V<N/2; original auxiliary
+  degree cutoff improves from N(N-1) to N(3N/2-1). The proof uses norm
+  degree/order rigidity and an explicit two-row obstruction for monomial V.
+- Retained the genuine r=1 failure and a nonmonomial e=N/2 compressed-norm
+  boundary example that fails the original rows. Independent root-sum controls
+  and Python regressions passed; no Lean or expanded multiplier search.
+- Classification: mathematical progress on the auxiliary bound. All-degree
+  bound, N-or-2N branch, characteristic two and publication novelty unresolved.
+- Next computation: degree-H norm classification with actual parity rows;
+  next formalisation remains parent-row extraction on the existing descent path.
 
 ## Completed on 2026-10-08 (Thursday formalisation)
 

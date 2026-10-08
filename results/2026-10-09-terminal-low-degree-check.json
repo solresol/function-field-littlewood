@@ -1,0 +1,1094 @@
+{
+  "python": "3.9.6",
+  "dependencies": "Python standard library",
+  "seed": null,
+  "scope": "identity and explicit obstruction checks; no search",
+  "polynomial_checks": [
+    {
+      "p": 3,
+      "N": 2,
+      "exhaustive_coefficient_width": 2,
+      "additional_vectors": "all unit monomials of degree < H; 1+t^H",
+      "nonzero_vectors": 8,
+      "low_degree_monomial_norms": 2
+    },
+    {
+      "p": 5,
+      "N": 4,
+      "exhaustive_coefficient_width": 4,
+      "additional_vectors": "all unit monomials of degree < H; 1+t^H",
+      "nonzero_vectors": 624,
+      "low_degree_monomial_norms": 8
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "exhaustive_coefficient_width": 2,
+      "additional_vectors": "all unit monomials of degree < H; 1+t^H",
+      "nonzero_vectors": 169,
+      "low_degree_monomial_norms": 24
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "exhaustive_coefficient_width": 1,
+      "additional_vectors": "all unit monomials of degree < H; 1+t^H",
+      "nonzero_vectors": 44,
+      "low_degree_monomial_norms": 43
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "exhaustive_coefficient_width": 3,
+      "additional_vectors": "all unit monomials of degree < H; 1+t^H",
+      "nonzero_vectors": 4918,
+      "low_degree_monomial_norms": 53
+    }
+  ],
+  "adjacent_row_checks": [
+    {
+      "p": 5,
+      "N": 4,
+      "records": [
+        {
+          "M": 0,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            1,
+            2
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 5
+        },
+        {
+          "M": 1,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            2,
+            0
+          ],
+          "difference": 3,
+          "inclusive_original_endpoint": 6
+        },
+        {
+          "M": 2,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 3,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 4,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 5,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            4,
+            2
+          ],
+          "difference": 3,
+          "inclusive_original_endpoint": 10
+        },
+        {
+          "M": 6,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 13
+        },
+        {
+          "M": 7,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 13
+        },
+        {
+          "M": 4503599627370496,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            1,
+            2
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 4503599627370501
+        },
+        {
+          "M": 4503599627370497,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            2,
+            0
+          ],
+          "difference": 3,
+          "inclusive_original_endpoint": 4503599627370502
+        },
+        {
+          "M": 4503599627370499,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 4503599627370505
+        }
+      ]
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "records": [
+        {
+          "M": 0,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            6,
+            2
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 5
+        },
+        {
+          "M": 1,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            2,
+            0
+          ],
+          "difference": 11,
+          "inclusive_original_endpoint": 6
+        },
+        {
+          "M": 2,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 3,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 4,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 5,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            4,
+            2
+          ],
+          "difference": 11,
+          "inclusive_original_endpoint": 10
+        },
+        {
+          "M": 6,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            9
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 13
+        },
+        {
+          "M": 7,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            9
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 13
+        },
+        {
+          "M": 4503599627370496,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            6,
+            2
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 4503599627370501
+        },
+        {
+          "M": 4503599627370497,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            2,
+            0
+          ],
+          "difference": 11,
+          "inclusive_original_endpoint": 4503599627370502
+        },
+        {
+          "M": 4503599627370499,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            4
+          ],
+          "difference": 4,
+          "inclusive_original_endpoint": 4503599627370505
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "records": [
+        {
+          "M": 0,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            16,
+            8
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 9
+        },
+        {
+          "M": 1,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            8,
+            4
+          ],
+          "difference": 37,
+          "inclusive_original_endpoint": 10
+        },
+        {
+          "M": 2,
+          "adjacent_rows": [
+            7,
+            8
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 3,
+          "adjacent_rows": [
+            6,
+            7
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 4,
+          "adjacent_rows": [
+            5,
+            6
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 5,
+          "adjacent_rows": [
+            4,
+            5
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 6,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 7,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 8,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 9,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            8,
+            4
+          ],
+          "difference": 37,
+          "inclusive_original_endpoint": 18
+        },
+        {
+          "M": 10,
+          "adjacent_rows": [
+            7,
+            8
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 11,
+          "adjacent_rows": [
+            6,
+            7
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 12,
+          "adjacent_rows": [
+            5,
+            6
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 13,
+          "adjacent_rows": [
+            4,
+            5
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 14,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 15,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            33
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 25
+        },
+        {
+          "M": 9007199254740992,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            16,
+            8
+          ],
+          "difference": 33,
+          "inclusive_original_endpoint": 9007199254741001
+        },
+        {
+          "M": 9007199254740993,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            8,
+            4
+          ],
+          "difference": 37,
+          "inclusive_original_endpoint": 9007199254741002
+        },
+        {
+          "M": 9007199254740999,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            8
+          ],
+          "difference": 8,
+          "inclusive_original_endpoint": 9007199254741009
+        }
+      ]
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "records": [
+        {
+          "M": 0,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            6,
+            7
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 17
+        },
+        {
+          "M": 1,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            7,
+            16
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 18
+        },
+        {
+          "M": 2,
+          "adjacent_rows": [
+            15,
+            16
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 3,
+          "adjacent_rows": [
+            14,
+            15
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 4,
+          "adjacent_rows": [
+            13,
+            14
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 5,
+          "adjacent_rows": [
+            12,
+            13
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 6,
+          "adjacent_rows": [
+            11,
+            12
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 7,
+          "adjacent_rows": [
+            10,
+            11
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 8,
+          "adjacent_rows": [
+            9,
+            10
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 9,
+          "adjacent_rows": [
+            8,
+            9
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 10,
+          "adjacent_rows": [
+            7,
+            8
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 11,
+          "adjacent_rows": [
+            6,
+            7
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 12,
+          "adjacent_rows": [
+            5,
+            6
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 13,
+          "adjacent_rows": [
+            4,
+            5
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 14,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 15,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 16,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 33
+        },
+        {
+          "M": 17,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            16,
+            8
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 34
+        },
+        {
+          "M": 18,
+          "adjacent_rows": [
+            15,
+            16
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 19,
+          "adjacent_rows": [
+            14,
+            15
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 20,
+          "adjacent_rows": [
+            13,
+            14
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 21,
+          "adjacent_rows": [
+            12,
+            13
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 22,
+          "adjacent_rows": [
+            11,
+            12
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 23,
+          "adjacent_rows": [
+            10,
+            11
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 24,
+          "adjacent_rows": [
+            9,
+            10
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 25,
+          "adjacent_rows": [
+            8,
+            9
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 26,
+          "adjacent_rows": [
+            7,
+            8
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 27,
+          "adjacent_rows": [
+            6,
+            7
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 28,
+          "adjacent_rows": [
+            5,
+            6
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 29,
+          "adjacent_rows": [
+            4,
+            5
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 30,
+          "adjacent_rows": [
+            3,
+            4
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 31,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            1
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 49
+        },
+        {
+          "M": 18014398509481984,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            6,
+            7
+          ],
+          "difference": 1,
+          "inclusive_original_endpoint": 18014398509482001
+        },
+        {
+          "M": 18014398509481985,
+          "adjacent_rows": [
+            1,
+            2
+          ],
+          "values": [
+            7,
+            16
+          ],
+          "difference": 9,
+          "inclusive_original_endpoint": 18014398509482002
+        },
+        {
+          "M": 18014398509481999,
+          "adjacent_rows": [
+            2,
+            3
+          ],
+          "values": [
+            0,
+            16
+          ],
+          "difference": 16,
+          "inclusive_original_endpoint": 18014398509482017
+        }
+      ]
+    }
+  ],
+  "degree_boundary": {
+    "p": 5,
+    "N": 4,
+    "V": [
+      1,
+      1,
+      3
+    ],
+    "W": [
+      1,
+      0,
+      4
+    ],
+    "M": 1,
+    "C": 2,
+    "original_rows": [
+      2,
+      0,
+      2,
+      0,
+      2,
+      4,
+      0
+    ],
+    "inclusive_original_endpoint": 13
+  },
+  "r1_terminal_rows": [
+    0,
+    0,
+    2
+  ],
+  "runtime_seconds": 0.047546042000000004
+}

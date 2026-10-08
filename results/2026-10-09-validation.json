@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-09T08:22:36.695615+11:00",
+  "classification": "mathematical progress: ordinary all-shift terminal degree exclusion",
+  "commands": [
+    {
+      "command": "python3 -m search.terminal_low_degree_check",
+      "exit_code": 0,
+      "runtime_seconds": 0.047546042000000004,
+      "evidence": "results/2026-10-09-terminal-low-degree-check.json"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "test_summary": "Ran 41 tests in 3.588s\n\nOK"
+    }
+  ],
+  "polynomial_identity_vectors": 5763,
+  "explicit_adjacent_row_obstructions": 76,
+  "proof_scope": "r>=2 over F_p, all shifts and d<N(3N/2-1); ordinary proof using existing descent/moment lemmas",
+  "lean_build": "not run; no Lean source or dependency changes",
+  "limits": [
+    "all-degree bound unresolved",
+    "N-or-2N branch unresolved",
+    "no characteristic-two result",
+    "publication novelty not established"
+  ]
+}
