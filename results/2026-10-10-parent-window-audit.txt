@@ -1,0 +1,55 @@
+@FunctionFieldLittlewood.ParentWindow.parity_split : ∀ {K : Type u_1} [inst : Field K] (R : Polynomial K),
+  R =
+    (Polynomial.expand K 2) (FunctionFieldLittlewood.ParentWindow.evenPart R) +
+      Polynomial.X * (Polynomial.expand K 2) (FunctionFieldLittlewood.ParentWindow.oddPart R)
+@FunctionFieldLittlewood.ParentWindow.parent_windows : ∀ {K : Type u_1} [inst : Field K] (R E O : Polynomial K)
+  (a : ℕ → K),
+  (∀ (v : ℕ), a (2 * v) = a v) →
+    R = (Polynomial.expand K 2) E + Polynomial.X * (Polynomial.expand K 2) O →
+      ∀ (q s n epsilon delta : ℕ),
+        epsilon ≤ 1 →
+          delta ≤ 1 →
+            (∀ (k : ℕ),
+                1 ≤ k →
+                  k ≤ 2 * q + epsilon + 2 * s →
+                    FunctionFieldLittlewood.WindowMoments.filt R a (2 * n + delta + k) = 0) →
+              (∀ l < q + s + epsilon * delta,
+                  FunctionFieldLittlewood.WindowMoments.filt E a (n + l + 1) +
+                      FunctionFieldLittlewood.WindowMoments.filt O (fun i => a (2 * i + 1)) (n + l + 1) =
+                    0) ∧
+                ∀ l < q + s + epsilon * (1 - delta),
+                  FunctionFieldLittlewood.WindowMoments.filt O a (n + delta + l + 1) +
+                      FunctionFieldLittlewood.WindowMoments.filt E (fun i => a (2 * i + 1)) (n + delta + l) =
+                    0
+@FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor : ∀ {p r k s : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    s ∣ 2 ^ r →
+      p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+        ∀ (U : Polynomial (ZMod p)) (q n epsilon delta : ℕ),
+          epsilon ≤ 1 →
+            delta ≤ 1 →
+              ((Polynomial.expand (ZMod p) 2)
+                        (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s) *
+                      U).natDegree =
+                  2 * q + epsilon →
+                (∀ (j : ℕ),
+                    1 ≤ j →
+                      j ≤ 2 * q + epsilon + 2 * s →
+                        FunctionFieldLittlewood.WindowMoments.filt
+                            ((Polynomial.expand (ZMod p) 2)
+                                (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s) *
+                              U)
+                            (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (2 * n + delta + j) =
+                          0) →
+                  FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s * (Polynomial.X ^ 2 ^ r + 1) ∣
+                      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s *
+                        FunctionFieldLittlewood.ParentWindow.evenPart U ∧
+                    FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s *
+                        (Polynomial.X ^ 2 ^ r + 1) ∣
+                      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ r) s *
+                        FunctionFieldLittlewood.ParentWindow.oddPart U
+'FunctionFieldLittlewood.ParentWindow.parity_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.ParentWindow.parent_windows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

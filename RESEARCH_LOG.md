@@ -779,3 +779,30 @@ automation readback were checked. No code or proof changed; tests were not rerun
   main counterexample, characteristic-two advance or established novelty.
   Next informative question: degree-H norm solutions and their original parity
   rows. Next Lean step remains parent-row extraction and degree bookkeeping.
+
+## 2026-10-10 (Saturday, Australia/Sydney): actual parent windows to forced factors
+
+- Clean main at 8460e29 fetched and fast-forward-only current, expected origin,
+  no prior run lock or active research process. Read automation memory, current
+  sources, recent ordinary/formal records and primary parity argument.
+- Asked before coding whether the actual parent window supplies the parity
+  rows and exact degree budgets. ParentWindow.lean proves the canonical split,
+  both filter identities, all four degree/shift row counts, coefficient-based
+  degree bounds, and geometric quotient degree/expansion identities.
+- Composed these with the existing named-stream theorem: a factored parent
+  with the specified zero window forces the next binomial factor in both
+  canonical children. No assumed parity rows, quotient degree budgets,
+  enumeration, or moment vanishing remains. Shift zero, zero components and
+  the original r=1 comparison are included without endpoint assumptions.
+- Classification: verification/infrastructure progress on the ordinary proof,
+  not a new mathematical result. Still needed: odd-subsequence cancellation,
+  nonzero leading-child selection/shift, next factor identity and iteration;
+  the stronger terminal cutoff and all-degree bound are not Lean theorems.
+- Full pinned build and separate type/axiom audit are retained in the dated
+  validation records. No new placeholder, axiom or proof bypass; the pre-existing
+  isolated Challenge statement placeholder is outside this proof closure.
+  No dependency update, Python change, finite search or retired-stream expansion.
+- Primary LS v1 and BPZ v1 pages and ANL v2 quadratic/window exclusions were
+  refreshed. No comprehensive new frontier or novelty search was claimed.
+  Next computational question remains degree-H terminal norms and original rows.
+  See results/2026-10-10-parent-window.md for exact hypotheses and limitations.

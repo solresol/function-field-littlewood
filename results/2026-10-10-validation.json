@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-10",
+  "timezone": "Australia/Sydney",
+  "classification": "verification/infrastructure progress",
+  "build": {
+    "command": "lake build",
+    "exit_code": 0,
+    "elapsed_seconds": 26.918248582995147
+  },
+  "declaration_audit": {
+    "command": "lake env lean verification/ParentWindowAudit.lean",
+    "exit_code": 0,
+    "elapsed_seconds": 13.83340041700285
+  },
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "nonstandard_axioms": [],
+  "proof_bypass_scan": [],
+  "warnings": [
+    "Existing isolated Challenge.lean:37 statement placeholder; absent from new theorem axiom closure."
+  ],
+  "finite_search": "none",
+  "seed": null,
+  "python_tests": "not rerun; no Python source or data changes",
+  "sha256": {
+    "FunctionFieldLittlewood/ParentWindow.lean": "55fa13399bdc9769c3763ef43eba20194ab83ba14dac9adf894346b319cc6350",
+    "FunctionFieldLittlewood.lean": "e5770b177cda0380b94110020dde995c5077aea0e224e4f1befddab1db3a1af4",
+    "verification/ParentWindowAudit.lean": "0df8790506a2becea3bc0f4eb4ffc6dfdbb424114f64be0519c38feb645a2b0a",
+    "results/2026-10-10-lean-build.txt": "300e7728b23330a4aaf99afe52f6c823c1721e52ecb0e7456c9882beaed4b1c1",
+    "results/2026-10-10-parent-window-audit.txt": "092b6dc8e6a76db48dba48b09848b70d3252f20d911b99224bba4cb4788b8d78"
+  }
+}

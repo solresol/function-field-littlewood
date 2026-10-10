@@ -1,0 +1,10 @@
+module
+public import FunctionFieldLittlewood.ParentWindow
+@[expose] public section
+set_option pp.universes false
+#check @FunctionFieldLittlewood.ParentWindow.parity_split
+#check @FunctionFieldLittlewood.ParentWindow.parent_windows
+#check @FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor
+#print axioms FunctionFieldLittlewood.ParentWindow.parity_split
+#print axioms FunctionFieldLittlewood.ParentWindow.parent_windows
+#print axioms FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor

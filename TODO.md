@@ -123,10 +123,12 @@ retired examples that never reaches the substantive question.
   identity (6 October); do not repeat these. WindowMoments.lean now proves
   cross-convolution, exact finite parity-window
   budgets, and the named-stream forced factor (8 October). Do not repeat them.
-  Prove the original parent polynomial parity split and extract its finite rows
-  and quotient support/degree bounds to discharge the new theorem hypotheses.
-  Then prove the leading-child degree/shift step and iterate to the cutoff.
-  These are outstanding proofs, not assumed consequences of the new theorem.
+  ParentWindow.lean now derives the canonical polynomial parity split, actual
+  parent rows and quotient degree bounds (10 October), composing them into
+  stream_parent_forced_factor. Next prove odd-subsequence cancellation after
+  divisibility, the nonzero leading child of degree q at n+epsilon*delta,
+  and the next geometric factor identity; then iterate to the cutoff.
+  These remain outstanding proofs, not assumed consequences of divisibility.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -136,6 +138,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-10 (Saturday formalisation)
+
+- Kernel-checked canonical parity split, exact parent-window extraction,
+  quotient degree bounds and geometric quotient degree/expansion identities.
+- The named-stream forced factor now follows from the actual factored parent
+  and its vanishing window, without assuming parity rows or degree budgets.
+- Classification: verification/infrastructure progress on the existing
+  ordinary descent. Child selection/cancellation and iteration remain;
+  no all-degree or characteristic-two advance. Next computation is unchanged.
 
 ## Completed on 2026-10-09 (Friday computation)
 
