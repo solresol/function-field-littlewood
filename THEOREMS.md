@@ -7,6 +7,7 @@ The independent root-moment package has its own verified snapshot,
 `15ca311e989d36ead9f7eaa99bc8537a2e41ae78` (7 October 2026).
 The finite parity-window group is pinned to
 `931160ccf298f9d69c65f76d60e810b7a382ae24` (8 October 2026).
+The actual parent-window group is pinned to `75e5c61870de95e901f99b5a48e74a55919f87d7` (10 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -24,8 +25,14 @@ axiom audit, archive coverage and registry status.
 | [Binary digit-parity stream recurrences](https://github.com/solresol/function-field-littlewood/blob/a88a66bfbf75c98d279a45b40137bb5259718f10/FunctionFieldLittlewood/BinaryStream.lean#L21) | known recurrence formalised for regression | v0.1.0 |
 | [Independent root-moment package](https://github.com/solresol/function-field-littlewood/blob/15ca311e989d36ead9f7eaa99bc8537a2e41ae78/Solution.lean#L21) | independent statement and comparison of existing formal steps | Not yet archived |
 | [Finite parity windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/931160ccf298f9d69c65f76d60e810b7a382ae24/FunctionFieldLittlewood/WindowMoments.lean#L168) | source-based convolution and exact row budgets | Not yet archived |
+| [Actual parent windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/75e5c61870de95e901f99b5a48e74a55919f87d7/FunctionFieldLittlewood/ParentWindow.lean#L197) | canonical split, actual rows and derived degree budgets | Not yet archived |
 
 ## Verification boundary
+
+The 10 October parent-window group passed its own pinned build and
+[type/axiom audit](results/2026-10-10-parent-window-audit.txt). It derives the
+parent rows and degree budgets; nonzero child selection and iteration remain.
+It is outside the older Comparator and archive snapshots.
 
 The earlier declarations were resolved in Lean and their axioms audited on 7 October.
 The new finite-window group passed its own build and

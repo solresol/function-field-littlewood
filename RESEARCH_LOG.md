@@ -806,3 +806,7 @@ automation readback were checked. No code or proof changed; tests were not rerun
   refreshed. No comprehensive new frontier or novelty search was claimed.
   Next computational question remains degree-H terminal norms and original rows.
   See results/2026-10-10-parent-window.md for exact hypotheses and limitations.
+- Proof snapshot: 75e5c61870de95e901f99b5a48e74a55919f87d7. The catalogue
+  adds the exact parent-window declarations and hypotheses with immutable source
+  hashes; all eleven historical groups remain unchanged. The pinned v0.4 metadata
+  schema and new-group provenance checks passed. No new archive or submission.

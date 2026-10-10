@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-10T11:07:24.069297+11:00",
+  "proof_snapshot": "75e5c61870de95e901f99b5a48e74a55919f87d7",
+  "schema": "official v0.4 locally pinned schema",
+  "schema_validation": "passed",
+  "new_group_validation": "immutable source bytes, hashes, declaration types and line numbers, axioms, toolchain and dependency pin passed",
+  "historical_groups": "all eleven earlier entries unchanged",
+  "new_declarations": 3,
+  "comparison": "no independent-kernel or Comparator replay claimed for this group",
+  "archive": "not included in v0.1.0"
+}
