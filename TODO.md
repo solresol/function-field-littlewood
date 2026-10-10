@@ -53,10 +53,21 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
+- Sunday's complete shift cover excludes quotient degree H=N/2 at every
+  shift over p=5,13,41,17, raising the respective original strict cutoffs to
+  24,24,96,384. See results/2026-10-11-sunday-integration.md. The ordinary
+  covering proof isolates at most one coefficient with high 2-adic valuation;
+  all its possible values are excluded by checked nonzero minors. Next seek
+  a symbolic row obstruction uniform in N and the prime, or controlled common
+  divisors of suitable minors. Individual integer minors have odd factors,
+  so the current certificates do not establish a prime-independent theorem.
+  Do not default to more primes, higher degrees or formal certificate exports.
+  The norm shapes alone remain insufficient; keep the original rows.
+
 - The 9 October ordinary proof excludes all terminal S=F_1 V with
   deg V<N/2 at every shift, improving the original degree cutoff to
   d<N(3N/2-1). Do not rescan that range. The first unresolved quotient
-  degree is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
+  degree uniformly in the prime is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
   there with V(0)!=0, then test compatibility with the original parity rows.
   The F_5 example V=1+t+3t^2,M=1 has C=2 but fails its first original row;
   it shows why the low-degree monomial argument does not extend automatically.
@@ -117,8 +128,8 @@ retired examples that never reaches the substantive question.
   arbitrary child constant coefficients and the exact shift n+epsilon*delta.
   The moment-to-forced-factor step is now kernel-checked in ParityDescent.lean
   (3 October), including Vandermonde rigidity, prime-field nonsquareness and
-  nonvanishing of the geometric factor. Do not repeat that bridge. Next connect
-  the parent rows to the exact H moments. RootStream.lean now proves the
+  nonvanishing of the geometric factor. Do not repeat that bridge. The parent
+  rows are now connected to the exact H moments below. RootStream.lean proves the
   uniform H-root enumeration, odd-subsequence formula and polynomial-filter
   identity (6 October); do not repeat these. WindowMoments.lean now proves
   cross-convolution, exact finite parity-window
@@ -138,6 +149,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-11 (Sunday integration)
+
+- Ordinary complete shift cover plus independently verified exact minors
+  excludes quotient degree H over p=5,13,41,17 at every nonnegative shift.
+  The respective strict original degree cutoffs rise to 24,24,96,384.
+- Weekly lift/low-degree controls reproduce; Python regressions and existing
+  pinned Lean build pass. No new Lean theorem or characteristic-two result.
+- Classification: field-specific mathematical progress. Next seek a uniform
+  row obstruction, not more finite boxes or retired-stream formalisation.
 
 ## Completed on 2026-10-10 (Saturday formalisation)
 

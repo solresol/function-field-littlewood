@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-11T08:26:31.337664+11:00",
+  "python": "3.9.6",
+  "dependencies": "Python standard library; unchanged pinned Lean 4.35.0-rc2/mathlib 065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "seed": null,
+  "checks": {
+    "terminal_lift": {
+      "matches_saved_evidence": true,
+      "runtime_seconds": 0.028075417,
+      "command": "search.terminal_lift_check.run(), compare JSON-normalised saved result"
+    },
+    "terminal_low_degree": {
+      "matches_saved_evidence": true,
+      "runtime_seconds": 0.0489035,
+      "command": "search.terminal_low_degree_check.run(), compare JSON-normalised saved result"
+    },
+    "python_tests": {
+      "exit_code": 0,
+      "runtime_seconds": 4.903039042,
+      "output": "test_all_small_prefixes_and_relations (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_invalid_inputs_and_polynomial_truncation (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_saved_independent_readback_and_corruption (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_tail_and_inclusive_endpoint (test_binary_quadratic_screen.QuadraticScreenTests) ... ok\ntest_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests) ... ok\ntest_endpoint_obstruction_and_mutations (test_finite_rank.RankTests) ... ok\ntest_every_tiny_stream (test_finite_rank.RankTests) ... ok\ntest_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests) ... ok\ntest_invalid_input (test_finite_rank.RankTests) ... ok\ntest_lai_sprang_tiny_boxes (test_finite_rank.RankTests) ... ok\ntest_saved_certificates (test_finite_rank.RankTests) ... ok\ntest_unresolved_is_only_a_prefix (test_finite_rank.RankTests) ... ok\ntest_coefficients_against_original_root_sum (test_lai_sprang.SearchTests) ... ok\ntest_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests) ... ok\ntest_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests) ... ok\ntest_invalid_input (test_lai_sprang.SearchTests) ... ok\ntest_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests) ... ok\ntest_recorded_results_if_present (test_lai_sprang.SearchTests) ... ok\ntest_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests) ... ok\ntest_small_box_and_scaling (test_lai_sprang.SearchTests) ... ok\ntest_five_support_points_and_cancellation (test_lai_sprang_support.SupportTests) ... ok\ntest_invalid_intervals (test_lai_sprang_support.SupportTests) ... ok\ntest_original_root_sums_on_whole_intervals (test_lai_sprang_support.SupportTests) ... ok\ntest_saved_readback_independent_and_corruption (test_lai_sprang_support.SupportTests) ... ok\ntest_small_intervals_exhaustively (test_lai_sprang_support.SupportTests) ... ok\ntest_corrupt_or_incomplete_records_rejected (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_exhaustive_tiny_generic_streams (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_invalid_inputs_and_no_overwrites (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_saved_readback_without_generation (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_sparse_dense_cutoffs_and_tail_locality (test_lai_sprang_three_term.ThreeTermTests) ... ok\ntest_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests) ... ok\ntest_bareiss_against_permutation_formula (test_terminal_boundary_cover.BoundaryCoverTests) ... ok\ntest_corruption_and_coverage_controls (test_terminal_boundary_cover.BoundaryCoverTests) ... ok\ntest_period_cover_at_large_shifts_and_inclusive_endpoint (test_terminal_boundary_cover.BoundaryCoverTests) ... ok\ntest_saved_minors_without_generator_or_elimination (test_terminal_boundary_cover.BoundaryCoverTests) ... ok\ntest_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_invalid_inputs (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests) ... ok\ntest_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests) ... ok\n\n----------------------------------------------------------------------\nRan 45 tests in 4.775s\n\nOK\n",
+      "command": "python3 -m unittest discover -s tests -v"
+    },
+    "lake_build": {
+      "command": "lake build",
+      "exit_code": 0,
+      "runtime_seconds": 6.035189417,
+      "output_tail": "ents.stream_windows_forced_factor' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n\u2139 [2568/2574] Replayed FunctionFieldLittlewood.ParentWindow\ninfo: FunctionFieldLittlewood/ParentWindow.lean:232:0: 'FunctionFieldLittlewood.ParentWindow.parity_split' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/ParentWindow.lean:233:0: 'FunctionFieldLittlewood.ParentWindow.parent_windows' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/ParentWindow.lean:234:0: 'FunctionFieldLittlewood.ParentWindow.quotient_degree_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/ParentWindow.lean:235:0: 'FunctionFieldLittlewood.ParentWindow.factorQuotient_degree' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/ParentWindow.lean:236:0: 'FunctionFieldLittlewood.ParentWindow.factorQuotient_expand' depends on axioms: [propext, Classical.choice, Quot.sound]\ninfo: FunctionFieldLittlewood/ParentWindow.lean:237:0: 'FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n\u26a0 [2571/2574] Replayed Challenge\nwarning: Challenge.lean:37:8: declaration uses `sorry`\n\u2139 [2573/2574] Replayed Solution\ninfo: Solution.lean:55:0: 'FunctionFieldLittlewood.Palomar.root_moment_package' depends on axioms: [propext, Classical.choice, Quot.sound]\nBuild completed successfully (2574 jobs).\n"
+    },
+    "boundary_cover": {
+      "generation_command": "python3 -m search.terminal_boundary_cover results/2026-10-11-boundary-cover.json",
+      "verification_command": "python3 -m search.terminal_boundary_cover results/2026-10-11-boundary-cover.json --verify",
+      "generation_runtime_seconds": 1.5266307080000001,
+      "readback_runtime_seconds": 0.872419875,
+      "verified_nonzero_minors": 3456,
+      "field_case_counts": {
+        "5": 152,
+        "13": 152,
+        "41": 624,
+        "17": 2528
+      }
+    }
+  },
+  "sha256": {
+    "search/terminal_boundary_cover.py": "40423a6e80ee5f7d9179a262d8ba2292164c00fa9826542779903fbfe3d2cc4e",
+    "tests/test_terminal_boundary_cover.py": "0f6c976570814ae24366c3ab9ebde838ce3c8d8e991318289e9bfbb0ab3826fb",
+    "results/2026-10-11-boundary-cover.json": "9fb5b463b666fe312dcfe0bc9352fc6ed78edfb830e0d8a43e60c27583121b75",
+    "results/2026-10-11-sunday-integration.md": "6c01a4b833fa6629c84c6cb2ff0dae071fbcc5eb3de5be4063e0059406479c99",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lake-manifest.json": "7449011a2c0f5da1303e705346f1e97cc72493a1f7f4ad4fd7038059399473b2"
+  },
+  "limits": "All-shift boundary exclusion in four fixed prime fields; no all-degree, characteristic-two, Lean or novelty conclusion.",
+  "transient_check_note": "Initial saved-output comparison failed because in-memory quotient vectors were tuples and saved JSON uses lists; comparison succeeded after JSON normalisation with no mathematical or source changes."
+}

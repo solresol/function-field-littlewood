@@ -810,3 +810,47 @@ automation readback were checked. No code or proof changed; tests were not rerun
   adds the exact parent-window declarations and hypotheses with immutable source
   hashes; all eleven historical groups remain unchanged. The pinned v0.4 metadata
   schema and new-group provenance checks passed. No new archive or submission.
+
+## 2026-10-11 (Sunday, Australia/Sydney): all-shift degree-H boundary cover
+
+- Clean main at 51f72c0 fetched and remained current by fast-forward-only update;
+  expected origin, no prior run lock or competing research process. Read current
+  ordinary/formal sources, roadmap, research and automation records before work.
+- Asked whether the first unresolved terminal quotient degree H=N/2 can be
+  excluded at every shift. Norm reduction gives two sparse shapes but does not
+  exclude actual windows. Stated the alternative complete shift-cover question
+  before implementing it; no expanded multiplier or shift search was substituted.
+- Ordinary covering proof: D=N-1+H and D+1 rows use an interval of length 2D+1.
+  Choose dyadic L>2D+1 and split M modulo NL. Every coefficient except at
+  most one is fixed; the remaining coefficient is in {0,H,-H}. All original
+  shifts, however large, are included in this finite overapproximation.
+- At p=5,13,41,17 every abstract row matrix has full column rank, certified
+  by a saved nonzero square minor. Independent original-root-sum/Bareiss
+  readback checks all 3456 cases and complete coverage. This proves all-shift
+  exclusion at degree H for these fields. Combined with the existing ordinary
+  descent and lower-degree exclusion, strict cutoffs rise to 24,24,96,384.
+- Classification: mathematical progress on the auxiliary bound by ordinary
+  argument plus exact finite proof. No all-degree resolution, uniform-prime
+  boundary result, characteristic-two advance, Lean theorem or novelty claim.
+  Initial exploratory rank checks were followed by independent certificates;
+  rank diagnostics alone are not used as proof evidence.
+- Reproduced the 5/9 October small controls, preserving r=1; 45 Python tests
+  pass, including readback with generation/elimination disabled, corruption,
+  Bareiss and inclusive/large-shift controls. Existing pinned lake build passes;
+  its isolated Challenge placeholder is unchanged and outside completed proofs.
+  No Lean source, dependency, catalogue, archive or publication action changed.
+- Weekly assessment distinguishes Monday/Friday/Sunday auxiliary mathematics,
+  Tuesday/Thursday/Saturday verification, and Wednesday provenance work. Added
+  a supersession note to the dated 2 October compatibility discussion and removed
+  the stale current TODO to re-prove the completed parent-to-moment bridge.
+- Refreshed LS v1 Proposition 2.3/Section 3, BPZ v1, ANL v2 Section 7.2 and
+  Garrett–Robertson v2 Section 5. One anchored fetch failed before full HTML
+  succeeded. Scoped searches found no later binary resolution, without an
+  absence claim; rational/quadratic and unbounded-window exclusions retained.
+- Next informative experiment: seek a symbolic row obstruction or controlled
+  common divisors of minors, uniform in N and the prime. Do not default to
+  extending fields/degrees: the present integer minors have odd factors.
+  Next Lean lemma: odd-subsequence cancellation and exact leading-child degree
+  and shift, then the geometric identity and iteration to the existing cutoff.
+- Complete proof, ranges, commands, timing, certificates and validation are in
+  results/2026-10-11-sunday-integration.md and the dated JSON records.

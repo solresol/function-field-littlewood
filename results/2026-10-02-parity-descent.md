@@ -4,6 +4,12 @@
 not Lean formalisation. Classification: **mathematical progress on the
 auxiliary bound**; no main-conjecture or publication-novelty claim.
 
+Status note (11 October integration): the historical discussion below of
+unproved necessity and lost sibling compatibility is superseded by the
+[5 October reverse lift](2026-10-05-terminal-lift.md), which proves equivalence.
+The [9 October](2026-10-09-terminal-low-degree.md) and
+[11 October](2026-10-11-sunday-integration.md) cutoffs strengthen this result.
+
 ## Question, decision and result
 
 Can a vanishing window of length d+N be reduced to smaller degree without

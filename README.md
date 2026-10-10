@@ -70,9 +70,18 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 5 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 11 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
+
+**11 October all-shift boundary exclusion:** a complete finite cover of shifts
+excludes terminal quotient degree H=N/2 over p=5,13,41,17. Ordinary proof that
+the cover contains every shift, plus independently checked nonzero minors,
+raises the respective strict degree cutoffs to **24,24,96,384**. This is
+field-specific mathematical progress, not an all-degree or Lean theorem.
+The next question is whether a symbolic row obstruction makes this boundary
+exclusion uniform; adding more primes or degrees is not the default next step.
+See [the proof, certificates and weekly assessment](results/2026-10-11-sunday-integration.md).
 
 **9 October structural result:** the auxiliary bound holds at every shift
 for **d<N(3N/2-1)** when r>=2, improving the earlier cutoff N(N-1).
