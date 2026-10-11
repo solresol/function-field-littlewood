@@ -854,3 +854,41 @@ automation readback were checked. No code or proof changed; tests were not rerun
   and shift, then the geometric identity and iteration to the existing cutoff.
 - Complete proof, ranges, commands, timing, certificates and validation are in
   results/2026-10-11-sunday-integration.md and the dated JSON records.
+
+## 2026-10-12 (Monday, Australia/Sydney): prime-independent boundary obstruction
+
+- Clean main at aca9047 fetched and remained current with fast-forward-only
+  update; expected origin, no competing run lock/process. Read recent ordinary
+  proofs, source, research/automation records and primary literature first.
+- Asked before coding whether normalized integer terminal matrices have
+  maximal minors with power-of-two common divisor. Kept exactly the existing
+  N=4,8,16 boundary covers and quotient degree H; no added primes/degrees.
+- Exact selected-minor gcds are powers of two for N=8,16. At N=4 three
+  cases instead have gcd 3. An actual no-hole matrix at M=4 has kernel
+  (1,2,2) modulo 3 and gcd 3 over all its maximal minors. Thus the stronger
+  all-odd-characteristics rank hypothesis is false; this is not a spurious
+  abstract coefficient, but characteristic 3 is inadmissible for N=4.
+- The common-divisor lemma proves full rank for every admissible prime at
+  these three scales. Together with existing descent/low-degree exclusion,
+  the all-shift cutoffs d<24,96,384 now hold for ALL primes with r=2,3,4,
+  respectively. Yesterday's four-prime limitation is removed. Uniform N,
+  the all-degree N-bound, its N-or-2N branch and characteristic two remain open.
+- Independent readback expands the integer formal series and recomputes all
+  4362 saved determinants over Fractions, without support-formula generation,
+  modular elimination or Bareiss code. Complete-cover and gcd checks pass;
+  the 50-test regression suite includes nine corruptions, root-sum readback,
+  exact modulo-3 failure and existing r=1 controls. Generation 1.866 seconds,
+  readback 3.299 seconds; Python 3.9.6, standard library, seed null. Reproduction
+  and full proof are in results/2026-10-12-prime-obstruction.md; exact inputs,
+  selected minors and validation are retained in the accompanying JSON files.
+- Classification: mathematical progress via ordinary argument and exact finite
+  proof, not finite agreement, a Lean theorem or established novelty. No Lean
+  source/build, dependency, catalogue, release or retired-stream expansion.
+- Refreshed LS v1, BPZ v1, ANL v2 quadratic exclusion and Garrett–Robertson v2
+  unbounded-window discussion. Scoped searches found no later relevant binary
+  resolution, with indexing/noise limits; no binary candidate was proposed.
+- Next substantive question: dyadic original-row identities forcing odd gcd
+  divisors to be incompatible with v_2(p-1)=log_2 N, uniformly in N. Preserve
+  the modulo-3 control; do not substitute routine higher-scale certificates.
+  No such uniform identity was obtained. Next Lean step remains cancellation,
+  exact leading-child degree/shift and geometric-factor iteration.

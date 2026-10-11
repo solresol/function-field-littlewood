@@ -70,18 +70,21 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 11 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 12 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
-**11 October all-shift boundary exclusion:** a complete finite cover of shifts
-excludes terminal quotient degree H=N/2 over p=5,13,41,17. Ordinary proof that
-the cover contains every shift, plus independently checked nonzero minors,
-raises the respective strict degree cutoffs to **24,24,96,384**. This is
-field-specific mathematical progress, not an all-degree or Lean theorem.
-The next question is whether a symbolic row obstruction makes this boundary
-exclusion uniform; adding more primes or degrees is not the default next step.
-See [the proof, certificates and weekly assessment](results/2026-10-11-sunday-integration.md).
+**12 October prime-independent boundary exclusion:** the all-shift cutoffs
+are now **d<24,96,384 for every prime with r=v_2(p-1)=2,3,4**, respectively.
+Integer maximal-minor gcd certificates extend the
+[11 October four-field result](results/2026-10-11-sunday-integration.md)
+to all primes in those classes. The stronger all-odd-characteristics rank
+hypothesis fails at N=4 modulo 3; that characteristic is inadmissible for
+the N=4 Lai–Sprang stream. This is mathematical progress by an ordinary
+argument and exact finite proof, not an all-degree or Lean theorem.
+Dependence on N remains: the next question is a dyadic row identity controlling
+admissible prime divisors uniformly, not more primes or routine larger covers.
+See [the proof, failure control and checks](results/2026-10-12-prime-obstruction.md).
 
 **9 October structural result:** the auxiliary bound holds at every shift
 for **d<N(3N/2-1)** when r>=2, improving the earlier cutoff N(N-1).

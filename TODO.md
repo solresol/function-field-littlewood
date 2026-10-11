@@ -53,21 +53,22 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
-- Sunday's complete shift cover excludes quotient degree H=N/2 at every
-  shift over p=5,13,41,17, raising the respective original strict cutoffs to
-  24,24,96,384. See results/2026-10-11-sunday-integration.md. The ordinary
-  covering proof isolates at most one coefficient with high 2-adic valuation;
-  all its possible values are excluded by checked nonzero minors. Next seek
-  a symbolic row obstruction uniform in N and the prime, or controlled common
-  divisors of suitable minors. Individual integer minors have odd factors,
-  so the current certificates do not establish a prime-independent theorem.
-  Do not default to more primes, higher degrees or formal certificate exports.
-  The norm shapes alone remain insufficient; keep the original rows.
+- The 12 October integer-minor gcd certificates exclude quotient degree H=N/2
+  at every shift for **all primes with r=v_2(p-1)=2,3,4**. The strict original
+  cutoffs are respectively 24,96,384; the four-field limitation is removed.
+  See results/2026-10-12-prime-obstruction.md. For N=8,16 the selected gcds
+  are powers of two. At N=4 an actual normalized row matrix has maximal-minor
+  gcd 3, but characteristic 3 is incompatible with this N. Retire the stronger
+  full-rank-in-every-odd-characteristic hypothesis: this is a real rank failure,
+  not merely a spurious abstract coefficient and not a Lai–Sprang counterexample.
+  Next seek a dyadic row identity controlling admissible prime divisors of the
+  maximal-minor gcd uniformly in N, retaining this control and the original rows.
+  Do not default to more primes, routine higher-scale covers or formal exports.
 
 - The 9 October ordinary proof excludes all terminal S=F_1 V with
   deg V<N/2 at every shift, improving the original degree cutoff to
-  d<N(3N/2-1). Do not rescan that range. The first unresolved quotient
-  degree uniformly in the prime is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
+  d<N(3N/2-1). Do not rescan that range. For r>=5 the first unresolved
+  quotient degree uniformly in the prime is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
   there with V(0)!=0, then test compatibility with the original parity rows.
   The F_5 example V=1+t+3t^2,M=1 has C=2 but fails its first original row;
   it shows why the low-degree monomial argument does not extend automatically.
@@ -149,6 +150,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-12 (Monday computation)
+
+- Removed the prime restriction from the boundary exclusion at N=4,8,16
+  using exact integer maximal-minor gcds and independent formal-series/Fraction
+  readback. All primes with r=2,3,4 have the improved all-shift cutoffs.
+- Refuted the stronger power-of-two-gcd hypothesis at N=4 with an actual
+  modulo-3 kernel; that characteristic is outside the admissible class.
+- Classification: mathematical progress. Uniform N, all-degree bound and
+  characteristic two remain unresolved; no Lean or publication change.
 
 ## Completed on 2026-10-11 (Sunday integration)
 
