@@ -1,0 +1,29 @@
+{
+  "started_at": "2026-10-13T08:20:03.039916+11:00",
+  "seed": null,
+  "classification": "verification/infrastructure progress",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "checks": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 6.738086393997946,
+      "output": "results/2026-10-13-lean-build.txt"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/DescentStepAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.220979049001471,
+      "output": "results/2026-10-13-descent-audit.txt"
+    }
+  ]
+}

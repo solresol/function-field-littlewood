@@ -16,6 +16,7 @@ public import FunctionFieldLittlewood.FractionalPartExamples
 public import FunctionFieldLittlewood.ParityDescent
 public import FunctionFieldLittlewood.WindowMoments
 public import FunctionFieldLittlewood.ParentWindow
+public import FunctionFieldLittlewood.DescentStep
 public import FunctionFieldLittlewood.RootStream
 
 @[expose] public section

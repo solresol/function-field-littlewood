@@ -1,0 +1,98 @@
+@FunctionFieldLittlewood.DescentStep.factorQuotient_next : ∀ {K : Type u_1} [inst : Field K] {H s : ℕ},
+  0 < H →
+    s ∣ H →
+      FunctionFieldLittlewood.ParityDescent.factorQuotient K H s * (Polynomial.X ^ H + 1) =
+        FunctionFieldLittlewood.ParityDescent.factorQuotient K (2 * H) s
+@FunctionFieldLittlewood.DescentStep.odd_filter_zero : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      Polynomial.X ^ 2 ^ r + 1 ∣ P →
+        ∀ (v : ℕ),
+          FunctionFieldLittlewood.WindowMoments.filt P
+              (fun i => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * i + 1)) v =
+            0
+@FunctionFieldLittlewood.DescentStep.leading_child : ∀ {K : Type u_1} [inst : Field K] (R E O : Polynomial K),
+  R ≠ 0 →
+    R = (Polynomial.expand K 2) E + Polynomial.X * (Polynomial.expand K 2) O →
+      ∀ (q epsilon : ℕ),
+        epsilon ≤ 1 →
+          R.natDegree = 2 * q + epsilon →
+            (if epsilon = 0 then E else O) ≠ 0 ∧ (if epsilon = 0 then E else O).natDegree = q
+@FunctionFieldLittlewood.DescentStep.stream_descent_step : ∀ {p r k s : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    s ∣ 2 ^ r →
+      p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+        ∀ (R : Polynomial (ZMod p)),
+          R ≠ 0 →
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) (2 * s) ∣ R →
+              ∀ (q n epsilon delta : ℕ),
+                epsilon ≤ 1 →
+                  delta ≤ 1 →
+                    R.natDegree = 2 * q + epsilon →
+                      (∀ (j : ℕ),
+                          1 ≤ j →
+                            j ≤ R.natDegree + 2 * s →
+                              FunctionFieldLittlewood.WindowMoments.filt R
+                                  (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (2 * n + delta + j) =
+                                0) →
+                        ∃ S,
+                          S ≠ 0 ∧
+                            S.natDegree = q ∧
+                              FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) s ∣ S ∧
+                                ∀ (j : ℕ),
+                                  1 ≤ j →
+                                    j ≤ q + s →
+                                      FunctionFieldLittlewood.WindowMoments.filt S
+                                          (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                          (n + epsilon * delta + j) =
+                                        0
+@FunctionFieldLittlewood.DescentStep.iterated_degree_bound : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ j ≤ r + 1,
+        ∀ (R : Polynomial (ZMod p)),
+          R ≠ 0 →
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) (2 ^ j) ∣ R →
+              ∀ (m : ℕ),
+                (∀ (i : ℕ),
+                    1 ≤ i →
+                      i ≤ R.natDegree + 2 ^ j →
+                        FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                            (m + i) =
+                          0) →
+                  2 ^ j * (2 * 2 ^ r - 1) ≤ R.natDegree
+@FunctionFieldLittlewood.DescentStep.stream_degree_bound : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (R : Polynomial (ZMod p)),
+        R ≠ 0 →
+          ∀ (m : ℕ),
+            (∀ (i : ℕ),
+                1 ≤ i →
+                  i ≤ R.natDegree + 2 ^ (r + 1) →
+                    FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (m + i) =
+                      0) →
+              2 ^ (r + 1) * (2 ^ (r + 1) - 1) ≤ R.natDegree
+@FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (R : Polynomial (ZMod p)),
+        R ≠ 0 →
+          ∀ (m : ℕ),
+            R.natDegree < 2 ^ (r + 1) * (2 ^ (r + 1) - 1) →
+              ∃ i,
+                1 ≤ i ∧
+                  i ≤ R.natDegree + 2 ^ (r + 1) ∧
+                    FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (m + i) ≠
+                      0
+'FunctionFieldLittlewood.DescentStep.factorQuotient_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.odd_filter_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.leading_child' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.stream_descent_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.iterated_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.stream_degree_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

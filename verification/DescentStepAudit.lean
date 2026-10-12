@@ -1,0 +1,18 @@
+module
+public import FunctionFieldLittlewood.DescentStep
+@[expose] public section
+set_option pp.universes false
+#check @FunctionFieldLittlewood.DescentStep.factorQuotient_next
+#check @FunctionFieldLittlewood.DescentStep.odd_filter_zero
+#check @FunctionFieldLittlewood.DescentStep.leading_child
+#check @FunctionFieldLittlewood.DescentStep.stream_descent_step
+#check @FunctionFieldLittlewood.DescentStep.iterated_degree_bound
+#check @FunctionFieldLittlewood.DescentStep.stream_degree_bound
+#check @FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff
+#print axioms FunctionFieldLittlewood.DescentStep.factorQuotient_next
+#print axioms FunctionFieldLittlewood.DescentStep.odd_filter_zero
+#print axioms FunctionFieldLittlewood.DescentStep.leading_child
+#print axioms FunctionFieldLittlewood.DescentStep.stream_descent_step
+#print axioms FunctionFieldLittlewood.DescentStep.iterated_degree_bound
+#print axioms FunctionFieldLittlewood.DescentStep.stream_degree_bound
+#print axioms FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff

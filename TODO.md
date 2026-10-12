@@ -120,27 +120,17 @@ downstream theorem it enables. Completing an essential bridge is legitimate
 verification progress; avoid an indefinite sequence of bridges or formalised
 retired examples that never reaches the substantive question.
 
-- The fractional-part order, base-two size and polynomial product bridge is now
-  proved (1 October). Product >= 2^(-N) is equivalent to a nonzero coefficient
-  among 1,...,d+N, without assuming an exact index. Do not extend bridge work
-  by default. The 2 October structural target is now available: formalise the
-  F_s, surplus-s to F_(s/2), surplus-s/2 reduction for even s dividing N.
-  Its downstream theorem is the all-shift degree cutoff d<N(N-1). Preserve
-  arbitrary child constant coefficients and the exact shift n+epsilon*delta.
-  The moment-to-forced-factor step is now kernel-checked in ParityDescent.lean
-  (3 October), including Vandermonde rigidity, prime-field nonsquareness and
-  nonvanishing of the geometric factor. Do not repeat that bridge. The parent
-  rows are now connected to the exact H moments below. RootStream.lean proves the
-  uniform H-root enumeration, odd-subsequence formula and polynomial-filter
-  identity (6 October); do not repeat these. WindowMoments.lean now proves
-  cross-convolution, exact finite parity-window
-  budgets, and the named-stream forced factor (8 October). Do not repeat them.
-  ParentWindow.lean now derives the canonical polynomial parity split, actual
-  parent rows and quotient degree bounds (10 October), composing them into
-  stream_parent_forced_factor. Next prove odd-subsequence cancellation after
-  divisibility, the nonzero leading child of degree q at n+epsilon*delta,
-  and the next geometric factor identity; then iterate to the cutoff.
-  These remain outstanding proofs, not assumed consequences of divisibility.
+- The entire ordinary 2 October degree cutoff is now formalised (13 October):
+  DescentStep.lean proves cancellation, exact nonzero leading-child degree/shift,
+  the next factor identity, surplus-halving and iteration. For every shift and
+  nonzero polynomial with d<N(N-1), a row among 1,...,d+N is nonzero.
+  Do not repeat the product/root/moment/parent bridges or this iteration.
+  Next substantive formal target: terminal exclusion for deg V<N/2 from the
+  9 October ordinary norm/order and adjacent-row argument. This enables the
+  stronger cutoff d<N(3N/2-1); terminal-witness transport from the completed
+  step may be added only as needed for that theorem. Keep the actual original
+  rows: compressed norm congruences alone fail at the known boundary example.
+  The uniform-in-N prime obstruction remains the next computational question.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -150,6 +140,17 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-13 (Tuesday formalisation)
+
+- Kernel-checked full factor-aware descent, including odd-filter cancellation,
+  the nonzero degree-q child at shift n+epsilon*delta, and F_s identity.
+- Iterated to the uniform all-shift degree cutoff d<N(N-1), in finite
+  nonvanishing form. No terminal statement or target bound is assumed.
+- Classification: verification/infrastructure progress on existing mathematics.
+  The stronger terminal cutoffs, all-degree bound and characteristic two remain
+  unresolved formal/substantive work as applicable. Next formal target is the
+  low-degree terminal exclusion; no more generic bridges or retired examples.
 
 ## Completed on 2026-10-12 (Monday computation)
 

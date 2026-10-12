@@ -892,3 +892,36 @@ automation readback were checked. No code or proof changed; tests were not rerun
   the modulo-3 control; do not substitute routine higher-scale certificates.
   No such uniform identity was obtained. Next Lean step remains cancellation,
   exact leading-child degree/shift and geometric-factor iteration.
+
+## 2026-10-13 (Tuesday, Australia/Sydney): formal descent reaches the cutoff
+
+- Clean main at 424e579, expected origin; fetch/fast-forward-only remained
+  current. No competing run found. Read migrated memory and actual sources;
+  the scheduler's first-run label did not erase prior work or require a new
+  foundation. Lean and advertised research files are present.
+- Stated the exact surplus-2s to surplus-s question before coding, including
+  nonzero child, exact floor-half degree and shift n+epsilon*delta. Completed
+  odd-subsequence cancellation and the next geometric identity, composed with
+  the existing parent-window forced-factor theorem, then iterated the step.
+- DescentStep.lean proves any nonzero R with d+N zero rows has d>=N(N-1),
+  uniformly in every shift and admissible prime. Its contrapositive gives
+  a nonzero coefficient among 1,...,d+N for d<N(N-1). No endpoint assumption,
+  terminal nonvanishing assertion or target bound is assumed. Includes N=2;
+  the genuine r=1,d=2 comparison remains outside its strict cutoff d<2.
+- Classification: verification/infrastructure progress on the 2 October
+  ordinary proof. No stronger mathematical cutoff, all-degree conclusion,
+  terminal dichotomy proof, characteristic-two construction or novelty claim.
+  The terminal witness is not packaged by this degree-inequality induction.
+- Full pinned lake build passed in 6.738s; separate seven-declaration type/axiom
+  audit passed in 2.221s. Only propext, Classical.choice and Quot.sound. No
+  new sorry, axiom, native_decide or dependency change; existing isolated
+  Challenge placeholder remains outside this closure. No Python code/search
+  or retired-stream expansion. Results and exact commands are retained in
+  results/2026-10-13-{descent-cutoff.md,validation.json,descent-audit.txt,lean-build.txt}.
+- Refreshed LS v1 and BPZ v1 primary pages; scoped arXiv searches found no
+  later characteristic-two resolution, without an absence claim. Reopened
+  ANL v2/GR v2 baseline exclusions; ANL quadratic-text find failed, so prior
+  attribution is retained rather than newly asserted. No binary candidate.
+- Next computation remains the uniform-N original-row/prime obstruction.
+  Next formal target is the 9 October low-degree terminal exclusion enabling
+  d<N(3N/2-1). Do not repeat the completed descent, generic bridges or attainment.

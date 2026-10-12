@@ -31,6 +31,18 @@ the combined root-moment component. Its sandboxed Comparator check and Lean,
 NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
+## Formal degree cutoff completed on 13 October 2026
+
+[DescentStep.lean](FunctionFieldLittlewood/DescentStep.lean) now proves the
+complete surplus-halving step and iterates it: any nonzero polynomial with
+`d+N` zero rows has `d>=N(N-1)`. Thus at every shift and degree
+`d<N(N-1)` the named stream has a nonzero row among `1,...,d+N`.
+All degree/shift parities, shift zero and arbitrary constant coefficients are
+included. This is **verification/infrastructure progress** on the ordinary
+2 October argument, not a stronger mathematical bound. The later terminal
+cutoffs, the all-degree bound and characteristic two remain outside this theorem.
+See [the proof scope and checks](results/2026-10-13-descent-cutoff.md).
+
 ## Formal step completed on 10 October 2026
 
 [ParentWindow.lean](FunctionFieldLittlewood/ParentWindow.lean) now derives
@@ -38,8 +50,8 @@ finite parity rows and quotient degree budgets from an actual factored
 parent window, then forces the next binomial factor in both canonical children.
 All four degree/shift parities and shift zero are included. This is
 verification/infrastructure progress on the ordinary descent; leading-child
-selection and iteration remain. No all-degree or characteristic-two result
-is claimed. See [the statement and limits](results/2026-10-10-parent-window.md).
+selection and iteration were subsequently completed on 13 October. No all-degree
+or characteristic-two result is claimed. See [the statement and limits](results/2026-10-10-parent-window.md).
 
 ## Formal step completed on 8 October 2026
 
@@ -49,7 +61,8 @@ then proves the geometric forced factor for the named Lai–Sprang stream.
 Zero parity quotients and shift zero are included. This is verification progress
 on the 2 October ordinary descent proof, not a new mathematical result.
 The parent-window split is now connected above; child degree/shift selection
-and iteration remain, and the auxiliary all-degree bound is unresolved.
+and iteration were completed on 13 October; the auxiliary all-degree bound
+is unresolved.
 See [the exact statement and limits](results/2026-10-08-window-moments.md).
 
 ## Status update (6 Oct 2026)
