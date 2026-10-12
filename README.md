@@ -2,6 +2,9 @@
 
 This repository tracks computational and formal work around the function-field `P(t)`-adic Littlewood conjecture.
 
+The [daily research automation](AUTOMATION.md) runs on raksasa; its udara copy
+was paused after the 12 October 2026 handoff.
+
 The first research software release is **Root-moment rigidity for the
 Lai–Sprang Littlewood series in Lean 4**; see [v0.1.0](releases/v0.1.0.md)
 for its exact theorem, limitations and reproduction commands. Citation metadata
