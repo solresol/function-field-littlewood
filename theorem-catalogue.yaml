@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-10'
+updated: '2026-10-13'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -787,14 +787,158 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: iterated-degree-cutoff
+  title: Complete parity descent and uniform degree cutoff
+  status: kernel-checked
+  mathematical_origin: source-based adaptation of the 2 October ordinary argument
+  first_formalisation_priority: unestablished
+  statement: A nonzero polynomial of degree d with d+N zero rows in the named Lai-Sprang stream has
+    d>=N(N-1). Hence d<N(N-1) gives a nonzero row among 1,...,d+N at every nonnegative shift.
+  assumptions:
+  - Prime p>2, N=2^(r+1), p-1=N(2k+1); Lean r is one less than the usual valuation parameter.
+  - The one-step theorem assumes s divides N/2, F_(2s) divides nonzero R, degree 2q+epsilon, shift
+    2n+delta with epsilon,delta<=1, and d+2s zero rows. It concludes a nonzero F_s-multiple of degree
+    q with q+s zero rows at shift n+epsilon*delta.
+  - The final nonvanishing theorem assumes only the field/order conditions, R nonzero, arbitrary
+    nonnegative shift and strict degree cutoff. No nonzero constant coefficient or terminal target
+    is assumed.
+  limitations: Verification/infrastructure progress, not a new mathematical bound. Stronger ordinary
+    terminal cutoffs, all-degree N-bound and characteristic-two construction are not proved here.
+    The iteration packages a degree inequality, not a final terminal witness. No new Laurent-product
+    corollary or priority claim.
+  declarations:
+  - name: FunctionFieldLittlewood.DescentStep.stream_descent_step
+    file: FunctionFieldLittlewood/DescentStep.lean
+    line_at_snapshot: 68
+    introduced_commit: a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1
+    lean_type: |-
+      @FunctionFieldLittlewood.DescentStep.stream_descent_step : ∀ {p r k s : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          s ∣ 2 ^ r →
+            p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+              ∀ (R : Polynomial (ZMod p)),
+                R ≠ 0 →
+                  FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) (2 * s) ∣ R →
+                    ∀ (q n epsilon delta : ℕ),
+                      epsilon ≤ 1 →
+                        delta ≤ 1 →
+                          R.natDegree = 2 * q + epsilon →
+                            (∀ (j : ℕ),
+                                1 ≤ j →
+                                  j ≤ R.natDegree + 2 * s →
+                                    FunctionFieldLittlewood.WindowMoments.filt R
+                                        (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (2 * n + delta + j) =
+                                      0) →
+                              ∃ S,
+                                S ≠ 0 ∧
+                                  S.natDegree = q ∧
+                                    FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) s ∣ S ∧
+                                      ∀ (j : ℕ),
+                                        1 ≤ j →
+                                          j ≤ q + s →
+                                            FunctionFieldLittlewood.WindowMoments.filt S
+                                                (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                                (n + epsilon * delta + j) =
+                                              0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.DescentStep.iterated_degree_bound
+    file: FunctionFieldLittlewood/DescentStep.lean
+    line_at_snapshot: 117
+    introduced_commit: a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1
+    lean_type: |-
+      @FunctionFieldLittlewood.DescentStep.iterated_degree_bound : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ j ≤ r + 1,
+              ∀ (R : Polynomial (ZMod p)),
+                R ≠ 0 →
+                  FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) (2 ^ j) ∣ R →
+                    ∀ (m : ℕ),
+                      (∀ (i : ℕ),
+                          1 ≤ i →
+                            i ≤ R.natDegree + 2 ^ j →
+                              FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                  (m + i) =
+                                0) →
+                        2 ^ j * (2 * 2 ^ r - 1) ≤ R.natDegree
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.DescentStep.stream_degree_bound
+    file: FunctionFieldLittlewood/DescentStep.lean
+    line_at_snapshot: 148
+    introduced_commit: a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1
+    lean_type: |-
+      @FunctionFieldLittlewood.DescentStep.stream_degree_bound : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (R : Polynomial (ZMod p)),
+              R ≠ 0 →
+                ∀ (m : ℕ),
+                  (∀ (i : ℕ),
+                      1 ≤ i →
+                        i ≤ R.natDegree + 2 ^ (r + 1) →
+                          FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (m + i) =
+                            0) →
+                    2 ^ (r + 1) * (2 ^ (r + 1) - 1) ≤ R.natDegree
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff
+    file: FunctionFieldLittlewood/DescentStep.lean
+    line_at_snapshot: 163
+    introduced_commit: a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1
+    lean_type: |-
+      @FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (R : Polynomial (ZMod p)),
+              R ≠ 0 →
+                ∀ (m : ℕ),
+                  R.natDegree < 2 ^ (r + 1) * (2 ^ (r + 1) - 1) →
+                    ∃ i,
+                      1 ≤ i ∧
+                        i ≤ R.natDegree + 2 ^ (r + 1) ∧
+                          FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (m + i) ≠
+                            0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-13-lean-build.txt
+    full_build_validation: results/2026-10-13-validation.json
+    catalogue_audit: results/2026-10-13-descent-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/DescentStep.lean: dd257a4efabe75c866bacd2585047fa9f83288670600f876ab2b04f7a253c4f0
+    verification: Lean kernel and separate type/axiom audit; no Comparator or independent-kernel
+      replay for this increment.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
-- id: degree-cutoff
+- id: stronger-terminal-cutoff
   status: ordinary-proof-not-lean
-  statement: For every shift, j-d<=N when d<N(N-1).
-  record: results/2026-10-02-parity-descent.md
-  remaining: Parent rows now force the factor. Odd-subsequence cancellation, nonzero leading-child
-    selection and shift, next factor identity and iteration remain. The 9 October stronger
-    ordinary cutoff d<N(3N/2-1) additionally needs terminal norm and adjacent-row formalisation.
+  statement: For every shift, j-d<=N when d<N(3N/2-1), for r>=2 in valuation notation.
+  record: results/2026-10-09-terminal-low-degree.md
+  remaining: The first cutoff d<N(N-1) is now Lean-proved in the iterated-degree-cutoff group.
+    Formalise terminal norm/order rigidity and the adjacent-row obstruction, with terminal
+    witness transport as needed. The 12 October prime-independent boundary cutoffs also remain
+    outside Lean.
 - id: terminal-equivalence
   status: ordinary-proof-not-lean
   statement: Terminal F_1 nonvanishing is equivalent to the all-degree N-bound, and the maximum

@@ -5,8 +5,8 @@ project:
   description: Formalises root-moment rigidity, the geometric forced-factor step, uniform root
     enumeration, the coefficient/root-sum identity, and finite parity-window-to-moment convolution
     and actual parent-window extraction for the explicit Lai-Sprang support stream.
-    Includes generic exact and dual certificates and Laurent/product bridges. The leading-child
-    selection and full degree-cutoff descent are not yet assembled into a Lean theorem.
+    Includes generic exact and dual certificates and Laurent/product bridges. Complete leading-child
+    selection and iterated descent now prove the all-shift cutoff d<N(N-1) in finite nonvanishing form.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -43,8 +43,9 @@ status:
     and moment equations are explicit hypotheses of the rigidity theorem; RootStream separately
     proves enumeration and odd/filter identities for the named support stream. WindowMoments derives
     moments and the forced factor from finite parity windows with explicit row budgets. ParentWindow now derives
-    the parity rows and degree budgets from an actual factored parent and proves the forced factor. Leading-child selection, iterated degree cutoff,
-    all-degree N-bound, terminal dichotomy and characteristic-two
+    the parity rows and degree budgets from an actual factored parent and proves the forced factor.
+    DescentStep proves cancellation, exact child selection and iteration to d<N(N-1).
+    Stronger terminal cutoffs, all-degree N-bound, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
     sorry counts.
@@ -55,6 +56,14 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff
+    file: FunctionFieldLittlewood/DescentStep.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor
     file: FunctionFieldLittlewood/ParentWindow.lean
     sorry_count: 0

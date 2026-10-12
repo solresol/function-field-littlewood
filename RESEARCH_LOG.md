@@ -925,3 +925,6 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next computation remains the uniform-N original-row/prime obstruction.
   Next formal target is the 9 October low-degree terminal exclusion enabling
   d<N(3N/2-1). Do not repeat the completed descent, generic bridges or attainment.
+- Proof snapshot a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1; catalogue updated with exact declarations,
+  immutable source hash and passed schema/provenance validation. All twelve earlier
+  groups retain their evidence. No archive, Comparator rerun or registry submission.
