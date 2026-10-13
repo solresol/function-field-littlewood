@@ -1,0 +1,30 @@
+{
+  "completed_at": "2026-10-14T08:30:23.473694+11:00",
+  "classification": "mathematical progress: ordinary uniform dyadic-gap lemma; no new all-shift cutoff",
+  "commands": [
+    {
+      "command": "python3 -m search.terminal_gap_check",
+      "exit_code": 0,
+      "runtime_seconds": 1.1094662090181373
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 54,
+      "runtime_seconds": 6.809
+    }
+  ],
+  "dependencies": "Python 3.14.4 standard library",
+  "seed": null,
+  "sha256": {
+    "search/terminal_gap_check.py": "b6aa59ef39591179e80de69e253ad6d6bd9ec5067711eb6c61aafe177f0c2d7c",
+    "tests/test_terminal_gap.py": "9d88965a0a977b896a1a3bb91127d791899fdcb0490da2a5d7b56cd5555204a6",
+    "results/2026-10-14-dyadic-gap.md": "c6a1d7bf7648c4f88729376ac86e87fc0884a58f46ff3cf862ff1e7a789d4f28"
+  },
+  "limits": [
+    "ordinary proof, not Lean",
+    "no new all-shift degree cutoff",
+    "no all-degree or characteristic-two conclusion",
+    "finite checks verify identities; they are not the uniform proof"
+  ]
+}

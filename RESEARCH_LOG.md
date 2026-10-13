@@ -928,3 +928,43 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Proof snapshot a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1; catalogue updated with exact declarations,
   immutable source hash and passed schema/provenance validation. All twelve earlier
   groups retain their evidence. No archive, Comparator rerun or registry submission.
+
+## 2026-10-14 (Wednesday, Australia/Sydney): uniform dyadic-gap localization
+
+- Clean main at 137f705, expected origin, fetch/fast-forward-only already
+  current; no competing research lock. Read migrated memory, recent records,
+  roadmap and actual support, cover, determinant and stream sources.
+- Asked before coding whether original adjacent-row differences provide a
+  uniform minor controlling odd prime divisors at the degree-H boundary.
+  In each open N-block their last supported position is qN+u, where u is
+  the capped 2-adic divisor of the even member of {q,q+1}.
+- Ordinary proof: if e+u<N, a consecutive difference-row minor is triangular
+  after column reversal, with diagonal +/-1 or +/-2. All row budgets are
+  explicit. Therefore every odd characteristic has full rank; maximal-minor
+  gcds divide a power of two. This is uniform in N, not inferred from tests.
+- At e=H, remaining terminal windows require floor((M+H)/N)=0 or -1 mod H,
+  of density 4/N. The theorem also gives a characteristic-independent proof
+  for all e<H and excludes some larger quotient degrees at specified shifts.
+  It does not improve the current all-shift cutoffs. No all-degree, binary,
+  Lean or publication-novelty claim. Classification: mathematical progress.
+- The actual N=8,e=4,M=21 stream has no minor of the single-gap triangular
+  form, although its first five original rows have determinant 12 (nonzero
+  mod 41). This exposes the method's limit at an odd exceptional shift; it is
+  not a terminal counterexample.
+- Constructive minors in the existing N=4,8,16 covers were independently
+  checked from formal-series coefficients, original rows and Fraction
+  determinants; no larger cover or prime search. General-degree identity
+  endpoints and huge shifts use exact controls and original root sums.
+  A scratch control-array endpoint error raised IndexError and was fixed
+  before the successful rerun. Checker: 1.109s; Python 3.14.4, standard library,
+  seed null. All 54 regression tests pass in 6.809s, retaining r1 and N4/mod3.
+  No Lean source/build, dependency, catalogue or release changes.
+- Proof and reproduction: results/2026-10-14-dyadic-gap.md; exact finite inputs
+  and outcomes in dated gap-check/validation JSON. Primary LSv1, BPZv1,
+  ANLv2 quadratic exclusion and GRv2 unbounded-window discussion refreshed.
+  Scoped search found no later relevant binary resolution; no absence or
+  novelty claim and no new/retired binary search.
+- Next: symbolic multi-pivot elimination on the exceptional **odd** shifts,
+  retaining adjacent dyadic tails and boundary coefficients. Do not repeat a
+  larger cover. The next formal low-degree terminal exclusion can use today's
+  direct gap proof instead of norm rigidity if that reduces the proof work.

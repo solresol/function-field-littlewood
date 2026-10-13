@@ -86,9 +86,21 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 12 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 14 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
+
+**14 October uniform dyadic-gap lemma:** original-row differences have an
+explicit triangular minor with determinant a signed power of 1 or 2 whenever
+`e+u<N`, where `q=floor((M+e)/N)` and `u` is the largest power of two at most
+`N/2` dividing the even member of `{q,q+1}` (use `u=N/2` at q=0).
+This excludes those terminal windows for every dyadic N>=4 and every odd
+characteristic. At quotient degree e=N/2, any remaining terminal failure must
+have `q=0 or -1 mod (N/2)`: only a fraction 4/N of shifts remain when N>=8.
+An actual N=8 example shows why a single zero gap does not finish the proof.
+This is **auxiliary mathematical progress**, without a new all-shift degree
+cutoff or an all-degree result. See [the proof and limits](results/2026-10-14-dyadic-gap.md).
+The next question is symbolic elimination on the exceptional odd-shift strips.
 
 **12 October prime-independent boundary exclusion:** the all-shift cutoffs
 are now **d<24,96,384 for every prime with r=v_2(p-1)=2,3,4**, respectively.

@@ -1,0 +1,115 @@
+{
+  "python": "3.14.4",
+  "dependencies": "standard library",
+  "seed": null,
+  "scales": [
+    {
+      "N": 4,
+      "e": 2,
+      "complete_cover_cases": 152,
+      "constructive_minors": 0,
+      "residual_cases": 152,
+      "pivots": {},
+      "degree_control_inputs": {
+        "degrees": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "M": [
+          0,
+          11
+        ]
+      },
+      "degree_controls_checked": 24
+    },
+    {
+      "N": 8,
+      "e": 4,
+      "complete_cover_cases": 624,
+      "constructive_minors": 304,
+      "residual_cases": 320,
+      "pivots": {
+        "-2": 72,
+        "-1": 76,
+        "1": 108,
+        "2": 48
+      },
+      "degree_control_inputs": {
+        "degrees": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "M": [
+          0,
+          23
+        ]
+      },
+      "degree_controls_checked": 80
+    },
+    {
+      "N": 16,
+      "e": 8,
+      "complete_cover_cases": 2528,
+      "constructive_minors": 1888,
+      "residual_cases": 640,
+      "pivots": {
+        "-2": 488,
+        "-1": 476,
+        "1": 540,
+        "2": 384
+      },
+      "degree_control_inputs": {
+        "degrees": [
+          0,
+          7,
+          8,
+          11,
+          14,
+          15
+        ],
+        "M": [
+          0,
+          47
+        ]
+      },
+      "degree_controls_checked": 179
+    }
+  ],
+  "gap_failure_control": {
+    "N": 8,
+    "e": 4,
+    "M": 21,
+    "differences": [
+      0,
+      0,
+      1,
+      2,
+      1,
+      0,
+      -1,
+      0,
+      0,
+      0,
+      -1,
+      -2,
+      -1,
+      0,
+      1
+    ],
+    "original_minor_rows": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "original_minor_determinant": 12
+  },
+  "runtime_seconds": 1.1094662090181373
+}

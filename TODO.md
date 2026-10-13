@@ -53,6 +53,18 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
+- The 14 October dyadic-gap proof supplies a uniform original-row minor outside
+  explicit exceptional strips. For quotient degree e and q=floor((M+e)/N),
+  let u be the largest power of two <=N/2 dividing the even member of {q,q+1}
+  (u=N/2 at q=0). If e+u<N, the minor has determinant a signed power of 1 or 2,
+  so every odd characteristic is excluded. At e=H=N/2, any terminal failure
+  requires q=0 or -1 modulo H. Even shifts are already excluded by the earlier
+  moment lemma. Work next on the **remaining odd shifts in these two classes**:
+  derive symbolic multi-pivot elimination for adjacent dyadic tails and their
+  boundary values. The actual N=8,e=4,M=21 stream admits no consecutive-row
+  single-gap triangular minor, so that criterion alone cannot finish the proof
+  See results/2026-10-14-dyadic-gap.md. No larger cover is the default next step.
+
 - The 12 October integer-minor gcd certificates exclude quotient degree H=N/2
   at every shift for **all primes with r=v_2(p-1)=2,3,4**. The strict original
   cutoffs are respectively 24,96,384; the four-field limitation is removed.
@@ -61,8 +73,8 @@ finding rather than promoting it to a firstness claim.
   gcd 3, but characteristic 3 is incompatible with this N. Retire the stronger
   full-rank-in-every-odd-characteristic hypothesis: this is a real rank failure,
   not merely a spurious abstract coefficient and not a Lai–Sprang counterexample.
-  Next seek a dyadic row identity controlling admissible prime divisors of the
-  maximal-minor gcd uniformly in N, retaining this control and the original rows.
+  The 14 October identity now controls the gcd outside the exceptional strips;
+  extend it inside those strips, retaining this control and the original rows.
   Do not default to more primes, routine higher-scale covers or formal exports.
 
 - The 9 October ordinary proof excludes all terminal S=F_1 V with
@@ -130,7 +142,11 @@ retired examples that never reaches the substantive question.
   stronger cutoff d<N(3N/2-1); terminal-witness transport from the completed
   step may be added only as needed for that theorem. Keep the actual original
   rows: compressed norm congruences alone fail at the known boundary example.
-  The uniform-in-N prime obstruction remains the next computational question.
+  The 14 October adjacent-gap proof gives an alternative direct route to the
+  same low-degree exclusion and a uniform shift localization. Prefer it if its
+  support and row-index lemmas simplify the formal proof; do not build both
+  routes merely for verification. The exceptional strips remain the next
+  computational question.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -140,6 +156,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-14 (Wednesday computation)
+
+- Proved the uniform dyadic-gap minor lemma over the normalized integer stream.
+  It recovers low-degree exclusion without a characteristic relation and
+  confines degree-H terminal failures to two classes of floor((M+H)/N) mod H.
+- An actual N=8 stream disproves completeness of the single-gap triangular
+  method. Next retain multiple dyadic tails in the exceptional odd-shift strips.
+- Classification: mathematical progress on the auxiliary obstruction. No new
+  all-shift cutoff, all-degree result, characteristic-two advance or Lean theorem.
 
 ## Completed on 2026-10-13 (Tuesday formalisation)
 
