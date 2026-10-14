@@ -1003,3 +1003,6 @@ automation readback were checked. No code or proof changed; tests were not rerun
   runtime metadata retained. Next computation: exceptional odd-shift boundary
   elimination. Next formal work should support that step; do not duplicate
   the alternative norm proof, completed cutoff or generic bridges.
+- Proof snapshot ad99eeae946f1a948e6a49a69b1b92a75262459e; catalogue updated with exact declarations,
+  immutable source hash and passed schema/provenance validation. All thirteen earlier
+  groups retain their evidence. No archive, Comparator rerun or registry submission.

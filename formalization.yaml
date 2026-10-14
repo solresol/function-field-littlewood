@@ -6,7 +6,8 @@ project:
     enumeration, the coefficient/root-sum identity, and finite parity-window-to-moment convolution
     and actual parent-window extraction for the explicit Lai-Sprang support stream.
     Includes generic exact and dual certificates and Laurent/product bridges. Complete leading-child
-    selection and iterated descent now prove the all-shift cutoff d<N(N-1) in finite nonvanishing form.
+    selection, original-row terminal gap exclusion and iterated descent now prove the all-shift
+    cutoff d<N(3N/2-1) in finite nonvanishing form.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -45,7 +46,9 @@ status:
     moments and the forced factor from finite parity windows with explicit row budgets. ParentWindow now derives
     the parity rows and degree budgets from an actual factored parent and proves the forced factor.
     DescentStep proves cancellation, exact child selection and iteration to d<N(N-1).
-    Stronger terminal cutoffs, all-degree N-bound, terminal dichotomy and characteristic-two
+    TerminalGap proves support gaps and original-row terminal exclusion, strengthening the
+    formal cutoff to d<N(3N/2-1). Boundary cutoffs, exact shift localization, all-degree
+    N-bound, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
     sorry counts.
@@ -56,6 +59,14 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.TerminalGap.stream_nonvanishing_below_cutoff
+    file: FunctionFieldLittlewood/TerminalGap.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff
     file: FunctionFieldLittlewood/DescentStep.lean
     sorry_count: 0
@@ -135,8 +146,9 @@ fidelity:
     Section 3. Root moments are first formalised generically with explicit hypotheses; odd/filter
     stream identities require only N dividing p-1. The named support stream is not identified
     with the entire infinite rational-function Laurent sum. The original paper's full odd-characteristic
-    counterexample theorem and this repository's ordinary cutoff/terminal refinements are not
-    formalised end to end. No first-formalisation claim is made. The combined package discharges
+    counterexample theorem and this repository's terminal equivalence and boundary refinements
+    are not formalised end to end. The named-stream cutoff d<N(3N/2-1) is formalised.
+    No first-formalisation claim is made. The combined package discharges
     root enumeration uniformly and exposes the odd coefficient sequence and geometric factor
     inside its independent statement; moment vanishing is still an explicit hypothesis.
 review:

@@ -9,6 +9,7 @@ The finite parity-window group is pinned to
 `931160ccf298f9d69c65f76d60e810b7a382ae24` (8 October 2026).
 The actual parent-window group is pinned to `75e5c61870de95e901f99b5a48e74a55919f87d7` (10 October 2026).
 The complete descent/cutoff group is pinned to `a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1` (13 October 2026).
+The terminal-gap/stronger-cutoff group is pinned to `ad99eeae946f1a948e6a49a69b1b92a75262459e` (15 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -28,8 +29,16 @@ axiom audit, archive coverage and registry status.
 | [Finite parity windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/931160ccf298f9d69c65f76d60e810b7a382ae24/FunctionFieldLittlewood/WindowMoments.lean#L168) | source-based convolution and exact row budgets | Not yet archived |
 | [Actual parent windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/75e5c61870de95e901f99b5a48e74a55919f87d7/FunctionFieldLittlewood/ParentWindow.lean#L197) | canonical split, actual rows and derived degree budgets | Not yet archived |
 | [Complete descent and degree cutoff](https://github.com/solresol/function-field-littlewood/blob/a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1/FunctionFieldLittlewood/DescentStep.lean#L163) | full iteration of the ordinary degree-cutoff argument | Not yet archived |
+| [Terminal gap exclusion and stronger cutoff](https://github.com/solresol/function-field-littlewood/blob/ad99eeae946f1a948e6a49a69b1b92a75262459e/FunctionFieldLittlewood/TerminalGap.lean#L325) | actual support gaps, original rows and iteration to N(3N/2-1) | Not yet archived |
 
 ## Verification boundary
+
+The 15 October terminal-gap group passed the pinned full build and
+[separate ten-declaration type/axiom audit](results/2026-10-15-terminal-gap-audit.txt).
+It proves actual-stream terminal nonvanishing for deg V<N/2, then iterates to
+finite nonvanishing below d=N(3N/2-1). No constant endpoint, pivot, gap or
+terminal target is assumed in the final theorem. This verifies existing
+mathematics and is outside prior archive/Comparator snapshots.
 
 The 13 October descent/cutoff group passed the pinned full build and
 [separate type/axiom audit](results/2026-10-13-descent-audit.txt). It completes
@@ -72,9 +81,9 @@ commands above audit the current development.
 
 ## Results outside the proved catalogue
 
-The stronger terminal degree cutoffs and terminal equivalence/dichotomy have ordinary
-proofs in the dated reports; they are recorded separately in `unformalised_and_open`.
-The first cutoff d<N(N-1) is now in the proved catalogue.
+The degree-H boundary cutoffs, exact shift localization and terminal equivalence/dichotomy
+have ordinary proofs in the dated reports, recorded in `unformalised_and_open`.
+The all-shift cutoff d<N(3N/2-1) is now in the proved catalogue.
 The all-degree auxiliary N-bound remains open in this project. A characteristic-two
 construction is not claimed. Finite certificates and retired binary regressions do not
 establish either target.
@@ -102,5 +111,5 @@ migration and dependency upgrades do not rewrite that audit or archive coverage.
 The project metadata follows [formalization.yaml v0.4](https://github.com/mathlib-initiative/formalization.yaml).
 Verification and submission status follow
 [Palomar’s submission guide](https://palomar-registry.org/how-to-submit).
-Prefer a coherent parity-descent formalisation package with exact scope. The first
-Lean degree-cutoff theorem is now complete; stronger terminal results remain future work.
+Prefer a coherent parity-descent formalisation package with exact scope. The low-degree
+terminal theorem and cutoff d<N(3N/2-1) are now complete; boundary results remain future work.
