@@ -137,16 +137,14 @@ retired examples that never reaches the substantive question.
   the next factor identity, surplus-halving and iteration. For every shift and
   nonzero polynomial with d<N(N-1), a row among 1,...,d+N is nonzero.
   Do not repeat the product/root/moment/parent bridges or this iteration.
-  Next substantive formal target: terminal exclusion for deg V<N/2 from the
-  9 October ordinary norm/order and adjacent-row argument. This enables the
-  stronger cutoff d<N(3N/2-1); terminal-witness transport from the completed
-  step may be added only as needed for that theorem. Keep the actual original
-  rows: compressed norm congruences alone fail at the known boundary example.
-  The 14 October adjacent-gap proof gives an alternative direct route to the
-  same low-degree exclusion and a uniform shift localization. Prefer it if its
-  support and row-index lemmas simplify the formal proof; do not build both
-  routes merely for verification. The exceptional strips remain the next
-  computational question.
+  The low-degree terminal exclusion and stronger cutoff d<N(3N/2-1) are now
+  also formalised (15 October), via the direct support-gap proof. Do not
+  duplicate the alternative norm/order route or repeat terminal transport.
+  Next useful formal step, when needed by the boundary argument: identify
+  the exact last nonzero difference offset u and formalise the 14 October
+  condition e+u<N and its degree-H shift localization. The present formal
+  theorem uses only u<=N/2. Prioritise a new boundary lemma from the next
+  computational work over routine certificate exports or redundant bridges.
 - The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
   F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
   and original root-sum identification remain lower-priority obligations; do not
@@ -156,6 +154,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-15 (Thursday formalisation)
+
+- Proved actual-stream support gaps, available pivots and original-row terminal
+  nonvanishing for every nonzero quotient of degree <N/2 at every shift.
+- Composed the proved terminal base with existing descent to formalise
+  d<N(3N/2-1), including zero shift and zero constant coefficients.
+- Classification: verification/infrastructure progress on existing mathematics.
+  No all-degree, characteristic-two or stronger mathematical cutoff result.
+  Next computation remains exceptional odd-shift multi-pivot elimination.
 
 ## Completed on 2026-10-14 (Wednesday computation)
 

@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-15T08:28:17.364005+11:00",
+  "classification": "verification/infrastructure progress",
+  "runs": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 7.7961786550004035,
+      "output": "results/2026-10-15-lean-build.txt"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/TerminalGapAudit.lean"
+      ],
+      "exit_code": 0,
+      "runtime_seconds": 7.145669883000664,
+      "output": "results/2026-10-15-terminal-gap-audit.txt"
+    }
+  ],
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "new_search": false,
+  "python_changed": false,
+  "audited_declarations": 10,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_sorry_axiom_native_decide": false,
+  "existing_placeholder": "Challenge.lean remains isolated and is absent from the new theorem axiom closures",
+  "seed": null
+}

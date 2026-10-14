@@ -31,6 +31,18 @@ the combined root-moment component. Its sandboxed Comparator check and Lean,
 NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
+## Stronger formal cutoff completed on 15 October 2026
+
+[TerminalGap.lean](FunctionFieldLittlewood/TerminalGap.lean) proves the actual
+original-row terminal exclusion for every nonzero quotient V with deg V<N/2,
+then iterates the existing descent to give a nonzero row among 1,...,d+N
+at every shift whenever **d<N(3N/2-1)**. The proof derives the needed gaps
+from the infinite support stream and imposes no constant-coefficient condition.
+This is **verification/infrastructure progress** on the 9/14 October ordinary
+proofs, not a new mathematical bound. The stronger certified boundary cutoffs,
+all-degree question and characteristic two remain separate. See
+[the proof scope and checks](results/2026-10-15-terminal-gap.md).
+
 ## Formal degree cutoff completed on 13 October 2026
 
 [DescentStep.lean](FunctionFieldLittlewood/DescentStep.lean) now proves the
@@ -39,8 +51,9 @@ complete surplus-halving step and iterates it: any nonzero polynomial with
 `d<N(N-1)` the named stream has a nonzero row among `1,...,d+N`.
 All degree/shift parities, shift zero and arbitrary constant coefficients are
 included. This is **verification/infrastructure progress** on the ordinary
-2 October argument, not a stronger mathematical bound. The later terminal
-cutoffs, the all-degree bound and characteristic two remain outside this theorem.
+2 October argument, not a stronger mathematical bound. The low-degree terminal
+cutoff was subsequently formalised on 15 October; the all-degree bound and
+characteristic two remain outside this theorem.
 See [the proof scope and checks](results/2026-10-13-descent-cutoff.md).
 
 ## Formal step completed on 10 October 2026
@@ -86,7 +99,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 14 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 15 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -121,8 +134,8 @@ norm congruence forces a monomial, and two original adjacent stream rows
 rule out that case. A nonmonomial boundary example at quotient degree N/2
 shows where this argument stops; it is not a terminal counterexample.
 See [the proof and exact controls](results/2026-10-09-terminal-low-degree.md).
-This is auxiliary mathematical progress, not an all-degree result, Lean
-theorem or characteristic-two construction.
+This is auxiliary mathematical progress, not an all-degree result or
+characteristic-two construction. Its low-degree cutoff was formalised on 15 October.
 
 Lai--Sprang prove a uniform positive lower bound for the Littlewood product. Their argument gives a defect bound corresponding to `2N`, where `N=2^r`. The first experiment in this repository asks whether the explicit `Lambda` has a sharper bound when `r>=2`.
 

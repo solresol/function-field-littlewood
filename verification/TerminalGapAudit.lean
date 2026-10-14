@@ -1,0 +1,23 @@
+import FunctionFieldLittlewood.TerminalGap
+
+#check @FunctionFieldLittlewood.TerminalGap.gap_obstruction
+#check @FunctionFieldLittlewood.TerminalGap.terminal_difference
+#check @FunctionFieldLittlewood.TerminalGap.support_rep
+#check @FunctionFieldLittlewood.TerminalGap.stream_upper_gap
+#check @FunctionFieldLittlewood.TerminalGap.block_pivot
+#check @FunctionFieldLittlewood.TerminalGap.stream_difference_pivots
+#check @FunctionFieldLittlewood.TerminalGap.terminal_nonvanishing
+#check @FunctionFieldLittlewood.TerminalGap.terminal_degree_bound
+#check @FunctionFieldLittlewood.TerminalGap.iterated_degree_bound
+#check @FunctionFieldLittlewood.TerminalGap.stream_nonvanishing_below_cutoff
+
+#print axioms FunctionFieldLittlewood.TerminalGap.gap_obstruction
+#print axioms FunctionFieldLittlewood.TerminalGap.terminal_difference
+#print axioms FunctionFieldLittlewood.TerminalGap.support_rep
+#print axioms FunctionFieldLittlewood.TerminalGap.stream_upper_gap
+#print axioms FunctionFieldLittlewood.TerminalGap.block_pivot
+#print axioms FunctionFieldLittlewood.TerminalGap.stream_difference_pivots
+#print axioms FunctionFieldLittlewood.TerminalGap.terminal_nonvanishing
+#print axioms FunctionFieldLittlewood.TerminalGap.terminal_degree_bound
+#print axioms FunctionFieldLittlewood.TerminalGap.iterated_degree_bound
+#print axioms FunctionFieldLittlewood.TerminalGap.stream_nonvanishing_below_cutoff

@@ -968,3 +968,38 @@ automation readback were checked. No code or proof changed; tests were not rerun
   retaining adjacent dyadic tails and boundary coefficients. Do not repeat a
   larger cover. The next formal low-degree terminal exclusion can use today's
   direct gap proof instead of norm rigidity if that reduces the proof work.
+
+## 2026-10-15 (Thursday, Australia/Sydney): formal low-degree terminal cutoff
+
+- Clean main at 8947904, expected origin, fetch/fast-forward-only current;
+  no competing run. Read memory, roadmap, recent results and actual sources.
+- Stated before coding: prove original-row terminal nonvanishing for deg V<N/2
+  from support gaps, enabling the stronger formal cutoff. A conditional gap
+  lemma alone would not establish that target. Chose the direct 14 October
+  route rather than additionally formalising 9 October norm rigidity.
+- TerminalGap.lean proves actual support representation, upper-half block gaps,
+  nonzero difference offsets one/two, available pivots, trailing/leading
+  coefficient isolation and original-row telescoping. Terminal exclusion
+  holds for every odd prime without N dividing p-1. Exact row budget includes
+  both rows of each adjacent difference, all shifts and arbitrary V(0).
+- Composed the proved terminal base with existing descent: under p-1=N(2k+1),
+  N=2^(r+2), every nonzero degree-d multiplier has a nonzero row by d+N when
+  d<N(3N/2-1). Lean r here is valuation minus two. This completes the planned
+  formal target; no assumed terminal theorem, norm congruence or finite oracle.
+- Classification: verification/infrastructure progress on existing mathematics.
+  No stronger mathematical cutoff, all-degree result, binary advance or novelty
+  claim. Boundary cutoffs 24/96/384 and exact shift localization remain outside
+  this formal theorem; the original r=1 comparison is retained unchanged.
+- Pinned full lake build passed in 7.796s and separate ten-declaration audit in
+  7.146s, using only propext/Classical.choice/Quot.sound. No new sorry, axiom,
+  native_decide or dependency change; existing Challenge placeholder is outside
+  the proof closures. No Python algorithm/search changes or repeated suite.
+  Reused mathlib polynomial trailing degree/finite-set maxima after source and
+  Apache-2.0 licence inspection. Development API/arithmetic errors were repaired.
+- LSv1/BPZv1 primary pages refreshed, plus ANLv2 quadratic exclusion and GRv2
+  unbounded windows. Scoped search found no later relevant binary resolution,
+  not an absence proof; no candidate or retired-stream search was started.
+- Report: results/2026-10-15-terminal-gap.md; exact audited types, build and
+  runtime metadata retained. Next computation: exceptional odd-shift boundary
+  elimination. Next formal work should support that step; do not duplicate
+  the alternative norm proof, completed cutoff or generic bridges.
