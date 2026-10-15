@@ -99,9 +99,21 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 15 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 16 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
+
+**16 October two-residue localization:** for every dyadic N>=8, an odd-shift
+terminal failure at quotient degree H=N/2 must have
+`M=1-N or 1-H modulo NH`. Three explicit row arguments exclude the other
+exceptional strips, including an antiperiodic sparse-divisor obstruction whose
+reflection product has a forbidden nonzero x^6 coefficient. This is a uniform
+**auxiliary mathematical increment**, not a new all-shift cutoff or an
+all-degree result. The two residual classes remain open uniformly in N;
+N=8,16 were already handled by finite certificates. See
+[the ordinary proof and checks](results/2026-10-16-two-strip-localization.md).
+Next combine original rows with the available difference rows at those two
+offsets, respecting the missing-row budget.
 
 **14 October uniform dyadic-gap lemma:** original-row differences have an
 explicit triangular minor with determinant a signed power of 1 or 2 whenever
@@ -113,7 +125,7 @@ have `q=0 or -1 mod (N/2)`: only a fraction 4/N of shifts remain when N>=8.
 An actual N=8 example shows why a single zero gap does not finish the proof.
 This is **auxiliary mathematical progress**, without a new all-shift degree
 cutoff or an all-degree result. See [the proof and limits](results/2026-10-14-dyadic-gap.md).
-The next question is symbolic elimination on the exceptional odd-shift strips.
+The 16 October argument above further reduces those odd-shift strips to two residues.
 
 **12 October prime-independent boundary exclusion:** the all-shift cutoffs
 are now **d<24,96,384 for every prime with r=v_2(p-1)=2,3,4**, respectively.

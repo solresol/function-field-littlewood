@@ -1006,3 +1006,41 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Proof snapshot ad99eeae946f1a948e6a49a69b1b92a75262459e; catalogue updated with exact declarations,
   immutable source hash and passed schema/provenance validation. All thirteen earlier
   groups retain their evidence. No archive, Comparator rerun or registry submission.
+
+
+## 2026-10-16 (Friday, Australia/Sydney): two-residue boundary localization
+
+- Clean main at 4bc942d, expected origin, fetch/FF-only current; no competing
+  run or lock. Read memory, roadmap, recent proofs and actual row/cover sources.
+- Stated before coding: can multiple difference rows uniformly exclude the
+  exceptional odd boundary strips, without enlarging complete covers? Exact
+  unit-pivot exploration on the existing scales suggested a difference-only
+  obstruction; seven prescribed offset traces at N=8,16,32 helped inspect it.
+- Proved uniformly for every dyadic N>=8 and odd characteristic: an odd
+  degree-H terminal failure requires M=1-N or 1-H modulo NH. These two
+  classes have density 4/N^2 among all shifts. No admissible-prime condition
+  is needed for this odd-shift lemma; the earlier even-shift argument retains it.
+- Three explicit mechanisms: antiperiodicity forces a sparse degree-H divisor
+  of x^N+1, contradicted by its reflection product's x^6 coefficient +/-2;
+  two E rows force the leading coefficient to vanish; a next-block gap supplies
+  an invertible triangular minor. All row budgets and boundary values retained.
+- Classification: mathematical progress by ordinary proof. No new all-shift
+  cutoff, all-degree bound, characteristic-two construction, Lean theorem or
+  novelty claim. The two remaining offsets lack two needed rows; those cannot
+  be silently assumed. N=4/modulo-3 and genuine r=1 controls remain unchanged.
+- New narrow checker independently reads formal-series original rows at only
+  the existing N=8,16 complete abstract covers; verifies the proof identities,
+  reflection coefficient and triangular minor. No expanded complete cover or
+  multiplier search. Python 3.14.4, standard library, seed null; dated JSON
+  retains checker runtime. All 57 tests passed in 7.253s, including negative and
+  endpoint controls plus existing root-sum/certificate/control regressions.
+- An invalid initial scratch relative-module invocation was corrected before
+  the probe ran. No Lean/dependency/catalogue/release changes or Lean build.
+- LS2606.00633v1 and BPZ2608.22078v1 remain listed; ANL1806.04478v2 quadratic
+  exclusion and GR2405.14454v2 unbounded windows refreshed. Scoped primary
+  search found no later relevant characteristic-two resolution, not absence or
+  novelty proof. No new binary candidate or expansion of retired baselines.
+- Full proof: results/2026-10-16-two-strip-localization.md; reproduction and
+  validation accompany it. Next computation: combine original A with available
+  D/E at the two residual offsets. Focused formal target: sparse divisor
+  obstruction and, if needed, its antiperiodic convolution bridge.

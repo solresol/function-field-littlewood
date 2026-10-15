@@ -53,15 +53,23 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
+- **16 October uniform boundary refinement:** for every N>=8, a possible
+  odd terminal window at e=H requires M=1-N or 1-H modulo NH. The three
+  other strips are excluded by an antiperiodic sparse-divisor argument,
+  two separated rows, and a next-block gap. Work next on exactly those two
+  offsets, combining an original A row with the available D/E equations.
+  The tempting next E rows are outside the window; do not assume them.
+  See results/2026-10-16-two-strip-localization.md. No new all-shift cutoff
+  or all-degree result; N=4 and its modulo-3 control remain separate.
+
 - The 14 October dyadic-gap proof supplies a uniform original-row minor outside
   explicit exceptional strips. For quotient degree e and q=floor((M+e)/N),
   let u be the largest power of two <=N/2 dividing the even member of {q,q+1}
   (u=N/2 at q=0). If e+u<N, the minor has determinant a signed power of 1 or 2,
   so every odd characteristic is excluded. At e=H=N/2, any terminal failure
   requires q=0 or -1 modulo H. Even shifts are already excluded by the earlier
-  moment lemma. Work next on the **remaining odd shifts in these two classes**:
-  derive symbolic multi-pivot elimination for adjacent dyadic tails and their
-  boundary values. The actual N=8,e=4,M=21 stream admits no consecutive-row
+  moment lemma. The 16 October result above handles most odd shifts in these
+  classes using adjacent dyadic tails and their boundary values. The actual N=8,e=4,M=21 stream admits no consecutive-row
   single-gap triangular minor, so that criterion alone cannot finish the proof
   See results/2026-10-14-dyadic-gap.md. No larger cover is the default next step.
 
@@ -140,7 +148,11 @@ retired examples that never reaches the substantive question.
   The low-degree terminal exclusion and stronger cutoff d<N(3N/2-1) are now
   also formalised (15 October), via the direct support-gap proof. Do not
   duplicate the alternative norm/order route or repeat terminal transport.
-  Next useful formal step, when needed by the boundary argument: identify
+  The 16 October sparse-divisor obstruction is now a focused substantive
+  formal target: f(x)-f(-x)=4x and the nonzero x^6 reflection coefficient
+  prevent f from dividing x^N+1. Its antiperiodic convolution bridge enables
+  the first-strip exclusion. Prioritise this over generic bookkeeping.
+  Another useful formal step, when needed by the boundary argument: identify
   the exact last nonzero difference offset u and formalise the 14 October
   condition e+u<N and its degree-H shift localization. The present formal
   theorem uses only u<=N/2. Prioritise a new boundary lemma from the next
@@ -154,6 +166,16 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-16 (Friday computation)
+
+- Ordinary uniform proof localizes degree-H odd terminal failures to two
+  residues modulo NH for every N>=8, using three exact row arguments.
+- The first-strip obstruction reduces to a sparse divisor of x^N+1 and
+  contradicts its reflection product's x^6 coefficient in odd characteristic.
+- Classification: mathematical progress on the auxiliary bound. No new
+  all-shift cutoff, all-degree result, characteristic-two advance or Lean proof.
+  Next address the two remaining offsets with actual original-row information.
 
 ## Completed on 2026-10-15 (Thursday formalisation)
 

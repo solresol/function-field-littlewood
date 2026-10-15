@@ -1,0 +1,41 @@
+{
+  "python": "3.14.4",
+  "dependencies": "standard library",
+  "seed": null,
+  "scope": "identities in existing abstract covers; proof is ordinary",
+  "scales": [
+    {
+      "N": 8,
+      "e": 4,
+      "counts": {
+        "antiperiodic": 48,
+        "next_gap": 40,
+        "old_gap": 160,
+        "remaining": 48,
+        "two_rows": 24
+      },
+      "remaining_residues": [
+        25,
+        29
+      ],
+      "modulus": 32
+    },
+    {
+      "N": 16,
+      "e": 8,
+      "counts": {
+        "antiperiodic": 96,
+        "next_gap": 104,
+        "old_gap": 960,
+        "remaining": 48,
+        "two_rows": 72
+      },
+      "remaining_residues": [
+        113,
+        121
+      ],
+      "modulus": 128
+    }
+  ],
+  "runtime_seconds": 0.22929748898604885
+}
