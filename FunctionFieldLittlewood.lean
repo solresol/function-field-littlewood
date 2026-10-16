@@ -17,6 +17,7 @@ public import FunctionFieldLittlewood.ParityDescent
 public import FunctionFieldLittlewood.WindowMoments
 public import FunctionFieldLittlewood.ParentWindow
 public import FunctionFieldLittlewood.DescentStep
+public import FunctionFieldLittlewood.SparseDivisor
 public import FunctionFieldLittlewood.TerminalGap
 public import FunctionFieldLittlewood.RootStream
 

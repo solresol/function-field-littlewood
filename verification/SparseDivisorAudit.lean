@@ -1,0 +1,17 @@
+import FunctionFieldLittlewood.SparseDivisor
+
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_degree
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_reflection
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_low_coeff
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_reflection_coeff_six
+#check @FunctionFieldLittlewood.SparseDivisor.reflection_product
+#check @FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd
+
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_degree
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_reflection
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_low_coeff
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_reflection_coeff_six
+#print axioms FunctionFieldLittlewood.SparseDivisor.reflection_product
+#print axioms FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd

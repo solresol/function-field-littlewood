@@ -148,10 +148,15 @@ retired examples that never reaches the substantive question.
   The low-degree terminal exclusion and stronger cutoff d<N(3N/2-1) are now
   also formalised (15 October), via the direct support-gap proof. Do not
   duplicate the alternative norm/order route or repeat terminal transport.
-  The 16 October sparse-divisor obstruction is now a focused substantive
-  formal target: f(x)-f(-x)=4x and the nonzero x^6 reflection coefficient
-  prevent f from dividing x^N+1. Its antiperiodic convolution bridge enables
-  the first-strip exclusion. Prioritise this over generic bookkeeping.
+  The 16 October sparse-divisor obstruction is now formalised (17 October):
+  SparseDivisor.sparse_not_dvd covers all dyadic H>=4 and fields with 2!=0,
+  with the explicit sum formula, reflection identity and x^6 coefficient
+  proved internally. This is verification progress, not a new bound.
+  Do not repeat the algebraic obstruction. The actual-row antiperiodic
+  convolution bridge would complete its connection to first-strip exclusion,
+  but prioritise a substantive lemma at the two remaining offsets if the
+  next computational work supplies one; do not formalise all bookkeeping
+  merely to postpone that unresolved step.
   Another useful formal step, when needed by the boundary argument: identify
   the exact last nonzero difference offset u and formalise the 14 October
   condition e+u<N and its degree-H shift localization. The present formal

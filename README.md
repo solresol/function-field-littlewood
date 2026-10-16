@@ -31,6 +31,17 @@ the combined root-moment component. Its sandboxed Comparator check and Lean,
 NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
+## Sparse-divisor obstruction formalised on 17 October 2026
+
+[SparseDivisor.lean](FunctionFieldLittlewood/SparseDivisor.lean) proves that
+`a+2X+X^2+X^4+...+X^(H/2)+sigma*X^H` cannot divide `X^(2H)+1`
+for every dyadic H>=4 over any field with 2!=0, when sigma^2=1.
+This is **verification/infrastructure progress** on the algebraic step in the
+16 October first-strip proof. The actual-row antiperiodic convolution bridge
+and full shift localization are not formalised by this theorem. The two
+residual shift classes and all-degree bound remain unresolved uniformly.
+See [the statement, proof and checks](results/2026-10-17-sparse-divisor.md).
+
 ## Stronger formal cutoff completed on 15 October 2026
 
 [TerminalGap.lean](FunctionFieldLittlewood/TerminalGap.lean) proves the actual

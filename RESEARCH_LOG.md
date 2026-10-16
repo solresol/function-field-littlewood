@@ -1044,3 +1044,29 @@ automation readback were checked. No code or proof changed; tests were not rerun
   validation accompany it. Next computation: combine original A with available
   D/E at the two residual offsets. Focused formal target: sparse divisor
   obstruction and, if needed, its antiperiodic convolution bridge.
+
+
+## 2026-10-17 (Saturday, Australia/Sydney): formal sparse-divisor obstruction
+
+- Clean main at a1ec371, expected origin, fetch/FF-only already current;
+  no competing lock. Read memory, roadmap, recent proofs and actual Lean/row sources.
+- Stated before coding: verify the uniform sparse-divisor obstruction from the
+  16 October first strip, or expose a missing characteristic restriction.
+  Completed SparseDivisor.sparse_not_dvd for all dyadic H>=4, arbitrary a,
+  sigma^2=1, over every field with 2!=0. The explicit sum, degree, reflection
+  identity and nonzero x^6 coefficient are derived, not assumed.
+- Classification: verification/infrastructure progress on Friday's ordinary
+  mathematics. Enables the algebraic step of first-strip exclusion, but the
+  actual-row antiperiodic convolution bridge is not formalised. No new bound,
+  all-degree result, characteristic-two construction or priority claim.
+- Full pinned build passed in 12.174s; seven-declaration type/axiom audit in
+  6.961s, standard axioms only. No sorry/added axiom/native_decide, dependency
+  change, independent-kernel replay, Python change or finite search. Read
+  mathlib polynomial/coprimality source and Apache-2.0 licence. Repaired
+  development rewrite/simplification errors; no failed mathematical hypothesis.
+- Rechecked LSv1/BPZv1 and ANLv2 quadratic/GRv2 window boundaries; scoped search
+  found no later relevant binary resolution, not proof of absence. No retired
+  examples expanded; N=4/mod3 and genuine r=1 controls remain unchanged.
+- Report: results/2026-10-17-sparse-divisor.md, build/audit/runtime evidence.
+  Next substantive step: original A plus available D/E at the two residual
+  shifts. Prioritise a new boundary lemma over formalising all bookkeeping.

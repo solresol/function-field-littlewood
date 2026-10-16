@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-17T08:25:32.457228+11:00",
+  "runs": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 12.173609295976348,
+      "output": "results/2026-10-17-lean-build.txt"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/SparseDivisorAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.961386314011179,
+      "output": "results/2026-10-17-sparse-divisor-audit.txt"
+    }
+  ],
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "classification": "verification/infrastructure progress",
+  "experiment": "No finite search or Python algorithm change; universal Lean proof."
+}
