@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-15'
+updated: '2026-10-17'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -1049,6 +1049,83 @@ theorems:
     source_sha256:
       FunctionFieldLittlewood/TerminalGap.lean: 267da73f999588849961ca99d5c05f5d6442586837557feefbac88bbe247da48
     verification: Lean kernel and separate ten-declaration type/axiom audit; no Comparator or independent-kernel
+      replay for this increment.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
+- id: sparse-divisor-obstruction
+  title: Uniform sparse-divisor obstruction by reflection
+  status: kernel-checked
+  mathematical_origin: formalisation of the 16 October ordinary first-strip algebraic obstruction
+  first_formalisation_priority: unestablished
+  statement: For H=2^(r+2), r>=0, over every field with 2 nonzero, a+2X+sum_(i=0)^r X^(2^(i+1))+sigma
+    X^H does not divide X^(2H)+1 when sigma^2=1.
+  assumptions:
+  - K is a field and (2:K) is nonzero; characteristic zero is also allowed.
+  - r is any natural number, H=2^(r+2), N=2H. For the admissible stream r is the usual valuation
+    parameter minus three.
+  - a is arbitrary and sigma^2=1. No nonzero constant term, field-size relation, root list, finite
+    fixture or version of the target is assumed.
+  limitations: Verification/infrastructure progress on existing mathematics. The actual-row antiperiodic
+    convolution bridge and complete two-residue localization are not formalised by this theorem.
+    No new cutoff, all-degree bound, characteristic-two construction or priority claim. N=4 is excluded.
+  declarations:
+  - name: FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum
+    file: FunctionFieldLittlewood/SparseDivisor.lean
+    line_at_snapshot: 22
+    introduced_commit: 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84
+    lean_type: |-
+      @FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+        FunctionFieldLittlewood.SparseDivisor.sparse r a σ =
+          Polynomial.C a + Polynomial.C 2 * Polynomial.X + ∑ i ∈ Finset.range (r + 1), Polynomial.X ^ 2 ^ (i + 1) +
+            Polynomial.C σ * Polynomial.X ^ 2 ^ (r + 2)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.SparseDivisor.reflection_product
+    file: FunctionFieldLittlewood/SparseDivisor.lean
+    line_at_snapshot: 114
+    introduced_commit: 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84
+    lean_type: |-
+      @FunctionFieldLittlewood.SparseDivisor.reflection_product : ∀ {K : Type u_1} [inst : Field K] (f : Polynomial K)
+        (H : ℕ),
+        0 < H →
+          Even H →
+            f.natDegree = H →
+              f.leadingCoeff ^ 2 = 1 →
+                4 ≠ 0 →
+                  f - f.comp (-Polynomial.X) = Polynomial.C 4 * Polynomial.X →
+                    f ∣ Polynomial.X ^ (2 * H) + 1 → f * f.comp (-Polynomial.X) = Polynomial.X ^ (2 * H) + 1
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd
+    file: FunctionFieldLittlewood/SparseDivisor.lean
+    line_at_snapshot: 150
+    introduced_commit: 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84
+    lean_type: |-
+      @FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+        2 ≠ 0 → σ ^ 2 = 1 → ¬FunctionFieldLittlewood.SparseDivisor.sparse r a σ ∣ Polynomial.X ^ (2 * 2 ^ (r + 2)) + 1
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-17-lean-build.txt
+    full_build_validation: results/2026-10-17-validation.json
+    catalogue_audit: results/2026-10-17-sparse-divisor-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/SparseDivisor.lean: 6b6c65baf5ba07ddb38967ce426860639c671940b87b03e15f6c006b8b664b30
+    verification: Lean kernel and separate seven-declaration type/axiom audit; no Comparator or independent-kernel
       replay for this increment.
   archive:
     zenodo_version: null

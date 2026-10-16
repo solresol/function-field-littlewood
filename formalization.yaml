@@ -7,7 +7,8 @@ project:
     and actual parent-window extraction for the explicit Lai-Sprang support stream.
     Includes generic exact and dual certificates and Laurent/product bridges. Complete leading-child
     selection, original-row terminal gap exclusion and iterated descent now prove the all-shift
-    cutoff d<N(3N/2-1) in finite nonvanishing form.
+    cutoff d<N(3N/2-1) in finite nonvanishing form. Also verifies the sparse-divisor
+    obstruction used in the ordinary boundary localization argument.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -47,7 +48,10 @@ status:
     the parity rows and degree budgets from an actual factored parent and proves the forced factor.
     DescentStep proves cancellation, exact child selection and iteration to d<N(N-1).
     TerminalGap proves support gaps and original-row terminal exclusion, strengthening the
-    formal cutoff to d<N(3N/2-1). Boundary cutoffs, exact shift localization, all-degree
+    formal cutoff to d<N(3N/2-1). SparseDivisor proves the explicit degree-H sparse
+    polynomial cannot divide X^(2H)+1 for dyadic H>=4, sigma^2=1, over fields with 2 nonzero;
+    the actual-row antiperiodic convolution bridge is not formalised. Boundary
+    cutoffs, exact shift localization, all-degree
     N-bound, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
@@ -59,6 +63,14 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd
+    file: FunctionFieldLittlewood/SparseDivisor.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.TerminalGap.stream_nonvanishing_below_cutoff
     file: FunctionFieldLittlewood/TerminalGap.lean
     sorry_count: 0

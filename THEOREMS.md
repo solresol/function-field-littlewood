@@ -10,6 +10,7 @@ The finite parity-window group is pinned to
 The actual parent-window group is pinned to `75e5c61870de95e901f99b5a48e74a55919f87d7` (10 October 2026).
 The complete descent/cutoff group is pinned to `a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1` (13 October 2026).
 The terminal-gap/stronger-cutoff group is pinned to `ad99eeae946f1a948e6a49a69b1b92a75262459e` (15 October 2026).
+The sparse-divisor group is pinned to `417116c79e25edefcc9ecb9b1bcc9edaca1b1f84` (17 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -30,8 +31,16 @@ axiom audit, archive coverage and registry status.
 | [Actual parent windows to forced factors](https://github.com/solresol/function-field-littlewood/blob/75e5c61870de95e901f99b5a48e74a55919f87d7/FunctionFieldLittlewood/ParentWindow.lean#L197) | canonical split, actual rows and derived degree budgets | Not yet archived |
 | [Complete descent and degree cutoff](https://github.com/solresol/function-field-littlewood/blob/a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1/FunctionFieldLittlewood/DescentStep.lean#L163) | full iteration of the ordinary degree-cutoff argument | Not yet archived |
 | [Terminal gap exclusion and stronger cutoff](https://github.com/solresol/function-field-littlewood/blob/ad99eeae946f1a948e6a49a69b1b92a75262459e/FunctionFieldLittlewood/TerminalGap.lean#L325) | actual support gaps, original rows and iteration to N(3N/2-1) | Not yet archived |
+| [Sparse-divisor obstruction](https://github.com/solresol/function-field-littlewood/blob/417116c79e25edefcc9ecb9b1bcc9edaca1b1f84/FunctionFieldLittlewood/SparseDivisor.lean#L150) | reflection obstruction for the first exceptional strip | Not yet archived |
 
 ## Verification boundary
+
+The 17 October sparse-divisor group passed the pinned full build and
+[separate seven-declaration type/axiom audit](results/2026-10-17-sparse-divisor-audit.txt).
+Its explicit polynomial cannot divide X^(2H)+1 for any dyadic H>=4 over a field
+with 2 nonzero and sigma^2=1. The actual-row antiperiodic convolution bridge
+is not part of this theorem. This verifies existing mathematics and is outside
+prior archive/Comparator snapshots.
 
 The 15 October terminal-gap group passed the pinned full build and
 [separate ten-declaration type/axiom audit](results/2026-10-15-terminal-gap-audit.txt).

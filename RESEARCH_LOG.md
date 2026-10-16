@@ -1070,3 +1070,6 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Report: results/2026-10-17-sparse-divisor.md, build/audit/runtime evidence.
   Next substantive step: original A plus available D/E at the two residual
   shifts. Prioritise a new boundary lemma over formalising all bookkeeping.
+- Proof snapshot 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84; catalogue exact types, immutable source
+  hash and schema/provenance validation passed; all 14 earlier groups unchanged.
+  No archive or registry submission.
