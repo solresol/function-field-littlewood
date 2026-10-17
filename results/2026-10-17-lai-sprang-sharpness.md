@@ -223,7 +223,10 @@ formula. Their acknowledgement thanks Lunnon for a correction of
 Conjecture 1.8, so the printed 2^n is plausibly a slip for 2^(n+1).
 We do not claim to refute the intended statement. With exponent 2^(n+1),
 it predicts deficiency 2N for their family, which matches what we prove
-for the Lai–Sprang family at five primes.
+for the Lai–Sprang family at six primes. A follow-up scan (shifts up to
+60,000, truncation 600, so degrees up to about 300) finds level-two
+deficiency reaching but never exceeding 8 over F_5, and reaching 7 over F_13.
+This is finite evidence for the 2^(n+1) reading, not a proof.
 
 ## 8. Heuristic and open questions
 

@@ -1,0 +1,320 @@
+% DRAFT for the author's review. Not submitted. See paper/README.md.
+\documentclass[11pt]{amsart}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\frp}[1]{\langle #1\rangle}
+
+\title[Sharpness of the Lai--Sprang bound]{The Lai--Sprang lower bound for the
+$P(t)$-adic Littlewood conjecture is attained in characteristics
+$5,13,29,37,53$ and $61$}
+\author{Greg Baker}
+\date{Draft, 18 October 2026}
+
+\begin{document}
+
+\begin{abstract}
+Lai and Sprang disproved the $P(t)$-adic Littlewood conjecture in every odd
+characteristic $p$ with an explicit Laurent series $\Lambda$, proving
+$\inf_{Q\neq0}\abs{Q}\,\abs{Q}_{P}\,\abs{\frp{Q\Lambda(P)}}\ge 2^{-2N\deg P}$,
+where $N=2^{v_2(p-1)}$. We show that this constant is optimal when
+$p\in\{5,13,29,37,53,61\}$: in each case an explicit multiplier attains
+$2^{-2N}$ for $P=t$, and composition gives equality for every irreducible $P$
+over every field of characteristic $p$. The witnesses come from a reformulation
+of the extremal problem as the occurrence of a partial quotient of degree
+$N+1$ in a shifted continued fraction, combined with a dyadic reverse lift.
+The cases $p=5$ and $p=13$ are verified in the Lean proof assistant. In
+particular, the sharper bound $2^{-N}$ suggested by small computations is
+false. A random model predicts witnesses of degree about $p^{N/2}$; whether the
+constant is attained for every odd $p$ remains open.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Let $\K$ be a field and $\K((t^{-1}))$ the field of Laurent series in $t^{-1}$,
+with $\abs{f}=2^{\deg f}$. For an irreducible $P\in\K[t]$ write
+$\abs{Q}_P=\abs{P}^{-v_P(Q)}$, and let $\frp{f}$ denote the part of $f$ of
+negative degree. The $P(t)$-adic Littlewood conjecture of de Mathan and
+Teuli\'e asserts that
+$\inf_{Q\in\K[t]\setminus\{0\}}\abs{Q}\,\abs{Q}_P\,\abs{\frp{Q\Theta}}=0$
+for every $\Theta\in\K((t^{-1}))$. It fails over infinite fields; over finite
+fields counterexamples were found in characteristic $3$ by Adiceam, Nesharim
+and Lunnon~\cite{ANL}, in characteristics $5$, $7$, $11$ by Garrett and
+Robertson~\cite{GR}, and in every odd characteristic by Lai and
+Sprang~\cite{LS}. Characteristic two remains open.
+
+Fix an odd prime $p$, let $r=v_2(p-1)$, $N=2^r$ and $H=N/2$. Lai and Sprang
+consider
+\[
+\Lambda(t)=\sum_{k\ge0}\ \sum_{\zeta^{H}=-1}\frac{t^{2^k}}{t^{2^{k+1}}-\zeta}
+\in\F_p((t^{-1})),
+\]
+the inner sum running over the $H$ primitive $N$-th roots of unity in $\F_p$,
+and prove \cite[Theorem~1.2]{LS}
+\begin{equation}\label{eq:LS}
+\inf_{Q\in\K[t]\setminus\{0\}}\abs{Q}\,\abs{Q}_P\,\abs{\frp{Q\Lambda(P)}}
+\ \ge\ 2^{-2N\deg P}
+\end{equation}
+for every field $\K$ of characteristic $p$ and every irreducible $P\in\K[t]$.
+They do not discuss optimality of the constant.
+
+\begin{theorem}\label{thm:main}
+Let $p\in\{5,13,29,37,53,61\}$, so that $N=4$. There is $Q\in\F_p[t]$ with
+$\abs{Q}\,\abs{Q}_t\,\abs{\frp{Q\Lambda}}=2^{-8}$. Consequently equality holds
+in \eqref{eq:LS} for every field $\K$ of characteristic $p$ and every
+irreducible $P\in\K[t]$.
+\end{theorem}
+
+For $p=5$ one may take $Q=t^{1244}S(t^4)$ with
+\[
+S=(1+t+t^2+t^3)(2+t+t^2+t^3+3t^4+3t^5+t^6+t^7+t^8),
+\]
+so that $S(t^4)$ has degree $44$ and $Q\Lambda$ has its first nonzero
+fractional coefficient at $t^{-52}$. Every $N=4$ prime up to $61$ is covered.
+Small computations had suggested the sharper bound $2^{-N}$: it holds for all
+multipliers of degree below $44$ when $p=5$ (Theorem~\ref{thm:minimal}), but
+not in general.
+
+The proof of Theorem~\ref{thm:main} is a finite computation together with a
+reverse lift (Lemma~\ref{lem:lift}) that turns a short ``terminal'' window into
+an extremal multiplier. The witnesses were found by recasting the existence of
+a terminal window as a continued-fraction question (Section~\ref{sec:cf}).
+
+\section{Coefficients, rows and the reverse lift}
+
+Write $\Lambda=\sum_{n\ge1}a_nt^{-n}$. Expanding
+$t^{2^k}/(t^{2^{k+1}}-\zeta)=\sum_{u\ge0}\zeta^u t^{-2^k(2u+1)}$ gives
+$a_{2^k(2u+1)}=\sum_\zeta\zeta^u$. The roots form a coset of the $H$-th roots of
+unity, so $\sum_\zeta\zeta^u=H(-1)^{u/H}$ if $H\mid u$ and $0$ otherwise. Hence
+\begin{equation}\label{eq:coeff}
+a_{2n}=a_n,\qquad a_n=H(-1)^h\ \text{if the odd part of $n$ is $1+Nh$},
+\qquad a_n=0\ \text{otherwise}.
+\end{equation}
+For $T=\sum_iT_it^i\in\F_p[t]$ and $v\ge1$ set $B_T(v)=\sum_iT_ia_{v+i}$, the
+coefficient of $t^{-k}$ in $t^MT\Lambda$ when $v=M+k$. If $Q=t^mR$ with
+$R(0)\neq0$ and $\deg R=d$, and $j\ge1$ is least with $B_R(m+j)\neq0$, then
+\begin{equation}\label{eq:product}
+\abs{Q}\,\abs{Q}_t\,\abs{\frp{Q\Lambda}}=2^{m+d}\,2^{-m}\,2^{-j}=2^{d-j}.
+\end{equation}
+We call $j-d$ the \emph{defect}. By \eqref{eq:LS} every defect is at most
+$2N$.
+
+\begin{lemma}[reverse lift]\label{lem:lift}
+Let $F=1+t+\dots+t^{N-1}$ and suppose $F\mid S$. Then for all $v\ge1$,
+$B_{S(t^N)}(v)=B_S(v/N)$ if $N\mid v$, and $B_{S(t^N)}(v)=0$ otherwise.
+\end{lemma}
+
+\begin{proof}
+Put $T_i=S(t^{2^i})$ for $0\le i\le r$. Let $1\le i\le r$. By \eqref{eq:coeff},
+$B_{T_i}(2w)=\sum_lT_{i-1,l}\,a_{2(l+w)}=B_{T_{i-1}}(w)$. For odd arguments,
+\[
+B_{T_i}(2w+1)=\sum_lT_{i-1,l}\,a_{2(l+w)+1}
+=\sum_\zeta\zeta^w\,T_{i-1}(\zeta)=\sum_\zeta\zeta^w\,S\bigl(\zeta^{2^{i-1}}\bigr).
+\]
+Each $\zeta^{2^{i-1}}$ is an $N$-th root of unity of order $N/2^{i-1}\ge2$, so
+it is a root of $F$, and every summand vanishes. Induction on $i$ gives the
+claim for $T_r=S(t^N)$.
+\end{proof}
+
+\begin{definition}
+A \emph{terminal window} is a pair $(S,M)$ with $F\mid S$, $S\neq0$,
+$D=\deg S$, $M\ge0$, and $B_S(M+k)=0$ for $1\le k\le D+1$.
+\end{definition}
+
+\begin{corollary}\label{cor:lift}
+Let $(S,M)$ be a terminal window with $S(0)\neq0$ and $B_S(M+D+2)\neq0$. Then
+$Q=t^{NM}S(t^N)$ has $\abs{Q}\,\abs{Q}_t\,\abs{\frp{Q\Lambda}}=2^{-2N}$.
+\end{corollary}
+
+\begin{proof}
+$R=S(t^N)$ has $R(0)=S(0)\neq0$ and degree $ND$. By Lemma~\ref{lem:lift} its
+first nonzero row at shift $NM$ is row $N(D+2)$. Apply \eqref{eq:product}.
+\end{proof}
+
+\begin{remark}\label{rem:cap}
+The hypothesis $B_S(M+D+2)\neq0$ is automatic: Lai--Sprang's
+Proposition~2.3~\cite{LS} applied to $(t-1)S$, a multiple of $t^N-1$, shows
+that no $F$-multiple has $D+2$ zero rows. For the same reason every terminal
+window has $S(0)\neq0$. We verify both
+conditions directly, so the proof of Theorem~\ref{thm:main} does not depend on
+this remark.
+\end{remark}
+
+\section{Proof of Theorem~\ref{thm:main}}\label{sec:proof}
+
+Table~\ref{tab:witnesses} lists, for each prime, an odd shift $M$ and a
+polynomial $S=FV$ with $\deg V=e$. In each case $S(0)\neq0$, the rows
+$B_S(M+1),\dots,B_S(M+D+1)$ vanish and $B_S(M+D+2)\neq0$. These are finite
+statements about at most $2D+M+2$ coefficients given by \eqref{eq:coeff}.
+The polynomial for $p=5$ is displayed above; the others are in the ancillary
+data~\cite{repo}. Corollary~\ref{cor:lift} gives a multiplier of degree $4D$
+with defect $8=2N$, proving the first assertion.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrrr}
+\toprule
+$p$ & $M$ & $e=\deg V$ & $D=\deg S$ & $\deg R=4D$ & shift $4M$ & $j=4(D+2)$\\
+\midrule
+5 & 311 & 8 & 11 & 44 & 1244 & 52\\
+13 & 1465 & 76 & 79 & 316 & 5860 & 324\\
+29 & 2501 & 326 & 329 & 1316 & 10004 & 1324\\
+37 & 19939 & 1134 & 1137 & 4548 & 79756 & 4556\\
+53 & 40193 & 1128 & 1131 & 4524 & 160772 & 4532\\
+61 & 35113 & 3245 & 3248 & 12992 & 140452 & 13000\\
+\bottomrule
+\end{tabular}
+\caption{Terminal windows and their lifts, $N=4$.}\label{tab:witnesses}
+\end{table}
+
+For the second assertion let $Q=t^mR$ be as above, $d=\deg R$, and let
+$\frp{Q\Lambda}=f=\sum_{k\ge j}f_kt^{-k}$, $f_j\neq0$. Substituting $t\mapsto P$
+keeps the polynomial part of $Q\Lambda$ polynomial, while
+$f(P)=\sum_{k\ge j}f_kP^{-k}$ has absolute value $2^{-j\deg P}<1$; hence
+$\frp{Q(P)\Lambda(P)}=f(P)$. Also $\abs{Q(P)}=2^{(m+d)\deg P}$ and, as
+$R(P)\equiv R(0)\neq0\pmod P$, $v_P(Q(P))=m$. The product for $Q(P)$ is
+therefore $2^{(d-j)\deg P}=2^{-2N\deg P}$, which equals the bound
+\eqref{eq:LS}. (Compare Robertson's transfer principle~\cite{Rob}.)
+\qed
+
+\begin{remark}[formal verification]
+For $p=5$ the exact certificate of $Q$ and the identity
+$\abs{Q}\abs{Q}_t\abs{\frp{Q\Lambda}}=2^{-8}<2^{-4}$ are checked by the Lean
+kernel for the actual polynomial and the infinite coefficient stream
+\eqref{eq:coeff}. For $p=13$ the Lean proof checks the 81-row terminal
+certificate and derives the lifted certificate from a formal version of
+Lemma~\ref{lem:lift}: for any stream with $a_{2n}=a_n$, vanishing odd rows
+double the shift and the first index. The odd-row condition reduces to finitely
+many residues by periodicity of $a_{2u+1}$ in $u$. Both proofs use only the
+standard axioms; see \cite{repo}.
+\end{remark}
+
+\section{A continued-fraction formulation}\label{sec:cf}
+
+Let $b_v=a_v+\dots+a_{v+N-1}$, the coefficients of $F\Lambda$. For $S=FV$ the
+rows of $S$ at shift $M$ are $\sum_jV_jb_{M+k+j}$. Thus $(FV,M)$ is a terminal
+window with $\deg V=e$ exactly when
+$\abs{\frp{V\,\Theta_M}}\le2^{-(N+e+1)}$, where
+\[
+\Theta_M=\frp{t^MF\Lambda}=\sum_{k\ge1}b_{M+k}t^{-k}.
+\]
+By the best-approximation property of continued fractions this happens if and
+only if $\Theta_M$ has a convergent denominator of degree at most $e$ whose next
+partial quotient has degree at least $N+1$. Remark~\ref{rem:cap} shows that
+no partial quotient of any $\Theta_M$ has degree above $N+1$.
+
+\begin{proposition}\label{prop:cf}
+Let $\Delta_p$ be the largest defect of a nonzero multiplier at any shift.
+Then $\Delta_p\in\{N,2N\}$, and $\Delta_p=2N$ if and only if some
+$\Theta_M$ has a partial quotient of degree $N+1$.
+\end{proposition}
+
+\begin{proof}[Sketch]
+$\Delta_p\ge N$ is attained in degree zero by $R=1$, $m=5N+1$. If some
+partial quotient of $\Theta_M$ has degree $N+1$, Corollary~\ref{cor:lift}
+gives defect $2N$. Conversely, a multiplier with defect above $N$ descends, by
+the factor-aware parity descent adapted from~\cite[\S3]{LS}, to a terminal
+window; this ordinary argument is in~\cite{repo}, where its descent steps are
+also formalised.
+\end{proof}
+
+A single Euclidean expansion of $\Theta_M$ truncated after $2E+N+1$ terms
+decides every quotient degree $e\le E$ at that shift. All shifts reduce to a
+finite list: put $T=2N+2E$, let $L$ be the least power of two exceeding $T$
+and write $M=qNL+b$. By \eqref{eq:coeff}, every coefficient $a_{M+i}$,
+$1\le i\le T$, equals $a_{b+i}$ unless $L\mid b+i$, which happens for at
+most one $i$; there the value lies in $\{0,\pm H\}$. Running the expansion
+for the $NL$ residues $b$, with all three values at the exceptional index,
+therefore covers every shift.
+
+\begin{theorem}\label{thm:minimal}
+For $p=5,13,29,37,53$ every nonzero $R$ of degree $d$ has a nonzero row among
+the first $d+N$ rows, at every shift, whenever $d<44,316,1316,4548,4524$
+respectively. Each threshold is attained by Table~\ref{tab:witnesses}.
+\end{theorem}
+
+This is computer-assisted: the covers exclude terminal windows of smaller
+quotient degree, and the descent transfers the exclusion to all multipliers.
+Two independent implementations (Berlekamp--Massey linear complexity in Python
+and Euclidean division in C) give identical results where both were run, and
+for $p=5$ a direct nullspace computation agrees. For $p=61$ no terminal window
+has $\deg V\le2000$, so the least degree lies in $[8016,12992]$.
+
+The integer matrix of the $p=5$ terminal window has the greatest common divisor
+of its maximal minors equal to $5$. So the witness is specific to
+characteristic $5$, not an integer rank drop.
+
+\section{Heuristics and questions}
+
+Model each realizable window and degree as an independent event of
+probability $p^{-N}$ for a zero block of side $N$ in the number wall of $b$
+modulo $p$. Because the sequence is $2$-automatic, distinct windows up to
+degree $E$ number on the order of $E^2$, so the model predicts least terminal
+degrees of order $p^{N/2}$. For $N=4$ the observed least degrees
+$8,76,326,1134,1128$ are $0.32,0.45,0.39,0.83,0.40$ times $p^2$, and for
+$p=61$ the ratio lies between $0.54$ and $0.87$. For $N=8$ the model predicts
+degrees around $3\cdot10^6$ already at $p=41$. Complete covers to quotient
+degree $250$ found nothing for $p=41,73,89,137$ ($N=8$) and $p=17,113$
+($N=16$), which is consistent with the model and is no evidence for the
+sharper constant.
+
+\begin{question}
+Is $\inf_Q\abs{Q}\abs{Q}_t\abs{\frp{Q\Lambda}}=2^{-2N}$ for every odd prime
+$p$? For $r=1$ this holds since $R=1+t^2$, $m=2$ has rows $0,0,0,0,0,2$.
+\end{question}
+
+\begin{remark}
+Garrett and Robertson~\cite[Conjecture~1.8]{GR} predict, for their level-$n$
+paperfolding series, the infimum $q^{-2^n}$ with $2^n=N$. As printed this
+contradicts~\cite[Theorem~1.1]{ANL}, which gives deficiency $4=2^{n+1}$ in
+characteristic $3$, so the intended exponent is presumably $2^{n+1}$. For
+their level-two series over $\F_5$ the multiplier $t^{61}R$ with $\deg R=64$
+has first index $72$, deficiency $8=2^{n+1}$. Scans to shift $60{,}000$ found
+no larger value. This agrees with the reading $2^{n+1}$ and with
+Theorem~\ref{thm:main} for the Lai--Sprang series.
+\end{remark}
+
+\subsection*{Data, code and use of AI}
+All witnesses, both cover implementations, independent root-sum readback and
+the Lean proofs are in the public repository~\cite{repo}. The computations,
+Lean proofs and a first draft of this note were produced with substantial
+assistance from AI coding agents (Anthropic Claude Code; earlier repository
+work used OpenAI Codex), under the author's direction. Every claim is checked
+by an exact finite computation, a kernel-checked proof, or an ordinary proof
+in the repository's dated reports.
+
+\begin{thebibliography}{9}
+\bibitem{ANL} F.~Adiceam, E.~Nesharim and F.~Lunnon, On the $t$-adic
+Littlewood conjecture, \emph{Duke Math.\ J.} \textbf{170} (2021), 2371--2419;
+arXiv:1806.04478.
+\bibitem{GR} S.~Garrett and S.~Robertson, Counterexamples to the $p(t)$-adic
+Littlewood conjecture over small finite fields, arXiv:2405.14454v2 (2025).
+\bibitem{LS} L.~Lai and J.~Sprang, On the $P(t)$-adic Littlewood conjecture in
+odd characteristics, arXiv:2606.00633v1 (2026).
+\bibitem{Rob} S.~Robertson, Combinatorics on number walls and the
+$P(t)$-adic Littlewood conjecture, arXiv:2307.00955v3 (2025).
+\bibitem{repo} G.~Baker, Function-field $P(t)$-adic Littlewood research,
+\url{https://github.com/solresol/function-field-littlewood}, files
+\texttt{results/2026-10-17-lai-sprang-sharpness.md},
+\texttt{FunctionFieldLittlewood/Sharpness.lean},
+\texttt{FunctionFieldLittlewood/ReverseLift.lean}.
+\end{thebibliography}
+
+\end{document}
