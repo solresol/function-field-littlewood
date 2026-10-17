@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-17'
+updated: '2026-10-18'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -1134,6 +1134,129 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: lai-sprang-sharpness-f5
+  title: Kernel-checked F_5 refutation of the auxiliary N-bound
+  status: kernel-checked
+  mathematical_origin: new finite witness found by the 17 October continued-fraction cover
+    and reverse lift; certificate checked directly by the kernel
+  first_formalisation_priority: unestablished
+  statement: Over F_5 (N=4), R(t)=S(t^4) with S=(1+t+t^2+t^3)(2+t+t^2+t^3+3t^4+3t^5+t^6+t^7+t^8)
+    has degree 44 and exact first fractional index 52 at shift 1244 for the infinite named
+    support stream, so the polynomial Littlewood product of X^1244 R is 2^-8 < 2^-4. S itself
+    has exactly deg S+1=12 zero rows at shift 311.
+  assumptions:
+  - The named support stream laiSprangStream 5 2 (N=4), the base-two product of FractionalPart.lean,
+    and the explicit coefficient vectors recorded in Sharpness.lean.
+  - No search output, lift lemma or minimality claim is assumed; both exact certificates are
+    decided by kernel evaluation through the proved identity laiSprangFast_eq.
+  limitations: Only p=5 is formalised. The p=13,29,37,53 witnesses, least-degree covers, the
+    continued-fraction equivalence, the reverse lift and the sharpness of Lai-Sprang Theorem 1.2
+    are ordinary or computer-assisted results in results/2026-10-17-lai-sprang-sharpness.md.
+    No characteristic-two statement.
+  declarations:
+  - name: FunctionFieldLittlewood.laiSprangFast_eq
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 49
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.laiSprangFast_eq : ∀ (p r : ℕ),
+        FunctionFieldLittlewood.laiSprangFast p r = FunctionFieldLittlewood.laiSprangStream p r
+    axioms:
+    - propext
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5Terminal_factor
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 63
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5Terminal_factor : ∀ (k : Fin 12),
+        FunctionFieldLittlewood.sharp5Terminal k =
+          ∑ i, if ↑i ≤ ↑k ∧ ↑k ≤ ↑i + 3 then FunctionFieldLittlewood.sharp5Quotient i else 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5Terminal_certificate
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 69
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5Terminal_certificate : FunctionFieldLittlewood.ExactCertificate
+        (FunctionFieldLittlewood.laiSprangStream 5 2) FunctionFieldLittlewood.sharp5Terminal 311 13
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5Lift_certificate
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 79
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5Lift_certificate : FunctionFieldLittlewood.ExactCertificate
+        (FunctionFieldLittlewood.laiSprangStream 5 2) FunctionFieldLittlewood.sharp5Lift 1244 52
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5_polynomial_product
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 93
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+          (FunctionFieldLittlewood.laiSprangStream 5 2)
+          (Polynomial.X ^ 1244 * FunctionFieldLittlewood.multiplierPolynomial FunctionFieldLittlewood.sharp5Lift) =
+        2 ^ (-8)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5_refutes_N_bound
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 100
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+          (FunctionFieldLittlewood.laiSprangStream 5 2)
+          (Polynomial.X ^ 1244 * FunctionFieldLittlewood.multiplierPolynomial FunctionFieldLittlewood.sharp5Lift) <
+        2 ^ (-4)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp5_no_row_within_N
+    file: FunctionFieldLittlewood/Sharpness.lean
+    line_at_snapshot: 108
+    introduced_commit: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_type: |-
+      FunctionFieldLittlewood.sharp5_no_row_within_N : ¬∃ k,
+          0 < k ∧
+            k ≤ 44 + 4 ∧
+              FunctionFieldLittlewood.fractionalCoeff (FunctionFieldLittlewood.laiSprangStream 5 2)
+                  FunctionFieldLittlewood.sharp5Lift 1244 k ≠
+                0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: a4e400f5228a06c3e2097e5c3bc6051d0973a6c2
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-17-sharpness-lean-build.txt
+    full_build_validation: results/2026-10-17-sharpness-validation.json
+    catalogue_audit: results/2026-10-17-sharpness-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/Sharpness.lean: e12d157a16715333a686b66b8f56616e17a571d4692346d901c9b86caffd7589
+    verification: Lean kernel (decide +kernel, no native_decide) and separate type/axiom audit;
+      no Comparator or independent-kernel replay for this increment.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -1149,14 +1272,16 @@ unformalised_and_open:
   statement: Terminal F_1 nonvanishing is equivalent to the all-degree N-bound, and the maximum
     defect is N or 2N.
   record: results/2026-10-05-terminal-lift.md
-  remaining: The dichotomy does not select either branch; reverse lift and literature-dependent
-    proof are not Lean-formalised.
+  remaining: On 17 October the 2N branch was selected for p=5,13,29,37,53 by explicit witnesses
+    (p=5 in Lean); p=61 and every prime with N>=8 remain undecided. The reverse lift and the
+    literature-dependent proof are not Lean-formalised.
 - id: all-degree-bound
-  status: open-in-project
+  status: refuted
   statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.
-  record: TODO.md
-  remaining: Rule out or exhibit original odd-shift terminal rows with nonzero residual scalar
-    C.
+  record: results/2026-10-17-lai-sprang-sharpness.md
+  remaining: False at p=5 (kernel-checked, lai-sprang-sharpness-f5) and at p=13,29,37,53 by exact
+    certificates. Successor question, open in project - is the maximum defect 2N for every odd
+    prime? Undecided for p=61 and for every prime with N>=8.
 - id: characteristic-two
   status: no-construction-proved
   statement: A characteristic-two main-conjecture counterexample or informative stronger intermediate

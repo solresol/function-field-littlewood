@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-18T00:06:28.944939+11:00",
+  "proof_snapshot": "a4e400f5228a06c3e2097e5c3bc6051d0973a6c2",
+  "schema": "official v0.4 locally pinned schema (.research/formalization-v0.4.schema.json)",
+  "schema_validation": "passed",
+  "new_group_validation": "source bytes and sha256 equal at the proof snapshot; declaration types, line numbers and axioms match results/2026-10-17-sharpness-audit.txt; introduced commits are ancestors",
+  "historical_groups": "15 earlier entries unchanged",
+  "new_catalogue_declarations": 7,
+  "unformalised_and_open_changes": {
+    "all-degree-bound": "open-in-project -> refuted",
+    "terminal-equivalence": "remaining text records 2N branch at five primes"
+  },
+  "comparison": "no independent-kernel or Comparator replay claimed for this group",
+  "archive": "not included in v0.1.0"
+}

@@ -11,6 +11,7 @@ The actual parent-window group is pinned to `75e5c61870de95e901f99b5a48e74a55919
 The complete descent/cutoff group is pinned to `a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1` (13 October 2026).
 The terminal-gap/stronger-cutoff group is pinned to `ad99eeae946f1a948e6a49a69b1b92a75262459e` (15 October 2026).
 The sparse-divisor group is pinned to `417116c79e25edefcc9ecb9b1bcc9edaca1b1f84` (17 October 2026).
+The F_5 sharpness group is pinned to `a4e400f5228a06c3e2097e5c3bc6051d0973a6c2` (17 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -32,8 +33,16 @@ axiom audit, archive coverage and registry status.
 | [Complete descent and degree cutoff](https://github.com/solresol/function-field-littlewood/blob/a29effc281ad4d0f16a78b14f52ea0b0bf6a6ea1/FunctionFieldLittlewood/DescentStep.lean#L163) | full iteration of the ordinary degree-cutoff argument | Not yet archived |
 | [Terminal gap exclusion and stronger cutoff](https://github.com/solresol/function-field-littlewood/blob/ad99eeae946f1a948e6a49a69b1b92a75262459e/FunctionFieldLittlewood/TerminalGap.lean#L325) | actual support gaps, original rows and iteration to N(3N/2-1) | Not yet archived |
 | [Sparse-divisor obstruction](https://github.com/solresol/function-field-littlewood/blob/417116c79e25edefcc9ecb9b1bcc9edaca1b1f84/FunctionFieldLittlewood/SparseDivisor.lean#L150) | reflection obstruction for the first exceptional strip | Not yet archived |
+| [F_5 refutation of the auxiliary N-bound](https://github.com/solresol/function-field-littlewood/blob/a4e400f5228a06c3e2097e5c3bc6051d0973a6c2/FunctionFieldLittlewood/Sharpness.lean#L100) | new kernel-checked counterexample: product 2^-8 < 2^-4 | Not yet archived |
 
 ## Verification boundary
+
+The 17 October F_5 sharpness group passed the full build and its
+[type/axiom audit](results/2026-10-17-sharpness-audit.txt). Both exact certificates
+are decided by kernel evaluation (`decide +kernel`, no `native_decide`) after the
+proved rewrite `laiSprangFast_eq`; no search output or lift lemma is trusted.
+It refutes the all-degree auxiliary N-bound at p=5 only. The p=13,29,37,53
+witnesses and least-degree covers are outside Lean.
 
 The 17 October sparse-divisor group passed the pinned full build and
 [separate seven-declaration type/axiom audit](results/2026-10-17-sparse-divisor-audit.txt).
