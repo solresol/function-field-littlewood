@@ -318,6 +318,29 @@ not built by default.
     python3 -m search.run_terminal_cover results/2026-10-18-p61-cover.json --analyze DIR 61 4000
     lake build SharpnessCertificates
 
+## 18 October addendum: a number-wall engine and the N=8 cost
+
+`search/number_wall.c` computes the number wall of a sequence over F_p with
+Lunnon's frame equations, so all shifts are handled at once. A search to
+quotient degree E then costs about E times the number of columns, instead of
+E^2 per shift. The tests compare 5000+ wall entries with direct Toeplitz
+determinants on random sequences (windows up to side 29 exercised). They also
+check that side-4 windows of the p=5 derived wall coincide with the profile's
+terminal windows on actual shifts. A longer local run matched all 3617
+continued-fraction hits in its valid region, with no window larger than 4,
+consistent with the N+1 cap.
+
+The random model fitted at N=4 (least quotient degree about p^(N/2)/2:
+predicted 12, 84, 420, 685, 1404, 1860 against observed 8, 76, 326, 1134,
+1128, 2083) gives about 1.4 million for p=41, N=8. The wall area needed for
+one expected hit is about N p^N, roughly 6*10^13 cells. The current engine
+runs about 8*10^7 cells/s on raksasa's 12 threads, limited by serial window
+bookkeeping. A ring-buffer redesign (frames read from the last g+3 rows,
+compact window records, parallel detection) should approach 10^9 to 3*10^9
+cells/s. That would still mean roughly 5 to 15 hours of the whole machine,
+plus hours to extract and verify a degree-10^6 witness, which is far beyond
+Lean. This was not run.
+
 ## Literature
 
 Accessed 17 October 2026, Australia/Sydney:

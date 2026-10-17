@@ -72,6 +72,12 @@ finding rather than promoting it to a firstness claim.
   factor E; an automatic-tiling description of the wall modulo p (as in
   Adiceam–Nesharim–Lunnon and Garrett–Robertson) could decide it exactly.
   Do not report empty N>=8 ranges as evidence for N.
+- N=8 by number wall: search/number_wall.c is validated (determinants, and
+  the p=5 terminal hits) but runs only about 8*10^7 cells/s, limited by serial
+  window bookkeeping. p=41 needs about 6*10^13 cells for one expected
+  witness (degree near 1.4*10^6). A ring-buffer redesign (frames read from
+  the last g+3 rows, compact window records, parallel detection) is the
+  prerequisite. Then it is a 5-15 hour raksasa run; ask before occupying it.
 - Seek a reason, not more sporadic witnesses: is there a construction of a
   degree-(N+1) partial quotient of some <t^M F Lambda> for every p, or an
   argument that size-N windows must occur in the derived number wall?
