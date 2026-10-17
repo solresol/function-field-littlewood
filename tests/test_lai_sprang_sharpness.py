@@ -3,8 +3,9 @@ import json
 from pathlib import Path
 import unittest
 
+from search.run_terminal_cover import realizable_shift
 from search.lai_sprang_sharpness import (
-    cover_cases, cover_parameters, derived_window, direct_rank_exclusion,
+    cover_cases, cover_parameters, derived_window, direct_rank_exclusion, normalized,
     garrett_robertson_witness, kernel, morphism_sequence, paperfolding_level2,
     profile_jumps, rows, scan_cover, terminal_events, verify_garrett_robertson,
     verify_witness, witness,
@@ -74,6 +75,22 @@ class SharpnessTests(unittest.TestCase):
         # The witness shift 311 realises residue 55 with c_320=c_5=-1.
         _, L, P, _ = cover_parameters(4, 8)
         self.assertEqual((311 % P, (311 + 9) % L), (55, 0))
+
+    def test_realizability_rule_against_actual_shifts(self):
+        self.assertEqual(realizable_shift(4, 8, 55, -1, 8), 311)
+        self.assertEqual(realizable_shift(4, 8, 119, -1, 8), 631)
+        N, E = 4, 8
+        T, L, P, _ = cover_parameters(N, E)
+        for b, x in cover_cases(N, E):
+            if x is None:
+                continue
+            hole = next(i for i in range(1, T + 1) if (b + i) % L == 0)
+            actual = {normalized(N, q * P + b + hole) for q in range(64)}
+            M = realizable_shift(N, E, b, x, E)
+            self.assertEqual(M is not None, x in actual, (b, x))
+            if M is not None:
+                self.assertEqual(M % P, b)
+                self.assertEqual(normalized(N, M + hole), x)
 
     def test_cover_is_complete_and_holes_are_unique(self):
         N, E = 4, 8

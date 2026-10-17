@@ -37,3 +37,11 @@ set_option pp.proofs true
 #print axioms FunctionFieldLittlewood.sharp13Lift_certificate
 #print axioms FunctionFieldLittlewood.sharp13_polynomial_product
 #print axioms FunctionFieldLittlewood.sharp13_refutes_N_bound
+#check @FunctionFieldLittlewood.lsNat_cast
+#check @FunctionFieldLittlewood.forall_lt_concat
+#check @FunctionFieldLittlewood.certificate_of_check
+#check @FunctionFieldLittlewood.product_of_checks
+#print axioms FunctionFieldLittlewood.lsNat_cast
+#print axioms FunctionFieldLittlewood.forall_lt_concat
+#print axioms FunctionFieldLittlewood.certificate_of_check
+#print axioms FunctionFieldLittlewood.product_of_checks

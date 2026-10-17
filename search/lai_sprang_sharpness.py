@@ -32,9 +32,9 @@ from search.run_rank_experiments import oracle
 
 # p: (actual odd shift M, quotient degree e). For p<=53 each e is least over
 # ALL shifts: Python covers below for p=5,13,29; the C cover for p=37,53.
-# The p=61 witness (18 October) carries no minimality claim.
+# The p=61 witness is least over all shifts by the 18 October raksasa cover.
 WITNESSES = {5: (311, 8), 13: (1465, 76), 29: (2501, 326),
-             37: (19939, 1134), 53: (40193, 1128), 61: (35113, 3245)}
+             37: (19939, 1134), 53: (40193, 1128), 61: (22815, 2083)}
 RECORDED = (5, 13, 29, 37, 53)
 PYTHON_COVER = (5, 13, 29)
 KERNEL_CHECK = (5, 13)

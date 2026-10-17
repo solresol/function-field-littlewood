@@ -1,6 +1,6 @@
-..................................................................
+....................................................................
 ----------------------------------------------------------------------
-Ran 66 tests in 23.375s
+Ran 68 tests in 7.447s
 
 OK
-python3 -m unittest discover -s tests  16.13s user 0.74s system 70% cpu 23.892 total
+python3 -m unittest discover -s tests  7.16s user 0.15s system 94% cpu 7.695 total

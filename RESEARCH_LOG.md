@@ -1114,14 +1114,20 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Continuation of the 17 October session, after pushing a4e400f/e0afc2e on
   top of the 13–17 October automation commits (no conflicting claims: their
   degree-H boundary results are consistent with the p=5 threshold 44).
-- A raksasa C cover for p=61 to deg V<=4000 found a terminal window at
-  deg V=3245, realized at M=35113. Root-sum readback: lifted degree 12992,
-  shift 140452, index 13000, defect 8=2N. Every N=4 prime up to 61 now attains
-  2N. The least p=61 degree is between 8016 and 12992 (cover unfinished).
+- A raksasa C cover for p=61 to deg V<=4000 (96,832 cases) has least hit
+  deg V=2083, realized at M=22815 (an unrealizable case shares that degree).
+  Root-sum readback: lifted degree 8344, shift 91260, index 8352, defect 8=2N.
+  Every N=4 prime up to 61 attains 2N; the p=61 least degree is 8344.
 - ReverseLift.lean proves the reverse lift generically (any stream with
   a(2n)=a(n); vanishing odd rows double the shift and the exact index) and
   reduces the odd-row condition for the named stream to residues modulo N via
   periodicity. The p=13 refutation follows from an 81-row kernel certificate,
   without evaluating the 323-row lifted one (`sharp13_refutes_N_bound`).
-- Classification: one more prime (computational certificate) and verification
-  progress (formal reverse lift; p=13 formal). N>=8 remains undecided.
+- FastCertificate.lean: residue stream, list dot products and a soundness
+  theorem; chunked row checks keep kernel memory bounded. The non-default
+  SharpnessCertificates target kernel-checks p=29,37,53,61 (12-324 s each on
+  raksasa, under 5.5 GB). All six refutations are now Lean theorems.
+  The laptop was swapping heavily, so the big checks ran on raksasa.
+- Classification: one more prime (computational certificate, least degree)
+  and verification progress (formal reverse lift; all six primes formal).
+  N>=8 remains undecided.

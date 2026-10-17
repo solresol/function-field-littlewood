@@ -6,7 +6,8 @@
     {
       "command": "python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --witness 61",
       "outcome": "generated",
-      "runtime_seconds": 4.35353391605895
+      "runtime_seconds": 0.6758972089737654,
+      "note": "Least witness (deg V=2083, M=22815) after the complete cover; replaces the earlier mid-run witness deg V=3245, M=35113."
     },
     {
       "command": "python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --verify",
@@ -16,24 +17,50 @@
           {
             "p": 61,
             "N": 4,
-            "M": 35113,
-            "e": 3245,
-            "terminal_value": 33,
-            "lifted_degree": 12992,
-            "m": 140452,
-            "j": 13000,
+            "M": 22815,
+            "e": 2083,
+            "terminal_value": 54,
+            "lifted_degree": 8344,
+            "m": 91260,
+            "j": 8352,
             "defect": 8,
-            "largest_original_index": 166444
+            "largest_original_index": 107956
           }
         ],
         "covers": [],
-        "runtime_seconds": 21.0926118750358
+        "runtime_seconds": 3.4852342079393566
       }
     },
     {
-      "command": "raksasa: search/terminal_cover.c, p=61 N=4 E=4000, 96 residue chunks",
-      "outcome": "partial",
-      "note": "Hit at b=2345, x=-1, e=3245 found within the first 12 chunks; least-degree cover unfinished, so no minimality claim. b=6495, x=0, e=3995 also reported."
+      "command": "raksasa: search/terminal_cover.c p=61 N=4 E=4000 in 96 residue chunks (gcc -O3 -march=native, niced)",
+      "outcome": "completed",
+      "cases": 96832,
+      "hits": 14,
+      "least_hit": 2083,
+      "least_realizable": {
+        "b": 22815,
+        "x": 0,
+        "e": 2083,
+        "jump": 5,
+        "realizable_shift": 22815
+      },
+      "analysis": "python3 -m search.run_terminal_cover results/2026-10-18-p61-cover.json --analyze DIR 61 4000"
+    },
+    {
+      "command": "raksasa: lake build SharpnessCertificates.P29/.P37/.P53/.P61 and SharpnessCertificates (one module at a time, RSS guard 10 GB)",
+      "outcome": "passed",
+      "wall_seconds": {
+        "P29": 12.28,
+        "P37": 98.36,
+        "P53": 98.36,
+        "P61": 323.82
+      },
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": "results/2026-10-18-sharpness-certificates-build.txt"
     },
     {
       "command": "lake build",
@@ -54,7 +81,7 @@
       "command": "python3 -m unittest discover -s tests",
       "outcome": "passed",
       "summary": [
-        "Ran 66 tests in 23.375s",
+        "Ran 68 tests in 7.447s",
         "OK"
       ],
       "log": "results/2026-10-18-tests.txt"

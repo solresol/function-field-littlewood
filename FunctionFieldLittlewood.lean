@@ -22,5 +22,6 @@ public import FunctionFieldLittlewood.TerminalGap
 public import FunctionFieldLittlewood.RootStream
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
+public import FunctionFieldLittlewood.FastCertificate
 
 @[expose] public section

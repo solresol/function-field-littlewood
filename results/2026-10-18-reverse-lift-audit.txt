@@ -78,3 +78,44 @@ FunctionFieldLittlewood.sharp13_refutes_N_bound : FunctionFieldLittlewood.polyno
 'FunctionFieldLittlewood.sharp13Lift_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FunctionFieldLittlewood.sharp13_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
 'FunctionFieldLittlewood.sharp13_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.lsNat_cast : ∀ (p r n : ℕ) [NeZero p],
+  ↑(FunctionFieldLittlewood.lsNat p r n) = FunctionFieldLittlewood.laiSprangStream p r n
+@FunctionFieldLittlewood.forall_lt_concat : ∀ {P : ℕ → Prop} {a b c : ℕ},
+  (∀ k < b, P (a + k)) → (∀ k < c, P (a + b + k)) → ∀ k < b + c, P (a + k)
+FunctionFieldLittlewood.certificate_of_check : ∀ (p r M d : ℕ) [NeZero p] (S w : List ℕ),
+  S.length = d + 1 →
+    w = List.map (fun j => FunctionFieldLittlewood.lsNat p r (M + 1 + j)) (List.range (2 * d + 2)) →
+      S.getD 0 0 % p ≠ 0 →
+        S.getD d 0 % p ≠ 0 →
+          (∀ k < d + 1, FunctionFieldLittlewood.dotNat S (List.drop k w) % p = 0) →
+            FunctionFieldLittlewood.dotNat S (List.drop (d + 1) w) % p ≠ 0 →
+              FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p r)
+                (fun i => ↑(S.getD (↑i) 0)) M (d + 2)
+FunctionFieldLittlewood.product_of_checks : ∀ (p M d : ℕ) [inst : Fact (Nat.Prime p)] (S w : List ℕ),
+  S.length = d + 1 →
+    w = List.map (fun j => FunctionFieldLittlewood.lsNat p 2 (M + 1 + j)) (List.range (2 * d + 2)) →
+      S.getD 0 0 % p ≠ 0 →
+        S.getD d 0 % p ≠ 0 →
+          (∀ k < d + 1, FunctionFieldLittlewood.dotNat S (List.drop k w) % p = 0) →
+            FunctionFieldLittlewood.dotNat S (List.drop (d + 1) w) % p ≠ 0 →
+              (∀ u < 4,
+                  FunctionFieldLittlewood.dotNat S
+                        (List.map (fun i => FunctionFieldLittlewood.lsNat p 2 (2 * (u + i) + 1)) (List.range (d + 1))) %
+                      p =
+                    0) →
+                (∀ u < 4,
+                    FunctionFieldLittlewood.dotNat S
+                          (List.map (fun i => FunctionFieldLittlewood.lsNat p 2 (2 * (u + 2 * i) + 1))
+                            (List.range (d + 1))) %
+                        p =
+                      0) →
+                  FunctionFieldLittlewood.polynomialLittlewoodProduct (FunctionFieldLittlewood.laiSprangStream p 2)
+                      (Polynomial.X ^ (2 * (2 * M)) *
+                        FunctionFieldLittlewood.multiplierPolynomial
+                          (FunctionFieldLittlewood.liftTwo
+                            (FunctionFieldLittlewood.liftTwo fun i => ↑(S.getD (↑i) 0)))) =
+                    2 ^ (-8)
+'FunctionFieldLittlewood.lsNat_cast' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.forall_lt_concat' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.certificate_of_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.product_of_checks' depends on axioms: [propext, Classical.choice, Quot.sound]

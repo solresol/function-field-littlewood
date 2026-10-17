@@ -38,7 +38,7 @@ $2^{-2N}$ for $P=t$, and composition gives equality for every irreducible $P$
 over every field of characteristic $p$. The witnesses come from a reformulation
 of the extremal problem as the occurrence of a partial quotient of degree
 $N+1$ in a shifted continued fraction, combined with a dyadic reverse lift.
-The cases $p=5$ and $p=13$ are verified in the Lean proof assistant. In
+All six cases are verified in the Lean proof assistant. In
 particular, the sharper bound $2^{-N}$ suggested by small computations is
 false. A random model predicts witnesses of degree about $p^{N/2}$; whether the
 constant is attained for every odd $p$ remains open.
@@ -178,7 +178,7 @@ $p$ & $M$ & $e=\deg V$ & $D=\deg S$ & $\deg R=4D$ & shift $4M$ & $j=4(D+2)$\\
 29 & 2501 & 326 & 329 & 1316 & 10004 & 1324\\
 37 & 19939 & 1134 & 1137 & 4548 & 79756 & 4556\\
 53 & 40193 & 1128 & 1131 & 4524 & 160772 & 4532\\
-61 & 35113 & 3245 & 3248 & 12992 & 140452 & 13000\\
+61 & 22815 & 2083 & 2086 & 8344 & 91260 & 8352\\
 \bottomrule
 \end{tabular}
 \caption{Terminal windows and their lifts, $N=4$.}\label{tab:witnesses}
@@ -198,12 +198,13 @@ therefore $2^{(d-j)\deg P}=2^{-2N\deg P}$, which equals the bound
 For $p=5$ the exact certificate of $Q$ and the identity
 $\abs{Q}\abs{Q}_t\abs{\frp{Q\Lambda}}=2^{-8}<2^{-4}$ are checked by the Lean
 kernel for the actual polynomial and the infinite coefficient stream
-\eqref{eq:coeff}. For $p=13$ the Lean proof checks the 81-row terminal
-certificate and derives the lifted certificate from a formal version of
+\eqref{eq:coeff}. For the other primes the Lean proofs check the terminal
+certificate and derive the lifted certificate from a formal version of
 Lemma~\ref{lem:lift}: for any stream with $a_{2n}=a_n$, vanishing odd rows
 double the shift and the first index. The odd-row condition reduces to finitely
-many residues by periodicity of $a_{2u+1}$ in $u$. Both proofs use only the
-standard axioms; see \cite{repo}.
+many residues by periodicity of $a_{2u+1}$ in $u$. For $p\ge29$ the terminal
+rows are evaluated by a natural-number checker with a soundness proof. All
+proofs use only the standard axioms; see \cite{repo}.
 \end{remark}
 
 \section{A continued-fraction formulation}\label{sec:cf}
@@ -245,17 +246,16 @@ for the $NL$ residues $b$, with all three values at the exceptional index,
 therefore covers every shift.
 
 \begin{theorem}\label{thm:minimal}
-For $p=5,13,29,37,53$ every nonzero $R$ of degree $d$ has a nonzero row among
-the first $d+N$ rows, at every shift, whenever $d<44,316,1316,4548,4524$
-respectively. Each threshold is attained by Table~\ref{tab:witnesses}.
+For $p=5,13,29,37,53,61$ every nonzero $R$ of degree $d$ has a nonzero row
+among the first $d+N$ rows, at every shift, whenever
+$d<44,316,1316,4548,4524,8344$ respectively. Each threshold is attained by Table~\ref{tab:witnesses}.
 \end{theorem}
 
 This is computer-assisted: the covers exclude terminal windows of smaller
 quotient degree, and the descent transfers the exclusion to all multipliers.
 Two independent implementations (Berlekamp--Massey linear complexity in Python
 and Euclidean division in C) give identical results where both were run, and
-for $p=5$ a direct nullspace computation agrees. For $p=61$ no terminal window
-has $\deg V\le2000$, so the least degree lies in $[8016,12992]$.
+for $p=5$ a direct nullspace computation agrees.
 
 The integer matrix of the $p=5$ terminal window has the greatest common divisor
 of its maximal minors equal to $5$. So the witness is specific to
@@ -268,8 +268,7 @@ probability $p^{-N}$ for a zero block of side $N$ in the number wall of $b$
 modulo $p$. Because the sequence is $2$-automatic, distinct windows up to
 degree $E$ number on the order of $E^2$, so the model predicts least terminal
 degrees of order $p^{N/2}$. For $N=4$ the observed least degrees
-$8,76,326,1134,1128$ are $0.32,0.45,0.39,0.83,0.40$ times $p^2$, and for
-$p=61$ the ratio lies between $0.54$ and $0.87$. For $N=8$ the model predicts
+$8,76,326,1134,1128,2083$ are $0.32,0.45,0.39,0.83,0.40,0.56$ times $p^2$. For $N=8$ the model predicts
 degrees around $3\cdot10^6$ already at $p=41$. Complete covers to quotient
 degree $250$ found nothing for $p=41,73,89,137$ ($N=8$) and $p=17,113$
 ($N=16$), which is consistent with the model and is no evidence for the

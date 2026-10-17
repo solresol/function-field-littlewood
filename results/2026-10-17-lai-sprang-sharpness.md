@@ -5,9 +5,10 @@ Classification: **mathematical progress**. The auxiliary all-degree bound
 j-d<=N is **false**; the 5 October N-or-2N dichotomy selects 2N for six
 primes (p=61 added on 18 October); Lai–Sprang's Theorem 1.2 is therefore sharp
 in those characteristics.
-The p=5 and p=13 refutations are Lean kernel-checked theorems, the latter via a
-formalised reverse lift. The other witnesses are exact finite certificates read
-back from original root sums; minimality and the exclusions for other primes are
+All six refutations are Lean kernel-checked: p=5 and p=13 in the default library
+(the latter via a formalised reverse lift), and p=29,37,53,61 in the non-default
+`SharpnessCertificates` target through a natural-number certificate checker with
+a soundness proof. Minimality and the exclusions for other primes are
 computer-assisted all-shift statements.
 
 ## Question and decision
@@ -60,7 +61,7 @@ zero rows at the odd shift M, and its lift R=S(t^4), m=4M has exact defect 8=2N.
 | 29 | 2501 | 326 | 329 | 1316 | 10004 | 1324 | 8 |
 | 37 | 19939 | 1134 | 1137 | 4548 | 79756 | 4556 | 8 |
 | 53 | 40193 | 1128 | 1131 | 4524 | 160772 | 4532 | 8 |
-| 61 | 35113 | 3245 | 3248 | 12992 | 140452 | 13000 | 8 |
+| 61 | 22815 | 2083 | 2086 | 8344 | 91260 | 8352 | 8 |
 
 For p=13, [ReverseLift.lean](../FunctionFieldLittlewood/ReverseLift.lean)
 kernel-checks the 81-row terminal certificate and the finitely many odd-row
@@ -91,17 +92,14 @@ same composition principle as [Robertson's Theorem 1.6](https://arxiv.org/abs/23
 
 **Theorem 4 (least degrees, all shifts; computer-assisted).** For every
 nonzero polynomial R of degree d and every shift m>=0, some row among
-1,...,d+N is nonzero whenever d<44, 316, 1316, 4548, 4524 for p=5, 13, 29,
-37, 53 respectively. Theorem 2 shows each threshold is attained.
+1,...,d+N is nonzero whenever d<44, 316, 1316, 4548, 4524, 8344 for p=5, 13,
+29, 37, 53, 61 respectively. Theorem 2 shows each threshold is attained.
 
 *Proof.* By the [2 October descent](2026-10-02-parity-descent.md), a
 degree-d multiplier with d+N zero rows yields a terminal window of exact
 degree floor(d/N), at some shift, of the form FV with deg V=floor(d/N)-N+1.
 The complete covers in Section 4 exclude terminal windows with deg V below
-8, 76, 326, 1134, 1128 respectively, at every shift. QED.
-
-For p=61 the least degree lies in [8016, 12992]: no terminal window has
-deg V<=2000 at any shift, and the cover to deg V<=4000 is unfinished.
+8, 76, 326, 1134, 1128, 2083 respectively, at every shift. QED.
 
 For p=5 the 12 October all-prime cutoff d<24 was correct but not sharp;
 the true threshold is 44. The proved ordinary cutoffs N(N-1), N(3N/2-1)
@@ -241,8 +239,7 @@ size-N zero window in the derived number wall modulo p. Since the stream is
 2-automatic, distinct windows up to degree E number on the order of E^2.
 This predicts least quotient degrees of order p^(N/2). For N=4 the
 observed values 8, 76, 326, 1134, 1128 are 0.32, 0.45, 0.39, 0.83, 0.40
-times p^2; p=61 has its least value between 2001 and 3245 (ratio 0.54 to
-0.87). The model is a heuristic only.
+times p^2, and p=61 gives 2083, ratio 0.56. The model is a heuristic only.
 
 For N=8 it predicts least degrees of order 41^4, about 3*10^6, at p=41,
 far beyond the E=250 covers. **The empty N>=8 ranges are therefore not
@@ -266,7 +263,7 @@ Open questions:
 ## 9. Consequences for the roadmap
 
 - Retire the all-degree auxiliary N-bound for r>=2. It is false at
-  p=5,13,29,37,53,61, formally so at p=5 and p=13.
+  p=5,13,29,37,53,61, formally so at all six primes.
 - Retire the 12 October plan to find a uniform dyadic identity bounding the
   terminal gcd's odd primes. At e=H it was harmless; in general p=5 divides
   the minors at e=8.
@@ -286,25 +283,40 @@ Python 3.9+ standard library; the C cover needs a C compiler. No randomness.
 The generator refuses to overwrite its output. Runtimes, versions and outputs
 are in the JSON files and `2026-10-17-sharpness-validation.json`. Exclusions hold only
 up to the stated E. The p=37 and p=53 minimality claims rely on the C
-implementation, cross-checked with Python only on smaller fields. Theorem 1
-and the p=13 case of Theorem 2 are Lean results; the remaining cases of
-Theorem 2, Theorem 4 and Corollary 3 are ordinary or computer-assisted proofs.
+implementation, cross-checked with Python only on smaller fields. Theorems 1
+and 2 are Lean results (the latter for all six primes, see the addendum);
+Theorem 4 and Corollary 3 are ordinary or computer-assisted proofs.
 A direct Lean check of the p=13 lifted certificate (102,000 products) did not
 finish in ten minutes, which motivated the formal lift.
 
-## 18 October addendum: p=61
+## 18 October addendum: p=61 and full Lean coverage
 
-The raksasa cover to deg V<=4000 (same C program, 96 residue chunks) found a
-p=61 terminal window at residue 2345 modulo 32768 with exceptional value -1.
-That value is realized when the index 8192(1+4q) has c_(1+4q)=-1, i.e. for
-odd q; q=1 gives M=35113. Berlekamp–Massey extraction and independent
-root-sum readback confirm deg V=3245, a terminal window of exactly 3249 rows,
-and the lifted defect 8 at degree 12992, shift 140452, index 13000. The
-largest original index read is 166,444. Generation took 4.4 s and readback
-21 s. Because the cover had not finished, no least-degree claim is made for p=61.
+A raksasa run of the same C program covered p=61 to deg V<=4000 in 96 residue
+chunks (96,832 cases). It reported 14 conservative hits; the least is deg V=2083,
+and nothing lies below it, so 2083 is least over all shifts
+([analysis](2026-10-18-p61-cover.json)). At 2083 the case (b,x)=(6431,0) is
+unrealizable, since its exceptional coefficient c_(1+4q) is never 0, but
+(22815,0) is realized at M=22815. Berlekamp–Massey extraction and root-sum
+readback confirm a terminal window of exactly 2087 rows and the lifted defect 8
+at degree 8344, shift 91260, index 8352. The largest original index
+read is 107,956. An earlier mid-run witness (deg V=3245, M=35113) was replaced
+by this least one. `realizable_shift` in search/run_terminal_cover.py records
+the realizability rule; a test compares it with actual shifts.
+
+Lean now covers all six primes. FastCertificate.lean defines the stream as a
+residue `lsNat`, proves `lsNat_cast`, and turns list dot products against a
+precomputed window into `ExactCertificate` (`certificate_of_check`). Odd-row
+residues and two reverse lifts then give the polynomial product 2^-8
+(`product_of_checks`). Rows are checked in blocks of 100, joined by
+`forall_lt_concat`, to bound kernel memory. SharpnessCertificates/P29, P37,
+P53 and P61 build in 12, 98, 98 and 324 seconds on raksasa, each under 5.5 GB
+([log and hashes](2026-10-18-sharpness-certificates-build.txt)). This target is
+not built by default.
 
     python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --witness 61
     python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --verify
+    python3 -m search.run_terminal_cover results/2026-10-18-p61-cover.json --analyze DIR 61 4000
+    lake build SharpnessCertificates
 
 ## Literature
 

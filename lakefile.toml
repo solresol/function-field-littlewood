@@ -17,3 +17,10 @@ roots = ["Challenge"]
 [[lean_lib]]
 name = "Solution"
 roots = ["Solution"]
+
+# Large kernel-checked sharpness certificates (p=29,37,53,61). Not a default
+# target: each needs minutes and several GB. Build with
+#   lake build SharpnessCertificates
+[[lean_lib]]
+name = "SharpnessCertificates"
+roots = ["SharpnessCertificates"]

@@ -8,7 +8,7 @@ frontier. Judge the next work against two mathematical outcomes:
 
 1. A structural lemma towards proving or refuting j-d<=N for all degrees and
    shifts in the Lai–Sprang stream, for r>=2. **Settled 17 October: refuted.**
-   The bound fails at p=5, 13 (both Lean), 29, 37, 53, 61, where Delta_p=2N.
+   The bound fails at p=5, 13, 29, 37, 53, 61 (all Lean), where Delta_p=2N.
    The successor question is whether Delta_p=2N for every odd prime.
 2. A characteristic-two construction or stronger intermediate statement whose
    behaviour is not already explained by the primary literature.
@@ -56,16 +56,16 @@ finding rather than promoting it to a firstness claim.
 ## Next computation
 
 - 17 October: the all-degree N-bound is **false**. Explicit lifted terminal
-  witnesses give defect exactly 2N at p=5,13,29,37,53,61 (p=5 in Sharpness.lean,
-  p=13 via ReverseLift.lean). Least original degrees over all shifts are
-  44,316,1316,4548,4524 through p=53; for p=61 between 8016 and 12992. See results/2026-10-17-lai-sprang-sharpness.md. Retire the N-bound,
+  witnesses give defect exactly 2N at p=5,13,29,37,53,61, all kernel-checked
+  (p=5,13 in the default library; p=29,37,53,61 in the SharpnessCertificates
+  target). Least original degrees over all shifts are 44,316,1316,4548,4524,8344. See results/2026-10-17-lai-sprang-sharpness.md. Retire the N-bound,
   the uniform dyadic-gcd plan and the 16 October plan to close the two residual
   degree-H offsets as routes to an all-degree bound: those boundary results stay
   true, but larger quotient degrees genuinely fail at p=5. The bullets after
   the Garrett–Robertson note are historical context.
 - Decide Delta_p beyond these six primes. Every N=4 prime up to 61 attains
-  2N; p=61 needed deg V=3245 (raksasa cover; least degree unfinished). The
-  next N=4 primes 101, 109 should need deg V near 0.4p^2, about 4000-5000;
+  2N; p=61 needs deg V=2083 (complete raksasa cover to 4000). The
+  next N=4 primes 101, 109 should need deg V near 0.4-0.8p^2, about 4000-9000;
   per-shift Euclid costs grow like E^3 per prime. N>=8: the model
   predicts least quotient degree near p^(N/2), about 3*10^6 at p=41, so
   per-shift scans cannot decide it. A number-wall frame computation saves a
@@ -162,12 +162,12 @@ finding rather than promoting it to a firstness claim.
 
 ## Next formalisation
 
-- 17 October: Sharpness.lean kernel-checks the p=5 refutation (product 2^-8
-  for the actual polynomial X^1244 R and the infinite named stream). Direct
-  certificates for larger witnesses are slow: a p=13 attempt ran more than
-  ten minutes without finishing. The useful next lemma is the 5 October
-  reverse lift for the support stream (multiples of t^H+1 annihilate the odd
-  rows), so that small terminal certificates transfer to lifted defect 2N.
+- 17-18 October: all six refutations are kernel-checked (Sharpness.lean,
+  ReverseLift.lean, FastCertificate.lean and the SharpnessCertificates
+  target). Possible next formal steps: derive the odd-row condition from
+  divisibility by 1+X^H in general (it is now checked per instance), state the
+  composition corollary for all irreducible P, and connect the reverse lift to
+  DescentStep for a formal N-or-2N dichotomy modulo Lai–Sprang's upper bound.
   The descent cutoffs remain true but no longer lead to an all-degree bound.
 
 Choose a lemma on an explicit proof path to the priorities above and name the

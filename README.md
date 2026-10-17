@@ -41,14 +41,17 @@ polynomial and the infinite named stream in
 [Sharpness.lean](FunctionFieldLittlewood/Sharpness.lean) (`sharp5_refutes_N_bound`).
 [ReverseLift.lean](FunctionFieldLittlewood/ReverseLift.lean) formalises the reverse
 lift and kernel-checks the p=13 case the same way (`sharp13_refutes_N_bound`).
+[FastCertificate.lean](FunctionFieldLittlewood/FastCertificate.lean) adds a sound
+natural-number certificate checker; with it the non-default target
+`lake build SharpnessCertificates` kernel-checks p=29, 37, 53 and 61 as well.
 
 Exact certificates, read back from original root sums, give defect 2N also
 for p=13, 29, 37, 53, 61: every N=4 prime up to 61. For these six primes the
 N-or-2N dichotomy selects 2N.
 Lai–Sprang's Theorem 1.2 bound 2^(-2^(r+1) deg P) is then attained for every
 irreducible P over every field of that characteristic. Least multiplier degrees
-over all shifts are 44, 316, 1316, 4548 and 4524 for p up to 53
-(computer-assisted covers); for p=61 it lies between 8016 and 12992.
+over all shifts are 44, 316, 1316, 4548, 4524 and 8344 (computer-assisted
+covers).
 
 The search uses a continued-fraction reformulation: Delta_p=2N exactly when
 some <t^M (1+t+...+t^(N-1)) Lambda> has a partial quotient of degree N+1.
