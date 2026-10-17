@@ -1257,6 +1257,133 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: reverse-lift-and-f13-sharpness
+  title: Reverse lift of exact certificates and the F_13 refutation
+  status: kernel-checked
+  mathematical_origin: formalisation of the 5 October ordinary reverse lift in certificate form, applied
+    to the 17 October p=13 witness
+  first_formalisation_priority: unestablished
+  statement: For any commutative ring and stream with a(2n)=a(n), if all odd rows of R vanish at every
+    shift then an exact certificate for R at (m,j) gives one for R(t^2) at (2m,2j). For the named stream
+    the odd coefficients have period 2^r in u, so odd-row vanishing reduces to residues. Over F_13 the
+    lifted degree-316 multiplier at shift 5860 has exact index 324 and product 2^-8 < 2^-4.
+  assumptions:
+  - 'heven: a(2n)=a(n) for all n; hodd: every odd row of R vanishes, at every shift.'
+  - 'For the F_13 instance: the 81-row terminal certificate and the 4 odd-row residues for S and S(t^2)
+    are kernel-decided.'
+  limitations: The odd-row condition is checked per instance by residues, not derived from divisibility
+    by 1+X^H in general. Only p=5 (Sharpness.lean) and p=13 are formal; p=29,37,53,61 witnesses, least-degree
+    covers and the sharpness corollary for all P remain outside Lean.
+  declarations:
+  - name: FunctionFieldLittlewood.fractionalCoeff_liftTwo
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 37
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "@FunctionFieldLittlewood.fractionalCoeff_liftTwo : ∀ {K : Type u_1} [inst : CommRing K]\
+      \ {d : ℕ} (a : ℕ → K)\n  (R : Fin (d + 1) → K) (m k : ℕ),\n  FunctionFieldLittlewood.fractionalCoeff\
+      \ a (FunctionFieldLittlewood.liftTwo R) (2 * m) k =\n    ∑ i, R i * a (2 * m + 2 * ↑i + k)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.certificate_liftTwo
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 70
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "@FunctionFieldLittlewood.certificate_liftTwo : ∀ {K : Type u_1} [inst : CommRing K] {d\
+      \ : ℕ} (a : ℕ → K)\n  (R : Fin (d + 1) → K) (m j : ℕ),\n  (∀ (n : ℕ), a (2 * n) = a n) →\n    (∀\
+      \ (w : ℕ), ∑ i, R i * a (2 * (w + ↑i) + 1) = 0) →\n      FunctionFieldLittlewood.ExactCertificate\
+      \ a R m j →\n        FunctionFieldLittlewood.ExactCertificate a (FunctionFieldLittlewood.liftTwo\
+      \ R) (2 * m) (2 * j)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.laiSprangStream_odd_period
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 106
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "FunctionFieldLittlewood.laiSprangStream_odd_period : ∀ (p r u : ℕ),\n  FunctionFieldLittlewood.laiSprangStream\
+      \ p r (2 * (u + 2 ^ r) + 1) =\n    FunctionFieldLittlewood.laiSprangStream p r (2 * u + 1)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.stream_odd_rows
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 132
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "@FunctionFieldLittlewood.stream_odd_rows : ∀ {d : ℕ} (p r : ℕ) (R : Fin (d + 1) → ZMod\
+      \ p),\n  (∀ w < 2 ^ r, ∑ i, R i * FunctionFieldLittlewood.laiSprangStream p r (2 * (w + ↑i) + 1)\
+      \ = 0) →\n    ∀ (w : ℕ), ∑ i, R i * FunctionFieldLittlewood.laiSprangStream p r (2 * (w + ↑i) +\
+      \ 1) = 0"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp13Terminal_certificate
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 148
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "FunctionFieldLittlewood.sharp13Terminal_certificate : FunctionFieldLittlewood.ExactCertificate\n\
+      \  (FunctionFieldLittlewood.laiSprangStream 13 2) FunctionFieldLittlewood.sharp13Terminal 1465 81"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp13Lift_certificate
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 167
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "FunctionFieldLittlewood.sharp13Lift_certificate : FunctionFieldLittlewood.ExactCertificate\n\
+      \  (FunctionFieldLittlewood.laiSprangStream 13 2)\n  (FunctionFieldLittlewood.liftTwo (FunctionFieldLittlewood.liftTwo\
+      \ FunctionFieldLittlewood.sharp13Terminal))\n  (2 * (2 * 1465)) (2 * (2 * 81))"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp13_polynomial_product
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 178
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "FunctionFieldLittlewood.sharp13_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 13 2)\n    (Polynomial.X ^ (2 * (2 * 1465)) *\n  \
+      \    FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo (FunctionFieldLittlewood.liftTwo\
+      \ FunctionFieldLittlewood.sharp13Terminal))) =\n  2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp13_refutes_N_bound
+    file: FunctionFieldLittlewood/ReverseLift.lean
+    line_at_snapshot: 185
+    introduced_commit: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_type: "FunctionFieldLittlewood.sharp13_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 13 2)\n    (Polynomial.X ^ (2 * (2 * 1465)) *\n  \
+      \    FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo (FunctionFieldLittlewood.liftTwo\
+      \ FunctionFieldLittlewood.sharp13Terminal))) <\n  2 ^ (-4)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 93badc486f8d25125785f0decac7ccbbdf3d6a98
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-18-reverse-lift-lean-build.txt
+    full_build_validation: results/2026-10-18-validation.json
+    catalogue_audit: results/2026-10-18-reverse-lift-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/ReverseLift.lean: 12ab91adf4b8bd24f027055779786abf0a5a8128dfde0ffdfd81da893afe156d
+    verification: Lean kernel (decide +kernel, no native_decide) and type/axiom audit; no Comparator or
+      independent-kernel replay.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -1272,16 +1399,18 @@ unformalised_and_open:
   statement: Terminal F_1 nonvanishing is equivalent to the all-degree N-bound, and the maximum
     defect is N or 2N.
   record: results/2026-10-05-terminal-lift.md
-  remaining: On 17 October the 2N branch was selected for p=5,13,29,37,53 by explicit witnesses
-    (p=5 in Lean); p=61 and every prime with N>=8 remain undecided. The reverse lift and the
-    literature-dependent proof are not Lean-formalised.
+  remaining: On 17-18 October the 2N branch was selected for p=5,13,29,37,53,61 by explicit witnesses
+    (p=5 and p=13 in Lean, with the reverse lift formalised in certificate form); every prime with
+    N>=8 remains undecided. The descent-side equivalence and the literature-dependent cap are not
+    Lean-formalised.
 - id: all-degree-bound
   status: refuted
   statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.
   record: results/2026-10-17-lai-sprang-sharpness.md
-  remaining: False at p=5 (kernel-checked, lai-sprang-sharpness-f5) and at p=13,29,37,53 by exact
-    certificates. Successor question, open in project - is the maximum defect 2N for every odd
-    prime? Undecided for p=61 and for every prime with N>=8.
+  remaining: False at p=5 and p=13 (kernel-checked, lai-sprang-sharpness-f5 and reverse-lift-and-f13-sharpness)
+    and at p=29,37,53,61 by exact certificates. Successor question, open in project - is the maximum
+    defect 2N for every odd prime? Undecided for every prime with N>=8 and untested for N=4 primes
+    beyond 61 past deg V=250.
 - id: characteristic-two
   status: no-construction-proved
   statement: A characteristic-two main-conjecture counterexample or informative stronger intermediate
