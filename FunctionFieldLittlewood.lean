@@ -21,5 +21,6 @@ public import FunctionFieldLittlewood.SparseDivisor
 public import FunctionFieldLittlewood.TerminalGap
 public import FunctionFieldLittlewood.RootStream
 public import FunctionFieldLittlewood.Sharpness
+public import FunctionFieldLittlewood.ReverseLift
 
 @[expose] public section

@@ -30,10 +30,12 @@ from time import perf_counter
 from search.run_rank_experiments import oracle
 
 
-# p: (actual odd shift M, quotient degree e). Each e is least over ALL shifts:
-# Python covers below for p=5,13,29; the C cover for p=37,53.
+# p: (actual odd shift M, quotient degree e). For p<=53 each e is least over
+# ALL shifts: Python covers below for p=5,13,29; the C cover for p=37,53.
+# The p=61 witness (18 October) carries no minimality claim.
 WITNESSES = {5: (311, 8), 13: (1465, 76), 29: (2501, 326),
-             37: (19939, 1134), 53: (40193, 1128)}
+             37: (19939, 1134), 53: (40193, 1128), 61: (35113, 3245)}
+RECORDED = (5, 13, 29, 37, 53)
 PYTHON_COVER = (5, 13, 29)
 KERNEL_CHECK = (5, 13)
 
@@ -237,9 +239,9 @@ def verify_garrett_robertson(w):
     return dict(p=p, m=m, d=d, j=j, deficiency=j - d, value=values[-1])
 
 
-def generate(cover_fields=PYTHON_COVER):
+def generate(cover_fields=PYTHON_COVER, witness_fields=RECORDED):
     started = perf_counter()
-    witnesses = [witness(p) for p in sorted(WITNESSES)]
+    witnesses = [witness(p) for p in witness_fields]
     covers = []
     for p in cover_fields:
         _, e = WITNESSES[p]
@@ -251,7 +253,7 @@ def generate(cover_fields=PYTHON_COVER):
                            hits_at=at['hits'], runtime_seconds=perf_counter() - t))
     return dict(python=platform.python_version(), dependencies='standard library',
                 seed=None, witnesses=witnesses, covers=covers,
-                garrett_robertson=garrett_robertson_witness(),
+                garrett_robertson=garrett_robertson_witness() if covers else None,
                 runtime_seconds=perf_counter() - started)
 
 
@@ -308,7 +310,7 @@ def direct_rank_exclusion(p, E):
 
 def verify(data):
     started = perf_counter()
-    assert [w['p'] for w in data['witnesses']] == sorted(WITNESSES)
+    assert all(WITNESSES[w['p']] == (w['M'], w['e']) for w in data['witnesses'])
     witnesses = [verify_witness(w) for w in data['witnesses']]
     covers = []
     for cover in data['covers']:
@@ -320,25 +322,29 @@ def verify(data):
         # The actual witness shift must appear among the cover hits at e.
         assert any(h['b'] == M % P and h['e'] == e for h in cover['hits_at'])
         covers.append(dict(p=p, excluded_through=e - 1, cases=cover['cases_below']))
-    p5 = direct_rank_exclusion(5, 8)
-    assert {(b, e) for b, _, e in p5} == {(55, 8), (119, 8)}
-    assert all(e == 8 for _, _, e in p5)
-    return dict(witnesses=witnesses, covers=covers, p5_direct_rank_kernels=p5,
-                garrett_robertson=verify_garrett_robertson(data['garrett_robertson']),
-                runtime_seconds=perf_counter() - started)
+    result = dict(witnesses=witnesses, covers=covers)
+    if data['covers']:
+        p5 = direct_rank_exclusion(5, 8)
+        assert {(b, e) for b, _, e in p5} == {(55, 8), (119, 8)}
+        result['p5_direct_rank_kernels'] = p5
+        result['garrett_robertson'] = verify_garrett_robertson(data['garrett_robertson'])
+    result['runtime_seconds'] = perf_counter() - started
+    return result
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('path', type=Path)
     parser.add_argument('--verify', action='store_true')
+    parser.add_argument('--witness', type=int, action='append',
+                        help='generate only these witnesses, without covers')
     args = parser.parse_args()
     if args.verify:
         print(json.dumps(verify(json.loads(args.path.read_text())), indent=2))
         return
     if args.path.exists():
         raise SystemExit(f'refusing to overwrite {args.path}')
-    data = generate()
+    data = generate((), tuple(args.witness)) if args.witness else generate()
     args.path.write_text(json.dumps(data, separators=(',', ':')) + '\n')
     print(json.dumps(dict(witnesses=[(w['p'], w['lifted_degree'], w['m'], w['j'])
                                      for w in data['witnesses']],

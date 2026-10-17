@@ -1,12 +1,14 @@
-# The Lai–Sprang constant 2N is attained for p=5,13,29,37,53
+# The Lai–Sprang constant 2N is attained for p=5,13,29,37,53,61
 
 17 October 2026, Saturday, Australia/Sydney (AEDT).
 Classification: **mathematical progress**. The auxiliary all-degree bound
-j-d<=N is **false**; the 5 October N-or-2N dichotomy selects 2N for five
-primes; Lai–Sprang's Theorem 1.2 is therefore sharp in those characteristics.
-The p=5 refutation is a Lean kernel-checked theorem. The other witnesses are
-exact finite certificates read back from original root sums; minimality and the
-exclusions for other primes are computer-assisted all-shift statements.
+j-d<=N is **false**; the 5 October N-or-2N dichotomy selects 2N for six
+primes (p=61 added on 18 October); Lai–Sprang's Theorem 1.2 is therefore sharp
+in those characteristics.
+The p=5 and p=13 refutations are Lean kernel-checked theorems, the latter via a
+formalised reverse lift. The other witnesses are exact finite certificates read
+back from original root sums; minimality and the exclusions for other primes are
+computer-assisted all-shift statements.
 
 ## Question and decision
 
@@ -46,9 +48,10 @@ proves both certificates, S=FV, the polynomial product 2^-8 for the actual
 mathlib polynomial X^1244 R and the infinite named support stream, and the
 failure of the 2^-4 bound (`sharp5_refutes_N_bound`), with standard axioms only.
 
-**Theorem 2 (five primes).** For each row below, the stated S=FV (recorded
-in [the JSON certificate](2026-10-17-sharpness.json)) has exactly deg S+1 zero
-rows at the odd shift M, and its lift R=S(t^4), m=4M has exact defect 8=2N.
+**Theorem 2 (six primes).** For each row below, the stated S=FV (recorded
+in [the JSON certificate](2026-10-17-sharpness.json), and for p=61 in
+[its 18 October record](2026-10-18-sharpness-p61.json)) has exactly deg S+1
+zero rows at the odd shift M, and its lift R=S(t^4), m=4M has exact defect 8=2N.
 
 | p | M | deg V | deg S | lifted deg R | m | j | defect |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -57,13 +60,22 @@ rows at the odd shift M, and its lift R=S(t^4), m=4M has exact defect 8=2N.
 | 29 | 2501 | 326 | 329 | 1316 | 10004 | 1324 | 8 |
 | 37 | 19939 | 1134 | 1137 | 4548 | 79756 | 4556 | 8 |
 | 53 | 40193 | 1128 | 1131 | 4524 | 160772 | 4532 | 8 |
+| 61 | 35113 | 3245 | 3248 | 12992 | 140452 | 13000 | 8 |
+
+For p=13, [ReverseLift.lean](../FunctionFieldLittlewood/ReverseLift.lean)
+kernel-checks the 81-row terminal certificate and the finitely many odd-row
+residues, then derives the 323-row lifted certificate from a general theorem
+(`certificate_liftTwo`): for any stream with a(2n)=a(n), doubling exponents
+doubles the shift and the exact index when all odd rows vanish. Periodicity of
+the odd support coefficients (`laiSprangStream_odd_period`) reduces that
+condition to residues modulo N. The result is `sharp13_refutes_N_bound`.
 
 Hence for these primes the maximum defect is Delta_p=2N=8: the infimum of
 the Littlewood products of the Lai–Sprang series over F_p is exactly 2^-8.
 The upper bound is Lai–Sprang's Theorem 1.2; the witnesses give equality.
 
 **Corollary 3 (Lai–Sprang Theorem 1.2 is sharp in these characteristics).**
-Let K be any field of characteristic p in {5,13,29,37,53} and P in K[t] any
+Let K be any field of characteristic p in {5,13,29,37,53,61} and P in K[t] any
 irreducible polynomial. Lai–Sprang prove
 
     inf_{Q in K[t]\{0}} |Q| |Q|_P |<Q Lambda(P(t))>| >= 2^(-2^(r+1) deg P).
@@ -88,6 +100,9 @@ degree floor(d/N), at some shift, of the form FV with deg V=floor(d/N)-N+1.
 The complete covers in Section 4 exclude terminal windows with deg V below
 8, 76, 326, 1134, 1128 respectively, at every shift. QED.
 
+For p=61 the least degree lies in [8016, 12992]: no terminal window has
+deg V<=2000 at any shift, and the cover to deg V<=4000 is unfinished.
+
 For p=5 the 12 October all-prime cutoff d<24 was correct but not sharp;
 the true threshold is 44. The proved ordinary cutoffs N(N-1), N(3N/2-1)
 and N(N+H) remain valid theorems.
@@ -97,7 +112,6 @@ No terminal window with deg V<=E exists, so j-d<=N for all d<N(N+E):
 
 | primes | N | E | strict all-shift cutoff |
 |---|---|---:|---:|
-| 61 | 4 | 2000 | d<8016 |
 | every p congruent to 5 modulo 8 with 101<=p<=1181 (45 primes) | 4 | 250 | d<1016 |
 | 41, 73, 89, 137 | 8 | 250 | d<2064 |
 | 17, 113 | 16 | 250 | d<4256 |
@@ -218,20 +232,21 @@ size-N zero window in the derived number wall modulo p. Since the stream is
 2-automatic, distinct windows up to degree E number on the order of E^2.
 This predicts least quotient degrees of order p^(N/2). For N=4 the
 observed values 8, 76, 326, 1134, 1128 are 0.32, 0.45, 0.39, 0.83, 0.40
-times p^2, and p=61 has none below 2000 (ratio >0.53). The model is a
-heuristic only.
+times p^2; p=61 has its least value between 2001 and 3245 (ratio 0.54 to
+0.87). The model is a heuristic only.
 
 For N=8 it predicts least degrees of order 41^4, about 3*10^6, at p=41,
 far beyond the E=250 covers. **The empty N>=8 ranges are therefore not
-evidence for Delta_p=N.** No prime with N>=8 is resolved, and neither is
-p=61.
+evidence for Delta_p=N.** No prime with N>=8 is resolved. Every N=4 prime
+up to 61 attains 2N; primes p congruent to 5 modulo 8 from 101 upward are
+untested beyond deg V=250.
 
 Open questions:
 
 1. Is Delta_p=2N for every odd prime? It is for every r=1 prime: there
    c_n=(-1)^((oddpart(n)-1)/2) has no zeros, and R=1+t^2, m=2 has rows
-   0,0,0,0,0,2 in every odd characteristic. It is now also true for the five
-   N=4 primes above. A proof would need a
+   0,0,0,0,0,2 in every odd characteristic. It is now also true for the six
+   N=4 primes above, i.e. for every N=4 prime up to 61. A proof would need a
    construction not tied to sporadic arithmetic, or an argument that size-N
    windows must occur in an automatic number wall modulo p.
 2. A sharper search for N=8 would need a method subquadratic in the
@@ -242,7 +257,7 @@ Open questions:
 ## 9. Consequences for the roadmap
 
 - Retire the all-degree auxiliary N-bound for r>=2. It is false at
-  p=5,13,29,37,53, formally so at p=5.
+  p=5,13,29,37,53,61, formally so at p=5 and p=13.
 - Retire the 12 October plan to find a uniform dyadic identity bounding the
   terminal gcd's odd primes. At e=H it was harmless; in general p=5 divides
   the minors at e=8.
@@ -263,8 +278,24 @@ The generator refuses to overwrite its output. Runtimes, versions and outputs
 are in the JSON files and `2026-10-17-sharpness-validation.json`. Exclusions hold only
 up to the stated E. The p=37 and p=53 minimality claims rely on the C
 implementation, cross-checked with Python only on smaller fields. Theorem 1
-is the only Lean result; Theorems 2 and 4 and Corollary 3 are ordinary or
-computer-assisted proofs.
+and the p=13 case of Theorem 2 are Lean results; the remaining cases of
+Theorem 2, Theorem 4 and Corollary 3 are ordinary or computer-assisted proofs.
+A direct Lean check of the p=13 lifted certificate (102,000 products) did not
+finish in ten minutes, which motivated the formal lift.
+
+## 18 October addendum: p=61
+
+The raksasa cover to deg V<=4000 (same C program, 96 residue chunks) found a
+p=61 terminal window at residue 2345 modulo 32768 with exceptional value -1.
+That value is realized when the index 8192(1+4q) has c_(1+4q)=-1, i.e. for
+odd q; q=1 gives M=35113. Berlekamp–Massey extraction and independent
+root-sum readback confirm deg V=3245, a terminal window of exactly 3249 rows,
+and the lifted defect 8 at degree 12992, shift 140452, index 13000. The
+largest original index read is 166,444. Generation took 4.4 s and readback
+21 s. Because the cover had not finished, no least-degree claim is made for p=61.
+
+    python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --witness 61
+    python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --verify
 
 ## Literature
 

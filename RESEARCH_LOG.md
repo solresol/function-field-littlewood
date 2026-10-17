@@ -1108,3 +1108,20 @@ automation readback were checked. No code or proof changed; tests were not rerun
   with one new Lean theorem. Open: p=61, every N>=8 prime, a uniform
   reason for 2N, characteristic two. Details and reproduction are in
   results/2026-10-17-lai-sprang-sharpness.md.
+
+## 2026-10-18 (Sunday, Australia/Sydney): p=61 and a formal reverse lift
+
+- Continuation of the 17 October session, after pushing a4e400f/e0afc2e on
+  top of the 13–17 October automation commits (no conflicting claims: their
+  degree-H boundary results are consistent with the p=5 threshold 44).
+- A raksasa C cover for p=61 to deg V<=4000 found a terminal window at
+  deg V=3245, realized at M=35113. Root-sum readback: lifted degree 12992,
+  shift 140452, index 13000, defect 8=2N. Every N=4 prime up to 61 now attains
+  2N. The least p=61 degree is between 8016 and 12992 (cover unfinished).
+- ReverseLift.lean proves the reverse lift generically (any stream with
+  a(2n)=a(n); vanishing odd rows double the shift and the exact index) and
+  reduces the odd-row condition for the named stream to residues modulo N via
+  periodicity. The p=13 refutation follows from an 81-row kernel certificate,
+  without evaluating the 323-row lifted one (`sharp13_refutes_N_bound`).
+- Classification: one more prime (computational certificate) and verification
+  progress (formal reverse lift; p=13 formal). N>=8 remains undecided.

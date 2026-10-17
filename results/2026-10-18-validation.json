@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Australia/Sydney",
+  "python": "3.11.6",
+  "commands": [
+    {
+      "command": "python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --witness 61",
+      "outcome": "generated",
+      "runtime_seconds": 4.35353391605895
+    },
+    {
+      "command": "python3 -m search.lai_sprang_sharpness results/2026-10-18-sharpness-p61.json --verify",
+      "outcome": "passed",
+      "result": {
+        "witnesses": [
+          {
+            "p": 61,
+            "N": 4,
+            "M": 35113,
+            "e": 3245,
+            "terminal_value": 33,
+            "lifted_degree": 12992,
+            "m": 140452,
+            "j": 13000,
+            "defect": 8,
+            "largest_original_index": 166444
+          }
+        ],
+        "covers": [],
+        "runtime_seconds": 21.0926118750358
+      }
+    },
+    {
+      "command": "raksasa: search/terminal_cover.c, p=61 N=4 E=4000, 96 residue chunks",
+      "outcome": "partial",
+      "note": "Hit at b=2345, x=-1, e=3245 found within the first 12 chunks; least-degree cover unfinished, so no minimality claim. b=6495, x=0, e=3995 also reported."
+    },
+    {
+      "command": "lake build",
+      "outcome": "passed",
+      "log": "results/2026-10-18-reverse-lift-lean-build.txt"
+    },
+    {
+      "command": "lake env lean verification/SharpnessAudit.lean",
+      "outcome": "passed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": "results/2026-10-18-reverse-lift-audit.txt"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "outcome": "passed",
+      "summary": [
+        "Ran 66 tests in 23.375s",
+        "OK"
+      ],
+      "log": "results/2026-10-18-tests.txt"
+    }
+  ]
+}

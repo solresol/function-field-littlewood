@@ -21,3 +21,19 @@ set_option pp.proofs true
 #print axioms FunctionFieldLittlewood.sharp5_polynomial_product
 #print axioms FunctionFieldLittlewood.sharp5_refutes_N_bound
 #print axioms FunctionFieldLittlewood.sharp5_no_row_within_N
+#check @FunctionFieldLittlewood.fractionalCoeff_liftTwo
+#check @FunctionFieldLittlewood.certificate_liftTwo
+#check @FunctionFieldLittlewood.laiSprangStream_odd_period
+#check @FunctionFieldLittlewood.stream_odd_rows
+#check @FunctionFieldLittlewood.sharp13Terminal_certificate
+#check @FunctionFieldLittlewood.sharp13Lift_certificate
+#check @FunctionFieldLittlewood.sharp13_polynomial_product
+#check @FunctionFieldLittlewood.sharp13_refutes_N_bound
+#print axioms FunctionFieldLittlewood.fractionalCoeff_liftTwo
+#print axioms FunctionFieldLittlewood.certificate_liftTwo
+#print axioms FunctionFieldLittlewood.laiSprangStream_odd_period
+#print axioms FunctionFieldLittlewood.stream_odd_rows
+#print axioms FunctionFieldLittlewood.sharp13Terminal_certificate
+#print axioms FunctionFieldLittlewood.sharp13Lift_certificate
+#print axioms FunctionFieldLittlewood.sharp13_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp13_refutes_N_bound
