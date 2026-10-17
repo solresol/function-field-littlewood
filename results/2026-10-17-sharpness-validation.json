@@ -1,0 +1,193 @@
+{
+  "date": "2026-10-17",
+  "timezone": "Australia/Sydney",
+  "python": "3.11.6",
+  "commands": [
+    {
+      "command": "python3 -m search.lai_sprang_sharpness results/2026-10-17-sharpness.json",
+      "outcome": "generated",
+      "runtime_seconds": 676.04513004201,
+      "python_cover_runtimes": {
+        "5": 0.06193095806520432,
+        "13": 14.655700250063092,
+        "29": 659.9702180000022
+      }
+    },
+    {
+      "command": "python3 -m search.lai_sprang_sharpness results/2026-10-17-sharpness.json --verify",
+      "outcome": "passed",
+      "result": {
+        "witnesses": [
+          {
+            "p": 5,
+            "N": 4,
+            "M": 311,
+            "e": 8,
+            "terminal_value": 4,
+            "lifted_degree": 44,
+            "m": 1244,
+            "j": 52,
+            "defect": 8,
+            "largest_original_index": 1340
+          },
+          {
+            "p": 13,
+            "N": 4,
+            "M": 1465,
+            "e": 76,
+            "terminal_value": 1,
+            "lifted_degree": 316,
+            "m": 5860,
+            "j": 324,
+            "defect": 8,
+            "largest_original_index": 6500
+          },
+          {
+            "p": 29,
+            "N": 4,
+            "M": 2501,
+            "e": 326,
+            "terminal_value": 7,
+            "lifted_degree": 1316,
+            "m": 10004,
+            "j": 1324,
+            "defect": 8,
+            "largest_original_index": 12644
+          },
+          {
+            "p": 37,
+            "N": 4,
+            "M": 19939,
+            "e": 1134,
+            "terminal_value": 25,
+            "lifted_degree": 4548,
+            "m": 79756,
+            "j": 4556,
+            "defect": 8,
+            "largest_original_index": 88860
+          },
+          {
+            "p": 53,
+            "N": 4,
+            "M": 40193,
+            "e": 1128,
+            "terminal_value": 45,
+            "lifted_degree": 4524,
+            "m": 160772,
+            "j": 4532,
+            "defect": 8,
+            "largest_original_index": 169828
+          }
+        ],
+        "covers": [
+          {
+            "p": 5,
+            "excluded_through": 7,
+            "cases": 304
+          },
+          {
+            "p": 13,
+            "excluded_through": 75,
+            "cases": 2288
+          },
+          {
+            "p": 29,
+            "excluded_through": 325,
+            "cases": 9360
+          }
+        ],
+        "p5_direct_rank_kernels": [
+          [
+            55,
+            -1,
+            8
+          ],
+          [
+            119,
+            -1,
+            8
+          ]
+        ],
+        "garrett_robertson": {
+          "p": 5,
+          "m": 61,
+          "d": 64,
+          "j": 72,
+          "deficiency": 8,
+          "value": 1
+        },
+        "runtime_seconds": 2.3955216660397127
+      }
+    },
+    {
+      "command": "python3 -m search.run_terminal_cover results/2026-10-17-terminal-cover.json --workers 7",
+      "outcome": "generated",
+      "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+      "runtime_seconds": 941.4604920829879,
+      "note": "Workstation shared with an unrelated heavy job; runtimes are not benchmarks."
+    },
+    {
+      "command": "python3 -m search.run_terminal_cover results/2026-10-17-terminal-cover.json --verify",
+      "outcome": "passed",
+      "result": {
+        "python_cross_checks": [
+          {
+            "p": 5,
+            "E": 250,
+            "cases": 6112,
+            "hits": 941
+          },
+          {
+            "p": 13,
+            "E": 250,
+            "cases": 6112,
+            "hits": 18
+          }
+        ],
+        "runtime_seconds": 202.9715657919878
+      }
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "outcome": "passed",
+      "summary": [
+        "Ran 66 tests in 8.669s",
+        "OK"
+      ],
+      "log": "results/2026-10-17-sharpness-tests.txt",
+      "note": "Rerun after rebasing onto e7d68f7 (13-17 October automation commits)."
+    },
+    {
+      "command": "lake build",
+      "outcome": "passed",
+      "log": "results/2026-10-17-sharpness-lean-build.txt",
+      "note": "Rebuilt after rebasing onto e7d68f7; includes DescentStep, SparseDivisor, TerminalGap."
+    },
+    {
+      "command": "lake env lean verification/SharpnessAudit.lean",
+      "outcome": "passed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "log": "results/2026-10-17-sharpness-audit.txt"
+    }
+  ],
+  "integer_minor_check": {
+    "p": 5,
+    "M": 311,
+    "e": 8,
+    "maximal_minors": 220,
+    "gcd": 5,
+    "note": "All 9x9 minors of the 12x9 normalized integer terminal matrix; Fraction determinants."
+  },
+  "rational_proxy_scan": {
+    "modulus": 2147483647,
+    "N": 4,
+    "shifts": "0..2000",
+    "truncation": 300,
+    "partial_quotients_of_degree_N_plus_1": 0,
+    "note": "Exploratory proxy for rational behaviour; not a proof about Q."
+  }
+}

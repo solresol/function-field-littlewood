@@ -19,3 +19,7 @@ code and documentation, and to run exact experiments. Greg Baker directed
 the research. Kernel checking and automated audits do not by themselves
 establish fidelity to the intended mathematical statement or novelty.
 No independent human peer review is claimed for this release.
+
+Later development: the 17 October 2026 sharpness result (continued-fraction
+scans, witness readback, Sharpness.lean and its documentation) was produced
+with Anthropic Claude Code (Claude Opus 5.5) under Greg Baker's direction.

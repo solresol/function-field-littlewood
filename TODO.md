@@ -7,7 +7,9 @@ resolved the auxiliary upper bound or materially advanced the characteristic-two
 frontier. Judge the next work against two mathematical outcomes:
 
 1. A structural lemma towards proving or refuting j-d<=N for all degrees and
-   shifts in the Lai–Sprang stream, for r>=2.
+   shifts in the Lai–Sprang stream, for r>=2. **Settled 17 October: refuted.**
+   The bound fails at p=5 (Lean), 13, 29, 37, 53, where Delta_p=2N.
+   The successor question is whether Delta_p=2N for every odd prime.
 2. A characteristic-two construction or stronger intermediate statement whose
    behaviour is not already explained by the primary literature.
 
@@ -52,6 +54,31 @@ priority remains unestablished. Keep submission on hold and retain this scoped
 finding rather than promoting it to a firstness claim.
 
 ## Next computation
+
+- 17 October: the all-degree N-bound is **false**. Explicit lifted terminal
+  witnesses give defect exactly 2N at p=5,13,29,37,53 (p=5 kernel-checked in
+  Sharpness.lean). Least original degrees over all shifts are 44,316,1316,4548,
+  4524. See results/2026-10-17-lai-sprang-sharpness.md. Retire the N-bound,
+  the uniform dyadic-gcd plan and the 16 October plan to close the two residual
+  degree-H offsets as routes to an all-degree bound: those boundary results stay
+  true, but larger quotient degrees genuinely fail at p=5. The bullets after
+  the Garrett–Robertson note are historical context.
+- Decide Delta_p beyond these five primes. p=61: no terminal window with
+  deg V<=2000 at any shift; the random model predicts a first witness near
+  0.4*61^2, so a cover to roughly E=4000 is a fair test (cost grows like E^3
+  per prime with the per-shift Euclid; consider raksasa). N>=8: the model
+  predicts least quotient degree near p^(N/2), about 3*10^6 at p=41, so
+  per-shift scans cannot decide it. A number-wall frame computation saves a
+  factor E; an automatic-tiling description of the wall modulo p (as in
+  Adiceam–Nesharim–Lunnon and Garrett–Robertson) could decide it exactly.
+  Do not report empty N>=8 ranges as evidence for N.
+- Seek a reason, not more sporadic witnesses: is there a construction of a
+  degree-(N+1) partial quotient of some <t^M F Lambda> for every p, or an
+  argument that size-N windows must occur in the derived number wall?
+- Garrett–Robertson Conjecture 1.8 as printed (exponent 2^n) conflicts with
+  Adiceam–Nesharim–Lunnon's F_3 deficiency 4; their level-two F_5 series has
+  deficiency at least 8 (explicit witness in the 17 October report). Treat the
+  intended exponent as 2^(n+1); do not describe this as refuting their intent.
 
 - **16 October uniform boundary refinement:** for every N>=8, a possible
   odd terminal window at e=H requires M=1-N or 1-H modulo NH. The three
@@ -135,6 +162,14 @@ finding rather than promoting it to a firstness claim.
 
 ## Next formalisation
 
+- 17 October: Sharpness.lean kernel-checks the p=5 refutation (product 2^-8
+  for the actual polynomial X^1244 R and the infinite named stream). Direct
+  certificates for larger witnesses are slow: a p=13 attempt ran more than
+  ten minutes without finishing. The useful next lemma is the 5 October
+  reverse lift for the support stream (multiples of t^H+1 annihilate the odd
+  rows), so that small terminal certificates transfer to lifted defect 2N.
+  The descent cutoffs remain true but no longer lead to an all-degree bound.
+
 Choose a lemma on an explicit proof path to the priorities above and name the
 downstream theorem it enables. Completing an essential bridge is legitimate
 verification progress; avoid an indefinite sequence of bridges or formalised
@@ -171,6 +206,18 @@ retired examples that never reaches the substantive question.
   and all-scale witness remain available as optional regression/formal targets,
   not default daily work. The named prefix and basic recurrences already suffice
   for the existing certificate regressions.
+
+## Completed on 2026-10-17 (Saturday computation and formalisation)
+
+- Continued-fraction reformulation of the terminal problem; complete covers
+  by two independent scanners (Python Berlekamp–Massey, C Euclid). Terminal
+  witnesses at p=5,13,29,37,53 lift to defect exactly 2N; least degrees found.
+- Lean: oddCoreFuel, laiSprangFast and the kernel-checked p=5 certificates,
+  polynomial product 2^-8 and failure of the 2^-4 bound.
+- Lai–Sprang Theorem 1.2 is sharp for these five characteristics (all P).
+- Classification: mathematical progress (refutes the auxiliary hypothesis and
+  selects the 2N branch for five primes). p=61, N>=8 and characteristic two
+  remain open.
 
 ## Completed on 2026-10-16 (Friday computation)
 

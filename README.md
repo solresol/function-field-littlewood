@@ -31,6 +31,33 @@ the combined root-moment component. Its sandboxed Comparator check and Lean,
 NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
 
+## Result on 17 October 2026: the Lai–Sprang constant is attained
+
+The repository's auxiliary hypothesis j-d<=N for r>=2 is **false**. Over F_5,
+R(t)=S(t^4) with S=(1+t+t^2+t^3)(2+t+t^2+t^3+3t^4+3t^5+t^6+t^7+t^8) has
+degree 44. At shift 1244 its first nonzero fractional coefficient has index 52:
+defect 8=2N and Littlewood product 2^-8. This is kernel-checked for the actual
+polynomial and the infinite named stream in
+[Sharpness.lean](FunctionFieldLittlewood/Sharpness.lean) (`sharp5_refutes_N_bound`).
+
+Exact certificates, read back from original root sums, give defect 2N also
+for p=13, 29, 37, 53. For these five primes the N-or-2N dichotomy selects 2N.
+Lai–Sprang's Theorem 1.2 bound 2^(-2^(r+1) deg P) is then attained for every
+irreducible P over every field of that characteristic. Least multiplier degrees
+over all shifts are 44, 316, 1316, 4548 and 4524 (computer-assisted covers).
+
+The search uses a continued-fraction reformulation: Delta_p=2N exactly when
+some <t^M (1+t+...+t^(N-1)) Lambda> has a partial quotient of degree N+1.
+p=61 and every prime with N>=8 remain undecided. A random-model heuristic
+predicts witnesses near quotient degree p^(N/2), far beyond feasible N>=8
+searches, so empty ranges there are not evidence for N.
+
+The printed exponent in Garrett–Robertson's Conjecture 1.8 conflicts with
+Adiceam–Nesharim–Lunnon's F_3 theorem. Their level-two F_5 series also reaches
+deficiency 8; the intended exponent is plausibly 2^(n+1). See
+[the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
+are historical; their statements that the all-degree N-bound is open are superseded.
+
 ## Sparse-divisor obstruction formalised on 17 October 2026
 
 [SparseDivisor.lean](FunctionFieldLittlewood/SparseDivisor.lean) proves that
@@ -113,6 +140,9 @@ in `F_p`.  This is convenient for exact computation: no finite-field extension o
 The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 16 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
+
+Superseded on 17 October: the auxiliary N-bound is false for p=5,13,29,37,53
+(section above). The paragraphs below record the earlier cutoff work.
 
 **16 October two-residue localization:** for every dyadic N>=8, an odd-shift
 terminal failure at quotient degree H=N/2 must have

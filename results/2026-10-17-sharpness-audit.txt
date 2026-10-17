@@ -1,0 +1,38 @@
+FunctionFieldLittlewood.laiSprangFast_eq : ∀ (p r : ℕ),
+  FunctionFieldLittlewood.laiSprangFast p r = FunctionFieldLittlewood.laiSprangStream p r
+FunctionFieldLittlewood.sharp5Terminal_factor : ∀ (k : Fin 12),
+  FunctionFieldLittlewood.sharp5Terminal k =
+    ∑ i, if ↑i ≤ ↑k ∧ ↑k ≤ ↑i + 3 then FunctionFieldLittlewood.sharp5Quotient i else 0
+FunctionFieldLittlewood.sharp5Terminal_certificate : FunctionFieldLittlewood.ExactCertificate
+  (FunctionFieldLittlewood.laiSprangStream 5 2) FunctionFieldLittlewood.sharp5Terminal 311 13
+FunctionFieldLittlewood.sharp5Lift_certificate : FunctionFieldLittlewood.ExactCertificate
+  (FunctionFieldLittlewood.laiSprangStream 5 2) FunctionFieldLittlewood.sharp5Lift 1244 52
+FunctionFieldLittlewood.sharp5_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 5 2)
+    (Polynomial.X ^ 1244 * FunctionFieldLittlewood.multiplierPolynomial FunctionFieldLittlewood.sharp5Lift) =
+  2 ^ (-8)
+FunctionFieldLittlewood.sharp5_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 5 2)
+    (Polynomial.X ^ 1244 * FunctionFieldLittlewood.multiplierPolynomial FunctionFieldLittlewood.sharp5Lift) <
+  2 ^ (-4)
+FunctionFieldLittlewood.sharp5_no_row_within_N : ¬∃ k,
+    0 < k ∧
+      k ≤ 44 + 4 ∧
+        FunctionFieldLittlewood.fractionalCoeff (FunctionFieldLittlewood.laiSprangStream 5 2)
+            FunctionFieldLittlewood.sharp5Lift 1244 k ≠
+          0
+@[expose] def FunctionFieldLittlewood.sharp5Terminal : Fin 12 → ZMod 5 :=
+fun i => [2, 3, 4, 0, 1, 3, 3, 3, 1, 3, 2, 1].getD (↑i) 0
+@[expose] def FunctionFieldLittlewood.sharp5Quotient : Fin 9 → ZMod 5 :=
+fun i => [2, 1, 1, 1, 3, 3, 1, 1, 1].getD (↑i) 0
+@[expose] def FunctionFieldLittlewood.sharp5Lift : Fin 45 → ZMod 5 :=
+fun i =>
+  if ↑i % 4 = 0 then FunctionFieldLittlewood.sharp5Terminal ⟨↑i / 4, FunctionFieldLittlewood.sharp5Lift._proof_2 i⟩
+  else 0
+'FunctionFieldLittlewood.laiSprangFast_eq' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.sharp5Terminal_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp5Terminal_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp5Lift_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp5_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp5_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp5_no_row_within_N' depends on axioms: [propext, Classical.choice, Quot.sound]

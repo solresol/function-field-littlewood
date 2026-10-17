@@ -1,0 +1,23 @@
+module
+
+public import FunctionFieldLittlewood
+
+@[expose] public section
+set_option pp.proofs true
+#check @FunctionFieldLittlewood.laiSprangFast_eq
+#check @FunctionFieldLittlewood.sharp5Terminal_factor
+#check @FunctionFieldLittlewood.sharp5Terminal_certificate
+#check @FunctionFieldLittlewood.sharp5Lift_certificate
+#check @FunctionFieldLittlewood.sharp5_polynomial_product
+#check @FunctionFieldLittlewood.sharp5_refutes_N_bound
+#check @FunctionFieldLittlewood.sharp5_no_row_within_N
+#print FunctionFieldLittlewood.sharp5Terminal
+#print FunctionFieldLittlewood.sharp5Quotient
+#print FunctionFieldLittlewood.sharp5Lift
+#print axioms FunctionFieldLittlewood.laiSprangFast_eq
+#print axioms FunctionFieldLittlewood.sharp5Terminal_factor
+#print axioms FunctionFieldLittlewood.sharp5Terminal_certificate
+#print axioms FunctionFieldLittlewood.sharp5Lift_certificate
+#print axioms FunctionFieldLittlewood.sharp5_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp5_refutes_N_bound
+#print axioms FunctionFieldLittlewood.sharp5_no_row_within_N

@@ -8,7 +8,8 @@ project:
     Includes generic exact and dual certificates and Laurent/product bridges. Complete leading-child
     selection, original-row terminal gap exclusion and iterated descent now prove the all-shift
     cutoff d<N(3N/2-1) in finite nonvanishing form. Also verifies the sparse-divisor
-    obstruction used in the ordinary boundary localization argument.
+    obstruction used in the ordinary boundary localization argument, and a kernel-checked
+    F_5 multiplier whose Littlewood product is 2^-8, refuting the sharper auxiliary 2^-N bound.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -50,9 +51,10 @@ status:
     TerminalGap proves support gaps and original-row terminal exclusion, strengthening the
     formal cutoff to d<N(3N/2-1). SparseDivisor proves the explicit degree-H sparse
     polynomial cannot divide X^(2H)+1 for dyadic H>=4, sigma^2=1, over fields with 2 nonzero;
-    the actual-row antiperiodic convolution bridge is not formalised. Boundary
-    cutoffs, exact shift localization, all-degree
-    N-bound, terminal dichotomy and characteristic-two
+    the actual-row antiperiodic convolution bridge is not formalised. Sharpness kernel-checks
+    the F_5 counterexample to the all-degree N-bound (product 2^-8 for the actual polynomial
+    and infinite named stream). Boundary cutoffs, exact shift localization, the reverse lift,
+    the other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
     sorry counts.
@@ -63,6 +65,14 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.sharp5_refutes_N_bound
+    file: FunctionFieldLittlewood/Sharpness.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd
     file: FunctionFieldLittlewood/SparseDivisor.lean
     sorry_count: 0
@@ -138,6 +148,18 @@ status:
     literature_dependencies: []
 automation:
   methods:
+  - method: agent
+    models:
+    - claude-opus-5-5
+    framework: Claude Code
+    tool_setup: 17 October 2026 session. Continued-fraction scans (Python and C), exact witness
+      readback, Lean certificate proofs, builds and axiom audits, at Greg Baker's request.
+    cost:
+      wall_time: One interactive session; dated run timings retained in results.
+      spend_usd: Not tracked
+      hardware: Local macOS workstation; hosted model inference.
+    prompting_notes: Open-ended instruction to advance the existing research roadmap, with
+      permission to commit to main.
   - method: agent
     models: []
     framework: OpenAI Codex

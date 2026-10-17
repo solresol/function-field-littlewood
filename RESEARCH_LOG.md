@@ -1073,3 +1073,38 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Proof snapshot 417116c79e25edefcc9ecb9b1bcc9edaca1b1f84; catalogue exact types, immutable source
   hash and schema/provenance validation passed; all 14 earlier groups unchanged.
   No archive or registry submission.
+
+## 2026-10-17 (Saturday, Australia/Sydney): the auxiliary N-bound is false
+
+- Clean main at 0d95468. Interactive session with an explicit large budget;
+  the user authorised committing directly to main. Read the descent,
+  terminal, lift, low-degree and prime-obstruction records first.
+- Question before coding: scan the terminal problem at all degrees for a
+  shift at once. A terminal window FV at shift M is exactly a partial
+  quotient of degree N+1 in <t^M F Lambda>. Lai–Sprang Proposition 2.3 caps
+  partial quotients at N+1, so Delta_p=2N iff one occurs.
+- A C Euclid scan found p=5 witnesses within seconds. The least, over all
+  shifts by a complete dyadic cover, has deg V=8 at M=311. Its lift
+  R=S(t^4), m=1244 has degree 44 and exact index 52: defect 8=2N.
+  Root-sum readback confirms it. Lean's Sharpness.lean kernel-checks both
+  certificates and the polynomial product 2^-8<2^-4 (standard axioms).
+- Witnesses also at p=13 (deg V 76), 29 (326), 37 (1134), 53 (1128), each
+  least over all shifts and each lifting to defect exactly 8. Hence Delta_p=2N
+  and Lai–Sprang Theorem 1.2 is sharp for these characteristics, for every
+  irreducible P by composition. The p=5 matrix has maximal-minor gcd exactly 5,
+  so these are characteristic-specific, not integer rank drops.
+- No witness with deg V<=250 for the other 46 primes p congruent to 5 mod 8
+  below 1200; none <=2000 for p=61; none <=250 for N=8 primes 41,73,89,137
+  and N=16 primes 17,113. A random model predicts least degrees near p^(N/2),
+  so these empty ranges are not evidence for N, especially for N>=8.
+- Two scanners (Python Berlekamp–Massey profile, C Euclid) agree exactly on
+  p=5 and p=13 hit lists; p=5 also by direct nullspaces of every cover matrix.
+  Mutation, r=1 and profile-versus-nullspace controls are in the new tests.
+- Literature: Lai–Sprang v1 has no optimality discussion. Garrett–Robertson
+  Conjecture 1.8 prints exponent 2^n, which conflicts with Adiceam–Nesharim–
+  Lunnon's F_3 deficiency 4. Their level-two F_5 series also reaches
+  deficiency 8 (explicit witness, checked against their morphism).
+- Classification: mathematical progress (refutation plus branch selection),
+  with one new Lean theorem. Open: p=61, every N>=8 prime, a uniform
+  reason for 2N, characteristic two. Details and reproduction are in
+  results/2026-10-17-lai-sprang-sharpness.md.

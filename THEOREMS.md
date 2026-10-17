@@ -93,9 +93,10 @@ commands above audit the current development.
 The degree-H boundary cutoffs, exact shift localization and terminal equivalence/dichotomy
 have ordinary proofs in the dated reports, recorded in `unformalised_and_open`.
 The all-shift cutoff d<N(3N/2-1) is now in the proved catalogue.
-The all-degree auxiliary N-bound remains open in this project. A characteristic-two
-construction is not claimed. Finite certificates and retired binary regressions do not
-establish either target.
+The all-degree auxiliary N-bound is **false**: Sharpness.lean kernel-checks an F_5
+multiplier with product 2^-8 (17 October). The p=13,29,37,53 witnesses, the least-degree
+covers and the sharpness of Lai–Sprang's constant are exact finite certificates and
+computer-assisted proofs outside Lean. A characteristic-two construction is not claimed.
 
 ## Updating the register
 
