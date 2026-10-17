@@ -21,6 +21,30 @@ class SharpnessTests(unittest.TestCase):
                              (lifted, m, j))
             self.assertEqual(result['defect'], 8)
 
+    def test_p5_witness_from_the_rational_definition(self):
+        # Expand sum_k sum_{z^2=-1} x^(2^k)/(1-z x^(2^(k+1))) over F_5 by generic
+        # power-series division, with no coefficient formula or root-sum shortcut.
+        p, prec = 5, 1400
+        lam = [0] * (prec + 1)
+        a = 1
+        while a <= prec:
+            for z in (2, 3):
+                rem = [0] * (prec + 1)
+                rem[a] = 1
+                for i in range(prec + 1):
+                    c = rem[i]
+                    if c and i + 2 * a <= prec:
+                        rem[i + 2 * a] = (rem[i + 2 * a] + z * c) % p
+                    lam[i] = (lam[i] + c) % p
+            a *= 2
+        R = [0] * 45
+        for i, s in enumerate([2, 3, 4, 0, 1, 3, 3, 3, 1, 3, 2, 1]):
+            R[4 * i] = s
+        rows = [sum(R[i] * lam[1244 + i + j] for i in range(45)) % p
+                for j in range(1, 53)]
+        self.assertEqual(rows[:51], [0] * 51)
+        self.assertEqual(rows[51], 4)
+
     def test_p5_witness_is_the_lean_polynomial(self):
         w = witness(5)
         self.assertEqual(w['V'], [2, 1, 1, 1, 3, 3, 1, 1, 1])

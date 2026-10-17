@@ -194,6 +194,12 @@ profile or elimination), and checks the lifted rows of R=S(t^4) at m=4M.
 The largest original index read is m+4 deg S+j, i.e. 1340 for p=5 and
 169,828 for p=53. Mutating one coefficient of S, the shift, or j is rejected.
 
+For p=5 a further check (18 October, in the test suite) builds Lambda directly
+from its definition, the sum of x^(2^k)/(1-zeta x^(2^(k+1))) over zeta^2=-1,
+by generic power-series division over F_5 through x^1400. It then multiplies
+by t^1244 R: rows 1-51 vanish and row 52 equals 4. No coefficient formula or
+root-sum shortcut is involved.
+
 ## 6. Why the earlier boxes saw only N
 
 The 18 September boxes covered d<=16, m<=64; the 2 October terminal screen
