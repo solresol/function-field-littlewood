@@ -1384,6 +1384,232 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: fast-certificate-checker
+  title: Sound natural-number checker for large sharpness certificates
+  status: kernel-checked
+  mathematical_origin: verification infrastructure for the 17-18 October witnesses
+  first_formalisation_priority: unestablished
+  statement: List dot products of a coefficient list against a window of lsNat values (proved equal to
+    the named support stream modulo p) imply an ExactCertificate; with odd-row residues and two reverse
+    lifts they give polynomial Littlewood product 2^-8 for X^(4M) S(t^4), N=4.
+  assumptions:
+  - NeZero p for the certificate; Fact p.Prime for the product theorem; N=4 (Lean r=2) in product_of_checks.
+  - The window hypothesis hw identifies the precomputed list with the computed stream; it is a hypothesis
+    discharged per instance.
+  limitations: Generic infrastructure; instances live in the non-default SharpnessCertificates target.
+  declarations:
+  - name: FunctionFieldLittlewood.lsNat_cast
+    file: FunctionFieldLittlewood/FastCertificate.lean
+    line_at_snapshot: 25
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.lsNat_cast : ∀ (p r n : ℕ) [NeZero p],\n  ↑(FunctionFieldLittlewood.lsNat\
+      \ p r n) = FunctionFieldLittlewood.laiSprangStream p r n"
+    axioms:
+    - propext
+    - Quot.sound
+  - name: FunctionFieldLittlewood.forall_lt_concat
+    file: FunctionFieldLittlewood/FastCertificate.lean
+    line_at_snapshot: 77
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "@FunctionFieldLittlewood.forall_lt_concat : ∀ {P : ℕ → Prop} {a b c : ℕ},\n  (∀ k < b,\
+      \ P (a + k)) → (∀ k < c, P (a + b + k)) → ∀ k < b + c, P (a + k)"
+    axioms:
+    - propext
+    - Quot.sound
+  - name: FunctionFieldLittlewood.certificate_of_check
+    file: FunctionFieldLittlewood/FastCertificate.lean
+    line_at_snapshot: 86
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.certificate_of_check : ∀ (p r M d : ℕ) [NeZero p] (S w : List\
+      \ ℕ),\n  S.length = d + 1 →\n    w = List.map (fun j => FunctionFieldLittlewood.lsNat p r (M + 1\
+      \ + j)) (List.range (2 * d + 2)) →\n      S.getD 0 0 % p ≠ 0 →\n        S.getD d 0 % p ≠ 0 →\n \
+      \         (∀ k < d + 1, FunctionFieldLittlewood.dotNat S (List.drop k w) % p = 0) →\n          \
+      \  FunctionFieldLittlewood.dotNat S (List.drop (d + 1) w) % p ≠ 0 →\n              FunctionFieldLittlewood.ExactCertificate\
+      \ (FunctionFieldLittlewood.laiSprangStream p r)\n                (fun i => ↑(S.getD (↑i) 0)) M (d\
+      \ + 2)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.product_of_checks
+    file: FunctionFieldLittlewood/FastCertificate.lean
+    line_at_snapshot: 161
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.product_of_checks : ∀ (p M d : ℕ) [inst : Fact (Nat.Prime p)]\
+      \ (S w : List ℕ),\n  S.length = d + 1 →\n    w = List.map (fun j => FunctionFieldLittlewood.lsNat\
+      \ p 2 (M + 1 + j)) (List.range (2 * d + 2)) →\n      S.getD 0 0 % p ≠ 0 →\n        S.getD d 0 %\
+      \ p ≠ 0 →\n          (∀ k < d + 1, FunctionFieldLittlewood.dotNat S (List.drop k w) % p = 0) →\n\
+      \            FunctionFieldLittlewood.dotNat S (List.drop (d + 1) w) % p ≠ 0 →\n              (∀\
+      \ u < 4,\n                  FunctionFieldLittlewood.dotNat S\n                        (List.map\
+      \ (fun i => FunctionFieldLittlewood.lsNat p 2 (2 * (u + i) + 1)) (List.range (d + 1))) %\n     \
+      \                 p =\n                    0) →\n                (∀ u < 4,\n                   \
+      \ FunctionFieldLittlewood.dotNat S\n                          (List.map (fun i => FunctionFieldLittlewood.lsNat\
+      \ p 2 (2 * (u + 2 * i) + 1))\n                            (List.range (d + 1))) %\n            \
+      \            p =\n                      0) →\n                  FunctionFieldLittlewood.polynomialLittlewoodProduct\
+      \ (FunctionFieldLittlewood.laiSprangStream p 2)\n                      (Polynomial.X ^ (2 * (2 *\
+      \ M)) *\n                        FunctionFieldLittlewood.multiplierPolynomial\n                \
+      \          (FunctionFieldLittlewood.liftTwo\n                            (FunctionFieldLittlewood.liftTwo\
+      \ fun i => ↑(S.getD (↑i) 0)))) =\n                    2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-18-reverse-lift-lean-build.txt
+    full_build_validation: results/2026-10-18-validation.json
+    catalogue_audit: results/2026-10-18-reverse-lift-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/FastCertificate.lean: 11f263416890a22909b77edd6be4bd3b57859300b706dd2466bd7ed97650c4e4
+    verification: Lean kernel and type/axiom audit; no Comparator or independent-kernel replay.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
+- id: sharpness-certificates-29-37-53-61
+  title: Kernel-checked refutations of the N-bound for p=29,37,53,61
+  status: kernel-checked
+  mathematical_origin: 17-18 October continued-fraction witnesses, checked by product_of_checks
+  first_formalisation_priority: unestablished
+  statement: For p=29,37,53,61 (N=4) the lifted multiplier X^(4M) S(t^4) of the recorded terminal witness
+    has polynomial Littlewood product 2^-8 < 2^-4 for the infinite named stream.
+  assumptions:
+  - Coefficient lists and stream windows are data in the modules; each window is proved equal to the computed
+    stream.
+  limitations: Non-default Lake target (lake build SharpnessCertificates); built on raksasa, not in the
+    default build or CI. Least-degree claims and the sharpness corollary for all P are outside Lean.
+  declarations:
+  - name: FunctionFieldLittlewood.sharp29_polynomial_product
+    file: SharpnessCertificates/P29.lean
+    line_at_snapshot: 147
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp29_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 29 2)\n    (Polynomial.X ^ (2 * (2 * 2501)) *\n  \
+      \    FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n  \
+      \        (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp29S.getD (↑i)\
+      \ 0)))) =\n  2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp29_refutes_N_bound
+    file: SharpnessCertificates/P29.lean
+    line_at_snapshot: 156
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp29_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 29 2)\n    (Polynomial.X ^ (2 * (2 * 2501)) *\n  \
+      \    FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n  \
+      \        (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp29S.getD (↑i)\
+      \ 0)))) <\n  2 ^ (-4)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp37_polynomial_product
+    file: SharpnessCertificates/P37.lean
+    line_at_snapshot: 280
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp37_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 37 2)\n    (Polynomial.X ^ (2 * (2 * 19939)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp37S.getD (↑i)\
+      \ 0)))) =\n  2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp37_refutes_N_bound
+    file: SharpnessCertificates/P37.lean
+    line_at_snapshot: 289
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp37_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 37 2)\n    (Polynomial.X ^ (2 * (2 * 19939)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp37S.getD (↑i)\
+      \ 0)))) <\n  2 ^ (-4)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp53_polynomial_product
+    file: SharpnessCertificates/P53.lean
+    line_at_snapshot: 280
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp53_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 53 2)\n    (Polynomial.X ^ (2 * (2 * 40193)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp53S.getD (↑i)\
+      \ 0)))) =\n  2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp53_refutes_N_bound
+    file: SharpnessCertificates/P53.lean
+    line_at_snapshot: 289
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp53_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 53 2)\n    (Polynomial.X ^ (2 * (2 * 40193)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp53S.getD (↑i)\
+      \ 0)))) <\n  2 ^ (-4)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp61_polynomial_product
+    file: SharpnessCertificates/P61.lean
+    line_at_snapshot: 434
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp61_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 61 2)\n    (Polynomial.X ^ (2 * (2 * 22815)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp61S.getD (↑i)\
+      \ 0)))) =\n  2 ^ (-8)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.sharp61_refutes_N_bound
+    file: SharpnessCertificates/P61.lean
+    line_at_snapshot: 443
+    introduced_commit: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_type: "FunctionFieldLittlewood.sharp61_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct\n\
+      \    (FunctionFieldLittlewood.laiSprangStream 61 2)\n    (Polynomial.X ^ (2 * (2 * 22815)) *\n \
+      \     FunctionFieldLittlewood.multiplierPolynomial\n        (FunctionFieldLittlewood.liftTwo\n \
+      \         (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp61S.getD (↑i)\
+      \ 0)))) <\n  2 ^ (-4)"
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c
+    lean_toolchain: leanprover/lean4:v4.35.0-rc2
+    mathlib_commit: 065356127b1dc0016f66b7283ce0ce2c4055aa55
+    full_build: results/2026-10-18-sharpness-certificates-build.txt
+    full_build_validation: results/2026-10-18-validation.json
+    catalogue_audit: results/2026-10-18-sharpness-certificates-audit.txt
+    source_sha256:
+      SharpnessCertificates.lean: 7be893561c841d4f5d17f42e83603bd5f32b7ef955e41e6655d92a44f357172e
+      SharpnessCertificates/P29.lean: 49ab5f3717ee01298861b1d11d3bdd08a5c2d0eab49869c6c508db1d7edc2746
+      SharpnessCertificates/P37.lean: 37fc9011996d8184c391574889eb3c88a7a10322233f5c5e7bb1485d37e58230
+      SharpnessCertificates/P53.lean: 5cb660b8294b4a720fd0bab1c3d03ed88df6b882833c6fb59e4fe3306b1659a0
+      SharpnessCertificates/P61.lean: 516f9b262ba1c4fcc35919c2d21fb43d4eaa10291445f23a62e4d3d34a5ed88c
+    verification: Lean kernel on raksasa (one module at a time) and type/axiom audit; no Comparator or
+      independent-kernel replay.
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Introduced after v0.1.0; not archived.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -1400,15 +1626,15 @@ unformalised_and_open:
     defect is N or 2N.
   record: results/2026-10-05-terminal-lift.md
   remaining: On 17-18 October the 2N branch was selected for p=5,13,29,37,53,61 by explicit witnesses
-    (p=5 and p=13 in Lean, with the reverse lift formalised in certificate form); every prime with
+    (all six in Lean, with the reverse lift formalised in certificate form); every prime with
     N>=8 remains undecided. The descent-side equivalence and the literature-dependent cap are not
     Lean-formalised.
 - id: all-degree-bound
   status: refuted
   statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.
   record: results/2026-10-17-lai-sprang-sharpness.md
-  remaining: False at p=5 and p=13 (kernel-checked, lai-sprang-sharpness-f5 and reverse-lift-and-f13-sharpness)
-    and at p=29,37,53,61 by exact certificates. Successor question, open in project - is the maximum
+  remaining: False at p=5,13,29,37,53,61, all kernel-checked (lai-sprang-sharpness-f5,
+    reverse-lift-and-f13-sharpness, sharpness-certificates-29-37-53-61). Successor question, open in project - is the maximum
     defect 2N for every odd prime? Undecided for every prime with N>=8 and untested for N=4 primes
     beyond 61 past deg V=250.
 - id: characteristic-two

@@ -55,7 +55,8 @@ status:
     the actual-row antiperiodic convolution bridge is not formalised. Sharpness kernel-checks
     the F_5 counterexample to the all-degree N-bound (product 2^-8 for the actual polynomial
     and infinite named stream); ReverseLift proves certificate doubling from vanishing odd rows
-    and the F_13 counterexample. Boundary cutoffs, exact shift localization, the
+    and the F_13 counterexample; FastCertificate proves a natural-number certificate checker
+    sound, and the non-default SharpnessCertificates target applies it to p=29,37,53,61. Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
@@ -67,6 +68,22 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.product_of_checks
+    file: FunctionFieldLittlewood/FastCertificate.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.sharp61_refutes_N_bound
+    file: SharpnessCertificates/P61.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.sharp13_refutes_N_bound
     file: FunctionFieldLittlewood/ReverseLift.lean
     sorry_count: 0

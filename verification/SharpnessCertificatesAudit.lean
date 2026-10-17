@@ -1,0 +1,21 @@
+module
+
+public import SharpnessCertificates
+
+@[expose] public section
+#check @FunctionFieldLittlewood.sharp29_refutes_N_bound
+#check @FunctionFieldLittlewood.sharp37_refutes_N_bound
+#check @FunctionFieldLittlewood.sharp53_refutes_N_bound
+#check @FunctionFieldLittlewood.sharp61_refutes_N_bound
+#check @FunctionFieldLittlewood.sharp29_polynomial_product
+#check @FunctionFieldLittlewood.sharp37_polynomial_product
+#check @FunctionFieldLittlewood.sharp53_polynomial_product
+#check @FunctionFieldLittlewood.sharp61_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp29_refutes_N_bound
+#print axioms FunctionFieldLittlewood.sharp37_refutes_N_bound
+#print axioms FunctionFieldLittlewood.sharp53_refutes_N_bound
+#print axioms FunctionFieldLittlewood.sharp61_refutes_N_bound
+#print axioms FunctionFieldLittlewood.sharp29_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp37_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp53_polynomial_product
+#print axioms FunctionFieldLittlewood.sharp61_polynomial_product
