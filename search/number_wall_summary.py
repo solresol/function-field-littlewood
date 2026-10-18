@@ -137,8 +137,10 @@ def main():
         step = max(1, last_row // 20000)
         distinct = sum(at(m) for m in range(0, last_row + 1, step)) * step
         computed = sum(b['cells'] for b in bands)
+        table = [dict((k, int(v)) for k, v in (t.split('=') for t in line.split()) if k != 'distinct/L')
+                 for line in Path(args.factors).read_text().splitlines()]
         expected = dict(distinct_cells=distinct, computed_cells=computed, side_N_density=rho(N),
-                        expected_side_N_windows=distinct * rho(N))
+                        expected_side_N_windows=distinct * rho(N), factor_counts=table)
     summary = dict(p=p, N=N, C=C, rows_completed=last_row, resumed_at=resumed,
                    final=final.group(0) if final else None, totals_by_side=hist,
                    side_N_windows=[dict(m0=m0, n0=n0, g=g, M=n0 - m0, e=m0) for m0, n0, g in windows],
