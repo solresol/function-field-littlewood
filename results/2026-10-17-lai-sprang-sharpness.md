@@ -235,9 +235,12 @@ This is finite evidence for the 2^(n+1) reading, not a proof.
 ## 8. Heuristic and open questions
 
 Treat each realizable (window, degree) as an independent chance p^-N for a
-size-N zero window in the derived number wall modulo p. Since the stream is
-2-automatic, distinct windows up to degree E number on the order of E^2.
-This predicts least quotient degrees of order p^(N/2). For N=4 the
+size-N zero window in the derived number wall modulo p. The complete cover
+bounds the number of (window,degree) cases by O(E^2)
+for fixed N. It supplies neither a matching lower bound on distinct cases
+nor independence or the probability p^-N for this structured stream. Under
+those additional heuristic assumptions, the predicted least quotient degree
+has order p^(N/2). (Qualified in the 18 October integration.) For N=4 the
 observed values 8, 76, 326, 1134, 1128 are 0.32, 0.45, 0.39, 0.83, 0.40
 times p^2, and p=61 gives 2083, ratio 0.56. The model is a heuristic only.
 
@@ -337,8 +340,8 @@ one expected hit is about N p^N, roughly 6*10^13 cells. The current engine
 runs about 8*10^7 cells/s on raksasa's 12 threads, limited by serial window
 bookkeeping. A ring-buffer redesign (frames read from the last g+3 rows,
 compact window records, parallel detection) should approach 10^9 to 3*10^9
-cells/s. That would still mean roughly 5 to 15 hours of the whole machine,
-plus hours to extract and verify a degree-10^6 witness, which is far beyond
+cells/s. At those projected rates, 6*10^13 cells alone would take about 5.6 to 16.7
+hours of the whole machine, plus hours to extract and verify a degree-10^6 witness, which is far beyond
 Lean. This was not run.
 
 ## Literature

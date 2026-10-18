@@ -1131,3 +1131,39 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Classification: one more prime (computational certificate, least degree)
   and verification progress (formal reverse lift; all six primes formal).
   N>=8 remains undecided.
+
+## 2026-10-18 (Sunday, Australia/Sydney): integration after sharpness
+
+- Clean main at 37f3007, expected solresol origin, fetch/fast-forward-only
+  already current; no competing process or research lock. The separate
+  17–18 October sharpness work was newer than automation memory and was read
+  before choosing work. Owned lock created for this integration.
+- Question stated before checks: do the p=5 all-shift exclusion below degree
+  44 and actual degree-44 witness use compatible stream/row/endpoint semantics?
+  Reproduced 304 cases at e<=7 with no event and 320 at e<=8 with two events;
+  direct ranks with independently expanded integer-series coefficients agree.
+  Original rational-definition expansion gives first index 52 at shift 1244,
+  terminal value 4, endpoint 1340. Older cutoffs and r=1 remain consistent.
+- Weekly mathematical outcome: the universal auxiliary N-bound is refuted;
+  six N=4 primes attain 2N, with Lean proofs already committed. Today's result
+  is VERIFICATION/INFRASTRUCTURE PROGRESS plus roadmap maintenance, no new
+  theorem, new prime, N>=8 conclusion or characteristic-two advance.
+- Corrected the heuristic inference: the cover has N(L+2T) abstract cases,
+  supplying only an O(E^2) upper bound on (window,degree) pairs for fixed N.
+  Independence, event probability and p^(N/2) waiting scale are not established.
+  Updated the projected cell-only runtime arithmetic and retired obsolete
+  active all-degree/boundary plans. No larger search or engine rewrite.
+- Existing 11 sharpness tests, terminal lift/gap/two-strip checks and independent
+  prime-obstruction readback passed; detailed commands and seconds in
+  results/2026-10-18-sunday-validation.json. Default lake build passed in 26.581s;
+  SharpnessAudit passed in 4.539s, 19 declarations with standard axioms only.
+  No computational/Lean source, dependency or catalogue changes; no large
+  certificate target rerun.
+- Primary LSv1/BPZv1, ANLv2 quadratic and GRv2 unbounded-window sources refreshed.
+  Scoped search found no later relevant characteristic-two resolution; no
+  absence or priority claim. Rational/quadratic and retired-stream screens stay.
+- Next bounded computation: try a parity-block recurrence for terminal rank
+  defect with residual dimension bounded in N independently of e; verify against
+  existing sharpness/boundary data and reject if residual states do not close.
+  Next focused formal lemma: factor-implied odd-filter vanishing for a general
+  reverse lift, using RootStream; this remains verification of known mathematics.

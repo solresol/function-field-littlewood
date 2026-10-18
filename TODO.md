@@ -1,10 +1,10 @@
 # Research roadmap
 
-## Research priorities and progress criteria (30 September review)
+## Research priorities and progress criteria (18 October review)
 
-The verified search and Lean foundations are useful, but they have not yet
-resolved the auxiliary upper bound or materially advanced the characteristic-two
-frontier. Judge the next work against two mathematical outcomes:
+The 17–18 October work refutes the auxiliary upper bound at six primes.
+The characteristic-two frontier has not advanced. Judge the next work against
+the following outcomes, preserving that distinction:
 
 1. A structural lemma towards proving or refuting j-d<=N for all degrees and
    shifts in the Lai–Sprang stream, for r>=2. **Settled 17 October: refuted.**
@@ -55,163 +55,78 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
-- 17 October: the all-degree N-bound is **false**. Explicit lifted terminal
-  witnesses give defect exactly 2N at p=5,13,29,37,53,61, all kernel-checked
-  (p=5,13 in the default library; p=29,37,53,61 in the SharpnessCertificates
-  target). Least original degrees over all shifts are 44,316,1316,4548,4524,8344. See results/2026-10-17-lai-sprang-sharpness.md. Retire the N-bound,
-  the uniform dyadic-gcd plan and the 16 October plan to close the two residual
-  degree-H offsets as routes to an all-degree bound: those boundary results stay
-  true, but larger quotient degrees genuinely fail at p=5. The bullets after
-  the Garrett–Robertson note are historical context.
-- Decide Delta_p beyond these six primes. Every N=4 prime up to 61 attains
-  2N; p=61 needs deg V=2083 (complete raksasa cover to 4000). The
-  next N=4 primes 101, 109 should need deg V near 0.4-0.8p^2, about 4000-9000;
-  per-shift Euclid costs grow like E^3 per prime. N>=8: the model
-  predicts least quotient degree near p^(N/2), about 3*10^6 at p=41, so
-  per-shift scans cannot decide it. A number-wall frame computation saves a
-  factor E; an automatic-tiling description of the wall modulo p (as in
-  Adiceam–Nesharim–Lunnon and Garrett–Robertson) could decide it exactly.
-  Do not report empty N>=8 ranges as evidence for N.
-- N=8 by number wall: search/number_wall.c is validated (determinants, and
-  the p=5 terminal hits) but runs only about 8*10^7 cells/s, limited by serial
-  window bookkeeping. p=41 needs about 6*10^13 cells for one expected
-  witness (degree near 1.4*10^6). A ring-buffer redesign (frames read from
-  the last g+3 rows, compact window records, parallel detection) is the
-  prerequisite. Then it is a 5-15 hour raksasa run; ask before occupying it.
-- Seek a reason, not more sporadic witnesses: is there a construction of a
-  degree-(N+1) partial quotient of some <t^M F Lambda> for every p, or an
-  argument that size-N windows must occur in the derived number wall?
-- Garrett–Robertson Conjecture 1.8 as printed (exponent 2^n) conflicts with
-  Adiceam–Nesharim–Lunnon's F_3 deficiency 4; their level-two F_5 series has
-  deficiency at least 8 (explicit witness in the 17 October report). Treat the
-  intended exponent as 2^(n+1); do not describe this as refuting their intent.
-
-- **16 October uniform boundary refinement:** for every N>=8, a possible
-  odd terminal window at e=H requires M=1-N or 1-H modulo NH. The three
-  other strips are excluded by an antiperiodic sparse-divisor argument,
-  two separated rows, and a next-block gap. Work next on exactly those two
-  offsets, combining an original A row with the available D/E equations.
-  The tempting next E rows are outside the window; do not assume them.
-  See results/2026-10-16-two-strip-localization.md. No new all-shift cutoff
-  or all-degree result; N=4 and its modulo-3 control remain separate.
-
-- The 14 October dyadic-gap proof supplies a uniform original-row minor outside
-  explicit exceptional strips. For quotient degree e and q=floor((M+e)/N),
-  let u be the largest power of two <=N/2 dividing the even member of {q,q+1}
-  (u=N/2 at q=0). If e+u<N, the minor has determinant a signed power of 1 or 2,
-  so every odd characteristic is excluded. At e=H=N/2, any terminal failure
-  requires q=0 or -1 modulo H. Even shifts are already excluded by the earlier
-  moment lemma. The 16 October result above handles most odd shifts in these
-  classes using adjacent dyadic tails and their boundary values. The actual N=8,e=4,M=21 stream admits no consecutive-row
-  single-gap triangular minor, so that criterion alone cannot finish the proof
-  See results/2026-10-14-dyadic-gap.md. No larger cover is the default next step.
-
-- The 12 October integer-minor gcd certificates exclude quotient degree H=N/2
-  at every shift for **all primes with r=v_2(p-1)=2,3,4**. The strict original
-  cutoffs are respectively 24,96,384; the four-field limitation is removed.
-  See results/2026-10-12-prime-obstruction.md. For N=8,16 the selected gcds
-  are powers of two. At N=4 an actual normalized row matrix has maximal-minor
-  gcd 3, but characteristic 3 is incompatible with this N. Retire the stronger
-  full-rank-in-every-odd-characteristic hypothesis: this is a real rank failure,
-  not merely a spurious abstract coefficient and not a Lai–Sprang counterexample.
-  The 14 October identity now controls the gcd outside the exceptional strips;
-  extend it inside those strips, retaining this control and the original rows.
-  Do not default to more primes, routine higher-scale covers or formal exports.
-
-- The 9 October ordinary proof excludes all terminal S=F_1 V with
-  deg V<N/2 at every shift, improving the original degree cutoff to
-  d<N(3N/2-1). Do not rescan that range. For r>=5 the first unresolved
-  quotient degree uniformly in the prime is H=N/2: classify W=V_0^2-t V_1^2=C t^(-n) modulo t^H+1
-  there with V(0)!=0, then test compatibility with the original parity rows.
-  The F_5 example V=1+t+3t^2,M=1 has C=2 but fails its first original row;
-  it shows why the low-degree monomial argument does not extend automatically.
-  See results/2026-10-09-terminal-low-degree.md. This boundary example is
-  not a terminal witness or a new linkage-only refutation.
-
-- The 5 October reverse lift makes the terminal F_1 statement **equivalent**
-  to the auxiliary all-degree N-bound. A terminal counterexample S at M lifts
-  via R=S(t^N), m=NM to exact defect 2N. Together with the earlier descent,
-  this proves that the maximum defect is either N or 2N, without selecting one.
-  There is no remaining sibling-compatibility barrier to using a terminal witness.
-  A minimum-degree terminal counterexample must have odd shift M=2n+1 and
-  nonzero C in V_0^2-t V_1^2=C t^(-n) modulo t^(N/2)+1; its quotient V is
-  coprime to t^N+1. Test whether the **original parity rows** can coexist with
-  these conditions, or prove they cannot. Linkage plus compressed moments alone
-  still cannot kill C. See results/2026-10-05-terminal-lift.md for the proof,
-  including the use of Lai–Sprang Proposition 2.3 in the zero-sibling case.
-  Do not replace this question with expanded boxes or further moment-only examples.
-
-- Screen new binary streams for rational/quadratic generating series and existing
-  unbounded-window results before treating them as open candidates. The known
-  quadratic-series route already handles binary Rudin–Shapiro; see the
-  26 September attribution correction.
-
-- Binary Rudin–Shapiro is now retired as a counterexample candidate: the
-  four-block concatenation argument proves j=5L and unbounded defect 2L-1
-  at all dyadic scales. Keep its exact certificates as regressions; do not
-  repeat scale expansion as new research. No all-scale optimality was proved.
-- The three-term family R=1-t^(N-1)+t^N,m=9N+3 fails for every r=2:
-  its first coefficient is -2. Retire the proposed all-r>=2 extension.
-  The 30 September support classification proves j=2N for every r>=3
-  by an ordinary argument; do not repeat scale expansion. Formalising the
-  five-point support classification is a bounded future lemma.
-  Only eight fixed degree/shift optima are certified, all at N<=32. The
-  all-degree auxiliary N-bound remains a hypothesis; keep the r=1 comparison.
-- Thue–Morse is retired as a candidate and degree-zero Lai–Sprang attainment
-  is settled. Do not repeat their expansions as new evidence. Binary paperfolding
-  is also retired: its exact recurrence proves a quadratic equation (27 September).
-- First choose a structural upper-bound lemma or a literature-screened binary
-  candidate and specify the discriminating calculation. Build number-wall
-  profiles only if needed for that question; compare against existing rank
-  certificates and independently check tiny determinants. Tool construction alone
-  is not the objective. Singularity does not guarantee nonzero endpoints.
+- The universal auxiliary N-bound is retired: it is false at p=5,13,29,37,53,61.
+  All six refutations are kernel-checked; the least original degrees are
+  44,316,1316,4548,4524,8344 by computer-assisted all-shift covers. Sunday's
+  independent small recheck confirms the p=5 threshold. See
+  [the sharpness report](results/2026-10-17-lai-sprang-sharpness.md) and
+  [the weekly integration](results/2026-10-18-sunday-integration.md).
+- Successor question: is Delta_p=2N for every odd prime? The r=1 family is
+  already settled; all six new primes have N=4. No N>=8 prime is decided.
+  Do not obtain more isolated N=4 witnesses merely to extend the list.
+- Next bounded structural attempt: split the *derived terminal Hankel matrix*
+  by row/column parity using c_(2n)=c_n and the explicit odd subsequence.
+  Can elimination of the known geometric factors express its rank defect
+  by a recurrence on boundary blocks whose dimensions are bounded in terms
+  of N alone, independently of quotient degree e? Keep the characteristic
+  symbolic, both endpoints and the exact row budget. Check a proposed identity
+  against the existing p=5,e=8 witness and the N=8,e=4 cover before expanding
+  any range. A closed recurrence would offer a route to deciding the 2N
+  branch; a growing residual block or conflicting transitions would reject
+  this bounded-state approach. Neither outcome is currently proved.
+- The degree-H two-residue localization and earlier cutoffs remain true.
+  Closing its residual offsets would not decide the all-degree sharpness
+  question; defer the remaining boundary bookkeeping unless the new recurrence
+  needs it. The proposed all-degree dyadic-gcd obstruction is retired because
+  the p=5 witness has maximal-minor gcd 5.
+- The number-wall engine and N=8 cost projection are available, not a default
+  next task. The cover gives an O(E^2) upper bound on (window,degree) cases
+  for fixed N, not independent trials or a matching lower bound. The p^(N/2)
+  waiting scale is an unproved random model. A ring-buffer rewrite alone is
+  infrastructure; no hours-long whole-machine run without explicit approval.
+- Keep characteristic two as the remaining finite-field main-conjecture
+  frontier in the primary sources checked on 18 October. Before selecting any
+  new candidate, exclude rational/quadratic generating series and known
+  unbounded-window constructions. Thue–Morse, regular paperfolding and
+  overlapping-11 Rudin–Shapiro stay retired; no further scale expansion.
+- Degree-zero attainment and the r>=3 three-term family are complete ordinary
+  arguments; the r=2 extension of that family fails. Retain r=1 as a control.
+  These results do not support the refuted N-bound.
+- Garrett–Robertson Conjecture 1.8 has a printed exponent inconsistent with
+  the established F_3 deficiency. The proposed 2^(n+1) correction remains an
+  interpretation, not an author-confirmed correction or a refutation of intent.
 
 ## Next formalisation
 
-- 17-18 October: all six refutations are kernel-checked (Sharpness.lean,
-  ReverseLift.lean, FastCertificate.lean and the SharpnessCertificates
-  target). Possible next formal steps: derive the odd-row condition from
-  divisibility by 1+X^H in general (it is now checked per instance), state the
-  composition corollary for all irreducible P, and connect the reverse lift to
-  DescentStep for a formal N-or-2N dichotomy modulo Lai–Sprang's upper bound.
-  The descent cutoffs remain true but no longer lead to an all-degree bound.
+All six refutations are kernel-checked (Sharpness, ReverseLift,
+FastCertificate and the separate SharpnessCertificates target). The existing
+cutoffs and sparse-divisor obstruction remain valid, but no longer form a
+proof path to the universal N-bound.
 
-Choose a lemma on an explicit proof path to the priorities above and name the
-downstream theorem it enables. Completing an essential bridge is legitimate
-verification progress; avoid an indefinite sequence of bridges or formalised
-retired examples that never reaches the substantive question.
+The next focused lemma, if computation supplies no more consequential target,
+is: for H=N/2 and (1+X^H) dividing S, every odd-row filter of S vanishes.
+Use RootStream.stream_filtered_root_enumeration and evaluation at roots of
+X^H+1. Then track this divisibility through dyadic substitutions to derive
+all scales of the reverse lift for F_1 multiples without per-instance residue
+checks. This enables the formal terminal-witness-to-defect-2N implication,
+not a universal existence theorem. Inspect existing definitions before coding;
+this is verification of the 5 October argument, not new mathematics.
 
-- The entire ordinary 2 October degree cutoff is now formalised (13 October):
-  DescentStep.lean proves cancellation, exact nonzero leading-child degree/shift,
-  the next factor identity, surplus-halving and iteration. For every shift and
-  nonzero polynomial with d<N(N-1), a row among 1,...,d+N is nonzero.
-  Do not repeat the product/root/moment/parent bridges or this iteration.
-  The low-degree terminal exclusion and stronger cutoff d<N(3N/2-1) are now
-  also formalised (15 October), via the direct support-gap proof. Do not
-  duplicate the alternative norm/order route or repeat terminal transport.
-  The 16 October sparse-divisor obstruction is now formalised (17 October):
-  SparseDivisor.sparse_not_dvd covers all dyadic H>=4 and fields with 2!=0,
-  with the explicit sum formula, reflection identity and x^6 coefficient
-  proved internally. This is verification progress, not a new bound.
-  Do not repeat the algebraic obstruction. The actual-row antiperiodic
-  convolution bridge would complete its connection to first-strip exclusion,
-  but prioritise a substantive lemma at the two remaining offsets if the
-  next computational work supplies one; do not formalise all bookkeeping
-  merely to postpone that unresolved step.
-  Another useful formal step, when needed by the boundary argument: identify
-  the exact last nonzero difference offset u and formalise the 14 October
-  condition e+u<N and its degree-H shift localization. The present formal
-  theorem uses only u<=N/2. Prioritise a new boundary lemma from the next
-  computational work over routine certificate exports or redundant bridges.
-- The Lai–Sprang support stream, dyadic invariance, saved F_17 prefix and
-  F_17/F_3 exact witnesses are formalised. Generic degree-zero formalisation
-  and original root-sum identification remain lower-priority obligations; do not
-  let them replace the structural upper-bound question indefinitely.
-- Defer further formalisation of the retired binary dyadic examples unless a
-  selected structural argument needs the lemma. The adjacent-difference identity
-  and all-scale witness remain available as optional regression/formal targets,
-  not default daily work. The named prefix and basic recurrences already suffice
-  for the existing certificate regressions.
+Defer the antiperiodic convolution bridge, further boundary bookkeeping,
+composition-to-P formalisation, large certificate exports and retired binary
+examples unless a chosen substantive argument needs them. Do not repeat the
+completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-18 (Sunday integration)
+
+- Reconciled the week's boundary work with the subsequent six sharpness
+  refutations; independently rechecked the p=5 all-shift threshold and actual
+  rational-definition witness. Older degree cutoffs remain consistent.
+- Corrected the unsupported inference from automaticity to independent
+  random trials, and retired obsolete active proof/search directions.
+- Classification: verification/infrastructure progress and roadmap maintenance;
+  no new mathematical theorem, new prime or characteristic-two advance today.
+  The week's substantive progress is the previously proved refutation.
 
 ## Completed on 2026-10-17 (Saturday computation and formalisation)
 

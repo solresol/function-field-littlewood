@@ -1,0 +1,200 @@
+{
+  "python": "3.14.4",
+  "dependencies": "Python standard library",
+  "seed": null,
+  "commands": [
+    {
+      "command": "python3 -m unittest discover -s tests -p test_lai_sprang_sharpness.py -v",
+      "exit_code": 0,
+      "runtime_seconds": 0.316
+    },
+    {
+      "command": "python3 -m search.terminal_lift_check",
+      "exit_code": 0,
+      "runtime_seconds": 0.062
+    },
+    {
+      "command": "python3 -m search.terminal_gap_check",
+      "exit_code": 0,
+      "runtime_seconds": 1.148
+    },
+    {
+      "command": "python3 -m search.terminal_two_strip_check",
+      "exit_code": 0,
+      "runtime_seconds": 0.287
+    },
+    {
+      "command": "python3 -m search.terminal_prime_obstruction results/2026-10-12-prime-obstruction.json --verify",
+      "exit_code": 0,
+      "runtime_seconds": 2.725
+    }
+  ],
+  "date": "2026-10-18T23:00:41.445469+11:00",
+  "classification": "verification/infrastructure progress; no new mathematical result",
+  "source_commit": "37f3007",
+  "small_p5_cover": [
+    {
+      "E": 7,
+      "T": 22,
+      "L": 32,
+      "P": 128,
+      "derived_terms": 19,
+      "p": 5,
+      "N": 4,
+      "max_quotient_degree": 7,
+      "cases": 304,
+      "hits": []
+    },
+    {
+      "E": 8,
+      "T": 24,
+      "L": 32,
+      "P": 128,
+      "derived_terms": 21,
+      "p": 5,
+      "N": 4,
+      "max_quotient_degree": 8,
+      "cases": 320,
+      "hits": [
+        {
+          "b": 55,
+          "x": -1,
+          "e": 8,
+          "jump": 5
+        },
+        {
+          "b": 119,
+          "x": -1,
+          "e": 8,
+          "jump": 5
+        }
+      ]
+    }
+  ],
+  "independent_coefficients": "integer formal series sum_k x^(2^k)/(1+x^(4*2^k)); oddpart generator replaced for direct rank readback",
+  "independent_rank_kernels": [
+    [
+      55,
+      -1,
+      8
+    ],
+    [
+      119,
+      -1,
+      8
+    ]
+  ],
+  "small_recheck_runtime_seconds": 0.162,
+  "lean": [
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "runtime_seconds": 26.581
+    },
+    {
+      "command": "lake env lean verification/SharpnessAudit.lean",
+      "exit_code": 0,
+      "runtime_seconds": 4.539
+    }
+  ],
+  "audited_axioms": {
+    "FunctionFieldLittlewood.laiSprangFast_eq": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5Terminal_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5Terminal_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5Lift_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5_polynomial_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5_refutes_N_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp5_no_row_within_N": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.fractionalCoeff_liftTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.certificate_liftTwo": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.laiSprangStream_odd_period": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.stream_odd_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp13Terminal_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp13Lift_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp13_polynomial_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.sharp13_refutes_N_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.lsNat_cast": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.forall_lt_concat": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.certificate_of_check": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.product_of_checks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "not_rerun": [
+    "large SharpnessCertificates target",
+    "p=13,29,37,53,61 minimality covers",
+    "whole Python suite",
+    "number-wall benchmarks"
+  ]
+}

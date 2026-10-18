@@ -65,6 +65,17 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Weekly integration on 18 October 2026
+
+Independent small checks reproduce the p=5 least degree 44 and exact index 52,
+including expansion from the original rational definition. The earlier boundary
+exclusions remain consistent with that witness. The pinned default Lean build
+and sharpness axiom audit pass. This integration is **verification/infrastructure
+progress**, with no new mathematical result. The random-model search scale for
+N>=8 is unproved; automaticity supplies a case-count upper bound, not independent
+trials. See [the integration record](results/2026-10-18-sunday-integration.md)
+and [the revised roadmap](TODO.md).
+
 ## Sparse-divisor obstruction formalised on 17 October 2026
 
 [SparseDivisor.lean](FunctionFieldLittlewood/SparseDivisor.lean) proves that
@@ -73,7 +84,8 @@ for every dyadic H>=4 over any field with 2!=0, when sigma^2=1.
 This is **verification/infrastructure progress** on the algebraic step in the
 16 October first-strip proof. The actual-row antiperiodic convolution bridge
 and full shift localization are not formalised by this theorem. The two
-residual shift classes and all-degree bound remain unresolved uniformly.
+residual degree-H shift classes remain unresolved uniformly; the all-degree
+N-bound was subsequently refuted as described above.
 See [the statement, proof and checks](results/2026-10-17-sparse-divisor.md).
 
 ## Stronger formal cutoff completed on 15 October 2026
@@ -144,7 +156,7 @@ a_n = (N/2) (-1)^h   if oddpart(n) = 1 + N h,
 
 in `F_p`.  This is convenient for exact computation: no finite-field extension or rational-function arithmetic is needed to generate the series.
 
-The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 16 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
+The remaining finite-field frontier appears to be characteristic 2. This was rechecked on 18 October 2026: Badziahin--Pavlenkov--Zorin, [arXiv:2608.22078v1](https://arxiv.org/abs/2608.22078v1), still make their characteristic-two exceptional-set conclusion conditional on the existence of a counterexample. No later resolution was found in the scoped primary-source search; this is an evidence boundary, not a proof of absence. Robertson's number-wall reformulation gives a combinatorial route to the remaining questions.
 
 ## Current computational question
 
@@ -160,8 +172,8 @@ reflection product has a forbidden nonzero x^6 coefficient. This is a uniform
 all-degree result. The two residual classes remain open uniformly in N;
 N=8,16 were already handled by finite certificates. See
 [the ordinary proof and checks](results/2026-10-16-two-strip-localization.md).
-Next combine original rows with the available difference rows at those two
-offsets, respecting the missing-row budget.
+This boundary problem is now deferred: completing it cannot restore the
+refuted all-degree N-bound. The current structural question is in [TODO.md](TODO.md).
 
 **14 October uniform dyadic-gap lemma:** original-row differences have an
 explicit triangular minor with determinant a signed power of 1 or 2 whenever
