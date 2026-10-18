@@ -1,6 +1,6 @@
 """Summarize a number-wall search run of search/number_wall.c (mode 1).
 
-    python3 search/number_wall_summary.py RUN_DIR OUT.json [--factors FILE]
+    python3 search/number_wall_summary.py RUN_DIR OUT.json [--factors FILE] [--run-info FILE]
 
 RUN_DIR holds progress*.err (stderr of the run and of any resumed runs, in
 order), windows.out (stdout) and optionally a factor-count table written by
@@ -89,6 +89,7 @@ def main():
     ap.add_argument('--factors')
     ap.add_argument('--p', type=int, default=41)
     ap.add_argument('--C', type=int, default=12000000)
+    ap.add_argument('--run-info', type=Path, help='JSON file with commands, hashes and times to embed')
     args = ap.parse_args()
     if args.out.exists():
         raise SystemExit(f'{args.out} exists; refusing to overwrite')
@@ -141,7 +142,8 @@ def main():
                  for line in Path(args.factors).read_text().splitlines()]
         expected = dict(distinct_cells=distinct, computed_cells=computed, side_N_density=rho(N),
                         expected_side_N_windows=distinct * rho(N), factor_counts=table)
-    summary = dict(p=p, N=N, C=C, rows_completed=last_row, resumed_at=resumed,
+    summary = dict(run=json.loads(args.run_info.read_text()) if args.run_info else None,
+                   p=p, N=N, C=C, rows_completed=last_row, resumed_at=resumed,
                    final=final.group(0) if final else None, totals_by_side=hist,
                    side_N_windows=[dict(m0=m0, n0=n0, g=g, M=n0 - m0, e=m0) for m0, n0, g in windows],
                    random_density_by_side={g: rho(g) for g in range(1, N + 1)},
