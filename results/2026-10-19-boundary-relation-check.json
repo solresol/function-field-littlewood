@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-19T08:25:49.720397+11:00",
+  "source_commit": "1eea18a",
+  "commands": [
+    {
+      "command": "python3 -m search.terminal_boundary_relation",
+      "exit_code": 0,
+      "runtime_seconds": 5.978
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_terminal_boundary_relation.py -v",
+      "exit_code": 0,
+      "runtime_seconds": 0.43,
+      "output": "test_domains_and_empty_blocks (test_terminal_boundary_relation.BoundaryRelationTests.test_domains_and_empty_blocks) ... ok\ntest_recursion_only_reads_scalar_hankel_bases (test_terminal_boundary_relation.BoundaryRelationTests.test_recursion_only_reads_scalar_hankel_bases) ... ok\ntest_relation_basis_has_independent_unique_preimages (test_terminal_boundary_relation.BoundaryRelationTests.test_relation_basis_has_independent_unique_preimages) ... ok\ntest_terminal_target_recovers_known_polynomial_and_rejects_mutations (test_terminal_boundary_relation.BoundaryRelationTests.test_terminal_target_recovers_known_polynomial_and_rejects_mutations) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.331s\n\nOK\n"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_lai_sprang_sharpness.py -v",
+      "exit_code": 0,
+      "runtime_seconds": 0.347,
+      "output": "test_cover_is_complete_and_holes_are_unique (test_lai_sprang_sharpness.SharpnessTests.test_cover_is_complete_and_holes_are_unique) ... ok\ntest_garrett_robertson_level2_deficiency_eight (test_lai_sprang_sharpness.SharpnessTests.test_garrett_robertson_level2_deficiency_eight) ... ok\ntest_mutations_are_rejected (test_lai_sprang_sharpness.SharpnessTests.test_mutations_are_rejected) ... ok\ntest_p5_minimality_two_ways (test_lai_sprang_sharpness.SharpnessTests.test_p5_minimality_two_ways) ... ok\ntest_p5_witness_from_the_rational_definition (test_lai_sprang_sharpness.SharpnessTests.test_p5_witness_from_the_rational_definition) ... ok\ntest_p5_witness_is_the_lean_polynomial (test_lai_sprang_sharpness.SharpnessTests.test_p5_witness_is_the_lean_polynomial) ... ok\ntest_profile_degrees_match_nullspaces (test_lai_sprang_sharpness.SharpnessTests.test_profile_degrees_match_nullspaces) ... ok\ntest_profile_detects_the_genuine_r1_terminal_window (test_lai_sprang_sharpness.SharpnessTests.test_profile_detects_the_genuine_r1_terminal_window) ... ok\ntest_realizability_rule_against_actual_shifts (test_lai_sprang_sharpness.SharpnessTests.test_realizability_rule_against_actual_shifts) ... ok\ntest_recorded_results_if_present (test_lai_sprang_sharpness.SharpnessTests.test_recorded_results_if_present) ... ok\ntest_small_witnesses_read_back_from_root_sums (test_lai_sprang_sharpness.SharpnessTests.test_small_witnesses_read_back_from_root_sums) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.264s\n\nOK\n"
+    }
+  ],
+  "identity_checks": {
+    "python": "3.14.4",
+    "dependencies": "standard library",
+    "seed": null,
+    "scope": "bounded identity checks, not state reachability",
+    "rectangle_checks": [
+      {
+        "p": 3,
+        "N": 2,
+        "comparisons": 270,
+        "max_merge_variables": 6
+      },
+      {
+        "p": 5,
+        "N": 4,
+        "comparisons": 510,
+        "max_merge_variables": 12
+      },
+      {
+        "p": 13,
+        "N": 4,
+        "comparisons": 390,
+        "max_merge_variables": 12
+      },
+      {
+        "p": 41,
+        "N": 8,
+        "comparisons": 510,
+        "max_merge_variables": 24
+      },
+      {
+        "p": 17,
+        "N": 16,
+        "comparisons": 270,
+        "max_merge_variables": 48
+      }
+    ],
+    "covers": [
+      {
+        "p": 5,
+        "E": 8,
+        "checked_actual_representatives": 248,
+        "abstract_cases_without_representative": 72,
+        "representative_q_range": [
+          0,
+          7
+        ],
+        "hits": [
+          {
+            "b": 55,
+            "x": -1,
+            "M": 311
+          },
+          {
+            "b": 119,
+            "x": -1,
+            "M": 631
+          }
+        ]
+      },
+      {
+        "p": 41,
+        "E": 4,
+        "checked_actual_representatives": 424,
+        "abstract_cases_without_representative": 216,
+        "representative_q_range": [
+          0,
+          15
+        ],
+        "hits": []
+      }
+    ],
+    "p5_known_witness": true,
+    "shifted_negative_control": true,
+    "r1_control": true,
+    "primitive_only_state_failure": {
+      "p": 5,
+      "t": 312,
+      "size": 12,
+      "roots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "witness_moments": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "runtime_seconds": 5.926348581910133
+  }
+}

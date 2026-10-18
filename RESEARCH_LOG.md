@@ -1167,3 +1167,47 @@ automation readback were checked. No code or proof changed; tests were not rerun
   existing sharpness/boundary data and reject if residual states do not close.
   Next focused formal lemma: factor-implied odd-filter vanishing for a general
   reverse lift, using RootStream; this remains verification of known mathematics.
+
+## 2026-10-19 (Monday, Australia/Sydney): a bounded boundary relation
+
+- Clean main at 28afe09, expected solresol origin, no competing research lock
+  or running search; fetched and fast-forwarded to 1eea18a before choosing work.
+  Read automation memory, README/roadmap, recent results/log and actual support,
+  original-root-sum, terminal-matrix, cover and solver sources. New remote wall
+  tooling was preserved; no wall run or engine edit. Created an owned run lock.
+- Question stated before coding: does parity splitting close the terminal rank
+  problem on boundary data bounded in N, or does it lose essential kernel data?
+  Proved an ordinary relation R in F_p^(2N) retaining root-exponential forcing
+  and evaluations at all N-th roots. Two child relations merge using only 3N
+  variables, independently of degree, including all nearly square row budgets.
+- Proposition 2.3 of Lai–Sprang excludes invisible kernel vectors; it gives
+  dim R=N+n-m and Lagrangian square states. A terminal event is exactly the
+  fixed target (0,e_1). Exact degree, both endpoints and the next nonzero row
+  follow from the existing F-multiple bound. Primitive-root moments alone fail
+  on the known p=5 witness, whose full moment vector is [1,0,0,0].
+- Classification: MATHEMATICAL PROGRESS (ordinary structural lemma towards the
+  successor sharpness question). No new prime, reachable-state classification,
+  characteristic-two result, Lean theorem or established publication novelty.
+  The universal auxiliary N-bound was already refuted; it is not reopened.
+- Bounded exact checks pass: 1,950 nearly square comparisons over p=3,5,13,41,17,
+  independent original-root-sum relations, dimensions and square isotropy;
+  actual representatives of the existing p=5,e=8 and p=41,e=4 covers. The
+  72/216 abstract cases with no representative in the prescribed q range were
+  explicitly skipped. Existing p=5 hits reproduced; no extra range searched.
+  Independent affine solver reconstructs six selected states, including p=13;
+  root-sum dot products and shift/next-row/moment negative controls pass.
+- Commands: new identity run 5.978s; four focused tests 0.430s; eleven existing
+  sharpness regressions 0.347s. Python 3.14.4, standard library, exact arithmetic,
+  no randomness. No Lean/dependency changes or Lean build. Full reproduction,
+  bounds, ordinary proofs and limitations in results/2026-10-19-boundary-relation.md
+  and its check JSON. Complete diff reviewed before committing.
+- Rechecked LS2606.00633v1, BPZ2608.22078v1, ANL1806.04478v2 quadratic exclusion
+  and GR2405.14454v2 window discussion, with URLs and Sydney access date. Scoped
+  primary searches found no later relevant characteristic-two resolution;
+  no absence/priority claim, new binary candidate or retired-stream expansion.
+- Next substantive step: derive a closed tuple of adjacent-offset/nearly-square
+  relations with correlated binary transitions. Free pairing of independently
+  reachable children is invalid; finite coordinate dimension alone does not
+  establish feasible enumeration. Next focused formal target is the odd-block
+  factorization/merge from existing named-stream identities; injectivity retains
+  the explicit Proposition 2.3 dependency until that theorem is formalised.

@@ -65,6 +65,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Bounded boundary relation on 19 October 2026
+
+An ordinary structural lemma reduces the terminal Hankel problem to a relation
+in F_p^(2N), retaining forcing coefficients and evaluations at all N-th roots.
+Parity recursion merges two child relations using only 3N variables, independent
+of quotient degree. Lai–Sprang Proposition 2.3 excludes invisible kernel vectors
+in the nearly square blocks; a terminal event is membership of one fixed vector.
+Primitive-root moments alone fail on the existing p=5 witness.
+
+This is **mathematical progress on the successor sharpness question**, supported
+by exact root-sum and independent affine checks. It does not decide a new prime,
+establish reachable-state closure, or advance characteristic two. See
+[the proof and bounded checks](results/2026-10-19-boundary-relation.md).
+The next question is correlated reachability of these relations, not a larger
+search box or additional attainment examples.
+
 ## Weekly integration on 18 October 2026
 
 Independent small checks reproduce the p=5 least degree 44 and exact index 52,
