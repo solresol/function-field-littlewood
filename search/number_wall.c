@@ -33,8 +33,8 @@
    W[m-2][n] is zero lies below a window; the window is found in place (scan up
    to its top row, then across that row) and its frame values are read from the
    ring, so no window records are kept. Rows are computed in parallel column
-   chunks (AVX2 when available), and each chunk also counts the new windows in
-   its columns. Cuts of the valid range occur only near its ends; they follow
+   chunks (AVX2 when available; NW_CHUNKS sets the number per row, default four
+   per thread), and each chunk also counts the new windows in its columns. Cuts of the valid range occur only near its ends; they follow
    exactly the rules of the earlier record-based version (search/number_wall_ref.c),
    so both print identical output. Compile: cc -O3 -march=native -fopenmp. */
 #include <stdint.h>
@@ -346,18 +346,18 @@ static void finish(Det *f, long *big, long a, long g) {
   if (g >= REPORT || g > GMAX) push_run(&f->rep, a, (int)g);
 }
 
-static int NTHREADS = 1;
+static int NCHUNKS = 1;   /* chunks per row; threads take them dynamically */
 static long MINCHUNK = 8192;
 static void compute_row(long m) {
   long lo = LOr(m - 1) + 1, hi = HIr(m - 1) - 1, len = hi - lo + 1;
-  int nch = (int)(len / MINCHUNK); if (nch > NTHREADS) nch = NTHREADS; if (nch < 1) nch = 1;
+  int nch = (int)(len / MINCHUNK); if (nch > NCHUNKS) nch = NCHUNKS; if (nch < 1) nch = 1;
   for (int i = 0; i < nch; i++) {
     long s = lo + len * i / nch, e = lo + len * (i + 1) / nch - 1;
     if (i > 0) s = (s + 63) & ~63L;
     if (i < nch - 1) e = ((lo + len * (i + 1) / nch + 63) & ~63L) - 1;
     CH[i].s = s; CH[i].e = e;
   }
-  #pragma omp parallel for schedule(static, 1) num_threads(nch)
+  #pragma omp parallel for schedule(dynamic, 1)
   for (int i = 0; i < nch; i++) kernel_chunk(m, &CH[i]);
   /* cuts for cells whose window frame was lost */
   for (int i = 0; i < nch; i++)
@@ -489,11 +489,11 @@ int main(int argc, char **argv) {
   for (int a = 0; a < 256; a++) INV[a] = 0;
   for (int a = 1; a < P; a++) for (int b = 1; b < P; b++) if (a * b % P == 1) INV[a] = (uint8_t)b;
 #ifdef _OPENMP
-  NTHREADS = omp_get_max_threads();
+  NCHUNKS = 4 * omp_get_max_threads();   /* spare chunks absorb slow threads on a shared box */
 #endif
-  if (getenv("NW_CHUNKS")) NTHREADS = atoi(getenv("NW_CHUNKS"));   /* testing: chunk count */
+  if (getenv("NW_CHUNKS")) NCHUNKS = atoi(getenv("NW_CHUNKS"));
   if (getenv("NW_MINCHUNK")) MINCHUNK = atol(getenv("NW_MINCHUNK"));
-  if (NTHREADS < 1 || MINCHUNK < 64) { fprintf(stderr, "bad NW_CHUNKS or NW_MINCHUNK\n"); return 1; }
+  if (NCHUNKS < 1 || MINCHUNK < 64) { fprintf(stderr, "bad NW_CHUNKS or NW_MINCHUNK\n"); return 1; }
 #ifdef __AVX2__
   USE_AVX2 = P <= 127 && !getenv("NW_SCALAR");
   if (USE_AVX2) {
@@ -515,8 +515,8 @@ int main(int argc, char **argv) {
   HIST = calloc((size_t)GMAX + 2, sizeof(long));
   DS.hist = calloc((size_t)GMAX + 2, sizeof(long)); DF.hist = calloc((size_t)GMAX + 2, sizeof(long));
   MIDH = calloc((size_t)GMAX + 2, sizeof(long));
-  CH = calloc((size_t)NTHREADS, sizeof(Chunk));
-  for (int i = 0; i < NTHREADS; i++) CH[i].hist = calloc((size_t)GMAX + 2, sizeof(long));
+  CH = calloc((size_t)NCHUNKS, sizeof(Chunk));
+  for (int i = 0; i < NCHUNKS; i++) CH[i].hist = calloc((size_t)GMAX + 2, sizeof(long));
   if (!ring || !LO || !HI || !HIST || !CH) { fprintf(stderr, "out of memory\n"); return 1; }
   memset(ring, 0, (size_t)K * stride);
   long m;
