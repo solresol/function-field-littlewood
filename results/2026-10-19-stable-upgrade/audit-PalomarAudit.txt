@@ -1,0 +1,20 @@
+FunctionFieldLittlewood.Palomar.root_moment_package {p r k s : ℕ} [Fact (Nat.Prime p)] (hp : 2 < p)
+  (horder : p - 1 = 2 ^ (r + 1) * (2 * k + 1)) (hs : s ∣ 2 ^ r) :
+  have A := fun u => if u % 2 ^ r = 0 then ↑(2 ^ r) * (-1) ^ (u / 2 ^ r) else 0;
+  have G := ∑ i ∈ Finset.range (2 ^ r / s), Polynomial.X ^ (s * i);
+  ∃ z,
+    Function.Injective z ∧
+      (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+        (∀ (x : ZMod p), x ^ 2 ^ r = -1 ↔ ∃ i, x = z i) ∧
+          (∀ (u : ℕ), A u = ∑ i, z i ^ u) ∧
+            (∀ (P : Polynomial (ZMod p)) (n : ℕ),
+                ∑ j ∈ Finset.range (P.natDegree + 1), P.coeff j * A (n + j) = ∑ i, z i ^ n * Polynomial.eval (z i) P) ∧
+              ∀ (U₀ U₁ : Polynomial (ZMod p)) (n : ℕ),
+                (∀ (j : Fin (2 ^ r)),
+                    ∑ i,
+                        z i ^ (n + ↑j) *
+                          (Polynomial.eval (z i) G *
+                            (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+                      0) →
+                  G * (Polynomial.X ^ 2 ^ r + 1) ∣ G * U₀ ∧ G * (Polynomial.X ^ 2 ^ r + 1) ∣ G * U₁
+'FunctionFieldLittlewood.Palomar.root_moment_package' depends on axioms: [propext, Classical.choice, Quot.sound]

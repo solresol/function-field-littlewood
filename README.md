@@ -28,8 +28,11 @@ Palomar registration is not yet submitted; its preparation requirements are in
 
 The [Palomar comparison package](PALOMAR.md) independently states and proves
 the combined root-moment component. Its sandboxed Comparator check and Lean,
-NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0-rc2;
+NanoDa and con-ron replays passed on 7 October. Current development uses Lean 4.35.0;
 the frozen v0.1.0 release retains its original Lean 4.27.0 pin.
+The [19 October stable upgrade](results/2026-10-19-stable-upgrade.md) passed
+the default and large-certificate builds, all declaration audits, Python tests
+and the sandboxed three-kernel comparison without changing any proof source.
 
 ## Result on 17–18 October 2026: the Lai–Sprang constant is attained
 

@@ -27,8 +27,8 @@ first-formalisation criterion.
 
 ## Verification
 
-The project is pinned to Lean `v4.35.0-rc2` and Mathlib commit
-`065356127b1dc0016f66b7283ce0ce2c4055aa55`, with a committed manifest. Every
+The project is pinned to Lean `v4.35.0` and Mathlib commit
+`56a005855ea17e0b0958f73ec801ae140b0a1679`, with a committed manifest. Every
 tracked Lean source uses the module system. The deliberate `sorry` in the
 Challenge is a statement placeholder. It is excluded from the proved
 development's sorry count, and must not occur in the Solution's axiom closure.
@@ -61,6 +61,13 @@ and con-ron. The [validation record](results/2026-10-07-palomar-validation.json)
 and [comparison log](results/2026-10-07-palomar-comparator.txt) retain the evidence.
 These checks apply to the combined package, not independent comparison of every
 historical catalogue entry.
+
+The [19 October stable-toolchain revalidation](results/2026-10-19-stable-upgrade.md)
+repeated the sandboxed comparison with Lean/mathlib 4.35.0: the statements
+matched and Lean, NanoDa and con-ron accepted. The
+[current comparison log](results/2026-10-19-stable-upgrade/comparator.txt)
+records that result. The 7 October immutable verification snapshot above is
+unchanged; no new registration or publication is claimed.
 
 ## Submission boundary
 

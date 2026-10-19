@@ -1,0 +1,42 @@
+@FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+  FunctionFieldLittlewood.SparseDivisor.sparse r a σ =
+    Polynomial.C a + Polynomial.C 2 * Polynomial.X + ∑ i ∈ Finset.range (r + 1), Polynomial.X ^ 2 ^ (i + 1) +
+      Polynomial.C σ * Polynomial.X ^ 2 ^ (r + 2)
+@FunctionFieldLittlewood.SparseDivisor.sparse_degree : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+  σ ≠ 0 →
+    (FunctionFieldLittlewood.SparseDivisor.sparse r a σ).natDegree = 2 ^ (r + 2) ∧
+      (FunctionFieldLittlewood.SparseDivisor.sparse r a σ).leadingCoeff = σ
+@FunctionFieldLittlewood.SparseDivisor.sparse_reflection : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+  FunctionFieldLittlewood.SparseDivisor.sparse r a σ -
+      (FunctionFieldLittlewood.SparseDivisor.sparse r a σ).comp (-Polynomial.X) =
+    Polynomial.C 4 * Polynomial.X
+@FunctionFieldLittlewood.SparseDivisor.sparse_low_coeff : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+  ∀ i ≤ 6,
+    (FunctionFieldLittlewood.SparseDivisor.sparse (r + 1) a σ).coeff i =
+      (FunctionFieldLittlewood.SparseDivisor.sparse 0 a 1).coeff i
+@FunctionFieldLittlewood.SparseDivisor.sparse_reflection_coeff_six : ∀ {K : Type u_1} [inst : Field K] (r : ℕ)
+  (a σ : K),
+  (FunctionFieldLittlewood.SparseDivisor.sparse r a σ *
+          (FunctionFieldLittlewood.SparseDivisor.sparse r a σ).comp (-Polynomial.X)).coeff
+      6 =
+    if r = 0 then 2 * σ else 2
+@FunctionFieldLittlewood.SparseDivisor.reflection_product : ∀ {K : Type u_1} [inst : Field K] (f : Polynomial K)
+  (H : ℕ),
+  0 < H →
+    Even H →
+      f.natDegree = H →
+        f.leadingCoeff ^ 2 = 1 →
+          4 ≠ 0 →
+            f - f.comp (-Polynomial.X) = Polynomial.C 4 * Polynomial.X →
+              f ∣ Polynomial.X ^ (2 * H) + 1 → f * f.comp (-Polynomial.X) = Polynomial.X ^ (2 * H) + 1
+@FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd : ∀ {K : Type u_1} [inst : Field K] (r : ℕ) (a σ : K),
+  2 ≠ 0 → σ ^ 2 = 1 → ¬FunctionFieldLittlewood.SparseDivisor.sparse r a σ ∣ Polynomial.X ^ (2 * 2 ^ (r + 2)) + 1
+'FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.sparse_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.sparse_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.sparse_low_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.sparse_reflection_coeff_six' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.reflection_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]

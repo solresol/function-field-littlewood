@@ -1,0 +1,654 @@
+{
+  "checked_at": "2026-10-19T22:26:38.341491+11:00",
+  "source_commit": "62c6537df42bf6df952bec096a5818c051361006",
+  "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "lake": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+  "python": "3.14.4",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "mathlib_toolchain": "leanprover/lean4:v4.35.0",
+  "seed": null,
+  "scope": "Dependency upgrade and compatibility verification; no mathematical increment.",
+  "resource_policy": "Large certificate modules built sequentially; no unrelated processes stopped.",
+  "default_build": {
+    "command": "lake build",
+    "exit_code": 0,
+    "seconds": 50.431882489006966
+  },
+  "python_tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "seconds": 24.909714531968348
+  },
+  "remaining_checks": [
+    {
+      "name": "certificate-29",
+      "command": [
+        "lake",
+        "build",
+        "SharpnessCertificates.P29"
+      ],
+      "exit_code": 0,
+      "seconds": 19.66736949805636,
+      "log": "certificate-29.txt",
+      "resources": "wall_seconds=19.63\nmax_rss_kb=2022804\n"
+    },
+    {
+      "name": "certificate-37",
+      "command": [
+        "lake",
+        "build",
+        "SharpnessCertificates.P37"
+      ],
+      "exit_code": 0,
+      "seconds": 171.8505597069161,
+      "log": "certificate-37.txt",
+      "resources": "wall_seconds=171.84\nmax_rss_kb=3507120\n"
+    },
+    {
+      "name": "certificate-53",
+      "command": [
+        "lake",
+        "build",
+        "SharpnessCertificates.P53"
+      ],
+      "exit_code": 0,
+      "seconds": 165.79942555597518,
+      "log": "certificate-53.txt",
+      "resources": "wall_seconds=165.79\nmax_rss_kb=3563244\n"
+    },
+    {
+      "name": "certificate-61",
+      "command": [
+        "lake",
+        "build",
+        "SharpnessCertificates.P61"
+      ],
+      "exit_code": 0,
+      "seconds": 571.5466729269829,
+      "log": "certificate-61.txt",
+      "resources": "wall_seconds=571.54\nmax_rss_kb=4438720\n"
+    },
+    {
+      "name": "certificates-root",
+      "command": [
+        "lake",
+        "build",
+        "SharpnessCertificates"
+      ],
+      "exit_code": 0,
+      "seconds": 14.967832896043546,
+      "log": "certificates-root.txt",
+      "resources": "wall_seconds=14.96\nmax_rss_kb=1369964\n"
+    },
+    {
+      "name": "audit-CatalogueAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/CatalogueAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.672694058041088,
+      "log": "audit-CatalogueAudit.txt",
+      "resources": "wall_seconds=6.66\nmax_rss_kb=1518424\n"
+    },
+    {
+      "name": "audit-DescentStepAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/DescentStepAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.607811696943827,
+      "log": "audit-DescentStepAudit.txt",
+      "resources": "wall_seconds=2.60\nmax_rss_kb=1280036\n"
+    },
+    {
+      "name": "audit-PalomarAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/PalomarAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.158396720071323,
+      "log": "audit-PalomarAudit.txt",
+      "resources": "wall_seconds=3.15\nmax_rss_kb=1270476\n"
+    },
+    {
+      "name": "audit-ParentWindowAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/ParentWindowAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.353523512952961,
+      "log": "audit-ParentWindowAudit.txt",
+      "resources": "wall_seconds=3.35\nmax_rss_kb=1279764\n"
+    },
+    {
+      "name": "audit-SharpnessAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/SharpnessAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.1986431679688394,
+      "log": "audit-SharpnessAudit.txt",
+      "resources": "wall_seconds=3.19\nmax_rss_kb=1530572\n"
+    },
+    {
+      "name": "audit-SharpnessCertificatesAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/SharpnessCertificatesAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.153162603965029,
+      "log": "audit-SharpnessCertificatesAudit.txt",
+      "resources": "wall_seconds=3.14\nmax_rss_kb=1523456\n"
+    },
+    {
+      "name": "audit-SparseDivisorAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/SparseDivisorAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 11.004267137963325,
+      "log": "audit-SparseDivisorAudit.txt",
+      "resources": "wall_seconds=11.00\nmax_rss_kb=2487448\n"
+    },
+    {
+      "name": "audit-TerminalGapAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/TerminalGapAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.3402959250379354,
+      "log": "audit-TerminalGapAudit.txt",
+      "resources": "wall_seconds=3.33\nmax_rss_kb=2501240\n"
+    },
+    {
+      "name": "audit-WindowMomentsAudit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/WindowMomentsAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.6088540230412036,
+      "log": "audit-WindowMomentsAudit.txt",
+      "resources": "wall_seconds=2.60\nmax_rss_kb=1359068\n"
+    },
+    {
+      "name": "comparator",
+      "command": [
+        "bash",
+        "scripts/verify-palomar.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 49.00504977698438,
+      "log": "comparator.txt",
+      "resources": "wall_seconds=49.00\nmax_rss_kb=246008\n"
+    }
+  ],
+  "axiom_audits": {
+    "audit-CatalogueAudit": {
+      "FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.RootStream.stream_root_enumeration": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.certificate_sound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.hankel_kernel_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.checkOptimalCertificate_sound_all": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.exactCertificate_normalise_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.optimal_polynomial_nonzero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.shiftedLaurent_coeff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.certificate_laurent_sound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.laiSprang17_sharp_first": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.laiSprang3_comparison_first": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.thueMorse_even": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.thueMorse_odd": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-DescentStepAudit": {
+      "FunctionFieldLittlewood.DescentStep.factorQuotient_next": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.odd_filter_zero": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.leading_child": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.stream_descent_step": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.iterated_degree_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.stream_degree_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.DescentStep.stream_nonvanishing_below_cutoff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-PalomarAudit": {
+      "FunctionFieldLittlewood.Palomar.root_moment_package": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-ParentWindowAudit": {
+      "FunctionFieldLittlewood.ParentWindow.parity_split": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.ParentWindow.parent_windows": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.ParentWindow.stream_parent_forced_factor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-SharpnessAudit": {
+      "FunctionFieldLittlewood.laiSprangFast_eq": [
+        "propext",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5Terminal_factor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5Terminal_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5Lift_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp5_no_row_within_N": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.fractionalCoeff_liftTwo": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.certificate_liftTwo": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.laiSprangStream_odd_period": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.stream_odd_rows": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp13Terminal_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp13Lift_certificate": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp13_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp13_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.lsNat_cast": [
+        "propext",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.forall_lt_concat": [
+        "propext",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.certificate_of_check": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.product_of_checks": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-SharpnessCertificatesAudit": {
+      "FunctionFieldLittlewood.sharp29_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp37_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp53_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp61_refutes_N_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp29_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp37_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp53_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.sharp61_polynomial_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-SparseDivisorAudit": {
+      "FunctionFieldLittlewood.SparseDivisor.sparse_eq_sum": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.sparse_degree": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.sparse_reflection": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.sparse_low_coeff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.sparse_reflection_coeff_six": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.reflection_product": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.SparseDivisor.sparse_not_dvd": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-TerminalGapAudit": {
+      "FunctionFieldLittlewood.TerminalGap.gap_obstruction": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.terminal_difference": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.support_rep": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.stream_upper_gap": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.block_pivot": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.stream_difference_pivots": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.terminal_nonvanishing": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.terminal_degree_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.iterated_degree_bound": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.TerminalGap.stream_nonvanishing_below_cutoff": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "audit-WindowMomentsAudit": {
+      "FunctionFieldLittlewood.WindowMoments.windows_moments": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "FunctionFieldLittlewood.WindowMoments.stream_windows_forced_factor": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "unchanged_lean_sources": {
+    "Challenge.lean": "ec959e4e01736a64de8ce58273a37b6ed907b256da9bd3832a78239b7a7e6904",
+    "FunctionFieldLittlewood.lean": "a5f5090c6f5bb96bfe602467626cb76c86c4894b7de23dc0d3c7b99a245d1430",
+    "FunctionFieldLittlewood/BinaryStream.lean": "425672e1c441342700d82161ab95ad728f53f7946fa537dfa818f705f0399c3a",
+    "FunctionFieldLittlewood/BridgeExamples.lean": "1759ded0f9307d091c1e9ea48de6b562f36db3314285cde018cd0280d432792a",
+    "FunctionFieldLittlewood/Certificate.lean": "8e4e65a2921f113894a292295e93a0d7128ea15def832c2f1b6deea8b8f6403f",
+    "FunctionFieldLittlewood/DescentStep.lean": "dd257a4efabe75c866bacd2585047fa9f83288670600f876ab2b04f7a253c4f0",
+    "FunctionFieldLittlewood/DualCertificate.lean": "54f2fac96ce822b30cd5db49e8b4d3b5c6613d4bb84d30e30b1a4e27d94aa36a",
+    "FunctionFieldLittlewood/Examples.lean": "15b3d01d9c1626401d1f75bd60e9f6a00edb19502f823ab773251b1f3d710945",
+    "FunctionFieldLittlewood/FastCertificate.lean": "11f263416890a22909b77edd6be4bd3b57859300b706dd2466bd7ed97650c4e4",
+    "FunctionFieldLittlewood/FractionalPart.lean": "0d573b85f328216d6207cddeac9964967898ea180b3e9237a50c24d79b529d37",
+    "FunctionFieldLittlewood/FractionalPartExamples.lean": "aa812d6dd3f20fa4e932337a5171d5ea8c7c40ccdea36ee5e2b40e1502aaee2a",
+    "FunctionFieldLittlewood/LaiSprangStream.lean": "5c0c378b83880b5020b2f68cd8fd86bff8d9a12252f636a34796f4b04dcd7b3c",
+    "FunctionFieldLittlewood/LaurentBridge.lean": "e9198383867f596e2e427a69bf0d1244e8929e9387ba7186cfe61ce88df9aed2",
+    "FunctionFieldLittlewood/LaurentExamples.lean": "b908953ffc3ed18d8192304ec9ee953244954e5948cc3e0619050c3a2890854d",
+    "FunctionFieldLittlewood/Normalisation.lean": "abfa2987b5d309556ed137dc750206d7b250529bf122824f77d3a7ba798daeb2",
+    "FunctionFieldLittlewood/ParentWindow.lean": "55fa13399bdc9769c3763ef43eba20194ab83ba14dac9adf894346b319cc6350",
+    "FunctionFieldLittlewood/ParityDescent.lean": "35926a37fc083c9c7b9f15317bbba850d193c449dba40307ffe018c8da92ebd4",
+    "FunctionFieldLittlewood/PolynomialBridge.lean": "4a27c080259884847878a5e113c35843a82899ee17f04bb2c79504347021f61e",
+    "FunctionFieldLittlewood/ReverseLift.lean": "12ab91adf4b8bd24f027055779786abf0a5a8128dfde0ffdfd81da893afe156d",
+    "FunctionFieldLittlewood/RootStream.lean": "856169d3f9bba2d5d08b402c1ebaf5b40e07d0a00f9510bbcef856a3a270ce8d",
+    "FunctionFieldLittlewood/SavedCertificates.lean": "df77fc3d6ec23c6b9771e218e5465d319c0283916e6421e904fcffde453ffc98",
+    "FunctionFieldLittlewood/Sharpness.lean": "e12d157a16715333a686b66b8f56616e17a571d4692346d901c9b86caffd7589",
+    "FunctionFieldLittlewood/SparseDivisor.lean": "6b6c65baf5ba07ddb38967ce426860639c671940b87b03e15f6c006b8b664b30",
+    "FunctionFieldLittlewood/TerminalGap.lean": "267da73f999588849961ca99d5c05f5d6442586837557feefbac88bbe247da48",
+    "FunctionFieldLittlewood/WindowMoments.lean": "bca218d86757370e4b923be831796b1b5d1ef5ed0e79fbab96684f7d652997cb",
+    "SharpnessCertificates.lean": "7be893561c841d4f5d17f42e83603bd5f32b7ef955e41e6655d92a44f357172e",
+    "SharpnessCertificates/P29.lean": "49ab5f3717ee01298861b1d11d3bdd08a5c2d0eab49869c6c508db1d7edc2746",
+    "SharpnessCertificates/P37.lean": "37fc9011996d8184c391574889eb3c88a7a10322233f5c5e7bb1485d37e58230",
+    "SharpnessCertificates/P53.lean": "5cb660b8294b4a720fd0bab1c3d03ed88df6b882833c6fb59e4fe3306b1659a0",
+    "SharpnessCertificates/P61.lean": "516f9b262ba1c4fcc35919c2d21fb43d4eaa10291445f23a62e4d3d34a5ed88c",
+    "Solution.lean": "91ff3492b47bd4360fbd8451d732333fa86032ac71b36f10309342e81ee3299e",
+    "verification/CatalogueAudit.lean": "1cfb3912b1d089278b5aa619668ed3b61d6e90623755674906757f3a42ca61ca",
+    "verification/DescentStepAudit.lean": "65c4bf82041d641457ebc4dc855c072096ae5673a1421b2d15c3196de7e3b2fc",
+    "verification/PalomarAudit.lean": "e3e81afa94033e53de195ca8e5306d2a5e2f3d30153058ae937057100ade8af3",
+    "verification/ParentWindowAudit.lean": "0df8790506a2becea3bc0f4eb4ffc6dfdbb424114f64be0519c38feb645a2b0a",
+    "verification/SharpnessAudit.lean": "010f072b715043d13922caecac17685139baaef1e469157cdd14fc61d91735f3",
+    "verification/SharpnessCertificatesAudit.lean": "d3c1af7962d463be16bb034d6c640f5403449f0c4972ec089f1297de57f4a2b9",
+    "verification/SparseDivisorAudit.lean": "4360d26f8ca082f7e5520f7b6ef3517276c2c2e3f9e36fe29a82b5be546eaf48",
+    "verification/TerminalGapAudit.lean": "3d941b9fc4b8876dbe98c7e4e132ae4d247497d1f93ff25810e643bfdbcc96f4",
+    "verification/WindowMomentsAudit.lean": "f5b9256ce470d5afc865d373d28c9e4aaf14453b391ddf76ef1101b7d55f4958"
+  },
+  "thesis": {
+    "command": "lake build PhdThesisLean DiscreteMetricRegression",
+    "exit_code": 0,
+    "seconds": 45.90194081293885,
+    "repository": "https://github.com/solresol/phd-thesis-lean",
+    "commit": "77a93c5683c3a313ea62e303a4651acdab4fdf66",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "source_changes": false,
+    "manifest_changes": false,
+    "proof_axiom_reports": 981,
+    "unexpected_axioms": [],
+    "warning_summary": "Existing module-system suggestions, deprecations and linter warnings; no sorry warning.",
+    "full_log_sha256": "82f4ba44df92feb3763ec02c331709fc74d02ea13603916b2ff9d622170f123f",
+    "retained_log_sha256": "e9df49765ade7cba3419386cf08f3e2179850303aac98a35ece829b5c898b594",
+    "retained_log_normalization": "Trailing whitespace stripped from compiler suggestions; original full_log_sha256 retained."
+  },
+  "comparison_scope": "Existing root-moment package only; independent-kernel checking of every theorem is not claimed.",
+  "known_warning": "The existing Challenge.lean statement placeholder uses sorry; no proved declaration audit contains sorryAx."
+}

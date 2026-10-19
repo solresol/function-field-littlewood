@@ -1,0 +1,87 @@
+test_all_small_prefixes_and_relations (test_binary_quadratic_screen.QuadraticScreenTests.test_all_small_prefixes_and_relations) ... ok
+test_invalid_inputs_and_polynomial_truncation (test_binary_quadratic_screen.QuadraticScreenTests.test_invalid_inputs_and_polynomial_truncation) ... ok
+test_saved_independent_readback_and_corruption (test_binary_quadratic_screen.QuadraticScreenTests.test_saved_independent_readback_and_corruption) ... ok
+test_tail_and_inclusive_endpoint (test_binary_quadratic_screen.QuadraticScreenTests.test_tail_and_inclusive_endpoint) ... ok
+test_corruption_and_completeness (test_extended_rank_boxes.ExtendedBoxesTests.test_corruption_and_completeness) ... ok
+test_exact_cutoff_and_locality_for_both_streams (test_extended_rank_boxes.ExtendedBoxesTests.test_exact_cutoff_and_locality_for_both_streams) ... ok
+test_saved_without_solver (test_extended_rank_boxes.ExtendedBoxesTests.test_saved_without_solver) ... ok
+test_endpoint_obstruction_and_mutations (test_finite_rank.RankTests.test_endpoint_obstruction_and_mutations) ... ok
+test_every_tiny_stream (test_finite_rank.RankTests.test_every_tiny_stream) ... ok
+test_inclusive_prefix_and_tail_invariance (test_finite_rank.RankTests.test_inclusive_prefix_and_tail_invariance) ... ok
+test_invalid_input (test_finite_rank.RankTests.test_invalid_input) ... ok
+test_lai_sprang_tiny_boxes (test_finite_rank.RankTests.test_lai_sprang_tiny_boxes) ... ok
+test_saved_certificates (test_finite_rank.RankTests.test_saved_certificates) ... ok
+test_unresolved_is_only_a_prefix (test_finite_rank.RankTests.test_unresolved_is_only_a_prefix) ... ok
+test_coefficients_against_original_root_sum (test_lai_sprang.SearchTests.test_coefficients_against_original_root_sum) ... ok
+test_cutoff_is_not_an_exact_index (test_lai_sprang.SearchTests.test_cutoff_is_not_an_exact_index) ... ok
+test_degree_zero_sharp_gaps_and_cutoffs (test_lai_sprang.SearchTests.test_degree_zero_sharp_gaps_and_cutoffs) ... ok
+test_invalid_input (test_lai_sprang.SearchTests.test_invalid_input) ... ok
+test_r1_comparison_and_certificate_mutations (test_lai_sprang.SearchTests.test_r1_comparison_and_certificate_mutations) ... ok
+test_recorded_results_if_present (test_lai_sprang.SearchTests.test_recorded_results_if_present) ... ok
+test_saved_degree_zero_certificates_and_mutations (test_lai_sprang.SearchTests.test_saved_degree_zero_certificates_and_mutations) ... ok
+test_small_box_and_scaling (test_lai_sprang.SearchTests.test_small_box_and_scaling) ... ok
+test_cover_is_complete_and_holes_are_unique (test_lai_sprang_sharpness.SharpnessTests.test_cover_is_complete_and_holes_are_unique) ... ok
+test_garrett_robertson_level2_deficiency_eight (test_lai_sprang_sharpness.SharpnessTests.test_garrett_robertson_level2_deficiency_eight) ... ok
+test_mutations_are_rejected (test_lai_sprang_sharpness.SharpnessTests.test_mutations_are_rejected) ... ok
+test_p5_minimality_two_ways (test_lai_sprang_sharpness.SharpnessTests.test_p5_minimality_two_ways) ... ok
+test_p5_witness_from_the_rational_definition (test_lai_sprang_sharpness.SharpnessTests.test_p5_witness_from_the_rational_definition) ... ok
+test_p5_witness_is_the_lean_polynomial (test_lai_sprang_sharpness.SharpnessTests.test_p5_witness_is_the_lean_polynomial) ... ok
+test_profile_degrees_match_nullspaces (test_lai_sprang_sharpness.SharpnessTests.test_profile_degrees_match_nullspaces) ... ok
+test_profile_detects_the_genuine_r1_terminal_window (test_lai_sprang_sharpness.SharpnessTests.test_profile_detects_the_genuine_r1_terminal_window) ... ok
+test_realizability_rule_against_actual_shifts (test_lai_sprang_sharpness.SharpnessTests.test_realizability_rule_against_actual_shifts) ... ok
+test_recorded_results_if_present (test_lai_sprang_sharpness.SharpnessTests.test_recorded_results_if_present) ... ok
+test_small_witnesses_read_back_from_root_sums (test_lai_sprang_sharpness.SharpnessTests.test_small_witnesses_read_back_from_root_sums) ... ok
+test_five_support_points_and_cancellation (test_lai_sprang_support.SupportTests.test_five_support_points_and_cancellation) ... ok
+test_invalid_intervals (test_lai_sprang_support.SupportTests.test_invalid_intervals) ... ok
+test_original_root_sums_on_whole_intervals (test_lai_sprang_support.SupportTests.test_original_root_sums_on_whole_intervals) ... ok
+test_saved_readback_independent_and_corruption (test_lai_sprang_support.SupportTests.test_saved_readback_independent_and_corruption) ... ok
+test_small_intervals_exhaustively (test_lai_sprang_support.SupportTests.test_small_intervals_exhaustively) ... ok
+test_corrupt_or_incomplete_records_rejected (test_lai_sprang_three_term.ThreeTermTests.test_corrupt_or_incomplete_records_rejected) ... ok
+test_exhaustive_tiny_generic_streams (test_lai_sprang_three_term.ThreeTermTests.test_exhaustive_tiny_generic_streams) ... ok
+test_invalid_inputs_and_no_overwrites (test_lai_sprang_three_term.ThreeTermTests.test_invalid_inputs_and_no_overwrites) ... ok
+test_saved_readback_without_generation (test_lai_sprang_three_term.ThreeTermTests.test_saved_readback_without_generation) ... ok
+test_sparse_dense_cutoffs_and_tail_locality (test_lai_sprang_three_term.ThreeTermTests.test_sparse_dense_cutoffs_and_tail_locality) ... ok
+test_identical_to_reference_engine (test_number_wall.NumberWallTests.test_identical_to_reference_engine)
+Same windows, rows, cuts and final ranges as the record-based version, ... ok
+test_side_four_windows_are_terminal_windows_p5 (test_number_wall.NumberWallTests.test_side_four_windows_are_terminal_windows_p5) ... ok
+test_wall_equals_toeplitz_determinants_with_windows (test_number_wall.NumberWallTests.test_wall_equals_toeplitz_determinants_with_windows) ... ok
+test_every_value_of_the_hole_occurs_for_q_at_most_N (test_number_wall_summary.NumberWallSummaryTests.test_every_value_of_the_hole_occurs_for_q_at_most_N) ... ok
+test_summary_of_a_small_run (test_number_wall_summary.NumberWallSummaryTests.test_summary_of_a_small_run) ... ok
+test_terminal_windows_recur_in_the_equivalent_shift_range (test_number_wall_summary.NumberWallSummaryTests.test_terminal_windows_recur_in_the_equivalent_shift_range)
+At p=5, every side-4 window of degree <= E=27 (L=64, P=256) at any ... ok
+test_binary_block_identity (test_rudin_shapiro_dyadic.RudinShapiroTests.test_binary_block_identity) ... ok
+test_four_block_scaling_at_every_residue (test_rudin_shapiro_dyadic.RudinShapiroTests.test_four_block_scaling_at_every_residue) ... ok
+test_invalid_scale (test_rudin_shapiro_dyadic.RudinShapiroTests.test_invalid_scale) ... ok
+test_saved_without_generator_or_solver_and_mutations (test_rudin_shapiro_dyadic.RudinShapiroTests.test_saved_without_generator_or_solver_and_mutations) ... ok
+test_sparse_dense_cutoff_and_locality (test_rudin_shapiro_dyadic.RudinShapiroTests.test_sparse_dense_cutoff_and_locality) ... ok
+test_bareiss_against_permutation_formula (test_terminal_boundary_cover.BoundaryCoverTests.test_bareiss_against_permutation_formula) ... ok
+test_corruption_and_coverage_controls (test_terminal_boundary_cover.BoundaryCoverTests.test_corruption_and_coverage_controls) ... ok
+test_period_cover_at_large_shifts_and_inclusive_endpoint (test_terminal_boundary_cover.BoundaryCoverTests.test_period_cover_at_large_shifts_and_inclusive_endpoint) ... ok
+test_saved_minors_without_generator_or_elimination (test_terminal_boundary_cover.BoundaryCoverTests.test_saved_minors_without_generator_or_elimination) ... ok
+test_domains_and_empty_blocks (test_terminal_boundary_relation.BoundaryRelationTests.test_domains_and_empty_blocks) ... ok
+test_recursion_only_reads_scalar_hankel_bases (test_terminal_boundary_relation.BoundaryRelationTests.test_recursion_only_reads_scalar_hankel_bases) ... ok
+test_relation_basis_has_independent_unique_preimages (test_terminal_boundary_relation.BoundaryRelationTests.test_relation_basis_has_independent_unique_preimages) ... ok
+test_terminal_target_recovers_known_polynomial_and_rejects_mutations (test_terminal_boundary_relation.BoundaryRelationTests.test_terminal_target_recovers_known_polynomial_and_rejects_mutations) ... ok
+test_constructive_minors_and_exact_failure_control (test_terminal_gap.TerminalGapTests.test_constructive_minors_and_exact_failure_control) ... ok
+test_corrupt_minor_and_endpoint_rejected (test_terminal_gap.TerminalGapTests.test_corrupt_minor_and_endpoint_rejected) ... ok
+test_large_shifts_with_independent_original_root_sums (test_terminal_gap.TerminalGapTests.test_large_shifts_with_independent_original_root_sums) ... ok
+test_r1_is_outside_the_hypotheses_and_still_fails (test_terminal_gap.TerminalGapTests.test_r1_is_outside_the_hypotheses_and_still_fails) ... ok
+test_complete_certificate_without_generation_code (test_terminal_prime_obstruction.PrimeObstructionTests.test_complete_certificate_without_generation_code) ... ok
+test_corrupt_certificates_are_rejected (test_terminal_prime_obstruction.PrimeObstructionTests.test_corrupt_certificates_are_rejected) ... ok
+test_formal_expansion_matches_original_root_sums (test_terminal_prime_obstruction.PrimeObstructionTests.test_formal_expansion_matches_original_root_sums) ... ok
+test_fraction_determinant_with_swaps_and_singular_matrices (test_terminal_prime_obstruction.PrimeObstructionTests.test_fraction_determinant_with_swaps_and_singular_matrices) ... ok
+test_wrong_characteristic_is_a_real_rank_failure (test_terminal_prime_obstruction.PrimeObstructionTests.test_wrong_characteristic_is_a_real_rank_failure) ... ok
+test_corrupted_stream_rejected (test_terminal_two_strip.TerminalTwoStripTests.test_corrupted_stream_rejected) ... ok
+test_original_row_identities (test_terminal_two_strip.TerminalTwoStripTests.test_original_row_identities) ... ok
+test_partition_and_row_budget_endpoints (test_terminal_two_strip.TerminalTwoStripTests.test_partition_and_row_budget_endpoints) ... ok
+test_reproduces_recorded_witnesses (test_terminal_witness.TerminalWitnessTests.test_reproduces_recorded_witnesses) ... ok
+test_wall_windows_are_witnesses_and_other_shifts_are_not (test_terminal_witness.TerminalWitnessTests.test_wall_windows_are_witnesses_and_other_shifts_are_not) ... ok
+test_adjacent_difference_identity (test_thue_morse_dyadic.DyadicTests.test_adjacent_difference_identity) ... ok
+test_invalid_inputs (test_thue_morse_dyadic.DyadicTests.test_invalid_inputs) ... ok
+test_saved_witnesses_without_elimination (test_thue_morse_dyadic.DyadicTests.test_saved_witnesses_without_elimination) ... ok
+test_sparse_dense_cutoff_and_inclusive_locality (test_thue_morse_dyadic.DyadicTests.test_sparse_dense_cutoff_and_inclusive_locality) ... ok
+
+----------------------------------------------------------------------
+Ran 80 tests in 24.586s
+
+OK

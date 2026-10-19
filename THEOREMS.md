@@ -42,6 +42,11 @@ axiom audit, archive coverage and registry status.
 
 ## Verification boundary
 
+Current development uses Lean/mathlib 4.35.0. The
+[19 October stable-toolchain validation](results/2026-10-19-stable-upgrade.md)
+records revalidation under that toolchain. The immutable theorem snapshots,
+source hashes and original audit environments below remain historical evidence.
+
 The 17 October F_5 sharpness group passed the full build and its
 [type/axiom audit](results/2026-10-17-sharpness-audit.txt). Both exact certificates
 are decided by kernel evaluation (`decide +kernel`, no `native_decide`) after the

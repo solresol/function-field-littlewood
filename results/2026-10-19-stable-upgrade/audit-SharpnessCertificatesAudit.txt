@@ -1,0 +1,64 @@
+FunctionFieldLittlewood.sharp29_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 29 2)
+    (Polynomial.X ^ (2 * (2 * 2501)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp29S.getD (↑i) 0)))) <
+  2 ^ (-4)
+FunctionFieldLittlewood.sharp37_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 37 2)
+    (Polynomial.X ^ (2 * (2 * 19939)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp37S.getD (↑i) 0)))) <
+  2 ^ (-4)
+FunctionFieldLittlewood.sharp53_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 53 2)
+    (Polynomial.X ^ (2 * (2 * 40193)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp53S.getD (↑i) 0)))) <
+  2 ^ (-4)
+FunctionFieldLittlewood.sharp61_refutes_N_bound : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 61 2)
+    (Polynomial.X ^ (2 * (2 * 22815)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp61S.getD (↑i) 0)))) <
+  2 ^ (-4)
+FunctionFieldLittlewood.sharp29_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 29 2)
+    (Polynomial.X ^ (2 * (2 * 2501)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp29S.getD (↑i) 0)))) =
+  2 ^ (-8)
+FunctionFieldLittlewood.sharp37_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 37 2)
+    (Polynomial.X ^ (2 * (2 * 19939)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp37S.getD (↑i) 0)))) =
+  2 ^ (-8)
+FunctionFieldLittlewood.sharp53_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 53 2)
+    (Polynomial.X ^ (2 * (2 * 40193)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp53S.getD (↑i) 0)))) =
+  2 ^ (-8)
+FunctionFieldLittlewood.sharp61_polynomial_product : FunctionFieldLittlewood.polynomialLittlewoodProduct
+    (FunctionFieldLittlewood.laiSprangStream 61 2)
+    (Polynomial.X ^ (2 * (2 * 22815)) *
+      FunctionFieldLittlewood.multiplierPolynomial
+        (FunctionFieldLittlewood.liftTwo
+          (FunctionFieldLittlewood.liftTwo fun i => ↑(FunctionFieldLittlewood.sharp61S.getD (↑i) 0)))) =
+  2 ^ (-8)
+'FunctionFieldLittlewood.sharp29_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp37_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp53_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp61_refutes_N_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp29_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp37_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp53_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.sharp61_polynomial_product' depends on axioms: [propext, Classical.choice, Quot.sound]

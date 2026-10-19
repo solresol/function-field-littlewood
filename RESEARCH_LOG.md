@@ -1211,3 +1211,29 @@ automation readback were checked. No code or proof changed; tests were not rerun
   establish feasible enumeration. Next focused formal target is the odd-block
   factorization/merge from existing named-stream identities; injectivity retains
   the explicit Proposition 2.3 dependency until that theorem is formalised.
+
+
+## 2026-10-19 — user-requested stable toolchain upgrade
+
+- Upgraded Lean 4.35.0-rc2 to stable 4.35.0 and mathlib from 06535612 to
+  stable-release commit 56a005855ea17e0b0958f73ec801ae140b0a1679. Regenerated
+  the manifest and synchronized current-version documentation. All 40 tracked
+  Lean sources remain byte-identical; no compatibility proof repair was needed.
+- Both clean main checkouts were fetched and fast-forward-only checked before
+  work. The thesis sibling already used this stable pair and has no Littlewood
+  dependency. Its default PhdThesisLean and non-default DiscreteMetricRegression
+  targets passed unchanged at 77a93c5683c3a313ea62e303a4651acdab4fdf66.
+- Default Littlewood build, all four large sharpness certificates (compiled
+  sequentially), combined certificate target, all nine audit files, and all 80
+  Python tests passed. The 73 distinct audited declarations use only standard
+  axioms. The existing Challenge statement placeholder is outside those closures.
+- The existing sandboxed Palomar comparison passed with Lean, NanoDa and con-ron
+  on the stable toolchain. This acceptance covers the root-moment package only;
+  no wider independent-kernel claim or submission is made. Historical catalogue
+  snapshots, archive scope and original dated evidence remain unchanged.
+- Report and full logs: results/2026-10-19-stable-upgrade.md and companion
+  directory. Exact runtimes, resource measurements, source hashes and sibling
+  validation are retained. Formalization metadata schema passed. No failed
+  build, skipped test, new assumption, or new mathematical claim.
+- Classification: dependency maintenance and verification/infrastructure progress.
+  The substantive boundary-relation roadmap is unchanged.

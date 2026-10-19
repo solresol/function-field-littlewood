@@ -1,0 +1,100 @@
+FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor {p H k s : ℕ} [Fact (Nat.Prime p)] (hp : 2 < p)
+  (hH : 0 < H) (hs : s ∣ H) (horder : p - 1 = 2 * H * (2 * k + 1)) (z : Fin H → ZMod p) (hz : Function.Injective z)
+  (hroot : ∀ (i : Fin H), z i ^ H = -1) (U₀ U₁ : Polynomial (ZMod p)) (n : ℕ)
+  (hm :
+    ∀ (j : Fin H),
+      ∑ i,
+          z i ^ (n + ↑j) *
+            (Polynomial.eval (z i) (FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s) *
+              (Polynomial.eval (z i) U₀ ^ 2 - z i * Polynomial.eval (z i) U₁ ^ 2)) =
+        0) :
+  FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * (Polynomial.X ^ H + 1) ∣
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * U₀ ∧
+    FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * (Polynomial.X ^ H + 1) ∣
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) H s * U₁
+FunctionFieldLittlewood.RootStream.stream_root_enumeration {p r : ℕ} [Fact (Nat.Prime p)] (hd : 2 ^ (r + 1) ∣ p - 1) :
+  ∃ z,
+    Function.Injective z ∧
+      (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+        (∀ (x : ZMod p), x ^ 2 ^ r = -1 ↔ ∃ i, x = z i) ∧
+          ∀ (u : ℕ), FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1) = ∑ i, z i ^ u
+FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration {p r : ℕ} [Fact (Nat.Prime p)]
+  (hd : 2 ^ (r + 1) ∣ p - 1) :
+  ∃ z,
+    Function.Injective z ∧
+      (∀ (i : Fin (2 ^ r)), z i ^ 2 ^ r = -1) ∧
+        ∀ (P : Polynomial (ZMod p)) (n : ℕ),
+          ∑ j ∈ Finset.range (P.natDegree + 1),
+              P.coeff j * FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * (n + j) + 1) =
+            ∑ i, z i ^ n * Polynomial.eval (z i) P
+FunctionFieldLittlewood.certificate_sound.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+  (R : Fin (d + 1) → K) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+  FunctionFieldLittlewood.FirstNonzero a R m j
+FunctionFieldLittlewood.hankel_kernel_iff.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+  (R : Fin (d + 1) → K) (m L : ℕ) :
+  (FunctionFieldLittlewood.hankel a m d L).mulVec R = 0 ↔
+    ∀ (row : Fin L), FunctionFieldLittlewood.fractionalCoeff a R m (↑row + 1) = 0
+FunctionFieldLittlewood.checkOptimalCertificate_sound_all.{u_1} {K : Type u_1} [Field K] {d : ℕ} [DecidableEq K]
+  (a : ℕ → K) (R : Fin (d + 1) → K) (m j : ℕ) (w : Fin (j + 1) → K)
+  (h : FunctionFieldLittlewood.checkOptimalCertificate a R m j w = true) :
+  FunctionFieldLittlewood.FirstNonzero a R m j ∧
+    ∀ (S : Fin (d + 1) → K),
+      S 0 ≠ 0 → S (Fin.last d) ≠ 0 → ∃ k, 0 < k ∧ k ≤ j ∧ FunctionFieldLittlewood.fractionalCoeff a S m k ≠ 0
+FunctionFieldLittlewood.exactCertificate_normalise_iff.{u_1} {K : Type u_1} [Field K] {d : ℕ} (a : ℕ → K)
+  (R : Fin (d + 1) → K) (h0 : R 0 ≠ 0) (m j : ℕ) :
+  FunctionFieldLittlewood.ExactCertificate a (FunctionFieldLittlewood.normaliseMultiplier R) m j ↔
+    FunctionFieldLittlewood.ExactCertificate a R m j
+FunctionFieldLittlewood.optimal_polynomial_nonzero.{u_1} {K : Type u_1} [Field K] {d : ℕ} [DecidableEq K] (a : ℕ → K)
+  (R : Fin (d + 1) → K) (m j : ℕ) (w : Fin (j + 1) → K)
+  (h : FunctionFieldLittlewood.checkOptimalCertificate a R m j w = true) (P : Polynomial K) (h0 : P.coeff 0 ≠ 0)
+  (hd : P.natDegree = d) : ∃ k, 0 < k ∧ k ≤ j ∧ ∑ i, P.coeff ↑i * a (m + ↑i + k) ≠ 0
+FunctionFieldLittlewood.shiftedLaurent_coeff.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+  (R : Fin (d + 1) → K) (m j : ℕ) :
+  (FunctionFieldLittlewood.shiftedLaurent a R m).coeff ↑j = FunctionFieldLittlewood.fractionalCoeff a R m j
+FunctionFieldLittlewood.certificate_laurent_sound.{u_1} {K : Type u_1} [CommSemiring K] {d : ℕ} (a : ℕ → K)
+  (R : Fin (d + 1) → K) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+  FunctionFieldLittlewood.LaurentFirstPositive (FunctionFieldLittlewood.shiftedLaurent a R m) j
+FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff.{u_2} {d : ℕ} {F : Type u_2} [Field F] (a : ℕ → F)
+  (R : Fin (d + 1) → F) (m N : ℕ) (h0 : R 0 ≠ 0) (hd : R (Fin.last d) ≠ 0) :
+  2 ^ (-↑N) ≤
+      FunctionFieldLittlewood.polynomialLittlewoodProduct a
+        (Polynomial.X ^ m * FunctionFieldLittlewood.multiplierPolynomial R) ↔
+    ∃ k, 0 < k ∧ k ≤ d + N ∧ FunctionFieldLittlewood.fractionalCoeff a R m k ≠ 0
+FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct.{u_2} {d : ℕ} {F : Type u_2} [Field F] (a : ℕ → F)
+  (R : Fin (d + 1) → F) (m j : ℕ) (h : FunctionFieldLittlewood.ExactCertificate a R m j) :
+  FunctionFieldLittlewood.polynomialLittlewoodProduct a
+      (Polynomial.X ^ m * FunctionFieldLittlewood.multiplierPolynomial R) =
+    2 ^ (↑d - ↑j)
+FunctionFieldLittlewood.laiSprang17_sharp_first :
+  FunctionFieldLittlewood.FirstNonzero (FunctionFieldLittlewood.laiSprangStream 17 4) (fun x => 1) 81 16
+FunctionFieldLittlewood.laiSprang3_comparison_first :
+  FunctionFieldLittlewood.FirstNonzero (FunctionFieldLittlewood.laiSprangStream 3 1)
+    FunctionFieldLittlewood.comparisonMultiplier 2 6
+FunctionFieldLittlewood.thueMorse_even (n : ℕ) :
+  FunctionFieldLittlewood.thueMorse (2 * n) = FunctionFieldLittlewood.thueMorse n
+FunctionFieldLittlewood.thueMorse_odd (n : ℕ) :
+  FunctionFieldLittlewood.thueMorse (2 * n + 1) = 1 + FunctionFieldLittlewood.thueMorse n
+'FunctionFieldLittlewood.ParityDescent.geometric_parity_forced_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.RootStream.stream_root_enumeration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.RootStream.stream_filtered_root_enumeration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.certificate_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.hankel_kernel_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.checkOptimalCertificate_sound_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.exactCertificate_normalise_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.optimal_polynomial_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.shiftedLaurent_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.certificate_laurent_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.polynomialLittlewoodProduct_bound_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.certificate_polynomialLittlewoodProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.laiSprang17_sharp_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.laiSprang3_comparison_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.thueMorse_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.thueMorse_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
