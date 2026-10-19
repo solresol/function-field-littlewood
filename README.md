@@ -97,6 +97,22 @@ establish reachable-state closure, or advance characteristic two. See
 The next question is correlated reachability of these relations, not a larger
 search box or additional attainment examples.
 
+## Boundary recurrence formalised on 20 October 2026
+
+[BoundaryRelation.lean](FunctionFieldLittlewood/BoundaryRelation.lean) proves the
+odd-block factorisation, complete N-root coordinates, squaring transport, and
+both directions of the even/odd parity merges. An explicit parity equivalence
+connects these to ordinary rectangular Hankel blocks, including empty blocks
+and exact final rows. The named stream supplies all recurrence hypotheses.
+
+This is **verification/infrastructure progress** on the 19 October ordinary
+argument. It enables formal use of the recurrence in the successor sharpness
+question; it proves no new sharpness case or characteristic-two result.
+Injectivity, dimensions and terminal detection still depend on the ordinary
+argument using Lai–Sprang Proposition 2.3; they are not part of this Lean result.
+Next substantive work remains correlated reachability. See
+[the scope and checks](results/2026-10-20-boundary-merge.md).
+
 ## Weekly integration on 18 October 2026
 
 Independent small checks reproduce the p=5 least degree 44 and exact index 52,

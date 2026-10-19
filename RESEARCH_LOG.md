@@ -1237,3 +1237,38 @@ automation readback were checked. No code or proof changed; tests were not rerun
   build, skipped test, new assumption, or new mathematical claim.
 - Classification: dependency maintenance and verification/infrastructure progress.
   The substantive boundary-relation roadmap is unchanged.
+
+## 2026-10-20 (Tuesday, Australia/Sydney): exact parity merge in Lean
+
+- Clean main at 6ed71f1, expected solresol origin, no active research lock;
+  fetched/fast-forwarded to 3238e07 before selecting work. The newly fetched
+  computer-verified p=41/N=8 result was preserved, not rerun or called Lean-proved.
+  Read memory, current roadmap, latest results and actual stream/matrix sources.
+- Question stated before formalisation: can odd-block factorisation and both
+  directions of the parent/child merge be proved with exact endpoint budgets?
+  Proved all-root data for the named stream, root-squaring forcing/moment maps,
+  the generic block merge, even/odd recurrences and natural-index parity
+  equivalence. Empty and unequal blocks are included; r=1 remains covered.
+- The Lean recurrence uses the raw stream a; the older Python relation uses
+  c=a/H. Their forcing coordinates differ by H, with the same zero-forcing
+  terminal targets. The normalization relation is explained, not claimed as a
+  separate Lean theorem. No primitive-root-only compression is reintroduced.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS, formalising the algebraic
+  part of the 19 October ordinary result. No new mathematical increment, prime
+  decision, characteristic-two construction or novelty claim. Proposition 2.3
+  is not assumed by the new theorems; its ordinary injectivity/dimension/terminal
+  consequences remain outside this formalisation.
+- Stable Lean/mathlib 4.35.0 pins unchanged. Default lake build passed 7.679s;
+  dedicated audit passes with all 20 theorem closures standard-only and no new
+  placeholder. Existing Challenge statement placeholder remains outside them.
+  Four existing independent boundary regressions passed (0.401s command time).
+  Final audit runtime, exact types, hashes, commands and logs are retained in
+  results/2026-10-20-boundary-validation.json and the companion report/logs.
+  No computational source, search range, dependency or large certificate changed.
+- Primary LSv1/BPZv1 and ANLv2/GRv2 screens rechecked on 20 October; scoped
+  characteristic-two arXiv queries found no later relevant resolution, without
+  asserting absence. Retired quadratic/unbounded-window examples stay retired.
+- Next substantive task: derive correlated adjacent-offset/size state closure
+  or identify an obstruction. Do not freely pair reachable children. This
+  algebraic bridge is complete; choose further formal work from new structural
+  evidence rather than repeating bookkeeping or witness exports.

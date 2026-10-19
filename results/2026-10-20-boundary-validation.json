@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-20",
+  "timezone": "Australia/Sydney",
+  "checked_at": "2026-10-20T08:26:57.001602+11:00",
+  "classification": "verification/infrastructure progress",
+  "base_commit": "3238e07aea1f493472579515f936a882c0299ac3",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python_version": "Python 3.14.4",
+  "runs": [
+    {
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.679,
+      "log": "results/2026-10-20-boundary-lean-build.txt",
+      "checked_at": "2026-10-20T08:25:13.961507+11:00"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/BoundaryRelationAudit.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.633,
+      "log": "results/2026-10-20-boundary-audit.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_terminal_boundary_relation.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.401,
+      "log": "results/2026-10-20-boundary-tests.txt"
+    }
+  ],
+  "axioms": {
+    "FunctionFieldLittlewood.BoundaryRelation.odd_block_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.stream_odd_block_factor": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.stream_even_block": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.full_root_sum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.forcing_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.moment_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.holds_reindex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.colJoin_swap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.rowJoin_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.colJoin_mulVec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.merge_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.parityEquiv_val": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.natural_holds_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.parity_forcing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.parity_moments": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.even_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.odd_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.even_merge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BoundaryRelation.odd_merge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "new_nonstandard_axioms": [],
+  "new_sorry_or_native_decide": false,
+  "default_build_existing_placeholder": "Challenge.lean:37, outside audited closures",
+  "seed": null,
+  "search_expansion": false,
+  "proof_scope": "Odd block factor, complete all-root data, forcing and moment transport, generic merge, both parity recurrences and exact natural-index reindexing. No injectivity/dimension/terminal existence/reachability theorem.",
+  "source_and_log_sha256": {
+    "FunctionFieldLittlewood/BoundaryRelation.lean": "43711b5a29b396062c3a062fd19be99d79499e47a460395c4b5c28705c008ac0",
+    "verification/BoundaryRelationAudit.lean": "0dfbe80b275b87b79ac52bea436017f7f994d11f826cfa8942086923d5ab2135",
+    "results/2026-10-20-boundary-lean-build.txt": "fd596f05f66c1b8334a4b6302a99945ddd2e01dad9f707054045ee6ec036421f",
+    "results/2026-10-20-boundary-audit.txt": "5af6b8162e93e072dd03f486c6c052b01693811167c8c470401be6ab3faec863",
+    "results/2026-10-20-boundary-tests.txt": "e58e83eb288e3d43410608cbf5f5616d30d556dce17e207b94c9b56eef3ca920"
+  }
+}

@@ -1,0 +1,9 @@
+test_domains_and_empty_blocks (test_terminal_boundary_relation.BoundaryRelationTests.test_domains_and_empty_blocks) ... ok
+test_recursion_only_reads_scalar_hankel_bases (test_terminal_boundary_relation.BoundaryRelationTests.test_recursion_only_reads_scalar_hankel_bases) ... ok
+test_relation_basis_has_independent_unique_preimages (test_terminal_boundary_relation.BoundaryRelationTests.test_relation_basis_has_independent_unique_preimages) ... ok
+test_terminal_target_recovers_known_polynomial_and_rejects_mutations (test_terminal_boundary_relation.BoundaryRelationTests.test_terminal_target_recovers_known_polynomial_and_rejects_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.295s
+
+OK

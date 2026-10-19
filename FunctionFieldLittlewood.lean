@@ -20,6 +20,7 @@ public import FunctionFieldLittlewood.DescentStep
 public import FunctionFieldLittlewood.SparseDivisor
 public import FunctionFieldLittlewood.TerminalGap
 public import FunctionFieldLittlewood.RootStream
+public import FunctionFieldLittlewood.BoundaryRelation
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
 public import FunctionFieldLittlewood.FastCertificate

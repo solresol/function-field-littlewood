@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Research priorities and progress criteria (19 October update)
+## Research priorities and progress criteria (20 October update)
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -113,13 +113,18 @@ FastCertificate and the separate SharpnessCertificates target). The existing
 cutoffs and sparse-divisor obstruction remain valid, but no longer form a
 proof path to the universal N-bound.
 
-The 19 October boundary relation gives a new focused target: formalise its
-odd-block factorization and exact parity merge, using the existing named-stream
-even recurrence and RootStream root-sum identity. This enables the bounded-state
-recurrence without requiring new witness exports. Its no-invisible-kernel lemma
-uses the literature's Proposition 2.3, which must remain an explicit dependency
-unless independently formalised; do not label that conditional bridge as an
-unconditional formal terminal theorem.
+The 20 October formalisation completes the algebraic recurrence: all-root
+coordinates, odd-block factorisation, squaring transport, both parity merges,
+and exact natural-index reindexing. It includes empty/unequal blocks and r=1.
+Do not repeat this bridge. The no-invisible-kernel, dimension and terminal-target
+claims are still ordinary deductions from Proposition 2.3, not Lean theorems.
+
+The next substantive task is the correlated adjacent-offset/size tuple in
+"Next computation" above. Derive a closure or an informative obstruction before
+choosing more formal work. A later formalisation should target that new lemma;
+do not let incremental recurrence bookkeeping replace the reachability question.
+Formalising Proposition 2.3 is a separate substantial project, not an assumed
+input to be disguised as an unconditional terminal theorem.
 
 The next focused lemma, if computation supplies no more consequential target,
 is: for H=N/2 and (1+X^H) dividing S, every odd-row filter of S vanishes.
@@ -134,6 +139,17 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-20 (Tuesday formalisation)
+
+- Proved the algebraic boundary recurrence in Lean, including all N-th roots,
+  both parity orientations, squaring fibres, exact endpoints and empty blocks.
+- Reused the named stream/root identities and stable Lean/mathlib 4.35.0.
+  Default build, dedicated axiom audit and existing focused regressions pass.
+- Classification: verification/infrastructure progress on the 19 October proof;
+  no new mathematical result, prime decision or characteristic-two advance.
+- Retained the newly fetched p=41 result as computer-verified, not Lean-checked.
+  Next substantive work is correlated reachability, not another witness export.
 
 ## Completed on 2026-10-19 (Monday computation)
 

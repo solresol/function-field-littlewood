@@ -1,0 +1,205 @@
+@FunctionFieldLittlewood.BoundaryRelation.odd_block_factor : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K),
+  (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+    ∀ (k m n : ℕ),
+      (fun i j => a (2 * (k + ↑i + ↑j) + 1)) =
+        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m * Matrix.diagonal fun q => w q * z q ^ k) *
+          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose
+@FunctionFieldLittlewood.BoundaryRelation.stream_odd_block_factor : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∃ z,
+      Function.Injective z ∧
+        (∀ (q : Fin (2 ^ r)), z q ^ 2 ^ r = -1) ∧
+          ∀ (k m n : ℕ),
+            (fun i j => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * (k + ↑i + ↑j) + 1)) =
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m * Matrix.diagonal fun q => z q ^ k) *
+                (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose
+FunctionFieldLittlewood.BoundaryRelation.stream_even_block : ∀ (p r k m n : ℕ),
+  (fun i j => FunctionFieldLittlewood.laiSprangStream p r (2 * (k + ↑i + ↑j))) =
+    FunctionFieldLittlewood.BoundaryRelation.block (FunctionFieldLittlewood.laiSprangStream p r) k m n
+@FunctionFieldLittlewood.BoundaryRelation.full_root_sum : ∀ {K : Type u_1} [inst : CommRing K] (ξ : K) (H l : ℕ),
+  ∑ q, FunctionFieldLittlewood.BoundaryRelation.oddWeight H q * (ξ ^ ↑q) ^ l = ∑ i, (ξ ^ (2 * ↑i + 1)) ^ l
+@FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∃ z,
+      Function.Injective z ∧
+        (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ q, x = z q) ∧
+          (∃ σ, ∀ (q : Fin (2 * 2 ^ r)), z (σ q) = z q ^ 2) ∧
+            ∀ (l : ℕ),
+              FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * l + 1) =
+                ∑ q, FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r) q * z q ^ l
+@FunctionFieldLittlewood.BoundaryRelation.forcing_transport : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+  (∀ (q : Ω), z (σ q) = z q ^ 2) →
+    ∀ (a m : ℕ),
+      FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m *
+          FunctionFieldLittlewood.BoundaryRelation.transport z σ a =
+        fun i q => z q ^ (2 * ↑i + a)
+@FunctionFieldLittlewood.BoundaryRelation.moment_transport : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+  (∀ (q : Ω), z (σ q) = z q ^ 2) →
+    ∀ (a n : ℕ),
+      (FunctionFieldLittlewood.BoundaryRelation.transport z σ a).transpose *
+          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose =
+        fun q j => z q ^ (2 * ↑j + a)
+@FunctionFieldLittlewood.BoundaryRelation.holds_reindex : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] {I : Type u_3} {J : Type u_4} {J' : Type u_5} [inst_2 : Fintype J] [inst_3 : Fintype J']
+  (A : Matrix I J K) (U : Matrix I Ω K) (V : Matrix Ω J K) (e : J' ≃ J) (u v : Ω → K),
+  FunctionFieldLittlewood.BoundaryRelation.Holds (A.submatrix id ⇑e) U (V.submatrix id ⇑e) u v ↔
+    FunctionFieldLittlewood.BoundaryRelation.Holds A U V u v
+@FunctionFieldLittlewood.BoundaryRelation.colJoin_swap : ∀ {K : Type u_1} {J₀ : Type u_2} {J₁ : Type u_3} {Ω : Type u_4}
+  (A : Matrix Ω J₀ K) (B : Matrix Ω J₁ K),
+  (FunctionFieldLittlewood.BoundaryRelation.colJoin A B).submatrix id Sum.swap =
+    FunctionFieldLittlewood.BoundaryRelation.colJoin B A
+@FunctionFieldLittlewood.BoundaryRelation.rowJoin_mulVec : ∀ {K : Type u_1} [inst : CommRing K] {I₀ : Type u_2}
+  {I₁ : Type u_3} {Ω : Type u_4} [inst_1 : Fintype Ω] (A : Matrix I₀ Ω K) (B : Matrix I₁ Ω K) (u : Ω → K),
+  (FunctionFieldLittlewood.BoundaryRelation.rowJoin A B).mulVec u = Sum.elim (A.mulVec u) (B.mulVec u)
+@FunctionFieldLittlewood.BoundaryRelation.colJoin_mulVec : ∀ {K : Type u_1} [inst : CommRing K] {J₀ : Type u_2}
+  {J₁ : Type u_3} {Ω : Type u_4} [inst_1 : Fintype J₀] [inst_2 : Fintype J₁] (A : Matrix Ω J₀ K) (B : Matrix Ω J₁ K)
+  (x : J₀ ⊕ J₁ → K),
+  (FunctionFieldLittlewood.BoundaryRelation.colJoin A B).mulVec x = A.mulVec (x ∘ Sum.inl) + B.mulVec (x ∘ Sum.inr)
+@FunctionFieldLittlewood.BoundaryRelation.merge_iff : ∀ {K : Type u_1} [inst : CommRing K] {I₀ : Type u_2}
+  {I₁ : Type u_3} {J₀ : Type u_4} {J₁ : Type u_5} {Ω : Type u_6} [inst_1 : Fintype J₀] [inst_2 : Fintype J₁]
+  [inst_3 : Fintype Ω] (A₀ : Matrix I₀ J₀ K) (A₁ : Matrix I₁ J₁ K) (U₀ : Matrix I₀ Ω K) (U₁ : Matrix I₁ Ω K)
+  (V₀ : Matrix Ω J₀ K) (V₁ : Matrix Ω J₁ K) (K₀ K₁ D₀ D₁ E₀ E₁ : Matrix Ω Ω K) (u v : Ω → K),
+  FunctionFieldLittlewood.BoundaryRelation.Holds (Matrix.fromBlocks A₀ (U₀ * K₀ * V₁) (U₁ * K₁ * V₀) A₁)
+      (FunctionFieldLittlewood.BoundaryRelation.rowJoin (U₀ * D₀) (U₁ * D₁))
+      (FunctionFieldLittlewood.BoundaryRelation.colJoin (E₀ * V₀) (E₁ * V₁)) u v ↔
+    ∃ v₀ v₁,
+      FunctionFieldLittlewood.BoundaryRelation.Holds A₀ U₀ V₀ (D₀.mulVec u - K₀.mulVec v₁) v₀ ∧
+        FunctionFieldLittlewood.BoundaryRelation.Holds A₁ U₁ V₁ (D₁.mulVec u - K₁.mulVec v₀) v₁ ∧
+          E₀.mulVec v₀ + E₁.mulVec v₁ = v
+FunctionFieldLittlewood.BoundaryRelation.parityEquiv_val : ∀ (m : ℕ) (i : Fin ((m + 1) / 2) ⊕ Fin (m / 2)),
+  ↑((FunctionFieldLittlewood.BoundaryRelation.parityEquiv m) i) = FunctionFieldLittlewood.BoundaryRelation.parityIndex i
+@FunctionFieldLittlewood.BoundaryRelation.natural_holds_iff : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t m n : ℕ) (u v : Ω → K),
+  FunctionFieldLittlewood.BoundaryRelation.Holds (FunctionFieldLittlewood.BoundaryRelation.block a t m n)
+      (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m)
+      (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose u v ↔
+    FunctionFieldLittlewood.BoundaryRelation.Holds
+      (FunctionFieldLittlewood.BoundaryRelation.parityBlock a t ((m + 1) / 2) (m / 2) ((n + 1) / 2) (n / 2))
+      (FunctionFieldLittlewood.BoundaryRelation.parityEval z ((m + 1) / 2) (m / 2))
+      (FunctionFieldLittlewood.BoundaryRelation.parityEval z ((n + 1) / 2) (n / 2)).transpose u v
+@FunctionFieldLittlewood.BoundaryRelation.parity_forcing : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+  (∀ (q : Ω), z (σ q) = z q ^ 2) →
+    ∀ (m₀ m₁ : ℕ),
+      FunctionFieldLittlewood.BoundaryRelation.parityEval z m₀ m₁ =
+        FunctionFieldLittlewood.BoundaryRelation.rowJoin
+          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀ *
+            FunctionFieldLittlewood.BoundaryRelation.transport z σ 0)
+          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁ *
+            FunctionFieldLittlewood.BoundaryRelation.transport z σ 1)
+@FunctionFieldLittlewood.BoundaryRelation.parity_moments : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+  (∀ (q : Ω), z (σ q) = z q ^ 2) →
+    ∀ (n₀ n₁ : ℕ),
+      (FunctionFieldLittlewood.BoundaryRelation.parityEval z n₀ n₁).transpose =
+        FunctionFieldLittlewood.BoundaryRelation.colJoin
+          ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose *
+            (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose)
+          ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose *
+            (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose)
+@FunctionFieldLittlewood.BoundaryRelation.even_blocks : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      ∀ (k m₀ m₁ n₀ n₁ : ℕ),
+        FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k) m₀ m₁ n₀ n₁ =
+          Matrix.fromBlocks (FunctionFieldLittlewood.BoundaryRelation.block a k m₀ n₀)
+            ((FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀ * Matrix.diagonal fun q => w q * z q ^ k) *
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose)
+            ((FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁ * Matrix.diagonal fun q => w q * z q ^ k) *
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose)
+            (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₁)
+@FunctionFieldLittlewood.BoundaryRelation.odd_blocks : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      ∀ (k m₀ m₁ n₀ n₁ : ℕ),
+        (FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k + 1) m₀ m₁ n₀ n₁).submatrix id Sum.swap =
+          Matrix.fromBlocks (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₀ n₁)
+            ((FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀ * Matrix.diagonal fun q => w q * z q ^ k) *
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose)
+            ((FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁ * Matrix.diagonal fun q => w q * z q ^ (k + 1)) *
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose)
+            (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₀)
+@FunctionFieldLittlewood.BoundaryRelation.even_merge : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ (k m₀ m₁ n₀ n₁ : ℕ) (u v : Ω → K),
+          FunctionFieldLittlewood.BoundaryRelation.Holds
+              (FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k) m₀ m₁ n₀ n₁)
+              (FunctionFieldLittlewood.BoundaryRelation.parityEval z m₀ m₁)
+              (FunctionFieldLittlewood.BoundaryRelation.parityEval z n₀ n₁).transpose u v ↔
+            ∃ v₀ v₁,
+              FunctionFieldLittlewood.BoundaryRelation.Holds (FunctionFieldLittlewood.BoundaryRelation.block a k m₀ n₀)
+                  (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀)
+                  (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose
+                  ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).mulVec u -
+                    (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₁)
+                  v₀ ∧
+                FunctionFieldLittlewood.BoundaryRelation.Holds
+                    (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose
+                    ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).mulVec u -
+                      (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₀)
+                    v₁ ∧
+                  (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ +
+                      (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ =
+                    v
+@FunctionFieldLittlewood.BoundaryRelation.odd_merge : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ (k m₀ m₁ n₀ n₁ : ℕ) (u v : Ω → K),
+          FunctionFieldLittlewood.BoundaryRelation.Holds
+              (FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k + 1) m₀ m₁ n₀ n₁)
+              (FunctionFieldLittlewood.BoundaryRelation.parityEval z m₀ m₁)
+              (FunctionFieldLittlewood.BoundaryRelation.parityEval z n₀ n₁).transpose u v ↔
+            ∃ v₁ v₀,
+              FunctionFieldLittlewood.BoundaryRelation.Holds
+                  (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₀ n₁)
+                  (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀)
+                  (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose
+                  ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).mulVec u -
+                    (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₀)
+                  v₁ ∧
+                FunctionFieldLittlewood.BoundaryRelation.Holds
+                    (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₀)
+                    (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose
+                    ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).mulVec u -
+                      (Matrix.diagonal fun q => w q * z q ^ (k + 1)).mulVec v₁)
+                    v₀ ∧
+                  (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ +
+                      (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ =
+                    v
+'FunctionFieldLittlewood.BoundaryRelation.odd_block_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.stream_odd_block_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.stream_even_block' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.full_root_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.forcing_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.moment_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.holds_reindex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.colJoin_swap' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.rowJoin_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.colJoin_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.merge_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.parityEquiv_val' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.natural_holds_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.parity_forcing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.parity_moments' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.even_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.odd_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.even_merge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BoundaryRelation.odd_merge' depends on axioms: [propext, Classical.choice, Quot.sound]
