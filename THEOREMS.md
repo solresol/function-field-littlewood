@@ -14,6 +14,7 @@ The sparse-divisor group is pinned to `417116c79e25edefcc9ecb9b1bcc9edaca1b1f84`
 The F_5 sharpness group is pinned to `a4e400f5228a06c3e2097e5c3bc6051d0973a6c2` (17 October 2026).
 The fast-checker and p=29,37,53,61 certificate groups are pinned to `3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c` (18 October 2026).
 The reverse-lift/F_13 group is pinned to `93badc486f8d25125785f0decac7ccbbdf3d6a98` (18 October 2026).
+The boundary parity-merge group is pinned to `491cd5a96f6515499dd2c14d60337f72b4cf338b` (20 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -39,8 +40,17 @@ axiom audit, archive coverage and registry status.
 | [Reverse lift and F_13 refutation](https://github.com/solresol/function-field-littlewood/blob/93badc486f8d25125785f0decac7ccbbdf3d6a98/FunctionFieldLittlewood/ReverseLift.lean#L70) | certificate doubling from vanishing odd rows; p=13 product 2^-8 | Not yet archived |
 | [Natural-number certificate checker](https://github.com/solresol/function-field-littlewood/blob/3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c/FunctionFieldLittlewood/FastCertificate.lean) | sound list dot-product checks to exact certificates and product 2^-8 | Not yet archived |
 | [Refutations for p=29,37,53,61](https://github.com/solresol/function-field-littlewood/blob/3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c/SharpnessCertificates.lean) | non-default target; kernel-checked on raksasa | Not yet archived |
+| [Exact boundary parity recurrence](https://github.com/solresol/function-field-littlewood/blob/491cd5a96f6515499dd2c14d60337f72b4cf338b/FunctionFieldLittlewood/BoundaryRelation.lean#L377) | all-root block factorization, exact merges and endpoint reindexing | Not yet archived |
 
 ## Verification boundary
+
+The 20 October boundary group formalises the algebraic part of the preceding
+ordinary recurrence. Both parity merges and all-root data are proved, with exact
+rectangular/empty endpoints. No invisible-kernel, dimension, terminal-detection
+or correlated-reachability theorem is included. The raw-stream normalization
+and all limits are recorded in [the report](results/2026-10-20-boundary-merge.md).
+Its dedicated audit uses standard axioms only; no independent-kernel comparison
+is claimed for this new group.
 
 Current development uses Lean/mathlib 4.35.0. The
 [19 October stable-toolchain validation](results/2026-10-19-stable-upgrade.md)

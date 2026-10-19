@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-18'
+updated: '2026-10-20'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -1610,6 +1610,221 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: boundary-parity-merge
+  title: Exact all-root boundary parity recurrence
+  status: kernel-checked
+  mathematical_origin: formalisation of the 19 October ordinary structural lemma
+  first_formalisation_priority: unestablished
+  statement: Odd Hankel blocks factor through root evaluations. All-root forcing and moments transport
+    under squaring, and the parent relation is equivalent to a two-child merge retaining three N-vectors.
+    Exact natural-index reindexing covers arbitrary rectangular and empty blocks, for both starting
+    parities.
+  assumptions:
+  - Generic matrix identities hold over a commutative ring and finite coordinate types.
+  - Parity recurrences assume a(2l)=a(l), a weighted odd-root formula and a root list closed under
+    squaring.
+  - For the actual named stream, prime p and N=2^(r+1) dividing p-1 discharge the recurrence hypotheses
+    through stream_full_root_data and the existing even identity; maximal valuation is unnecessary.
+  - Uses the raw stream a; the older computational relation uses a/H.
+  limitations: No injectivity, dimension, Lagrangian, terminal-detection or reachable-state theorem
+    is included. Proposition 2.3 is not assumed by these algebraic proofs. The normalized-coordinate
+    isomorphism is explained ordinarily, not separately formalised. No new prime, characteristic-two
+    construction, universal sharpness or publication priority is claimed.
+  declarations:
+  - name: FunctionFieldLittlewood.BoundaryRelation.odd_block_factor
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 29
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.odd_block_factor : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K),
+        (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+          ∀ (k m n : ℕ),
+            (fun i j => a (2 * (k + ↑i + ↑j) + 1)) =
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m * Matrix.diagonal fun q => w q * z q ^ k) *
+                (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 89
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∃ z,
+            Function.Injective z ∧
+              (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ q, x = z q) ∧
+                (∃ σ, ∀ (q : Fin (2 * 2 ^ r)), z (σ q) = z q ^ 2) ∧
+                  ∀ (l : ℕ),
+                    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * l + 1) =
+                      ∑ q, FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r) q * z q ^ l
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.forcing_transport
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 131
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.forcing_transport : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+        (∀ (q : Ω), z (σ q) = z q ^ 2) →
+          ∀ (a m : ℕ),
+            FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m *
+                FunctionFieldLittlewood.BoundaryRelation.transport z σ a =
+              fun i q => z q ^ (2 * ↑i + a)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.moment_transport
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 140
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.moment_transport : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+        (∀ (q : Ω), z (σ q) = z q ^ 2) →
+          ∀ (a n : ℕ),
+            (FunctionFieldLittlewood.BoundaryRelation.transport z σ a).transpose *
+                (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose =
+              fun q j => z q ^ (2 * ↑j + a)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.merge_iff
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 201
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.merge_iff : ∀ {K : Type u_1} [inst : CommRing K] {I₀ : Type u_2}
+        {I₁ : Type u_3} {J₀ : Type u_4} {J₁ : Type u_5} {Ω : Type u_6} [inst_1 : Fintype J₀] [inst_2 : Fintype J₁]
+        [inst_3 : Fintype Ω] (A₀ : Matrix I₀ J₀ K) (A₁ : Matrix I₁ J₁ K) (U₀ : Matrix I₀ Ω K) (U₁ : Matrix I₁ Ω K)
+        (V₀ : Matrix Ω J₀ K) (V₁ : Matrix Ω J₁ K) (K₀ K₁ D₀ D₁ E₀ E₁ : Matrix Ω Ω K) (u v : Ω → K),
+        FunctionFieldLittlewood.BoundaryRelation.Holds (Matrix.fromBlocks A₀ (U₀ * K₀ * V₁) (U₁ * K₁ * V₀) A₁)
+            (FunctionFieldLittlewood.BoundaryRelation.rowJoin (U₀ * D₀) (U₁ * D₁))
+            (FunctionFieldLittlewood.BoundaryRelation.colJoin (E₀ * V₀) (E₁ * V₁)) u v ↔
+          ∃ v₀ v₁,
+            FunctionFieldLittlewood.BoundaryRelation.Holds A₀ U₀ V₀ (D₀.mulVec u - K₀.mulVec v₁) v₀ ∧
+              FunctionFieldLittlewood.BoundaryRelation.Holds A₁ U₁ V₁ (D₁.mulVec u - K₁.mulVec v₀) v₁ ∧
+                E₀.mulVec v₀ + E₁.mulVec v₁ = v
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.natural_holds_iff
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 288
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.natural_holds_iff : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t m n : ℕ) (u v : Ω → K),
+        FunctionFieldLittlewood.BoundaryRelation.Holds (FunctionFieldLittlewood.BoundaryRelation.block a t m n)
+            (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m)
+            (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n).transpose u v ↔
+          FunctionFieldLittlewood.BoundaryRelation.Holds
+            (FunctionFieldLittlewood.BoundaryRelation.parityBlock a t ((m + 1) / 2) (m / 2) ((n + 1) / 2) (n / 2))
+            (FunctionFieldLittlewood.BoundaryRelation.parityEval z ((m + 1) / 2) (m / 2))
+            (FunctionFieldLittlewood.BoundaryRelation.parityEval z ((n + 1) / 2) (n / 2)).transpose u v
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.even_merge
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 377
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.even_merge : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ (k m₀ m₁ n₀ n₁ : ℕ) (u v : Ω → K),
+                FunctionFieldLittlewood.BoundaryRelation.Holds
+                    (FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k) m₀ m₁ n₀ n₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.parityEval z m₀ m₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.parityEval z n₀ n₁).transpose u v ↔
+                  ∃ v₀ v₁,
+                    FunctionFieldLittlewood.BoundaryRelation.Holds (FunctionFieldLittlewood.BoundaryRelation.block a k m₀ n₀)
+                        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀)
+                        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose
+                        ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).mulVec u -
+                          (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₁)
+                        v₀ ∧
+                      FunctionFieldLittlewood.BoundaryRelation.Holds
+                          (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₁)
+                          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁)
+                          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose
+                          ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).mulVec u -
+                            (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₀)
+                          v₁ ∧
+                        (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ +
+                            (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ =
+                          v
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BoundaryRelation.odd_merge
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    line_at_snapshot: 396
+    introduced_commit: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_type: |-
+      @FunctionFieldLittlewood.BoundaryRelation.odd_merge : ∀ {K : Type u_1} [inst : CommRing K] {Ω : Type u_2}
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ (k m₀ m₁ n₀ n₁ : ℕ) (u v : Ω → K),
+                FunctionFieldLittlewood.BoundaryRelation.Holds
+                    (FunctionFieldLittlewood.BoundaryRelation.parityBlock a (2 * k + 1) m₀ m₁ n₀ n₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.parityEval z m₀ m₁)
+                    (FunctionFieldLittlewood.BoundaryRelation.parityEval z n₀ n₁).transpose u v ↔
+                  ∃ v₁ v₀,
+                    FunctionFieldLittlewood.BoundaryRelation.Holds
+                        (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₀ n₁)
+                        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₀)
+                        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₁).transpose
+                        ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).mulVec u -
+                          (Matrix.diagonal fun q => w q * z q ^ k).mulVec v₀)
+                        v₁ ∧
+                      FunctionFieldLittlewood.BoundaryRelation.Holds
+                          (FunctionFieldLittlewood.BoundaryRelation.block a (k + 1) m₁ n₀)
+                          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z m₁)
+                          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z n₀).transpose
+                          ((FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).mulVec u -
+                            (Matrix.diagonal fun q => w q * z q ^ (k + 1)).mulVec v₁)
+                          v₀ ∧
+                        (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ +
+                            (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ =
+                          v
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 491cd5a96f6515499dd2c14d60337f72b4cf338b
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-20-boundary-lean-build.txt
+    full_build_validation: results/2026-10-20-boundary-validation.json
+    catalogue_audit: results/2026-10-20-boundary-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/BoundaryRelation.lean: 43711b5a29b396062c3a062fd19be99d79499e47a460395c4b5c28705c008ac0
+      verification/BoundaryRelationAudit.lean: 0dfbe80b275b87b79ac52bea436017f7f994d11f826cfa8942086923d5ab2135
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -1626,8 +1841,8 @@ unformalised_and_open:
     defect is N or 2N.
   record: results/2026-10-05-terminal-lift.md
   remaining: On 17-18 October the 2N branch was selected for p=5,13,29,37,53,61 by explicit witnesses
-    (all six in Lean, with the reverse lift formalised in certificate form); every prime with
-    N>=8 remains undecided. The descent-side equivalence and the literature-dependent cap are not
+    (all six in Lean, with the reverse lift formalised in certificate form); p=41 at N=8
+    was computer-verified on 19 October but is not Lean-checked. Other N>=8 primes remain undecided. The descent-side equivalence and the literature-dependent cap are not
     Lean-formalised.
 - id: all-degree-bound
   status: refuted
@@ -1635,8 +1850,8 @@ unformalised_and_open:
   record: results/2026-10-17-lai-sprang-sharpness.md
   remaining: False at p=5,13,29,37,53,61, all kernel-checked (lai-sprang-sharpness-f5,
     reverse-lift-and-f13-sharpness, sharpness-certificates-29-37-53-61). Successor question, open in project - is the maximum
-    defect 2N for every odd prime? Undecided for every prime with N>=8 and untested for N=4 primes
-    beyond 61 past deg V=250.
+    defect 2N for every odd prime? The p=41/N=8 case was computer-verified on 19 October (not Lean-checked); other N>=8 primes
+    remain undecided, and N=4 primes beyond 61 are untested past deg V=250.
 - id: characteristic-two
   status: no-construction-proved
   statement: A characteristic-two main-conjecture counterexample or informative stronger intermediate

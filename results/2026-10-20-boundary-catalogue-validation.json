@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-20",
+  "checked_at": "2026-10-20T08:28:08.378000+11:00",
+  "proof_snapshot": "491cd5a96f6515499dd2c14d60337f72b4cf338b",
+  "classification": "supporting catalogue validation; no mathematical increment",
+  "curated_declarations": 8,
+  "all_new_audited_theorems": 20,
+  "metadata_schema": "passed against local pinned v0.4 schema",
+  "checks": [
+    "exact Lean types and standard axiom closures",
+    "source line numbers, SHA256 and immutable proof snapshot bytes",
+    "previous theorem groups unchanged",
+    "unique theorem groups",
+    "new metadata points to audited declarations"
+  ],
+  "parser_note": "An initial ad-hoc count omitted Lean @ prefixes. Corrected extraction verifies all 20 types against their axiom reports. No proof or build failure resulted."
+}

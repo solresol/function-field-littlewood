@@ -10,7 +10,8 @@ project:
     cutoff d<N(3N/2-1) in finite nonvanishing form. Also verifies the sparse-divisor
     obstruction used in the ordinary boundary localization argument, kernel-checked F_5 and
     F_13 multipliers whose Littlewood products are 2^-8, refuting the sharper auxiliary 2^-N
-    bound, and the reverse lift of exact certificates.
+    bound, and the reverse lift of exact certificates. Also formalises the all-root
+    boundary parity recurrence with exact rectangular and empty endpoints.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -56,7 +57,11 @@ status:
     the F_5 counterexample to the all-degree N-bound (product 2^-8 for the actual polynomial
     and infinite named stream); ReverseLift proves certificate doubling from vanishing odd rows
     and the F_13 counterexample; FastCertificate proves a natural-number certificate checker
-    sound, and the non-default SharpnessCertificates target applies it to p=29,37,53,61. Boundary cutoffs, exact shift localization, the
+    sound, and the non-default SharpnessCertificates target applies it to p=29,37,53,61.
+    BoundaryRelation proves all-root data, odd-block factorisation, squaring transport,
+    exact even/odd merges and natural-index parity reindexing; its generic recurrence
+    hypotheses are discharged by the named stream identities. Injectivity, dimensions,
+    terminal detection and correlated reachability remain outside Lean. Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
@@ -68,6 +73,30 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.BoundaryRelation.stream_full_root_data
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.BoundaryRelation.even_merge
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.BoundaryRelation.odd_merge
+    file: FunctionFieldLittlewood/BoundaryRelation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.product_of_checks
     file: FunctionFieldLittlewood/FastCertificate.lean
     sorry_count: 0
