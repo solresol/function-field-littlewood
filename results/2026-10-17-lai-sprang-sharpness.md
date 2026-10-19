@@ -1,4 +1,4 @@
-# The Lai–Sprang constant 2N is attained for p=5,13,29,37,53,61
+# The Lai–Sprang constant 2N is attained for p=5,13,29,37,53,61 and 41
 
 17 October 2026, Saturday, Australia/Sydney (AEDT).
 Classification: **mathematical progress**. The auxiliary all-degree bound
@@ -9,7 +9,10 @@ All six refutations are Lean kernel-checked: p=5 and p=13 in the default library
 (the latter via a formalised reverse lift), and p=29,37,53,61 in the non-default
 `SharpnessCertificates` target through a natural-number certificate checker with
 a soundness proof. Minimality and the exclusions for other primes are
-computer-assisted all-shift statements.
+computer-assisted all-shift statements. On 19 October a number-wall search
+added **p=41, the first prime with N=8** (defect 2N=16). That witness has
+degree about 1.5*10^7 and is computer-verified three ways, not Lean-checked
+([19 October addendum](#19-october-addendum-p41-the-first-n8-prime-attains-2n)).
 
 ## Question and decision
 
@@ -111,7 +114,8 @@ No terminal window with deg V<=E exists, so j-d<=N for all d<N(N+E):
 | primes | N | E | strict all-shift cutoff |
 |---|---|---:|---:|
 | every p congruent to 5 modulo 8 with 101<=p<=1181 (45 primes) | 4 | 250 | d<1016 |
-| 41, 73, 89, 137 | 8 | 250 | d<2064 |
+| 41 (number wall, 19 October; 2N is attained) | 8 | 65,527 | d<524,280 |
+| 73, 89, 137 | 8 | 250 | d<2064 |
 | 17, 113 | 16 | 250 | d<4256 |
 
 These do not decide Delta_p for those primes. Section 7 explains why no
@@ -246,7 +250,9 @@ times p^2, and p=61 gives 2083, ratio 0.56. The model is a heuristic only.
 
 For N=8 it predicts least degrees of order 41^4, about 3*10^6, at p=41,
 far beyond the E=250 covers. **The empty N>=8 ranges are therefore not
-evidence for Delta_p=N.** No prime with N>=8 is resolved. Every N=4 prime
+evidence for Delta_p=N.** No prime with N>=8 is resolved. (Superseded on
+19 October: p=41 attains 2N, at quotient degree 1,916,335; see the addendum.
+Its least degree is unknown.) Every N=4 prime
 up to 61 attains 2N; primes p congruent to 5 modulo 8 from 101 upward are
 untested beyond deg V=250.
 
@@ -266,7 +272,8 @@ Open questions:
 ## 9. Consequences for the roadmap
 
 - Retire the all-degree auxiliary N-bound for r>=2. It is false at
-  p=5,13,29,37,53,61, formally so at all six primes.
+  p=5,13,29,37,53,61, formally so at all six primes, and at p=41 (r=3,
+  computer-verified, 19 October).
 - Retire the 12 October plan to find a uniform dyadic identity bounding the
   terminal gcd's odd primes. At e=H it was harmless; in general p=5 divides
   the minors at e=8.
@@ -342,7 +349,139 @@ bookkeeping. A ring-buffer redesign (frames read from the last g+3 rows,
 compact window records, parallel detection) should approach 10^9 to 3*10^9
 cells/s. At those projected rates, 6*10^13 cells alone would take about 5.6 to 16.7
 hours of the whole machine, plus hours to extract and verify a degree-10^6 witness, which is far beyond
-Lean. This was not run.
+Lean. This was not run. (It was run on 19 October with a faster engine and a
+corrected density; see the next addendum.)
+
+## 19 October addendum: p=41, the first N=8 prime, attains 2N
+
+**Theorem 5 (p=41, N=8; computer-verified).** Over F_41, let M=618,117 and
+e=1,916,335. The Berlekamp–Massey connection polynomial of s_k=b_(M+k),
+k=1..2e+9, reversed, gives a monic V of degree e. The linear complexity jumps
+from e by exactly N+1=9 there. Put S=(1+t+...+t^7)V, D=deg S=1,916,342. Then
+S has its first D+1 rows zero at shift M and row D+2 equal to 38. Its
+lift R=S(t^8), of degree 15,330,736, has first nonzero row j=15,330,752 at
+m=8M=4,944,936, with the same value. The defect is j-deg R=16=2N, so
+Delta_41=2N. Corollary 3's argument applies unchanged: Lai–Sprang's
+Theorem 1.2 is sharp in characteristic 41.
+
+The witness is in [the record](2026-10-19-sharpness-p41.json.gz), gzipped
+because V and S have about 1.9*10^6 coefficients each; it has the schema of
+the p=61 record. Three independent computations agree:
+
+1. The number wall of the derived stream modulo 41, computed through the
+   frame equations, has a zero window of side 8 with top-left
+   (1916335, 2534452).
+2. Berlekamp–Massey on the normalized stream finds the jump N+1 at
+   complexity e.
+3. `search/terminal_witness.c` reads back all D+2 terminal rows and all j
+   lifted rows from the root-sum definition. It reads no support formula,
+   profile or wall. It also divides S by 1+...+t^7 to recover V, checks both
+   endpoints, and rejects a mutated coefficient and a mutated shift. The
+   largest original index read is 35,606,424. On raksasa the readback
+   took 37 s for the terminal rows and 295 s for the lifted rows.
+   Berlekamp–Massey took 22 hours (19 October 03:28 to 20 October 01:31)
+   because per-term thread synchronisation stalls on a loaded shared
+   machine; the extractor now runs it on one thread.
+
+An independent spot-check (`search/p41_spot_check.py`) with the
+repository's Python root-sum oracle (`search/run_rank_experiments.py`) agrees. It confirms S=(1+...+t^7)V and
+that 20 terminal rows vanish, including D-1, D and D+1, while row D+2=38.
+It also checks five lifted rows, including row j=38.
+
+Lean is out of reach. The terminal certificate alone has about 3.7*10^12
+products. The 102,000-product p=13 lifted certificate already failed to
+finish a direct Lean check in ten minutes.
+
+The least degree for p=41 is unknown. It satisfies 65,528 <= e <= 1,916,335
+(below). Inside the scanned region the run stops at the first row holding a
+side-8 window, so no terminal window has smaller degree there. Shifts beyond
+that region are untested for 65,528 <= e < 1,916,335.
+
+**Engine.** `search/number_wall.c` now keeps only the last gmax+4 rows in a
+ring and keeps no window records. When the divisor W[m-2][n] is zero it scans
+up to the window's top row and across it, then reads the frame values A to G
+from the ring. Isolated zeros, about 97% of cases, use the combined formula
+
+    H = (C0 (F A1^2 - B1^2 E) + A0 B1^2 G) / (A0 A1^2),
+
+obtained from the second and third frame equations with D1=-B1 C1/A1. Rows
+run in parallel column chunks with AVX2 for the cross rule and this formula.
+Each chunk also counts the windows that start in it; the two edge zones are
+redone serially, so cuts of the valid range follow the old rules exactly.
+The record-based version is kept as `search/number_wall_ref.c`. The tests
+require identical output (every row, window, cut and final range) on 80
+random sequences, with gmax 64 and 8 and windows larger than 8, and on three
+derived streams. They use many small chunks and the per-row serial
+cross-check. On raksasa (12 threads) the engine runs 3-4*10^9 cells/s for
+rows up to 10^6 wide and 2.7*10^9 at 1.2*10^7, against 9.4*10^7 for the old
+engine on the same input. Under other jobs on the shared machine the run
+averaged 1.8*10^9. `search/terminal_witness.c` reproduces all six recorded
+N=4 witnesses exactly; tests also feed it 40 wall windows at p=5.
+
+**The deep p=41 derived wall behaves like a random wall.** Over F_q a Hankel
+determinant vanishes with probability exactly 1/q (q^(2n-2) singular n x n
+Hankel matrices). Side-g windows have relative frequencies (q-1)q^-(g+1)
+from the continued-fraction degree law. Together these give the per-cell
+density
+
+    rho_g = (q-1)^3 / ((q+1) q^(g+2)).
+
+The 18 October figure omitted the normalization factor (q-1)/(q+1). Below
+row 20,000 the p=41 derived wall matches rho_g band by band: within 0.1% for
+g=1,2, about 1% for g=3,4 and 4% for g=5. Side 6 is overdispersed by a factor
+of 2 to 3, since repeated factors repeat windows. The first 20,000 rows carry
+an excess of structural windows of sides 4 to 7; side 7=N-1 gives the
+defect-N branch. Hence rho_8=1.14*10^-13, one side-8 window per 8.8*10^12
+distinct cells.
+
+**Distinct cells.** A cell W[m][n] depends only on the factor
+b_(n-m+1..n+m+1). The N=8 derived stream has about 10.5 L distinct factors
+of length L, measured up to L=3*10^5 with `search/factor_counts.c`. Most
+top-row cells therefore repeat. Before the run, the full C=1.2*10^7 triangle
+(3.6*10^13 cells, 3.07*10^13 distinct) was expected to hold 3.5 side-8
+windows if Delta_41=2N and the deep wall stays random at side 8. The rows
+actually searched, 0 to 1,916,335, hold 1.88*10^13 cells, 1.40*10^13
+distinct, where the model expects 1.6. One appeared, in the last row
+searched.
+
+**Run.** User-approved, 19 October 00:29–03:24 AEDT on raksasa: 12 threads at
+nice 10, 240 MB, a checkpoint every 30 minutes. It was due to stop at 07:20
+and stopped itself at the first side-8 window. (The follow-up extraction
+then ran until 01:31 on 20 October, past the 07:30 limit, because its
+timeout killed only a wrapper process.) At the 00:59 checkpoint the
+build was switched to dynamic chunk scheduling (identical output), and the
+run resumed from row 275,835. Commands, source hashes, band histograms and
+valid ranges are in [the run record](2026-10-19-p41-number-wall.json). The
+run met 4.34*10^11 windows; by side 1 to 8 they number 4.23*10^11,
+1.03*10^10, 2.52*10^8, 6.60*10^6, 4.78*10^5, 1.44*10^5, 2.81*10^5 and 1.
+
+**All-shift consequence (computer-assisted).** Take E=65,527, so T=2N+2E is
+just below L=2^17, and P=NL=2^20. Off the one index divisible by L, the
+window c_(M+1..M+T) is periodic in M with period P. At that index
+c_(qP+h)=c(qN+h/L), and every value of c(qN+w) already occurs for some q in
+[1,N] (brute force in the tests). So every shift has an equivalent shift in
+[P,9P). Those shifts lie inside the framed region at every row e<=E, and no
+side-8 window appeared there. Therefore no p=41 terminal window with
+deg V<=65,527 exists at any shift, and j-d<=N for all d<524,280. The
+previous cover gave d<2064. `search/number_wall_summary.py` performs this
+check from the logs. At p=5 and p=13, every one of 6,457 windows found at
+arbitrary shifts has an equivalent window in [P,(N+1)P).
+
+**What this does and does not settle.** Delta_41=2N, so every prime decided
+so far attains 2N: all r=1 primes, all six N=4 primes up to 61, and 41. The next N=8 primes cost far more under the same model:
+rho_8~(p-1)^3 p^-10, so p=73 needs about 100 times as many distinct cells.
+For N=16 the density is near 10^-20 at p=17, so brute force cannot reach
+it. The random-wall agreement at p=41 is evidence for the heuristic that
+every odd prime attains 2N. The expected number of side-N windows grows
+without bound with depth because distinct cells grow like R^2. It is not a
+proof.
+
+    cc -O3 -march=native -fopenmp -o number_wall search/number_wall.c
+    OMP_NUM_THREADS=12 ./number_wall 41 8 1 12000000 6000000 8 gmax=16 stop ckpt=ckpt
+    cc -O3 -march=native -fopenmp -o terminal_witness search/terminal_witness.c
+    ./terminal_witness 41 618117 1916335 w41.json
+    python3 search/p41_spot_check.py results/2026-10-19-sharpness-p41.json.gz
+    python3 search/number_wall_summary.py RUN_DIR OUT.json --factors FACTORS --run-info INFO
 
 ## Literature
 

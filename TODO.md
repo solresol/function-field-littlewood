@@ -55,15 +55,17 @@ finding rather than promoting it to a firstness claim.
 
 ## Next computation
 
-- The universal auxiliary N-bound is retired: it is false at p=5,13,29,37,53,61.
-  All six refutations are kernel-checked; the least original degrees are
-  44,316,1316,4548,4524,8344 by computer-assisted all-shift covers. Sunday's
+- The universal auxiliary N-bound is retired: it is false at p=5,13,29,37,53,61
+  and (19 October, computer-verified, N=8) at p=41. The first six are
+  kernel-checked; their least original degrees are 44,316,1316,4548,4524,8344
+  by computer-assisted all-shift covers. Sunday's
   independent small recheck confirms the p=5 threshold. See
   [the sharpness report](results/2026-10-17-lai-sprang-sharpness.md) and
   [the weekly integration](results/2026-10-18-sunday-integration.md).
 - Successor question: is Delta_p=2N for every odd prime? The r=1 family is
-  already settled; all six new primes have N=4. No N>=8 prime is decided.
-  Do not obtain more isolated N=4 witnesses merely to extend the list.
+  already settled; six N=4 primes and p=41 (N=8) attain 2N. No other N>=8
+  prime is decided. Do not obtain more isolated witnesses merely to extend the
+  list; the next brute-force case (p=73) would cost about 100 p=41 runs.
 - The requested bounded-state recurrence is now proved ordinarily: retain
   forcing and evaluations at all N-th roots, a relation in F_p^(2N). Its
   parity merge uses 3N variables; Proposition 2.3 excludes invisible kernels.
@@ -82,11 +84,16 @@ finding rather than promoting it to a firstness claim.
   question; defer the remaining boundary bookkeeping unless the new recurrence
   needs it. The proposed all-degree dyadic-gcd obstruction is retired because
   the p=5 witness has maximal-minor gcd 5.
-- The number-wall engine and N=8 cost projection are available, not a default
-  next task. The cover gives an O(E^2) upper bound on (window,degree) cases
-  for fixed N, not independent trials or a matching lower bound. The p^(N/2)
-  waiting scale is an unproved random model. A ring-buffer rewrite alone is
-  infrastructure; no hours-long whole-machine run without explicit approval.
+- Number wall (19 October): the ring-buffer engine (35x, identical output to
+  search/number_wall_ref.c) found the p=41 witness at e=1,916,335, M=618,117.
+  Its least degree is open (65,528<=e<=1,916,335). Below its first 20,000 rows
+  the p=41 wall matches the random-wall density (q-1)^3/((q+1)q^(g+2)) for
+  window sides 1-5. That supports the random model at depth but is not a
+  proof. A structural explanation (an automaton for the wall modulo p, or a
+  construction of side-N windows) remains the route to all primes. No further
+  hours-long whole-machine run without explicit approval. Verifying the p=41
+  witness in Lean would need a new certificate method (about 3.7*10^12
+  terminal products).
 - Keep characteristic two as the remaining finite-field main-conjecture
   frontier in the primary sources checked on 18 October. Before selecting any
   new candidate, exclude rational/quadratic generating series and known

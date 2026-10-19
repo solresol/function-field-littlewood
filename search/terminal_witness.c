@@ -20,7 +20,8 @@
    out again and must return V with no remainder. Two mutations (one
    coefficient of S, and the shift M+2) must each be rejected.
    Exit status 0 only if every check passes. Compile: cc -O3 -march=native
-   -fopenmp. */
+   -fopenmp. Berlekamp--Massey runs on one thread; only the row readback is
+   parallel (one row per task). */
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,10 +48,11 @@ static uint8_t root_sum(long n) { /* original coefficient a(n) modulo p, n >= 1 
   return (uint8_t)(t % P);
 }
 
-/* sum_i x[i] y[i] modulo P */
+/* sum_i x[i] y[i] modulo P. Serial on purpose: Berlekamp--Massey calls it
+   once per term, and per-call thread synchronisation on a loaded shared
+   machine made the p=41, e=1.9*10^6 extraction take 22 hours. */
 static long dot(const uint8_t *x, const uint8_t *y, long n) {
   uint64_t total = 0;
-  #pragma omp parallel for reduction(+:total) schedule(static) if (n > 200000)
   for (long b = 0; b < n; b += 32768) {
     long e = b + 32768 < n ? b + 32768 : n;
     uint32_t acc = 0;
@@ -62,7 +64,6 @@ static long dot(const uint8_t *x, const uint8_t *y, long n) {
 /* y[i] = (y[i] + k x[i]) mod P, exact division by P via a 2^24 reciprocal */
 static void axpy(uint8_t *y, const uint8_t *x, long n, uint32_t k) {
   const uint32_t mu = (uint32_t)(((1u << 24) + P - 1) / P), pp = (uint32_t)P;
-  #pragma omp parallel for schedule(static) if (n > 200000)
   for (long i = 0; i < n; i++) {
     uint32_t v = y[i] + k * x[i];
     y[i] = (uint8_t)(v - ((v * mu) >> 24) * pp);

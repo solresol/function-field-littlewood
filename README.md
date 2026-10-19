@@ -58,9 +58,22 @@ covers).
 
 The search uses a continued-fraction reformulation: Delta_p=2N exactly when
 some <t^M (1+t+...+t^(N-1)) Lambda> has a partial quotient of degree N+1.
-Every prime with N>=8 remains undecided. A random-model heuristic
-predicts witnesses near quotient degree p^(N/2), far beyond feasible N>=8
-searches, so empty ranges there are not evidence for N.
+
+**19 October: p=41 is the first N=8 prime decided, and it attains 2N=16.**
+A number wall of the derived stream modulo 41 has a side-8 zero window at
+shift 618,117 and quotient degree 1,916,335. Its lift has degree 15,330,736
+and defect 16, so the Lai–Sprang bound is sharp in characteristic 41. The
+witness is computer-verified three ways (frame equations, Berlekamp–Massey,
+root-sum readback of all terminal and lifted rows), not Lean-checked. The
+same run shows no p=41 terminal window of degree <=65,527 at any shift
+(j-d<=N for d<524,280); the least degree is unknown. The rebuilt
+[`search/number_wall.c`](search/number_wall.c) runs about 35 times faster than
+the 18 October version, with identical output. Below its first 20,000 rows
+the p=41 wall matches the random-wall window density
+(q-1)^3/((q+1)q^(g+2)) for sides 1 to 5. See the
+[19 October addendum](results/2026-10-17-lai-sprang-sharpness.md#19-october-addendum-p41-the-first-n8-prime-attains-2n).
+The other primes with N>=8 remain undecided: under that density p=73 would
+need about 100 times the p=41 work, and N=16 is out of brute-force reach.
 
 The printed exponent in Garrett–Robertson's Conjecture 1.8 conflicts with
 Adiceam–Nesharim–Lunnon's F_3 theorem. Their level-two F_5 series also reaches
