@@ -1,0 +1,63 @@
+{
+  "python": "3.14.4",
+  "dependencies": "standard library",
+  "seed": null,
+  "scope": "transition identity checks; no reachability enumeration",
+  "small_checks": [
+    {
+      "p": 3,
+      "N": 2,
+      "parent_tuples": 35,
+      "child_tuples": 140,
+      "relations_checked": 1400
+    },
+    {
+      "p": 5,
+      "N": 4,
+      "parent_tuples": 35,
+      "child_tuples": 140,
+      "relations_checked": 1400
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "parent_tuples": 35,
+      "child_tuples": 140,
+      "relations_checked": 1400
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "parent_tuples": 35,
+      "child_tuples": 140,
+      "relations_checked": 1400
+    }
+  ],
+  "controls": [
+    {
+      "p": 3,
+      "shift": 1,
+      "square_size": 2,
+      "terminal": true
+    },
+    {
+      "p": 5,
+      "shift": 311,
+      "square_size": 12,
+      "terminal": true
+    },
+    {
+      "p": 5,
+      "shift": 313,
+      "square_size": 12,
+      "terminal": false
+    },
+    {
+      "p": 13,
+      "shift": 1465,
+      "square_size": 80,
+      "terminal": true
+    }
+  ],
+  "runtime_seconds": 3.538999851909466
+}

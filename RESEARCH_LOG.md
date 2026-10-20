@@ -1272,3 +1272,41 @@ automation readback were checked. No code or proof changed; tests were not rerun
   or identify an obstruction. Do not freely pair reachable children. This
   algebraic bridge is complete; choose further formal work from new structural
   evidence rather than repeating bookkeeping or witness exports.
+
+
+## 2026-10-21 (Wednesday, Australia/Sydney): correlated finite-state closure
+
+- Clean main at 5fef89b, expected solresol origin, fetch/FF-only already
+  current; no competing lock. Read memory, roadmap/recent results and actual
+  stream, root-sum, boundary and Lean merge sources. Owned run lock created.
+- Question stated before coding: can adjacent-shift/nearly-square relations
+  close as a jointly realizable tuple under paired binary transitions?
+  Proved closure with eight relations, q mod N and min(k,N). Explicit index
+  formulas keep every child inside one input tuple, including q=0 and empty
+  blocks. Induction from T(0,0) identifies every reachable state with an
+  actual shift/size pair, eliminating independent-sibling false positives.
+- Ordinary consequence: terminal sharpness events are binary-recognizable;
+  existence is decidable for each fixed odd prime by finite reachability.
+  No graph enumeration or uniform accepting path is supplied; the crude
+  bound N(N+1)p^(32N^2) is not a practical complexity claim. Terminal meaning
+  retains the 19 October Proposition 2.3 dependency. No Lean assumption added.
+- Classification: MATHEMATICAL PROGRESS on the successor sharpness question.
+  The auxiliary N-bound remains refuted. No new prime, characteristic-two
+  result, numerical-wall automaticity theorem or established novelty claim.
+- Reused the existing pure merge; bounded checks compare all tuple components
+  to full original-root-sum matrices over p=3,5,13,41 at prescribed small
+  parents and all four transitions. Existing p=5,p=13 and r=1 positive controls
+  pass; shifted/phase/size controls pass. Independent affine reconstruction
+  returns the known p=5 polynomial. No expanded witness or wall search.
+- Python 3.14.4 standard library, exact arithmetic, no randomness. New check
+  command 3.539s; 12 relevant new/existing tests pass in 1.124s. No Lean source,
+  dependencies, catalogue or build changed. Complete proof, commands, ranges
+  and limits in results/2026-10-21-correlated-state.md and companion JSON.
+- Primary LSv1/BPZv1 and ANLv2/GRv2 screens refreshed21Oct. Scoped searches
+  found no later relevant characteristic-two resolution, not proof of absence
+  or priority. Retired binary examples remain retired.
+- Next substantive question: state compression or uniform accepting digit
+  paths; test proposed compression by conflicting continuations of existing
+  full states. Next formal lemma: tuple index closure and word induction,
+  retaining the terminal soundness dependency explicitly. No brute-force
+  state enumeration warranted merely by the new finite bound.

@@ -81,6 +81,18 @@ class BoundaryRelations:
             raise ValueError('require t>=1 and nonnegative, nearly square sizes')
         if max(m, n) <= 1:
             return self.direct(t, m, n, independent=False)[0]
+        children = tuple(self.recursive((t+a+(t+a) % 2)//2,
+                                       (m+1-a)//2, (n+1-(t+a) % 2)//2)
+                         for a in (0, 1))
+        return self.merge(t, children)
+
+    def merge(self, t, children):
+        """Pure parity merge; children are ordered by ROW parity.
+
+        Only t modulo 2N is used. Callers must supply correlated child
+        relations with the appropriate sizes; arbitrary pairings are not
+        certified as actual stream states.
+        """
         p, N, roots = self.p, self.N, self.roots
         width = 3*N  # variables u, v_even, v_odd
         self.max_merge_variables = max(self.max_merge_variables, width)
@@ -88,7 +100,7 @@ class BoundaryRelations:
         for a in (0, 1):
             b = (t+a) % 2  # column parity of the even-index (recursive) block
             other = 1-b
-            child = self.recursive((t+a+b)//2, (m+1-a)//2, (n+1-b)//2)
+            child = children[a]
             # Linear map (u,v0,v1) -> (D_a u - K_k v_other, v_b).
             mapping = [[0]*width for _ in range(2*N)]
             for j, z in enumerate(roots):
@@ -109,7 +121,7 @@ class BoundaryRelations:
             projected.append(w[:N]+v)
         result = basis(projected, p)
         # The proof says internal boundary data cannot disappear on projection.
-        assert len(result) == len(W), ('invisible merge kernel', t, m, n)
+        assert len(result) == len(W), ('invisible merge kernel', t)
         return result
 
     def terminal(self, relation):

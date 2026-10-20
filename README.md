@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Correlated finite-state closure on 21 October 2026
+
+Eight adjacent-shift/size boundary relations, the shift modulo N and a
+saturated size counter close under four simultaneous binary transitions.
+Every reachable state comes from an actual pair of shift and size; siblings
+are never combined independently. This ordinary proof makes terminal
+sharpness events binary-recognizable and their existence decidable for each
+fixed odd prime by finite graph reachability.
+
+This is **mathematical progress on the successor sharpness question**. Exact
+transition checks against original root sums and known p=5/p=13 events pass.
+No reachable graph has been enumerated, no new prime decided, and no
+characteristic-two result or practical complexity bound is claimed. Next work
+should seek a structural reduction or uniform accepting paths. See
+[the proof and checks](results/2026-10-21-correlated-state.md).
+
 ## Bounded boundary relation on 19 October 2026
 
 An ordinary structural lemma reduces the terminal Hankel problem to a relation

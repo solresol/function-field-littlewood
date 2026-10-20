@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Research priorities and progress criteria (20 October update)
+## Research priorities and progress criteria (21 October update)
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -72,13 +72,18 @@ finding rather than promoting it to a firstness claim.
   Terminal existence is the target (0,e_1). Primitive-root-only moments lose
   the known p=5 witness and are rejected. See
   [the 19 October proof](results/2026-10-19-boundary-relation.md).
-- Next bounded structural attempt: close a finite tuple of these relations
-  at adjacent offsets and nearly square sizes under simultaneous binary
-  transitions. Preserve correlations between siblings: freely combining
-  independently reachable child states is not valid. Derive the tuple and
-  transition rules before coding, then use the existing p=5 witness as a
-  positive control. Bounded coordinate dimension is not a feasibility bound
-  on enumerating all states; no reachable-set or new-prime result is proved.
+- The correlated tuple is now closed: eight relations at two shifts and
+  four adjacent row/column sizes, plus q mod N and min(k,N). Four binary
+  transitions preserve simultaneous realizability. Terminal events are
+  binary-recognizable, giving fixed-prime decidability in principle. See
+  [the 21 October ordinary proof](results/2026-10-21-correlated-state.md).
+  No reachable graph has been enumerated; the crude finite bound is enormous.
+- Next bounded structural attempt: seek a smaller sufficient state or a
+  uniform family of accepting digit words. Test whether the square relation,
+  phase and saturated size determine subsequent terminal outputs by looking for
+  collisions among already reached full tuples. Conflicting outputs would
+  refute that compression. Derive the proposed invariant before coding;
+  do not replace this with a larger witness box or unbounded graph traversal.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence
@@ -119,10 +124,12 @@ and exact natural-index reindexing. It includes empty/unequal blocks and r=1.
 Do not repeat this bridge. The no-invisible-kernel, dimension and terminal-target
 claims are still ordinary deductions from Proposition 2.3, not Lean theorems.
 
-The next substantive task is the correlated adjacent-offset/size tuple in
-"Next computation" above. Derive a closure or an informative obstruction before
-choosing more formal work. A later formalisation should target that new lemma;
-do not let incremental recurrence bookkeeping replace the reachability question.
+The 21 October ordinary proof now closes the correlated eight-relation tuple.
+The next formal lemma is its index closure under paired binary digits and
+induction from the scalar initial state, reusing BoundaryRelation's merge.
+This enables a finite-state presentation, not uniform acceptance. Subsequent
+substantive work should reduce the reachable state or construct accepting
+paths; do not repeat the already established closure as a new research result.
 Formalising Proposition 2.3 is a separate substantial project, not an assumed
 input to be disguised as an unconditional terminal theorem.
 
@@ -139,6 +146,17 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-21 (Wednesday computation)
+
+- Proved correlated eight-relation closure under paired binary digits for
+  all odd primes, including zero shift and empty/unequal blocks.
+- Proved binary recognition and fixed-prime decidability of terminal
+  sharpness events; no full reachable graph or new prime was computed.
+- Exact root-sum transition checks, independent p=5 affine reconstruction,
+  p=13 and r=1 controls, and existing boundary regressions pass.
+- Classification: mathematical progress (ordinary structural lemma), not
+  Lean verification, characteristic-two progress or established novelty.
 
 ## Completed on 2026-10-20 (Tuesday formalisation)
 
