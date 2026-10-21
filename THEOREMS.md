@@ -15,6 +15,7 @@ The F_5 sharpness group is pinned to `a4e400f5228a06c3e2097e5c3bc6051d0973a6c2` 
 The fast-checker and p=29,37,53,61 certificate groups are pinned to `3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c` (18 October 2026).
 The reverse-lift/F_13 group is pinned to `93badc486f8d25125785f0decac7ccbbdf3d6a98` (18 October 2026).
 The boundary parity-merge group is pinned to `491cd5a96f6515499dd2c14d60337f72b4cf338b` (20 October 2026).
+The correlated reachability group is pinned to `914c91f6cc97fb48e428f8218664274152fdb3a1` (22 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -41,8 +42,17 @@ axiom audit, archive coverage and registry status.
 | [Natural-number certificate checker](https://github.com/solresol/function-field-littlewood/blob/3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c/FunctionFieldLittlewood/FastCertificate.lean) | sound list dot-product checks to exact certificates and product 2^-8 | Not yet archived |
 | [Refutations for p=29,37,53,61](https://github.com/solresol/function-field-littlewood/blob/3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c/SharpnessCertificates.lean) | non-default target; kernel-checked on raksasa | Not yet archived |
 | [Exact boundary parity recurrence](https://github.com/solresol/function-field-littlewood/blob/491cd5a96f6515499dd2c14d60337f72b4cf338b/FunctionFieldLittlewood/BoundaryRelation.lean#L377) | all-root block factorization, exact merges and endpoint reindexing | Not yet archived |
+| [Correlated boundary-state reachability](https://github.com/solresol/function-field-littlewood/blob/914c91f6cc97fb48e428f8218664274152fdb3a1/FunctionFieldLittlewood/CorrelatedState.lean#L263) | exact paired-word reachability and finite state type for the named stream | Not yet archived |
 
 ## Verification boundary
+
+The 22 October correlated-state group formalises exact digit transitions and
+both directions of reachability for the named infinite stream. It includes a
+finite state type, empty blocks, root phase, size saturation and r=1. This is
+verification of the 21 October ordinary lemma, not new sharpness mathematics.
+Terminal interpretation, uniform accepting paths, effective enumeration and the
+sharper subspace cardinal bound are excluded; see [the scope and audit](results/2026-10-22-correlated-state-lean.md).
+No independent-kernel replay or archive inclusion is claimed for this group.
 
 The 20 October boundary group formalises the algebraic part of the preceding
 ordinary recurrence. Both parity merges and all-root data are proved, with exact

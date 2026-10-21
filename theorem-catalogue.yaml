@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-20'
+updated: '2026-10-22'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -1818,6 +1818,179 @@ theorems:
     source_sha256:
       FunctionFieldLittlewood/BoundaryRelation.lean: 43711b5a29b396062c3a062fd19be99d79499e47a460395c4b5c28705c008ac0
       verification/BoundaryRelationAudit.lean: 0dfbe80b275b87b79ac52bea436017f7f994d11f826cfa8942086923d5ab2135
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: correlated-boundary-reachability
+  title: Exact finite correlated boundary-state reachability
+  status: kernel-checked
+  mathematical_origin: formalisation of the 21 October ordinary structural lemma
+  first_formalisation_priority: unestablished
+  statement: The eight-relation tuple, root phase and saturated size close under paired binary digits.
+    Reachability from the scalar initial tuple is equivalent to being the tuple of an actual nonnegative
+    shift/size pair. The state type is finite over finite coefficients, and the infinite named Lai-Sprang
+    stream discharges the generic recurrence hypotheses.
+  assumptions:
+  - Generic algebra uses a commutative ring and finite decidable root-coordinate type.
+  - The generic closure theorem requires the even recurrence, weighted odd-root formula, root-squaring
+    map, N>0 and all z^N=1; it does not assume the target transition identity.
+  - The finite-state instance additionally requires finite coefficient and coordinate types.
+  - The named-stream specialization assumes prime p and 2^(r+1) dividing p-1, not maximal valuation;
+    Lean r=0 includes the usual valuation-r=1 case.
+  limitations: Uses raw coefficients, not a formal normalized-stream coordinate equivalence. No Proposition
+    2.3, injectivity/dimension theorem, terminal interpretation, executable enumeration, sharper
+    subspace cardinal bound, uniform acceptance, new prime or characteristic-two advance. The finite
+    type contains arbitrary predicate relations; no practical complexity claim.
+  declarations:
+  - name: FunctionFieldLittlewood.CorrelatedState.finiteState
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 137
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.finiteState : ∀ {K : Type u_1} {Ω : Type u_2} {N : ℕ} [Finite K] [Finite Ω],
+        Finite (FunctionFieldLittlewood.CorrelatedState.State K Ω N)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.step_actual
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 174
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.step_actual : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ {N : ℕ} (hN : 0 < N),
+                (∀ (x : Ω), z x ^ N = 1) →
+                  ∀ (q k : ℕ)
+                    (digit : FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit),
+                    FunctionFieldLittlewood.CorrelatedState.step z w σ hN
+                        (FunctionFieldLittlewood.CorrelatedState.actual a z hN q k) digit =
+                      FunctionFieldLittlewood.CorrelatedState.actual a z hN (2 * q + ↑digit.1) (2 * k + ↑digit.2)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.fold_actual
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 191
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.fold_actual : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ {N : ℕ} (hN : 0 < N),
+                (∀ (x : Ω), z x ^ N = 1) →
+                  ∀ (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit))
+                    (q k : ℕ),
+                    List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                        (FunctionFieldLittlewood.CorrelatedState.actual a z hN q k) word =
+                      FunctionFieldLittlewood.CorrelatedState.actual a z hN
+                        (List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (q, k) word).1
+                        (List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (q, k) word).2
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.leading_zero
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 207
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.leading_zero : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ {N : ℕ} (hN : 0 < N),
+                (∀ (x : Ω), z x ^ N = 1) →
+                  ∀ (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit)),
+                    List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                        (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) ((0, 0) :: word) =
+                      List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                        (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) word
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.readPair_surjective
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 216
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      FunctionFieldLittlewood.CorrelatedState.readPair_surjective : ∀ (q k : ℕ),
+        ∃ word, List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (0, 0) word = (q, k)
+    axioms:
+    - propext
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.reachable_iff
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 245
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.reachable_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            (∀ (q : Ω), z (σ q) = z q ^ 2) →
+              ∀ {N : ℕ} (hN : 0 < N),
+                (∀ (x : Ω), z x ^ N = 1) →
+                  ∀ (S : FunctionFieldLittlewood.CorrelatedState.State K Ω N),
+                    (∃ word,
+                        List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                            (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) word =
+                          S) ↔
+                      ∃ q k, FunctionFieldLittlewood.CorrelatedState.actual a z hN q k = S
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.CorrelatedState.stream_reachable_iff
+    file: FunctionFieldLittlewood/CorrelatedState.lean
+    line_at_snapshot: 263
+    introduced_commit: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_type: |-
+      @FunctionFieldLittlewood.CorrelatedState.stream_reachable_iff : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∃ z σ,
+            Function.Injective z ∧
+              (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ j, x = z j) ∧
+                ∀ (S : FunctionFieldLittlewood.CorrelatedState.State (ZMod p) (Fin (2 * 2 ^ r)) (2 * 2 ^ r)),
+                  (∃ word,
+                      List.foldl
+                          (FunctionFieldLittlewood.CorrelatedState.step z
+                            (FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r)) σ ⋯)
+                          (FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                            z ⋯ 0 0)
+                          word =
+                        S) ↔
+                    ∃ q k,
+                      FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯ q
+                          k =
+                        S
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 914c91f6cc97fb48e428f8218664274152fdb3a1
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-22-correlated-build.txt
+    full_build_validation: results/2026-10-22-correlated-validation.json
+    catalogue_audit: results/2026-10-22-correlated-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/CorrelatedState.lean: 319a1d303f3cd6cd48b7ce0ed2d833ca2b42b82fc7bab9e0a55a440f709e9200
+      verification/CorrelatedStateAudit.lean: aad71f1b169f6e16f38448ef322e105d0dd1133f28433d8cf739c02a7582dbb7
   archive:
     zenodo_version: null
     zenodo_doi: null

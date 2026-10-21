@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-22T08:24:41.878856+11:00",
+  "proof_snapshot": "914c91f6cc97fb48e428f8218664274152fdb3a1",
+  "curated_declarations": 7,
+  "audited_declarations": 15,
+  "prior_groups_unchanged": 20,
+  "checks": [
+    "metadata schema passed",
+    "exact Lean types/standard axiom closures",
+    "immutable snapshot bytes and SHA256",
+    "source declaration lines",
+    "prior theorem groups unchanged"
+  ],
+  "classification": "supporting provenance; no mathematical increment"
+}
