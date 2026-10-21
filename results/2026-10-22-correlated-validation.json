@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-22",
+  "checked_at": "2026-10-22T08:23:48.250231+11:00",
+  "base_commit": "cd124e6224b7bb42d572e21d13fb82b384c41e65",
+  "classification": "verification/infrastructure progress; formalises existing ordinary mathematics",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "Python 3.14.4",
+  "seed": null,
+  "checks": [
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "seconds": 7.4880323180696,
+      "exit_code": 0,
+      "output": "results/2026-10-22-correlated-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/CorrelatedStateAudit.lean"
+      ],
+      "seconds": 2.4292086779605597,
+      "exit_code": 0,
+      "output": "results/2026-10-22-correlated-audit.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*boundary*.py",
+        "-v"
+      ],
+      "seconds": 1.2622898559784517,
+      "exit_code": 0,
+      "output": "results/2026-10-22-correlated-tests.txt"
+    }
+  ],
+  "audited_declarations": {
+    "FunctionFieldLittlewood.CorrelatedState.half_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.relation_even": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.relation_odd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.tupleStep_tuple": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.power_phase": [
+      "propext"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.tupleStep_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.finiteState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.size_saturation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.step_actual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.fold_actual": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.reachable_realized": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.leading_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.readPair_surjective": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.reachable_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.CorrelatedState.stream_reachable_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "sha256": {
+    "FunctionFieldLittlewood/CorrelatedState.lean": "319a1d303f3cd6cd48b7ce0ed2d833ca2b42b82fc7bab9e0a55a440f709e9200",
+    "verification/CorrelatedStateAudit.lean": "aad71f1b169f6e16f38448ef322e105d0dd1133f28433d8cf739c02a7582dbb7",
+    "FunctionFieldLittlewood.lean": "cf7d9dfd381a29f04821e9830cb579ad1f577d42f9a5c64b91372cd387b03d29",
+    "results/2026-10-22-correlated-build.txt": "b19088f2f6df45f6127172f774d785476610af2a2d250b98aa394aecb4cd0be7",
+    "results/2026-10-22-correlated-audit.txt": "feb44ece7b07897729f6e06d93b62adaeb5caea3e7ab699fb4d96b24a94e670c",
+    "results/2026-10-22-correlated-tests.txt": "868374573129c9363b3e9bce7a1d95a633a42aecbd05e70aa19bf15e76aacb57"
+  },
+  "limits": [
+    "No new sharpness case or characteristic-two advance",
+    "No terminal interpretation or Proposition 2.3 theorem",
+    "Finite predicate-state type, not executable graph enumeration or subspace cardinal bound",
+    "Existing Challenge placeholder outside audited closures",
+    "No Python algorithm change or expanded search"
+  ]
+}

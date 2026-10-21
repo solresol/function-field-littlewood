@@ -1,0 +1,144 @@
+FunctionFieldLittlewood.CorrelatedState.half_length : ∀ (k : ℕ)
+  (η i parity : FunctionFieldLittlewood.CorrelatedState.Bit),
+  (2 * k + ↑η + ↑i + 1 - ↑parity) / 2 = k + ↑(FunctionFieldLittlewood.CorrelatedState.half η i parity)
+@FunctionFieldLittlewood.CorrelatedState.relation_even : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ (s m n : ℕ),
+          FunctionFieldLittlewood.CorrelatedState.relation a z (2 * s) m n =
+            FunctionFieldLittlewood.CorrelatedState.mergeEven z w σ s
+              (FunctionFieldLittlewood.CorrelatedState.relation a z s ((m + 1) / 2) ((n + 1) / 2))
+              (FunctionFieldLittlewood.CorrelatedState.relation a z (s + 1) (m / 2) (n / 2))
+@FunctionFieldLittlewood.CorrelatedState.relation_odd : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ (s m n : ℕ),
+          FunctionFieldLittlewood.CorrelatedState.relation a z (2 * s + 1) m n =
+            FunctionFieldLittlewood.CorrelatedState.mergeOdd z w σ s
+              (FunctionFieldLittlewood.CorrelatedState.relation a z (s + 1) ((m + 1) / 2) (n / 2))
+              (FunctionFieldLittlewood.CorrelatedState.relation a z (s + 1) (m / 2) ((n + 1) / 2))
+@FunctionFieldLittlewood.CorrelatedState.tupleStep_tuple : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ (q k : ℕ) (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+          FunctionFieldLittlewood.CorrelatedState.tupleStep z w σ q
+              (FunctionFieldLittlewood.CorrelatedState.tuple a z q k) ε η =
+            FunctionFieldLittlewood.CorrelatedState.tuple a z (2 * q + ↑ε) (2 * k + ↑η)
+@FunctionFieldLittlewood.CorrelatedState.power_phase : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K] {N : ℕ}
+  (z : Ω → K), (∀ (x : Ω), z x ^ N = 1) → ∀ (q c : ℕ) (x : Ω), z x ^ (q % N + c) = z x ^ (q + c)
+@FunctionFieldLittlewood.CorrelatedState.tupleStep_phase : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] {N : ℕ} (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (x : Ω), z x ^ N = 1) →
+    ∀ (q : ℕ) (T : FunctionFieldLittlewood.CorrelatedState.Tuple K Ω)
+      (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+      FunctionFieldLittlewood.CorrelatedState.tupleStep z w σ (q % N) T ε η =
+        FunctionFieldLittlewood.CorrelatedState.tupleStep z w σ q T ε η
+@FunctionFieldLittlewood.CorrelatedState.finiteState : ∀ {K : Type u_1} {Ω : Type u_2} {N : ℕ} [Finite K] [Finite Ω],
+  Finite (FunctionFieldLittlewood.CorrelatedState.State K Ω N)
+FunctionFieldLittlewood.CorrelatedState.size_saturation : ∀ (N k η : ℕ), min (2 * min k N + η) N = min (2 * k + η) N
+@FunctionFieldLittlewood.CorrelatedState.step_actual : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ {N : ℕ} (hN : 0 < N),
+          (∀ (x : Ω), z x ^ N = 1) →
+            ∀ (q k : ℕ)
+              (digit : FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit),
+              FunctionFieldLittlewood.CorrelatedState.step z w σ hN
+                  (FunctionFieldLittlewood.CorrelatedState.actual a z hN q k) digit =
+                FunctionFieldLittlewood.CorrelatedState.actual a z hN (2 * q + ↑digit.1) (2 * k + ↑digit.2)
+@FunctionFieldLittlewood.CorrelatedState.fold_actual : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ {N : ℕ} (hN : 0 < N),
+          (∀ (x : Ω), z x ^ N = 1) →
+            ∀ (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit))
+              (q k : ℕ),
+              List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                  (FunctionFieldLittlewood.CorrelatedState.actual a z hN q k) word =
+                FunctionFieldLittlewood.CorrelatedState.actual a z hN
+                  (List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (q, k) word).1
+                  (List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (q, k) word).2
+@FunctionFieldLittlewood.CorrelatedState.reachable_realized : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ {N : ℕ} (hN : 0 < N),
+          (∀ (x : Ω), z x ^ N = 1) →
+            ∀ (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit)),
+              ∃ q k,
+                List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                    (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) word =
+                  FunctionFieldLittlewood.CorrelatedState.actual a z hN q k
+@FunctionFieldLittlewood.CorrelatedState.leading_zero : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ {N : ℕ} (hN : 0 < N),
+          (∀ (x : Ω), z x ^ N = 1) →
+            ∀ (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit)),
+              List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                  (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) ((0, 0) :: word) =
+                List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                  (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) word
+FunctionFieldLittlewood.CorrelatedState.readPair_surjective : ∀ (q k : ℕ),
+  ∃ word, List.foldl FunctionFieldLittlewood.CorrelatedState.readPair (0, 0) word = (q, k)
+@FunctionFieldLittlewood.CorrelatedState.reachable_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : CommRing K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      (∀ (q : Ω), z (σ q) = z q ^ 2) →
+        ∀ {N : ℕ} (hN : 0 < N),
+          (∀ (x : Ω), z x ^ N = 1) →
+            ∀ (S : FunctionFieldLittlewood.CorrelatedState.State K Ω N),
+              (∃ word,
+                  List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ hN)
+                      (FunctionFieldLittlewood.CorrelatedState.actual a z hN 0 0) word =
+                    S) ↔
+                ∃ q k, FunctionFieldLittlewood.CorrelatedState.actual a z hN q k = S
+@FunctionFieldLittlewood.CorrelatedState.stream_reachable_iff : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∃ z σ,
+      Function.Injective z ∧
+        (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ j, x = z j) ∧
+          ∀ (S : FunctionFieldLittlewood.CorrelatedState.State (ZMod p) (Fin (2 * 2 ^ r)) (2 * 2 ^ r)),
+            (∃ word,
+                List.foldl
+                    (FunctionFieldLittlewood.CorrelatedState.step z
+                      (FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r)) σ ⋯)
+                    (FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                      z ⋯ 0 0)
+                    word =
+                  S) ↔
+              ∃ q k,
+                FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯ q
+                    k =
+                  S
+'FunctionFieldLittlewood.CorrelatedState.half_length' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.relation_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.relation_odd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.tupleStep_tuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.power_phase' depends on axioms: [propext]
+'FunctionFieldLittlewood.CorrelatedState.tupleStep_phase' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.finiteState' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.size_saturation' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.step_actual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.fold_actual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.reachable_realized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.leading_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.readPair_surjective' depends on axioms: [propext, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.CorrelatedState.stream_reachable_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

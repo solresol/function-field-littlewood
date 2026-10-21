@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Correlated reachability formalised on 22 October 2026
+
+[CorrelatedState.lean](FunctionFieldLittlewood/CorrelatedState.lean) now proves
+exact paired-digit closure and both directions of reachability: states reached
+from the scalar initial tuple are precisely the actual shift/size tuples.
+The named infinite stream discharges the recurrence hypotheses, including r=1;
+empty blocks, root phase and saturated size are preserved. The state type is
+finite over finite coefficients.
+
+This is **verification/infrastructure progress**, formalising the 21 October
+ordinary result. Terminal interpretation, uniform accepting paths, effective
+graph enumeration and the sharper subspace cardinal bound remain outside this
+Lean theorem. The default build, declaration audit and focused regressions pass.
+See [the precise scope and checks](results/2026-10-22-correlated-state-lean.md).
+Next substantive work is state compression or uniform acceptance.
+
 ## Correlated finite-state closure on 21 October 2026
 
 Eight adjacent-shift/size boundary relations, the shift modulo N and a
@@ -126,7 +142,7 @@ argument. It enables formal use of the recurrence in the successor sharpness
 question; it proves no new sharpness case or characteristic-two result.
 Injectivity, dimensions and terminal detection still depend on the ordinary
 argument using Lai–Sprang Proposition 2.3; they are not part of this Lean result.
-Next substantive work remains correlated reachability. See
+The 22 October result closes correlated reachability separately. See
 [the scope and checks](results/2026-10-20-boundary-merge.md).
 
 ## Weekly integration on 18 October 2026

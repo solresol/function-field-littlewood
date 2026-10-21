@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Research priorities and progress criteria (21 October update)
+## Research priorities and progress criteria (22 October update)
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -100,7 +100,7 @@ finding rather than promoting it to a firstness claim.
   witness in Lean would need a new certificate method (about 3.7*10^12
   terminal products).
 - Keep characteristic two as the remaining finite-field main-conjecture
-  frontier in the primary sources checked on 18 October. Before selecting any
+  frontier in the primary sources checked on 22 October. Before selecting any
   new candidate, exclude rational/quadratic generating series and known
   unbounded-window constructions. Thue–Morse, regular paperfolding and
   overlapping-11 Rudin–Shapiro stay retired; no further scale expansion.
@@ -124,12 +124,15 @@ and exact natural-index reindexing. It includes empty/unequal blocks and r=1.
 Do not repeat this bridge. The no-invisible-kernel, dimension and terminal-target
 claims are still ordinary deductions from Proposition 2.3, not Lean theorems.
 
-The 21 October ordinary proof now closes the correlated eight-relation tuple.
-The next formal lemma is its index closure under paired binary digits and
-induction from the scalar initial state, reusing BoundaryRelation's merge.
-This enables a finite-state presentation, not uniform acceptance. Subsequent
-substantive work should reduce the reachable state or construct accepting
-paths; do not repeat the already established closure as a new research result.
+The 22 October CorrelatedState proof now formalises the eight-relation tuple's
+exact digit transitions, phase/saturation updates, word induction and converse
+binary encoding. Reachable states are exactly actual tuples; the state type is
+finite, and the infinite named stream supplies all recurrence hypotheses.
+This is verification/infrastructure progress, not a new mathematical increment.
+The terminal interpretation, executable enumeration and sharper cardinal bound
+remain outside this theorem. See [the scope](results/2026-10-22-correlated-state-lean.md).
+Next formal work should follow the compression/accepting-path evidence from the
+next substantive computation; do not repeat closure or digit bookkeeping.
 Formalising Proposition 2.3 is a separate substantial project, not an assumed
 input to be disguised as an unconditional terminal theorem.
 

@@ -1310,3 +1310,33 @@ automation readback were checked. No code or proof changed; tests were not rerun
   full states. Next formal lemma: tuple index closure and word induction,
   retaining the terminal soundness dependency explicitly. No brute-force
   state enumeration warranted merely by the new finite bound.
+
+
+## 2026-10-22 (Thursday, Australia/Sydney): correlated reachability in Lean
+
+- Clean main cd124e6, expected origin, fetch/FF-only current; no competing lock.
+  Read memory, current notes/log and actual stream/merge/tuple/oracle sources.
+  Stated the exact paired-transition and word-realisation question before coding.
+- Proved exact eight-relation closure, root-phase reduction, capped-size update,
+  digit-word induction, leading-zero invariance and the converse binary encoding.
+  Reachable states are exactly actual shift/size tuples. The finite-state type
+  and infinite named-stream specialization are proved; r=1 is retained.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on the 21 October ordinary
+  structural lemma. No new mathematical sharpness result, prime, characteristic-two
+  construction or novelty claim. No target recurrence assumed. Proposition 2.3,
+  terminal interpretation, effective graph enumeration and the sharper subspace
+  cardinal bound remain outside Lean. Raw-stream/normalized-coordinate distinction
+  retained. No independent-kernel replay or large-certificate rebuild.
+- Stable Lean/mathlib pins unchanged. Default build passed 7.488s; all 15 new
+  theorem/instance axiom closures standard-only, audit 2.429s. Existing Challenge
+  statement placeholder lies outside those closures. Twelve focused boundary
+  regressions passed in 1.262s command time. No Python algorithm or search change.
+  Development elaboration/typeclass/rewrite issues repaired; no mathematical
+  hypothesis failed. Complete diffs inspected. Detailed scope, commands, hashes
+  and logs in results/2026-10-22-correlated-state-lean.md and companion files.
+- Refreshed primary LS2606.00633v1/BPZ2608.22078v1/ANL1806.04478v2/GR2405.14454v2.
+  Scoped arXiv search found no later relevant characteristic-two resolution;
+  this is not absence/priority proof. No retired binary candidate was expanded.
+- Next substantive task remains compression by conflicting continuations among
+  already reached tuples, or uniform accepting digit words. Closure is complete;
+  choose further formal work from new structural evidence instead of repeating it.
