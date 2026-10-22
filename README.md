@@ -720,19 +720,22 @@ identify the entire infinite rational-function sum, prove the all-degree
 bound, or decide the terminal N-or-2N alternative.
 See [the theorem scope and checks](results/2026-10-06-root-stream.md).
 
-Lean and mathlib are pinned to `v4.27.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
+Lean and mathlib are pinned to `v4.35.0`; `lake-manifest.json` records exact dependency commits. The imported mathlib matrix and modular-arithmetic sources and their Apache-2.0 licence were inspected before reuse.
 
 ```sh
-# First setup (requires elan, Git and network access)
-MATHLIB_NO_CACHE_ON_UPDATE=1 lake update
-lake exe cache get Mathlib.Data.ZMod.Basic Mathlib.Data.Matrix.Mul Mathlib.RingTheory.LaurentSeries
-lake build
+# Standalone Linux x86_64 setup and build (Python 3, Git, curl and network)
+# Uses pinned elan, the checked-in toolchain/manifest and a targeted cache.
+python3 scripts/bootstrap_lean.py --run lake build
 
 # Python 3.9+ standard library only; no random seed
 python3 search/lai_sprang_finite_search.py
 python3 -m unittest discover -s tests -v
 python3 -m search.export_lean_certificates --check
 ```
+
+For cloud task invocations, runtime exports, resource limits and failure handling,
+see [the standalone bootstrap instructions](docs/cloud-bootstrap.md). The bootstrap
+does not update dependencies, modify shell profiles or require another checkout.
 
 The original tests independently expand the original root sums for 2,560 coefficients and check saved witnesses. They also check that a cutoff is unresolved, scalar normalisation preserves the index, and malformed inputs are rejected.
 
