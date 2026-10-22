@@ -1,6 +1,6 @@
 # Research roadmap
 
-## Research priorities and progress criteria (22 October update)
+## Research priorities and progress criteria (23 October update)
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -78,12 +78,17 @@ finding rather than promoting it to a firstness claim.
   binary-recognizable, giving fixed-prime decidability in principle. See
   [the 21 October ordinary proof](results/2026-10-21-correlated-state.md).
   No reachable graph has been enumerated; the crude finite bound is enormous.
-- Next bounded structural attempt: seek a smaller sufficient state or a
-  uniform family of accepting digit words. Test whether the square relation,
-  phase and saturated size determine subsequent terminal outputs by looking for
-  collisions among already reached full tuples. Conflicting outputs would
-  refute that compression. Derive the proposed invariant before coding;
-  do not replace this with a larger witness box or unbounded graph traversal.
+- **23 October compression obstruction:** T(31,4) and T(63,4) over F_5
+  have the same phase, size and square relation (also next-shift square),
+  but the common digit word (0,1),(0,0),(1,0) has opposite terminal outputs.
+  Square-only and adjacent-shift-square-only compression are retired; even
+  exact k cannot repair this collision. See
+  [the verified obstruction](results/2026-10-23-square-state-obstruction.md).
+- Next bounded structural attempt: can the four square relations at shifts
+  q+1,q+2 and sizes k,k+1 reconstruct the rectangular components or determine
+  terminal continuations? Derive a bordered-relation argument, including
+  singular blocks, before testing collisions. Do not assume all eight relations
+  are necessary, launch unbounded graph enumeration, or extend witness boxes.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence

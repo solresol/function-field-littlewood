@@ -1340,3 +1340,30 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next substantive task remains compression by conflicting continuations among
   already reached tuples, or uniform accepting digit words. Closure is complete;
   choose further formal work from new structural evidence instead of repeating it.
+
+
+## 2026-10-23 (Friday, Australia/Sydney): obstruction to square-state compression
+
+- Prepared runtime check passed without installs/downloads. Clean generated work
+  branch b60cf9a, expected origin; fetched, checked ancestry, preserved work and
+  created tracking main. Fast-forward-only merge current; no competing run.
+- Stated square/phase/capped-size sufficiency question before implementation.
+  Bounded exact F_5 collision test found T(31,4), T(63,4): same compressed
+  state, but word (0,1),(0,0),(1,0) leads to rejection/acceptance. The next-shift
+  square also agrees initially, and k agrees exactly. This disproves both
+  proposed compressions; it does not prove all eight relations necessary.
+- Classification: MATHEMATICAL PROGRESS, a finite verified obstruction to a
+  meaningful structural reduction towards Delta_p=2N. No new prime, global
+  sharpness theorem, characteristic-two construction, Lean or novelty claim.
+- Fixed reproducer independently checks all components from original root sums,
+  all target decisions via affine solving, accepting dot products and rejection
+  duals. r=1 control retained. Twelve focused regressions pass (0.625s).
+  Python 3.12.14 standard library, no randomness; discovery 33.802s, retained
+  check under one second. Exact ranges, endpoints and commands in the report.
+- Primary versions LSv1/BPZv1/ANLv2/GRv2 refreshed. Newly noticed Hofer
+  2610.12691v1 explicitly retains characteristic two as the unresolved case.
+  Scoped search is no absence/priority proof; retired candidates not expanded.
+- Next: four-square bordered-relation reconstruction, treating singular blocks;
+  test continuations only after deriving the hypothesis. No dependency or Lean
+  source changes; Challenge placeholder remains outside evidence. Complete
+  report and fixed check: results/2026-10-23-square-state-obstruction.md and JSON.
