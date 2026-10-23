@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-22'
+updated: '2026-10-24'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -1998,6 +1998,152 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: uniform-geometric-terminal-lift
+  title: Uniform dyadic terminal-certificate lift and product
+  status: kernel-checked
+  mathematical_origin: formalisation of the 5 October ordinary reverse-lift argument
+  first_formalisation_priority: unestablished
+  statement: For geometric-factor multiples, the all-row dyadic lift identity holds through scale N. Exact
+    certificates transport both endpoints and first nonzero index; an exact terminal certificate j=deg
+    S+2 yields the actual polynomial product 2^(-2N).
+  assumptions:
+  - Prime p; N=2^(r+1) divides p-1; H=2^r. Maximality of the dyadic valuation is unnecessary, and r=0
+    includes the usual r=1 comparison.
+  - The all-row identity assumes F_N=1+X+...+X^(N-1) divides S, 0<=s<=r+1 and any natural absolute row,
+    including zero; S may be zero.
+  - Certificate transport additionally assumes an endpoint-admissible exact certificate at a nonnegative
+    shift; terminal_product assumes its exact first index is deg S+2.
+  - The binomial odd-filter lemma instead requires X^H+1 divides S.
+  limitations: Verification/infrastructure progress, not new sharpness mathematics. No existence of terminal
+    certificates, boundary-target-to-exact-certificate interpretation, Proposition 2.3, global optimality
+    cap, characteristic-two result or full rational-sum identification is proved or assumed as an axiom.
+    No independent-kernel replay or archive coverage.
+  declarations:
+  - name: FunctionFieldLittlewood.TerminalLift.odd_filter_of_dvd
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 23
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.odd_filter_of_dvd : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∀ (P : Polynomial (ZMod p)),
+            Polynomial.X ^ 2 ^ r + 1 ∣ P →
+              ∀ (w : ℕ),
+                FunctionFieldLittlewood.WindowMoments.filt P
+                    (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) w =
+                  0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalLift.geometric_eval_zero
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 35
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.geometric_eval_zero : ∀ {K : Type u_1} [inst : Field K] {N : ℕ}
+        (P : Polynomial K),
+        FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ P →
+          ∀ (z : K), z ^ N = 1 → z ≠ 1 → Polynomial.eval z P = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalLift.geometric_dyadic_odd_rows
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 48
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.geometric_dyadic_odd_rows : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∀ (P : Polynomial (ZMod p)),
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+              ∀ s ≤ r,
+                ∀ (w : ℕ),
+                  FunctionFieldLittlewood.WindowMoments.filt ((Polynomial.expand (ZMod p) (2 ^ s)) P)
+                      (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) w =
+                    0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 77
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∀ (P : Polynomial (ZMod p)),
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+              ∀ s ≤ r + 1,
+                ∀ (v : ℕ),
+                  FunctionFieldLittlewood.WindowMoments.filt ((Polynomial.expand (ZMod p) (2 ^ s)) P)
+                      (FunctionFieldLittlewood.laiSprangStream p (r + 1)) v =
+                    if 2 ^ s ∣ v then
+                      FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (v / 2 ^ s)
+                    else 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalLift.certificate_dyadic
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 137
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.certificate_dyadic : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∀ (P : Polynomial (ZMod p)),
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+              ∀ (M j s : ℕ),
+                s ≤ r + 1 →
+                  FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                      (FunctionFieldLittlewood.TerminalLift.coefficients P) M j →
+                    FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                      (FunctionFieldLittlewood.TerminalLift.coefficients ((Polynomial.expand (ZMod p) (2 ^ s)) P)) (2 ^ s * M)
+                      (2 ^ s * j)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalLift.terminal_product
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    line_at_snapshot: 174
+    introduced_commit: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalLift.terminal_product : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∀ (P : Polynomial (ZMod p)),
+            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+              ∀ (M : ℕ),
+                FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                    (FunctionFieldLittlewood.TerminalLift.coefficients P) M (P.natDegree + 2) →
+                  FunctionFieldLittlewood.polynomialLittlewoodProduct (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                      (Polynomial.X ^ (2 ^ (r + 1) * M) * (Polynomial.expand (ZMod p) (2 ^ (r + 1))) P) =
+                    2 ^ (-2 * ↑(2 ^ (r + 1)))
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-24-terminal-lift-build.txt
+    full_build_validation: results/2026-10-24-terminal-lift-validation.json
+    catalogue_audit: results/2026-10-24-terminal-lift-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/TerminalLift.lean: a06134d10aa7cba73f74356c58ddd7c9380b4e458b5931d6a9b6ee2a2626e49e
+      verification/TerminalLiftAudit.lean: ed658751c65a34ff9943827ddc7d375efbd9c28797596d97b43a55c8d64a7203
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -2015,8 +2161,9 @@ unformalised_and_open:
   record: results/2026-10-05-terminal-lift.md
   remaining: On 17-18 October the 2N branch was selected for p=5,13,29,37,53,61 by explicit witnesses
     (all six in Lean, with the reverse lift formalised in certificate form); p=41 at N=8
-    was computer-verified on 19 October but is not Lean-checked. Other N>=8 primes remain undecided. The descent-side equivalence and the literature-dependent cap are not
-    Lean-formalised.
+    was computer-verified on 19 October but is not Lean-checked. Other N>=8 primes remain undecided. The uniform geometric-factor lift from exact terminal certificates is now Lean-proved
+    in uniform-geometric-terminal-lift (24 October). Boundary acceptance to an exact certificate,
+    the descent-side equivalence and the literature-dependent cap remain outside Lean.
 - id: all-degree-bound
   status: refuted
   statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.

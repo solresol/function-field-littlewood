@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-24T08:48:29.700057+11:00",
+  "proof_snapshot": "846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f",
+  "curated_declarations": 6,
+  "audited_declarations": 9,
+  "prior_groups_unchanged": 21,
+  "checks": [
+    "YAML parsed; existing theorem-group field structure and main-result field structure preserved",
+    "exact Lean-reported types and standard-axiom closures",
+    "immutable proof-snapshot bytes and source SHA256",
+    "exact source declaration lines",
+    "all previous theorem groups and main-result declarations unchanged",
+    "no archive/registration status changed",
+    "full metadata diff inspected"
+  ],
+  "schema_note": "No external metadata schema downloaded; checks cover YAML parsing and existing local structure, not a fresh official JSON-schema validation.",
+  "classification": "supporting provenance; no mathematical increment"
+}

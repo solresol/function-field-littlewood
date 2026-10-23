@@ -12,7 +12,8 @@ project:
     F_13 multipliers whose Littlewood products are 2^-8, refuting the sharper auxiliary 2^-N
     bound, and the reverse lift of exact certificates. Also formalises the all-root
     boundary parity recurrence with exact rectangular and empty endpoints, and exact
-    correlated eight-relation reachability under paired binary words.
+    correlated eight-relation reachability under paired binary words. The uniform geometric-factor
+    reverse lift transports exact terminal certificates to product 2^(-2N) at every allowed dyadic scale.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -59,6 +60,9 @@ status:
     and infinite named stream); ReverseLift proves certificate doubling from vanishing odd rows
     and the F_13 counterexample; FastCertificate proves a natural-number certificate checker
     sound, and the non-default SharpnessCertificates target applies it to p=29,37,53,61.
+    TerminalLift proves geometric-factor odd-row annihilation, the all-row identity through scale N,
+    and exact certificate/product transport uniformly in the prime. Its terminal certificate
+    with j=deg S+2 is an explicit input, not an assumed existence theorem or Proposition 2.3.
     BoundaryRelation proves all-root data, odd-block factorisation, squaring transport,
     exact even/odd merges and natural-index parity reindexing; its generic recurrence
     hypotheses are discharged by the named stream identities. CorrelatedState proves exact
@@ -76,6 +80,30 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.TerminalLift.certificate_dyadic
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.TerminalLift.terminal_product
+    file: FunctionFieldLittlewood/TerminalLift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.CorrelatedState.step_actual
     file: FunctionFieldLittlewood/CorrelatedState.lean
     sorry_count: 0

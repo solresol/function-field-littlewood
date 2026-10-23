@@ -16,6 +16,7 @@ The fast-checker and p=29,37,53,61 certificate groups are pinned to `3b239bf062a
 The reverse-lift/F_13 group is pinned to `93badc486f8d25125785f0decac7ccbbdf3d6a98` (18 October 2026).
 The boundary parity-merge group is pinned to `491cd5a96f6515499dd2c14d60337f72b4cf338b` (20 October 2026).
 The correlated reachability group is pinned to `914c91f6cc97fb48e428f8218664274152fdb3a1` (22 October 2026).
+The uniform terminal-lift group is pinned to `846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f` (24 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -43,8 +44,18 @@ axiom audit, archive coverage and registry status.
 | [Refutations for p=29,37,53,61](https://github.com/solresol/function-field-littlewood/blob/3b239bf062a8a23c6d3f572b0c4f30e5a7540d1c/SharpnessCertificates.lean) | non-default target; kernel-checked on raksasa | Not yet archived |
 | [Exact boundary parity recurrence](https://github.com/solresol/function-field-littlewood/blob/491cd5a96f6515499dd2c14d60337f72b4cf338b/FunctionFieldLittlewood/BoundaryRelation.lean#L377) | all-root block factorization, exact merges and endpoint reindexing | Not yet archived |
 | [Correlated boundary-state reachability](https://github.com/solresol/function-field-littlewood/blob/914c91f6cc97fb48e428f8218664274152fdb3a1/FunctionFieldLittlewood/CorrelatedState.lean#L263) | exact paired-word reachability and finite state type for the named stream | Not yet archived |
+| [Uniform geometric terminal lift](https://github.com/solresol/function-field-littlewood/blob/846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f/FunctionFieldLittlewood/TerminalLift.lean#L174) | all-scale exact certificates to product 2^(-2N); existence is an input | Not yet archived |
 
 ## Verification boundary
+
+The 24 October terminal-lift group formalises the complete dyadic reverse lift
+for geometric-factor multiples. An exact terminal certificate j=deg S+2 yields
+the actual polynomial product 2^(-2N), including r=1, with no per-instance odd-row
+checks. The exact input certificate is a hypothesis; existence, the boundary-target
+interpretation and the global cap remain outside this theorem. This verifies the
+5 October ordinary argument; [scope and checks](results/2026-10-24-terminal-lift.md)
+record the standard-axiom audit, fixed root-sum controls and focused regressions.
+No independent-kernel replay, archive inclusion or novelty claim is made.
 
 The 22 October correlated-state group formalises exact digit transitions and
 both directions of reachability for the named infinite stream. It includes a
