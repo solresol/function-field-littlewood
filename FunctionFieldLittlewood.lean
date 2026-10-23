@@ -24,6 +24,7 @@ public import FunctionFieldLittlewood.BoundaryRelation
 public import FunctionFieldLittlewood.CorrelatedState
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
+public import FunctionFieldLittlewood.TerminalLift
 public import FunctionFieldLittlewood.FastCertificate
 
 @[expose] public section

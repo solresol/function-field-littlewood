@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-24",
+  "checked_at": "2026-10-24T08:46:28.433933+11:00",
+  "base_commit": "61c0c333821a4aeb90c4f79302ca881c8f58f05b",
+  "classification": "verification/infrastructure progress; formalises the 5 October ordinary reverse lift",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "seed": null,
+  "startup_check": {
+    "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+    "exit_code": 0,
+    "scope": "recorded pins, readiness, exact toolchains/dependency HEADs, clean tracked dependencies and representative imports; observed before setup"
+  },
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "pins_unchanged": true,
+  "dependencies_clean_and_exact": true,
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 1800,
+    "runner": "/workspace/shared/theorem-provers/prepare.py: m.run, env_for(littlewood)"
+  },
+  "checks": [
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 6.006,
+      "output": "results/2026-10-24-terminal-lift-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/TerminalLiftAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.003,
+      "output": "results/2026-10-24-terminal-lift-audit.txt"
+    },
+    {
+      "label": "regressions",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_lai_sprang_sharpness.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.001,
+      "output": "results/2026-10-24-terminal-lift-tests.txt"
+    },
+    {
+      "label": "independent-root-sum-controls",
+      "command": [
+        "python3",
+        "-m",
+        "search.terminal_lift_check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.013227743000015835,
+      "output": "results/2026-10-24-terminal-lift-check.json",
+      "identity_checks": 2885
+    }
+  ],
+  "audited_declarations": {
+    "FunctionFieldLittlewood.TerminalLift.odd_filter_of_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.geometric_eval_zero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.geometric_dyadic_odd_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.coefficients_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.fractionalCoeff_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.certificate_dyadic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalLift.terminal_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "finite_scope": "Existing fixed row identities/negative controls, no Python changes or expanded search; finite checks are not the theorem proof.",
+  "weekly_human_review": "Not found in saved checkout; first check may not yet be available. Reused dated 23 October source record; targeted Lai-Sprang v1 verification only.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2606.00633v1",
+      "version": "v1 (30 May 2026)",
+      "access_date": "2026-10-24 Australia/Sydney",
+      "role": "functional equation/root coefficient identity; full odd-characteristic theorem is prior literature, not formalised here"
+    },
+    {
+      "url": "https://arxiv.org/html/2606.00633v1#S2",
+      "version": "v1",
+      "access_date": "2026-10-24 Australia/Sydney",
+      "role": "checked Proposition 2.3 hypotheses; this proposition is not an axiom or dependency of the new proof"
+    }
+  ],
+  "limitations": [
+    "Exact terminal certificate with nonzero endpoints and j=deg S+2 is an explicit input.",
+    "No proof of terminal existence, boundary-target-to-exact-certificate interpretation, global 2N cap, characteristic-two result or novelty.",
+    "The named support stream is not identified with the entire infinite rational-function sum.",
+    "No independent-kernel replay or large-certificate rerun.",
+    "Existing Challenge.lean:37 sorry is outside the audited closure."
+  ],
+  "sha256": {
+    "FunctionFieldLittlewood/TerminalLift.lean": "a06134d10aa7cba73f74356c58ddd7c9380b4e458b5931d6a9b6ee2a2626e49e",
+    "FunctionFieldLittlewood.lean": "e5dfc1f9d166afc3f34d0f51f7aad9b09873fdd0f888c9d81b682183593df1c1",
+    "verification/TerminalLiftAudit.lean": "ed658751c65a34ff9943827ddc7d375efbd9c28797596d97b43a55c8d64a7203",
+    "results/2026-10-24-terminal-lift-build.txt": "ad25620baf97aaedd9795f0795cd35119d33dd76ba55bb4d7085078f656fa866",
+    "results/2026-10-24-terminal-lift-audit.txt": "cef9687a66447b1a351a33befa6551202f6c433435f90bcb0757b19fa81f4433",
+    "results/2026-10-24-terminal-lift-tests.txt": "1d010601734e605c25b632eb4266ac18685973ce37043fc7b4bf5d5d4198c284",
+    "results/2026-10-24-terminal-lift-check.json": "7e44802b5df800f31861c85781b01e7e2ccee6cac0989d9fb837757d8df823aa"
+  }
+}

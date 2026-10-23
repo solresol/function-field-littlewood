@@ -1367,3 +1367,35 @@ automation readback were checked. No code or proof changed; tests were not rerun
   test continuations only after deriving the hypothesis. No dependency or Lean
   source changes; Challenge placeholder remains outside evidence. Complete
   report and fixed check: results/2026-10-23-square-state-obstruction.md and JSON.
+
+
+## 2026-10-24 (Saturday, Australia/Sydney): uniform terminal-certificate lift
+
+- Read saved Start, bootstrap recovery, actual sources, roadmap and recent
+  results. Prepared-runtime check passed before setup; no installation/download,
+  dependency/pin changes or other repository work. Clean work at 61c0c33 matched
+  fetched origin/main; preserved work and created tracking main, FF current.
+- Stated the exact all-scale odd-row/terminal-product question before editing.
+  TerminalLift.lean now derives geometric-factor odd-row annihilation at every
+  intermediate scale, the all-row identity through scale N, exact-certificate
+  transport and product 2^(-2N) from j=deg S+2. Both endpoints are transported;
+  r=1, zero polynomial/row and arbitrary nonnegative shifts are included.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on the 5 October ordinary
+  proof. No new mathematical sharpness result, prime decision, characteristic-two
+  construction or priority claim. Terminal existence and boundary acceptance to
+  exact certificate still need separate proofs; Proposition 2.3 is not assumed
+  as an axiom or counted as formalised.
+- Default Lean 4.35.0 build passed (6.006s); all nine new declarations audited
+  with standard axioms only (4.003s). New source has no warning/sorry/added axiom/
+  native_decide. Challenge's existing placeholder is outside the proof closure.
+  Audit derives the r=1 product and checks omitted-factor/over-scale controls.
+  Existing root-sum check: 2,885 fixed identities (0.013s); 11 sharpness tests
+  passed (0.209s). No Python code or ranges changed, no witness search expanded.
+- Weekly HUMAN literature findings were not available in the saved checkout;
+  first review may not yet have run. Reused 23 October source record, with only
+  targeted Lai–Sprang v1 functional-equation/hypothesis verification today.
+  No fresh broad search, external-host access or schedule changes.
+- Next substantive task remains singular-inclusive four-square reconstruction
+  or uniform accepting paths. Reuse the completed lift; no repeated bridges or
+  routine instance exports. Full statements, checks and limitations are in
+  results/2026-10-24-terminal-lift.md and companion evidence files.

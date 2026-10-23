@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Uniform terminal lift formalised on 24 October 2026
+
+[TerminalLift.lean](FunctionFieldLittlewood/TerminalLift.lean) proves every
+dyadic scale of the reverse lift for geometric-factor multiples, including
+zero rows/polynomials and the r=1 comparison. An endpoint-admissible exact
+terminal certificate with first index deg S+2 now gives the actual polynomial
+product 2^(-2N), uniformly in the prime, without per-instance odd-row checks.
+
+This is **verification/infrastructure progress** on the 5 October ordinary
+argument. Terminal existence and the boundary-target-to-exact-certificate bridge
+remain open formal steps; no global sharpness or characteristic-two result is
+claimed. The default build, nine-declaration axiom audit, boundary controls and
+focused regressions pass. The weekly HUMAN literature findings were unavailable
+in this checkout. See [the scope and evidence](results/2026-10-24-terminal-lift.md).
+Next substantive work remains four-square reconstruction or uniform acceptance.
+
 ## Correlated reachability formalised on 22 October 2026
 
 [CorrelatedState.lean](FunctionFieldLittlewood/CorrelatedState.lean) now proves

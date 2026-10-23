@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (23 October update)
+## Research priorities and progress criteria (24 October update)
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -164,14 +164,22 @@ next substantive computation; do not repeat closure or digit bookkeeping.
 Formalising Proposition 2.3 is a separate substantial project, not an assumed
 input to be disguised as an unconditional terminal theorem.
 
-The next focused lemma, if computation supplies no more consequential target,
-is: for H=N/2 and (1+X^H) dividing S, every odd-row filter of S vanishes.
-Use RootStream.stream_filtered_root_enumeration and evaluation at roots of
-X^H+1. Then track this divisibility through dyadic substitutions to derive
-all scales of the reverse lift for F_1 multiples without per-instance residue
-checks. This enables the formal terminal-witness-to-defect-2N implication,
-not a universal existence theorem. Inspect existing definitions before coding;
-this is verification of the 5 October argument, not new mathematics.
+**24 October: the uniform reverse lift is complete.** TerminalLift.lean proves
+odd-row annihilation for X^(N/2)+1 multiples and, for F_1 multiples, at every
+dyadic intermediate scale. Its all-row identity includes scales 1 through N,
+zero rows/polynomials and r=1. Exact certificates transport both endpoints and
+the first nonzero row; a terminal exact certificate j=deg S+2 gives the actual
+polynomial product 2^(-2N), uniformly in the prime. No per-instance odd-row
+residues or Proposition 2.3 assumption enters the new proof. See
+[the precise scope and checks](results/2026-10-24-terminal-lift.md).
+This is verification/infrastructure progress on the 5 October ordinary result,
+not new sharpness mathematics. Do not repeat the lift or export more instances.
+
+Next substantive work remains the four-square bordered-relation reconstruction
+or uniform accepting paths. Further formal work should follow that evidence.
+The separate missing bridge from boundary target (0,e_1) to an endpoint-admissible
+exact terminal certificate still needs a proof of Proposition 2.3 (or another
+proved replacement); do not insert it as an axiom or count it as completed.
 
 Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary

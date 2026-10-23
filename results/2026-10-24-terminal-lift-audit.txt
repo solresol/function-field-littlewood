@@ -1,0 +1,79 @@
++ lake env lean verification/TerminalLiftAudit.lean
+@FunctionFieldLittlewood.TerminalLift.odd_filter_of_dvd : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      Polynomial.X ^ 2 ^ r + 1 ∣ P →
+        ∀ (w : ℕ),
+          FunctionFieldLittlewood.WindowMoments.filt P
+              (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) w =
+            0
+@FunctionFieldLittlewood.TerminalLift.geometric_eval_zero : ∀ {K : Type u_1} [inst : Field K] {N : ℕ}
+  (P : Polynomial K),
+  FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ P →
+    ∀ (z : K), z ^ N = 1 → z ≠ 1 → Polynomial.eval z P = 0
+@FunctionFieldLittlewood.TerminalLift.geometric_dyadic_odd_rows : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+        ∀ s ≤ r,
+          ∀ (w : ℕ),
+            FunctionFieldLittlewood.WindowMoments.filt ((Polynomial.expand (ZMod p) (2 ^ s)) P)
+                (fun u => FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)) w =
+              0
+@FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+        ∀ s ≤ r + 1,
+          ∀ (v : ℕ),
+            FunctionFieldLittlewood.WindowMoments.filt ((Polynomial.expand (ZMod p) (2 ^ s)) P)
+                (FunctionFieldLittlewood.laiSprangStream p (r + 1)) v =
+              if 2 ^ s ∣ v then
+                FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                  (v / 2 ^ s)
+              else 0
+@FunctionFieldLittlewood.TerminalLift.coefficients : {K : Type u_1} →
+  [inst : Field K] → (P : Polynomial K) → Fin (P.natDegree + 1) → K
+@FunctionFieldLittlewood.TerminalLift.coefficients_reconstruct : ∀ {K : Type u_1} [inst : Field K] (P : Polynomial K),
+  FunctionFieldLittlewood.multiplierPolynomial (FunctionFieldLittlewood.TerminalLift.coefficients P) = P
+@FunctionFieldLittlewood.TerminalLift.fractionalCoeff_coefficients : ∀ {K : Type u_1} [inst : Field K]
+  (P : Polynomial K) (a : ℕ → K) (m k : ℕ),
+  FunctionFieldLittlewood.fractionalCoeff a (FunctionFieldLittlewood.TerminalLift.coefficients P) m k =
+    FunctionFieldLittlewood.WindowMoments.filt P a (m + k)
+@FunctionFieldLittlewood.TerminalLift.certificate_dyadic : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+        ∀ (M j s : ℕ),
+          s ≤ r + 1 →
+            FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                (FunctionFieldLittlewood.TerminalLift.coefficients P) M j →
+              FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                (FunctionFieldLittlewood.TerminalLift.coefficients ((Polynomial.expand (ZMod p) (2 ^ s)) P)) (2 ^ s * M)
+                (2 ^ s * j)
+@FunctionFieldLittlewood.TerminalLift.terminal_product : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∀ (P : Polynomial (ZMod p)),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 ^ (r + 1)) 1 ∣ P →
+        ∀ (M : ℕ),
+          FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+              (FunctionFieldLittlewood.TerminalLift.coefficients P) M (P.natDegree + 2) →
+            FunctionFieldLittlewood.polynomialLittlewoodProduct (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                (Polynomial.X ^ (2 ^ (r + 1) * M) * (Polynomial.expand (ZMod p) (2 ^ (r + 1))) P) =
+              2 ^ (-2 * ↑(2 ^ (r + 1)))
+'FunctionFieldLittlewood.TerminalLift.odd_filter_of_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.geometric_eval_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.geometric_dyadic_odd_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.coefficients_reconstruct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.fractionalCoeff_coefficients' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.certificate_dyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalLift.terminal_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+Guarded command wall time: 4.003s
