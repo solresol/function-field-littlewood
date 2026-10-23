@@ -1,5 +1,19 @@
 # Research log
 
+## 2026-10-24 — first weekly human-research literature baseline
+
+Read current targets at c7b2a98 and established a new/revised arXiv and primary
+journal baseline. Rechecked Lai–Sprang's exact lower-bound hypotheses and the
+August measure theorem's characteristic-two nonemptiness condition. Newly located
+the July Selecta paper on the binary Thue–Morse wall; it concerns partial escape
+of mass and reinforces an already retired candidate. Read Hofer's existing
+October lead more closely; no uniform sharpness/characteristic-two resolution or
+four-square reconstruction follows. Keep conditional terminal lift and uniform
+existence separate. Sources, versions, access dates, reading decisions, search
+checkpoint and access limitations are in
+[the weekly review](results/2026-10-24-literature-review.md).
+Literature/documentation work only; no new internal theorem or computation.
+
 ## 2026-09-17 (Thursday, Australia/Sydney) — first automation run
 
 Started 08:20:56 AEST on clean, current `main` (`bd637f1`); verified origin and

@@ -25,6 +25,11 @@ does not enable or modify any schedule.
 
 ## Research priorities and progress criteria (24 October update)
 
+Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
+The newly located published Thue–Morse wall result reinforces its retirement;
+Hofer remains a method lead. Neither supplies uniform terminal existence or a
+characteristic-two counterexample. Keep the substantive priorities below.
+
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
 the following outcomes, preserving that distinction:
