@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Sunday integration on 25 October 2026: four square relations suffice
+
+The two adjacent square boundary relations at a fixed shift are distinct.
+Their sum recovers the wide rectangle and their intersection recovers the tall
+rectangle, even when both Hankel blocks are singular. Thus four squares at two
+shifts and two sizes recover the previous eight-relation state exactly.
+
+This is **ordinary mathematical progress on the auxiliary sharpness structure**,
+using the existing no-invisible-vector lemma and its Lai–Sprang Proposition 2.3
+dependency. Exact checks cover five fields, singular and empty blocks, r=1,
+and independent affine reconstruction. It is not a Lean theorem, new prime
+decision, uniform accepting path or characteristic-two advance. The smaller
+representation does not establish practical state enumeration. See
+[the weekly assessment, proof and checks](results/2026-10-25-sunday-integration.md).
+Next work is the one-digit terminal-target preimage in this representation.
+
 ## Uniform terminal lift formalised on 24 October 2026
 
 [TerminalLift.lean](FunctionFieldLittlewood/TerminalLift.lean) proves every
@@ -94,8 +110,10 @@ argument. Terminal existence and the boundary-target-to-exact-certificate bridge
 remain open formal steps; no global sharpness or characteristic-two result is
 claimed. The default build, nine-declaration axiom audit, boundary controls and
 focused regressions pass. The weekly HUMAN literature findings were unavailable
-in this checkout. See [the scope and evidence](results/2026-10-24-terminal-lift.md).
-Next substantive work remains four-square reconstruction or uniform acceptance.
+at the time of that run; the [24 October review](results/2026-10-24-literature-review.md)
+is now present and was used for Sunday's research selection. See
+[the lift's scope and evidence](results/2026-10-24-terminal-lift.md).
+Sunday completed four-square reconstruction; uniform acceptance remains open.
 
 ## Correlated reachability formalised on 22 October 2026
 
@@ -758,24 +776,20 @@ The original tests independently expand the original root sums for 2,560 coeffic
 ## Near-term programme
 
 See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
-Next substantive work: rule out the original odd-shift terminal parity rows
-with C!=0 and quotient coprime to t^N+1, or exhibit such a window. The reverse
-lift makes any terminal witness decisive; no sibling-compatibility barrier
-remains. Linked factors and H-1 moments alone do not suffice. The ordinary reduction
-already proves the all-shift cutoff d<N(N-1). Its moment-to-factor step is now
-formalised; the parent-window calculation and complete descent remain to be checked
-in Lean.
-The positive fractional-part/product bridge is complete for Q=t^m R with
-nonzero endpoints. Original root-sum identification and generic degree-zero
-formalisation remain separate, lower-priority obligations. The Laurent coefficient
-bridge, named prefixes, scalar normalisation and polynomial endpoints are proved.
-The three-term support identity for r>=3 now has an ordinary proof; its r=2
-extension failed. Prioritise a structural lemma
-towards the all-degree upper bound or a literature-screened characteristic-two
-construction. Number-wall tooling is conditional on a specific discriminating
-question. The three binary baselines remain retired via known quadratic-series
-results and serve as
-regressions. New binary candidates need a literature/algebraicity screen first.
+The auxiliary N upper bound is refuted. The remaining sharpness question is
+whether Delta_p=2N for every odd prime. Reuse the completed descent, correlated
+recurrence and conditional uniform lift. Four square relations now reconstruct
+the full state; next derive a one-digit terminal-target criterion and test it on
+known accepting and rejecting paths before seeking uniform accepting words.
+Smaller storage does not justify a whole reachable-graph or larger wall search.
+
+Characteristic two remains a separate main frontier. New candidates require
+rational/quadratic-series and known unbounded-window screening first; the three
+binary baselines remain retired. Further formal work should support the new
+acceptance argument. The no-invisible-vector/dimension and terminal-exactness
+arguments still depend ordinarily on Proposition 2.3; do not count them as Lean
+theorems. Original root-sum identification and generic degree-zero formalisation
+remain lower priorities. The r=2 three-term extension remains refuted.
 
 The 30 September research review replaces the daily artifact quota with a
 mathematical progress criterion. Each run should identify the unresolved question

@@ -23,12 +23,18 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (24 October update)
+## Research priorities and progress criteria (25 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
 Hofer remains a method lead. Neither supplies uniform terminal existence or a
 characteristic-two counterexample. Keep the substantive priorities below.
+
+Sunday's [integration and bordered reconstruction](results/2026-10-25-sunday-integration.md)
+prove that four adjacent square relations recover the eight-relation state,
+including singular blocks. This is ordinary mathematical progress on the
+auxiliary structure; both substantive targets remain open. The next question is
+the one-digit preimage of the terminal target, not further closure bookkeeping.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -54,9 +60,9 @@ run. Distinguish mathematical progress, verification/infrastructure progress and
 no useful increment in the daily account. On Sundays, assess these separately
 and redirect work that repeatedly yields only infrastructure or maintenance.
 
-The existing degree-zero attainment already shows why an N upper bound would
-be sharp. The three-term positive-degree family adds structure but does not
-prove that upper bound. Further scale checks of these families are unnecessary.
+The existing degree-zero and three-term positive-degree families attain N;
+neither supported the now-refuted universal N upper bound. Further scale checks
+of these families are unnecessary.
 The three retired binary baselines remain regression inputs only.
 
 ## Keeping the proof catalogue current
@@ -112,11 +118,20 @@ finding rather than promoting it to a firstness claim.
   Square-only and adjacent-shift-square-only compression are retired; even
   exact k cannot repair this collision. See
   [the verified obstruction](results/2026-10-23-square-state-obstruction.md).
-- Next bounded structural attempt: can the four square relations at shifts
-  q+1,q+2 and sizes k,k+1 reconstruct the rectangular components or determine
-  terminal continuations? Derive a bordered-relation argument, including
-  singular blocks, before testing collisions. Do not assume all eight relations
-  are necessary, launch unbounded graph enumeration, or extend witness boxes.
+- **25 October reconstruction:** at each shift, the wide rectangle is the sum
+  of the adjacent square relations, and the tall rectangle is their intersection.
+  The squares are distinct: equality would give an invisible vector. The proof
+  includes singular/empty blocks and r=1, using the existing ordinary
+  Proposition 2.3 input. Four squares therefore recover the exact eight-relation
+  state and all terminal continuations. See
+  [the proof and exact checks](results/2026-10-25-sunday-integration.md).
+- Next bounded structural attempt: reduce the one-digit preimage of (0,e_1)
+  to child membership with v_0(1)=v_1(1)=1/2, zero moments at the other squares
+  in Omega, and free moments at nonsquares. Use the adjacent-square intersections;
+  test the reduced criterion on existing p=5,p=13,r=1 accepting paths and nearby
+  rejecting words. A stable invariant could guide uniform words; a failure should
+  identify the obstructing free moment. Do not equate smaller storage with
+  practical enumeration, launch a whole reachable graph, or extend witness boxes.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence
@@ -133,7 +148,7 @@ finding rather than promoting it to a firstness claim.
   witness in Lean would need a new certificate method (about 3.7*10^12
   terminal products).
 - Keep characteristic two as the remaining finite-field main-conjecture
-  frontier in the primary sources checked on 22 October. Before selecting any
+  frontier in the 24 October weekly primary-source review. Before selecting any
   new candidate, exclude rational/quadratic generating series and known
   unbounded-window constructions. Thue–Morse, regular paperfolding and
   overlapping-11 Rudin–Shapiro stay retired; no further scale expansion.
@@ -180,8 +195,13 @@ residues or Proposition 2.3 assumption enters the new proof. See
 This is verification/infrastructure progress on the 5 October ordinary result,
 not new sharpness mathematics. Do not repeat the lift or export more instances.
 
-Next substantive work remains the four-square bordered-relation reconstruction
-or uniform accepting paths. Further formal work should follow that evidence.
+The 25 October ordinary bordered reconstruction now recovers all rectangles
+from four squares. The next formal lemma, if needed by the accepting-path
+argument, is the generic sum/intersection identity from explicit stacked-matrix
+injectivity and relation dimensions, including singular blocks. Keep these
+hypotheses visible; this is not an unconditional formalisation of Proposition 2.3.
+Next substantive work is the reduced one-digit acceptance criterion above.
+Further formal work should serve that question rather than repeat state closure.
 The separate missing bridge from boundary target (0,e_1) to an endpoint-admissible
 exact terminal certificate still needs a proof of Proposition 2.3 (or another
 proved replacement); do not insert it as an axiom or count it as completed.
@@ -190,6 +210,23 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-25 (Sunday integration)
+
+- Proved ordinary reconstruction: adjacent squares are distinct; their sum is
+  the wide rectangle and their intersection the tall rectangle. Four squares
+  recover all eight components, including singular blocks, empty blocks and r=1.
+- Exact original-root-sum checks cover 8,000 component comparisons in five
+  fields, with 233 singular parent square blocks and 56 doubly singular pairs;
+  independent affine solving checks 88 rectangle basis preimages. Twenty-six
+  focused tests and the existing compression/lift checks pass.
+- Classification: mathematical progress on auxiliary structure; no new prime,
+  uniform terminal existence, characteristic-two result, Lean theorem or novelty
+  claim. The week's recurrence/compression mathematics and formal verification
+  are assessed separately in the dated integration report. Weekly literature
+  findings are now present and were read; retired hypotheses remain retired.
+- Next: the one-digit terminal preimage and its free primitive-root moments;
+  reuse the completed lift and avoid more routine certificates or larger boxes.
 
 ## Completed on 2026-10-21 (Wednesday computation)
 

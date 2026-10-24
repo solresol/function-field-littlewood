@@ -1,0 +1,274 @@
+{
+  "python": "3.12.14",
+  "dependencies": "standard library",
+  "seed": null,
+  "scope": "prescribed reconstruction/transition identities; no search",
+  "checks": [
+    {
+      "p": 3,
+      "N": 2,
+      "parents": 40,
+      "children": 160,
+      "relations_checked": 1600,
+      "singular_parent_square_blocks": 44,
+      "both_singular_parent_pairs": 8,
+      "singular_examples": [
+        {
+          "t": 2,
+          "size": 1,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 2,
+          "size": 2,
+          "nullities": [
+            1,
+            0
+          ]
+        },
+        {
+          "t": 2,
+          "size": 3,
+          "nullities": [
+            0,
+            1
+          ]
+        }
+      ],
+      "both_singular_example": {
+        "t": 2,
+        "size": 4,
+        "nullities": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "N": 4,
+      "parents": 40,
+      "children": 160,
+      "relations_checked": 1600,
+      "singular_parent_square_blocks": 25,
+      "both_singular_parent_pairs": 1,
+      "singular_examples": [
+        {
+          "t": 1,
+          "size": 2,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 1,
+          "size": 3,
+          "nullities": [
+            1,
+            0
+          ]
+        },
+        {
+          "t": 2,
+          "size": 4,
+          "nullities": [
+            0,
+            1
+          ]
+        }
+      ],
+      "both_singular_example": {
+        "t": 17,
+        "size": 3,
+        "nullities": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "parents": 40,
+      "children": 160,
+      "relations_checked": 1600,
+      "singular_parent_square_blocks": 22,
+      "both_singular_parent_pairs": 1,
+      "singular_examples": [
+        {
+          "t": 1,
+          "size": 2,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 1,
+          "size": 3,
+          "nullities": [
+            1,
+            0
+          ]
+        },
+        {
+          "t": 3,
+          "size": 0,
+          "nullities": [
+            0,
+            1
+          ]
+        }
+      ],
+      "both_singular_example": {
+        "t": 17,
+        "size": 3,
+        "nullities": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "parents": 40,
+      "children": 160,
+      "relations_checked": 1600,
+      "singular_parent_square_blocks": 63,
+      "both_singular_parent_pairs": 19,
+      "singular_examples": [
+        {
+          "t": 1,
+          "size": 4,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 2,
+          "size": 4,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 3,
+          "size": 0,
+          "nullities": [
+            0,
+            1
+          ]
+        }
+      ],
+      "both_singular_example": {
+        "t": 4,
+        "size": 2,
+        "nullities": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "parents": 40,
+      "children": 160,
+      "relations_checked": 1600,
+      "singular_parent_square_blocks": 79,
+      "both_singular_parent_pairs": 27,
+      "singular_examples": [
+        {
+          "t": 3,
+          "size": 0,
+          "nullities": [
+            0,
+            1
+          ]
+        },
+        {
+          "t": 3,
+          "size": 1,
+          "nullities": [
+            1,
+            0
+          ]
+        },
+        {
+          "t": 3,
+          "size": 2,
+          "nullities": [
+            0,
+            1
+          ]
+        }
+      ],
+      "both_singular_example": {
+        "t": 4,
+        "size": 2,
+        "nullities": [
+          1,
+          1
+        ]
+      }
+    }
+  ],
+  "independent_affine_preimages": [
+    {
+      "p": 3,
+      "q": 1,
+      "k": 2,
+      "rectangle_basis_preimages": 8,
+      "terminal": true,
+      "inclusive_coefficient_endpoint": 7
+    },
+    {
+      "p": 5,
+      "q": 311,
+      "k": 12,
+      "rectangle_basis_preimages": 16,
+      "terminal": true,
+      "inclusive_coefficient_endpoint": 337
+    },
+    {
+      "p": 13,
+      "q": 1465,
+      "k": 80,
+      "rectangle_basis_preimages": 16,
+      "terminal": true,
+      "inclusive_coefficient_endpoint": 1627
+    },
+    {
+      "p": 41,
+      "q": 255,
+      "k": 11,
+      "rectangle_basis_preimages": 32,
+      "terminal": false,
+      "inclusive_coefficient_endpoint": 279
+    },
+    {
+      "p": 5,
+      "q": 0,
+      "k": 0,
+      "rectangle_basis_preimages": 16,
+      "terminal": false,
+      "inclusive_coefficient_endpoint": 2
+    }
+  ],
+  "friday_collision_distinguishing_square_indices": [
+    1,
+    3
+  ],
+  "friday_continuation_outputs": [
+    false,
+    true
+  ],
+  "runtime_seconds": 16.145388373000003
+}

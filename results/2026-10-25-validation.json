@@ -1,0 +1,87 @@
+{
+  "commands": [
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m search.four_square_state > results/2026-10-25-four-square-check.json"
+      ],
+      "seconds": 17.009168311999986,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m search.square_state_obstruction > results/2026-10-25-square-obstruction-check.json"
+      ],
+      "seconds": 1.0011279560000048,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m search.terminal_lift_check > results/2026-10-25-terminal-lift-check.json"
+      ],
+      "seconds": 1.0013625089999891,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p 'test_*boundary*.py' -v > results/2026-10-25-boundary-tests.txt 2>&1"
+      ],
+      "seconds": 2.0015820869999743,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p test_four_square_state.py -v > results/2026-10-25-four-square-tests.txt 2>&1"
+      ],
+      "seconds": 1.0013767009999697,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p test_lai_sprang_sharpness.py -v > results/2026-10-25-sharpness-tests.txt 2>&1"
+      ],
+      "seconds": 1.0014331650000372,
+      "exit_code": 0
+    }
+  ],
+  "guards": {
+    "timeout_seconds": 180,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12,
+    "lean_threads": 2
+  },
+  "lean_changed": false,
+  "lean_build_run": false,
+  "initial_commit": "3e4a41af1fc2648345074ad6088245172933b388",
+  "origin": "https://github.com/solresol/function-field-littlewood.git",
+  "python": "3.12.14",
+  "classification": "ordinary mathematical structural progress; not Lean or terminal existence",
+  "source_sha256": {
+    "search/four_square_state.py": "cde5f68415f9b933574006d26c9772debf99880892e0431d879b9902ba594884",
+    "tests/test_four_square_state.py": "1a99bbfc11faa62df4423d5a8fcf0abeeb1bcea280b40039e4c90f51b8ecee74",
+    "search/terminal_boundary_relation.py": "301950728a0df03f8d2eba4b4967a3b20cca209b6d09c2041647dc3b09a312b3",
+    "search/correlated_boundary_state.py": "87fdd7d9c958dcee2c4429f417d55425ddb407bb80ecf13d8c07c9bf21f5824a",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd",
+    "results/2026-10-24-literature-review.md": "cf2b3a08d4f8934b5131384834c2b8e7c2fef3e118397738aa879beaf50a569c"
+  },
+  "prepared_pins_unchanged": true,
+  "focused_tests": {
+    "boundary": 12,
+    "four_square": 3,
+    "sharpness": 11,
+    "all_passed": true
+  }
+}

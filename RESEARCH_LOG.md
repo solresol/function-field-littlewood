@@ -1,5 +1,37 @@
 # Research log
 
+## 2026-10-25 (Sunday, Australia/Sydney): integration and four-square reconstruction
+
+- First sourced the selected prepared env and ran check.py: pins, readiness,
+  dependencies and imports passed. Clean work at 3e4a41a matched expected origin;
+  fetch/ancestry checked, work preserved and tracking main created, FF current.
+  Read saved Start, current source/records and the new 24 October weekly review.
+  No applicable AGENTS.md/.agents skill or overlapping research run was found.
+- Before coding, asked whether adjacent squares reconstruct the rectangles even
+  for singular blocks. Proved distinctness from no invisible vectors, then wide
+  rectangle=sum and tall rectangle=intersection. Four squares recover all eight
+  relations and preserve exact transitions. Proposition 2.3 remains an explicit
+  ordinary input; no Lean target or project axiom is assumed.
+- Classification: MATHEMATICAL PROGRESS on auxiliary structure, with a weekly
+  synthesis separating prior mathematical and verification/infrastructure work.
+  No new prime, uniform terminal existence, characteristic-two advance, Lean
+  theorem or priority claim. Retired hypotheses/candidates remain retired.
+- Prescribed exact checks compare 8,000 components over p=3,5,13,41,17, including
+  233 singular square blocks and 56 doubly singular pairs. Separate affine solver
+  reconstructs 88 rectangle basis preimages from original root sums. All 26
+  focused tests pass; Friday's obstruction and 2,885 lift identities reproduce.
+  New identity check about 17s; all retained commands have resource guards.
+  Python 3.12.14 standard library, no randomness. No Lean/dependency changes or
+  Lean build claimed. Source, full diffs and supporting records inspected.
+- Corrected the README's stale review-availability wording and active near-term
+  programme, completed the four-square roadmap item, and retained proof limits.
+  Targeted Lai–Sprang v1 Proposition 2.3 and Hofer v1 source reading only; no
+  repeated broad search. No schedule, runtime, credentials or external host changed.
+- Next: derive the one-digit target preimage using fixed square-root moments
+  and free primitive-root moments; test known accepting/rejecting paths before
+  seeking a uniform word. Formal work should serve that criterion. Full proof,
+  ranges, endpoints, commands and limits: results/2026-10-25-sunday-integration.md.
+
 ## 2026-10-24 — first weekly human-research literature baseline
 
 Read current targets at c7b2a98 and established a new/revised arXiv and primary
