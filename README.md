@@ -81,6 +81,25 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Terminal target preimages on 26 October 2026
+
+Every even-shift terminal event strips exactly: A(2q,2k)=A(q,k), while
+A(2q,2k+1) is false. Thus every event has a canonical odd-shift representative,
+including r=1. The normalized synchronized lift is (1+X)T(X^2)/2.
+The four-square target preimage uses N primitive variables; its remaining
+obstruction is compatibility of two affine slices, with at most one joint solution.
+
+One complete parity subsystem plus the old norm congruence is insufficient:
+an explicit F_5 polynomial at shift 313 has every row of one parity zero and
+every row of the other parity nonzero. Both child slices are feasible but
+their primitive-moment candidates disagree. This retires that simplification.
+
+This is **ordinary mathematical progress on auxiliary sharpness structure**,
+with exact independent finite checks. It proves no new prime, uniform accepting
+word, characteristic-two result or Lean theorem. See
+[the exact recursion, compatibility criterion and counterexample](results/2026-10-26-terminal-target-preimage.md).
+Next study the compatibility class under shared prefix digits on actual states.
+
 ## Sunday integration on 25 October 2026: four square relations suffice
 
 The two adjacent square boundary relations at a fixed shift are distinct.
@@ -95,7 +114,8 @@ and independent affine reconstruction. It is not a Lean theorem, new prime
 decision, uniform accepting path or characteristic-two advance. The smaller
 representation does not establish practical state enumeration. See
 [the weekly assessment, proof and checks](results/2026-10-25-sunday-integration.md).
-Next work is the one-digit terminal-target preimage in this representation.
+The 26 October result above completes the one-digit target preimage; uniform
+odd-shift acceptance remains unresolved.
 
 ## Uniform terminal lift formalised on 24 October 2026
 

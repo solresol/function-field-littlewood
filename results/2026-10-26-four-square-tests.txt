@@ -1,0 +1,8 @@
+test_no_invisible_vector_hypothesis_cannot_be_dropped (test_four_square_state.FourSquareTests.test_no_invisible_vector_hypothesis_cannot_be_dropped) ... ok
+test_reconstructs_known_singular_and_empty_tuples (test_four_square_state.FourSquareTests.test_reconstructs_known_singular_and_empty_tuples) ... ok
+test_transitions_use_stored_squares_and_keep_old_collision_distinct (test_four_square_state.FourSquareTests.test_transitions_use_stored_squares_and_keep_old_collision_distinct) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.079s
+
+OK

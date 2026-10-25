@@ -1,5 +1,40 @@
 # Research log
 
+## 2026-10-26 (Monday, Australia/Sydney): exact target preimage and sibling obstruction
+
+- Prepared env.sh/check.py passed exact pins, dependencies, readiness and imports.
+  Clean generated work at f02f5ff matched expected origin; fetched main, checked
+  ancestry/equality, preserved work and created tracking main, FF current. Parent
+  verified no overlapping cloud task; no independent research process found.
+  Read saved Start, README/TODO/log, actual sources, recent results and the
+  24 October weekly human-literature review. No applicable AGENTS.md/.agents skill.
+- Stated before coding: derive a useful one-digit terminal compatibility test,
+  and test whether free primitive moments can be simplified on actual paths.
+  Derived the exact N-variable branch table, uniqueness and affine quotient
+  obstruction. Proved A(2q,2k)=A(q,k), A(2q,2k+1)=false, including H=1; every
+  event strips canonically to odd shift. Explicit synchronized polynomial lift
+  (1+X)T(X^2)/2 is separate from the existing reverse lift T(X^N).
+- Strong failed hypothesis: F_5 shift313,size12 polynomial S has nonzero
+  endpoints, root moments e_1, one entire original parity subsystem zero and
+  the full old norm congruence, yet all opposite-parity rows fail. Both actual
+  child slices are singleton and disagree. Retire one-parity-plus-norm
+  sufficiency and independent-feasibility sufficiency; keep coupled class.
+  Independent delegated mathematical review checked proof boundaries/arithmetic.
+- Classification: MATHEMATICAL PROGRESS on auxiliary structure; no new prime,
+  uniform odd-shift existence, characteristic-two advance, Lean theorem or
+  novelty claim. Explicit ordinary Proposition 2.3 dependency remains.
+- 800 prescribed target comparisons with independent original-root-sum affine
+  matrices, empty/r=1 controls, existing p=5/p=13 neighbors/Friday paths and p=41
+  odd-size recurrence control pass. New check about 4.13s; all 18 focused tests
+  pass, guarded at 180s, 2 GiB disk, 12 GiB RSS. Exact Python 3.12.14 standard library,
+  no seed. No Lean changes/build/audit, dependency/runtime/schedule changes,
+  external host operations or routine notifications. Targeted Lai–Sprang v1
+  functional equation/Proposition 2.3 verified; weekly source limits retained.
+- Next: transformation of the compatibility class under a shared prefix digit
+  on actual adjacent-shift squares; seek a preserved proper subspace or refute
+  that reduction with existing paths. Full proof, failed hypothesis, commands,
+  endpoints and limits: results/2026-10-26-terminal-target-preimage.md.
+
 ## 2026-10-25 (Sunday, Australia/Sydney): integration and four-square reconstruction
 
 - First sourced the selected prepared env and ran check.py: pins, readiness,

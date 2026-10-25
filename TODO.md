@@ -23,18 +23,22 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (25 October update)
+## Research priorities and progress criteria (26 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
 Hofer remains a method lead. Neither supplies uniform terminal existence or a
 characteristic-two counterexample. Keep the substantive priorities below.
 
-Sunday's [integration and bordered reconstruction](results/2026-10-25-sunday-integration.md)
-prove that four adjacent square relations recover the eight-relation state,
-including singular blocks. This is ordinary mathematical progress on the
-auxiliary structure; both substantive targets remain open. The next question is
-the one-digit preimage of the terminal target, not further closure bookkeeping.
+Sunday's [bordered reconstruction](results/2026-10-25-sunday-integration.md)
+recovers all eight relations from four adjacent squares, including singular
+blocks. Monday's [target preimage](results/2026-10-26-terminal-target-preimage.md)
+now strips every even-shift event exactly to an odd-shift representative and
+isolates the remaining affine compatibility class. One full parity subsystem
+plus the old norm congruence is insufficient, with an explicit F_5 example.
+These are ordinary mathematical increments on auxiliary structure; both
+substantive targets remain open. Next study the compatibility class under a
+shared prefix digit, preserving actual adjacent-shift correlations.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -125,13 +129,21 @@ finding rather than promoting it to a firstness claim.
   Proposition 2.3 input. Four squares therefore recover the exact eight-relation
   state and all terminal continuations. See
   [the proof and exact checks](results/2026-10-25-sunday-integration.md).
-- Next bounded structural attempt: reduce the one-digit preimage of (0,e_1)
-  to child membership with v_0(1)=v_1(1)=1/2, zero moments at the other squares
-  in Omega, and free moments at nonsquares. Use the adjacent-square intersections;
-  test the reduced criterion on existing p=5,p=13,r=1 accepting paths and nearby
-  rejecting words. A stable invariant could guide uniform words; a failure should
-  identify the obstructing free moment. Do not equate smaller storage with
-  practical enumeration, launch a whole reachable graph, or extend witness boxes.
+- **26 October target preimage:** the two child equations use only N primitive
+  variables and have at most one joint solution. If their affine slices are
+  a_i+K_i, the exact obstruction is [a_1-a_0] modulo K_0+K_1, with K_0 cap K_1=0.
+  A(2q,2k)=A(q,k), while A(2q,2k+1) is false, including r=1. Thus all events
+  reduce canonically to odd shift. See
+  [the proof, branch table and failed criterion](results/2026-10-26-terminal-target-preimage.md).
+  Both local slices can be feasible and their candidates disagree; over F_5 at
+  M=313,n=12, one entire original parity subsystem plus the full norm congruence
+  still fails the other subsystem. Retire that sufficiency hypothesis.
+- Next bounded structural attempt: derive the compatibility class's change
+  under a shared prefix digit on actual adjacent-shift squares. Seek a preserved
+  proper subspace, or a collision refuting that reduction, on the existing
+  p=5/p=13 accepting and rejecting paths. The quotient can have full dimension N;
+  do not replace it by independent child feasibility or norm moments. No whole
+  graph enumeration, larger witness boxes or practical-complexity claim follows.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence
@@ -200,8 +212,12 @@ from four squares. The next formal lemma, if needed by the accepting-path
 argument, is the generic sum/intersection identity from explicit stacked-matrix
 injectivity and relation dimensions, including singular blocks. Keep these
 hypotheses visible; this is not an unconditional formalisation of Proposition 2.3.
-Next substantive work is the reduced one-digit acceptance criterion above.
+The reduced one-digit acceptance criterion is now proved ordinarily on 26 October;
+next substantive work is its remaining odd-shift compatibility class above.
 Further formal work should serve that question rather than repeat state closure.
+The generic affine-intersection obstruction and target-specialized merge are
+focused formal steps using the existing recurrence. Exact even-shift stripping
+also needs the ordinary moment-factor/D+2 input; keep that dependency explicit.
 The separate missing bridge from boundary target (0,e_1) to an endpoint-admissible
 exact terminal certificate still needs a proof of Proposition 2.3 (or another
 proved replacement); do not insert it as an axiom or count it as completed.
@@ -210,6 +226,22 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-26
+
+- Proved exact terminal acceptance recursion A(2q,2k)=A(q,k), and no event at
+  (2q,2k+1), including r=1. Every event has a canonical odd-shift representative;
+  the normalized synchronized lift is (1+X)T(X^2)/2. This is distinct from the
+  previously formalized reverse lift T(X^N).
+- Derived the four target-preimage branches in N primitive variables and the
+  affine quotient compatibility obstruction, with uniqueness from no invisible
+  vectors. Explicit endpoint-admissible F_5 polynomial satisfies one complete
+  original parity subsystem and the full old norm congruence, yet coupling fails.
+  Retired one-parity-plus-norm sufficiency; individual child feasibility also fails.
+- Exact prescribed checks compare 800 targets with independent original-root-sum
+  matrices; existing accepting/rejecting paths and the p=41 odd-size branch pass.
+  All 18 focused tests pass. Ordinary mathematics, not a Lean theorem, new prime,
+  uniform accepting path or characteristic-two advance. See the dated report.
 
 ## Completed on 2026-10-25 (Sunday integration)
 

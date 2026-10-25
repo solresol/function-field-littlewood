@@ -1,0 +1,47 @@
+{
+  "commands": [
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m search.terminal_target_preimage > results/2026-10-26-terminal-target-check.json"
+      ],
+      "seconds": 5.0028860429999895,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p test_terminal_target_preimage.py -v > results/2026-10-26-terminal-target-tests.txt 2>&1"
+      ],
+      "seconds": 1.000924015999999,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p 'test_*boundary*.py' -v > results/2026-10-26-boundary-tests.txt 2>&1"
+      ],
+      "seconds": 1.000841969000021,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "bash",
+        "-c",
+        "python3 -m unittest discover -s tests -p test_four_square_state.py -v > results/2026-10-26-four-square-tests.txt 2>&1"
+      ],
+      "seconds": 1.0010773320000226,
+      "exit_code": 0
+    }
+  ],
+  "guards": {
+    "timeout_seconds": 180,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12
+  },
+  "lean_changed": false,
+  "lean_build_run": false
+}
