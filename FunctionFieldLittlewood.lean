@@ -22,6 +22,7 @@ public import FunctionFieldLittlewood.TerminalGap
 public import FunctionFieldLittlewood.RootStream
 public import FunctionFieldLittlewood.BoundaryRelation
 public import FunctionFieldLittlewood.CorrelatedState
+public import FunctionFieldLittlewood.TargetPreimage
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
 public import FunctionFieldLittlewood.TerminalLift
