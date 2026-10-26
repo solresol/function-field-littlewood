@@ -17,6 +17,7 @@ The reverse-lift/F_13 group is pinned to `93badc486f8d25125785f0decac7ccbbdf3d6a
 The boundary parity-merge group is pinned to `491cd5a96f6515499dd2c14d60337f72b4cf338b` (20 October 2026).
 The correlated reachability group is pinned to `914c91f6cc97fb48e428f8218664274152fdb3a1` (22 October 2026).
 The uniform terminal-lift group is pinned to `846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f` (24 October 2026).
+The primitive-target/affine-compatibility group is pinned to `4bb00ee703579687fee35ed7aec267e0872f9e50` (27 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -45,8 +46,19 @@ axiom audit, archive coverage and registry status.
 | [Exact boundary parity recurrence](https://github.com/solresol/function-field-littlewood/blob/491cd5a96f6515499dd2c14d60337f72b4cf338b/FunctionFieldLittlewood/BoundaryRelation.lean#L377) | all-root block factorization, exact merges and endpoint reindexing | Not yet archived |
 | [Correlated boundary-state reachability](https://github.com/solresol/function-field-littlewood/blob/914c91f6cc97fb48e428f8218664274152fdb3a1/FunctionFieldLittlewood/CorrelatedState.lean#L263) | exact paired-word reachability and finite state type for the named stream | Not yet archived |
 | [Uniform geometric terminal lift](https://github.com/solresol/function-field-littlewood/blob/846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f/FunctionFieldLittlewood/TerminalLift.lean#L174) | all-scale exact certificates to product 2^(-2N); existence is an input | Not yet archived |
+| [Primitive terminal target and affine compatibility](https://github.com/solresol/function-field-littlewood/blob/4bb00ee703579687fee35ed7aec267e0872f9e50/FunctionFieldLittlewood/TargetPreimage.lean#L206) | coupled target criterion for the named stream; generic quotient obstruction | Not yet archived |
 
 ## Verification boundary
+
+The 27 October target-preimage group derives the exact primitive-parts criterion
+for all four paired-digit branches on actual infinite-stream Hankel blocks,
+including empty blocks and r=1. Its generic affine criterion identifies the
+obstruction modulo the sum of directions and proves representative independence.
+Uniqueness explicitly requires trivial direction intersection. The actual child
+predicates are not packaged as affine subspaces in Lean. The no-invisible-vector
+lemma, terminal existence and exact-certificate interpretation remain outside this
+group. This is verification of Monday's ordinary argument; see [scope and evidence](results/2026-10-27-target-preimage-lean.md).
+No independent-kernel replay, archive coverage or novelty claim is made.
 
 The 24 October terminal-lift group formalises the complete dyadic reverse lift
 for geometric-factor multiples. An exact terminal certificate j=deg S+2 yields

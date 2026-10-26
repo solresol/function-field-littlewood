@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-27",
+  "checked_at": "2026-10-27T09:12:33.626368+11:00",
+  "base_commit": "db7961726245ce4b6832fbdf3a9b34ce8e040d6b",
+  "classification": "verification/infrastructure progress on the 26 October ordinary criterion",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "seed": null,
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "pins_unchanged": true,
+  "startup_check": {
+    "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+    "exit_code": 0,
+    "scope": "exact toolchains, dependency revisions/cleanliness, pins, readiness receipts, representative imports; observed before work"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 1800,
+    "runner": "/workspace/shared/theorem-provers/prepare.py: m.run and env_for(littlewood); no setup functions invoked"
+  },
+  "checks": [
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 5.039,
+      "output": "results/2026-10-27-target-preimage-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/TargetPreimageAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.039,
+      "output": "results/2026-10-27-target-preimage-audit.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_terminal_target_preimage.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 2.049,
+      "output": "results/2026-10-27-target-preimage-tests.txt"
+    },
+    {
+      "label": "fixed-check",
+      "command": [
+        "python3",
+        "-m",
+        "search.terminal_target_preimage"
+      ],
+      "exit_code": 0,
+      "seconds": 7.052,
+      "output": "results/2026-10-27-target-preimage-fixed-check.txt"
+    }
+  ],
+  "audited_declarations": {
+    "transport_transpose_apply": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "alpha_reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "output_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "mergeEven_target_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "mergeOdd_target_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tupleStep_target_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "actual_target_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "stream_target_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "affine_intersection_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "affine_intersection_quotient_iff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "affine_class_representatives": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "affine_intersection_unique": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/TargetPreimage.lean": "201d673a330022bc5feed1de98560706fca996628e15e27c70fe64852db35710",
+    "verification/TargetPreimageAudit.lean": "bd35071218ce3515faa13ae754cfee2c6f87d1bfceec87931ed0f06eb8071256",
+    "FunctionFieldLittlewood.lean": "31a30ea1386f3d84ca8ac8c45c51ff0c58ba85154115d10f8a61a4bdc85faaaf"
+  },
+  "limits": [
+    "No Proposition 2.3/no-invisible-vector input or terminal-existence axiom.",
+    "Generic affine quotient criterion; actual slices are not packaged as submodules in Lean.",
+    "No uniform accepting word, new prime decision, characteristic-two result or independent-kernel replay.",
+    "Existing Challenge.lean:37 placeholder is outside all new proof closures."
+  ],
+  "proof_snapshot": "4bb00ee703579687fee35ed7aec267e0872f9e50",
+  "documentation_checks": {
+    "yaml": "parsed",
+    "declarations": "12 exact source locations and standard axiom lists",
+    "source_hashes_and_proof_snapshot": "matched",
+    "local_links": "resolved",
+    "diff_check": "passed"
+  }
+}

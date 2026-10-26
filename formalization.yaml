@@ -14,6 +14,8 @@ project:
     boundary parity recurrence with exact rectangular and empty endpoints, and exact
     correlated eight-relation reachability under paired binary words. The uniform geometric-factor
     reverse lift transports exact terminal certificates to product 2^(-2N) at every allowed dyadic scale.
+    The primitive target preimage criterion is proved for all four digit branches and the named stream,
+    with a separate generic affine compatibility quotient theorem.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -67,8 +69,13 @@ status:
     exact even/odd merges and natural-index parity reindexing; its generic recurrence
     hypotheses are discharged by the named stream identities. CorrelatedState proves exact
     paired-digit transitions, a finite state type and both directions of word reachability
-    for the named stream. Injectivity, dimensions, terminal detection, executable enumeration
-    and the sharper subspace cardinal bound remain outside Lean. Boundary cutoffs, exact shift localization, the
+    for the named stream. TargetPreimage proves the exact primitive-parts reduction of the
+    zero-forcing root target for all four digit branches and the named infinite stream,
+    plus a generic affine quotient criterion and representative independence. The actual
+    child predicates are not yet packaged as affine subspaces; uniqueness has an explicit
+    trivial-direction-intersection premise. Injectivity, dimensions, target-to-exact-certificate
+    interpretation, executable enumeration and the sharper subspace cardinal bound remain outside Lean.
+    Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
     a combined root-moment package; its deliberate statement placeholder is excluded from proof-development
@@ -80,6 +87,22 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.TargetPreimage.stream_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.TargetPreimage.affine_intersection_quotient_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.TerminalLift.geometric_dyadic_rows
     file: FunctionFieldLittlewood/TerminalLift.lean
     sorry_count: 0

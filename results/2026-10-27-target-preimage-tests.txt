@@ -1,0 +1,9 @@
++ python3 -m unittest discover -s tests -p test_terminal_target_preimage.py -v
+test_even_shift_stripping_and_exact_normalized_polynomial (test_terminal_target_preimage.TerminalTargetPreimageTests.test_even_shift_stripping_and_exact_normalized_polynomial) ... ok
+test_existing_odd_size_acceptance_is_preserved (test_terminal_target_preimage.TerminalTargetPreimageTests.test_existing_odd_size_acceptance_is_preserved) ... ok
+test_one_parity_and_full_norm_still_leave_a_nonzero_compatibility_class (test_terminal_target_preimage.TerminalTargetPreimageTests.test_one_parity_and_full_norm_still_leave_a_nonzero_compatibility_class) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.953s
+
+OK

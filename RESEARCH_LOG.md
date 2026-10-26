@@ -1480,3 +1480,37 @@ automation readback were checked. No code or proof changed; tests were not rerun
   or uniform accepting paths. Reuse the completed lift; no repeated bridges or
   routine instance exports. Full statements, checks and limitations are in
   results/2026-10-24-terminal-lift.md and companion evidence files.
+
+## 2026-10-27 (Tuesday, Australia/Sydney): coupled target preimages in Lean
+
+- Scheduled 26 October 21:20 UTC is Tuesday 27 October 08:20 AEDT. First sourced
+  prepared env.sh and passed check.py. Clean generated work at db79617 matched
+  fetched solresol origin/main; preserved work and created tracking main, FF-only
+  current. Read saved Start, bootstrap recovery, current TODO/log, actual source
+  and the 24 October weekly literature handoff. No installation or pin change.
+- Question stated before coding: derive the target's two primitive child tests
+  from the existing merge and check the generic affine compatibility obstruction.
+  TargetPreimage.lean proves both orientations, exact four-digit endpoints,
+  actual infinite Hankel membership and the named-stream specialization, including
+  empty blocks and r=1. Root data discharge nonzero/negation/squaring premises.
+- Generic affine intersection is equivalent to the zero difference class modulo
+  the sum of directions; representatives do not affect it. Uniqueness explicitly
+  requires trivial direction intersection. Actual affine-slice packaging and
+  cardinality/dimension results remain outside Lean, as do Proposition 2.3,
+  no-invisible-vector, exact even-shift stripping and the exact-certificate bridge.
+  Raw forcing retains alpha rather than assuming the normalized simplification.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on Monday's ordinary
+  argument. No new mathematical sharpness decision, prime, uniform accepting word,
+  characteristic-two construction, archive coverage or priority claim. The
+  Challenge.lean:37 placeholder is outside all 12 audited proof closures.
+- Default build 5.039s; 12-declaration standard-only axiom audit 4.039s;
+  three focused tests 2.049s command time; unchanged 800 prescribed target
+  comparisons 7.052s. Infinite-stream proofs, exact finite controls, no randomness,
+  no expanded box or large-certificate rebuild. Lean/mathlib pins unchanged.
+- Targeted Lai–Sprang v1 hypotheses read on 27 October; other source/access
+  limitations remain in the weekly handoff. No broad daily search or new binary
+  candidate. Exact statements, commands, development issues, hashes and limits:
+  results/2026-10-27-target-preimage-lean.md and companion validation/logs.
+- Next substantive question remains shared-prefix evolution of the compatibility
+  class on actual p=5/p=13 accepting/rejecting paths. Do not substitute more generic
+  packaging, repeated lift proofs or routine certificates for that investigation.

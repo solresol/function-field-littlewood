@@ -216,8 +216,12 @@ The reduced one-digit acceptance criterion is now proved ordinarily on 26 Octobe
 next substantive work is its remaining odd-shift compatibility class above.
 Further formal work should serve that question rather than repeat state closure.
 The generic affine-intersection obstruction and target-specialized merge are
-focused formal steps using the existing recurrence. Exact even-shift stripping
-also needs the ordinary moment-factor/D+2 input; keep that dependency explicit.
+now kernel-checked in TargetPreimage.lean (27 October), including the actual
+named-stream target criterion. Do not repeat them. Concrete affine-slice
+packaging, normalized-forcing simplification and dimension counts remain outside
+Lean and should be undertaken only when the substantive accepting-path argument
+needs them. Exact even-shift stripping also needs the ordinary moment-factor/D+2
+input; keep that dependency explicit.
 The separate missing bridge from boundary target (0,e_1) to an endpoint-admissible
 exact terminal certificate still needs a proof of Proposition 2.3 (or another
 proved replacement); do not insert it as an axiom or count it as completed.
@@ -226,6 +230,26 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-27 (Tuesday formalisation)
+
+- Kernel-checked target output reduction to two primitive parts, both parity
+  orientations, all four paired-digit branches and actual infinite named-stream
+  target membership. Complete root data discharge nonzero/negation/squaring
+  hypotheses; empty blocks and r=1 are retained.
+- Proved the generic affine sum-quotient criterion, representative independence
+  and uniqueness with an explicit trivial-direction-intersection hypothesis.
+  Actual child predicates are not yet packaged as affine subspaces in Lean;
+  no-invisible-vector, Proposition 2.3 and the exact-certificate bridge stay open.
+- Classification: verification/infrastructure progress on Monday's ordinary
+  argument. Default build, 12 standard-axiom audits, three focused tests and
+  800 prescribed original-root-sum target comparisons pass. No new prime,
+  uniform accepting word, characteristic-two advance or novelty claim.
+- Next substantive computation remains the compatibility class under a shared
+  prefix digit on actual adjacent-shift states. The reduced target and generic
+  quotient bridge now exist; do not repeat them or the terminal lift. Choose
+  further formal work from a useful invariant/collision, rather than packaging
+  generic affine spaces as an automatic next task. See the dated report.
 
 ## Completed on 2026-10-26
 

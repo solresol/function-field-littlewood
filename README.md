@@ -81,6 +81,19 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Coupled target preimages formalised on 27 October 2026
+
+[TargetPreimage.lean](FunctionFieldLittlewood/TargetPreimage.lean) derives the
+primitive-parts criterion for the zero-forcing terminal target from the existing
+merge, uniformly for all four digit branches and the infinite named stream.
+The generic affine quotient obstruction and representative independence are also
+kernel-checked; uniqueness retains an explicit direction-intersection hypothesis.
+
+This is **verification/infrastructure progress** on the 26 October ordinary
+argument. Concrete affine-slice packaging, no-invisible-vector and exact-certificate
+interpretation remain outside Lean. No uniform accepting word, new prime or
+characteristic-two result is claimed. See [scope and checks](results/2026-10-27-target-preimage-lean.md).
+
 ## Terminal target preimages on 26 October 2026
 
 Every even-shift terminal event strips exactly: A(2q,2k)=A(q,k), while

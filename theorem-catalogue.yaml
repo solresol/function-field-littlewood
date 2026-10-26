@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-24'
+updated: '2026-10-27'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -2137,6 +2137,257 @@ theorems:
     source_sha256:
       FunctionFieldLittlewood/TerminalLift.lean: a06134d10aa7cba73f74356c58ddd7c9380b4e458b5931d6a9b6ee2a2626e49e
       verification/TerminalLiftAudit.lean: ed658751c65a34ff9943827ddc7d375efbd9c28797596d97b43a55c8d64a7203
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: coupled-terminal-target-preimage
+  title: Primitive target preimages and affine compatibility
+  status: kernel-checked
+  mathematical_origin: formalisation of the 26 October ordinary target reduction and generic linear algebra
+  first_formalisation_priority: unestablished
+  statement: The zero-forcing root target reduces exactly to two coupled child tests with free moments
+    vanishing on squared-root coordinates. All four digit branches agree with actual named-stream Hankel
+    target membership. Generic affine-slice intersection is equivalent to the zero difference class modulo
+    the sum of directions; this class is representative-independent, with uniqueness conditional on trivial
+    direction intersection.
+  assumptions:
+  - 'Generic root reduction: a field with 2 nonzero; a finite injective list of nonzero roots closed under
+    negation; a squaring map with z(sigma q)=z(q)^2. Generic relation arguments are arbitrary predicates,
+    with no invisible-kernel premise.'
+  - Actual-block specialization additionally uses the even coefficient recurrence and weighted odd-root
+    formula, both discharged for the infinite named stream.
+  - 'Named-stream theorem: prime p, 2^(r+1) divides p-1. No maximality is needed; Lean r=0 includes the
+    usual valuation-r=1 case.'
+  - 'Affine quotient theorem: two specified direction submodules and their affine representatives. Uniqueness
+    explicitly assumes their intersection is bottom.'
+  limitations: Verification/infrastructure progress on existing ordinary mathematics. The actual reduced
+    child predicates are not yet packaged as affine subspaces in Lean. No formal free-coordinate cardinality,
+    four-square reconstruction, normalized-forcing simplification, no-invisible-vector theorem, Proposition
+    2.3, exact-certificate interpretation, even-shift stripping, uniform accepting word, new prime decision
+    or characteristic-two result is supplied. No independent-kernel replay or archive coverage.
+  declarations:
+  - name: FunctionFieldLittlewood.TargetPreimage.transport_transpose_apply
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 31
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.transport_transpose_apply : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω) (a : ℕ) (v : Ω → K) (q : Ω),
+        (FunctionFieldLittlewood.BoundaryRelation.transport z σ a).transpose.mulVec v q = z q ^ a * v (σ q)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.alpha_reconstruct
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 38
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.alpha_reconstruct : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K] (z : Ω → K)
+        (σ : Ω → Ω),
+        (∀ (q : Ω), z (σ q) = z q ^ 2) →
+          2 ≠ 0 →
+            ∀ (q : Ω),
+              FunctionFieldLittlewood.TargetPreimage.alpha z (σ q) +
+                  z q * FunctionFieldLittlewood.TargetPreimage.alpha z (σ q) =
+                FunctionFieldLittlewood.TargetPreimage.target z q
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.output_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 59
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.output_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+        Function.Injective z →
+          (∀ (q : Ω), z (σ q) = z q ^ 2) →
+            (∀ (q : Ω), ∃ q', z q' = -z q) →
+              (∀ (q : Ω), z q ≠ 0) →
+                2 ≠ 0 →
+                  ∀ (v₀ v₁ : Ω → K),
+                    (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ +
+                          (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ =
+                        FunctionFieldLittlewood.TargetPreimage.target z ↔
+                      FunctionFieldLittlewood.TargetPreimage.Primitive σ
+                          (v₀ - FunctionFieldLittlewood.TargetPreimage.alpha z) ∧
+                        FunctionFieldLittlewood.TargetPreimage.Primitive σ
+                          (v₁ - FunctionFieldLittlewood.TargetPreimage.alpha z)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.mergeEven_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 123
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.mergeEven_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+        Function.Injective z →
+          (∀ (q : Ω), z (σ q) = z q ^ 2) →
+            (∀ (q : Ω), ∃ q', z q' = -z q) →
+              (∀ (q : Ω), z q ≠ 0) →
+                2 ≠ 0 →
+                  ∀ (s : ℕ) (R₀ R₁ : FunctionFieldLittlewood.CorrelatedState.Relation K Ω),
+                    FunctionFieldLittlewood.CorrelatedState.mergeEven z w σ s R₀ R₁ 0
+                        (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.TargetPreimage.reducedEven z w σ s R₀ R₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.mergeOdd_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 143
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.mergeOdd_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+        Function.Injective z →
+          (∀ (q : Ω), z (σ q) = z q ^ 2) →
+            (∀ (q : Ω), ∃ q', z q' = -z q) →
+              (∀ (q : Ω), z q ≠ 0) →
+                2 ≠ 0 →
+                  ∀ (s : ℕ) (R₀ R₁ : FunctionFieldLittlewood.CorrelatedState.Relation K Ω),
+                    FunctionFieldLittlewood.CorrelatedState.mergeOdd z w σ s R₀ R₁ 0
+                        (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.TargetPreimage.reducedOdd z w σ s R₀ R₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.tupleStep_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 174
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.tupleStep_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+        Function.Injective z →
+          (∀ (q : Ω), z (σ q) = z q ^ 2) →
+            (∀ (q : Ω), ∃ q', z q' = -z q) →
+              (∀ (q : Ω), z q ≠ 0) →
+                2 ≠ 0 →
+                  ∀ (phase : ℕ) (T : FunctionFieldLittlewood.CorrelatedState.Tuple K Ω)
+                    (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+                    FunctionFieldLittlewood.CorrelatedState.tupleStep z w σ phase T ε η 0 0 0 0
+                        (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.TargetPreimage.reducedTarget z w σ phase T ε η
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.actual_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 189
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.actual_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+        (∀ (l : ℕ), a (2 * l) = a l) →
+          (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+            Function.Injective z →
+              (∀ (q : Ω), z (σ q) = z q ^ 2) →
+                (∀ (q : Ω), ∃ q', z q' = -z q) →
+                  (∀ (q : Ω), z q ≠ 0) →
+                    2 ≠ 0 →
+                      ∀ (q k : ℕ) (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+                        FunctionFieldLittlewood.CorrelatedState.relation a z (2 * q + ↑ε + 1) (2 * k + ↑η) (2 * k + ↑η) 0
+                            (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                          FunctionFieldLittlewood.TargetPreimage.reducedTarget z w σ q
+                            (FunctionFieldLittlewood.CorrelatedState.tuple a z q k) ε η
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.stream_target_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 206
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.stream_target_iff : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+        2 ^ (r + 1) ∣ p - 1 →
+          ∃ z σ,
+            Function.Injective z ∧
+              (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ j, x = z j) ∧
+                (∀ (j : Fin (2 * 2 ^ r)), z (σ j) = z j ^ 2) ∧
+                  ∀ (q k : ℕ) (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+                    FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (2 * q + ↑ε + 1) (2 * k + ↑η) (2 * k + ↑η) 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.TargetPreimage.reducedTarget z
+                        (FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r)) σ q
+                        (FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q
+                          k)
+                        ε η
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.affine_intersection_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 248
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.affine_intersection_iff : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+        [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ : V),
+        (∃ x, x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁) ↔ a₁ - a₀ ∈ L₀ ⊔ L₁
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.affine_intersection_quotient_iff
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 266
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.affine_intersection_quotient_iff : ∀ {K : Type u_1} [inst : Field K]
+        {V : Type u_2} [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ : V),
+        (∃ x, x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁) ↔ Submodule.Quotient.mk (a₁ - a₀) = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.affine_class_representatives
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 272
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.affine_class_representatives : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+        [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ u v : V),
+        u ∈ L₀ → v ∈ L₁ → Submodule.Quotient.mk (a₁ + v - (a₀ + u)) = Submodule.Quotient.mk (a₁ - a₀)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TargetPreimage.affine_intersection_unique
+    file: FunctionFieldLittlewood/TargetPreimage.lean
+    line_at_snapshot: 282
+    introduced_commit: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_type: |-
+      @FunctionFieldLittlewood.TargetPreimage.affine_intersection_unique : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+        [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V),
+        L₀ ⊓ L₁ = ⊥ → ∀ (a₀ a₁ x y : V), x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁ → y - a₀ ∈ L₀ ∧ y - a₁ ∈ L₁ → x = y
+    axioms:
+    - propext
+    - Quot.sound
+  evidence:
+    proof_snapshot: 4bb00ee703579687fee35ed7aec267e0872f9e50
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-27-target-preimage-build.txt
+    full_build_validation: results/2026-10-27-target-preimage-validation.json
+    catalogue_audit: results/2026-10-27-target-preimage-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/TargetPreimage.lean: 201d673a330022bc5feed1de98560706fca996628e15e27c70fe64852db35710
+      verification/TargetPreimageAudit.lean: bd35071218ce3515faa13ae754cfee2c6f87d1bfceec87931ed0f06eb8071256
+      FunctionFieldLittlewood.lean: 31a30ea1386f3d84ca8ac8c45c51ff0c58ba85154115d10f8a61a4bdc85faaaf
   archive:
     zenodo_version: null
     zenodo_doi: null
