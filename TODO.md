@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (26 October update)
+## Research priorities and progress criteria (28 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
@@ -37,8 +37,10 @@ now strips every even-shift event exactly to an odd-shift representative and
 isolates the remaining affine compatibility class. One full parity subsystem
 plus the old norm congruence is insufficient, with an explicit F_5 example.
 These are ordinary mathematical increments on auxiliary structure; both
-substantive targets remain open. Next study the compatibility class under a
-shared prefix digit, preserving actual adjacent-shift correlations.
+substantive targets remain open. The [28 October finite obstruction](results/2026-10-28-compatibility-affine-obstruction.md)
+rules out a fixed proper affine subspace for compatibility differences even
+at fixed phase, capped size, size parity and next digit. Next derive transport
+with state-dependent relation data, preserving actual adjacent-shift correlations.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -138,12 +140,20 @@ finding rather than promoting it to a firstness claim.
   Both local slices can be feasible and their candidates disagree; over F_5 at
   M=313,n=12, one entire original parity subsystem plus the full norm congruence
   still fails the other subsystem. Retire that sufficiency hypothesis.
+- **28 October affine obstruction:** five actual F_5 singleton-slice differences
+  at phase 3, capped size 4, even k and next digit (1,1) affinely span F_5^4.
+  Their augmented determinant is 1, independently certified by ten explicit
+  original-root-sum system inverses. Retire a fixed proper affine locus depending
+  only on these labels; state-dependent/nonlinear constraints remain possible.
+  The full next-digit affine-slice profile closure question is inconclusive:
+  the bounded existing-path comparison found collisions only at k=0. See
+  [proof, exact inputs and limits](results/2026-10-28-compatibility-affine-obstruction.md).
 - Next bounded structural attempt: derive the compatibility class's change
-  under a shared prefix digit on actual adjacent-shift squares. Seek a preserved
-  proper subspace, or a collision refuting that reduction, on the existing
-  p=5/p=13 accepting and rejecting paths. The quotient can have full dimension N;
-  do not replace it by independent child feasibility or norm moments. No whole
-  graph enumeration, larger witness boxes or practical-complexity claim follows.
+  under a shared prefix digit while retaining state-dependent relation data,
+  or find a nonlinear constraint strong enough to force the zero class.
+  Keep the actual p=5/p=13 path correlations. Do not replace compatibility by
+  independent feasibility, norm moments or a fixed proper affine subspace.
+  No whole-graph enumeration, larger witness boxes or complexity claim follows.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence
@@ -230,6 +240,22 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-28 (Wednesday structural computation)
+
+- Refuted a fixed proper affine-subspace constraint on actual compatibility
+  differences. Five F_5 states have the same phase/capped size/size parity/digit
+  labels, singleton child slices and augmented discrepancy determinant 1.
+  Two arise from a shared digit on existing path prefixes; no witness box grew.
+- Ten direct original-root-sum parity systems have certified two-sided inverses;
+  readback needs no elimination, state recurrence or Proposition 2.3 assumption.
+  Exact finite proof, not Lean. Twenty-two focused tests pass, including saved
+  inverse corruption controls and existing r=1/p=13 regressions; last index 336.
+- Classification: mathematical progress through a failed affine reduction.
+  No new prime, uniform accepting word, characteristic-two result or novelty
+  claim. Full-slice profile closure remains inconclusive on the bounded inputs.
+  Next retain state-dependent relation data or seek nonlinear structure; no
+  routine formal packaging is justified by this negative result alone.
 
 ## Completed on 2026-10-27 (Tuesday formalisation)
 

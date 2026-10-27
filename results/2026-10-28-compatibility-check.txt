@@ -1,0 +1,10 @@
+{
+  "records": 5,
+  "inverse_identities": 20,
+  "linear_rank": 4,
+  "affine_dimension": 4,
+  "max_original_index": 336,
+  "readback_elimination_used": false,
+  "readback_recurrence_used": false,
+  "reduced_slices_compared": true
+}

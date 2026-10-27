@@ -1,0 +1,52 @@
+{
+  "commands": [
+    {
+      "command": "python3 -m search.compatibility_affine_obstruction --check-reduced",
+      "output": "results/2026-10-28-compatibility-check.txt",
+      "seconds": 1.0009369619999688,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_compatibility_affine_obstruction.py -v",
+      "output": "results/2026-10-28-compatibility-tests.txt",
+      "seconds": 1.000995448000026,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_terminal_target_preimage.py -v",
+      "output": "results/2026-10-28-target-tests.txt",
+      "seconds": 2.0022102109999764,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_*boundary*.py' -v",
+      "output": "results/2026-10-28-boundary-tests.txt",
+      "seconds": 2.0020628059999694,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_four_square_state.py -v",
+      "output": "results/2026-10-28-four-square-tests.txt",
+      "seconds": 1.0012616949999824,
+      "exit_code": 0
+    }
+  ],
+  "guards": {
+    "timeout_seconds": 180,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12
+  },
+  "python": "3.12.14",
+  "dependencies": "standard library",
+  "seed": null,
+  "lean_changed": false,
+  "lean_build_run": false,
+  "sha256": {
+    "search/compatibility_affine_obstruction.py": "5a02cb877f147da544d6e459e731500cfcad21c103cbfb426bd08387c5524992",
+    "tests/test_compatibility_affine_obstruction.py": "8349a892272377a0fb65da11524440a20ba3f022ebc7199f8fc07b236dfc77c6",
+    "results/2026-10-28-compatibility-affine-check.json": "6d87a35961eb08b5ed2eac25e7d1882b1ae00f2cfa380eab21a2b5e6a138a7ed",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  }
+}

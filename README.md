@@ -812,8 +812,11 @@ See `TODO.md` for the current roadmap and `RESEARCH_LOG.md` for dated records.
 The auxiliary N upper bound is refuted. The remaining sharpness question is
 whether Delta_p=2N for every odd prime. Reuse the completed descent, correlated
 recurrence and conditional uniform lift. Four square relations now reconstruct
-the full state; next derive a one-digit terminal-target criterion and test it on
-known accepting and rejecting paths before seeking uniform accepting words.
+the full state, and the one-digit coupled target criterion is formalised.
+The [28 October obstruction](results/2026-10-28-compatibility-affine-obstruction.md)
+rules out fixed proper affine constraints on compatibility differences at fixed
+phase/size/digit labels. Next derive transport with state-dependent relation
+data or nonlinear structure towards uniform accepting words.
 Smaller storage does not justify a whole reachable-graph or larger wall search.
 
 Characteristic two remains a separate main frontier. New candidates require

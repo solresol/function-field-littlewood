@@ -1,5 +1,41 @@
 # Research log
 
+## 2026-10-28 (Wednesday, Australia/Sydney): full affine compatibility span
+
+- Scheduled 27 October 21:20 UTC is Wednesday 28 October 08:20 AEDT. Sourced
+  prepared env.sh and passed check.py before work and after refresh. Clean work
+  e3044a5 matched fetched expected origin/main; preserved work, created tracking
+  main and completed FF-only merge. No overlapping research process found.
+  Read saved Start, bootstrap recovery, actual sources, roadmap/recent records
+  and the 24 October weekly human-literature review. No installation/pin change.
+- Stated full affine-slice profile closure question before coding. Checked only
+  28 p=5 and 16 p=13 prefixes of existing accept/reject paths; all collisions
+  had size zero, leaving mature profile closure inconclusive. Refined the
+  question to a fixed proper compatibility subspace at fixed discrete labels.
+- One-digit extension of 12 existing p=5 prefixes gives 52 prescribed states.
+  Five actual states at phase3, capped size4, even k, next digit(1,1) have
+  singleton child slices whose differences affinely span F_5^4: augmented
+  determinant 1. This refutes fixed proper affine constraints depending only
+  on these labels, including after any fixed invertible affine coordinate change.
+- Classification: MATHEMATICAL PROGRESS through an informative failed reduction.
+  No new prime, uniform accepting word, characteristic-two advance, Lean theorem
+  or priority claim. State-dependent/nonlinear reductions remain possible; the
+  full-slice profile closure question was not refuted. No attainment box expanded.
+- Independent original root sums and ten saved two-sided system inverses prove
+  local feasibility/uniqueness without elimination during readback, recurrence
+  or Proposition 2.3 as an input. Largest original index 336, exact arithmetic,
+  Python3.12.14 standard library, no seed. Twenty-two focused tests pass, with
+  five corruption controls and existing r=1/p=13 regressions. Guarded commands
+  use 180s/2GiB/12GiB limits and finish in about seven seconds altogether.
+- No Lean changes/build/audit, catalogue, dependency/runtime, schedule, credential,
+  other checkout or user-machine change. Targeted Lai–Sprang v1 theorem/function
+  equation/Proposition 2.3 reading on 28 October retains the weekly source limits;
+  no broad daily search or new binary candidate. Challenge's sorry is not used.
+- Next: compatibility transport with state-dependent relation data or nonlinear
+  structure that can force zero. Do not repeat the affine constraint, generic
+  packaging or witness exports. Exact table/proof, inverse certificate, commands
+  and limits: results/2026-10-28-compatibility-affine-obstruction.md and validation.
+
 ## 2026-10-26 (Monday, Australia/Sydney): exact target preimage and sibling obstruction
 
 - Prepared env.sh/check.py passed exact pins, dependencies, readiness and imports.

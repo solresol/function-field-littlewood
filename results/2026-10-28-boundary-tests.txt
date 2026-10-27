@@ -1,0 +1,17 @@
+test_domains (test_correlated_boundary_state.CorrelatedStateTests.test_domains) ... ok
+test_shift_phase_is_essential_for_transition (test_correlated_boundary_state.CorrelatedStateTests.test_shift_phase_is_essential_for_transition) ... ok
+test_transition_needs_only_stored_state (test_correlated_boundary_state.CorrelatedStateTests.test_transition_needs_only_stored_state) ... ok
+test_zero_shift_empty_rectangles_and_size_guard (test_correlated_boundary_state.CorrelatedStateTests.test_zero_shift_empty_rectangles_and_size_guard) ... ok
+test_bareiss_against_permutation_formula (test_terminal_boundary_cover.BoundaryCoverTests.test_bareiss_against_permutation_formula) ... ok
+test_corruption_and_coverage_controls (test_terminal_boundary_cover.BoundaryCoverTests.test_corruption_and_coverage_controls) ... ok
+test_period_cover_at_large_shifts_and_inclusive_endpoint (test_terminal_boundary_cover.BoundaryCoverTests.test_period_cover_at_large_shifts_and_inclusive_endpoint) ... ok
+test_saved_minors_without_generator_or_elimination (test_terminal_boundary_cover.BoundaryCoverTests.test_saved_minors_without_generator_or_elimination) ... ok
+test_domains_and_empty_blocks (test_terminal_boundary_relation.BoundaryRelationTests.test_domains_and_empty_blocks) ... ok
+test_recursion_only_reads_scalar_hankel_bases (test_terminal_boundary_relation.BoundaryRelationTests.test_recursion_only_reads_scalar_hankel_bases) ... ok
+test_relation_basis_has_independent_unique_preimages (test_terminal_boundary_relation.BoundaryRelationTests.test_relation_basis_has_independent_unique_preimages) ... ok
+test_terminal_target_recovers_known_polynomial_and_rejects_mutations (test_terminal_boundary_relation.BoundaryRelationTests.test_terminal_target_recovers_known_polynomial_and_rejects_mutations) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.026s
+
+OK
