@@ -1,0 +1,507 @@
++ python3 -m search.terminal_target_preimage
+{
+  "python": "3.12.14",
+  "dependencies": "standard library",
+  "seed": null,
+  "scope": "prescribed target identities, compatibility and failed implication; no search",
+  "fields": [
+    {
+      "p": 3,
+      "N": 2,
+      "comparisons": 160,
+      "independently_feasible_but_reject": 87
+    },
+    {
+      "p": 5,
+      "N": 4,
+      "comparisons": 160,
+      "independently_feasible_but_reject": 73
+    },
+    {
+      "p": 13,
+      "N": 4,
+      "comparisons": 160,
+      "independently_feasible_but_reject": 77
+    },
+    {
+      "p": 41,
+      "N": 8,
+      "comparisons": 160,
+      "independently_feasible_but_reject": 25
+    },
+    {
+      "p": 17,
+      "N": 16,
+      "comparisons": 160,
+      "independently_feasible_but_reject": 0
+    }
+  ],
+  "existing_path_controls": [
+    {
+      "p": 3,
+      "shift": 1,
+      "size": 2,
+      "accepted": true,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              2,
+              2
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              2,
+              2
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": [
+          2,
+          2
+        ],
+        "joint_dual": null,
+        "quotient_dimension": 2,
+        "compatibility_dual": null
+      }
+    },
+    {
+      "p": 5,
+      "shift": 311,
+      "size": 12,
+      "accepted": true,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              3,
+              1,
+              4,
+              2
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": [
+          3,
+          1,
+          4,
+          2
+        ],
+        "joint_dual": null,
+        "quotient_dimension": 4,
+        "compatibility_dual": null
+      }
+    },
+    {
+      "p": 5,
+      "shift": 313,
+      "size": 12,
+      "accepted": false,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              4,
+              2,
+              4,
+              2
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              1,
+              4,
+              1,
+              0
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": null,
+        "joint_dual": [
+          2,
+          4,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "quotient_dimension": 4,
+        "compatibility_dual": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "shift": 1465,
+      "size": 80,
+      "accepted": true,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              11,
+              10,
+              11,
+              10
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              11,
+              10,
+              11,
+              10
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": [
+          11,
+          10,
+          11,
+          10
+        ],
+        "joint_dual": null,
+        "quotient_dimension": 4,
+        "compatibility_dual": null
+      }
+    },
+    {
+      "p": 13,
+      "shift": 1463,
+      "size": 80,
+      "accepted": false,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              1,
+              0,
+              4,
+              3
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              3,
+              2,
+              11,
+              10
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": null,
+        "joint_dual": [
+          6,
+          10,
+          11,
+          10,
+          1
+        ],
+        "quotient_dimension": 4,
+        "compatibility_dual": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "shift": 249,
+      "size": 36,
+      "accepted": false,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              1,
+              0,
+              2,
+              1
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": null,
+        "joint_dual": [
+          1,
+          3,
+          4,
+          0,
+          0,
+          1
+        ],
+        "quotient_dimension": 4,
+        "compatibility_dual": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "shift": 505,
+      "size": 36,
+      "accepted": true,
+      "original_matrix_checked": true,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              2,
+              1,
+              2,
+              1
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "joint_dual": null,
+        "quotient_dimension": 4,
+        "compatibility_dual": null
+      }
+    },
+    {
+      "p": 41,
+      "shift": 618117,
+      "size": 1916343,
+      "accepted": true,
+      "original_matrix_checked": false,
+      "preimage": {
+        "slices": [
+          {
+            "point": [
+              13,
+              15,
+              3,
+              22,
+              19,
+              2,
+              1,
+              14
+            ],
+            "directions": [],
+            "dual": null
+          },
+          {
+            "point": [
+              13,
+              15,
+              3,
+              22,
+              19,
+              2,
+              1,
+              14
+            ],
+            "directions": [],
+            "dual": null
+          }
+        ],
+        "point": [
+          13,
+          15,
+          3,
+          22,
+          19,
+          2,
+          1,
+          14
+        ],
+        "joint_dual": null,
+        "quotient_dimension": 8,
+        "compatibility_dual": null
+      }
+    }
+  ],
+  "one_parity_norm_counterexample": {
+    "p": 5,
+    "shift": 313,
+    "size": 12,
+    "V": [
+      3,
+      3,
+      4,
+      0,
+      1,
+      3,
+      4,
+      0,
+      1
+    ],
+    "S": [
+      3,
+      1,
+      0,
+      0,
+      3,
+      3,
+      3,
+      3,
+      3,
+      0,
+      1,
+      1
+    ],
+    "E": [
+      3,
+      0,
+      3,
+      3,
+      3,
+      1
+    ],
+    "O": [
+      1,
+      0,
+      3,
+      3,
+      0,
+      1
+    ],
+    "root_moments": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "primitive_moments": [
+      4,
+      2,
+      4,
+      2
+    ],
+    "weighted_norm_values": [
+      1,
+      1
+    ],
+    "original_rows": [
+      0,
+      4,
+      0,
+      3,
+      0,
+      3,
+      0,
+      4,
+      0,
+      1,
+      0,
+      1
+    ],
+    "inclusive_original_endpoint": 336,
+    "preimage": {
+      "slices": [
+        {
+          "point": [
+            4,
+            2,
+            4,
+            2
+          ],
+          "directions": [],
+          "dual": null
+        },
+        {
+          "point": [
+            1,
+            4,
+            1,
+            0
+          ],
+          "directions": [],
+          "dual": null
+        }
+      ],
+      "point": null,
+      "joint_dual": [
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "quotient_dimension": 4,
+      "compatibility_dual": [
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "runtime_seconds": 6.919513615000028
+}

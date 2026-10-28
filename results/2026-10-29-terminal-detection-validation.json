@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-29",
+  "checked_at": "2026-10-29T08:57:33.588783+11:00",
+  "scheduled_utc": "2026-10-28T21:20:00Z",
+  "base_commit": "6d6f0031e3e6a82af0ac0b947cb94610a6546c17",
+  "classification": "verification/infrastructure progress: coefficient-row Proposition 2.3, no invisible vectors and accepted target to exact certificate/product",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "seed": null,
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "startup_check": {
+    "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+    "exit_code": 0,
+    "scope": "exact toolchains, pins, dependency HEADs and tracked cleanliness, readiness receipts, representative imports; observed before research"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 1800,
+    "runner": "prepared m.run and env_for(littlewood); no setup functions called"
+  },
+  "checks": [
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 2.04,
+      "output": "results/2026-10-29-terminal-detection-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/TerminalDetectionAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.038,
+      "output": "results/2026-10-29-terminal-detection-audit.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_terminal_target_preimage.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 2.036,
+      "output": "results/2026-10-29-terminal-detection-tests.txt"
+    },
+    {
+      "label": "fixed-check",
+      "command": [
+        "python3",
+        "-m",
+        "search.terminal_target_preimage"
+      ],
+      "exit_code": 0,
+      "seconds": 7.039,
+      "output": "results/2026-10-29-terminal-detection-fixed-check.txt"
+    }
+  ],
+  "audited_declarations": {
+    "FunctionFieldLittlewood.BinomialNonvanishing.binomial_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_descent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.filt_difference": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.stream_geometric_nonvanishing": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.geometric_constant": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.stream_terminal_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.unity_root_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.geometric_dvd_of_evaluations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.multiplier_eval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.filt_multiplier": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.target_exact_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.target_sharp_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FunctionFieldLittlewood.TerminalDetection.stream_no_invisible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/BinomialNonvanishing.lean": "81e3e81d68c0e5e62a13839902ca4b9e4b80348f8d7f3d739baae6863a74a23e",
+    "FunctionFieldLittlewood/TerminalDetection.lean": "01fff9f130315cbfbbbc304216a1a52de6c1e4d0961ba685db16ab4e341eea24",
+    "verification/TerminalDetectionAudit.lean": "879d3d59aa2313f7bc5ea8d3bddc47dae6e7be94bd5532470e26b88ad7687dd2",
+    "FunctionFieldLittlewood.lean": "3631e7f15c92fe0deac1693b3b2ebb14b7fdace336c5b620887f604adf412825"
+  },
+  "pins_unchanged": true
+}
