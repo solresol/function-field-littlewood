@@ -16,6 +16,9 @@ project:
     reverse lift transports exact terminal certificates to product 2^(-2N) at every allowed dyadic scale.
     The primitive target preimage criterion is proved for all four digit branches and the named stream,
     with a separate generic affine compatibility quotient theorem.
+    Coefficient-row Proposition 2.3 is now proved by strict degree descent. Actual nonempty square
+    target membership yields exact terminal certificates and polynomial product 2^(-2N), and the
+    stacked Hankel/evaluation map has trivial kernel for rows>=columns-1.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -73,8 +76,14 @@ status:
     zero-forcing root target for all four digit branches and the named infinite stream,
     plus a generic affine quotient criterion and representative independence. The actual
     child predicates are not yet packaged as affine subspaces; uniqueness has an explicit
-    trivial-direction-intersection premise. Injectivity, dimensions, target-to-exact-certificate
-    interpretation, executable enumeration and the sharper subspace cardinal bound remain outside Lean.
+    trivial-direction-intersection premise. BinomialNonvanishing proves the coefficient-row form of
+    Lai-Sprang Proposition 2.3 for the infinite named stream, with full two-primary order and all shifts.
+    TerminalDetection derives geometric nonvanishing by degree+2, proves the exact certificate endpoints,
+    and connects actual accepted nonempty square targets to the existing product theorem. It also proves
+    no invisible vectors for rows>=columns-1 without assuming Hankel invertibility. Dimensions,
+    four-square reconstruction, concrete affine-direction intersection, executable enumeration and
+    the sharper subspace cardinal bound remain outside Lean. Uniform acceptance remains an explicit
+    missing existence theorem.
     Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
@@ -87,6 +96,30 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing
+    file: FunctionFieldLittlewood/BinomialNonvanishing.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.TerminalDetection.target_sharp_product
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.TerminalDetection.stream_no_invisible
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.TargetPreimage.stream_target_iff
     file: FunctionFieldLittlewood/TargetPreimage.lean
     sorry_count: 0
@@ -324,6 +357,8 @@ fidelity:
     with the entire infinite rational-function Laurent sum. The original paper's full odd-characteristic
     counterexample theorem and this repository's terminal equivalence and boundary refinements
     are not formalised end to end. The named-stream cutoff d<N(3N/2-1) is formalised.
+    The named-stream coefficient-row Proposition 2.3 and accepted-target-to-exact-certificate/product
+    implication are now formalised; acceptance is still an explicit hypothesis.
     No first-formalisation claim is made. The combined package discharges
     root enumeration uniformly and exposes the odd coefficient sequence and geometric factor
     inside its independent statement; moment vanishing is still an explicit hypothesis.

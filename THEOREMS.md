@@ -18,6 +18,7 @@ The boundary parity-merge group is pinned to `491cd5a96f6515499dd2c14d60337f72b4
 The correlated reachability group is pinned to `914c91f6cc97fb48e428f8218664274152fdb3a1` (22 October 2026).
 The uniform terminal-lift group is pinned to `846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f` (24 October 2026).
 The primitive-target/affine-compatibility group is pinned to `4bb00ee703579687fee35ed7aec267e0872f9e50` (27 October 2026).
+The binomial nonvanishing/terminal detection group is pinned to `db1616b4757687cced5ad1bcb43d6e9157926e8f` (29 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -47,8 +48,23 @@ axiom audit, archive coverage and registry status.
 | [Correlated boundary-state reachability](https://github.com/solresol/function-field-littlewood/blob/914c91f6cc97fb48e428f8218664274152fdb3a1/FunctionFieldLittlewood/CorrelatedState.lean#L263) | exact paired-word reachability and finite state type for the named stream | Not yet archived |
 | [Uniform geometric terminal lift](https://github.com/solresol/function-field-littlewood/blob/846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f/FunctionFieldLittlewood/TerminalLift.lean#L174) | all-scale exact certificates to product 2^(-2N); existence is an input | Not yet archived |
 | [Primitive terminal target and affine compatibility](https://github.com/solresol/function-field-littlewood/blob/4bb00ee703579687fee35ed7aec267e0872f9e50/FunctionFieldLittlewood/TargetPreimage.lean#L206) | coupled target criterion for the named stream; generic quotient obstruction | Not yet archived |
+| [Binomial nonvanishing and exact terminal detection](https://github.com/solresol/function-field-littlewood/blob/db1616b4757687cced5ad1bcb43d6e9157926e8f/FunctionFieldLittlewood/TerminalDetection.lean#L160) | proved coefficient-row Proposition 2.3, no invisible vectors and accepted target to exact certificate/product | Not yet archived |
 
 ## Verification boundary
+
+The 29 October group proves coefficient-row Proposition 2.3 for the infinite
+named stream by strict degree descent, assuming prime p>2 and the full two-primary
+order. All shifts and the r=1 comparison are included. It derives the geometric
+degree+2 nonvanishing bound, both certificate endpoints and the exact next row.
+Actual nonempty square target membership then yields an exact terminal certificate
+and an actual polynomial product 2^(-2N), using the existing lift. The same proved
+descent establishes no invisible vectors for rows>=columns-1, including singular
+Hankel blocks. Acceptance remains a hypothesis; no uniform accepting path or new
+prime is supplied. The full rational Laurent-sum identification, arbitrary-field/P
+source theorem, dimensions, four-square reconstruction and concrete affine-direction
+intersection remain outside this group. This is verification of known mathematics;
+see [scope and evidence](results/2026-10-29-terminal-detection.md). No independent-kernel
+replay, archive coverage or novelty claim is made.
 
 The 27 October target-preimage group derives the exact primitive-parts criterion
 for all four paired-digit branches on actual infinite-stream Hankel blocks,

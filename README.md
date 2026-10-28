@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Exact terminal detection formalised on 29 October 2026
+
+[BinomialNonvanishing.lean](FunctionFieldLittlewood/BinomialNonvanishing.lean)
+proves the coefficient-row form of Lai–Sprang Proposition 2.3 by strict degree
+descent. [TerminalDetection.lean](FunctionFieldLittlewood/TerminalDetection.lean)
+uses it to derive a full-degree, endpoint-admissible exact certificate from
+actual square target membership, then the existing lift gives product `2^(-2N)`.
+The no-invisible-vector lemma is proved for blocks with at least columns-1 rows,
+including singular Hankel blocks. All shifts and the r=1 comparison are included.
+
+This is **verification/infrastructure progress on known mathematics**. Acceptance
+is still an explicit hypothesis: no uniform accepting word, new prime or
+characteristic-two result follows. The default build, 14-declaration standard-axiom
+audit and existing exact target regressions pass. See [scope and checks](results/2026-10-29-terminal-detection.md).
+Next substantive work remains state-dependent or nonlinear compatibility transport.
+
 ## Coupled target preimages formalised on 27 October 2026
 
 [TargetPreimage.lean](FunctionFieldLittlewood/TargetPreimage.lean) derives the
@@ -822,9 +838,11 @@ Smaller storage does not justify a whole reachable-graph or larger wall search.
 Characteristic two remains a separate main frontier. New candidates require
 rational/quadratic-series and known unbounded-window screening first; the three
 binary baselines remain retired. Further formal work should support the new
-acceptance argument. The no-invisible-vector/dimension and terminal-exactness
-arguments still depend ordinarily on Proposition 2.3; do not count them as Lean
-theorems. Original root-sum identification and generic degree-zero formalisation
+acceptance argument. The coefficient-row Proposition 2.3, no-invisible-vector
+lemma and accepted-target-to-exact-certificate/product implication are now Lean
+theorems. Relation dimensions, four-square reconstruction, concrete affine-direction
+intersection and uniform accepting paths remain outside Lean. Original root-sum
+identification and generic degree-zero formalisation
 remain lower priorities. The r=2 three-term extension remains refuted.
 
 The 30 September research review replaces the daily artifact quota with a

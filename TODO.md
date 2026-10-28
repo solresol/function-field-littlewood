@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (28 October update)
+## Research priorities and progress criteria (29 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
@@ -41,6 +41,12 @@ substantive targets remain open. The [28 October finite obstruction](results/202
 rules out a fixed proper affine subspace for compatibility differences even
 at fixed phase, capped size, size parity and next digit. Next derive transport
 with state-dependent relation data, preserving actual adjacent-shift correlations.
+
+The [29 October formalisation](results/2026-10-29-terminal-detection.md) proves
+the coefficient-row Proposition 2.3, the actual no-invisible-vector lemma and
+the missing accepted-target-to-exact-certificate/product implication. These are
+verification/infrastructure progress on known mathematics. Uniform acceptance
+is still open; this does not justify more generic affine packaging or witnesses.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -191,8 +197,10 @@ proof path to the universal N-bound.
 The 20 October formalisation completes the algebraic recurrence: all-root
 coordinates, odd-block factorisation, squaring transport, both parity merges,
 and exact natural-index reindexing. It includes empty/unequal blocks and r=1.
-Do not repeat this bridge. The no-invisible-kernel, dimension and terminal-target
-claims are still ordinary deductions from Proposition 2.3, not Lean theorems.
+Do not repeat this bridge. The 29 October BinomialNonvanishing/TerminalDetection
+modules now prove coefficient-row Proposition 2.3, no invisible kernels and the
+accepted-target-to-exact-certificate/product implication. Dimension results and
+uniform target existence remain outside Lean.
 
 The 22 October CorrelatedState proof now formalises the eight-relation tuple's
 exact digit transitions, phase/saturation updates, word induction and converse
@@ -203,8 +211,8 @@ The terminal interpretation, executable enumeration and sharper cardinal bound
 remain outside this theorem. See [the scope](results/2026-10-22-correlated-state-lean.md).
 Next formal work should follow the compression/accepting-path evidence from the
 next substantive computation; do not repeat closure or digit bookkeeping.
-Formalising Proposition 2.3 is a separate substantial project, not an assumed
-input to be disguised as an unconditional terminal theorem.
+The coefficient-row Proposition 2.3 is proved by strict degree descent on
+29 October; do not repeat it or replace it by an assumed input.
 
 **24 October: the uniform reverse lift is complete.** TerminalLift.lean proves
 odd-row annihilation for X^(N/2)+1 multiples and, for F_1 multiples, at every
@@ -230,16 +238,37 @@ now kernel-checked in TargetPreimage.lean (27 October), including the actual
 named-stream target criterion. Do not repeat them. Concrete affine-slice
 packaging, normalized-forcing simplification and dimension counts remain outside
 Lean and should be undertaken only when the substantive accepting-path argument
-needs them. Exact even-shift stripping also needs the ordinary moment-factor/D+2
-input; keep that dependency explicit.
-The separate missing bridge from boundary target (0,e_1) to an endpoint-admissible
-exact terminal certificate still needs a proof of Proposition 2.3 (or another
-proved replacement); do not insert it as an axiom or count it as completed.
+needs them. Exact even-shift stripping remains unformalised; the coefficient-row
+Proposition 2.3 and D+2 nonvanishing input are now available from 29 October.
+The separate bridge from a nonempty boundary target (0,e_1) to an
+endpoint-admissible exact terminal certificate and actual product is completed
+on 29 October, using the proved coefficient-row Proposition 2.3. It includes
+exact degree and constant-endpoint conclusions; do not repeat the bridge.
+The no-invisible-vector input is also proved for rows>=columns-1. The generic
+bordered sum/intersection theorem and its dimensions remain unformalised;
+choose further work only when a substantive accepting-path argument needs it.
 
 Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-29 (Thursday formalisation)
+
+- Proved coefficient-row Proposition 2.3: a nonzero X^N-1 multiple has a nonzero
+  row by its degree at every shift. Strict degree descent reuses existing parity,
+  finite-moment, nonsquare and leading-child lemmas, including r=1.
+- Actual nonempty square target membership now yields exact degree, both nonzero
+  endpoints and an exact terminal certificate; the existing lift then gives the
+  actual polynomial product 2^(-2N). No target existence or nonvanishing theorem
+  is assumed. No-invisible vectors are also proved for rows>=columns-1, without
+  requiring Hankel invertibility.
+- Classification: verification/infrastructure progress on known mathematics.
+  Default build, 14-declaration standard-axiom audit, raw F_3/singular controls,
+  three focused tests and 800 existing prescribed target comparisons pass.
+  No new prime, uniform accepting word, characteristic-two advance or novelty
+  claim. Next: substantive state-dependent/nonlinear compatibility structure;
+  no repeat of generic packaging, completed bridges or witness exports.
 
 ## Completed on 2026-10-28 (Wednesday structural computation)
 

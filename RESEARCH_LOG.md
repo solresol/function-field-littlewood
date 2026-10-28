@@ -1,5 +1,40 @@
 # Research log
 
+## 2026-10-29 (Thursday, Australia/Sydney): proved nonvanishing and terminal detection
+
+- Scheduled 28 October 21:20 UTC = Thursday 29 October 08:20 AEDT. Prepared
+  env.sh/check.py passed before research. Clean work at 6d6f003 matched expected
+  origin/main; fetched, verified ancestry, preserved work and created tracking
+  main, FF current. Read saved Start, bootstrap recovery, actual source/licence,
+  current roadmap/recent results and the 24 October human-literature review.
+- Stated before coding: prove coefficient-row Proposition 2.3 from existing
+  parity/moment machinery, then remove assumed nonvanishing from terminal
+  detection. BinomialNonvanishing proves strict degree descent and nonvanishing
+  for every nonzero X^N-1 multiple, all shifts, including r=1.
+- TerminalDetection proves the geometric D+2 bound, exact endpoints/next row,
+  actual accepted-target-to-exact-certificate/product implication, and no
+  invisible vectors for rows>=columns-1 including singular Hankel blocks.
+  Proposition 2.3, rank, endpoints and target existence are not assumed as axioms.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on known mathematics.
+  Acceptance remains an explicit hypothesis. No uniform accepting word, new
+  prime, characteristic-two advance, graph enumeration or priority claim.
+  No generic affine packaging or expanded attainment search was undertaken.
+- Guarded default build, 14-declaration type/standard-axiom audit, raw F_3 and
+  singular controls, three focused tests and unchanged 800 original-root-sum
+  target comparisons pass. Lean 4.35.0/mathlib pins unchanged; no new sorry,
+  unproved axiom or native_decide. Existing Challenge placeholder is excluded
+  from proof closures. No separate-kernel replay claimed. Exact inputs, ranges,
+  endpoints, source hashes, commands/timings and limits are in the dated report
+  and validation record. Python 3.12.14 standard library, no seed.
+- Targeted Lai–Sprang v1 Proposition 2.3/descent reading on 29 October;
+  weekly human-review source limits retained. No broad daily literature search
+  or new binary candidate. No install/download, runtime, dependency, security,
+  credential, schedule, other-checkout, user-machine or environment-publication
+  change. Cloud-thread send tools unavailable; exact push state returned to parent.
+- Next: state-dependent/nonlinear compatibility transport on actual correlated
+  paths. Formal acceptance can now feed the product theorem; do not repeat the
+  completed bridge or Wednesday's fixed-affine obstruction.
+
 ## 2026-10-28 (Wednesday, Australia/Sydney): full affine compatibility span
 
 - Scheduled 27 October 21:20 UTC is Wednesday 28 October 08:20 AEDT. Sourced

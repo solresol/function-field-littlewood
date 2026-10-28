@@ -2395,6 +2395,226 @@ theorems:
   palomar:
     status: not-submitted
     id: null
+- id: binomial-nonvanishing-terminal-detection
+  title: Coefficient-row Proposition 2.3 and exact terminal detection
+  status: kernel-checked
+  mathematical_origin: formalisation of Lai-Sprang Proposition 2.3 and the ordinary boundary arguments
+    of 19/26 October
+  first_formalisation_priority: unestablished
+  statement: For the infinite named support stream, every nonzero X^N-1 multiple has a nonzero row by
+    its degree at every shift. Every nonzero geometric multiple has a nonzero row by degree+2. Actual
+    nonempty square target membership yields full degree, nonzero endpoints and an exact terminal certificate,
+    then a polynomial product 2^(-2N). The stacked Hankel/evaluation map has trivial kernel whenever rows>=columns-1,
+    including singular Hankel blocks.
+  assumptions:
+  - Prime p>2 and p-1=2*2^r*(2k+1), so N=2^(r+1) is the full two-primary part. Lean r=0 includes the usual
+    valuation-r=1 comparison; all shifts are nonnegative.
+  - Binomial nonvanishing requires a nonzero polynomial divisible by X^N-1. Geometric nonvanishing requires
+    the factor F_N; no constant-coefficient premise is imposed.
+  - Target detection takes actual membership of (0,e_1) in a square of size d+1, and an injective complete
+    N-th-root list, supplied separately by the existing stream_full_root_data theorem. It assumes neither
+    endpoints, exact degree, no invisible vectors nor Proposition 2.3.
+  - No-invisible-vector theorem requires N distinct N-th roots, d+1 columns, L rows with d<=L, and both
+    Hankel and evaluation outputs zero.
+  limitations: Verification/infrastructure progress on known mathematics. Acceptance remains an explicit
+    hypothesis; no uniform accepting word, new prime, characteristic-two construction, finite graph enumeration,
+    dimension theorem, concrete affine-direction intersection, four-square theorem or even-shift stripping
+    is supplied. The named support stream is not identified end to end with the full rational Laurent
+    sum. This is not the full source theorem over arbitrary ground fields and irreducible P. No novelty,
+    independent-kernel replay, archive or registry coverage is claimed.
+  declarations:
+  - name: FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_descent
+    file: FunctionFieldLittlewood/BinomialNonvanishing.lean
+    line_at_snapshot: 26
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_descent : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (R : Polynomial (ZMod p)),
+              R ≠ 0 →
+                Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+                  ∀ (q n epsilon delta : ℕ),
+                    epsilon ≤ 1 →
+                      delta ≤ 1 →
+                        R.natDegree = 2 * q + epsilon →
+                          (∀ (j : ℕ),
+                              1 ≤ j →
+                                j ≤ R.natDegree →
+                                  FunctionFieldLittlewood.WindowMoments.filt R
+                                      (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (2 * n + delta + j) =
+                                    0) →
+                            ∃ S,
+                              S ≠ 0 ∧
+                                S.natDegree = q ∧
+                                  Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ S ∧
+                                    ∀ (j : ℕ),
+                                      1 ≤ j →
+                                        j ≤ q →
+                                          FunctionFieldLittlewood.WindowMoments.filt S
+                                              (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + epsilon * delta + j) =
+                                            0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing
+    file: FunctionFieldLittlewood/BinomialNonvanishing.lean
+    line_at_snapshot: 109
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (R : Polynomial (ZMod p)),
+              R ≠ 0 →
+                Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+                  ∀ (m : ℕ),
+                    ∃ j,
+                      1 ≤ j ∧
+                        j ≤ R.natDegree ∧
+                          FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (m + j) ≠
+                            0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalDetection.stream_geometric_nonvanishing
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    line_at_snapshot: 31
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalDetection.stream_geometric_nonvanishing : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (P : Polynomial (ZMod p)),
+              P ≠ 0 →
+                FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+                  ∀ (m : ℕ),
+                    ∃ j,
+                      1 ≤ j ∧
+                        j ≤ P.natDegree + 2 ∧
+                          FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (m + j) ≠
+                            0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalDetection.stream_terminal_certificate
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    line_at_snapshot: 63
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalDetection.stream_terminal_certificate : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (P : Polynomial (ZMod p)),
+              P ≠ 0 →
+                FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+                  ∀ (m : ℕ),
+                    (∀ (j : ℕ),
+                        1 ≤ j →
+                          j ≤ P.natDegree + 1 →
+                            FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                (m + j) =
+                              0) →
+                      FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (FunctionFieldLittlewood.TerminalLift.coefficients P) m (P.natDegree + 2)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalDetection.target_exact_certificate
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    line_at_snapshot: 160
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalDetection.target_exact_certificate : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ∀ (m d : ℕ),
+                    FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (m + 1) (d + 1) (d + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z) →
+                      ∃ P,
+                        P.natDegree = d ∧
+                          FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P ∧
+                            FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (FunctionFieldLittlewood.TerminalLift.coefficients P) m (d + 2)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalDetection.target_sharp_product
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    line_at_snapshot: 208
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalDetection.target_sharp_product : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ∀ (m d : ℕ),
+                    FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (m + 1) (d + 1) (d + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z) →
+                      ∃ P,
+                        P.natDegree = d ∧
+                          FunctionFieldLittlewood.polynomialLittlewoodProduct
+                              (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (Polynomial.X ^ (2 ^ (r + 1) * m) * (Polynomial.expand (ZMod p) (2 ^ (r + 1))) P) =
+                            2 ^ (-2 * ↑(2 ^ (r + 1)))
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.TerminalDetection.stream_no_invisible
+    file: FunctionFieldLittlewood/TerminalDetection.lean
+    line_at_snapshot: 228
+    introduced_commit: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_type: |-
+      @FunctionFieldLittlewood.TerminalDetection.stream_no_invisible : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+                  ∀ (m L d : ℕ),
+                    d ≤ L →
+                      ∀ (x : Fin (d + 1) → ZMod p),
+                        (FunctionFieldLittlewood.BoundaryRelation.block (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                  (m + 1) L (d + 1)).mulVec
+                              x =
+                            0 →
+                          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (d + 1)).transpose.mulVec x = 0 → x = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: db1616b4757687cced5ad1bcb43d6e9157926e8f
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-29-terminal-detection-build.txt
+    full_build_validation: results/2026-10-29-terminal-detection-validation.json
+    catalogue_audit: results/2026-10-29-terminal-detection-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/BinomialNonvanishing.lean: 81e3e81d68c0e5e62a13839902ca4b9e4b80348f8d7f3d739baae6863a74a23e
+      FunctionFieldLittlewood/TerminalDetection.lean: 01fff9f130315cbfbbbc304216a1a52de6c1e4d0961ba685db16ab4e341eea24
+      verification/TerminalDetectionAudit.lean: 879d3d59aa2313f7bc5ea8d3bddc47dae6e7be94bd5532470e26b88ad7687dd2
+      FunctionFieldLittlewood.lean: 3631e7f15c92fe0deac1693b3b2ebb14b7fdace336c5b620887f604adf412825
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
 unformalised_and_open:
 - id: boundary-terminal-cutoffs
   status: ordinary-proof-not-lean
@@ -2413,8 +2633,9 @@ unformalised_and_open:
   remaining: On 17-18 October the 2N branch was selected for p=5,13,29,37,53,61 by explicit witnesses
     (all six in Lean, with the reverse lift formalised in certificate form); p=41 at N=8
     was computer-verified on 19 October but is not Lean-checked. Other N>=8 primes remain undecided. The uniform geometric-factor lift from exact terminal certificates is now Lean-proved
-    in uniform-geometric-terminal-lift (24 October). Boundary acceptance to an exact certificate,
-    the descent-side equivalence and the literature-dependent cap remain outside Lean.
+    in uniform-geometric-terminal-lift (24 October). Boundary acceptance to an exact certificate is now
+    Lean-proved in binomial-nonvanishing-terminal-detection (29 October), using a proved coefficient-row
+    Proposition 2.3. The descent-side equivalence and the full literature-dependent cap remain outside Lean.
 - id: all-degree-bound
   status: refuted
   statement: j-d<=N for all degrees and shifts for the explicit Lai-Sprang stream when r>=2.
