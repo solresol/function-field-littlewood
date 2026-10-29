@@ -1,0 +1,79 @@
++ python3 -m search.compatibility_profile_obstruction --discover
+[
+  {
+    "p": 5,
+    "paths": [
+      [
+        311,
+        12
+      ],
+      [
+        313,
+        12
+      ],
+      [
+        249,
+        36
+      ],
+      [
+        505,
+        36
+      ]
+    ],
+    "prefixes": 12,
+    "inputs": 52,
+    "collisions": [
+      [
+        [
+          62,
+          8
+        ],
+        [
+          126,
+          8
+        ]
+      ]
+    ],
+    "transition_separations": [
+      {
+        "inputs": [
+          [
+            62,
+            8
+          ],
+          [
+            126,
+            8
+          ]
+        ],
+        "digit": [
+          1,
+          1
+        ]
+      }
+    ],
+    "prescribed_suffixes": 11,
+    "terminal_separations": [],
+    "runtime_seconds": 0.7848825710000256
+  },
+  {
+    "p": 13,
+    "paths": [
+      [
+        1465,
+        80
+      ],
+      [
+        1463,
+        80
+      ]
+    ],
+    "prefixes": 9,
+    "inputs": 37,
+    "collisions": [],
+    "transition_separations": [],
+    "prescribed_suffixes": 9,
+    "terminal_separations": [],
+    "runtime_seconds": 0.5718408980000049
+  }
+]

@@ -1,0 +1,10 @@
++ python3 -m unittest discover -s tests -p test_compatibility_affine_obstruction.py -v
+test_inverse_point_root_and_completeness_corruptions_rejected (test_compatibility_affine_obstruction.CompatibilityAffineObstructionTests.test_inverse_point_root_and_completeness_corruptions_rejected) ... ok
+test_reduced_slices_match_independent_original_systems (test_compatibility_affine_obstruction.CompatibilityAffineObstructionTests.test_reduced_slices_match_independent_original_systems) ... ok
+test_saved_certificate_reproduces_exactly (test_compatibility_affine_obstruction.CompatibilityAffineObstructionTests.test_saved_certificate_reproduces_exactly) ... ok
+test_saved_proof_without_elimination_or_state_recursion (test_compatibility_affine_obstruction.CompatibilityAffineObstructionTests.test_saved_proof_without_elimination_or_state_recursion) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.061s
+
+OK

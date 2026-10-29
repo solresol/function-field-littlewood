@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (29 October update)
+## Research priorities and progress criteria (30 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
@@ -47,6 +47,15 @@ the coefficient-row Proposition 2.3, the actual no-invisible-vector lemma and
 the missing accepted-target-to-exact-certificate/product implication. These are
 verification/infrastructure progress on known mathematics. Uniform acceptance
 is still open; this does not justify more generic affine packaging or witnesses.
+
+The [30 October collision](results/2026-10-30-compatibility-profile-obstruction.md)
+settles Wednesday's previously inconclusive complete target-slice profile closure
+question: T(62,8),T(126,8) over F_5 have equal full profiles, including all
+homogeneous directions and exact k, but digit (1,1) separates the profiles.
+No nonlinear update of that profile alone can close the recurrence. This does
+not establish terminal language inequivalence or refute compression restricted
+to feasible/singleton profiles. Next identify the transverse forcing/output
+response lost by empty target slices, using this fixed collision.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -151,15 +160,24 @@ finding rather than promoting it to a firstness claim.
   Their augmented determinant is 1, independently certified by ten explicit
   original-root-sum system inverses. Retire a fixed proper affine locus depending
   only on these labels; state-dependent/nonlinear constraints remain possible.
-  The full next-digit affine-slice profile closure question is inconclusive:
-  the bounded existing-path comparison found collisions only at k=0. See
+  Its full-profile closure test was inconclusive at that date: the bounded
+  existing-path comparison found collisions only at k=0; 30 October below
+  settles closure at saturated size. See
   [proof, exact inputs and limits](results/2026-10-28-compatibility-affine-obstruction.md).
-- Next bounded structural attempt: derive the compatibility class's change
-  under a shared prefix digit while retaining state-dependent relation data,
-  or find a nonlinear constraint strong enough to force the zero class.
-  Keep the actual p=5/p=13 path correlations. Do not replace compatibility by
-  independent feasibility, norm moments or a fixed proper affine subspace.
-  No whole-graph enumeration, larger witness boxes or complexity claim follows.
+- **30 October profile obstruction:** actual T(62,8),T(126,8) over F_5 have
+  identical complete local affine slices and homogeneous directions for all
+  four next digits, with equal phase, exact k and current rejection. Digit
+  (1,1) gives different profiles. The fixed original-coefficient primal/dual
+  certificate refutes deterministic profile closure, including nonlinear
+  updates; it does not distinguish the two terminal languages. See
+  [the proof and limits](results/2026-10-30-compatibility-profile-obstruction.md).
+- Next bounded structural attempt: identify the transverse forcing/output
+  response data from the four squares that distinguish this fixed collision
+  but are lost by empty local target slices. Derive the missing response before
+  proposing a further compression or compatibility transport. Feasible-only
+  profile reductions remain open. Keep actual p=5/p=13 path correlations; no
+  independent feasibility, norm-only criterion, fixed proper affine locus,
+  whole-graph enumeration or larger witness boxes.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence

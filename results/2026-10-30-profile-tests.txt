@@ -1,0 +1,10 @@
++ python3 -m unittest discover -s tests -p test_compatibility_profile_obstruction.py -v
+test_agrees_with_reduced_state_slices (test_compatibility_profile_obstruction.CompatibilityProfileObstructionTests.test_agrees_with_reduced_state_slices) ... ok
+test_original_certificates_regenerate_exactly (test_compatibility_profile_obstruction.CompatibilityProfileObstructionTests.test_original_certificates_regenerate_exactly) ... ok
+test_primal_dual_point_root_and_completeness_corruptions (test_compatibility_profile_obstruction.CompatibilityProfileObstructionTests.test_primal_dual_point_root_and_completeness_corruptions) ... ok
+test_readback_without_elimination_or_relation_engine (test_compatibility_profile_obstruction.CompatibilityProfileObstructionTests.test_readback_without_elimination_or_relation_engine) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.295s
+
+OK

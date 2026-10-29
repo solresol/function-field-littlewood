@@ -1585,3 +1585,42 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next substantive question remains shared-prefix evolution of the compatibility
   class on actual p=5/p=13 accepting/rejecting paths. Do not substitute more generic
   packaging, repeated lift proofs or routine certificates for that investigation.
+
+
+## 2026-10-30 (Friday, Australia/Sydney): full target-slice profiles do not close
+
+- Scheduled 29 October 21:20 UTC is Friday 30 October 08:20 AEDT. Prepared
+  runtime check passed without installs/downloads; exact pins/readiness retained.
+  Clean work at 09cc7ab matched fetched solresol origin/main. Preserved work,
+  created main and completed FF-only check. No overlap reported by parent.
+- Read Start, bootstrap recovery, latest weekly human-literature handoff,
+  README/TODO/log, actual relation/target/oracle sources and recent results.
+  Stated compatibility-class transport question before coding. The bounded
+  prescribed-prefix-plus-one-digit attempt finds T(62,8),T(126,8) over F_5.
+- The two actual saturated states have equal full next-digit affine-slice
+  profiles for all four digits, including homogeneous directions when the
+  affine slices are empty, phase, exact k and current rejection. Shared digit
+  (1,1) separates successor singleton slices. Thus no deterministic (even
+  nonlinear) update closes this profile. This resolves the 28 October closure
+  question at saturated size; the earlier fixed-affine-locus obstruction is
+  separate. No claim of terminal language inequivalence: 11 prescribed suffixes
+  did not distinguish acceptance, and both displayed successor targets reject.
+- Classification: MATHEMATICAL PROGRESS on auxiliary sharpness structure,
+  a finite exact obstruction to a meaningful compression. No new prime,
+  uniform acceptance, characteristic-two result, Lean theorem or priority claim.
+- Independent original-root-sum readback certifies 20 local systems and both
+  current rejections by explicit primal/dual identities. Verification performs
+  no elimination or relation recursion; inclusive original endpoint 576.
+  Four new tests plus existing boundary/target/four-square/affine controls:
+  26 pass. r=1 and F_13 retained. Python 3.12.14 standard library, no randomness.
+  Seven guarded commands pass in 10.304s; discovery only 52 F_5 / 37 F_13
+  prescribed states, no boxes/graph/witness expansion. No Lean source changed
+  and no new build/audit claimed. Existing Challenge placeholder unused.
+- Targeted Lai–Sprang v1 theorem/functional-equation/Proposition 2.3 reading
+  accessed 30 October; other frontier/source limits inherited from the weekly
+  handoff. No broad daily search or new binary candidate. Complete proof,
+  reproducible commands, hashes and limits in results/2026-10-30-compatibility-profile-obstruction.md
+  and companion certificate/validation/logs. Full diff inspected before commit.
+- Next identify transverse forcing/output response lost by empty target slices
+  using this fixed collision. Do not repeat affine packaging or expand witnesses.
+  Feasible-only reductions, uniform Delta_p=2N and characteristic two remain open.

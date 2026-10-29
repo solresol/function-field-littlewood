@@ -81,6 +81,20 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Target-slice profile closure refuted on 30 October 2026
+
+Two actual saturated F_5 states, T(62,8) and T(126,8), have identical complete
+next-digit affine-slice profiles, homogeneous directions, phase, exact size and
+current rejection. After the same digit (1,1), their profiles differ. Thus this
+profile admits no deterministic update, even a nonlinear one. This settles the
+profile-closure question left inconclusive on 28 October.
+
+This is **mathematical progress on auxiliary sharpness structure**, with direct
+original-coefficient primal/dual certificates. It does not distinguish the
+terminal languages of those two states or decide uniform sharpness or
+characteristic two. See [the exact collision, proof and limits](results/2026-10-30-compatibility-profile-obstruction.md).
+Next isolate the transverse response data lost by empty fixed-target slices.
+
 ## Exact terminal detection formalised on 29 October 2026
 
 [BinomialNonvanishing.lean](FunctionFieldLittlewood/BinomialNonvanishing.lean)

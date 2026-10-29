@@ -1,0 +1,64 @@
+{
+  "commands": [
+    {
+      "command": "python3 -m search.compatibility_profile_obstruction --check-reduced",
+      "output": "results/2026-10-30-profile-check.txt",
+      "seconds": 1.0394286339999894,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m search.compatibility_profile_obstruction --discover",
+      "output": "results/2026-10-30-profile-discovery.txt",
+      "seconds": 2.0551218089999566,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_compatibility_profile_obstruction.py -v",
+      "output": "results/2026-10-30-profile-tests.txt",
+      "seconds": 1.0442732120000073,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_terminal_target_preimage.py -v",
+      "output": "results/2026-10-30-target-tests.txt",
+      "seconds": 2.0489887360000125,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_*boundary*.py' -v",
+      "output": "results/2026-10-30-boundary-tests.txt",
+      "seconds": 2.0421086869999954,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_four_square_state.py -v",
+      "output": "results/2026-10-30-four-square-tests.txt",
+      "seconds": 1.0361947999999757,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_compatibility_affine_obstruction.py -v",
+      "output": "results/2026-10-30-affine-tests.txt",
+      "seconds": 1.0377241190000177,
+      "exit_code": 0
+    }
+  ],
+  "guards": {
+    "timeout_seconds": 180,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12
+  },
+  "python": "3.12.14",
+  "dependencies": "standard library",
+  "seed": null,
+  "lean_changed": false,
+  "lean_build_run": false,
+  "sha256": {
+    "search/compatibility_profile_obstruction.py": "94084533ed99d7550f16d73a560eff69837d42a86abb22b4e14e61973b66f8c7",
+    "tests/test_compatibility_profile_obstruction.py": "350dbb6cd1f3670c141f4e4617cccdc07338bf0a2a3c7ec0655cf1d170643c16",
+    "results/2026-10-30-compatibility-profile-check.json": "229e5daad08c02865e3223b0706fb2107cc30a216806b677c63426858dde5a1a",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  }
+}
