@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-27'
+updated: '2026-10-31'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -2608,6 +2608,219 @@ theorems:
       FunctionFieldLittlewood/TerminalDetection.lean: 01fff9f130315cbfbbbc304216a1a52de6c1e4d0961ba685db16ab4e341eea24
       verification/TerminalDetectionAudit.lean: 879d3d59aa2313f7bc5ea8d3bddc47dae6e7be94bd5532470e26b88ad7687dd2
       FunctionFieldLittlewood.lean: 3631e7f15c92fe0deac1693b3b2ebb14b7fdace336c5b620887f604adf412825
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: even-shift-terminal-stripping
+  title: Even-shift terminal stripping and odd-shift existence reduction
+  status: kernel-checked
+  mathematical_origin: formalisation of the 26 October ordinary terminal-stripping argument
+  first_formalisation_priority: unestablished
+  statement: At even shift, degree+1 zero rows of a geometric multiple force the full geometric
+    factor into both parity children. Actual boundary targets satisfy A(2m,2n) iff A(m,n),
+    with no odd-size event at even shift and no event at shift zero. Every polynomial event
+    has an odd-shift representative after dividing shift and size by the same power of two.
+    Actual boundary-target existence is equivalent to odd-shift existence.
+  assumptions:
+  - Prime p>2 and p-1=2*2^r*(2k+1), so N=2^(r+1) is the full two-primary part.
+    Lean r=0 includes the usual valuation-r=1 comparison. All shifts and sizes are nonnegative.
+  - Terminal is nonzero polynomial existence with exact degree+1=size, F_N divisibility and
+    size-many zero rows for the infinite named support stream. Endpoints, normalization at 1
+    and the exact next row are not assumed.
+  - Actual boundary statements require an injective complete N-th-root list, supplied separately
+    by existing stream_full_root_data. No invertibility or terminal existence is assumed.
+  limitations: Verification/infrastructure progress on the 26 October ordinary argument. Uniform
+    odd-shift acceptance remains open. No new prime, characteristic-two construction, closed
+    profile transport, dimension theorem, four-square reconstruction, normalized unique-polynomial
+    formula or full rational Laurent-sum identification is supplied. No independent-kernel replay,
+    novelty, archive or registry coverage is claimed.
+  declarations:
+  - name: FunctionFieldLittlewood.EvenShift.stream_even_forced_factor
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 34
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.stream_even_forced_factor : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (P : Polynomial (ZMod p)),
+              FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+                ∀ (q n epsilon : ℕ),
+                  epsilon ≤ 1 →
+                    P.natDegree = 2 * q + epsilon →
+                      (∀ (j : ℕ),
+                          1 ≤ j →
+                            j ≤ P.natDegree + 1 →
+                              FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                  (2 * n + j) =
+                                0) →
+                        ∃ E O,
+                          P = (Polynomial.expand (ZMod p) 2) E + Polynomial.X * (Polynomial.expand (ZMod p) 2) O ∧
+                            FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ E ∧
+                              FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ O ∧
+                                (∀ (j : ℕ),
+                                    1 ≤ j →
+                                      j ≤ q + epsilon →
+                                        FunctionFieldLittlewood.WindowMoments.filt E
+                                            (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + j) =
+                                          0) ∧
+                                  ∀ (j : ℕ),
+                                    1 ≤ j →
+                                      j ≤ q + 1 →
+                                        FunctionFieldLittlewood.WindowMoments.filt O
+                                            (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + j) =
+                                          0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.terminal_even_double
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 195
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.terminal_even_double : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (m n : ℕ),
+              FunctionFieldLittlewood.EvenShift.Terminal p r (2 * m) (2 * n) ↔
+                FunctionFieldLittlewood.EvenShift.Terminal p r m n
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.terminal_even_odd_size
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 153
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.terminal_even_odd_size : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) → ∀ (m n : ℕ), ¬FunctionFieldLittlewood.EvenShift.Terminal p r (2 * m) (2 * n + 1)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.target_iff_terminal
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 244
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.target_iff_terminal : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ∀ (m n : ℕ),
+                    FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.EvenShift.Terminal p r m n
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.target_even_double
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 323
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.target_even_double : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ∀ (m n : ℕ),
+                    FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (2 * m + 1) (2 * n) (2 * n) 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                      FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.target_even_odd_size
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 336
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.target_even_odd_size : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ∀ (m n : ℕ),
+                    ¬FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (2 * m + 1) (2 * n + 1) (2 * n + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.terminal_zero_shift
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 347
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.terminal_zero_shift : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p → p - 1 = 2 * 2 ^ r * (2 * k + 1) → ∀ (n : ℕ), ¬FunctionFieldLittlewood.EvenShift.Terminal p r 0 n
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.terminal_odd_representative
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 364
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.terminal_odd_representative : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (m n : ℕ),
+              FunctionFieldLittlewood.EvenShift.Terminal p r m n →
+                ∃ s u v, Odd u ∧ m = 2 ^ s * u ∧ n = 2 ^ s * v ∧ FunctionFieldLittlewood.EvenShift.Terminal p r u v
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShift.target_exists_odd_iff
+    file: FunctionFieldLittlewood/EvenShift.lean
+    line_at_snapshot: 392
+    introduced_commit: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShift.target_exists_odd_iff : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+                  ((∃ m n,
+                      FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                        (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z)) ↔
+                    ∃ m n,
+                      Odd m ∧
+                        FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                          (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z))
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: ecddc07ab2a958bd40f4e827e91ce5e508f085d2
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-10-31-even-shift-build.txt
+    full_build_validation: results/2026-10-31-even-shift-validation.json
+    catalogue_audit: results/2026-10-31-even-shift-audit.txt
+    source_sha256:
+      FunctionFieldLittlewood/EvenShift.lean: 03a18008ed765f14369589594cd1deb885cc2dad90c95783da71b9eb09c8348b
+      verification/EvenShiftAudit.lean: 72e62a20882d9173f9a0af01ae2a0412041d77682a043c383e8e6df23c323e4a
+      FunctionFieldLittlewood.lean: d23e09636a4000c9d667ac484f0f69dbec75417a4a62d7fb279992a5addc8c36
   archive:
     zenodo_version: null
     zenodo_doi: null

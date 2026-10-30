@@ -19,6 +19,7 @@ The correlated reachability group is pinned to `914c91f6cc97fb48e428f82186642741
 The uniform terminal-lift group is pinned to `846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f` (24 October 2026).
 The primitive-target/affine-compatibility group is pinned to `4bb00ee703579687fee35ed7aec267e0872f9e50` (27 October 2026).
 The binomial nonvanishing/terminal detection group is pinned to `db1616b4757687cced5ad1bcb43d6e9157926e8f` (29 October 2026).
+The even-shift stripping group is pinned to `ecddc07ab2a958bd40f4e827e91ce5e508f085d2` (31 October 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -49,8 +50,23 @@ axiom audit, archive coverage and registry status.
 | [Uniform geometric terminal lift](https://github.com/solresol/function-field-littlewood/blob/846e458e1bfc8e34ed1bd0cc7fdc40eb0bd76c8f/FunctionFieldLittlewood/TerminalLift.lean#L174) | all-scale exact certificates to product 2^(-2N); existence is an input | Not yet archived |
 | [Primitive terminal target and affine compatibility](https://github.com/solresol/function-field-littlewood/blob/4bb00ee703579687fee35ed7aec267e0872f9e50/FunctionFieldLittlewood/TargetPreimage.lean#L206) | coupled target criterion for the named stream; generic quotient obstruction | Not yet archived |
 | [Binomial nonvanishing and exact terminal detection](https://github.com/solresol/function-field-littlewood/blob/db1616b4757687cced5ad1bcb43d6e9157926e8f/FunctionFieldLittlewood/TerminalDetection.lean#L160) | proved coefficient-row Proposition 2.3, no invisible vectors and accepted target to exact certificate/product | Not yet archived |
+| [Even-shift stripping and odd-shift reduction](https://github.com/solresol/function-field-littlewood/blob/ecddc07ab2a958bd40f4e827e91ce5e508f085d2/FunctionFieldLittlewood/EvenShift.lean#L323) | exact target stripping; terminal existence reduces to odd shifts | Not yet archived |
 
 ## Verification boundary
+
+The 31 October group proves even-shift geometric-factor propagation and exact
+stripping for the actual boundary target: A(2m,2n) iff A(m,n), with odd sizes
+excluded at even shifts. Shift zero has no event. Every polynomial terminal event
+reduces to an odd-shift representative with the same dyadic factor removed from
+shift and size; actual target existence is equivalent to odd-shift existence.
+The full two-primary order, raw infinite-stream convention, complete root list,
+empty sizes and r=1 are explicit. Existence is still unresolved. This is
+verification/infrastructure progress on the 26 October argument; it supplies no
+uniform accepting word, new prime or characteristic-two result. The normalized
+unique-polynomial formula, four-square reconstruction and transverse response
+compression remain outside this group. See [scope and checks](results/2026-10-31-even-shift.md).
+The new declarations use standard axioms only; no independent-kernel replay,
+archive coverage or novelty claim is made.
 
 The 29 October group proves coefficient-row Proposition 2.3 for the infinite
 named stream by strict degree descent, assuming prime p>2 and the full two-primary

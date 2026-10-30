@@ -19,6 +19,8 @@ project:
     Coefficient-row Proposition 2.3 is now proved by strict degree descent. Actual nonempty square
     target membership yields exact terminal certificates and polynomial product 2^(-2N), and the
     stacked Hankel/evaluation map has trivial kernel for rows>=columns-1.
+    EvenShift proves exact even-shift terminal stripping, odd-size exclusion at even shifts,
+    no shift-zero events and reduction of every event to an odd-shift representative.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -80,7 +82,12 @@ status:
     Lai-Sprang Proposition 2.3 for the infinite named stream, with full two-primary order and all shifts.
     TerminalDetection derives geometric nonvanishing by degree+2, proves the exact certificate endpoints,
     and connects actual accepted nonempty square targets to the existing product theorem. It also proves
-    no invisible vectors for rows>=columns-1 without assuming Hankel invertibility. Dimensions,
+    no invisible vectors for rows>=columns-1 without assuming Hankel invertibility.
+    EvenShift proves A(2m,2n) iff A(m,n), odd-size rejection at even shift, shift-zero exclusion
+    and an odd-shift representative with the same power of two removed from shift and size,
+    including r=1 and empty sizes.
+    Its polynomial event is equivalent to actual boundary-target membership, and target existence
+    is equivalent to odd-shift existence. Uniform odd-shift acceptance remains open. Dimensions,
     four-square reconstruction, concrete affine-direction intersection, executable enumeration and
     the sharper subspace cardinal bound remain outside Lean. Uniform acceptance remains an explicit
     missing existence theorem.
@@ -96,6 +103,38 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.EvenShift.target_even_double
+    file: FunctionFieldLittlewood/EvenShift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.EvenShift.target_even_odd_size
+    file: FunctionFieldLittlewood/EvenShift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.EvenShift.terminal_odd_representative
+    file: FunctionFieldLittlewood/EvenShift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.EvenShift.target_exists_odd_iff
+    file: FunctionFieldLittlewood/EvenShift.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing
     file: FunctionFieldLittlewood/BinomialNonvanishing.lean
     sorry_count: 0
