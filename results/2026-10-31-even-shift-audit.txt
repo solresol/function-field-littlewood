@@ -1,0 +1,142 @@
++ lake env lean verification/EvenShiftAudit.lean
+@[expose] def FunctionFieldLittlewood.EvenShift.Terminal : (p : ℕ) → ℕ → ℕ → ℕ → [Fact (Nat.Prime p)] → Prop :=
+fun p r m n [Fact (Nat.Prime p)] =>
+  ∃ P,
+    P ≠ 0 ∧
+      P.natDegree + 1 = n ∧
+        FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P ∧
+          ∀ (j : ℕ),
+            1 ≤ j →
+              j ≤ n →
+                FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                    (m + j) =
+                  0
+@FunctionFieldLittlewood.EvenShift.geometric_double : ∀ {K : Type u_1} [inst : Field K] (H : ℕ),
+  FunctionFieldLittlewood.ParityDescent.factorQuotient K (2 * H) 1 =
+    (Polynomial.expand K 2) (FunctionFieldLittlewood.ParityDescent.factorQuotient K H 1) * (1 + Polynomial.X)
+@FunctionFieldLittlewood.EvenShift.stream_even_forced_factor : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (P : Polynomial (ZMod p)),
+        FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+          ∀ (q n epsilon : ℕ),
+            epsilon ≤ 1 →
+              P.natDegree = 2 * q + epsilon →
+                (∀ (j : ℕ),
+                    1 ≤ j →
+                      j ≤ P.natDegree + 1 →
+                        FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                            (2 * n + j) =
+                          0) →
+                  ∃ E O,
+                    P = (Polynomial.expand (ZMod p) 2) E + Polynomial.X * (Polynomial.expand (ZMod p) 2) O ∧
+                      FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ E ∧
+                        FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ O ∧
+                          (∀ (j : ℕ),
+                              1 ≤ j →
+                                j ≤ q + epsilon →
+                                  FunctionFieldLittlewood.WindowMoments.filt E
+                                      (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + j) =
+                                    0) ∧
+                            ∀ (j : ℕ),
+                              1 ≤ j →
+                                j ≤ q + 1 →
+                                  FunctionFieldLittlewood.WindowMoments.filt O
+                                      (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + j) =
+                                    0
+FunctionFieldLittlewood.EvenShift.terminal_empty : ∀ (p r m : ℕ) [inst : Fact (Nat.Prime p)],
+  ¬FunctionFieldLittlewood.EvenShift.Terminal p r m 0
+@FunctionFieldLittlewood.EvenShift.geometric_eval_one : ∀ {K : Type u_1} [inst : Field K] (N : ℕ),
+  Polynomial.eval 1 (FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1) = ↑N
+@FunctionFieldLittlewood.EvenShift.binomial_dvd_of_geometric : ∀ {K : Type u_1} [inst : Field K] {N : ℕ},
+  ↑N ≠ 0 →
+    ∀ (P : Polynomial K),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ P →
+        Polynomial.eval 1 P = 0 → Polynomial.X ^ N - 1 ∣ P
+@FunctionFieldLittlewood.EvenShift.order_cast_ne_zero : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p → p - 1 = 2 * 2 ^ r * (2 * k + 1) → ↑(2 * 2 ^ r) ≠ 0
+@FunctionFieldLittlewood.EvenShift.terminal_even_odd_size : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) → ∀ (m n : ℕ), ¬FunctionFieldLittlewood.EvenShift.Terminal p r (2 * m) (2 * n + 1)
+@FunctionFieldLittlewood.EvenShift.geometric_sync_dvd : ∀ {K : Type u_1} [inst : Field K] {N : ℕ},
+  0 < N →
+    ∀ (P : Polynomial K),
+      FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ P →
+        FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ (1 + Polynomial.X) * (Polynomial.expand K 2) P
+@FunctionFieldLittlewood.EvenShift.terminal_even_double : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (m n : ℕ),
+        FunctionFieldLittlewood.EvenShift.Terminal p r (2 * m) (2 * n) ↔
+          FunctionFieldLittlewood.EvenShift.Terminal p r m n
+@FunctionFieldLittlewood.EvenShift.target_iff_terminal : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ∀ (m n : ℕ),
+              FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.EvenShift.Terminal p r m n
+@FunctionFieldLittlewood.EvenShift.target_even_double : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ∀ (m n : ℕ),
+              FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (2 * m + 1) (2 * n) (2 * n) 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z)
+@FunctionFieldLittlewood.EvenShift.target_even_odd_size : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ∀ (m n : ℕ),
+              ¬FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (2 * m + 1) (2 * n + 1) (2 * n + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z)
+@FunctionFieldLittlewood.EvenShift.terminal_zero_shift : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p → p - 1 = 2 * 2 ^ r * (2 * k + 1) → ∀ (n : ℕ), ¬FunctionFieldLittlewood.EvenShift.Terminal p r 0 n
+@FunctionFieldLittlewood.EvenShift.terminal_odd_representative : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (m n : ℕ),
+        FunctionFieldLittlewood.EvenShift.Terminal p r m n →
+          ∃ s u v, Odd u ∧ m = 2 ^ s * u ∧ n = 2 ^ s * v ∧ FunctionFieldLittlewood.EvenShift.Terminal p r u v
+@FunctionFieldLittlewood.EvenShift.target_exists_odd_iff : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ((∃ m n,
+                FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z)) ↔
+              ∃ m n,
+                Odd m ∧
+                  FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                    (m + 1) n n 0 (FunctionFieldLittlewood.TargetPreimage.target z))
+'FunctionFieldLittlewood.EvenShift.geometric_double' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.stream_even_forced_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.terminal_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.geometric_eval_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.binomial_dvd_of_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.order_cast_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.terminal_even_odd_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.geometric_sync_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.terminal_even_double' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.target_iff_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.target_even_double' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.target_even_odd_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.terminal_zero_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShift.terminal_odd_representative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.EvenShift.target_exists_odd_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'_private.verification.EvenShiftAudit.0.target3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'_private.verification.EvenShiftAudit.0.doubled3' depends on axioms: [propext, Classical.choice, Quot.sound]
+elapsed_seconds: 4.004

@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (30 October update)
+## Research priorities and progress criteria (31 October update)
 
 Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
 The newly located published Thue–Morse wall result reinforces its retirement;
@@ -56,6 +56,14 @@ No nonlinear update of that profile alone can close the recurrence. This does
 not establish terminal language inequivalence or refute compression restricted
 to feasible/singleton profiles. Next identify the transverse forcing/output
 response lost by empty target slices, using this fixed collision.
+
+The [31 October formalisation](results/2026-10-31-even-shift.md) proves exact
+even-shift stripping and odd-size rejection on actual boundary targets, excludes
+shift zero and reduces every terminal event to an odd-shift representative.
+It includes empty blocks and r=1, using the proved nonvanishing inputs.
+This is verification/infrastructure progress on the 26 October argument, not a
+new accepting path. Reuse it; the next substantive step remains the transverse
+forcing/output response lost by the fixed collision's empty target slices.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -256,8 +264,10 @@ now kernel-checked in TargetPreimage.lean (27 October), including the actual
 named-stream target criterion. Do not repeat them. Concrete affine-slice
 packaging, normalized-forcing simplification and dimension counts remain outside
 Lean and should be undertaken only when the substantive accepting-path argument
-needs them. Exact even-shift stripping remains unformalised; the coefficient-row
-Proposition 2.3 and D+2 nonvanishing input are now available from 29 October.
+needs them. Exact even-shift stripping, odd-size rejection and odd-shift
+existence reduction are now formalised in EvenShift.lean (31 October), including
+shift zero, empty sizes and r=1. Do not repeat this reduction. It uses the
+coefficient-row Proposition 2.3 and D+2 nonvanishing proved on 29 October.
 The separate bridge from a nonempty boundary target (0,e_1) to an
 endpoint-admissible exact terminal certificate and actual product is completed
 on 29 October, using the proved coefficient-row Proposition 2.3. It includes
@@ -270,6 +280,20 @@ Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-10-31 (Saturday formalisation)
+
+- Proved geometric factor propagation into both parity children at even shifts
+  with exact terminal row budgets, including the single-root r=1 case.
+- Proved A(2m,2n) iff A(m,n), no odd-size even-shift events, no shift-zero
+  events, and an odd-shift representative with the same dyadic factor in size.
+  Polynomial existence is equivalent to actual normalized boundary membership.
+- Verification/infrastructure progress on the 26 October ordinary argument;
+  uniform accepting words and characteristic two remain open. Full build,
+  standard-only axiom audit and unchanged focused target regressions pass.
+  Exact statements, evidence and limits: results/2026-10-31-even-shift.md.
+- Next substantive work remains transverse response data for the fixed profile
+  collision. No repeated stripping, generic packaging or witness expansion.
 
 ## Completed on 2026-10-29 (Thursday formalisation)
 

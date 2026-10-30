@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-31",
+  "checked_at": "2026-10-31T08:49:57.581837+11:00",
+  "scheduled_utc": "2026-10-30T21:20:00Z",
+  "base_commit": "fb16a73b56060b99bd19e4af1bab322f72de4f8f",
+  "classification": "verification/infrastructure progress: formal even-shift terminal stripping and odd-shift existence reduction",
+  "source_config_version_id": "f4c4ae6d-5a2c-43a6-a161-c34781e84e76~cecfgver_6ada10e72dbc81a2b953510e16f84de4",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "dependencies": "existing pinned Lean/mathlib; Python standard library only",
+  "seed": null,
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/EvenShift.lean": "03a18008ed765f14369589594cd1deb885cc2dad90c95783da71b9eb09c8348b",
+    "verification/EvenShiftAudit.lean": "72e62a20882d9173f9a0af01ae2a0412041d77682a043c383e8e6df23c323e4a",
+    "FunctionFieldLittlewood.lean": "d23e09636a4000c9d667ac484f0f69dbec75417a4a62d7fb279992a5addc8c36"
+  },
+  "startup_check": {
+    "command": [
+      "bash",
+      "-lc",
+      "source /workspace/shared/theorem-provers/env.sh\npython3 /workspace/shared/theorem-provers/check.py"
+    ],
+    "exit_code": 0,
+    "output": "results/2026-10-31-even-shift-preflight.txt",
+    "scope": "exact toolchains, pins, dependency HEADs and clean tracked dependency sources, readiness receipts and representative imports; passed before work and after fetch"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 900,
+    "runner": "prepared prepare.py m.run and env_for(littlewood); no setup functions called"
+  },
+  "checks": [
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 6.004,
+      "output": "results/2026-10-31-even-shift-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/EvenShiftAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.004,
+      "output": "results/2026-10-31-even-shift-audit.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_terminal_target_preimage.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 2.002,
+      "output": "results/2026-10-31-even-shift-tests.txt"
+    },
+    {
+      "label": "fixed-check",
+      "command": [
+        "python3",
+        "-m",
+        "search.terminal_target_preimage"
+      ],
+      "exit_code": 0,
+      "seconds": 7.005,
+      "output": "results/2026-10-31-even-shift-fixed-check.txt"
+    }
+  ],
+  "axiom_audit": {
+    "new_theorems": 15,
+    "named_regressions": 2,
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "unexpected_axioms": [],
+    "prohibited_token_scan": "passed on new source, new audit and root module",
+    "existing_placeholder": "Challenge.lean:37 remains; absent from audited theorem closures"
+  },
+  "fixed_regressions": {
+    "fields": [
+      3,
+      5,
+      13,
+      41,
+      17
+    ],
+    "q": [
+      0,
+      1,
+      2,
+      3,
+      7,
+      8,
+      15,
+      31
+    ],
+    "k": {
+      "min": 0,
+      "max_inclusive": 4
+    },
+    "digit_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "target_comparisons": 800,
+    "scope": "unchanged prescribed identities and existing path controls, not a new search or evidence of uniform existence",
+    "tests": 3
+  },
+  "source_verification": [
+    {
+      "url": "https://arxiv.org/abs/2606.00633",
+      "version": "v1, 30 May 2026; only displayed version on access",
+      "access_date_sydney": "2026-10-31"
+    },
+    {
+      "url": "https://arxiv.org/html/2606.00633v1",
+      "read": "Theorem 1.2, functional equation (1.2), Proposition 2.3",
+      "access_date_sydney": "2026-10-31",
+      "comparison": "lower bound and nonvanishing, not attainment; Lean r is one less than source valuation"
+    }
+  ],
+  "weekly_review": "results/2026-10-24-literature-review.md",
+  "new_search": false
+}

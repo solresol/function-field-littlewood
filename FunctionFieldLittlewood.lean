@@ -25,6 +25,7 @@ public import FunctionFieldLittlewood.CorrelatedState
 public import FunctionFieldLittlewood.TargetPreimage
 public import FunctionFieldLittlewood.BinomialNonvanishing
 public import FunctionFieldLittlewood.TerminalDetection
+public import FunctionFieldLittlewood.EvenShift
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
 public import FunctionFieldLittlewood.TerminalLift

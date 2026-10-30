@@ -1,0 +1,12 @@
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake env lean /workspace/shared/theorem-provers/thesis-imports.lean
+Nat : Type
+thesis: exact pins, dependency HEADs, and representative imports verified
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
++ lake env lean /workspace/shared/theorem-provers/littlewood-imports.lean
+Nat : Type
+littlewood: exact pins, dependency HEADs, and representative imports verified
+Lean (version 4.27.0, x86_64-unknown-linux-gnu, commit db93fe1608548721853390a10cd40580fe7d22ae, Release)
++ lake env lean /workspace/shared/theorem-provers/scholz-imports.lean
+Nat : Type
+scholz: exact pins, dependency HEADs, and representative imports verified

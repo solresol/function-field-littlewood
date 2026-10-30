@@ -81,6 +81,20 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Even-shift terminal stripping formalised on 31 October 2026
+
+[EvenShift.lean](FunctionFieldLittlewood/EvenShift.lean) proves
+A(2m,2n) iff A(m,n), excludes odd-size events at even shifts and excludes every
+size at shift zero. Every event descends to an odd-shift event with the same
+power of two removed from its shift and size. The polynomial event is proved
+equivalent to actual boundary-target membership, including empty sizes and r=1.
+
+This is **verification/infrastructure progress** on the 26 October ordinary
+argument. It reduces terminal existence to the remaining odd-shift compatibility
+problem; it supplies no accepting word, new prime or characteristic-two result.
+The full build and standard-axiom audit pass. See [scope, proof and checks](results/2026-10-31-even-shift.md).
+Next substantive work remains the transverse response lost by empty target slices.
+
 ## Target-slice profile closure refuted on 30 October 2026
 
 Two actual saturated F_5 states, T(62,8) and T(126,8), have identical complete

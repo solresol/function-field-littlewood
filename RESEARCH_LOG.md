@@ -1624,3 +1624,41 @@ automation readback were checked. No code or proof changed; tests were not rerun
 - Next identify transverse forcing/output response lost by empty target slices
   using this fixed collision. Do not repeat affine packaging or expand witnesses.
   Feasible-only reductions, uniform Delta_p=2N and characteristic two remain open.
+
+
+## 2026-10-31 (Saturday, Australia/Sydney): even-shift stripping in Lean
+
+- Scheduled 30 October 21:20 UTC = 31 October 08:20 AEDT. Environment startup
+  completed with the verified source-version binding; sourced saved env.sh and
+  passed check.py before work and after fetch. Clean generated work at fb16a73
+  matched fetched solresol origin/main. Preserved work, created main and checked
+  FF-only current. Read saved Start, bootstrap recovery, latest weekly handoff,
+  README/TODO/log, 30 October obstruction and actual relevant foundations.
+- Stated exact even-shift reduction question before coding. EvenShift.lean proves
+  geometric parity-factor propagation from degree+1 terminal rows, A(2m,2n)
+  iff A(m,n), odd-size exclusion at even shift, shift-zero exclusion and an odd
+  representative with the same dyadic factor in shift and size. Polynomial
+  terminal existence is equivalent to actual boundary-target membership;
+  normalization at 1 follows from proved nonvanishing. Includes empty sizes
+  and the H=1/r=1 boundary. No assumed target, endpoint, rank or invisible lemma.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on the 26 October ordinary
+  argument. This enables a checked reduction to odd-shift compatibility; no new
+  sharpness decision, prime, uniform accepting word, characteristic-two result,
+  priority, independent-kernel replay or archive coverage is claimed.
+- Full build 6.004s; 15-theorem and two named-regression standard-only axiom audit
+  4.004s; three focused tests 2.002s; unchanged 800 prescribed target comparisons
+  7.005s. Guarded sequential runs, exact arithmetic, no randomness. New proof,
+  audit and root module pass prohibited-token scans. Existing Challenge.lean:37
+  placeholder is outside audited closures. Actual r=1 matrices, empty/zero-shift
+  cases and omitted-factor/maximal-order controls retained.
+- Targeted Lai–Sprang v1 theorem/equation/Proposition 2.3 reading accessed today;
+  other source and binary-frontier limits retained from the 24 October weekly
+  review. No broad search, new binary candidate, profile-collision rerun,
+  expanded box, dependency/pin/runtime/security/schedule/other-checkout change.
+  Full scope, exact statements, commands, hashes and development limits:
+  results/2026-10-31-even-shift.md and companion evidence.
+- Next identify transverse forcing/output response lost by empty slices of the
+  fixed T(62,8)/T(126,8) collision at odd shifts. Reuse the completed stripping
+  and target-to-product results; do not substitute generic packaging or more
+  attainment witnesses. Parent handles authorized Raksasa reconciliation after
+  verified push; this worker made no user-machine or schedule call.
