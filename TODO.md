@@ -25,10 +25,11 @@ does not enable or modify any schedule.
 
 ## Research priorities and progress criteria (31 October update)
 
-Latest weekly handoff: [24 October literature baseline](results/2026-10-24-literature-review.md).
-The newly located published Thue–Morse wall result reinforces its retirement;
-Hofer remains a method lead. Neither supplies uniform terminal existence or a
-characteristic-two counterexample. Keep the substantive priorities below.
+Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
+No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
+lower bound, Hofer's conditional method and the known binary-input retirements;
+none supplies uniform terminal existence or a characteristic-two counterexample.
+Keep the substantive priorities below.
 
 Sunday's [bordered reconstruction](results/2026-10-25-sunday-integration.md)
 recovers all eight relations from four adjacent squares, including singular
