@@ -1,0 +1,116 @@
+{
+  "base_commit": "cfea57d43d8798e64251670f72be9280b420445b",
+  "scheduled_utc": "2026-10-31T21:20:00Z",
+  "local_research_day": "2026-11-01 Australia/Sydney",
+  "python": "3.12.14",
+  "dependencies": "standard library; unchanged prepared Lean/mathlib pins",
+  "seed": null,
+  "commands": [
+    {
+      "command": "python3 /workspace/shared/theorem-provers/check.py",
+      "output": "results/2026-11-01-preflight.txt",
+      "seconds": 15.061171332000015,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m search.corner_response_obstruction --check-reduced",
+      "output": "results/2026-11-01-corner-check.txt",
+      "seconds": 1.0620604090000256,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_corner_response_obstruction.py -v",
+      "output": "results/2026-11-01-corner-tests.txt",
+      "seconds": 4.04838449500005,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m search.compatibility_profile_obstruction --check-reduced",
+      "output": "results/2026-11-01-profile-check.txt",
+      "seconds": 1.0579247370000076,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m search.compatibility_affine_obstruction --check-reduced",
+      "output": "results/2026-11-01-affine-check.txt",
+      "seconds": 1.0519451099999628,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m search.terminal_target_preimage",
+      "output": "results/2026-11-01-target-check.txt",
+      "seconds": 8.059773967000012,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_*boundary*.py' -v",
+      "output": "results/2026-11-01-boundary-tests.txt",
+      "seconds": 2.057091524000043,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_four_square_state.py -v",
+      "output": "results/2026-11-01-four-square-tests.txt",
+      "seconds": 1.0499704930000462,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_terminal_target_preimage.py -v",
+      "output": "results/2026-11-01-target-tests.txt",
+      "seconds": 2.0455117939999923,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_compatibility_profile_obstruction.py -v",
+      "output": "results/2026-11-01-profile-tests.txt",
+      "seconds": 1.0567094270000439,
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p test_compatibility_affine_obstruction.py -v",
+      "output": "results/2026-11-01-affine-tests.txt",
+      "seconds": 1.0467852830000197,
+      "exit_code": 0
+    },
+    {
+      "command": "lake build",
+      "output": "results/2026-11-01-build.txt",
+      "seconds": 3.0516780670000117,
+      "exit_code": 0
+    },
+    {
+      "command": "lake env lean verification/TargetPreimageAudit.lean",
+      "output": "results/2026-11-01-target-preimage-audit.txt",
+      "seconds": 4.05590571099998,
+      "exit_code": 0
+    },
+    {
+      "command": "lake env lean verification/TerminalDetectionAudit.lean",
+      "output": "results/2026-11-01-terminal-detection-audit.txt",
+      "seconds": 4.050500518000035,
+      "exit_code": 0
+    },
+    {
+      "command": "lake env lean verification/EvenShiftAudit.lean",
+      "output": "results/2026-11-01-even-shift-audit.txt",
+      "seconds": 3.053640962999964,
+      "exit_code": 0
+    }
+  ],
+  "guards": {
+    "timeout_seconds": 900,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12
+  },
+  "sha256": {
+    "search/corner_response_obstruction.py": "c97a0ba54fcff80222be1e5521ded4984398c658c839f99829563c9aa7416e1f",
+    "tests/test_corner_response_obstruction.py": "e184449dbfa78007ef72ab86dece30f8f736f834d5bf09daddfd5d8b2bc0001e",
+    "results/2026-11-01-corner-response-check.json": "bf82190857f49b46eb3b943c69e399c17ce6b64b3454c502a8e842e0095b2a18",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "lean_source_changed": false,
+  "new_lean_theorem": false,
+  "source_config_version_id": "f4c4ae6d-5a2c-43a6-a161-c34781e84e76~cecfgver_6ada10e72dbc81a2b953510e16f84de4"
+}

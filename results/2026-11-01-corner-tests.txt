@@ -1,0 +1,11 @@
++ python3 -m unittest discover -s tests -p test_corner_response_obstruction.py -v
+test_exact_regeneration (test_corner_response_obstruction.CornerResponseTests.test_exact_regeneration) ... ok
+test_first_square_child_table_including_empty_and_r1 (test_corner_response_obstruction.CornerResponseTests.test_first_square_child_table_including_empty_and_r1) ... ok
+test_rank_preimage_border_and_completeness_corruptions (test_corner_response_obstruction.CornerResponseTests.test_rank_preimage_border_and_completeness_corruptions) ... ok
+test_readback_without_elimination_or_recurrence (test_corner_response_obstruction.CornerResponseTests.test_readback_without_elimination_or_recurrence) ... ok
+test_reduced_state_and_original_coefficient_agreement (test_corner_response_obstruction.CornerResponseTests.test_reduced_state_and_original_coefficient_agreement) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 3.026s
+
+OK

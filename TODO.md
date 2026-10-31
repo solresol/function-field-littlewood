@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (31 October update)
+## Research priorities and progress criteria (1 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -65,6 +65,19 @@ It includes empty blocks and r=1, using the proved nonvanishing inputs.
 This is verification/infrastructure progress on the 26 October argument, not a
 new accepting path. Reuse it; the next substantive step remains the transverse
 forcing/output response lost by the fixed collision's empty target slices.
+
+The [1 November integration](results/2026-11-01-sunday-integration.md) sharpens
+that diagnosis: the pair agrees on seven **full** relations. The omitted B11
+is never queried by any next first-square channel. Its common tall/wide
+rectangles leave a scalar line in a two-dimensional quotient undetermined;
+the actual pair realizes two values and shared digit (1,1) exposes them.
+First-three-square, first-seven-relation and complete one-step first-square
+response closure are refuted. Varying targets in the same channels cannot
+repair this obstruction. Retain the line, not just its bordering rectangles.
+The primitive-forcing all-eight restriction had no collision on the existing
+52/37 prescribed inputs; its closure is inconclusive. No larger box follows.
+This is mathematical progress on auxiliary structure. The week's formal work
+is verification of useful existing arguments; neither substantive outcome changed.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -180,13 +193,31 @@ finding rather than promoting it to a firstness claim.
   certificate refutes deterministic profile closure, including nonlinear
   updates; it does not distinguish the two terminal languages. See
   [the proof and limits](results/2026-10-30-compatibility-profile-obstruction.md).
-- Next bounded structural attempt: identify the transverse forcing/output
-  response data from the four squares that distinguish this fixed collision
-  but are lost by empty local target slices. Derive the missing response before
-  proposing a further compression or compatibility transport. Feasible-only
-  profile reductions remain open. Keep actual p=5/p=13 path correlations; no
-  independent feasibility, norm-only criterion, fixed proper affine locus,
-  whole-graph enumeration or larger witness boxes.
+- **1 November missing-corner obstruction:** T(62,8),T(126,8) agree on
+  the first seven full relations, including both far-corner rectangles; only
+  B11 differs. In the common W/L quotient its lines have parameters 0 and 4
+  in the chosen chart. Shared (1,1) changes B01 at T(125,17),T(253,17).
+  Every next first square initially agrees, but shared (1,1),(1,1) separates
+  the full first squares at T(251,35),T(507,35), both still rejecting the
+  terminal target. Thus no deterministic update exists for those specific
+  three-square/seven-relation/all-one-step-response profiles. This is not
+  terminal-language inequivalence or minimality of four squares. See
+  [the proof and original-coefficient certificates](results/2026-11-01-sunday-integration.md).
+- Next bounded structural attempt: derive transport of the missing B11/L
+  line through odd digit (1,1), with the common seven relations held fixed.
+  Use the existing merge/bordered equations; determine whether the induced
+  next response has a nonconstant projective map or needs another datum.
+  Preserve singular charts; two fitted values do not prove a fractional-linear
+  law. A rank-two map would motivate a projective compatibility recurrence;
+  a rank drop or new dependence should identify the next obstruction.
+  Abstract line completions are not automatically reachable stream states.
+  Primitive-forcing restrictions and feasible-only profiles remain open,
+  not supported by the absence of collisions in a bounded sample. Keep actual
+  path correlations; no whole graph, new attainment box or generic packaging.
+- Next focused formal lemma: derive the four-branch first-square table from
+  CorrelatedState and prove independence from B11, including k=0 and r=1.
+  Formalize the L-perp/two-dimensional-quotient parameterization only if needed
+  for substantive transport; repeated bridges cannot replace that question.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence

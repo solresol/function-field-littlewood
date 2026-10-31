@@ -1,0 +1,27 @@
++ python3 -m search.corner_response_obstruction --check-reduced
+{
+  "full_relations": 12,
+  "initial_seven_relations_equal": true,
+  "omitted_square_equal": false,
+  "common_tall_dimension": 3,
+  "common_wide_dimension": 5,
+  "border_parameters": [
+    0,
+    4
+  ],
+  "shared_digit": [
+    1,
+    1
+  ],
+  "successor_three_squares_equal": false,
+  "second_shared_digit": [
+    1,
+    1
+  ],
+  "second_full_responses_equal": false,
+  "terminal_language_separation_proved": false,
+  "max_original_index": 576,
+  "elimination_used": false,
+  "state_recurrence_used": false,
+  "reduced_states_compared": true
+}

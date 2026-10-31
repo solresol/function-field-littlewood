@@ -1,0 +1,174 @@
++ lake env lean verification/TerminalDetectionAudit.lean
+@FunctionFieldLittlewood.BinomialNonvanishing.binomial_product : ∀ {K : Type u_1} [inst : Field K] (H : ℕ),
+  (Polynomial.X ^ H - 1) * (Polynomial.X ^ H + 1) = Polynomial.X ^ (2 * H) - 1
+@FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_descent : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (R : Polynomial (ZMod p)),
+        R ≠ 0 →
+          Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+            ∀ (q n epsilon delta : ℕ),
+              epsilon ≤ 1 →
+                delta ≤ 1 →
+                  R.natDegree = 2 * q + epsilon →
+                    (∀ (j : ℕ),
+                        1 ≤ j →
+                          j ≤ R.natDegree →
+                            FunctionFieldLittlewood.WindowMoments.filt R
+                                (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (2 * n + delta + j) =
+                              0) →
+                      ∃ S,
+                        S ≠ 0 ∧
+                          S.natDegree = q ∧
+                            Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ S ∧
+                              ∀ (j : ℕ),
+                                1 ≤ j →
+                                  j ≤ q →
+                                    FunctionFieldLittlewood.WindowMoments.filt S
+                                        (FunctionFieldLittlewood.laiSprangStream p (r + 1)) (n + epsilon * delta + j) =
+                                      0
+@FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (R : Polynomial (ZMod p)),
+        R ≠ 0 →
+          Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+            ∀ (m : ℕ),
+              ∃ j,
+                1 ≤ j ∧
+                  j ≤ R.natDegree ∧
+                    FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (m + j) ≠
+                      0
+@FunctionFieldLittlewood.TerminalDetection.filt_difference : ∀ {K : Type u_1} [inst : Field K] (P : Polynomial K)
+  (a : ℕ → K) (v : ℕ),
+  FunctionFieldLittlewood.WindowMoments.filt ((Polynomial.X - 1) * P) a v =
+    FunctionFieldLittlewood.WindowMoments.filt P a (v + 1) - FunctionFieldLittlewood.WindowMoments.filt P a v
+@FunctionFieldLittlewood.TerminalDetection.stream_geometric_nonvanishing : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (P : Polynomial (ZMod p)),
+        P ≠ 0 →
+          FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+            ∀ (m : ℕ),
+              ∃ j,
+                1 ≤ j ∧
+                  j ≤ P.natDegree + 2 ∧
+                    FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (m + j) ≠
+                      0
+@FunctionFieldLittlewood.TerminalDetection.geometric_constant : ∀ {K : Type u_1} [inst : Field K] {N : ℕ},
+  0 < N → (FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1).coeff 0 = 1
+@FunctionFieldLittlewood.TerminalDetection.stream_terminal_certificate : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (P : Polynomial (ZMod p)),
+        P ≠ 0 →
+          FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P →
+            ∀ (m : ℕ),
+              (∀ (j : ℕ),
+                  1 ≤ j →
+                    j ≤ P.natDegree + 1 →
+                      FunctionFieldLittlewood.WindowMoments.filt P (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                          (m + j) =
+                        0) →
+                FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                  (FunctionFieldLittlewood.TerminalLift.coefficients P) m (P.natDegree + 2)
+@FunctionFieldLittlewood.TerminalDetection.unity_root_product : ∀ {K : Type u_1} [inst : Field K] {N : ℕ},
+  0 < N →
+    ∀ (z : Fin N → K),
+      Function.Injective z →
+        (∀ (i : Fin N), z i ^ N = 1) → ∏ i, (Polynomial.X - Polynomial.C (z i)) = Polynomial.X ^ N - 1
+@FunctionFieldLittlewood.TerminalDetection.geometric_dvd_of_evaluations : ∀ {K : Type u_1} [inst : Field K] {N : ℕ},
+  0 < N →
+    ∀ (z : Fin N → K),
+      Function.Injective z →
+        (∀ (i : Fin N), z i ^ N = 1) →
+          ∀ (P : Polynomial K),
+            (∀ (i : Fin N), z i ≠ 1 → Polynomial.eval (z i) P = 0) →
+              FunctionFieldLittlewood.ParityDescent.factorQuotient K N 1 ∣ P
+@FunctionFieldLittlewood.TerminalDetection.multiplier_eval : ∀ {K : Type u_1} [inst : Field K] {d : ℕ}
+  (x : Fin (d + 1) → K) (z : K), Polynomial.eval z (FunctionFieldLittlewood.multiplierPolynomial x) = ∑ i, z ^ ↑i * x i
+@FunctionFieldLittlewood.TerminalDetection.filt_multiplier : ∀ {K : Type u_1} [inst : Field K] {d : ℕ}
+  (x : Fin (d + 1) → K) (a : ℕ → K) (v : ℕ),
+  FunctionFieldLittlewood.WindowMoments.filt (FunctionFieldLittlewood.multiplierPolynomial x) a v =
+    ∑ i, x i * a (v + ↑i)
+@FunctionFieldLittlewood.TerminalDetection.target_exact_certificate : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ∀ (m d : ℕ),
+              FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (m + 1) (d + 1) (d + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z) →
+                ∃ P,
+                  P.natDegree = d ∧
+                    FunctionFieldLittlewood.ParityDescent.factorQuotient (ZMod p) (2 * 2 ^ r) 1 ∣ P ∧
+                      FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (FunctionFieldLittlewood.TerminalLift.coefficients P) m (d + 2)
+@FunctionFieldLittlewood.TerminalDetection.target_sharp_product : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ i, x = z i) →
+            ∀ (m d : ℕ),
+              FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (m + 1) (d + 1) (d + 1) 0 (FunctionFieldLittlewood.TargetPreimage.target z) →
+                ∃ P,
+                  P.natDegree = d ∧
+                    FunctionFieldLittlewood.polynomialLittlewoodProduct
+                        (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (Polynomial.X ^ (2 ^ (r + 1) * m) * (Polynomial.expand (ZMod p) (2 ^ (r + 1))) P) =
+                      2 ^ (-2 * ↑(2 ^ (r + 1)))
+@FunctionFieldLittlewood.TerminalDetection.stream_no_invisible : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+            ∀ (m L d : ℕ),
+              d ≤ L →
+                ∀ (x : Fin (d + 1) → ZMod p),
+                  (FunctionFieldLittlewood.BoundaryRelation.block (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                            (m + 1) L (d + 1)).mulVec
+                        x =
+                      0 →
+                    (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (d + 1)).transpose.mulVec x = 0 → x = 0
+'FunctionFieldLittlewood.BinomialNonvanishing.binomial_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_descent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BinomialNonvanishing.stream_binomial_nonvanishing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.filt_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.stream_geometric_nonvanishing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.geometric_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.stream_terminal_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.unity_root_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.geometric_dvd_of_evaluations' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.multiplier_eval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.filt_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.target_exact_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.target_sharp_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TerminalDetection.stream_no_invisible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

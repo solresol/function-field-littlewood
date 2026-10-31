@@ -1,5 +1,43 @@
 # Research log
 
+## 2026-11-01 (Sunday, Australia/Sydney): the missing bordering scalar
+
+- Scheduled 31 October 21:20 UTC. After startup, prepared env.sh/check.py
+  passed; source-version binding matched the verified handoff. Read saved
+  START, bootstrap recovery, actual sources and newer 30 October weekly review.
+  Clean work cfea57d at expected solresol origin; fetch/ancestry/equality check,
+  preserve work, create tracking main and FF-only merge. Exact pins reused.
+- Asked before coding whether transverse output response repairs the fixed
+  profile collision. Ordinary branch table shows no next first-square channel
+  reads B11, even for arbitrary forcing/output. The actual F_5 pair agrees on
+  seven full relations; its missing squares have identical tall/wide borders
+  but different lines (parameters 0,4) in the common two-dimensional quotient.
+  Shared (1,1) exposes the line. First-three-square, first-seven-relation and
+  complete one-step first-square-response closure are explicitly retired.
+- Classification: MATHEMATICAL PROGRESS on auxiliary structure through a
+  stronger failed compression and ordinary quotient lemma. No uniform
+  acceptance, new prime, characteristic-two result, minimality theorem,
+  terminal-language separation or priority claim. This week's verification
+  proves useful bridges; neither substantive outcome changed. Primitive-only
+  forcing restrictions on the prior 52/37 inputs had no collision, inconclusive.
+- Twelve full squares independently certified by original-coefficient preimages
+  and invertible rank minors, through index576 inclusive. Readback disables
+  elimination/recurrence; five new tests include the branch table's empty/r=1
+  controls and ten certificate corruptions.
+  Week's affine/profile certificates, 800 target identities, relevant regressions,
+  default Lean build and three unchanged declaration audits pass. No Lean source
+  changed; Challenge's sorry is unused. Exact commands/runtimes/guards/hashes
+  and ordinary proof are in results/2026-11-01-sunday-integration.md and validation.
+- Reused 30 October source/access limits; targeted LS2606.00633v1 and ANL
+  1806.04478v2 §7.2 reread on 1 November. No new binary candidate or broad
+  daily search. No dependency/runtime/security/credential/schedule/environment
+  publication, other-repository or user-machine change. Raksasa stays paused;
+  parent owns synchronization after the verified push.
+- Next experiment: derive odd-digit transport of the missing quotient line,
+  retaining singular charts and testing actual dependence rather than fitting
+  two values. Next formal lemma: first-square branch table/B11 independence;
+  do not replace substantive transport with repeated generic formalization.
+
 ## 2026-10-29 (Thursday, Australia/Sydney): proved nonvanishing and terminal detection
 
 - Scheduled 28 October 21:20 UTC = Thursday 29 October 08:20 AEDT. Prepared

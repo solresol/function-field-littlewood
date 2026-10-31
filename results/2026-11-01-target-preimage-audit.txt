@@ -1,0 +1,121 @@
++ lake env lean verification/TargetPreimageAudit.lean
+@FunctionFieldLittlewood.TargetPreimage.transport_transpose_apply : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω) (a : ℕ) (v : Ω → K) (q : Ω),
+  (FunctionFieldLittlewood.BoundaryRelation.transport z σ a).transpose.mulVec v q = z q ^ a * v (σ q)
+@FunctionFieldLittlewood.TargetPreimage.alpha_reconstruct : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K] (z : Ω → K)
+  (σ : Ω → Ω),
+  (∀ (q : Ω), z (σ q) = z q ^ 2) →
+    2 ≠ 0 →
+      ∀ (q : Ω),
+        FunctionFieldLittlewood.TargetPreimage.alpha z (σ q) +
+            z q * FunctionFieldLittlewood.TargetPreimage.alpha z (σ q) =
+          FunctionFieldLittlewood.TargetPreimage.target z q
+@FunctionFieldLittlewood.TargetPreimage.output_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z : Ω → K) (σ : Ω → Ω),
+  Function.Injective z →
+    (∀ (q : Ω), z (σ q) = z q ^ 2) →
+      (∀ (q : Ω), ∃ q', z q' = -z q) →
+        (∀ (q : Ω), z q ≠ 0) →
+          2 ≠ 0 →
+            ∀ (v₀ v₁ : Ω → K),
+              (FunctionFieldLittlewood.BoundaryRelation.transport z σ 0).transpose.mulVec v₀ +
+                    (FunctionFieldLittlewood.BoundaryRelation.transport z σ 1).transpose.mulVec v₁ =
+                  FunctionFieldLittlewood.TargetPreimage.target z ↔
+                FunctionFieldLittlewood.TargetPreimage.Primitive σ
+                    (v₀ - FunctionFieldLittlewood.TargetPreimage.alpha z) ∧
+                  FunctionFieldLittlewood.TargetPreimage.Primitive σ
+                    (v₁ - FunctionFieldLittlewood.TargetPreimage.alpha z)
+@FunctionFieldLittlewood.TargetPreimage.mergeEven_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+  Function.Injective z →
+    (∀ (q : Ω), z (σ q) = z q ^ 2) →
+      (∀ (q : Ω), ∃ q', z q' = -z q) →
+        (∀ (q : Ω), z q ≠ 0) →
+          2 ≠ 0 →
+            ∀ (s : ℕ) (R₀ R₁ : FunctionFieldLittlewood.CorrelatedState.Relation K Ω),
+              FunctionFieldLittlewood.CorrelatedState.mergeEven z w σ s R₀ R₁ 0
+                  (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.TargetPreimage.reducedEven z w σ s R₀ R₁
+@FunctionFieldLittlewood.TargetPreimage.mergeOdd_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+  Function.Injective z →
+    (∀ (q : Ω), z (σ q) = z q ^ 2) →
+      (∀ (q : Ω), ∃ q', z q' = -z q) →
+        (∀ (q : Ω), z q ≠ 0) →
+          2 ≠ 0 →
+            ∀ (s : ℕ) (R₀ R₁ : FunctionFieldLittlewood.CorrelatedState.Relation K Ω),
+              FunctionFieldLittlewood.CorrelatedState.mergeOdd z w σ s R₀ R₁ 0
+                  (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.TargetPreimage.reducedOdd z w σ s R₀ R₁
+@FunctionFieldLittlewood.TargetPreimage.tupleStep_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (z w : Ω → K) (σ : Ω → Ω),
+  Function.Injective z →
+    (∀ (q : Ω), z (σ q) = z q ^ 2) →
+      (∀ (q : Ω), ∃ q', z q' = -z q) →
+        (∀ (q : Ω), z q ≠ 0) →
+          2 ≠ 0 →
+            ∀ (phase : ℕ) (T : FunctionFieldLittlewood.CorrelatedState.Tuple K Ω)
+              (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+              FunctionFieldLittlewood.CorrelatedState.tupleStep z w σ phase T ε η 0 0 0 0
+                  (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.TargetPreimage.reducedTarget z w σ phase T ε η
+@FunctionFieldLittlewood.TargetPreimage.actual_target_iff : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] [inst_2 : DecidableEq Ω] (a : ℕ → K) (z w : Ω → K) (σ : Ω → Ω),
+  (∀ (l : ℕ), a (2 * l) = a l) →
+    (∀ (l : ℕ), a (2 * l + 1) = ∑ q, w q * z q ^ l) →
+      Function.Injective z →
+        (∀ (q : Ω), z (σ q) = z q ^ 2) →
+          (∀ (q : Ω), ∃ q', z q' = -z q) →
+            (∀ (q : Ω), z q ≠ 0) →
+              2 ≠ 0 →
+                ∀ (q k : ℕ) (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+                  FunctionFieldLittlewood.CorrelatedState.relation a z (2 * q + ↑ε + 1) (2 * k + ↑η) (2 * k + ↑η) 0
+                      (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                    FunctionFieldLittlewood.TargetPreimage.reducedTarget z w σ q
+                      (FunctionFieldLittlewood.CorrelatedState.tuple a z q k) ε η
+@FunctionFieldLittlewood.TargetPreimage.stream_target_iff : ∀ {p r : ℕ} [inst : Fact (Nat.Prime p)],
+  2 ^ (r + 1) ∣ p - 1 →
+    ∃ z σ,
+      Function.Injective z ∧
+        (∀ (x : ZMod p), x ^ (2 * 2 ^ r) = 1 ↔ ∃ j, x = z j) ∧
+          (∀ (j : Fin (2 * 2 ^ r)), z (σ j) = z j ^ 2) ∧
+            ∀ (q k : ℕ) (ε η : FunctionFieldLittlewood.CorrelatedState.Bit),
+              FunctionFieldLittlewood.CorrelatedState.relation (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                  (2 * q + ↑ε + 1) (2 * k + ↑η) (2 * k + ↑η) 0 (FunctionFieldLittlewood.TargetPreimage.target z) ↔
+                FunctionFieldLittlewood.TargetPreimage.reducedTarget z
+                  (FunctionFieldLittlewood.BoundaryRelation.oddWeight (2 ^ r)) σ q
+                  (FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q
+                    k)
+                  ε η
+@FunctionFieldLittlewood.TargetPreimage.affine_intersection_iff : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+  [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ : V),
+  (∃ x, x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁) ↔ a₁ - a₀ ∈ L₀ ⊔ L₁
+@FunctionFieldLittlewood.TargetPreimage.affine_intersection_quotient_iff : ∀ {K : Type u_1} [inst : Field K]
+  {V : Type u_2} [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ : V),
+  (∃ x, x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁) ↔ Submodule.Quotient.mk (a₁ - a₀) = 0
+@FunctionFieldLittlewood.TargetPreimage.affine_intersection_unique : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+  [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V),
+  L₀ ⊓ L₁ = ⊥ → ∀ (a₀ a₁ x y : V), x - a₀ ∈ L₀ ∧ x - a₁ ∈ L₁ → y - a₀ ∈ L₀ ∧ y - a₁ ∈ L₁ → x = y
+'FunctionFieldLittlewood.TargetPreimage.transport_transpose_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.alpha_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.output_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.mergeEven_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.mergeOdd_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.tupleStep_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.actual_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.stream_target_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.affine_intersection_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.affine_intersection_quotient_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@FunctionFieldLittlewood.TargetPreimage.affine_class_representatives : ∀ {K : Type u_1} [inst : Field K] {V : Type u_2}
+  [inst_1 : AddCommGroup V] [inst_2 : Module K V] (L₀ L₁ : Submodule K V) (a₀ a₁ u v : V),
+  u ∈ L₀ → v ∈ L₁ → Submodule.Quotient.mk (a₁ + v - (a₀ + u)) = Submodule.Quotient.mk (a₁ - a₀)
+'FunctionFieldLittlewood.TargetPreimage.affine_class_representatives' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.TargetPreimage.affine_intersection_unique' depends on axioms: [propext, Quot.sound]

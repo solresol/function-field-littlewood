@@ -81,6 +81,25 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Sunday integration on 1 November 2026: the missing bordering scalar
+
+The existing F_5 pair T(62,8), T(126,8) agrees on **seven full boundary
+relations**, including the last corner's tall and wide rectangles. The
+remaining square differs by one line in their two-dimensional quotient:
+parameters 0 and 4 in the reported chart. A shared digit (1,1) exposes it.
+Thus neither the first three squares nor the first seven relations close
+under digit transitions. All four complete next first-square responses
+also agree initially and separate after that digit. Merely varying targets
+in those same one-step channels cannot fix the earlier profile obstruction.
+
+This is **mathematical progress on auxiliary sharpness structure**, with
+independent original-coefficient rank/preimage certificates. It does not prove
+terminal-language inequivalence, minimality of four squares, uniform sharpness
+or a characteristic-two result. The week's mathematical and verification
+work changes neither substantive outcome. Next derive the missing line's
+transport through the odd digit, retaining singular charts; do not expand
+witness boxes or repeat completed bridges. See [proof, weekly assessment and checks](results/2026-11-01-sunday-integration.md).
+
 ## Even-shift terminal stripping formalised on 31 October 2026
 
 [EvenShift.lean](FunctionFieldLittlewood/EvenShift.lean) proves
