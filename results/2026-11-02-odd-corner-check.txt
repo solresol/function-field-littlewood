@@ -1,0 +1,39 @@
++ python3 -m search.odd_corner_transport --compare
+{
+  "internal_dimension": 5,
+  "fixed_kernel_dimension": 3,
+  "quotient_rank": 2,
+  "matrix": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "determinant": 1,
+  "finite_input_images": [
+    1,
+    4,
+    0,
+    3,
+    null
+  ],
+  "infinity_input_image": 2,
+  "actual_input_parameters": [
+    0,
+    4
+  ],
+  "actual_output_parameters": [
+    1,
+    null
+  ],
+  "all_abstract_lines": 6,
+  "all_completions_reachable_claimed": false,
+  "original_source_max_index": 576,
+  "elimination_used": false,
+  "state_recurrence_used": false,
+  "all_six_merges_and_original_borders_compared": true
+}

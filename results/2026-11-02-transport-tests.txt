@@ -1,0 +1,36 @@
++ python3 -m unittest tests.test_odd_corner_transport tests.test_corner_response_obstruction tests.test_four_square_state tests.test_correlated_boundary_state tests.test_terminal_boundary_relation -v
+test_all_six_lines_and_exact_regeneration (tests.test_odd_corner_transport.OddCornerTransportTests.test_all_six_lines_and_exact_regeneration) ... ok
+test_empty_r1_and_separate_field_borders (tests.test_odd_corner_transport.OddCornerTransportTests.test_empty_r1_and_separate_field_borders) ... ok
+test_independent_readback_and_actual_pole (tests.test_odd_corner_transport.OddCornerTransportTests.test_independent_readback_and_actual_pole) ... ok
+test_rank_lift_chart_and_provenance_corruptions (tests.test_odd_corner_transport.OddCornerTransportTests.test_rank_lift_chart_and_provenance_corruptions) ... ok
+test_exact_regeneration (tests.test_corner_response_obstruction.CornerResponseTests.test_exact_regeneration) ... ok
+test_first_square_child_table_including_empty_and_r1 (tests.test_corner_response_obstruction.CornerResponseTests.test_first_square_child_table_including_empty_and_r1) ... ok
+test_rank_preimage_border_and_completeness_corruptions (tests.test_corner_response_obstruction.CornerResponseTests.test_rank_preimage_border_and_completeness_corruptions) ... ok
+test_readback_without_elimination_or_recurrence (tests.test_corner_response_obstruction.CornerResponseTests.test_readback_without_elimination_or_recurrence) ... ok
+test_reduced_state_and_original_coefficient_agreement (tests.test_corner_response_obstruction.CornerResponseTests.test_reduced_state_and_original_coefficient_agreement) ... ok
+test_no_invisible_vector_hypothesis_cannot_be_dropped (tests.test_four_square_state.FourSquareTests.test_no_invisible_vector_hypothesis_cannot_be_dropped) ... ok
+test_reconstructs_known_singular_and_empty_tuples (tests.test_four_square_state.FourSquareTests.test_reconstructs_known_singular_and_empty_tuples) ... ok
+test_transitions_use_stored_squares_and_keep_old_collision_distinct (tests.test_four_square_state.FourSquareTests.test_transitions_use_stored_squares_and_keep_old_collision_distinct) ... ok
+test_correlated_boundary_state (unittest.loader._FailedTest.test_correlated_boundary_state) ... ERROR
+test_domains_and_empty_blocks (tests.test_terminal_boundary_relation.BoundaryRelationTests.test_domains_and_empty_blocks) ... ok
+test_recursion_only_reads_scalar_hankel_bases (tests.test_terminal_boundary_relation.BoundaryRelationTests.test_recursion_only_reads_scalar_hankel_bases) ... ok
+test_relation_basis_has_independent_unique_preimages (tests.test_terminal_boundary_relation.BoundaryRelationTests.test_relation_basis_has_independent_unique_preimages) ... ok
+test_terminal_target_recovers_known_polynomial_and_rejects_mutations (tests.test_terminal_boundary_relation.BoundaryRelationTests.test_terminal_target_recovers_known_polynomial_and_rejects_mutations) ... ok
+
+======================================================================
+ERROR: test_correlated_boundary_state (unittest.loader._FailedTest.test_correlated_boundary_state)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_correlated_boundary_state
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/function-field-littlewood/tests/test_correlated_boundary_state.py", line 6, in <module>
+    from test_terminal_boundary_relation import reconstruct
+ModuleNotFoundError: No module named 'test_terminal_boundary_relation'
+
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.083s
+
+FAILED (errors=1)

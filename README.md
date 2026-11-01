@@ -81,6 +81,24 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Odd-corner transport on 2 November 2026
+
+The missing B11 line transports through odd digit (1,1) to the next B01
+by a **projective isomorphism**, for every admissible odd prime and size.
+The common internal solution space and its fixed kernel map bijectively to
+actual wide and tall boundary relations, so their quotient has rank two, including
+empty and singular blocks and r=1. No additional transverse datum is needed
+for this response. On the fixed F_5 pair the map is
+`lambda -> (2lambda+1)/(lambda+1)` in the reported charts; the second actual
+input maps to infinity, a chart pole that must be retained.
+
+This is an ordinary structural lemma on auxiliary sharpness, supported by
+an independent exact matrix certificate, not a Lean theorem or a uniform
+accepting path. Abstract completions are not automatically reachable states.
+Next derive the simultaneous update of the other large square, where the
+same missing line occurs in both children. See
+[the proof, certificate and limits](results/2026-11-02-odd-corner-transport.md).
+
 ## Sunday integration on 1 November 2026: the missing bordering scalar
 
 The existing F_5 pair T(62,8), T(126,8) agrees on **seven full boundary
@@ -96,9 +114,9 @@ This is **mathematical progress on auxiliary sharpness structure**, with
 independent original-coefficient rank/preimage certificates. It does not prove
 terminal-language inequivalence, minimality of four squares, uniform sharpness
 or a characteristic-two result. The week's mathematical and verification
-work changes neither substantive outcome. Next derive the missing line's
-transport through the odd digit, retaining singular charts; do not expand
-witness boxes or repeat completed bridges. See [proof, weekly assessment and checks](results/2026-11-01-sunday-integration.md).
+work changes neither substantive outcome. The 2 November result above now
+derives the missing line's transport to the next B01. See
+[proof, weekly assessment and checks](results/2026-11-01-sunday-integration.md).
 
 ## Even-shift terminal stripping formalised on 31 October 2026
 

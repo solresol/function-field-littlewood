@@ -1,0 +1,82 @@
+{
+  "base_commit": "b2ce21c63d278a1525e6270481ac08212744a5e0",
+  "scheduled_utc": "2026-11-01T21:20:00Z",
+  "local_research_day": "2026-11-02 Australia/Sydney",
+  "python": "3.12.14",
+  "dependencies": "standard library; unchanged prepared Lean/mathlib pins",
+  "seed": null,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "/workspace/shared/theorem-provers/check.py"
+      ],
+      "output": "results/2026-11-02-preflight.txt",
+      "seconds": null,
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "search.odd_corner_transport",
+        "--compare"
+      ],
+      "output": "results/2026-11-02-odd-corner-check.txt",
+      "seconds": null,
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "tests.test_odd_corner_transport",
+        "tests.test_corner_response_obstruction",
+        "tests.test_four_square_state",
+        "tests.test_correlated_boundary_state",
+        "tests.test_terminal_boundary_relation",
+        "-v"
+      ],
+      "output": "results/2026-11-02-transport-tests.txt",
+      "seconds": null,
+      "test_runner_seconds": 4.083,
+      "exit_code": 1,
+      "reason": "16 tests passed; one existing module imports test_terminal_boundary_relation by bare name and requires discovery -s tests"
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_correlated_boundary_state.py",
+        "-v"
+      ],
+      "output": "results/2026-11-02-correlated-tests.txt",
+      "seconds": 1.0011723529999017,
+      "exit_code": 0
+    }
+  ],
+  "timing_note": "First driver aborted on existing test import before retaining its per-command wall times. Null times are unknown, not zero. Original logs preserved; only affected module rerun by discovery.",
+  "guards": {
+    "timeout_seconds": 180,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12
+  },
+  "sha256": {
+    "search/odd_corner_transport.py": "c4db6cbd3536398057256b7ff36a0ffe24e426f498a338d74532c4a70440cbd7",
+    "tests/test_odd_corner_transport.py": "e4469fa4a4f99cccd54c60a5035f109b2d084154257db64b8f126bb49ca94ed9",
+    "results/2026-11-02-odd-corner-check.json": "0a3c919c798dd1b012fc82f1b674c4e5b5e3bcd59f6f2fc3f32a9c8a74610f44",
+    "results/2026-11-01-corner-response-check.json": "bf82190857f49b46eb3b943c69e399c17ce6b64b3454c502a8e842e0095b2a18",
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "lean_source_changed": false,
+  "new_lean_theorem": false,
+  "source_config_version_id": "f4c4ae6d-5a2c-43a6-a161-c34781e84e76~cecfgver_6ada10e72dbc81a2b953510e16f84de4"
+}

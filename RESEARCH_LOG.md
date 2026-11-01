@@ -1700,3 +1700,45 @@ automation readback were checked. No code or proof changed; tests were not rerun
   and target-to-product results; do not substitute generic packaging or more
   attainment witnesses. Parent handles authorized Raksasa reconciliation after
   verified push; this worker made no user-machine or schedule call.
+
+
+## 2026-11-02 (Monday, Australia/Sydney): invertible odd-corner transport
+
+- Scheduled 1 November 21:20 UTC = 2 November 08:20 AEDT. Matched the required
+  runtime source-version binding; prepared env.sh/check.py passed before work
+  and after refresh. Clean work at b2ce21c matched fetched expected origin/main;
+  preserved work and created tracking main. Saved Start and latest 30 October
+  weekly review available; Personal Context unavailable. No applicable AGENTS
+  or .agents skill. Read current sources and the fixed missing-corner result.
+- Stated rank-two-versus-new-datum question before code. For fixed F=B01 and
+  corner borders L,W, the common internal solution space S and kernel S_L map
+  bijectively to actual successor wide/tall relations. Their dimensions N+1
+  and N-1 prove a canonical quotient isomorphism W/L -> W'/L'. Thus odd digit
+  (1,1) carries every abstract missing line to a distinct next B01 line,
+  uniformly for admissible odd primes, empty/singular blocks and r=1.
+- Fixed F_5 certificate gives matrix [[2,1],[1,1]], determinant 1, hence
+  lambda -> (2lambda+1)/(lambda+1). Actual inputs 0,4 map to 1,infinity;
+  the second state's pole is retained. An exact representative lift of b
+  failed in scratch work; the required quotient lift succeeds. No unproved
+  surjectivity onto the full W is used. All six abstract lines checked without
+  asserting their stream reachability. Original source endpoint remains 576.
+- Classification: MATHEMATICAL PROGRESS on auxiliary sharpness structure,
+  an ordinary lemma with independently checked finite algebra. No accepting word,
+  new prime, uniform sharpness, characteristic-two result, Lean theorem or
+  priority claim. No Lean source/build/audit or dependency change today.
+- Certificate readback disables elimination, solvers and state recurrence;
+  inverse minors, preimages, quotient coordinates and actual original-coefficient
+  successors checked. Four new tests include regeneration, ten corruptions,
+  empty/r=1 and a separate field. All 20 distinct focused tests pass; the
+  existing correlated test's bare sibling import required discovery instead
+  of the initial combined module invocation. Failed command/correction retained.
+  Exact retained commands, times and hashes: results/2026-11-02-validation.json.
+  Python standard library, exact arithmetic, deterministic, no random seed.
+- Targeted Lai–Sprang 2606.00633v1 theorem/functional-equation/Proposition 2.3
+  reread accessed 1 November UTC / 2 November Sydney; latest weekly review's
+  other access/frontier limits retained. No broad search, new binary candidate,
+  larger witness box, runtime/security/network/schedule/other-checkout change.
+- Proof and scope: results/2026-11-02-odd-corner-transport.md. Next derive the
+  remaining large square's simultaneous dependence on two copies of B11;
+  retain correlations and poles. Parent handles authorized Raksasa reconciliation
+  after push through cloud_threads; no direct remote shell or schedule call.

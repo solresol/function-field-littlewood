@@ -1,0 +1,10 @@
++ python3 -m unittest discover -s tests -p test_correlated_boundary_state.py -v
+test_domains (test_correlated_boundary_state.CorrelatedStateTests.test_domains) ... ok
+test_shift_phase_is_essential_for_transition (test_correlated_boundary_state.CorrelatedStateTests.test_shift_phase_is_essential_for_transition) ... ok
+test_transition_needs_only_stored_state (test_correlated_boundary_state.CorrelatedStateTests.test_transition_needs_only_stored_state) ... ok
+test_zero_shift_empty_rectangles_and_size_guard (test_correlated_boundary_state.CorrelatedStateTests.test_zero_shift_empty_rectangles_and_size_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.060s
+
+OK

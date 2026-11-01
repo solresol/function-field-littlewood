@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (1 November update)
+## Research priorities and progress criteria (2 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -78,6 +78,16 @@ The primitive-forcing all-eight restriction had no collision on the existing
 52/37 prescribed inputs; its closure is inconclusive. No larger box follows.
 This is mathematical progress on auxiliary structure. The week's formal work
 is verification of useful existing arguments; neither substantive outcome changed.
+
+The [2 November transport lemma](results/2026-11-02-odd-corner-transport.md)
+settles the next B01 response: with F=B01 and the missing corner's borders
+L,W fixed, the odd digit induces a projective isomorphism W/L -> W'/L'.
+Actual wide/tall parents prove rank two uniformly, including empty/singular
+blocks and r=1. In the fixed F_5 chart its matrix is [[2,1],[1,1]], and the
+second actual input maps to infinity. Retain that chart pole. This is ordinary
+mathematical structure with an independent exact certificate, not a uniform
+accepting path, Lean theorem or characteristic-two advance. Next analyze the
+remaining large square's simultaneous dependence on two copies of the same line.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -203,14 +213,17 @@ finding rather than promoting it to a firstness claim.
   three-square/seven-relation/all-one-step-response profiles. This is not
   terminal-language inequivalence or minimality of four squares. See
   [the proof and original-coefficient certificates](results/2026-11-01-sunday-integration.md).
-- Next bounded structural attempt: derive transport of the missing B11/L
-  line through odd digit (1,1), with the common seven relations held fixed.
-  Use the existing merge/bordered equations; determine whether the induced
-  next response has a nonconstant projective map or needs another datum.
-  Preserve singular charts; two fitted values do not prove a fractional-linear
-  law. A rank-two map would motivate a projective compatibility recurrence;
-  a rank drop or new dependence should identify the next obstruction.
-  Abstract line completions are not automatically reachable stream states.
+- **2 November odd-corner transport:** the next B01 response is a projective
+  isomorphism for all admissible primes and sizes, by actual wide/tall parent
+  identification. The fixed F_5 map (2lambda+1)/(lambda+1) has determinant 1;
+  the second actual input is its pole. No rank drop occurs in this channel.
+  See [proof and exact checks](results/2026-11-02-odd-corner-transport.md).
+- Next bounded structural attempt: derive the odd digit's remaining large
+  square, which merges two occurrences of the same B11 line. Determine whether
+  this simultaneous dependence is projective linear, a higher-degree
+  correspondence or requires additional correlated data. Preserve actual border
+  identities and poles. Abstract line completions are not automatically
+  reachable stream states.
   Primitive-forcing restrictions and feasible-only profiles remain open,
   not supported by the absence of collisions in a bounded sample. Keep actual
   path correlations; no whole graph, new attainment box or generic packaging.
