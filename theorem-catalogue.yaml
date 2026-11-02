@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-10-31'
+updated: '2026-11-03'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -2821,6 +2821,204 @@ theorems:
       FunctionFieldLittlewood/EvenShift.lean: 03a18008ed765f14369589594cd1deb885cc2dad90c95783da71b9eb09c8348b
       verification/EvenShiftAudit.lean: 72e62a20882d9173f9a0af01ae2a0412041d77682a043c383e8e6df23c323e4a
       FunctionFieldLittlewood.lean: d23e09636a4000c9d667ac484f0f69dbec75417a4a62d7fb279992a5addc8c36
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: actual-bordered-reconstruction
+  title: Actual bordered reconstruction and four-square determination
+  status: kernel-checked
+  mathematical_origin: formalisation of the 25 October ordinary reconstruction, using constructive border correction
+  first_formalisation_priority: unestablished
+  statement: Adjacent square boundary relations of the infinite named Lai-Sprang stream are distinct;
+    their sum is the wide rectangle and their intersection is the tall rectangle. Four actual squares
+    determine all eight correlated predicates, including comparisons at different shifts and sizes.
+  assumptions:
+  - Actual stream conclusions assume prime p>2 and p-1=2*2^r*(2*l+1), the full two-primary order.
+    Lean r=0 includes the usual valuation-r=1 case. All m,k are nonnegative, with matrix start m+1.
+  - An injective N-element root list with z_i^N=1, N=2^(r+1). No invertible Hankel or terminal
+    acceptance premise occurs. The existing proved coefficient-row Proposition 2.3 supplies stacked injectivity.
+  - Generic reconstruction explicitly assumes the wide stacked Hankel/evaluation map has zero kernel.
+    No relation dimension or rank formula is assumed. The carrier is the existing raw-coefficient predicate.
+  limitations: Verification/infrastructure progress on an essential prerequisite of the 2 November
+    projective transport argument. No uniform terminal acceptance, new prime decision, characteristic-two
+    result, relation dimension, projective quotient isomorphism, independent-kernel replay, archive coverage
+    or novelty claim is supplied. Four-square determination is proved; a new compressed automaton is not.
+  declarations:
+  - name: FunctionFieldLittlewood.BorderedRelation.mem_space
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 32
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.mem_space : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t m n : ℕ) (uv : (Ω → K) × (Ω → K)),
+        uv ∈ FunctionFieldLittlewood.BorderedRelation.space a z t m n ↔
+          FunctionFieldLittlewood.CorrelatedState.relation a z t m n uv.1 uv.2
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.wide_preimage_unique
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 60
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.wide_preimage_unique : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+        FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+          ∀ (x y : Fin (k + 1) → K),
+            (FunctionFieldLittlewood.BoundaryRelation.block a t k (k + 1)).mulVec x =
+                (FunctionFieldLittlewood.BoundaryRelation.block a t k (k + 1)).mulVec y →
+              (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (k + 1)).transpose.mulVec x =
+                  (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (k + 1)).transpose.mulVec y →
+                x = y
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.border_defect_exists
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 80
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.border_defect_exists : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+        FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+          ∃ x u,
+            (FunctionFieldLittlewood.BoundaryRelation.block a t k k).mulVec x =
+                (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z k).mulVec u ∧
+              ∑ i, a (t + k + ↑i) * x i - ∑ q, z q ^ k * u q ≠ 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.tall_eq_inf
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 167
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.tall_eq_inf : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+        FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+          FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) k =
+            FunctionFieldLittlewood.BorderedRelation.space a z t k k ⊓
+              FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.wide_eq_sup
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 223
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.wide_eq_sup : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+        FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+          FunctionFieldLittlewood.BorderedRelation.space a z t k (k + 1) =
+            FunctionFieldLittlewood.BorderedRelation.space a z t k k ⊔
+              FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.adjacent_ne
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 253
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.adjacent_ne : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+        [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+        FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+          FunctionFieldLittlewood.BorderedRelation.space a z t k k ≠
+            FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.stream_noInvisible
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 276
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.stream_noInvisible : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+                  ∀ (m k : ℕ),
+                    FunctionFieldLittlewood.BorderedRelation.NoInvisible (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                      (m + 1) k
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 286
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+                  ∀ (m k : ℕ),
+                    have a := FunctionFieldLittlewood.laiSprangStream p (r + 1);
+                    FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ≠
+                        FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1) ∧
+                      FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k (k + 1) =
+                          FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ⊔
+                            FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1) ∧
+                        FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) k =
+                          FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ⊓
+                            FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.BorderedRelation.stream_tuple_eq_of_squares
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    line_at_snapshot: 302
+    introduced_commit: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_type: |-
+      @FunctionFieldLittlewood.BorderedRelation.stream_tuple_eq_of_squares : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+                  ∀ (q k q' k' : ℕ),
+                    (∀ (d i : FunctionFieldLittlewood.CorrelatedState.Bit),
+                        FunctionFieldLittlewood.BorderedRelation.space (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                            (q + 1 + ↑d) (k + ↑i) (k + ↑i) =
+                          FunctionFieldLittlewood.BorderedRelation.space (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                            (q' + 1 + ↑d) (k' + ↑i) (k' + ↑i)) →
+                      FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q
+                          k =
+                        FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q'
+                          k'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 7315c6ba8bec00992295c5eea2dc86112773f3a7
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-11-03-bordered-build.txt
+    full_build_validation: results/2026-11-03-bordered-validation.json
+    catalogue_audit: results/2026-11-03-bordered-audit.txt
+    scope: results/2026-11-03-bordered-reconstruction.md
+    source_sha256:
+      FunctionFieldLittlewood/BorderedRelation.lean: fd2bd6fb5d08d34a3392e05fc30ab9fc605b89e3777bdc53d07a7a66a3137e86
+      verification/BorderedRelationAudit.lean: 6d2fa244bdec91020bde2552dc260e651b3a92c5f274a44cb0b355575132fdcb
+      FunctionFieldLittlewood.lean: d25274791e5369c343b86bf90a40ba37aed2a7f4a857450ea4cfa6377d048737
   archive:
     zenodo_version: null
     zenodo_doi: null

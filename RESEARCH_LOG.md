@@ -1742,3 +1742,45 @@ automation readback were checked. No code or proof changed; tests were not rerun
   remaining large square's simultaneous dependence on two copies of B11;
   retain correlations and poles. Parent handles authorized Raksasa reconciliation
   after push through cloud_threads; no direct remote shell or schedule call.
+
+
+## 2026-11-03 (Tuesday, Australia/Sydney): actual bordered reconstruction in Lean
+
+- Scheduled 2 November 21:20 UTC = 3 November 08:20 AEDT. Matched the required
+  published runtime source-version binding; sourced prepared env.sh/check.py
+  before work and after refresh. Pins, dependency HEADs, readiness and imports
+  passed without installation/download. Clean work at 0ce2a34 matched fetched
+  expected origin/main; preserved work, created tracking main, FF-only current.
+  Read Start, bootstrap recovery, current README/TODO/log, actual source and
+  latest 30 October weekly human-literature handoff. No applicable AGENTS/skill.
+- Question stated before coding: prove the actual bordered sum/intersection and
+  distinctness needed by the current quotient-line transport. BorderedRelation
+  derives a nonzero border defect by duality and proved stacked injectivity;
+  scaling that solution corrects every wide solution's last row. This avoids
+  dimension assumptions. Unique wide preimages prove tall=intersection and
+  adjacent-square distinctness. Actual stream hypotheses are prime p>2, full
+  two-primary order and N distinct N-th roots; no target, inverse, dimension or
+  no-invisible-vector premise is assumed in the stream theorem. Includes empty
+  sizes, singular Hankel blocks and r=1. Uses existing raw coefficient convention.
+- Four jointly realized squares determine the complete eight-relation tuple,
+  even at different shifts/sizes. This enables checked border identities for
+  projective transport; dimensions and the full isomorphism remain outside Lean.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on the 25 October ordinary
+  argument, an essential current transport prerequisite. No new accepting word,
+  uniform Delta_p=2N, prime decision, characteristic-two result or priority claim.
+- Retained guarded preflight 25.083s, full build 3.055s, 9-headline/4-regression
+  standard-only axiom audit 4.052s, 3 unchanged focused tests 1.046s. Empty F_3,
+  actual singular F_3, F_5 and zero-stream negative controls pass. No expanded
+  box or random seed. Existing Challenge.lean:37 placeholder is outside audited
+  closures. New source/audit/root pass prohibited-token scan. Development syntax,
+  import and module-visibility errors were corrected before accepted checks.
+- Targeted Lai-Sprang 2606.00633v1 Theorem 1.2, equation (1.2), Proposition 2.3
+  accessed 2 November UTC / 3 November Sydney. Other weekly access limits retained.
+  No broad search or new binary candidate. Source/licence attribution inspected.
+  Exact proof, hypotheses, commands, hashes, audit and limits:
+  results/2026-11-03-bordered-reconstruction.md and companion validation/evidence.
+- Next substantive work remains the remaining large square's simultaneous
+  odd-digit dependence on two copies of B11. Reuse the completed reconstruction;
+  do not repeat generic bridges or attainment witnesses. Parent coordinates
+  Raksasa reconciliation after verified push and keeps its local schedule paused;
+  no direct remote shell, schedule, environment/security/dependency change here.

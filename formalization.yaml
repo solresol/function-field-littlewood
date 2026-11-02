@@ -21,6 +21,8 @@ project:
     stacked Hankel/evaluation map has trivial kernel for rows>=columns-1.
     EvenShift proves exact even-shift terminal stripping, odd-size exclusion at even shifts,
     no shift-zero events and reduction of every event to an odd-shift representative.
+    BorderedRelation proves actual adjacent-square distinctness, wide=sum, tall=intersection
+    and four-square determination, using proved stacked injectivity without dimension assumptions.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -87,8 +89,11 @@ status:
     and an odd-shift representative with the same power of two removed from shift and size,
     including r=1 and empty sizes.
     Its polynomial event is equivalent to actual boundary-target membership, and target existence
-    is equivalent to odd-shift existence. Uniform odd-shift acceptance remains open. Dimensions,
-    four-square reconstruction, concrete affine-direction intersection, executable enumeration and
+    is equivalent to odd-shift existence. BorderedRelation proves adjacent-square distinctness,
+    wide=sum, tall=intersection and determination of the full tuple by four actual squares,
+    including empty/singular blocks and r=1, from proved stacked injectivity. No dimension formula
+    or Hankel inverse is assumed. Uniform odd-shift acceptance remains open. Dimensions,
+    projective transport, concrete affine-direction intersection, executable enumeration and
     the sharper subspace cardinal bound remain outside Lean. Uniform acceptance remains an explicit
     missing existence theorem.
     Boundary cutoffs, exact shift localization, the
@@ -103,6 +108,22 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.BorderedRelation.stream_tuple_eq_of_squares
+    file: FunctionFieldLittlewood/BorderedRelation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.EvenShift.target_even_double
     file: FunctionFieldLittlewood/EvenShift.lean
     sorry_count: 0

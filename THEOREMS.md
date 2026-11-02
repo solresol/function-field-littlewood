@@ -20,6 +20,7 @@ The uniform terminal-lift group is pinned to `846e458e1bfc8e34ed1bd0cc7fdc40eb0b
 The primitive-target/affine-compatibility group is pinned to `4bb00ee703579687fee35ed7aec267e0872f9e50` (27 October 2026).
 The binomial nonvanishing/terminal detection group is pinned to `db1616b4757687cced5ad1bcb43d6e9157926e8f` (29 October 2026).
 The even-shift stripping group is pinned to `ecddc07ab2a958bd40f4e827e91ce5e508f085d2` (31 October 2026).
+The bordered reconstruction group is pinned to `7315c6ba8bec00992295c5eea2dc86112773f3a7` (3 November 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -51,8 +52,22 @@ axiom audit, archive coverage and registry status.
 | [Primitive terminal target and affine compatibility](https://github.com/solresol/function-field-littlewood/blob/4bb00ee703579687fee35ed7aec267e0872f9e50/FunctionFieldLittlewood/TargetPreimage.lean#L206) | coupled target criterion for the named stream; generic quotient obstruction | Not yet archived |
 | [Binomial nonvanishing and exact terminal detection](https://github.com/solresol/function-field-littlewood/blob/db1616b4757687cced5ad1bcb43d6e9157926e8f/FunctionFieldLittlewood/TerminalDetection.lean#L160) | proved coefficient-row Proposition 2.3, no invisible vectors and accepted target to exact certificate/product | Not yet archived |
 | [Even-shift stripping and odd-shift reduction](https://github.com/solresol/function-field-littlewood/blob/ecddc07ab2a958bd40f4e827e91ce5e508f085d2/FunctionFieldLittlewood/EvenShift.lean#L323) | exact target stripping; terminal existence reduces to odd shifts | Not yet archived |
+| [Actual bordered reconstruction](https://github.com/solresol/function-field-littlewood/blob/7315c6ba8bec00992295c5eea2dc86112773f3a7/FunctionFieldLittlewood/BorderedRelation.lean#L286) | adjacent-square distinctness, wide=sum, tall=intersection and four-square determination | Not yet archived |
 
 ## Verification boundary
+
+The 3 November group proves exact bordered reconstruction for actual infinite
+Lai–Sprang relations at every admissible odd prime, nonnegative shift and size,
+including empty/singular blocks and r=1. Generic wide stacked injectivity yields
+a nonzero border defect; scaling that solution proves wide=sum without dimension
+assumptions. Unique wide preimages prove tall=intersection and distinctness.
+The actual stream theorem derives injectivity from the proved coefficient-row
+Proposition 2.3. Four actual squares determine all eight existing predicates,
+including comparisons at different shifts and sizes. This verifies a prerequisite
+of the current projective transport proof. Relation dimensions, the projective
+isomorphism and uniform acceptance remain outside this group. No new prime,
+characteristic-two result, archive coverage, independent-kernel replay or priority
+claim is made. See [scope and checks](results/2026-11-03-bordered-reconstruction.md).
 
 The 31 October group proves even-shift geometric-factor propagation and exact
 stripping for the actual boundary target: A(2m,2n) iff A(m,n), with odd sizes

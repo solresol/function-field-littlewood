@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (2 November update)
+## Research priorities and progress criteria (3 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -88,6 +88,16 @@ second actual input maps to infinity. Retain that chart pole. This is ordinary
 mathematical structure with an independent exact certificate, not a uniform
 accepting path, Lean theorem or characteristic-two advance. Next analyze the
 remaining large square's simultaneous dependence on two copies of the same line.
+
+The [3 November formalisation](results/2026-11-03-bordered-reconstruction.md)
+proves actual adjacent-square distinctness, wide=sum and tall=intersection
+directly from the proved no-invisible-vector theorem, including empty/singular
+blocks and r=1. Four actual squares determine the complete eight-relation tuple.
+The constructive proof needs no dimension assumptions. This verifies a prerequisite
+of the current projective transport; dimensions and the isomorphism remain outside
+Lean. It supplies no accepting path and is verification/infrastructure progress.
+Do not repeat reconstruction or substitute generic bridges for the simultaneous
+large-square dependence question.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -296,11 +306,13 @@ residues or Proposition 2.3 assumption enters the new proof. See
 This is verification/infrastructure progress on the 5 October ordinary result,
 not new sharpness mathematics. Do not repeat the lift or export more instances.
 
-The 25 October ordinary bordered reconstruction now recovers all rectangles
-from four squares. The next formal lemma, if needed by the accepting-path
-argument, is the generic sum/intersection identity from explicit stacked-matrix
-injectivity and relation dimensions, including singular blocks. Keep these
-hypotheses visible; this is not an unconditional formalisation of Proposition 2.3.
+The 25 October bordered reconstruction is now kernel-checked in
+BorderedRelation.lean (3 November), supplying the actual borders used by the
+2 November projective transport. Generic reconstruction assumes wide stacked
+injectivity; the actual stream theorem discharges it using proved Proposition 2.3.
+The constructive sum proof avoids dimension assumptions. Four actual squares
+determine all eight predicates. No dimension or projective-isomorphism theorem
+is claimed. Do not repeat this reconstruction.
 The reduced one-digit acceptance criterion is now proved ordinarily on 26 October;
 next substantive work is its remaining odd-shift compatibility class above.
 Further formal work should serve that question rather than repeat state closure.
@@ -317,14 +329,30 @@ The separate bridge from a nonempty boundary target (0,e_1) to an
 endpoint-admissible exact terminal certificate and actual product is completed
 on 29 October, using the proved coefficient-row Proposition 2.3. It includes
 exact degree and constant-endpoint conclusions; do not repeat the bridge.
-The no-invisible-vector input is also proved for rows>=columns-1. The generic
-bordered sum/intersection theorem and its dimensions remain unformalised;
-choose further work only when a substantive accepting-path argument needs it.
+The no-invisible-vector input is also proved for rows>=columns-1. The bordered
+sum/intersection theorem is now proved; dimensions remain unformalised.
+Choose further work only when a substantive accepting-path argument needs it.
 
 Defer the antiperiodic convolution bridge, further boundary bookkeeping,
 composition-to-P formalisation, large certificate exports and retired binary
 examples unless a chosen substantive argument needs them. Do not repeat the
 completed descent, terminal cutoff, sparse-divisor or product bridges.
+
+## Completed on 2026-11-03 (Tuesday formalisation)
+
+- BorderedRelation.lean proves a nonzero border-defect solution, unique wide
+  preimages, adjacent-square distinctness, wide=sum and tall=intersection.
+  The actual infinite-stream theorem discharges stacked injectivity from the
+  existing proved coefficient-row Proposition 2.3; no matrix inverse or dimension
+  premise is used. Four jointly realized squares determine all eight predicates.
+- Nine headline declarations and four named regression audits use standard axioms
+  only; the default build and three unchanged focused tests pass. Empty/r=1,
+  singular actual Hankel, separate F_5 and zero-stream negative controls included.
+  Scope and exact evidence: results/2026-11-03-bordered-reconstruction.md.
+- Verification/infrastructure progress on an essential current transport
+  prerequisite. No new sharpness decision, accepting path or characteristic-two
+  result. Next substantive work remains simultaneous dependence of the remaining
+  large square on the same missing B11 line in both children.
 
 ## Completed on 2026-10-31 (Saturday formalisation)
 

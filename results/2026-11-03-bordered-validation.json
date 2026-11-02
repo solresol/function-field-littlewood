@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-03",
+  "checked_at": "2026-11-02T22:19:55.965368+00:00",
+  "scheduled_utc": "2026-11-02T21:20:00Z",
+  "base_commit": "0ce2a346f3ad83076a9213cd16474f809f3aef7b",
+  "classification": "verification/infrastructure progress: formal bordered reconstruction and four-square determination",
+  "source_config_version_id": "f4c4ae6d-5a2c-43a6-a161-c34781e84e76~cecfgver_6ada10e72dbc81a2b953510e16f84de4",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "dependencies": "existing pinned Lean/mathlib; Python standard library only",
+  "seed": null,
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/BorderedRelation.lean": "fd2bd6fb5d08d34a3392e05fc30ab9fc605b89e3777bdc53d07a7a66a3137e86",
+    "verification/BorderedRelationAudit.lean": "6d2fa244bdec91020bde2552dc260e651b3a92c5f274a44cb0b355575132fdcb",
+    "FunctionFieldLittlewood.lean": "d25274791e5369c343b86bf90a40ba37aed2a7f4a857450ea4cfa6377d048737"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 900,
+    "runner": "prepared prepare.py m.run and env_for(littlewood); no setup functions called"
+  },
+  "checks": [
+    {
+      "label": "preflight",
+      "command": [
+        "bash",
+        "-lc",
+        "source /workspace/shared/theorem-provers/env.sh\npython3 /workspace/shared/theorem-provers/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 25.083,
+      "output": "results/2026-11-03-bordered-preflight.txt"
+    },
+    {
+      "label": "build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 3.055,
+      "output": "results/2026-11-03-bordered-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "verification/BorderedRelationAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.052,
+      "output": "results/2026-11-03-bordered-audit.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_four_square_state.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.046,
+      "output": "results/2026-11-03-bordered-tests.txt"
+    }
+  ],
+  "axiom_audit": {
+    "headline_declarations": 9,
+    "named_regressions": 4,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "prohibited_token_scan": "passed on new module, new audit and root module",
+    "existing_placeholder": "Challenge.lean:37 remains outside all audited closures"
+  },
+  "regressions": {
+    "lean": [
+      "F3 empty k=0 at t=1",
+      "F3 singular size-two Hankel at t=2",
+      "F5 p=5,r=1,k=8,t=63",
+      "zero stream: invisible X^2-1 and equal adjacent squares at k=2"
+    ],
+    "python": "3 unchanged focused four-square tests; five prescribed field/shift/size contexts, fixed correlation and zero-stream controls; no expanded range"
+  },
+  "limits": [
+    "no dimension formula or projective quotient transport formalisation",
+    "no uniform terminal acceptance or new prime decision",
+    "no characteristic-two increment",
+    "no independent-kernel replay, archive coverage or priority claim"
+  ],
+  "development": "Initial proof elaboration errors corrected. Audit initially failed on missing explicit Sharpness import, unsupported decide-at syntax, then private-root-definition visibility under the module system; corrected. Only final error-free audit is accepted; failed elaborations are not proofs.",
+  "proof_commit": "7315c6ba8bec00992295c5eea2dc86112773f3a7"
+}

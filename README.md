@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Bordered reconstruction in Lean on 3 November 2026
+
+For the actual infinite Lai–Sprang stream, adjacent square boundary relations
+are distinct, their sum is the wide rectangle, and their intersection is the
+tall rectangle. [BorderedRelation.lean](FunctionFieldLittlewood/BorderedRelation.lean)
+derives these identities from the proved no-invisible-vector theorem, including
+empty and singular blocks and r=1. A constructive border correction avoids
+assuming relation dimensions. Equality of four actual squares determines all
+eight correlated predicates, even at different shifts and sizes.
+
+This verifies an essential prerequisite of the projective transport argument;
+dimensions and the full projective isomorphism remain outside Lean. Uniform
+terminal acceptance and characteristic two remain open. The default build,
+standard-only declaration audit and focused controls pass. See
+[scope and evidence](results/2026-11-03-bordered-reconstruction.md).
+
 ## Odd-corner transport on 2 November 2026
 
 The missing B11 line transports through odd digit (1,1) to the next B01

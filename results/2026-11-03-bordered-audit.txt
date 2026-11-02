@@ -1,0 +1,108 @@
++ lake env lean verification/BorderedRelationAudit.lean
+@FunctionFieldLittlewood.BorderedRelation.mem_space : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t m n : ℕ) (uv : (Ω → K) × (Ω → K)),
+  uv ∈ FunctionFieldLittlewood.BorderedRelation.space a z t m n ↔
+    FunctionFieldLittlewood.CorrelatedState.relation a z t m n uv.1 uv.2
+@FunctionFieldLittlewood.BorderedRelation.wide_preimage_unique : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+  FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+    ∀ (x y : Fin (k + 1) → K),
+      (FunctionFieldLittlewood.BoundaryRelation.block a t k (k + 1)).mulVec x =
+          (FunctionFieldLittlewood.BoundaryRelation.block a t k (k + 1)).mulVec y →
+        (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (k + 1)).transpose.mulVec x =
+            (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (k + 1)).transpose.mulVec y →
+          x = y
+@FunctionFieldLittlewood.BorderedRelation.border_defect_exists : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+  FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+    ∃ x u,
+      (FunctionFieldLittlewood.BoundaryRelation.block a t k k).mulVec x =
+          (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z k).mulVec u ∧
+        ∑ i, a (t + k + ↑i) * x i - ∑ q, z q ^ k * u q ≠ 0
+@FunctionFieldLittlewood.BorderedRelation.tall_eq_inf : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+  FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+    FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) k =
+      FunctionFieldLittlewood.BorderedRelation.space a z t k k ⊓
+        FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+@FunctionFieldLittlewood.BorderedRelation.wide_eq_sup : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+  FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+    FunctionFieldLittlewood.BorderedRelation.space a z t k (k + 1) =
+      FunctionFieldLittlewood.BorderedRelation.space a z t k k ⊔
+        FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+@FunctionFieldLittlewood.BorderedRelation.adjacent_ne : ∀ {K : Type u_1} {Ω : Type u_2} [inst : Field K]
+  [inst_1 : Fintype Ω] (a : ℕ → K) (z : Ω → K) (t k : ℕ),
+  FunctionFieldLittlewood.BorderedRelation.NoInvisible a z t k →
+    FunctionFieldLittlewood.BorderedRelation.space a z t k k ≠
+      FunctionFieldLittlewood.BorderedRelation.space a z t (k + 1) (k + 1)
+@FunctionFieldLittlewood.BorderedRelation.stream_noInvisible : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+            ∀ (m k : ℕ),
+              FunctionFieldLittlewood.BorderedRelation.NoInvisible (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                (m + 1) k
+@FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+            ∀ (m k : ℕ),
+              have a := FunctionFieldLittlewood.laiSprangStream p (r + 1);
+              FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ≠
+                  FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1) ∧
+                FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k (k + 1) =
+                    FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ⊔
+                      FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1) ∧
+                  FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) k =
+                    FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) k k ⊓
+                      FunctionFieldLittlewood.BorderedRelation.space a z (m + 1) (k + 1) (k + 1)
+@FunctionFieldLittlewood.BorderedRelation.stream_tuple_eq_of_squares : ∀ {p r l : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * l + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+            ∀ (q k q' k' : ℕ),
+              (∀ (d i : FunctionFieldLittlewood.CorrelatedState.Bit),
+                  FunctionFieldLittlewood.BorderedRelation.space (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                      (q + 1 + ↑d) (k + ↑i) (k + ↑i) =
+                    FunctionFieldLittlewood.BorderedRelation.space (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+                      (q' + 1 + ↑d) (k' + ↑i) (k' + ↑i)) →
+                FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q
+                    k =
+                  FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z q'
+                    k'
+'FunctionFieldLittlewood.BorderedRelation.mem_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.wide_preimage_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.border_defect_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.tall_eq_inf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.wide_eq_sup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.adjacent_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.stream_noInvisible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelation.stream_tuple_eq_of_squares' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelationAudit.bordered_empty3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelationAudit.bordered_singular3' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelationAudit.zero_stream_invisible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.BorderedRelationAudit.zero_stream_adjacent_equal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
