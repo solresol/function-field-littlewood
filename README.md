@@ -81,6 +81,22 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Simultaneous corner transport on 4 November 2026
+
+When the missing B11 line occurs in both odd-parent children, its larger-square
+response forms a **nonsingular conic** of two-planes in a four-dimensional
+quotient. A short-window lemma excludes invisible vectors in the required
+two-column-wider parent at even shift, uniformly for every odd prime, including
+empty/singular blocks and r=1. Every homogeneous parameter is retained; no extra
+datum or exceptional projection kernel is needed for this response.
+
+This is an ordinary structural lemma on auxiliary sharpness, supported by an
+independent fixed-pair rank/preimage certificate, not a Lean theorem or accepting
+path. Distinct parameters meet in an (N-2)-dimensional core, so another line-pencil
+law would be incorrect. Next combine this conic and the single-response map along
+jointly realized paths to derive an acceptance invariant. Uniform sharpness and
+characteristic two remain open. See [proof and limits](results/2026-11-04-simultaneous-corner.md).
+
 ## Bordered reconstruction in Lean on 3 November 2026
 
 For the actual infinite Lai–Sprang stream, adjacent square boundary relations
@@ -912,8 +928,9 @@ recurrence and conditional uniform lift. Four square relations now reconstruct
 the full state, and the one-digit coupled target criterion is formalised.
 The [28 October obstruction](results/2026-10-28-compatibility-affine-obstruction.md)
 rules out fixed proper affine constraints on compatibility differences at fixed
-phase/size/digit labels. Next derive transport with state-dependent relation
-data or nonlinear structure towards uniform accepting words.
+phase/size/digit labels. The [simultaneous corner law](results/2026-11-04-simultaneous-corner.md)
+is now a conic; combine it with the single-response projective map along actual
+correlated paths to seek an invariant forcing odd-shift acceptance.
 Smaller storage does not justify a whole reachable-graph or larger wall search.
 
 Characteristic two remains a separate main frontier. New candidates require
@@ -921,7 +938,8 @@ rational/quadratic-series and known unbounded-window screening first; the three
 binary baselines remain retired. Further formal work should support the new
 acceptance argument. The coefficient-row Proposition 2.3, no-invisible-vector
 lemma and accepted-target-to-exact-certificate/product implication are now Lean
-theorems. Relation dimensions, four-square reconstruction, concrete affine-direction
+theorems, as is actual four-square reconstruction. Relation dimensions, projective
+and simultaneous transport, concrete affine-direction
 intersection and uniform accepting paths remain outside Lean. Original root-sum
 identification and generic degree-zero formalisation
 remain lower priorities. The r=2 three-term extension remains refuted.

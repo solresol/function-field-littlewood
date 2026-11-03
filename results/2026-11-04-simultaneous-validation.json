@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-04",
+  "scheduled_utc": "2026-11-03T21:20:00Z",
+  "checked_at": "2026-11-03T21:39:17.307626+00:00",
+  "base_commit": "82127230a8365dedc47aadd79bb822264b254d2d",
+  "classification": "mathematical progress on auxiliary structure: ordinary simultaneous conic transport",
+  "controller_source_version_binding_verified": true,
+  "python": "3.12.14",
+  "dependencies": "Python standard library; prepared exact Lean/mathlib unchanged",
+  "seed": null,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "search/simultaneous_corner_transport.py": "8d5b85a970f83759c2d91f1312fa0fad2a5e0ce0266b2d7cdb511836976439e1",
+    "tests/test_simultaneous_corner_transport.py": "176fec0a20b45ec33e2dd162f516f6608300e19a47ad929c1a8331e663fd2cbb",
+    "results/2026-11-04-simultaneous-corner.md": "34f857509ef7c353a3db5f1b44a0dc86b71e31114ae03805ef70c3cc98a491e6",
+    "results/2026-11-04-simultaneous-corner-check.json": "eddbe13066cb280f9dcf3d76ee468f4b54506cce93fecaf4ef3920d98ccb3338",
+    "results/2026-11-01-corner-response-check.json": "bf82190857f49b46eb3b943c69e399c17ce6b64b3454c502a8e842e0095b2a18",
+    "search/odd_corner_transport.py": "c4db6cbd3536398057256b7ff36a0ffe24e426f498a338d74532c4a70440cbd7",
+    "search/terminal_boundary_relation.py": "301950728a0df03f8d2eba4b4967a3b20cca209b6d09c2041647dc3b09a312b3",
+    "search/run_rank_experiments.py": "ba15a14fc1fe9c5a6b30442dd7e05bfe59029f43bdae9fe79a70e9d730b86f5a"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 300,
+    "runner": "prepared prepare.py m.run and env_for(littlewood); no setup functions called"
+  },
+  "checks": [
+    {
+      "label": "preflight",
+      "command": [
+        "bash",
+        "-lc",
+        "source /workspace/shared/theorem-provers/env.sh && python3 /workspace/shared/theorem-provers/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": null,
+      "timing_note": "Completed after fetch; duration not captured.",
+      "output": "results/2026-11-04-simultaneous-preflight.txt"
+    },
+    {
+      "label": "certificate",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "search.simultaneous_corner_transport",
+        "--compare"
+      ],
+      "exit_code": 0,
+      "seconds": 1.001,
+      "output": "results/2026-11-04-simultaneous-certificate.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 23.022,
+      "output": "results/2026-11-04-simultaneous-tests.txt"
+    }
+  ],
+  "fixed_pair_certificate": {
+    "p": 5,
+    "inputs": [
+      [
+        62,
+        8
+      ],
+      [
+        126,
+        8
+      ]
+    ],
+    "actual_outputs": [
+      [
+        125,
+        17,
+        3
+      ],
+      [
+        253,
+        17,
+        3
+      ]
+    ],
+    "actual_parameters": [
+      0,
+      4
+    ],
+    "original_endpoints": [
+      161,
+      289
+    ],
+    "inherited_endpoint": 576,
+    "internal_dimension": 6,
+    "core_dimension": 2,
+    "quotient_rank": 4,
+    "independent_readback": "original coefficients, preimages, rank inverse products; no elimination or recurrence"
+  },
+  "all_line_identity_contexts": [
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      3,
+      1,
+      2
+    ],
+    [
+      13,
+      7,
+      4
+    ]
+  ],
+  "exploratory_projection_contexts": [
+    [
+      5,
+      311,
+      12
+    ],
+    [
+      5,
+      313,
+      12
+    ],
+    [
+      13,
+      1465,
+      80
+    ],
+    [
+      41,
+      255,
+      11
+    ],
+    [
+      5,
+      31,
+      4
+    ],
+    [
+      5,
+      63,
+      4
+    ],
+    [
+      5,
+      125,
+      17
+    ],
+    [
+      5,
+      253,
+      17
+    ]
+  ],
+  "exploratory_projection_inclusive_endpoints": [
+    673,
+    677,
+    3253,
+    557,
+    81,
+    145,
+    321,
+    577
+  ],
+  "tests": {
+    "full_suite": 121,
+    "new_tests": 4,
+    "unittest_seconds": 22.472,
+    "corruptions": 10,
+    "failures": 0
+  },
+  "development": "Initial generation and four new tests passed. No failed proof/code check was accepted. Diagnostic scripts were not retained; their inputs, diagnostic expression and tool wall times are in the report.",
+  "limits": [
+    "ordinary proof, not Lean or independent-kernel checked",
+    "no uniform terminal acceptance or additional prime decision",
+    "no characteristic-two advance, reachability of abstract completions, terminal-language separation or priority claim",
+    "no finite agreement promoted to infinite proof"
+  ],
+  "source_review": {
+    "latest_weekly": "results/2026-10-30-literature-review.md",
+    "primary": "https://arxiv.org/html/2606.00633v1",
+    "version": "v1, 30 May 2026",
+    "accessed_utc": "2026-11-03",
+    "sections": [
+      "Theorem 1.2",
+      "equation (1.2)",
+      "Proposition 2.3",
+      "Section 3"
+    ],
+    "other_access_limits": "Retain latest weekly checkpoint limitations; no broad daily search."
+  }
+}

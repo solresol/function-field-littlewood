@@ -1,0 +1,35 @@
++ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m search.simultaneous_corner_transport --compare
+{
+  "internal_dimension": 6,
+  "common_core_dimension": 2,
+  "quotient_rank": 4,
+  "plucker_coordinate_order": [
+    "01",
+    "02",
+    "03",
+    "12",
+    "13",
+    "23"
+  ],
+  "plucker_formula": [
+    "s^2",
+    "0",
+    "s*t",
+    "-s*t",
+    "0",
+    "t^2"
+  ],
+  "actual_parameters": [
+    0,
+    4
+  ],
+  "actual_original_endpoints": [
+    161,
+    289
+  ],
+  "inherited_original_max_index": 576,
+  "all_completions_reachable_claimed": false,
+  "elimination_used": false,
+  "state_recurrence_used": false,
+  "all_six_merges_and_original_borders_compared": true
+}

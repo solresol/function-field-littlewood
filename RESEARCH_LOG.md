@@ -1784,3 +1784,44 @@ automation readback were checked. No code or proof changed; tests were not rerun
   do not repeat generic bridges or attainment witnesses. Parent coordinates
   Raksasa reconciliation after verified push and keeps its local schedule paused;
   no direct remote shell, schedule, environment/security/dependency change here.
+
+
+## 2026-11-04 (Wednesday, Australia/Sydney): simultaneous corner conic
+
+- Scheduled 3 November 21:20 UTC = 4 November 08:20 AEDT. Runtime source binding
+  matched the controller's verified saved version. Prepared env.sh/check.py passed
+  before work and after refresh. Clean work at 8212723, expected solresol origin,
+  fetch/ancestry verified; preserved work and created tracking main, FF-only
+  current. Read saved Start, bootstrap recovery, relevant actual source/licence,
+  current roadmap and latest 30 October weekly human-literature review.
+- Stated before coding: determine the simultaneous use of the same missing B11
+  line in both odd-parent children, including possible projection kernels. An
+  even-shift short-window binomial lemma excludes the extra invisible vector
+  beyond the old nearly-square range. Two exact quotient isomorphisms have rank
+  four. The output is a nonsingular conic of two-planes, with coordinates
+  [s^2:0:s*t:-s*t:0:t^2], all parameters retained. Distinct outputs intersect in
+  the fixed N-2 core, so another projective line pencil is ruled out. Includes
+  every odd prime, empty/singular blocks and r=1; no extra response datum needed.
+- Classification: MATHEMATICAL PROGRESS on auxiliary sharpness structure, an
+  ordinary proof with independent finite evidence. No uniform accepting path,
+  main-target advance, additional prime decision, characteristic-two result,
+  Lean theorem or priority claim. No Lean source/build/axiom audit today.
+- Fixed F_5 collision reused without a witness search. Rank-six constraints,
+  independent output minor, rank-four quotient lifts and original-root-sum
+  successor preimages prove the finite claims without solvers/recurrence in
+  readback. Ten certificate corruptions and empty/r=1/separate-field controls
+  pass; all abstract lines checked only in the prescribed contexts. Diagnostic
+  double-wide identity checks on eight previously used inputs informed the
+  row-budget proof; they are not exhaustive state evidence. Exact inputs,
+  endpoints, commands/runtimes/guards/pins/hashes and test results are recorded
+  in results/2026-11-04-simultaneous-corner.md and its validation record.
+- Targeted Lai–Sprang 2606.00633v1 theorem/equation/Proposition 2.3 and Section 3
+  accessed 3 November UTC / 4 November Sydney; unchanged sole displayed version.
+  Weekly access limits retained; no broad daily search or new binary candidate.
+  No install/download, dependency/runtime/security/network/credential/schedule,
+  environment-publication, other-checkout or user-machine change occurred.
+- Next: combine the conic and single-response projective map along actual
+  correlated paths to force odd-shift terminal acceptance or identify an
+  obstruction. Do not repeat settled simultaneous dependence or retired
+  compressions. Parent handles Raksasa reconciliation after verified push and
+  keeps its local schedule paused; no direct remote shell was used here.

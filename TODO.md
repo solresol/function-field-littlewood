@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (3 November update)
+## Research priorities and progress criteria (4 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -98,6 +98,18 @@ of the current projective transport; dimensions and the isomorphism remain outsi
 Lean. It supplies no accepting path and is verification/infrastructure progress.
 Do not repeat reconstruction or substitute generic bridges for the simultaneous
 large-square dependence question.
+
+The [4 November simultaneous transport](results/2026-11-04-simultaneous-corner.md)
+now settles that question: the same missing line in both children gives a
+nonsingular conic of two-planes in a four-dimensional quotient. A short-window
+binomial lemma at even shift proves injectivity of the two-column-wider parent;
+both quotient maps have rank four for every odd prime, including empty/singular
+blocks and r=1. No extra datum or exceptional parameter occurs in this response.
+Different lines share only the (N-2)-dimensional output core, ruling out another
+line pencil. This is ordinary mathematical structure with independent finite
+rank/preimage checks, not a Lean theorem, acceptance invariant or main-target
+advance. Next combine both transport laws along jointly realized paths; do not
+repeat the pencil checks or replace acceptance by generic bridge formalisation.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -228,12 +240,19 @@ finding rather than promoting it to a firstness claim.
   identification. The fixed F_5 map (2lambda+1)/(lambda+1) has determinant 1;
   the second actual input is its pole. No rank drop occurs in this channel.
   See [proof and exact checks](results/2026-11-02-odd-corner-transport.md).
-- Next bounded structural attempt: derive the odd digit's remaining large
-  square, which merges two occurrences of the same B11 line. Determine whether
-  this simultaneous dependence is projective linear, a higher-degree
-  correspondence or requires additional correlated data. Preserve actual border
-  identities and poles. Abstract line completions are not automatically
-  reachable stream states.
+- **4 November simultaneous transport:** the remaining odd-digit large square
+  follows a nonsingular conic, with homogeneous coordinates
+  [s^2:0:s*t:-s*t:0:t^2] in the derived rank-four quotient. An even-shift
+  short-window lemma proves the stronger required injectivity. No added datum,
+  parameter collision or singular projection occurs; it is not another line
+  pencil. See [proof and checks](results/2026-11-04-simultaneous-corner.md).
+- Next bounded structural attempt: use the conic and the preceding projective
+  isomorphism along jointly realized transitions to derive an invariant forcing
+  odd-shift terminal acceptance, or a concrete obstruction. Preserve homogeneous
+  parameters and actual border correlations. Abstract line completions are not
+  automatically reachable stream states. The simultaneous law is settled; more
+  finite pencil checks, generic bridges or larger witness boxes cannot replace
+  this acceptance step.
   Primitive-forcing restrictions and feasible-only profiles remain open,
   not supported by the absence of collisions in a bounded sample. Keep actual
   path correlations; no whole graph, new attainment box or generic packaging.
