@@ -1,5 +1,37 @@
 # Research log
 
+## 2026-11-05 (Thursday, Australia/Sydney): even-shift short windows in Lean
+
+- Read saved Start, recovery instructions, actual sources, current roadmap,
+  recent results and the 30 October weekly handoff. Prepared env.sh/check.py
+  passed before work and after refresh. Clean generated work ad0ab829 matched
+  expected origin and live main; fetched ancestry checked, preserved work,
+  created tracking main and FF-only current. No overlapping process found.
+- Asked before coding whether the 4 November even-shift short-window premise
+  of rank-four conic transport follows from the existing actual descent inputs.
+  EvenShortWindow proves X^N-1 divisibility, degree<=2q+1 and 2q zero rows at
+  shift 2n force zero, then proves actual 2q-by-(2q+2) stacked injectivity.
+  Uses equal q/q parity budgets, full prime-field nonsquareness and the proved
+  Proposition 2.3; no rank, endpoint, target or square inverse is assumed.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on an essential
+  prerequisite of the ordinary conic theorem. Dimensions/projective isomorphism
+  remain outside Lean. No uniform acceptance, new prime, characteristic-two
+  result or priority claim. Next combine both transport laws on jointly realized
+  paths; do not repeat this prerequisite or routine quotient packaging.
+- Guarded default build, standard-only audit and unchanged conic regressions
+  pass. Lean controls include empty/r=1, singular actual Hankel, separate p=5
+  valuation and a nonzero degree-four binomial multiple with two zero rows,
+  showing an extra column fails. Two diagnostic audit compilations failed
+  during test setup; final audit is warning-free. No new sorry/axiom/native
+  decision procedure; existing Challenge placeholder excluded from closures.
+- Targeted primary-source recheck of Lai-Sprang v1 on 4 November UTC/5 November
+  Sydney; reused five-day-old weekly checkpoint with its AMS/Elsevier gaps.
+  No broad daily literature or binary candidate search. Exact pins, caches and
+  guards reused; no installation, dependency/runtime/settings/security/schedule,
+  sibling-checkout or user-machine change. Controller owns Raksasa sync.
+  Statements, inputs, timings and evidence: results/2026-11-05-even-short-window.md
+  and results/2026-11-05-short-window-validation.json.
+
 ## 2026-11-01 (Sunday, Australia/Sydney): the missing bordering scalar
 
 - Scheduled 31 October 21:20 UTC. After startup, prepared env.sh/check.py

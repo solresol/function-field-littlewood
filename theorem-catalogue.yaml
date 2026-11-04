@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-11-03'
+updated: '2026-11-05'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -3019,6 +3019,90 @@ theorems:
       FunctionFieldLittlewood/BorderedRelation.lean: fd2bd6fb5d08d34a3392e05fc30ab9fc605b89e3777bdc53d07a7a66a3137e86
       verification/BorderedRelationAudit.lean: 6d2fa244bdec91020bde2552dc260e651b3a92c5f274a44cb0b355575132fdcb
       FunctionFieldLittlewood.lean: d25274791e5369c343b86bf90a40ba37aed2a7f4a857450ea4cfa6377d048737
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: even-shift-short-window
+  title: Actual even-shift short windows and wider-stack injectivity
+  status: kernel-checked
+  mathematical_origin: formalisation of the 4 November ordinary even-shift short-window argument, adapting
+    Lai-Sprang Section 3
+  first_formalisation_priority: unestablished
+  statement: For the actual infinite named stream, an X^N-1 multiple of degree at most 2q+1 with 2q zero
+    rows at shift 2n is zero. Thus the 2q-by-(2q+2) Hankel/evaluation stack has trivial kernel, including
+    empty and singular blocks.
+  assumptions:
+  - Prime p>2 and p-1=2*2^r*(2k+1), so N=2^(r+1) is the full two-primary part; Lean r=0 includes the usual
+    valuation-r=1 comparison.
+  - All n,q>=0. The window theorem assumes X^N-1 divisibility and the explicit degree/row bounds, including
+    the zero polynomial.
+  - The stacked theorem assumes an injective list of N N-th roots, both Hankel and evaluation outputs
+    zero, 2q rows and 2q+2 columns.
+  limitations: Verification/infrastructure progress on the ordinary conic transport prerequisite. Only
+    even shifts are covered by the shorter window. The raw coefficient convention is retained. Conic dimensions
+    and quotient isomorphism, uniform acceptance, new prime decisions and characteristic-two construction
+    are not proved. No independent-kernel replay, archive or priority claim.
+  declarations:
+  - name: FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window
+    file: FunctionFieldLittlewood/EvenShortWindow.lean
+    line_at_snapshot: 20
+    introduced_commit: 8c0d60fd0037b160121ebd5e07581d11df4914f0
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (R : Polynomial (ZMod p)),
+              Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+                ∀ (n q : ℕ),
+                  R.natDegree ≤ 2 * q + 1 →
+                    (∀ (j : ℕ),
+                        1 ≤ j →
+                          j ≤ 2 * q →
+                            FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                                (2 * n + j) =
+                              0) →
+                      R = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.EvenShortWindow.stream_even_no_invisible
+    file: FunctionFieldLittlewood/EvenShortWindow.lean
+    line_at_snapshot: 81
+    introduced_commit: 8c0d60fd0037b160121ebd5e07581d11df4914f0
+    lean_type: |-
+      @FunctionFieldLittlewood.EvenShortWindow.stream_even_no_invisible : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+        2 < p →
+          p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+            ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+              Function.Injective z →
+                (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+                  ∀ (n q : ℕ) (x : Fin (2 * q + 1 + 1) → ZMod p),
+                    (FunctionFieldLittlewood.BoundaryRelation.block (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                              (2 * n + 1) (2 * q) (2 * q + 1 + 1)).mulVec
+                          x =
+                        0 →
+                      (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (2 * q + 1 + 1)).transpose.mulVec x = 0 → x = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 8c0d60fd0037b160121ebd5e07581d11df4914f0
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-11-05-short-window-build.txt
+    full_build_validation: results/2026-11-05-short-window-validation.json
+    catalogue_audit: results/2026-11-05-short-window-audit.txt
+    scope: results/2026-11-05-even-short-window.md
+    source_sha256:
+      FunctionFieldLittlewood/EvenShortWindow.lean: d88c0988bea67997cd8033f7f8786e36e4e5fd5b2654e9b0b5f6a1b06e2a7ad1
+      verification/EvenShortWindowAudit.lean: f7ef1a3f7600b5198a124314ed4a1601ad7be43d1e00434e9d6c9e8a71466601
+      FunctionFieldLittlewood.lean: b25ce0f69bc66b0878419b532a0747b4fc2978bd0c54711c64ed2d6f20b354fc
   archive:
     zenodo_version: null
     zenodo_doi: null

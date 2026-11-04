@@ -1,0 +1,10 @@
++ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m unittest discover -s tests -p test_simultaneous_corner_transport.py -v
+test_certificate_corruptions (test_simultaneous_corner_transport.SimultaneousCornerTransportTests.test_certificate_corruptions) ... ok
+test_exact_regeneration_and_six_merges (test_simultaneous_corner_transport.SimultaneousCornerTransportTests.test_exact_regeneration_and_six_merges) ... ok
+test_independent_readback (test_simultaneous_corner_transport.SimultaneousCornerTransportTests.test_independent_readback) ... ok
+test_no_projection_exception_in_prescribed_empty_r1_and_separate_field (test_simultaneous_corner_transport.SimultaneousCornerTransportTests.test_no_projection_exception_in_prescribed_empty_r1_and_separate_field) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.199s
+
+OK

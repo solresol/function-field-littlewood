@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (4 November update)
+## Research priorities and progress criteria (5 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -110,6 +110,17 @@ line pencil. This is ordinary mathematical structure with independent finite
 rank/preimage checks, not a Lean theorem, acceptance invariant or main-target
 advance. Next combine both transport laws along jointly realized paths; do not
 repeat the pencil checks or replace acceptance by generic bridge formalisation.
+
+The [5 November Lean proof](results/2026-11-05-even-short-window.md) verifies
+the specific short-window premise of that conic argument: at even shift,
+an X^N-1 multiple of degree<=2q+1 with 2q zero rows is zero. The actual
+2q-by-(2q+2) Hankel/evaluation stack is therefore injective, including empty
+and singular blocks and r=1. A checked extra-column counterexample retains
+the exact budget. This is verification/infrastructure progress; the conic's
+dimension/isomorphism proof remains ordinary and no accepting path is supplied.
+The next substantive task remains combining both laws along jointly realized
+paths. Do not repeat this prerequisite or replace that task with routine
+quotient packaging, a new search box or more attainment instances.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against

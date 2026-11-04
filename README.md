@@ -81,6 +81,20 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Even-shift short windows formalised on 5 November 2026
+
+[EvenShortWindow.lean](FunctionFieldLittlewood/EvenShortWindow.lean) verifies
+the extra injectivity used by the simultaneous conic argument below. At every
+even shift, an X^N-1 multiple of degree at most 2q+1 with 2q zero rows must
+vanish. Thus the actual 2q-by-(2q+2) Hankel/evaluation stack has zero kernel,
+including empty/singular blocks and r=1. An extra-column counterexample checks
+the precise degree budget.
+
+This is verification/infrastructure progress on the 4 November ordinary lemma.
+The conic's dimensions and quotient isomorphism remain outside Lean; uniform
+odd-shift acceptance and characteristic two remain open. See
+[scope and checks](results/2026-11-05-even-short-window.md).
+
 ## Simultaneous corner transport on 4 November 2026
 
 When the missing B11 line occurs in both odd-parent children, its larger-square

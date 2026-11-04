@@ -21,6 +21,7 @@ The primitive-target/affine-compatibility group is pinned to `4bb00ee703579687fe
 The binomial nonvanishing/terminal detection group is pinned to `db1616b4757687cced5ad1bcb43d6e9157926e8f` (29 October 2026).
 The even-shift stripping group is pinned to `ecddc07ab2a958bd40f4e827e91ce5e508f085d2` (31 October 2026).
 The bordered reconstruction group is pinned to `7315c6ba8bec00992295c5eea2dc86112773f3a7` (3 November 2026).
+The even-shift short-window group is pinned to `8c0d60fd0037b160121ebd5e07581d11df4914f0` (5 November 2026).
 It records curated theorem groups, not every supporting lemma or experimental observation.
 Each entry gives its assumptions, Lean-reported types, source locations, source hashes,
 axiom audit, archive coverage and registry status.
@@ -53,8 +54,21 @@ axiom audit, archive coverage and registry status.
 | [Binomial nonvanishing and exact terminal detection](https://github.com/solresol/function-field-littlewood/blob/db1616b4757687cced5ad1bcb43d6e9157926e8f/FunctionFieldLittlewood/TerminalDetection.lean#L160) | proved coefficient-row Proposition 2.3, no invisible vectors and accepted target to exact certificate/product | Not yet archived |
 | [Even-shift stripping and odd-shift reduction](https://github.com/solresol/function-field-littlewood/blob/ecddc07ab2a958bd40f4e827e91ce5e508f085d2/FunctionFieldLittlewood/EvenShift.lean#L323) | exact target stripping; terminal existence reduces to odd shifts | Not yet archived |
 | [Actual bordered reconstruction](https://github.com/solresol/function-field-littlewood/blob/7315c6ba8bec00992295c5eea2dc86112773f3a7/FunctionFieldLittlewood/BorderedRelation.lean#L286) | adjacent-square distinctness, wide=sum, tall=intersection and four-square determination | Not yet archived |
+| [Even-shift short windows](https://github.com/solresol/function-field-littlewood/blob/8c0d60fd0037b160121ebd5e07581d11df4914f0/FunctionFieldLittlewood/EvenShortWindow.lean#L20) | degree<=2q+1, 2q zero rows force zero for binomial multiples; wider-stack injectivity | Not yet archived |
 
 ## Verification boundary
+
+The 5 November group verifies the even-shift short-window premise of the
+4 November ordinary conic argument. At the full two-primary order, an X^N-1
+multiple of degree<=2q+1 with 2q zero rows at an even shift is zero. Consequently
+the actual 2q-by-(2q+2) Hankel/evaluation stack is injective, including empty
+and singular blocks and r=1. The proof derives the equal parity row budgets
+and uses proved root-moment/nonsquare descent; no rank or terminal acceptance
+is assumed. Standard-axiom audits and a checked extra-column failure control
+pass. The conic's dimensions/isomorphism, uniform odd-shift acceptance and
+characteristic-two construction remain outside the result. This is
+verification/infrastructure progress on existing auxiliary structure. See
+[scope and checks](results/2026-11-05-even-short-window.md).
 
 The 3 November group proves exact bordered reconstruction for actual infinite
 Lai–Sprang relations at every admissible odd prime, nonnegative shift and size,

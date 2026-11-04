@@ -1,0 +1,38 @@
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean verification/EvenShortWindowAudit.lean
+@FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (R : Polynomial (ZMod p)),
+        Polynomial.X ^ (2 * 2 ^ r) - 1 ∣ R →
+          ∀ (n q : ℕ),
+            R.natDegree ≤ 2 * q + 1 →
+              (∀ (j : ℕ),
+                  1 ≤ j →
+                    j ≤ 2 * q →
+                      FunctionFieldLittlewood.WindowMoments.filt R (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                          (2 * n + j) =
+                        0) →
+                R = 0
+@FunctionFieldLittlewood.EvenShortWindow.stream_even_no_invisible : ∀ {p r k : ℕ} [inst : Fact (Nat.Prime p)],
+  2 < p →
+    p - 1 = 2 * 2 ^ r * (2 * k + 1) →
+      ∀ (z : Fin (2 * 2 ^ r) → ZMod p),
+        Function.Injective z →
+          (∀ (i : Fin (2 * 2 ^ r)), z i ^ (2 * 2 ^ r) = 1) →
+            ∀ (n q : ℕ) (x : Fin (2 * q + 1 + 1) → ZMod p),
+              (FunctionFieldLittlewood.BoundaryRelation.block (FunctionFieldLittlewood.laiSprangStream p (r + 1))
+                        (2 * n + 1) (2 * q) (2 * q + 1 + 1)).mulVec
+                    x =
+                  0 →
+                (FunctionFieldLittlewood.BoundaryRelation.evalMatrix z (2 * q + 1 + 1)).transpose.mulVec x = 0 → x = 0
+'FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.EvenShortWindow.stream_even_no_invisible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FunctionFieldLittlewood.EvenShortWindowAudit.empty3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShortWindowAudit.singular3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.EvenShortWindowAudit.extra_column_fails' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

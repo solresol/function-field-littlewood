@@ -23,6 +23,8 @@ project:
     no shift-zero events and reduction of every event to an odd-shift representative.
     BorderedRelation proves actual adjacent-square distinctness, wide=sum, tall=intersection
     and four-square determination, using proved stacked injectivity without dimension assumptions.
+    EvenShortWindow verifies the even-shift binomial short-window lemma and actual
+    2q-by-(2q+2) Hankel/evaluation injectivity needed by the ordinary conic transport argument.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -92,7 +94,9 @@ status:
     is equivalent to odd-shift existence. BorderedRelation proves adjacent-square distinctness,
     wide=sum, tall=intersection and determination of the full tuple by four actual squares,
     including empty/singular blocks and r=1, from proved stacked injectivity. No dimension formula
-    or Hankel inverse is assumed. Uniform odd-shift acceptance remains open. Dimensions,
+    or Hankel inverse is assumed. Uniform odd-shift acceptance remains open.
+    EvenShortWindow now proves the extra two-column-wider injectivity at even shifts from
+    the actual q/q parity budgets and full two-primary prime-field hypothesis. The conic's dimensions,
     projective transport, concrete affine-direction intersection, executable enumeration and
     the sharper subspace cardinal bound remain outside Lean. Uniform acceptance remains an explicit
     missing existence theorem.
@@ -108,6 +112,22 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window
+    file: FunctionFieldLittlewood/EvenShortWindow.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.EvenShortWindow.stream_even_no_invisible
+    file: FunctionFieldLittlewood/EvenShortWindow.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.BorderedRelation.stream_bordered_reconstruction
     file: FunctionFieldLittlewood/BorderedRelation.lean
     sorry_count: 0

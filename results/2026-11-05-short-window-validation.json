@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-05",
+  "weekday": "Thursday",
+  "timezone": "Australia/Sydney",
+  "checked_at": "2026-11-04T21:56:05.553860+00:00",
+  "base_commit": "ad0ab82918c545c22c2a5528b6954b16556552ef",
+  "classification": "verification/infrastructure progress: actual even-shift short window and two-column-wider stacked injectivity",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "seed": null,
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/EvenShortWindow.lean": "d88c0988bea67997cd8033f7f8786e36e4e5fd5b2654e9b0b5f6a1b06e2a7ad1",
+    "verification/EvenShortWindowAudit.lean": "f7ef1a3f7600b5198a124314ed4a1601ad7be43d1e00434e9d6c9e8a71466601",
+    "FunctionFieldLittlewood.lean": "b25ce0f69bc66b0878419b532a0747b4fc2978bd0c54711c64ed2d6f20b354fc"
+  },
+  "resource_guards": {
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "build_timeout_seconds": 900,
+    "other_timeout_seconds": 180,
+    "runner": "prepared prepare.py m.run, installed_tools and env_for(littlewood); no setup called"
+  },
+  "checks": [
+    {
+      "label": "preflight",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/shared/theorem-provers/check.py"
+      ],
+      "exit_code": 0,
+      "seconds": 11.006,
+      "output": "results/2026-11-05-short-window-preflight.txt"
+    },
+    {
+      "label": "build",
+      "command": [
+        "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 2.002,
+      "output": "results/2026-11-05-short-window-build.txt"
+    },
+    {
+      "label": "audit",
+      "command": [
+        "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake",
+        "env",
+        "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "verification/EvenShortWindowAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.005,
+      "output": "results/2026-11-05-short-window-audit.txt"
+    },
+    {
+      "label": "conic-regressions",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_simultaneous_corner_transport.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.001,
+      "output": "results/2026-11-05-short-window-conic-regressions.txt"
+    }
+  ],
+  "axiom_audit": {
+    "headline_declarations": 2,
+    "named_controls": 3,
+    "allowed_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "unexpected_axioms": [],
+    "prohibited_token_scan": "passed for new proof, audit and root import",
+    "existing_placeholder": "Challenge.lean:37 excluded from audited closures"
+  },
+  "diagnostics": {
+    "initial_proof_check": "passed first attempt",
+    "initial_default_build": "passed",
+    "audit_development_failures": "Two failed diagnostic compilations while correcting the singular control, missing executable-stream import and polynomial normalization; no failed closure is accepted.",
+    "diagnostic_timings": "not retained",
+    "rank_diagnostic_inputs": [
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        3,
+        3,
+        2
+      ],
+      [
+        3,
+        1,
+        3
+      ],
+      [
+        5,
+        127,
+        8
+      ]
+    ],
+    "rank_diagnostic_result": [
+      4,
+      2,
+      6,
+      16
+    ],
+    "rank_diagnostic_semantics": "(p,t,q), exact rank of actual 2q-square via original root-sum oracle; used only to correct the singular control, not conjecture evidence"
+  },
+  "literature": {
+    "weekly_handoff": "results/2026-10-30-literature-review.md",
+    "status": "latest handoff present, accessed 31 October Sydney, five days earlier; no broad daily review repeated",
+    "primary_source": "https://arxiv.org/html/2606.00633v1",
+    "version": "v1, 30 May 2026; sole version displayed at arXiv abstract",
+    "access_date_utc": "2026-11-04",
+    "access_date_sydney": "2026-11-05",
+    "read": "Theorem 1.2, Proposition 2.3 and Section 3 row budgets and nonsquare descent",
+    "limitations": "AMS/Elsevier access gaps retained from weekly review; no later general absence or priority claim"
+  },
+  "scope": {
+    "uniform_acceptance": false,
+    "characteristic_two_result": false,
+    "full_conic_formalisation": false,
+    "normalized_coordinate_identification": false,
+    "independent_kernel_replay": false,
+    "ordinary_argument": "results/2026-11-04-simultaneous-corner.md section 1",
+    "next": "combine the two ordinary transport laws on jointly realized paths to force odd-shift terminal acceptance or derive an obstruction"
+  },
+  "proof_commit": "8c0d60fd0037b160121ebd5e07581d11df4914f0",
+  "catalogue_validation": {
+    "status": "passed",
+    "checks": [
+      "YAML parse and unique group identifier",
+      "exact audited types and declaration source lines",
+      "proof snapshot and working-tree source hashes equal recorded hashes",
+      "pin hashes unchanged",
+      "formalization.yaml declaration references",
+      "successful retained build/audit/regression evidence exists"
+    ]
+  }
+}
