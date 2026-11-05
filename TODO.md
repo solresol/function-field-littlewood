@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (5 November update)
+## Research priorities and progress criteria (6 November update)
 
 Latest weekly handoff: [30 October literature checkpoint](results/2026-10-30-literature-review.md).
 No useful new or revised result was located. Rechecked Lai–Sprang's odd-characteristic
@@ -121,6 +121,20 @@ dimension/isomorphism proof remains ordinary and no accepting path is supplied.
 The next substantive task remains combining both laws along jointly realized
 paths. Do not repeat this prerequisite or replace that task with routine
 quotient packaging, a new search box or more attainment instances.
+
+The [6 November selector](results/2026-11-06-corner-terminal-selector.md)
+now combines those laws along a shared actual path. The fixed F_5 pair's
+terminal languages differ: (1,1),(0,1),(0,1),(0,0),(1,0) sends them to
+T(2001,284) accepting and T(4049,284) rejecting. Original-coefficient primal
+and dual certificates verify both outputs. An exact nine-port response and
+polynomial Bezout identity select only [0:1], over every F_5 extension; the
+actual input parameters are 0 and 4. Terminal-only identification of this
+seven-relation pair is therefore also refuted. This is mathematical progress
+on auxiliary acceptance structure, not a minimality theorem, uniform sharpness,
+new prime decision, Lean theorem or characteristic-two advance. Next seek a
+state-dependent selector on a reachable family which forces a compatible
+accepting parameter uniformly in the prime. More suffixes for this fixed pair
+or isolated witnesses cannot supply that argument.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -257,13 +271,20 @@ finding rather than promoting it to a firstness claim.
   short-window lemma proves the stronger required injectivity. No added datum,
   parameter collision or singular projection occurs; it is not another line
   pencil. See [proof and checks](results/2026-11-04-simultaneous-corner.md).
-- Next bounded structural attempt: use the conic and the preceding projective
-  isomorphism along jointly realized transitions to derive an invariant forcing
-  odd-shift terminal acceptance, or a concrete obstruction. Preserve homogeneous
-  parameters and actual border correlations. Abstract line completions are not
-  automatically reachable stream states. The simultaneous law is settled; more
-  finite pencil checks, generic bridges or larger witness boxes cannot replace
-  this acceptance step.
+- **6 November terminal separation:** the same seven-relation pair now has a
+  certified shared suffix with opposite terminal outputs. Its projective
+  response followed by a conic admits an exact selector [0:1], over every F_5
+  extension, by a nine-port affine response and two-minor Bezout identity.
+  This refutes terminal-only identification of the pair, not every smaller
+  recognizer or feasibility-restricted compression. See
+  [the proof and original-coefficient checks](results/2026-11-06-corner-terminal-selector.md).
+- Next bounded structural attempt: derive a state-dependent selector/transport
+  relation on a jointly reachable family, sufficient to force a compatible
+  odd-shift accepting parameter uniformly in the odd prime. Preserve homogeneous
+  parameters and actual border correlations; abstract completions need not be
+  reachable. Both transport laws and this fixed pair's terminal inequivalence
+  are settled. More fixed-pair suffixes, generic bridges, isolated witnesses or
+  larger search boxes cannot replace the remaining reachable-parameter argument.
   Primitive-forcing restrictions and feasible-only profiles remain open,
   not supported by the absence of collisions in a bounded sample. Keep actual
   path correlations; no whole graph, new attainment box or generic packaging.

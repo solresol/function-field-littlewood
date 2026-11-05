@@ -81,6 +81,23 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## The missing corner changes terminal acceptance: 6 November 2026
+
+The actual F_5 pair T(62,8), T(126,8) has different terminal languages,
+despite equality of seven full relations, phase and exact size. The shared
+word (1,1),(0,1),(0,1),(0,0),(1,0) gives T(2001,284) accepting and
+T(4049,284) rejecting, independently certified from original coefficients.
+Thus omitting the corner also fails for terminal decisions alone.
+
+Combining the projective and conic responses, an exact nine-port calculation
+shows this suffix selects only parameter [0:1], over every F_5 extension.
+All occurrences share that one parameter; the two actual inputs are 0 and 4.
+This is mathematical progress on auxiliary acceptance structure, not uniform
+sharpness, a new prime decision, characteristic-two progress or a Lean theorem.
+See [proof, certificates and scope](results/2026-11-06-corner-terminal-selector.md).
+Next seek a selector/transport relation forcing acceptance on a reachable
+family uniformly in the odd prime; further fixed-pair enumeration is unnecessary.
+
 ## Even-shift short windows formalised on 5 November 2026
 
 [EvenShortWindow.lean](FunctionFieldLittlewood/EvenShortWindow.lean) verifies

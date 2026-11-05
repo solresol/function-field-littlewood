@@ -1,5 +1,41 @@
 # Research log
 
+## 2026-11-06 (Friday, Australia/Sydney): the missing corner affects acceptance
+
+- Read saved START, recovery instructions, latest available 30 October weekly
+  literature review, current roadmap, recent results and actual sources.
+  Prepared env.sh/check.py passed before work and after refresh. Clean generated
+  work at 0d989a3 matched expected origin and fetched main; ancestry checked,
+  work preserved, tracking main created and FF-only current. Controller had
+  already checked task/environment overlap; no overlapping process was found.
+- Asked before coding whether the two transport laws can distinguish terminal
+  outputs on the fixed T(62,8),T(126,8) pair. Shared suffix
+  (1,1),(0,1),(0,1),(0,0),(1,0) gives T(2001,284) accepting and T(4049,284)
+  rejecting. Seven-relation identification fails even for terminal decisions.
+  The projective response is used twice by the next conic. Nine independent
+  boundary ports retain the SAME line parameter; exact affine response and a
+  two-minor polynomial Bezout identity select only [0:1], over every F_5
+  extension. Actual parameters are 0 and 4; other completions need not be reachable.
+- Classification: MATHEMATICAL PROGRESS on auxiliary acceptance structure,
+  strengthening a previously open terminal-language obstruction. No uniform
+  accepting family, new prime decision, characteristic-two result, Lean theorem,
+  general minimality or priority claim. Neither substantive outcome changed.
+- Independent readback checks complete linear response via primal/dual lifts,
+  the polynomial identity, and actual original-coefficient terminal primal/dual
+  certificates through indices 2568/4616 inclusive. Four new tests include
+  solver/recurrence-disabled readback, regeneration, actual paths, six abstract
+  controls, r=1 and 14 corruptions. The full Python suite passes; no Lean build
+  or axiom audit is claimed. Initial runner import and one no-op corruption
+  test were corrected; exact evidence and timings are in the validation record.
+- Targeted Lai–Sprang v1 recheck on 5 November UTC/6 November Sydney; retain
+  weekly review access gaps. No broad daily literature search or binary revival.
+  Exact pins/caches/settings preserved; no install, dependency/runtime/security/
+  schedule, sibling-checkout or user-machine change. Parent owns Raksasa sync.
+  Proof, discovery bounds and limits: results/2026-11-06-corner-terminal-selector.md.
+- Next seek a state-dependent selector on a reachable family that forces a
+  compatible accepting parameter uniformly in the prime. Do not expand suffix
+  enumeration for this fixed pair or substitute generic bridge formalisation.
+
 ## 2026-11-05 (Thursday, Australia/Sydney): even-shift short windows in Lean
 
 - Read saved Start, recovery instructions, actual sources, current roadmap,

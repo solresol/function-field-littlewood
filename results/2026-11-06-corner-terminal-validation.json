@@ -1,0 +1,405 @@
+{
+  "date": "2026-11-06",
+  "timezone": "Australia/Sydney",
+  "weekday": "Friday",
+  "checked_at_utc": "2026-11-05T22:35:15.848140+00:00",
+  "base_commit": "0d989a3f553f66a4ef175a36646a9ffda7f0c39a",
+  "classification": "mathematical progress on auxiliary acceptance structure: exact fixed-pair terminal-language obstruction and selector",
+  "python": "3.12.14",
+  "dependencies": "Python standard library; prepared exact Lean/mathlib unchanged",
+  "seed": null,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "search/corner_terminal_selector.py": "86f4cdeb9b22b8881e734bf23c05ebbff20d060a2dfa459e4e3b4563160dc7ef",
+    "tests/test_corner_terminal_selector.py": "123e402fae0dc85d8e3ee9373050d8ad0129c014686cb568b4244fea4b94c984",
+    "results/2026-11-06-corner-terminal-check.json": "b2f79943cc08280ffc943162a74b3bb159caab59a2d9b252175764042b84c069",
+    "results/2026-11-06-corner-terminal-selector.md": "0e069d2514fd7a784e774aa4f8890760469590c478d976a69e8a2a58574766e1",
+    "results/2026-11-06-corner-terminal-tests.txt": "96d2e7c19932f5361c3ceb76156acfdbfa0de1cd8d9eb1534ad7b04ce0886aad",
+    "results/2026-11-01-corner-response-check.json": "bf82190857f49b46eb3b943c69e399c17ce6b64b3454c502a8e842e0095b2a18",
+    "search/odd_corner_transport.py": "c4db6cbd3536398057256b7ff36a0ffe24e426f498a338d74532c4a70440cbd7",
+    "search/simultaneous_corner_transport.py": "8d5b85a970f83759c2d91f1312fa0fad2a5e0ce0266b2d7cdb511836976439e1",
+    "search/corner_response_obstruction.py": "c97a0ba54fcff80222be1e5521ded4984398c658c839f99829563c9aa7416e1f",
+    "search/compatibility_profile_obstruction.py": "94084533ed99d7550f16d73a560eff69837d42a86abb22b4e14e61973b66f8c7",
+    "search/run_rank_experiments.py": "ba15a14fc1fe9c5a6b30442dd7e05bfe59029f43bdae9fe79a70e9d730b86f5a"
+  },
+  "preflight": [
+    {
+      "label": "before-refresh",
+      "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+      "exit_code": 0,
+      "seconds": null,
+      "timing_note": "Representative imports, exact pins, dependency HEADs and prepared readiness passed; per-command duration not retained."
+    },
+    {
+      "label": "after-refresh",
+      "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+      "exit_code": 0,
+      "seconds": null,
+      "timing_note": "Representative imports, exact pins, dependency HEADs and prepared readiness passed; per-command duration not retained."
+    }
+  ],
+  "repository": {
+    "origin": "https://github.com/solresol/function-field-littlewood.git",
+    "initial_branch": "work",
+    "initial_clean": true,
+    "head_equal_fetched_main": true,
+    "generated_branch_preserved": true,
+    "tracking_main_created": true,
+    "fast_forward_only": "Already up to date",
+    "overlap_check": "Controller checked tasks; local process check found no overlapping research"
+  },
+  "resource_guards": {
+    "runner": "prepared prepare.py m.run, env_for(littlewood); no preparation or setup functions called",
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "timeout_seconds": 300,
+    "threads": 2
+  },
+  "checks": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "search.corner_terminal_selector",
+        "--generate"
+      ],
+      "exit_code": 0,
+      "seconds": 5.004491926000014,
+      "label": "generate"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_corner_terminal_selector.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "seconds": 5.003270914000041,
+      "label": "focused"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_corner_terminal_selector.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 5.003691558000014,
+      "label": "focused-final"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 22.018419117999997,
+      "label": "tests"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 22.018833888000017,
+      "label": "tests-final",
+      "output": "results/2026-11-06-corner-terminal-tests.txt"
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "search.corner_terminal_selector"
+      ],
+      "exit_code": 0,
+      "seconds": 1.0011041039999782,
+      "label": "certificate"
+    }
+  ],
+  "certificate": {
+    "initial_seven_relations_equal": true,
+    "actual_initial_parameters": [
+      0,
+      4
+    ],
+    "word": [
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "final_inputs": [
+      [
+        2001,
+        284
+      ],
+      [
+        4049,
+        284
+      ]
+    ],
+    "actual_terminal_outputs": [
+      true,
+      false
+    ],
+    "terminal_language_separation_proved": true,
+    "response_nodes": 17,
+    "independent_ports": 9,
+    "affine_slice_dimension": 5,
+    "minor_polynomials": [
+      [
+        0,
+        3,
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      [
+        0,
+        3,
+        1,
+        4,
+        2,
+        3,
+        4
+      ]
+    ],
+    "bezout_sum": [
+      0,
+      1
+    ],
+    "unique_homogeneous_parameter": [
+      0,
+      1
+    ],
+    "selector_valid_over_every_F5_extension": true,
+    "original_coefficient_endpoints": [
+      2568,
+      4616
+    ],
+    "abstract_completions_reachable_claimed": false,
+    "elimination_used": false,
+    "state_recurrence_used": false
+  },
+  "discovery": {
+    "inputs": [
+      [
+        62,
+        8
+      ],
+      [
+        126,
+        8
+      ]
+    ],
+    "field": 5,
+    "seed": null,
+    "first_pass": {
+      "max_depth": 4,
+      "paired_nodes": 341,
+      "any_accepts": 0,
+      "seconds": 1.026710855
+    },
+    "pruned_pass": {
+      "word": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "pairs": [
+        [
+          2001,
+          284
+        ],
+        [
+          4049,
+          284
+        ]
+      ],
+      "accepts": [
+        true,
+        false
+      ],
+      "checked": 240,
+      "seconds": 2.760951887999994,
+      "depths": [
+        {
+          "depth": 0,
+          "checked": 1,
+          "expanded": 1,
+          "equal": 0,
+          "duplicate": 0,
+          "any_accept": 0,
+          "seconds": 0.030207252999986167
+        },
+        {
+          "depth": 1,
+          "checked": 4,
+          "expanded": 2,
+          "equal": 2,
+          "duplicate": 0,
+          "any_accept": 0,
+          "seconds": 0.05553678600000467
+        },
+        {
+          "depth": 2,
+          "checked": 8,
+          "expanded": 6,
+          "equal": 2,
+          "duplicate": 0,
+          "any_accept": 0,
+          "seconds": 0.1289703920000136
+        },
+        {
+          "depth": 3,
+          "checked": 24,
+          "expanded": 20,
+          "equal": 4,
+          "duplicate": 0,
+          "any_accept": 0,
+          "seconds": 0.3717331759999922
+        },
+        {
+          "depth": 4,
+          "checked": 80,
+          "expanded": 72,
+          "equal": 8,
+          "duplicate": 0,
+          "any_accept": 0,
+          "seconds": 1.3830260070000122
+        }
+      ]
+    },
+    "intended_limits": {
+      "max_depth": 8,
+      "soft_wall_seconds": 60,
+      "stop_on_first_separator": true
+    },
+    "scope": "Fixed pair only; equal full-state pairs pruned; no whole reachable graph or prime/attainment box"
+  },
+  "diagnostics": {
+    "original_target_solves": {
+      "inputs": [
+        [
+          2001,
+          284
+        ],
+        [
+          4049,
+          284
+        ]
+      ],
+      "combined_seconds": 4.051865822
+    },
+    "port_response": "Temporary script unrolled the prescribed root to nine ports; 13-dimensional response, 5-dimensional target fiber",
+    "minor_selection": "The first two nonzero lexicographic 6-row minors already have polynomial gcd X; retained explicit Bezout identity"
+  },
+  "tests": {
+    "full_suite": 125,
+    "new_tests": 4,
+    "final_unittest_seconds": 21.486,
+    "corruptions": 14,
+    "final_failures": 0,
+    "solver_and_recurrence_disabled_readback": true,
+    "exact_regeneration": true,
+    "all_six_abstract_parameter_controls": true,
+    "r1_control": {
+      "p": 3,
+      "shift": 1,
+      "size": 2
+    }
+  },
+  "development": [
+    "First temporary guarded-driver import failed before executing a project command: deployment_guard was not on sys.path. Added the existing shared helper directory to that temporary driver; no runtime or project setup changes.",
+    "First focused run failed one negative-control subtest because assigning 1 to an already-1 preimage entry made no mutation. Replaced it by adding 1 modulo 5. Certificate readback and regeneration had passed. All 14 genuine corruptions are now rejected.",
+    "First full suite passed 125 tests; added assertions identifying the single-response node and its repeated use by the conic node, then reran the full suite successfully."
+  ],
+  "source_review": {
+    "latest_weekly": "results/2026-10-30-literature-review.md",
+    "primary_urls": [
+      "https://arxiv.org/abs/2606.00633v1",
+      "https://arxiv.org/html/2606.00633v1"
+    ],
+    "version": "v1, 30 May 2026; sole displayed version",
+    "accessed_utc": "2026-11-05",
+    "accessed_sydney": "2026-11-06",
+    "sections": [
+      "Theorem 1.2",
+      "equation (1.2)",
+      "Proposition 2.3",
+      "Section 3"
+    ],
+    "limitations": "Retain weekly bounded coverage and AMS/Elsevier gaps; no broad daily literature search or binary candidate revival"
+  },
+  "limits": [
+    "Exact finite linear/polynomial certificates and ordinary proof; not Lean or independent-kernel checked",
+    "The algebraic selector is valid over every extension of F_5; this is not an all-prime selector or a reachability assertion for other completions",
+    "No uniform Delta_p=2N, additional prime decision, characteristic-two advance, general state minimality or priority claim",
+    "No Lean source changes, build or axiom audit; prepared representative imports only",
+    "No environment settings published or changed; no installation, dependency, schedule, other-checkout or user-machine changes; controller owns Raksasa sync"
+  ]
+}
