@@ -81,6 +81,21 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## A reachable dyadic family has two corner values: 8 November 2026
+
+For every odd prime, the actual family T(2^a-2,2N), a>=2r+2, keeps seven
+full boundary relations fixed. Its remaining square takes two distinct lines:
+one at a=2r+2, then a single stable value for all larger a. The endpoint
+coefficient gives a full algebraic projective pencil, but extending this ray
+reaches only its -1 and +1 members. This generalizes the existing F_5 pair
+without a new attainment or suffix search.
+
+This is ordinary mathematical progress on auxiliary reachable-state structure,
+not uniform sharpness, a new prime decision, characteristic-two progress or a
+Lean theorem. Next seek an accepting criterion meeting one of the two reachable
+lines uniformly in the prime; exponent growth cannot supply a freely chosen
+third parameter. See [proof, scope and checks](results/2026-11-08-dyadic-corner-family.md).
+
 ## The missing corner changes terminal acceptance: 6 November 2026
 
 The actual F_5 pair T(62,8), T(126,8) has different terminal languages,

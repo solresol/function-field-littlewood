@@ -1,5 +1,36 @@
 # Research log
 
+## 2026-11-08 (Sunday, Australia/Sydney): an exact reachable two-point family
+
+- Complete saved-runtime readiness check passed, including the previously
+  missing Scholz receipt. No repair or publication was performed here.
+  Clean work at 8d9d788 matched the expected origin and fetched main; ancestry
+  verified, work preserved and tracking main created. Read saved START,
+  current sources/roadmap and 6 November weekly human-literature review.
+- Asked before coding whether T(2^a-2,2N) sweeps the missing projective line.
+  Derived the entire original coefficient window for every odd prime, including
+  r=1. Seven full relations stay fixed for a>=2r+2. The remaining square is
+  one pencil member at a=2r+2 and a distinct, stable member for all larger a.
+  An endpoint-row functional proves the full algebraic pencil, while actual
+  coefficients restrict this ray to exactly -1,+1. Increasing the exponent
+  cannot provide a freely chosen accepting parameter.
+- Classification: MATHEMATICAL PROGRESS on auxiliary reachable structure.
+  No uniform acceptance, new prime decision, characteristic-two result, Lean
+  theorem or novelty claim. The week's projective/conic/selector mathematics
+  and bordered/short-window verification remain separate; neither target is
+  settled. Next seek a criterion meeting one of these two reachable lines
+  uniformly in p, or an obstruction requiring a different shift/size family.
+- Exact independent original-root-sum controls cover p=3,5,13,41,
+  s=r+1,r+2 and three stated exponents, through original index 1056 inclusive.
+  Actual state/direct comparisons and the full abstract endpoint pencils pass.
+  No attainment/suffix search, new tool, Lean change or assumed target was used.
+  Commands, timings and full-suite result are in the dated validation record;
+  ordinary proof and limits: results/2026-11-08-dyadic-corner-family.md.
+- Targeted Lai-Sprang v1 recheck on 7 November UTC/8 November Sydney; retain
+  weekly source/access limits. No broad daily search or binary revival. No
+  setup/download, dependency/runtime/security/schedule/settings, sibling or
+  user-host change. Parent owns any Raksasa synchronization after push.
+
 ## 2026-11-06 (Friday, Australia/Sydney): the missing corner affects acceptance
 
 - Read saved START, recovery instructions, latest available 30 October weekly

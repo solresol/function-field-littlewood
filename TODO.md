@@ -136,6 +136,17 @@ state-dependent selector on a reachable family which forces a compatible
 accepting parameter uniformly in the prime. More suffixes for this fixed pair
 or isolated witnesses cannot supply that argument.
 
+The [8 November dyadic-family lemma](results/2026-11-08-dyadic-corner-family.md)
+now supplies an actual correlated family uniformly in the odd prime:
+T(2^a-2,2N), a>=2r+2, fixes seven full relations and has exactly two distinct
+corner lines. The full state stabilizes for a>=2r+3. The endpoint coefficient
+parametrizes the complete algebraic pencil, but this ray reaches only its two
+signed members. Increasing the exponent cannot select an arbitrary parameter.
+This is ordinary mathematical progress on auxiliary reachable structure, not
+uniform acceptance, a new prime, characteristic-two progress or a Lean theorem.
+Next seek a criterion meeting one of those two actual lines uniformly in p,
+or identify a structural obstruction requiring a different shift/size family.
+
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
 the following outcomes, preserving that distinction:
@@ -280,7 +291,11 @@ finding rather than promoting it to a firstness claim.
   [the proof and original-coefficient checks](results/2026-11-06-corner-terminal-selector.md).
 - Next bounded structural attempt: derive a state-dependent selector/transport
   relation on a jointly reachable family, sufficient to force a compatible
-  odd-shift accepting parameter uniformly in the odd prime. Preserve homogeneous
+  odd-shift accepting parameter uniformly in the odd prime. The canonical
+  T(2^a-2,2N) family now has an exact two-point corner range (-1,+1), followed
+  by full-state stabilization. Seek a selector meeting that range, or an
+  obstruction requiring another reachable family; do not try to sweep the
+  whole pencil by increasing this exponent. Preserve homogeneous
   parameters and actual border correlations; abstract completions need not be
   reachable. Both transport laws and this fixed pair's terminal inequivalence
   are settled. More fixed-pair suffixes, generic bridges, isolated witnesses or
