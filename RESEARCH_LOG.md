@@ -1,5 +1,49 @@
 # Research log
 
+## 2026-11-09 (Monday, Australia/Sydney): selector specialization obstruction
+
+- Scheduled 8 November 21:20 UTC, executed 8 November UTC / 9 November AEDT.
+  Complete prepared startup check passed including Scholz without setup or
+  downloads. Expected origin, clean work and fetched main matched bb77f898;
+  ancestry verified, work preserved, tracking main created, FF-only current.
+  No competing local writer found; coordinator checked account-level overlap.
+  Read current sources/roadmap, bootstrap recovery and 6 November weekly
+  human-literature review. Saved Start was unavailable in cloud/executor
+  catalogues and local skill locations; explicit standing instructions followed.
+- Asked before coding whether the known five-digit selector extends uniformly
+  across N=4 primes or has an exact integral specialization obstruction. Two
+  integer terminal systems at q=2001,4049, k=284 have left annihilators with
+  target pairings exactly 5 and 1. Direct retained primal establishes the first
+  case in characteristic 5. Fourier residue sums connect these integer systems
+  with actual terminal targets; previous stabilization extends to all a>=6.
+  Thus W accepts T(2^a-2,8) iff p=5 and a=6, for every p=5 mod 8 and every
+  extension of its prime field. This word cannot be the desired uniform selector.
+- Classification: MATHEMATICAL PROGRESS on an auxiliary acceptance obstruction.
+  No new prime decision, uniform Delta_p=2N, characteristic-two result, Lean
+  theorem or novelty claim. Other words and prime-dependent continuations are
+  not excluded. No new suffix/prime enumeration or attainment search occurred.
+- Readback expands the integer generating series and checks exact annihilator
+  and target identities without elimination, recurrence or SymPy. Original-root
+  controls use p=5,13 through index4616 inclusive; prescribed state controls
+  use p=5,13,29 and a=6,7,8. Ten corruptions, exact regeneration and the full
+  Python suite pass; details/times/hashes in the dated validation record.
+  No Lean source changed or new Lean build/axiom audit was claimed. Challenge's
+  sorry and downstream assumptions supply no premise.
+- Scratch failures: incorrect runpy invocation; two 60-second guarded large
+  integer normalization/diagonalization timeouts; optional SymPy LLL assertion.
+  None supplies mathematical evidence. Successful discovery uses preinstalled
+  SymPy 1.14.0, opposite-order rational kernels, rank-four lattice normalization
+  and elementary integer reduction. Final proof depends only on read-back
+  integer identities, not those algorithms or their completeness.
+- Targeted Lai-Sprang v1 recheck accessed 8 November UTC / 9 November Sydney;
+  weekly coverage/journal gaps retained. Exact pins, dependencies, shared
+  runtime/settings/security and sibling checkouts preserved. No Raksasa access
+  or schedule change; coordinator owns separate safe sync with local schedule
+  paused. Proof and scope: results/2026-11-09-selector-specialization.md.
+- Next derive another or prime-dependent accepting criterion, or change the
+  reachable shift/size family. Extending this exponent or replaying W cannot
+  supply uniform acceptance. Stop after this coherent audited obstruction.
+
 ## 2026-11-08 (Sunday, Australia/Sydney): an exact reachable two-point family
 
 - Complete saved-runtime readiness check passed, including the previously

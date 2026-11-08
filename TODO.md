@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (6 November update)
+## Research priorities and progress criteria (9 November update)
 
 Latest weekly handoff: [6 November literature checkpoint](results/2026-11-06-literature-review.md).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
@@ -146,6 +146,18 @@ This is ordinary mathematical progress on auxiliary reachable structure, not
 uniform acceptance, a new prime, characteristic-two progress or a Lean theorem.
 Next seek a criterion meeting one of those two actual lines uniformly in p,
 or identify a structural obstruction requiring a different shift/size family.
+
+The [9 November specialization obstruction](results/2026-11-09-selector-specialization.md)
+rules out extending the existing five-digit F_5 selector uniformly: already
+for N=4, it accepts T(2^a-2,8), a>=6, iff p=5 and a=6. Exact integer
+annihilators pair with the target as 5 and 1 for the two ray representatives;
+the previous stabilization lemma supplies the all-exponent conclusion. This
+is an all-prime obstruction for this one word, not a sampled-prime failure,
+an obstruction to other words, uniform sharpness or characteristic-two progress.
+Next derive a different or prime-dependent accepting criterion on the two
+reachable lines, or change the shift/size family. Do not repeat this word,
+extend the stabilized exponent, or enumerate more fixed-pair suffixes as a
+substitute for a uniform mechanism.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against

@@ -81,6 +81,20 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## The existing dyadic selector is characteristic-specific: 9 November 2026
+
+For N=4, the known five-digit word accepts T(2^a-2,8), a>=6, exactly when
+p=5 and a=6. Two integer left-annihilator identities have target pairings
+5 and 1: the first ray state therefore rejects in every other admissible
+characteristic, and the stable ray state rejects in all of them. The previous
+stabilization proof extends these finite identities to the entire infinite ray.
+
+This is mathematical progress on an auxiliary obstruction, not uniform
+sharpness, another prime decision, characteristic-two progress or a Lean
+theorem. Other continuations remain open; replaying this word or extending
+the exponent cannot yield a uniform selector. See
+[the exact specialization criterion and independent checks](results/2026-11-09-selector-specialization.md).
+
 ## A reachable dyadic family has two corner values: 8 November 2026
 
 For every odd prime, the actual family T(2^a-2,2N), a>=2r+2, keeps seven
