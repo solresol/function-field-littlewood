@@ -1,0 +1,10 @@
++ python3 -m unittest discover -s tests -p test_dyadic_corner_family.py -v
+test_endpoint_equations_give_entire_abstract_pencil (test_dyadic_corner_family.DyadicCornerFamilyTests.test_endpoint_equations_give_entire_abstract_pencil) ... ok
+test_exact_original_coefficient_windows (test_dyadic_corner_family.DyadicCornerFamilyTests.test_exact_original_coefficient_windows) ... ok
+test_seven_relations_and_full_state_stabilization (test_dyadic_corner_family.DyadicCornerFamilyTests.test_seven_relations_and_full_state_stabilization) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.434s
+
+OK
+Elapsed seconds: 1.001

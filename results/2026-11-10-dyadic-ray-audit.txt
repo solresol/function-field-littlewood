@@ -1,0 +1,92 @@
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean verification/DyadicRayAudit.lean
+FunctionFieldLittlewood.DyadicRay.odd_period : ∀ (p r m u : ℕ),
+  FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * (2 ^ (r + 1) * m + u) + 1) =
+    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 * u + 1)
+'FunctionFieldLittlewood.DyadicRay.odd_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.interior : ∀ (p r s a n : ℕ),
+  s + r + 1 ≤ a →
+    0 < n →
+      n < 2 ^ s →
+        FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ a + n) =
+          FunctionFieldLittlewood.laiSprangStream p (r + 1) n
+'FunctionFieldLittlewood.DyadicRay.interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.center : ∀ (p r a : ℕ),
+  FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ a) = ↑(2 ^ r)
+'FunctionFieldLittlewood.DyadicRay.center' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.endpoint : ∀ (p r s d : ℕ),
+  FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 1 + d) + 2 ^ s) = ↑(2 ^ r) * (-1) ^ 2 ^ d
+'FunctionFieldLittlewood.DyadicRay.endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.endpoint_first : ∀ (p r s : ℕ),
+  FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 1) + 2 ^ s) = -↑(2 ^ r)
+'FunctionFieldLittlewood.DyadicRay.endpoint_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.endpoint_stable : ∀ (p r s d : ℕ),
+  FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 2 + d) + 2 ^ s) = ↑(2 ^ r)
+'FunctionFieldLittlewood.DyadicRay.endpoint_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.predecessor_step : ∀ (p r a : ℕ),
+  r + 2 ≤ a →
+    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (a + 1) - 1) =
+      FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ a - 1)
+'FunctionFieldLittlewood.DyadicRay.predecessor_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.predecessor : ∀ (p r a d : ℕ),
+  r + 2 ≤ a →
+    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (a + d) - 1) =
+      FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ a - 1)
+'FunctionFieldLittlewood.DyadicRay.predecessor' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.prefix_window : ∀ (p r s d j : ℕ),
+  j ≤ 2 ^ (s + 1) →
+    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 2 + d) - 1 + j) =
+      FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 2) - 1 + j)
+'FunctionFieldLittlewood.DyadicRay.prefix_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+FunctionFieldLittlewood.DyadicRay.stable_window : ∀ (p r s d j : ℕ),
+  j ≤ 2 ^ (s + 1) + 1 →
+    FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 3 + d) - 1 + j) =
+      FunctionFieldLittlewood.laiSprangStream p (r + 1) (2 ^ (s + r + 3) - 1 + j)
+'FunctionFieldLittlewood.DyadicRay.stable_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+@FunctionFieldLittlewood.DyadicRay.tuple_stable : ∀ {Ω : Type u_1} [inst : Fintype Ω] (p r s d : ℕ) (z : Ω → ZMod p),
+  FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+      (2 ^ (s + r + 3 + d) - 2) (2 ^ s) =
+    FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+      (2 ^ (s + r + 3) - 2) (2 ^ s)
+'FunctionFieldLittlewood.DyadicRay.tuple_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+@FunctionFieldLittlewood.DyadicRay.seven_relations : ∀ {Ω : Type u_1} [inst : Fintype Ω] (p r s d : ℕ) (z : Ω → ZMod p)
+  (δ i j : FunctionFieldLittlewood.CorrelatedState.Bit),
+  δ = 0 ∨ i = 0 ∨ j = 0 →
+    FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+        (2 ^ (s + r + 2 + d) - 2) (2 ^ s) δ i j =
+      FunctionFieldLittlewood.CorrelatedState.tuple (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z
+        (2 ^ (s + r + 2) - 2) (2 ^ s) δ i j
+'FunctionFieldLittlewood.DyadicRay.seven_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+@FunctionFieldLittlewood.DyadicRay.actual_stable : ∀ {Ω : Type u_1} [inst : Fintype Ω] (p r s d : ℕ) (z : Ω → ZMod p),
+  FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+      (2 ^ (s + r + 3 + d) - 2) (2 ^ s) =
+    FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+      (2 ^ (s + r + 3) - 2) (2 ^ s)
+'FunctionFieldLittlewood.DyadicRay.actual_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+@FunctionFieldLittlewood.DyadicRay.ray_two_states : ∀ {Ω : Type u_1} [inst : Fintype Ω] (p r s a : ℕ) (z : Ω → ZMod p),
+  s + r + 2 ≤ a →
+    FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯ (2 ^ a - 2)
+          (2 ^ s) =
+        FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+          (2 ^ (s + r + 2) - 2) (2 ^ s) ∨
+      FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯ (2 ^ a - 2)
+          (2 ^ s) =
+        FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+          (2 ^ (s + r + 3) - 2) (2 ^ s)
+'FunctionFieldLittlewood.DyadicRay.ray_two_states' depends on axioms: [propext, Classical.choice, Quot.sound]
+@FunctionFieldLittlewood.DyadicRay.continuation_stable : ∀ {Ω : Type u_1} [inst : Fintype Ω] [inst_1 : DecidableEq Ω]
+  (p r s d : ℕ) (z w : Ω → ZMod p) (σ : Ω → Ω)
+  (word : List (FunctionFieldLittlewood.CorrelatedState.Bit × FunctionFieldLittlewood.CorrelatedState.Bit)),
+  List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ ⋯)
+      (FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+        (2 ^ (s + r + 3 + d) - 2) (2 ^ s))
+      word =
+    List.foldl (FunctionFieldLittlewood.CorrelatedState.step z w σ ⋯)
+      (FunctionFieldLittlewood.CorrelatedState.actual (FunctionFieldLittlewood.laiSprangStream p (r + 1)) z ⋯
+        (2 ^ (s + r + 3) - 2) (2 ^ s))
+      word
+'FunctionFieldLittlewood.DyadicRay.continuation_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DyadicRayAudit.smallest_ray3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DyadicRayAudit.canonical_ray5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DyadicRayAudit.endpoint_change5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.DyadicRayAudit.endpoint_change3' depends on axioms: [propext, Classical.choice, Quot.sound]
+Elapsed seconds: 2.001

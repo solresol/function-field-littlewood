@@ -27,6 +27,7 @@ public import FunctionFieldLittlewood.BinomialNonvanishing
 public import FunctionFieldLittlewood.TerminalDetection
 public import FunctionFieldLittlewood.EvenShift
 public import FunctionFieldLittlewood.BorderedRelation
+public import FunctionFieldLittlewood.DyadicRay
 public import FunctionFieldLittlewood.EvenShortWindow
 public import FunctionFieldLittlewood.Sharpness
 public import FunctionFieldLittlewood.ReverseLift
