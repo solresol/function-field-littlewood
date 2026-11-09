@@ -55,8 +55,21 @@ axiom audit, archive coverage and registry status.
 | [Even-shift stripping and odd-shift reduction](https://github.com/solresol/function-field-littlewood/blob/ecddc07ab2a958bd40f4e827e91ce5e508f085d2/FunctionFieldLittlewood/EvenShift.lean#L323) | exact target stripping; terminal existence reduces to odd shifts | Not yet archived |
 | [Actual bordered reconstruction](https://github.com/solresol/function-field-littlewood/blob/7315c6ba8bec00992295c5eea2dc86112773f3a7/FunctionFieldLittlewood/BorderedRelation.lean#L286) | adjacent-square distinctness, wide=sum, tall=intersection and four-square determination | Not yet archived |
 | [Even-shift short windows](https://github.com/solresol/function-field-littlewood/blob/8c0d60fd0037b160121ebd5e07581d11df4914f0/FunctionFieldLittlewood/EvenShortWindow.lean#L20) | degree<=2q+1, 2q zero rows force zero for binomial multiples; wider-stack injectivity | Not yet archived |
+| [Dyadic-ray coefficient windows and stabilization](https://github.com/solresol/function-field-littlewood/blob/1c937cfae402cc5e8fbfd4dac3e4b79600dac4f4/FunctionFieldLittlewood/DyadicRay.lean) | exact raw windows, seven relations, full stored-state stabilization and at most two ray states; no acceptance | Not yet archived |
 
 ## Verification boundary
+
+The 10 November group formalises the coefficient and stabilization part of the
+8 November ordinary dyadic-ray argument. It covers arbitrary natural moduli
+and fixed evaluation coordinates: with N=2^(r+1), k=2^s, seven relations are
+constant from a=s+r+2 and the full state from a=s+r+3. The ray has at most
+two states and every common continuation agrees on its stable tail. The raw
+endpoint is initially -2^r and subsequently 2^r. The proof does not establish
+distinct corner relations, their pencil, a transport recurrence or any accepting
+word. This is verification/infrastructure progress. Exact types, 15 standard-axiom
+closures and four controls are in the dated audit; source is pinned to
+1c937cfae402cc5e8fbfd4dac3e4b79600dac4f4. See the
+[scope](results/2026-11-10-dyadic-ray-lean.md).
 
 The 5 November group verifies the even-shift short-window premise of the
 4 November ordinary conic argument. At the full two-primary order, an X^N-1

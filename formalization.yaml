@@ -25,6 +25,8 @@ project:
     and four-square determination, using proved stacked injectivity without dimension assumptions.
     EvenShortWindow verifies the even-shift binomial short-window lemma and actual
     2q-by-(2q+2) Hankel/evaluation injectivity needed by the ordinary conic transport argument.
+    DyadicRay proves exact coefficient windows, seven-relation invariance, full stored-state
+    stabilization and at most two states on the actual dyadic ray; no accepting word is asserted.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -100,6 +102,9 @@ status:
     projective transport, concrete affine-direction intersection, executable enumeration and
     the sharper subspace cardinal bound remain outside Lean. Uniform acceptance remains an explicit
     missing existence theorem.
+    DyadicRay verifies the 8 November ordinary ray argument, with raw coefficients and no prime
+    premise. It proves at most two states, not distinct corner lines, a projective pencil or an
+    accepting continuation. The prime-dependent transport recurrence remains to be derived.
     Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
@@ -112,6 +117,54 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.DyadicRay.interior
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.DyadicRay.endpoint
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.DyadicRay.seven_relations
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.DyadicRay.actual_stable
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.DyadicRay.ray_two_states
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.DyadicRay.continuation_stable
+    file: FunctionFieldLittlewood/DyadicRay.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.EvenShortWindow.stream_even_short_window
     file: FunctionFieldLittlewood/EvenShortWindow.lean
     sorry_count: 0

@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (9 November update)
+## Research priorities and progress criteria (10 November update)
 
 Latest weekly handoff: [6 November literature checkpoint](results/2026-11-06-literature-review.md).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
@@ -158,6 +158,17 @@ Next derive a different or prime-dependent accepting criterion on the two
 reachable lines, or change the shift/size family. Do not repeat this word,
 extend the stabilized exponent, or enumerate more fixed-pair suffixes as a
 substitute for a uniform mechanism.
+
+The [10 November Lean proof](results/2026-11-10-dyadic-ray-lean.md) verifies
+that actual dyadic input reduction: raw coefficient windows and their endpoint,
+seven full relations from the first exponent, full stored-state stabilization
+from the next, and at most two states along the entire ray. Shared continuation
+equality includes phase and size. It covers the usual r=1 case and the smallest
+size, with no prime premise for the identities. Distinct corner lines and the
+pencil remain ordinary. This is verification/infrastructure progress, not a
+transport recurrence or accepting word. Do not repeat this reduction; next
+research still needs the prime-dependent mechanism and sufficient simultaneous
+target compatibility, or a different reachable family.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
@@ -315,10 +326,12 @@ finding rather than promoting it to a firstness claim.
   Primitive-forcing restrictions and feasible-only profiles remain open,
   not supported by the absence of collisions in a bounded sample. Keep actual
   path correlations; no whole graph, new attainment box or generic packaging.
-- Next focused formal lemma: derive the four-branch first-square table from
-  CorrelatedState and prove independence from B11, including k=0 and r=1.
-  Formalize the L-perp/two-dimensional-quotient parameterization only if needed
-  for substantive transport; repeated bridges cannot replace that question.
+- Next formal work should implement an explicit step of the substantive
+  prime-dependent transport argument once derived. The proposed four-branch
+  first-square table/independence-from-B11 and quotient parameterization remain
+  deferred unless that argument needs them. DyadicRay now verifies the actual
+  input stabilization; do not repeat it or export more fixed instances.
+  Repeated bridges cannot replace the remaining acceptance question.
 - The degree-H two-residue localization and earlier cutoffs remain true.
   Closing its residual offsets would not decide the all-degree sharpness
   question; defer the remaining boundary bookkeeping unless the new recurrence

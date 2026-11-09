@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-10",
+  "weekday": "Tuesday",
+  "timezone": "Australia/Sydney",
+  "checked_at_utc": "2026-11-09T21:35:53.332983+00:00",
+  "base_commit": "dab78a6c58b8c968c617f25b6360fb271c2168d5",
+  "proof_snapshot": "1c937cfae402cc5e8fbfd4dac3e4b79600dac4f4",
+  "classification": "verification/infrastructure progress: formalisation of the 8 November ordinary dyadic-ray argument",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "python": "3.12.14",
+  "pins_sha256": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "source_sha256": {
+    "FunctionFieldLittlewood/DyadicRay.lean": "f2f43ec6e94d1ddf635560578f6200c9b032da78d7e3f70078521e58664cfdc1",
+    "verification/DyadicRayAudit.lean": "5c0fd86aca72092ede1b3d012fb1729ab543fbd1008f7ec1fec431264c38a57b",
+    "FunctionFieldLittlewood.lean": "817ba89a2279fc3e2f94ba026adab5fd67b058c877f33842d960a470f1b00428"
+  },
+  "seed": null,
+  "resource_guards": {
+    "runner": "prepared prepare.py m.run; installed_tools and env_for(littlewood), no setup called",
+    "threads": 2,
+    "disk_reserve_gib": 2,
+    "process_group_rss_limit_gib": 12,
+    "build_timeout_seconds": 900,
+    "other_timeout_seconds": 300
+  },
+  "checks": [
+    {
+      "label": "prepared runtime gate",
+      "command": "source /workspace/shared/theorem-provers/env.sh; python3 /workspace/shared/theorem-provers/check.py",
+      "exit_code": 0,
+      "seconds": null,
+      "evidence": "Task tool output: thesis, Littlewood and Scholz exact pins/dependencies/imports all passed; gate output not duplicated into repository."
+    },
+    {
+      "label": "default build",
+      "command": "prepared absolute lake build",
+      "exit_code": 0,
+      "seconds": null,
+      "output": "results/2026-11-10-dyadic-ray-build.txt",
+      "timing_note": "Successful guarded build; separate elapsed duration not retained. Lean reports new module 1.9s and root module 1.4s."
+    },
+    {
+      "label": "type and axiom audit",
+      "command": "python3 .research/run-prepared.py verification/DyadicRayAudit.lean",
+      "exit_code": 0,
+      "seconds": 2.001,
+      "output": "results/2026-11-10-dyadic-ray-audit.txt"
+    },
+    {
+      "label": "independent original-root-sum regressions",
+      "command": "python3 -m unittest discover -s tests -p test_dyadic_corner_family.py -v",
+      "exit_code": 0,
+      "guarded_seconds": 1.001,
+      "test_seconds": 0.434,
+      "output": "results/2026-11-10-dyadic-ray-regressions.txt"
+    },
+    {
+      "label": "post-proof pin/dependency and axiom/token checks",
+      "exit_code": 0,
+      "evidence": "prepare.verify_existing_dependencies and prepare.pins equality with retained littlewood-pins.json; all 19 audited closures use only allowed axioms; no sorry/admit/axiom/native_decide tokens in new proof or audit."
+    },
+    {
+      "label": "catalogue and supporting-record consistency",
+      "exit_code": 0,
+      "evidence": "PyYAML 6.0.3 parses both YAML files; old theorem groups and main-result entries unchanged; all new declaration lines, evidence paths, source bytes at proof snapshot, current hashes and pin hashes match. Complete proof and supporting diff inspected; git diff --check passed."
+    }
+  ],
+  "axiom_audit": {
+    "declarations": [
+      "odd_period",
+      "interior",
+      "center",
+      "endpoint",
+      "endpoint_first",
+      "endpoint_stable",
+      "predecessor_step",
+      "predecessor",
+      "prefix_window",
+      "stable_window",
+      "tuple_stable",
+      "seven_relations",
+      "actual_stable",
+      "ray_two_states",
+      "continuation_stable"
+    ],
+    "control_declarations": [
+      "smallest_ray3",
+      "canonical_ray5",
+      "endpoint_change5",
+      "endpoint_change3"
+    ],
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "existing_placeholder": "Challenge.lean:37 warning retained in default build; absent from all audited closures."
+  },
+  "finite_controls": {
+    "purpose": "Existing fixed-input regressions, not search or proof of infinite statements",
+    "primes": [
+      3,
+      5,
+      13,
+      41
+    ],
+    "contexts": "For usual R=v2(p-1), report-s=R+1,R+2 and a=report-s+R, report-s+R+1, report-s+R+2; original coefficient endpoint at most 1056.",
+    "lean_controls": "p=3 usual R=1, smallest size k=1 for all stable exponents; p=5 canonical k=8 for every a>=6; endpoint changes 6/10 at p=3 and 80/144 at p=5."
+  },
+  "development_diagnostics": "Corrected unavailable Nat.pow_ne_zero, a power simplification, Matrix transpose scope and explicit natural-power base inference. An exploratory API check named unavailable Nat sub-mod lemmas. No failed proof was accepted; no search timeout or dependency change.",
+  "literature": {
+    "weekly_review": "results/2026-11-06-literature-review.md",
+    "targeted_access_utc": "2026-11-09",
+    "targeted_access_sydney": "2026-11-10",
+    "primary_urls": [
+      "https://arxiv.org/abs/2606.00633v1",
+      "https://arxiv.org/html/2606.00633v1"
+    ],
+    "version": "v1, 30 May 2026, sole listed version",
+    "limitations": "Weekly review bounded coverage and prior journal-access gaps retained; no broad daily search or novelty claim."
+  },
+  "runtime": {
+    "saved_start": "/workspace/shared/theorem-provers/START.md read; available this run",
+    "no_install_or_download": true,
+    "no_shared_runtime_or_sibling_mutation": true,
+    "configuration_note": "Attached executor status current and network enforced. Runtime/source configuration identifiers are in different platform namespaces; no equality with the coordinator environmentConfigId is asserted."
+  },
+  "publication": {
+    "remote_ci": "not checked",
+    "raksasa": "not accessed; separate coordinator action",
+    "push": "Final commit and remote equality reported in task completion, not fabricated in this pre-push record."
+  }
+}

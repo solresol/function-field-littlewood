@@ -81,6 +81,21 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Dyadic input stabilization formalised on 10 November 2026
+
+[DyadicRay.lean](FunctionFieldLittlewood/DyadicRay.lean) proves exact raw
+coefficient windows, their single endpoint sign change, seven full relation
+equalities, and full stored-state stabilization including phase and capped size.
+The entire actual ray has at most two states; every shared continuation agrees
+on its stable tail. The usual r=1 comparison is included. Distinct corner lines
+and the full pencil remain ordinary, and no accepting word is supplied.
+
+This is verification/infrastructure progress on the 8 November argument, not
+new sharpness mathematics or a characteristic-two construction. The default
+build and standard-axiom audit pass. See [exact scope, proof and
+checks](results/2026-11-10-dyadic-ray-lean.md). Next derive a prime-dependent
+transport recurrence with sufficient simultaneous target compatibility.
+
 ## The existing dyadic selector is characteristic-specific: 9 November 2026
 
 For N=4, the known five-digit word accepts T(2^a-2,8), a>=6, exactly when

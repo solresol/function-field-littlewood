@@ -1,5 +1,38 @@
 # Research log
 
+## 2026-11-10 (Tuesday, Australia/Sydney): dyadic ray in Lean
+
+- Scheduled 9 November 21:20 UTC, executed 9 November UTC / 10 November AEDT.
+  Complete prepared gate passed including Scholz; saved shared START.md was
+  available and read. No setup/download, runtime, pin or sibling changes. Clean
+  generated work at dab78a6 matched fetched main; ancestry checked, work kept,
+  tracking main created and FF-only current. No competing local research writer;
+  coordinator handled account-level overlap. Reviewed current sources, TODO,
+  8–9 November results and 6 November human-literature handoff.
+- Question stated before coding: verify the actual infinite dyadic coefficient
+  window and endpoint sign change uniformly, as input to a prime-dependent
+  transport recurrence. DyadicRay proves raw interior copying, the signed
+  endpoint, seven full relation equalities, full stored-state stabilization
+  including phase/size, at most two ray states and shared continuation equality.
+  Canonical p=5 specialization covers every a>=6, with stable tail a>=7.
+- Classification: VERIFICATION/INFRASTRUCTURE PROGRESS on the 8 November
+  ordinary argument. No new sharpness mathematics, accepting word, transport
+  recurrence, new prime, characteristic-two result or novelty claim. Distinct
+  corner relations and the pencil remain ordinary, not newly Lean-proved.
+- Default build passed; 15 declarations and four kernel controls use standard
+  axioms only. Existing Challenge.lean:37 is outside audited closures. Original
+  root-sum dyadic regressions pass, through index 1056; no algorithm or search
+  change and no full Python-suite rerun. Exact pins/dependencies rechecked.
+  Proof snapshot 1c937cfae402cc5e8fbfd4dac3e4b79600dac4f4; commands, bounds,
+  diagnostics, available timings and hashes in the dated validation record.
+- Targeted Lai–Sprang v1 source access 9 November UTC / 10 November Sydney;
+  retain weekly coverage limits. No Raksasa or schedule action; coordinator
+  owns safe sync with its local schedule paused. Remote CI not checked.
+- Next derive the prime-dependent block recurrence and sufficient simultaneous
+  target compatibility, or change the reachable family. Do not repeat this
+  stabilization or substitute routine formalisation for the substantive question.
+  Scope and proof: results/2026-11-10-dyadic-ray-lean.md.
+
 ## 2026-11-09 (Monday, Australia/Sydney): selector specialization obstruction
 
 - Scheduled 8 November 21:20 UTC, executed 8 November UTC / 9 November AEDT.
