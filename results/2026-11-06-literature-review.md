@@ -1,5 +1,7 @@
 # Weekly human-literature checkpoint — 6 November 2026 UTC
 
+Latest checkpoint: [13 November 2026](#13-november-2026-checkpoint).
+
 Scheduled 23:00 UTC / 7 November Sydney; sources accessed **6 November UTC**.
 Previous successful review: [30 October](2026-10-30-literature-review.md).
 Searched new submissions and revisions with overlap from **23 October UTC**.
@@ -74,3 +76,45 @@ Next overlap starts **30 October UTC**. Documentation only: no experiment,
 proof, pin, schedule or remote-machine work changed. The full shared startup
 check failed at missing `scholz-ready.json` after thesis and Littlewood imports
 passed. No further Lean work, preparation or environment repair was attempted.
+
+## 13 November 2026 checkpoint
+
+Previous successful review: 6 November above. Search cutoff **13 November
+2026, 23:43 UTC**, overlap **30 October UTC**, including revisions. Sources
+accessed 13 November. Read current roadmap, research log and dyadic-ray records
+on fetched main `ba019ecd09e791b13606a38e4d2e900e43c93286`.
+
+**No usable new or revised source was located for either exact target:**
+`Δ_p=2N`, `N=2^v₂(p−1)`, for every odd prime in the named Lai–Sprang stream,
+and the finite-field characteristic-two P(t)-adic frontier. The fixed five-digit
+selector has an all-prime obstruction on its N=4 ray, accepting only p=5 at the
+initial exponent. Seek a prime-dependent criterion meeting the actual reachable
+lines with simultaneous target compatibility, or change the family. The refuted
+`j−d<=N` bound and retired quadratic binary streams stay retired.
+
+[Lai–Sprang](https://arxiv.org/abs/2606.00633) remains **v1, 30 May 2026**.
+Re-read Theorem 1.2 and its reduction: the lower bound `2^(−2N deg P)` covers
+every ground field of odd characteristic and irreducible P, without uniform
+attainment. This is the known starting paper; full reading remains essential.
+[Hofer](https://arxiv.org/abs/2610.12691) remains **v1, 8 October**;
+Example 3/§4.3 retain the positive approximation-bound premise. Its method is
+an optional full read, not a characteristic-two construction.
+[Badziahin–Pavlenkov–Zorin](https://arxiv.org/abs/2608.22078) remains **v1,
+22 August**; Theorems 3.1–3.2 retain nonemptiness for arbitrary q and odd q for
+the explicit unconditional family. These are supplied preprint proofs; no
+independent formal replay or new full-reading priority follows.
+
+The arXiv API reran the exact three queries above, `lastUpdatedDate` descending,
+`start=0`, `max_results=100`: **18/18**, **21/21** and **37/37** records,
+respectively, with **zero** updates from 30 October in each. Supplementary
+searches covered AMS/Mathematics of Computation, Advances in Mathematics,
+Mathematika and Springer primary sources. The known published odd `3 mod 4`
+result was rechecked at its publisher abstract; no journal full-text audit or
+textual-identity check is claimed. Real-number uniform Littlewood results were
+excluded from this finite-field target. Earlier journal access gaps remain;
+unindexed/differently named work is outside coverage. This is a bounded search
+result, not a novelty claim. Next overlap: **6 November UTC**.
+
+Parent cleared overlap; only this existing literature record changes.
+Documentation only: no experiment, Lean build, shared startup execution,
+external artifact replay, dependency/runtime, schedule or user-machine work.
