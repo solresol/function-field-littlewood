@@ -23,9 +23,9 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (10 November update)
+## Research priorities and progress criteria (15 November update)
 
-Latest weekly handoff: [6 November literature checkpoint](results/2026-11-06-literature-review.md).
+Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
 lower bound and Hofer's conditional method still supply no uniform accepting
 selector or characteristic-two construction. Keep the reachable-family selector
@@ -169,6 +169,18 @@ pencil remain ordinary. This is verification/infrastructure progress, not a
 transport recurrence or accepting word. Do not repeat this reduction; next
 research still needs the prime-dependent mechanism and sufficient simultaneous
 target compatibility, or a different reachable family.
+
+The [15 November integration](results/2026-11-15-fraction-free-integration.md)
+gives a division-free integral propagation law for the full `(1,1)^m` tuple
+on the two canonical N=4 inputs. Its 56-coordinate terminal residual is a
+necessary-and-sufficient test in every admissible characteristic, with no
+specialization lost to a rational pivot. This is verification/infrastructure,
+not an accepting length or an all-length obstruction. The three old lengths
+remain validation controls only. Next motivate a structural identity for that
+full residual under the fixed phase-3 map, or change the reachable family;
+do not expand lengths, retry Smith elimination or formalize generic exterior
+packaging in place of a mathematical invariant. The week's selector obstruction
+changed the available mechanism; neither substantive target changed.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against

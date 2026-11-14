@@ -1,5 +1,31 @@
 # Research log
 
+## 2026-11-15 (Sunday, Australia/Sydney): fraction-free compatibility integration
+
+- Read 13 November weekly checkpoint on clean fetched main 19bc3a6; saved
+  runtime gate passed before work and after refresh, no installs/downloads.
+  Expected solresol origin, ancestry and clean work verified; preserved work,
+  created tracking main. Read saved Start and bootstrap recovery instructions.
+- Question stated before coding: propagate `(1,1)^m` on the two actual N=4
+  inputs without rational pivots while retaining full simultaneous compatibility.
+  Integral residue maps and exterior contraction now give the exact all-length
+  recurrence and complete 56-coordinate target test. Nonvanishing at every
+  admissible prime follows from actual dimension and no-invisibility, not samples.
+- Classification: VERIFICATION/INFRASTRUCTURE. No accepting length, preserved
+  residual identity, all-length rejection, Lean theorem or main-target advance.
+  Monday's selector obstruction changed the mechanism; neither weekly target
+  changed. Handoff-only 13/14 November timeout histories remain inconclusive.
+- Only old lengths 0,1,2: 96 original-root-sum whole-relation controls at p=5,13,
+  inclusive endpoint 579; three existing accepted/rejected controls include r=1.
+  Six residual gcds equal 1 without an all-length inference. No new search range.
+  Dyadic regressions, selector readback and three existing Lean axiom audits
+  passed under prepared guards; pins unchanged, no new build or full-suite claim.
+- Exact law, ordinary proof, commands/timings and limits:
+  results/2026-11-15-fraction-free-integration.md and linked validation records.
+  Next derive a motivated full-residual invariant under the stabilized map,
+  or change the reachable family. No further infrastructure packaging or lengths
+  substitutes for that step. Raksasa sync remains a separate coordinator task.
+
 ## 2026-11-10 (Tuesday, Australia/Sydney): dyadic ray in Lean
 
 - Scheduled 9 November 21:20 UTC, executed 9 November UTC / 10 November AEDT.

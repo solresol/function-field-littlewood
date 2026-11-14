@@ -1,0 +1,21 @@
++ python3 -m search.dyadic_selector_obstruction
+{
+  "records": [
+    {
+      "q": 2001,
+      "rows": 288,
+      "columns": 284,
+      "pairing": 5,
+      "endpoint_inclusive": 2568
+    },
+    {
+      "q": 4049,
+      "rows": 288,
+      "columns": 284,
+      "pairing": 1,
+      "endpoint_inclusive": 4616
+    }
+  ],
+  "characteristic_five_primal": true,
+  "conclusion": "N=4: first ray state accepts this word iff p=5; stable state never accepts"
+}

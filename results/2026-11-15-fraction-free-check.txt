@@ -1,0 +1,114 @@
++ python3 -m search.fraction_free_block
+{
+  "records": [
+    {
+      "m": 0,
+      "q": 62,
+      "k": 8,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 10
+    },
+    {
+      "m": 1,
+      "q": 125,
+      "k": 17,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 27
+    },
+    {
+      "m": 2,
+      "q": 251,
+      "k": 35,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 61
+    },
+    {
+      "m": 0,
+      "q": 126,
+      "k": 8,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 9
+    },
+    {
+      "m": 1,
+      "q": 253,
+      "k": 17,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 25
+    },
+    {
+      "m": 2,
+      "q": 507,
+      "k": 35,
+      "content": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "residual_gcd": 1,
+      "bits": 54
+    }
+  ],
+  "whole_relation_comparisons": 96,
+  "original_coefficient_endpoint_inclusive": 579,
+  "existing_terminal_controls": 3,
+  "python_dependencies": "standard library",
+  "seed": null,
+  "scope": "identity controls at pre-existing lengths; no all-length decision",
+  "seconds": 7.063565816999983
+}
