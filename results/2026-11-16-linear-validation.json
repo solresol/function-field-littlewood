@@ -1,0 +1,84 @@
+{
+  "date_sydney": "2026-11-16",
+  "checked_at_utc": "2026-11-15T21:49:49.235065+00:00",
+  "base_commit": "0e38db20d6be7d7836265d6c81946157d810031e",
+  "python": "3.12.14",
+  "seed": null,
+  "classification": "mathematical progress on auxiliary invariant obstruction; neither substantive target decided",
+  "exact_pins": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "commands": [
+    {
+      "label": "generation",
+      "command": [
+        "python3",
+        "-m",
+        "search.repeated_linear_obstruction",
+        "--generate"
+      ],
+      "exit_code": 0,
+      "seconds": 2.06,
+      "output": "results/2026-11-16-linear-generation.txt"
+    },
+    {
+      "label": "readback",
+      "command": [
+        "python3",
+        "-m",
+        "search.repeated_linear_obstruction"
+      ],
+      "exit_code": 0,
+      "seconds": 2.068,
+      "output": "results/2026-11-16-linear-readback.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_repeated_linear_obstruction.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 5.069,
+      "output": "results/2026-11-16-linear-tests.txt"
+    }
+  ],
+  "source_sha256": {
+    "search/repeated_linear_obstruction.py": "ba09a4da191736e93e38bd911bbba114a25eca7b0ce88b3b8961156109f4e6ce",
+    "tests/test_repeated_linear_obstruction.py": "b86d69f0c81514689b7a45352d4b677dd43ced7a38e0fa5855baeb3777ad0afe",
+    "search/fraction_free_block.py": "7402944616b330d1ac93677c91dc478ed2110c6e6f4ec9e807e1aaa538d194a7",
+    "results/2026-11-16-linear-invariant-certificate.json": "443ce5d224022e84ac370e24303404ef1ca629d549f2ffd9e0f9c6cb0b0abe93"
+  },
+  "resource_guards": {
+    "timeout_seconds": 60,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12,
+    "lean_threads": 2,
+    "prepared_runner": "/workspace/shared/theorem-provers/prepare.py"
+  },
+  "no_download_or_install": true,
+  "preflight": "Complete saved check.py passed before work and after fetch; unchanged pins, runtime and artifacts. Startup output retained in task tool history.",
+  "limits": "Two prescribed phase-3 transversality pairs only, no terminal acceptance search, length sweep, new Lean theorem, Lean source change or build claim.",
+  "development_notes": "Initial scratch relative-module invocation failed before execution; corrected to runpy. Rational envelope saturated; two determinant certificates replaced exploratory closure tooling. Optional installed SymPy factorint was tried only on the two determinants; no factorisation is used by the proof or retained tools. Retained first generation failed only at an incorrect 112 dimension assertion (35+71+8 is 114); corrected before successful validation, original failure log retained.",
+  "initial_failed_command": {
+    "command": [
+      "python3",
+      "-m",
+      "search.repeated_linear_obstruction",
+      "--generate"
+    ],
+    "exit_code": 1,
+    "seconds": 1.056,
+    "output": "results/2026-11-16-linear-generation-initial-failure.txt",
+    "reason": "incorrect matrix dimension assertion, corrected 112 to 114; determinant entries and values unchanged"
+  }
+}

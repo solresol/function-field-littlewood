@@ -1,0 +1,22 @@
++ python3 -m search.repeated_linear_obstruction --generate
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/function-field-littlewood/search/repeated_linear_obstruction.py", line 127, in <module>
+    main()
+  File "/workspace/function-field-littlewood/search/repeated_linear_obstruction.py", line 118, in main
+    result = verify(data)
+             ^^^^^^^^^^^^
+  File "/workspace/function-field-littlewood/search/repeated_linear_obstruction.py", line 96, in verify
+    require(rational_determinant(joint_matrix(q0)) == value,
+                                 ^^^^^^^^^^^^^^^^
+  File "/workspace/function-field-littlewood/search/repeated_linear_obstruction.py", line 60, in joint_matrix
+    assert len(rows) == width == 112
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/workspace/function-field-littlewood/.research/run_guarded.py", line 6, in <module>
+    prepare.m.run(sys.argv[1:],root,prepare.env_for('littlewood'),(root,prepare.B),timeout=60)
+  File "/workspace/shared/theorem-provers/bootstrap-tested.py", line 79, in run
+    raise subprocess.CalledProcessError(proc.returncode, argv)
+subprocess.CalledProcessError: Command '['python3', '-m', 'search.repeated_linear_obstruction', '--generate']' returned non-zero exit status 1.

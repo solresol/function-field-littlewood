@@ -81,6 +81,15 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## A fixed linear envelope fails on 16 November 2026
+
+For the two canonical N=4 repeated-block rays, any fixed linear first-square
+envelope containing both rays from their first phase-3 step is the full boundary
+space, in every admissible characteristic. Two exact transversality determinants
+with gcd 18 certify this obstruction. It retires this target-exclusion approach;
+it does not decide acceptance, all-length rejection or uniform sharpness.
+See [statement, independent integer verification and limits](results/2026-11-16-linear-invariant-obstruction.md).
+
 ## Dyadic input stabilization formalised on 10 November 2026
 
 [DyadicRay.lean](FunctionFieldLittlewood/DyadicRay.lean) proves exact raw

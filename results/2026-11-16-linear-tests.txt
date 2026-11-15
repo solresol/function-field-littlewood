@@ -1,0 +1,9 @@
++ python3 -m unittest discover -s tests -p test_repeated_linear_obstruction.py -v
+test_corrupted_certificate_rejected (test_repeated_linear_obstruction.RepeatedLinearObstructionTests.test_corrupted_certificate_rejected) ... ok
+test_existing_terminal_semantics_including_r1 (test_repeated_linear_obstruction.RepeatedLinearObstructionTests.test_existing_terminal_semantics_including_r1) ... ok
+test_regeneration_and_independent_readback (test_repeated_linear_obstruction.RepeatedLinearObstructionTests.test_regeneration_and_independent_readback) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.791s
+
+OK

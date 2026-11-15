@@ -1,5 +1,43 @@
 # Research log
 
+## 2026-11-16 (Monday, Australia/Sydney): fixed common linear-envelope obstruction
+
+- Read the 13 November weekly human-literature checkpoint, saved Start, bootstrap
+  recovery, current roadmap/log and actual recurrence/target sources. Complete
+  saved readiness gate passed before work and after fetch without downloads.
+  Clean generated work at 0e38db2 matched expected fetched solresol main;
+  ancestry checked, work preserved, tracking main created and FF-only current.
+- Before coding, asked whether a fixed per-component linear envelope preserved
+  by phase-3 `(1,1)` could exclude the terminal target for both actual N=4 rays.
+  Exploratory rational closure saturates. Two integer transverse-pair
+  determinants have gcd 18, proving that every admissible prime has a pair
+  spanning the whole first-square boundary space. Thus no proper fixed common
+  first-square envelope can contain both rays from m=2, even when chosen for p.
+- Classification: MATHEMATICAL PROGRESS on a precise auxiliary failed invariant.
+  Neither substantive target changes. No accepting length, all-length rejection,
+  new prime decision, characteristic-two result, Lean theorem or priority claim.
+  Coupled/nonlinear constraints, moving covectors, one-ray choices and later
+  tails are not excluded. Transversality does not test terminal acceptance.
+- Reused existing integral seeds and m=0,1,2 propagation, with one first-square
+  image of the fixed map to test the invariant. Independent full original-window
+  114-by-114 Fraction determinants and an integer Bezout identity verify both
+  values, through coefficient 1156 inclusive. No target query at m=3, length
+  sweep, suffix/prime/graph search or normalized specialization. Relevant tests
+  disable generator calls during readback, reject four certificate corruptions
+  and retain accepted/rejected and r=1 controls. Prepared guards; stdlib code,
+  exact arithmetic, deterministic. Initial dimension assertion corrected from
+  112 to 114, failed output retained; all final checks pass. No Lean source
+  changed and no new build/audit claimed; Challenge.lean:37 unused.
+- Proof, exact inputs, commands/times/pins/hashes and limits:
+  results/2026-11-16-linear-invariant-obstruction.md and linked evidence.
+  Targeted Lai–Sprang v1 theorem/equation/reduction accessed 15 November UTC /
+  16 November Sydney; weekly source limits remain. No broad daily search,
+  dependency/runtime/security/schedule/environment-publication or other checkout
+  change. Parent handles Raksasa reconciliation after verified push.
+- Next requires a specific moving-covector rule with controlled target pairing
+  or nonlinear full-tuple identity; otherwise change the reachable family.
+  Do not expand repetition lengths or formalize this obstruction as a substitute.
+
 ## 2026-11-15 (Sunday, Australia/Sydney): fraction-free compatibility integration
 
 - Read 13 November weekly checkpoint on clean fetched main 19bc3a6; saved

@@ -1,0 +1,19 @@
++ python3 -m search.repeated_linear_obstruction
+{
+  "result": {
+    "determinants": [
+      311100975435120619377323849997562446056541693025356,
+      71125722095308481942689533506690707367649200178
+    ],
+    "gcd": 18,
+    "direct_matrices": [
+      114,
+      114
+    ],
+    "endpoint_inclusive": 1156,
+    "conclusion": "Every N=4 admissible prime has a transverse consecutive pair; no proper fixed linear boundary envelope contains both rays."
+  },
+  "seconds": 1.072466497999983,
+  "dependencies": "Python standard library",
+  "seed": null
+}

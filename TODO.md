@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (15 November update)
+## Research priorities and progress criteria (16 November update)
 
 Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
@@ -181,6 +181,19 @@ full residual under the fixed phase-3 map, or change the reachable family;
 do not expand lengths, retry Smith elimination or formalize generic exterior
 packaging in place of a mathematical invariant. The week's selector obstruction
 changed the available mechanism; neither substantive target changed.
+
+The [16 November obstruction](results/2026-11-16-linear-invariant-obstruction.md)
+retires a concrete candidate invariant for that law. Two exact transverse-pair
+determinants have gcd 18: for every admissible N=4 prime, any fixed linear
+first-square envelope containing both repeated-block rays from their first
+phase-3 step is the whole boundary space. Even prime-dependent common linear
+constraints therefore cannot exclude the target. This is mathematical progress
+on an auxiliary obstruction, not acceptance, all-length rejection or either
+substantive target. Moving covectors, coupled/nonlinear identities, a single-ray
+choice and later-tail invariants remain open. Another repeated-block attempt
+needs a specific moving dual transport rule with controlled target pairing or
+a motivated nonlinear identity; otherwise change the reachable family. Do not
+expand lengths or formalize the determinant calculation to fill another run.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
