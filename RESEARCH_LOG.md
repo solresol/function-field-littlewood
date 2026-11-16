@@ -1,5 +1,107 @@
 # Research log
 
+## 2026-11-17 (Tuesday, Australia/Sydney): moving-dual attempt did not close
+
+- **Classification: NO USEFUL INCREMENT.** No new Lean theorem, accepting
+  length, all-length obstruction, prime decision or characteristic-two result.
+  No viable new formal lemma on the substantive proof path was obtained;
+  routine duality formalisation was deliberately not substituted for it.
+- Read the 13 November weekly human-literature checkpoint, current roadmap,
+  15–16 November results and actual BoundaryRelation, CorrelatedState,
+  TargetPreimage, TerminalDetection and fraction-free sources. Saved Start and
+  bootstrap recovery read; complete shared readiness gate passed, no downloads.
+  Clean generated `work` at f2f6a60 matched the expected fetched solresol
+  origin/main. Verified ancestry, preserved work, created tracking main and
+  checked FF-only current. Sydney date is Tuesday 17 November (16 November UTC).
+- Question before implementation: can Hankel symmetry supply a specific moving
+  rejection covector whose target pairing remains nonzero under parity merge?
+  Such a rule with controlled nonvanishing would justify a Lean lemma for the
+  remaining repeated-block mechanism; a rule requiring the original full
+  compatibility problem would not. No fixed-envelope search was repeated.
+
+Here is the precise attempted rule, in the existing **normalized root**
+coordinates (not the integer Fourier/residue chart). Put `D_a=transport z σ a`
+and `K_s=diag(w_z z^s/H)`, where `w` selects the primitive roots and `H=N/2`.
+In particular `K_s(1,1)=0`, including N=2. An even-start merge sends
+
+    (u,v0,v1) -> (D0 u-K_s v1,v0), (D1 u-K_s v0,v1),
+    v=D0^T v0+D1^T v1.
+
+Let `(a0,b0)` and `(a1,b1)` annihilate the respective child relations, using
+the ordinary dot product. They induce the parent annihilator
+`(D0^T a0+D1^T a1,b)` **provided both vector equations hold**:
+
+    b0-K_s a1=D0 b,       b1-K_s a0=D1 b.                (*)
+
+This follows by adding the two child annihilator evaluations and substituting
+`v`; K_s is diagonal. At root 1 the squaring fibre is {1,-1}, so (*) gives
+`b(1)=(b0(1)+b1(1))/2`. This is the exact pairing with the terminal target
+`(0,e_1)`. For an odd start the conditions instead are
+`b1-K_s a0=D0 b` and `b0-K_(s+1) a1=D1 b`; the pairing formula is unchanged.
+These are ordinary algebraic identities, **not kernel-checked results**.
+
+The difficulty is existence of a pair satisfying (*) with nonzero pairing.
+For square children, Hankel symmetry gives covectors `(-v,u)` from relation
+vectors `(u,v)`: `-v·u'+u·v'=0` follows by transposing the symmetric Hankel
+matrix. This does not remove (*). Its primitive-root coordinates, where every
+`D_a b` is zero, still impose coupled constraints on the two choices.
+
+A bounded check used only the **pre-existing semantic controls**, rather than
+new words, lengths or primes. Over F_5, the accepted parent `(q,k)=(311,12)`
+has two rejecting children `(t,m,n)=(156,6,6),(157,6,6)` (raw t, not q).
+The rejected control `(313,12)` has rejecting children `(157,6,6),(158,6,6)`.
+Their root order is `(1,2,3,4)`. The following exact relation vectors have
+`u=e_1`; their covectors `(-v,u)` all pair with the target as **1**:
+
+| p | raw t | size | polynomial vector x | moments v |
+| --- | --- | --- | --- | --- |
+| 5 | 156 | 6 | 0,4,2,0,3,3 | 2,0,2,3 |
+| 5 | 157 | 6 | 4,2,0,3,3,0 | 2,0,4,2 |
+| 5 | 158 | 6 | 2,2,1,2,0,0 | 2,1,1,4 |
+| 5 | 314 | 12 | 0,2,2,0,3,2,3,1,0,4,3,0 | 0,4,1,2 |
+| 3 | 1 or 2 | 1 | 1 | 1,1 |
+
+For the accepted F_5 parent, the first two chosen covectors give primitive-root
+coordinates `(0,2)` and `(0,1)` on the two left sides of (*), respectively;
+thus neither can equal `D_a b`, despite their nonzero average target pairing.
+The accepted parent polynomial is the existing `sharp5Terminal` vector
+`2,3,4,0,1,3,3,3,1,3,2,1`, whose root evaluations are `e_1`.
+The r=1 accepted control `(p,q,k)=(3,1,2)` has polynomial vector `(2,2)`
+and two rejecting size-one children at raw t=1,2. Thus even simultaneous
+child rejection does not suffice; this is a diagnostic of the proposed rule,
+not a new general obstruction or theorem about either research ray.
+
+Discovery used existing `BoundaryRelations.direct`, `null` and `_Affine`;
+each displayed vector was then read back by direct modular sums from the
+independent `oracle('lai_sprang',p,j)/H`. Specifically checked `A_t x=E u`
+and `E^T x=v`, and for the two accepted parents `A_t x=0`, `E^T x=e_1`.
+All sums use inclusive coefficient endpoints at most **336**; exact arithmetic,
+standard-library Python 3.12.14, no random seed. Inline commands and successful
+outputs are retained in the task transcript. No new search infrastructure,
+Python module/test, Lean source, dependency or pin changed; no build or axiom
+audit is claimed. Challenge.lean:37 supplied no premise.
+
+Targeted primary recheck, accessed 16 November UTC / 17 November Sydney:
+[Lai–Sprang](https://arxiv.org/abs/2606.00633), sole displayed v1, 30 May 2026;
+[Theorem 1.2 and reduction](https://arxiv.org/html/2606.00633v1) prove the known
+odd-characteristic lower bound, not uniform attainment. Weekly coverage and
+journal access limits remain. A screened F_2 fallback with `a(2n)=a(n)`
+and periodic `a(2n+1)` would satisfy `Y+Y²=x B(x²)`, where
+`B(x)=sum a(2n+1)x^n` is rational. This is already covered by the
+rational/quadratic exclusion; rechecked
+[Adiceam–Nesharim–Lunnon v2, §7.2](https://arxiv.org/html/1806.04478v2#S7.SS2)
+(11 October 2020), which attributes the quadratic theorem to de Mathan–Teulié.
+The 2004 proof was not separately audited. No binary candidate or
+extension-field exclusion was inferred. No broad literature review was repeated.
+
+Next useful step: a concrete choice of compatible child covectors solving (*)
+on the actual repeated rays, with a proved nonzero target pairing, or a
+different motivated reachable family. Merely maintaining a child rejection
+flag or formalising the displayed dual pullback does not solve that obligation.
+No such choice was found in this bounded attempt; uniform sharpness and the
+characteristic-two frontier remain unchanged. Parent owns Raksasa sync and
+keeps the local schedule paused; this worker took neither action.
+
 ## 2026-11-16 (Monday, Australia/Sydney): fixed common linear-envelope obstruction
 
 - Read the 13 November weekly human-literature checkpoint, saved Start, bootstrap

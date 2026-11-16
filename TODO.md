@@ -23,7 +23,7 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (16 November update)
+## Research priorities and progress criteria (17 November update)
 
 Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
@@ -194,6 +194,14 @@ choice and later-tail invariants remain open. Another repeated-block attempt
 needs a specific moving dual transport rule with controlled target pairing or
 a motivated nonlinear identity; otherwise change the reachable family. Do not
 expand lengths or formalize the determinant calculation to fill another run.
+
+The [17 November moving-dual attempt](RESEARCH_LOG.md#2026-11-17-tuesday-australiasydney-moving-dual-attempt-did-not-close)
+obtained no useful increment. Dual pullback gives a target-pairing average only
+after two full internal-cancellation equations are solved. Existing accepted
+controls have two rejecting children, including r=1; child rejection and
+nonzero separate pairings do not supply a compatible moving covector.
+Do not formalise this generic rule as a substitute for constructing such a
+choice on the actual rays, or selecting a different motivated reachable family.
 
 The 17–18 October work refutes the auxiliary upper bound at six primes.
 The characteristic-two frontier has not advanced. Judge the next work against
