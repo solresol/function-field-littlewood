@@ -1,0 +1,61 @@
+{
+  "date_sydney": "2026-11-18",
+  "checked_at_utc": "2026-11-17T21:35:26.877357+00:00",
+  "base_commit": "a8b0762cd5cb27fcb8fc816e16a494f7ab4143fe",
+  "python": "3.12.14",
+  "classification": "mathematical progress on failed characteristic-two construction family; neither substantive target settled",
+  "seed": null,
+  "dependencies": "Python standard library",
+  "exact_pins": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "commands": [
+    {
+      "label": "check",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "search.odd_dilation_obstruction"
+      ],
+      "exit_code": 0,
+      "seconds": 1.061,
+      "output": "results/2026-11-18-odd-dilation-check.txt"
+    },
+    {
+      "label": "tests",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_odd_dilation_obstruction.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.073,
+      "output": "results/2026-11-18-odd-dilation-tests.txt"
+    }
+  ],
+  "source_sha256": {
+    "search/odd_dilation_obstruction.py": "05c23f0f8b413dd31d279f7e2df4845eac4e484ad5fbd005cd7850fd565a247d",
+    "tests/test_odd_dilation_obstruction.py": "d9862408f3ab6b56e68b3ee34a26d96b894d95c5284baf2838271e738e37782d",
+    "results/2026-11-18-odd-dilation-obstruction.md": "0db7825fed1729295b3df57ef70fa62faaab1e384188343e32901a74efb286f8"
+  },
+  "resource_guards": {
+    "timeout_seconds": 60,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12,
+    "lean_threads": 2,
+    "prepared_runner": "/workspace/shared/theorem-provers/prepare.py"
+  },
+  "runtime_readiness": "Complete shared env.sh/check.py passed before work without installation or runtime/artifact downloads; exact pins, dependency HEADs and representative imports verified.",
+  "limits": "Ordinary all-scale theorem, not Lean checked. Retained fixed controls: five (ell,r) contexts, a=0..3, largest endpoint 17150 inclusive; direct root sums through 2450. Discovery checked degree 3 at shifts 0,1 then stopped; ternary a=0..6 supported the proof. No finite optimality, new conjecture resolution, broad literature review or priority claim.",
+  "development_notes": "Initial scratch python -m relative-path invocation failed before computation; corrected to runpy.run_path. No mathematical/test failure or timeout.",
+  "start_skill": "Unavailable in mounted/local/cloud skill catalogue; explicit standing instructions followed.",
+  "lean": "No source change, build or new axiom audit claimed; Challenge.lean:37 not used."
+}

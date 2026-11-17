@@ -81,6 +81,21 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Direct odd-prime dilation fails in characteristic two: 18 November 2026
+
+The direct unweighted odd-prime analogue of the Lai–Sprang root-sum stream
+cannot give a characteristic-two counterexample. For every odd prime ell,
+N=ell^r (r>=1), and L=ell^a, the multiplier 1+t^(NL) at shift L has exact
+first index (ell-1)NL, hence unbounded defect (ell-2)NL. An ordinary all-scale
+proof derives the coefficient formula and cancellation mechanism; independent
+rational-series and finite-field root sums check its normalization.
+
+These streams are transcendental over F_2(t), so this retirement goes beyond
+the known rational/quadratic screen. It is mathematical progress on a failed
+construction family, with no novelty or Lean claim. Other characteristic-two
+constructions and uniform odd-characteristic sharpness remain open. See
+[the theorem, source screen and exact checks](results/2026-11-18-odd-dilation-obstruction.md).
+
 ## A fixed linear envelope fails on 16 November 2026
 
 For the two canonical N=4 repeated-block rays, any fixed linear first-square

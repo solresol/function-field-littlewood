@@ -23,13 +23,26 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (17 November update)
+## Research priorities and progress criteria (18 November update)
 
 Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
 lower bound and Hofer's conditional method still supply no uniform accepting
 selector or characteristic-two construction. Keep the reachable-family selector
 priority below and preserve the recorded binary-input retirements.
+
+The [18 November odd-dilation obstruction](results/2026-11-18-odd-dilation-obstruction.md)
+retires the direct **unweighted** odd-prime analogue of Lai–Sprang's root sum
+in characteristic two, for every odd prime ell and N=ell^r, r>=1. At scale
+L=ell^a, R=1+t^(NL), m=L has exact j=(ell-1)NL and unbounded defect
+(ell-2)NL. This is an ordinary proof of a negative construction screen;
+the streams are transcendental over F_2(t), so quadratic exclusion did not
+already settle them. No main-frontier resolution, odd sharpness result,
+Lean theorem or novelty claim follows. Changing ell, root order or splitting
+field cannot rescue this family. Before searching a weighted or different-
+numerator variant, motivate how it avoids the proved unit-part cancellation
+and test its binomial-multiple dilation law. No replacement is supplied;
+the actual odd-characteristic moving-covector compatibility remains open.
 
 Sunday's [bordered reconstruction](results/2026-10-25-sunday-integration.md)
 recovers all eight relations from four adjacent squares, including singular

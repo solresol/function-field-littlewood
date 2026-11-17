@@ -1,5 +1,48 @@
 # Research log
 
+## 2026-11-18 (Wednesday, Australia/Sydney): odd-dilation construction obstruction
+
+- **Classification: MATHEMATICAL PROGRESS on a failed characteristic-two
+  construction family.** An ordinary theorem rules out the direct unweighted
+  odd-prime dilation analogue of Lai–Sprang for every odd prime ell and
+  N=ell^r, r>=1. At L=ell^a, R=1+t^(NL), shift L has exact first index
+  (ell-1)NL, giving unbounded defect (ell-2)NL. No characteristic-two
+  conjecture resolution, uniform odd sharpness, Lean theorem or novelty claim.
+- Before code, asked whether primitive cube roots in F_4 preserve the key
+  binomial-multiple nonvanishing property. The bounded pilot stopped at
+  d=3,m=1,R=1+t^3,j=6, after shifts 0,1 only. A seven-scale ternary check
+  informed the proof; no completed degree/shift box or finite optimum claimed.
+  The root sum descends to F_2 with support determined by ell-free unit part
+  modulo ell*N. Off-lattice coefficients cancel after dilation; lattice rows
+  reproduce the base first-index pattern. This proves the all-scale result.
+- Read the 13 November weekly review and 15–17 November/current actual sources.
+  Targeted Lai–Sprang v1, ANL v2 §7.2/Theorem 2.2, Garrett–Robertson v2 §5
+  and Christol et al. (1980) Theorem 1/§8 checked. The new streams are
+  nonperiodic and ell-automatic; Christol/Cobham imply transcendence over
+  F_2(t). Thus the rational/quadratic and listed unbounded-window examples
+  did not already supply this retirement. Bounded source coverage and weekly
+  journal gaps retained; no broad review, source-absence or priority claim.
+- Independent F_2 rational long division of the logarithmic-derivative seed
+  checks five fixed (ell,r) contexts at a=0,...,3, inclusive endpoint 17150.
+  Direct primitive-root sums in four checked small binary fields verify
+  normalization, endpoint <=2450. Focused tests disable the unit-part formula,
+  reject wrong indices/terms/shifts and retain p=3/r=1 comparison. Exact
+  standard-library arithmetic, no random seed. All retained checks pass;
+  no Lean source/build/audit. Challenge.lean:37 supplies no premise.
+- Complete saved readiness check passed without runtime installation/download;
+  expected origin and clean a8b0762 verified, fetched main, ancestry checked,
+  work preserved, main created and FF-only current. Bootstrap recovery read.
+  Saved Start was unavailable in mounted/local/cloud skill locations; explicit
+  standing instructions followed. No applicable AGENTS found. One scratch
+  relative-module invocation failed before computation and was corrected.
+- Retire this precise family across all ell, r and splitting fields. Weighted
+  and different-numerator variants remain outside scope and need a motivated
+  escape from the cancellation mechanism before any search. Neither main
+  target is settled. Full theorem, sources, commands, timings and limits:
+  results/2026-11-18-odd-dilation-obstruction.md and companion validation.
+  Parent handles Raksasa sync and paused schedule; no other checkout, runtime,
+  dependency, security, schedule or environment-publication change here.
+
 ## 2026-11-17 (Tuesday, Australia/Sydney): moving-dual attempt did not close
 
 - **Classification: NO USEFUL INCREMENT.** No new Lean theorem, accepting

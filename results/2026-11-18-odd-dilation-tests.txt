@@ -1,0 +1,9 @@
++ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m unittest discover -s tests -p test_odd_dilation_obstruction.py -v
+test_first_index_and_corrupted_controls (test_odd_dilation_obstruction.OddDilationObstructionTests.test_first_index_and_corrupted_controls) ... ok
+test_independent_checkers_do_not_use_unit_formula (test_odd_dilation_obstruction.OddDilationObstructionTests.test_independent_checkers_do_not_use_unit_formula) ... ok
+test_original_r1_comparison (test_odd_dilation_obstruction.OddDilationObstructionTests.test_original_r1_comparison) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK
