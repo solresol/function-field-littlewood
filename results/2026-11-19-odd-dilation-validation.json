@@ -1,0 +1,82 @@
+{
+  "date_sydney": "2026-11-19",
+  "weekday_sydney": "Thursday",
+  "checked_at_utc": "2026-11-18T22:06:12.528528+00:00",
+  "base_commit": "7ef2b54acb917d7de3ff0bcda3b55ffc18bdb17a",
+  "classification": "verification/infrastructure progress on the 18 November ordinary obstruction; neither substantive target changed",
+  "python": "3.12.14",
+  "seed": null,
+  "exact_pins": {
+    "lean-toolchain": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+    "lake-manifest.json": "0ad94b60c806c1e137717ca7c61ddee6b8161d24946c8d1a9d95d29e59718d69",
+    "lakefile.toml": "c551d635479eda11dfc80e990ae157da4640a807db757c53e4b1682e6b5971bd"
+  },
+  "commands": [
+    {
+      "label": "audit",
+      "command": [
+        "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake",
+        "env",
+        "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+        "verification/OddDilationAudit.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 2.103,
+      "output": "results/2026-11-19-odd-dilation-audit.txt"
+    },
+    {
+      "label": "regressions",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_odd_dilation_obstruction.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.102,
+      "output": "results/2026-11-19-odd-dilation-regressions.txt"
+    },
+    {
+      "label": "readback",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "search.odd_dilation_obstruction"
+      ],
+      "exit_code": 0,
+      "seconds": 1.087,
+      "output": "results/2026-11-19-odd-dilation-readback.txt"
+    }
+  ],
+  "source_sha256": {
+    "FunctionFieldLittlewood/OddDilation.lean": "5df0affb4cb4f5fdf5f21c459a8db3cfa9deb72f76672a2ed6e4278e72f28154",
+    "verification/OddDilationAudit.lean": "2460bb72ada5cd5b6b5a84cb3cedd9603ed269c07db14d9fd10601ae8c2226da",
+    "FunctionFieldLittlewood.lean": "16088c575095c45c4be900dc31283b503bc6ad1dc5c917a05f0d10c06b9ef0eb",
+    "search/odd_dilation_obstruction.py": "05c23f0f8b413dd31d279f7e2df4845eac4e484ad5fbd005cd7850fd565a247d",
+    "tests/test_odd_dilation_obstruction.py": "d9862408f3ab6b56e68b3ee34a26d96b894d95c5284baf2838271e738e37782d"
+  },
+  "build": {
+    "command": [
+      "/workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "output": "results/2026-11-19-odd-dilation-build.txt",
+    "total_wall_seconds": null,
+    "note": "Whole-build wall time not retained; Lake reports 2.1 seconds for OddDilation and 1.0 seconds for root. Existing Challenge.lean:37 sorry warning excluded from all audited closures."
+  },
+  "resource_guards": {
+    "timeout_seconds": 900,
+    "disk_reserve_gib": 2,
+    "process_group_rss_gib": 12,
+    "lean_threads": 2,
+    "runner": "/workspace/shared/theorem-provers/prepare.py"
+  },
+  "formal_scope": "Infinite support-formula stream over ZMod 2; root-sum identification and field-extension transport remain ordinary, no novelty claim.",
+  "development_diagnostics": "Corrected unknown lemma names, field-instance import, cast normalization, modulo arithmetic and recursive simp/unfold failures; direct source check, build and final audit must all pass. No failed output treated as proof."
+}

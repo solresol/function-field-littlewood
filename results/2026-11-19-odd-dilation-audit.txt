@@ -1,0 +1,71 @@
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean verification/OddDilationAudit.lean
+stream_mul : ∀ (ell N n : ℕ), 1 < ell → stream ell N (ell * n) = stream ell N n
+'FunctionFieldLittlewood.OddDilation.stream_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+stream_small : ∀ (ell N n : ℕ), 1 < ell → 1 < N → n ≤ N → stream ell N n = 0
+'FunctionFieldLittlewood.OddDilation.stream_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+stream_unit_period : ∀ (ell N n k : ℕ), n % ell ≠ 0 → stream ell N (n + ell * N * k) = stream ell N n
+'FunctionFieldLittlewood.OddDilation.stream_unit_period' depends on axioms: [propext, Classical.choice, Quot.sound]
+stream_pow : ∀ (ell N a n : ℕ), 1 < ell → stream ell N (ell ^ a * n) = stream ell N n
+'FunctionFieldLittlewood.OddDilation.stream_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+row_off_lattice : ∀ (ell N a h : ℕ),
+  1 < ell → ¬ell ^ a ∣ h → stream ell N (ell ^ a + h) + stream ell N ((N + 1) * ell ^ a + h) = 0
+'FunctionFieldLittlewood.OddDilation.row_off_lattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+row_on_lattice : ∀ (ell N a k : ℕ),
+  1 < ell →
+    stream ell N (ell ^ a + ell ^ a * k) + stream ell N ((N + 1) * ell ^ a + ell ^ a * k) =
+      stream ell N (1 + k) + stream ell N (N + 1 + k)
+'FunctionFieldLittlewood.OddDilation.row_on_lattice' depends on axioms: [propext, Classical.choice, Quot.sound]
+stream_window : ∀ (ell N n : ℕ),
+  1 < ell → 1 < N → ell ∣ N → n ≤ ell * N + 1 → stream ell N n = if n % N = 1 ∧ N < n ∧ n < ell * N + 1 then 1 else 0
+'FunctionFieldLittlewood.OddDilation.stream_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+base_zero : ∀ (ell N k : ℕ),
+  2 < ell → 1 < N → ell ∣ N → 0 < k → k < (ell - 1) * N → stream ell N (1 + k) + stream ell N (N + 1 + k) = 0
+'FunctionFieldLittlewood.OddDilation.base_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+base_hit : ∀ (ell N : ℕ),
+  2 < ell → 1 < N → ell ∣ N → stream ell N (1 + (ell - 1) * N) + stream ell N (N + 1 + (ell - 1) * N) = 1
+'FunctionFieldLittlewood.OddDilation.base_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+binomial_row : ∀ (a : ℕ → ZMod 2) (d m k : ℕ), fractionalCoeff a (binomial d) m k = a (m + k) + a (m + d + k)
+'FunctionFieldLittlewood.OddDilation.binomial_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+certificate : ∀ (ell N a : ℕ),
+  2 < ell →
+    1 < N → ell ∣ N → ExactCertificate (stream ell N) (binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a)
+'FunctionFieldLittlewood.OddDilation.certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+first : ∀ (ell N a : ℕ),
+  2 < ell → 1 < N → ell ∣ N → FirstNonzero (stream ell N) (binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a)
+'FunctionFieldLittlewood.OddDilation.first' depends on axioms: [propext, Classical.choice, Quot.sound]
+binomial_polynomial : ∀ (d : ℕ), multiplierPolynomial (binomial d) = 1 + Polynomial.X ^ d
+'FunctionFieldLittlewood.OddDilation.binomial_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+product : ∀ (ell N a : ℕ),
+  2 < ell →
+    1 < N →
+      ell ∣ N →
+        polynomialLittlewoodProduct (stream ell N) (Polynomial.X ^ ell ^ a * (1 + Polynomial.X ^ (N * ell ^ a))) =
+          2 ^ (-↑((ell - 2) * N * ell ^ a))
+'FunctionFieldLittlewood.OddDilation.product' depends on axioms: [propext, Classical.choice, Quot.sound]
+unbounded_defect : ∀ (ell N B : ℕ), 2 < ell → 1 < N → ∃ a, N * ell ^ a + B < (ell - 1) * N * ell ^ a
+'FunctionFieldLittlewood.OddDilation.unbounded_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+arbitrarily_large_certificates : ∀ (ell N B : ℕ),
+  2 < ell →
+    1 < N →
+      ell ∣ N →
+        ∃ a,
+          ExactCertificate (stream ell N) (binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a) ∧
+            N * ell ^ a + B < (ell - 1) * N * ell ^ a
+'FunctionFieldLittlewood.OddDilation.arbitrarily_large_certificates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+arbitrarily_small_products : ∀ (ell N B : ℕ),
+  2 < ell → 1 < N → ell ∣ N → ∃ Q, Q ≠ 0 ∧ polynomialLittlewoodProduct (stream ell N) Q < 2 ^ (-↑B)
+'FunctionFieldLittlewood.OddDilation.arbitrarily_small_products' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+power_certificate : ∀ (ell r a : ℕ),
+  2 < ell →
+    ExactCertificate (stream ell (ell ^ (r + 1))) (binomial (ell ^ (r + 1) * ell ^ a)) (ell ^ a)
+      ((ell - 1) * ell ^ (r + 1) * ell ^ a)
+'FunctionFieldLittlewood.OddDilation.power_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.OddDilationAudit.ternary_all_scales' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.OddDilationAudit.seed_endpoints' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.OddDilationAudit.terminal_controls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.OddDilationAudit.binary_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FunctionFieldLittlewood.OddDilationAudit.odd_r1_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]

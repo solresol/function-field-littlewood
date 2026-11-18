@@ -1,0 +1,12 @@
+Verified installed Lean/Lake 4.35.0
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean /workspace/shared/theorem-provers/thesis-imports.lean
+Nat : Type
+thesis: exact pins, dependency HEADs, and representative imports verified
+Verified installed Lean/Lake 4.35.0
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean /workspace/shared/theorem-provers/littlewood-imports.lean
+Nat : Type
+littlewood: exact pins, dependency HEADs, and representative imports verified
+Verified installed Lean/Lake 4.27.0
++ /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.27.0/bin/lake env /workspace/shared/theorem-provers/runtime/elan/toolchains/leanprover--lean4---v4.27.0/bin/lean /workspace/shared/theorem-provers/scholz-imports.lean
+Nat : Type
+scholz: exact pins, dependency HEADs, and representative imports verified

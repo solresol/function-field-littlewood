@@ -1,0 +1,315 @@
++ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m search.odd_dilation_obstruction
+{
+  "classification": "ordinary mathematical obstruction; finite controls only",
+  "records": [
+    {
+      "ell": 3,
+      "r": 1,
+      "a": 0,
+      "m": 1,
+      "degree": 3,
+      "first_index": 6,
+      "defect": 3,
+      "sparse_multiplier_exponents": [
+        0,
+        3
+      ],
+      "endpoint_inclusive": 10
+    },
+    {
+      "ell": 3,
+      "r": 1,
+      "a": 1,
+      "m": 3,
+      "degree": 9,
+      "first_index": 18,
+      "defect": 9,
+      "sparse_multiplier_exponents": [
+        0,
+        9
+      ],
+      "endpoint_inclusive": 30
+    },
+    {
+      "ell": 3,
+      "r": 1,
+      "a": 2,
+      "m": 9,
+      "degree": 27,
+      "first_index": 54,
+      "defect": 27,
+      "sparse_multiplier_exponents": [
+        0,
+        27
+      ],
+      "endpoint_inclusive": 90
+    },
+    {
+      "ell": 3,
+      "r": 1,
+      "a": 3,
+      "m": 27,
+      "degree": 81,
+      "first_index": 162,
+      "defect": 81,
+      "sparse_multiplier_exponents": [
+        0,
+        81
+      ],
+      "endpoint_inclusive": 270
+    },
+    {
+      "ell": 3,
+      "r": 2,
+      "a": 0,
+      "m": 1,
+      "degree": 9,
+      "first_index": 18,
+      "defect": 9,
+      "sparse_multiplier_exponents": [
+        0,
+        9
+      ],
+      "endpoint_inclusive": 28
+    },
+    {
+      "ell": 3,
+      "r": 2,
+      "a": 1,
+      "m": 3,
+      "degree": 27,
+      "first_index": 54,
+      "defect": 27,
+      "sparse_multiplier_exponents": [
+        0,
+        27
+      ],
+      "endpoint_inclusive": 84
+    },
+    {
+      "ell": 3,
+      "r": 2,
+      "a": 2,
+      "m": 9,
+      "degree": 81,
+      "first_index": 162,
+      "defect": 81,
+      "sparse_multiplier_exponents": [
+        0,
+        81
+      ],
+      "endpoint_inclusive": 252
+    },
+    {
+      "ell": 3,
+      "r": 2,
+      "a": 3,
+      "m": 27,
+      "degree": 243,
+      "first_index": 486,
+      "defect": 243,
+      "sparse_multiplier_exponents": [
+        0,
+        243
+      ],
+      "endpoint_inclusive": 756
+    },
+    {
+      "ell": 5,
+      "r": 1,
+      "a": 0,
+      "m": 1,
+      "degree": 5,
+      "first_index": 20,
+      "defect": 15,
+      "sparse_multiplier_exponents": [
+        0,
+        5
+      ],
+      "endpoint_inclusive": 26
+    },
+    {
+      "ell": 5,
+      "r": 1,
+      "a": 1,
+      "m": 5,
+      "degree": 25,
+      "first_index": 100,
+      "defect": 75,
+      "sparse_multiplier_exponents": [
+        0,
+        25
+      ],
+      "endpoint_inclusive": 130
+    },
+    {
+      "ell": 5,
+      "r": 1,
+      "a": 2,
+      "m": 25,
+      "degree": 125,
+      "first_index": 500,
+      "defect": 375,
+      "sparse_multiplier_exponents": [
+        0,
+        125
+      ],
+      "endpoint_inclusive": 650
+    },
+    {
+      "ell": 5,
+      "r": 1,
+      "a": 3,
+      "m": 125,
+      "degree": 625,
+      "first_index": 2500,
+      "defect": 1875,
+      "sparse_multiplier_exponents": [
+        0,
+        625
+      ],
+      "endpoint_inclusive": 3250
+    },
+    {
+      "ell": 5,
+      "r": 2,
+      "a": 0,
+      "m": 1,
+      "degree": 25,
+      "first_index": 100,
+      "defect": 75,
+      "sparse_multiplier_exponents": [
+        0,
+        25
+      ],
+      "endpoint_inclusive": 126
+    },
+    {
+      "ell": 5,
+      "r": 2,
+      "a": 1,
+      "m": 5,
+      "degree": 125,
+      "first_index": 500,
+      "defect": 375,
+      "sparse_multiplier_exponents": [
+        0,
+        125
+      ],
+      "endpoint_inclusive": 630
+    },
+    {
+      "ell": 5,
+      "r": 2,
+      "a": 2,
+      "m": 25,
+      "degree": 625,
+      "first_index": 2500,
+      "defect": 1875,
+      "sparse_multiplier_exponents": [
+        0,
+        625
+      ],
+      "endpoint_inclusive": 3150
+    },
+    {
+      "ell": 5,
+      "r": 2,
+      "a": 3,
+      "m": 125,
+      "degree": 3125,
+      "first_index": 12500,
+      "defect": 9375,
+      "sparse_multiplier_exponents": [
+        0,
+        3125
+      ],
+      "endpoint_inclusive": 15750
+    },
+    {
+      "ell": 7,
+      "r": 1,
+      "a": 0,
+      "m": 1,
+      "degree": 7,
+      "first_index": 42,
+      "defect": 35,
+      "sparse_multiplier_exponents": [
+        0,
+        7
+      ],
+      "endpoint_inclusive": 50
+    },
+    {
+      "ell": 7,
+      "r": 1,
+      "a": 1,
+      "m": 7,
+      "degree": 49,
+      "first_index": 294,
+      "defect": 245,
+      "sparse_multiplier_exponents": [
+        0,
+        49
+      ],
+      "endpoint_inclusive": 350
+    },
+    {
+      "ell": 7,
+      "r": 1,
+      "a": 2,
+      "m": 49,
+      "degree": 343,
+      "first_index": 2058,
+      "defect": 1715,
+      "sparse_multiplier_exponents": [
+        0,
+        343
+      ],
+      "endpoint_inclusive": 2450
+    },
+    {
+      "ell": 7,
+      "r": 1,
+      "a": 3,
+      "m": 343,
+      "degree": 2401,
+      "first_index": 14406,
+      "defect": 12005,
+      "sparse_multiplier_exponents": [
+        0,
+        2401
+      ],
+      "endpoint_inclusive": 17150
+    }
+  ],
+  "direct_root_controls": [
+    {
+      "ell": 3,
+      "r": 1,
+      "modulus": 7,
+      "endpoint_inclusive": 90
+    },
+    {
+      "ell": 3,
+      "r": 2,
+      "modulus": 67,
+      "endpoint_inclusive": 252
+    },
+    {
+      "ell": 5,
+      "r": 1,
+      "modulus": 19,
+      "endpoint_inclusive": 650
+    },
+    {
+      "ell": 7,
+      "r": 1,
+      "modulus": 11,
+      "endpoint_inclusive": 2450
+    }
+  ],
+  "dependencies": "Python standard library",
+  "seed": null,
+  "seconds": 0.026624932000004264
+}
