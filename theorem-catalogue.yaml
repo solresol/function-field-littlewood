@@ -2,7 +2,7 @@
 schema_version: 1
 project: Function-field Littlewood
 repository: https://github.com/solresol/function-field-littlewood
-updated: '2026-11-10'
+updated: '2026-11-19'
 scope: Curated proved theorem groups with per-group immutable evidence. The independent root-moment
   package is verified separately; original groups retain their historical audit and archive
   coverage.
@@ -3351,6 +3351,252 @@ theorems:
       FunctionFieldLittlewood/DyadicRay.lean: f2f43ec6e94d1ddf635560578f6200c9b032da78d7e3f70078521e58664cfdc1
       verification/DyadicRayAudit.lean: 5c0fd86aca72092ede1b3d012fb1729ab543fbd1008f7ec1fec431264c38a57b
       FunctionFieldLittlewood.lean: 817ba89a2279fc3e2f94ba026adab5fd67b058c877f33842d960a470f1b00428
+  archive:
+    zenodo_version: null
+    zenodo_doi: null
+    note: Not included in the frozen v0.1.0 archive.
+  palomar:
+    status: not-submitted
+    id: null
+- id: characteristic-two-odd-dilation-obstruction
+  title: All-scale odd-dilation cancellation and unbounded Littlewood defects
+  status: kernel-checked
+  mathematical_origin: 18 November ordinary repository obstruction formalised
+  first_formalisation_priority: unestablished
+  statement: For the infinite F_2 support stream, ell>2, N>1 and ell dividing N, shift ell^a with multiplier
+    1+X^(N*ell^a) has exact first index (ell-1)*N*ell^a and product 2^(-(ell-2)*N*ell^a). Off-lattice
+    rows cancel and lattice rows reproduce the base filter. Defects are unbounded and nonzero actual polynomials
+    have products below every prescribed dyadic threshold.
+  assumptions:
+  - ell,N,a,B are natural numbers; main results use ell>2, N>1, ell divides N.
+  - The stream is defined recursively by stripping ell factors, then checking u mod N=1 and u mod (ell*N)!=1,
+    with c_0=0. No finite prefix or target theorem is a premise.
+  - The intended primitive-root family has odd prime ell and N=ell^r, r>=1; power_certificate uses N=ell^(r+1),
+    including the intended r=1 at Lean r=0.
+  limitations: Verification/infrastructure progress on an existing ordinary failed-construction screen.
+    Formal conclusions concern the infinite support-formula stream over ZMod 2. Root-sum identification,
+    splitting-field descent, transcendence and transport to all characteristic-two fields remain ordinary,
+    not Lean conclusions. No weighted/different-numerator exclusion, new construction, uniform odd-characteristic
+    Delta_p=2N or novelty claim.
+  declarations:
+  - name: FunctionFieldLittlewood.OddDilation.stream_mul
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 30
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.stream_mul : ∀ (ell N n : ℕ), 1 < ell → FunctionFieldLittlewood.OddDilation.stream
+      ell N (ell * n) = FunctionFieldLittlewood.OddDilation.stream ell N n'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.stream_small
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 44
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.stream_small : ∀ (ell N n : ℕ), 1 < ell → 1 < N →
+      n ≤ N → FunctionFieldLittlewood.OddDilation.stream ell N n = 0'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.stream_unit_period
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 64
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.stream_unit_period : ∀ (ell N n k : ℕ), n % ell ≠
+      0 → FunctionFieldLittlewood.OddDilation.stream ell N (n + ell * N * k) = FunctionFieldLittlewood.OddDilation.stream
+      ell N n'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.stream_pow
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 72
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.stream_pow : ∀ (ell N a n : ℕ), 1 < ell → FunctionFieldLittlewood.OddDilation.stream
+      ell N (ell ^ a * n) = FunctionFieldLittlewood.OddDilation.stream ell N n'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.row_off_lattice
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 84
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.row_off_lattice : ∀ (ell N a h : ℕ),
+        1 < ell → ¬ell ^ a ∣ h → FunctionFieldLittlewood.OddDilation.stream ell N (ell ^ a + h) + FunctionFieldLittlewood.OddDilation.stream ell N ((N + 1) * ell ^ a + h) = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.row_on_lattice
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 113
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.row_on_lattice : ∀ (ell N a k : ℕ),
+        1 < ell →
+          FunctionFieldLittlewood.OddDilation.stream ell N (ell ^ a + ell ^ a * k) + FunctionFieldLittlewood.OddDilation.stream ell N ((N + 1) * ell ^ a + ell ^ a * k) =
+            FunctionFieldLittlewood.OddDilation.stream ell N (1 + k) + FunctionFieldLittlewood.OddDilation.stream ell N (N + 1 + k)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.stream_window
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 122
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.stream_window : ∀ (ell N n : ℕ),
+        1 < ell → 1 < N → ell ∣ N → n ≤ ell * N + 1 → FunctionFieldLittlewood.OddDilation.stream ell N n = if n % N = 1 ∧ N < n ∧ n < ell * N + 1 then 1 else 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.base_zero
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 156
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.base_zero : ∀ (ell N k : ℕ),
+        2 < ell → 1 < N → ell ∣ N → 0 < k → k < (ell - 1) * N → FunctionFieldLittlewood.OddDilation.stream ell N (1 + k) + FunctionFieldLittlewood.OddDilation.stream ell N (N + 1 + k) = 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.base_hit
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 183
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.base_hit : ∀ (ell N : ℕ),
+        2 < ell → 1 < N → ell ∣ N → FunctionFieldLittlewood.OddDilation.stream ell N (1 + (ell - 1) * N) + FunctionFieldLittlewood.OddDilation.stream ell N (N + 1 + (ell - 1) * N) = 1
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.binomial_row
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 201
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.binomial_row : ∀ (a : ℕ → ZMod 2) (d m k : ℕ), FunctionFieldLittlewood.fractionalCoeff
+      a (FunctionFieldLittlewood.OddDilation.binomial d) m k = a (m + k) + a (m + d + k)'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.certificate
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 208
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.certificate : ∀ (ell N a : ℕ),
+        2 < ell →
+          1 < N → ell ∣ N → FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.OddDilation.stream ell N) (FunctionFieldLittlewood.OddDilation.binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.first
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 245
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.first : ∀ (ell N a : ℕ),
+        2 < ell → 1 < N → ell ∣ N → FunctionFieldLittlewood.FirstNonzero (FunctionFieldLittlewood.OddDilation.stream ell N) (FunctionFieldLittlewood.OddDilation.binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.binomial_polynomial
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 251
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.binomial_polynomial : ∀ (d : ℕ), FunctionFieldLittlewood.multiplierPolynomial
+      (FunctionFieldLittlewood.OddDilation.binomial d) = 1 + Polynomial.X ^ d'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.product
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 267
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.product : ∀ (ell N a : ℕ),
+        2 < ell →
+          1 < N →
+            ell ∣ N →
+              FunctionFieldLittlewood.polynomialLittlewoodProduct (FunctionFieldLittlewood.OddDilation.stream ell N) (Polynomial.X ^ ell ^ a * (1 + Polynomial.X ^ (N * ell ^ a))) =
+                2 ^ (-↑((ell - 2) * N * ell ^ a))
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.unbounded_defect
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 279
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: 'FunctionFieldLittlewood.OddDilation.unbounded_defect : ∀ (ell N B : ℕ), 2 < ell → 1 <
+      N → ∃ a, N * ell ^ a + B < (ell - 1) * N * ell ^ a'
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.arbitrarily_large_certificates
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 288
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.arbitrarily_large_certificates : ∀ (ell N B : ℕ),
+        2 < ell →
+          1 < N →
+            ell ∣ N →
+              ∃ a,
+                FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.OddDilation.stream ell N) (FunctionFieldLittlewood.OddDilation.binomial (N * ell ^ a)) (ell ^ a) ((ell - 1) * N * ell ^ a) ∧
+                  N * ell ^ a + B < (ell - 1) * N * ell ^ a
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.arbitrarily_small_products
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 298
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.arbitrarily_small_products : ∀ (ell N B : ℕ),
+        2 < ell → 1 < N → ell ∣ N → ∃ Q, Q ≠ 0 ∧ FunctionFieldLittlewood.polynomialLittlewoodProduct (FunctionFieldLittlewood.OddDilation.stream ell N) Q < 2 ^ (-↑B)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  - name: FunctionFieldLittlewood.OddDilation.power_certificate
+    file: FunctionFieldLittlewood/OddDilation.lean
+    line_at_snapshot: 319
+    introduced_commit: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_type: |-
+      FunctionFieldLittlewood.OddDilation.power_certificate : ∀ (ell r a : ℕ),
+        2 < ell →
+          FunctionFieldLittlewood.ExactCertificate (FunctionFieldLittlewood.OddDilation.stream ell (ell ^ (r + 1))) (FunctionFieldLittlewood.OddDilation.binomial (ell ^ (r + 1) * ell ^ a)) (ell ^ a)
+            ((ell - 1) * ell ^ (r + 1) * ell ^ a)
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  evidence:
+    proof_snapshot: 9051cef8f180b2581277379ad395356b5d0c0841
+    lean_toolchain: leanprover/lean4:v4.35.0
+    mathlib_commit: 56a005855ea17e0b0958f73ec801ae140b0a1679
+    full_build: results/2026-11-19-odd-dilation-build.txt
+    full_build_validation: results/2026-11-19-odd-dilation-validation.json
+    catalogue_audit: results/2026-11-19-odd-dilation-audit.txt
+    scope: results/2026-11-19-odd-dilation-lean.md
+    source_sha256:
+      FunctionFieldLittlewood/OddDilation.lean: 5df0affb4cb4f5fdf5f21c459a8db3cfa9deb72f76672a2ed6e4278e72f28154
+      verification/OddDilationAudit.lean: 2460bb72ada5cd5b6b5a84cb3cedd9603ed269c07db14d9fd10601ae8c2226da
+      FunctionFieldLittlewood.lean: 16088c575095c45c4be900dc31283b503bc6ad1dc5c917a05f0d10c06b9ef0eb
   archive:
     zenodo_version: null
     zenodo_doi: null

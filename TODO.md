@@ -23,13 +23,23 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (18 November update)
+## Research priorities and progress criteria (19 November update)
 
 Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic
 lower bound and Hofer's conditional method still supply no uniform accepting
 selector or characteristic-two construction. Keep the reachable-family selector
 priority below and preserve the recorded binary-input retirements.
+
+The [19 November Lean result](results/2026-11-19-odd-dilation-lean.md) verifies
+the unweighted odd-dilation obstruction for its infinite F_2 support stream:
+all-scale exact first indices, polynomial products and unbounded defects,
+assuming only ell>2, N>1 and ell|N. Root-sum identification and field-extension
+transport remain ordinary. This is verification/infrastructure progress;
+neither substantive target changed. Do not continue formal packaging of this
+retired family. A replacement needs a motivated seed escaping the proved
+binomial-dilation cancellation before searching, or return to actual-ray
+moving-covector compatibility.
 
 The [18 November odd-dilation obstruction](results/2026-11-18-odd-dilation-obstruction.md)
 retires the direct **unweighted** odd-prime analogue of Lai–Sprang's root sum

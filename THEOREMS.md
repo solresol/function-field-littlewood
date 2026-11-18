@@ -56,8 +56,20 @@ axiom audit, archive coverage and registry status.
 | [Actual bordered reconstruction](https://github.com/solresol/function-field-littlewood/blob/7315c6ba8bec00992295c5eea2dc86112773f3a7/FunctionFieldLittlewood/BorderedRelation.lean#L286) | adjacent-square distinctness, wide=sum, tall=intersection and four-square determination | Not yet archived |
 | [Even-shift short windows](https://github.com/solresol/function-field-littlewood/blob/8c0d60fd0037b160121ebd5e07581d11df4914f0/FunctionFieldLittlewood/EvenShortWindow.lean#L20) | degree<=2q+1, 2q zero rows force zero for binomial multiples; wider-stack injectivity | Not yet archived |
 | [Dyadic-ray coefficient windows and stabilization](https://github.com/solresol/function-field-littlewood/blob/1c937cfae402cc5e8fbfd4dac3e4b79600dac4f4/FunctionFieldLittlewood/DyadicRay.lean) | exact raw windows, seven relations, full stored-state stabilization and at most two ray states; no acceptance | Not yet archived |
+| [Characteristic-two odd-dilation obstruction](https://github.com/solresol/function-field-littlewood/blob/9051cef8f180b2581277379ad395356b5d0c0841/FunctionFieldLittlewood/OddDilation.lean) | all-scale cancellation, exact first index, actual products and unbounded defects for the infinite F_2 support stream | Not yet archived |
 
 ## Verification boundary
+
+The 19 November group verifies the 18 November ordinary obstruction for the
+infinite support-formula stream over F_2. With ell>2, N>1 and ell|N, the
+shift ell^a and multiplier 1+X^(N ell^a) have exact first index
+(ell-1)N ell^a and product 2^(-(ell-2)N ell^a). Nonzero actual polynomials
+give products below every prescribed dyadic threshold. No finite prefix,
+root-sum equality or target claim is assumed. Root-sum identification,
+transcendence and extension-field transport remain ordinary; this is
+verification/infrastructure progress on a retired construction. Standard-axiom
+closures and exact scope are in the [report](results/2026-11-19-odd-dilation-lean.md).
+The proof source is pinned to `9051cef8f180b2581277379ad395356b5d0c0841`.
 
 The 10 November group formalises the coefficient and stabilization part of the
 8 November ordinary dyadic-ray argument. It covers arbitrary natural moduli

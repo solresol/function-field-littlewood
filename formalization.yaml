@@ -27,6 +27,9 @@ project:
     2q-by-(2q+2) Hankel/evaluation injectivity needed by the ordinary conic transport argument.
     DyadicRay proves exact coefficient windows, seven-relation invariance, full stored-state
     stabilization and at most two states on the actual dyadic ray; no accepting word is asserted.
+    OddDilation verifies all-scale cancellation, exact certificates and arbitrarily small
+    actual polynomial products for the infinite characteristic-two support-formula stream,
+    with ell>2, N>1 and ell dividing N. Its root-sum identification remains ordinary.
   authors:
   - Greg Baker
   responsible_maintainers:
@@ -105,6 +108,10 @@ status:
     DyadicRay verifies the 8 November ordinary ray argument, with raw coefficients and no prime
     premise. It proves at most two states, not distinct corner lines, a projective pencil or an
     accepting continuation. The prime-dependent transport recurrence remains to be derived.
+    OddDilation verifies the 18 November ordinary failed-construction screen over ZMod 2, with
+    exact first index (ell-1)*N*ell^a and product 2^(-(ell-2)*N*ell^a), with unbounded defects
+    and nonzero actual polynomials below every prescribed dyadic threshold. Root-sum identity,
+    transcendence and transport to other characteristic-two fields remain ordinary.
     Boundary cutoffs, exact shift localization, the
     other primes' sharpness witnesses, terminal dichotomy and characteristic-two
     construction are not Lean theorems of this project. Challenge.lean independently states
@@ -117,6 +124,22 @@ status:
   - Classical.choice
   - Quot.sound
   main_results:
+  - declaration: FunctionFieldLittlewood.OddDilation.certificate
+    file: FunctionFieldLittlewood/OddDilation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
+  - declaration: FunctionFieldLittlewood.OddDilation.arbitrarily_small_products
+    file: FunctionFieldLittlewood/OddDilation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    literature_dependencies: []
   - declaration: FunctionFieldLittlewood.DyadicRay.interior
     file: FunctionFieldLittlewood/DyadicRay.lean
     sorry_count: 0

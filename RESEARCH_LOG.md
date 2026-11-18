@@ -1,5 +1,35 @@
 # Research log
 
+## 2026-11-19 (Thursday, Australia/Sydney): odd-dilation obstruction in Lean
+
+- **Classification: VERIFICATION/INFRASTRUCTURE PROGRESS.** Asked before
+  implementation whether yesterday's infinite support stream has the stated
+  all-scale cancellation and exact first index. Lean now proves it for
+  ell>2, N>1, ell|N, hence all intended odd-prime powers. Actual nonzero
+  polynomials have product 2^(-(ell-2)N ell^a) below every dyadic threshold.
+  Root-sum identification, transcendence and extension transport remain
+  ordinary. No new characteristic-two construction, odd sharpness or novelty.
+- Read 13 November weekly review, current roadmap, 15–18 November records and
+  actual certificate/Laurent/product sources; targeted Lai–Sprang v1, ANL v2
+  §7.2 and Garrett–Robertson v2 §5 rechecked 18 November UTC / 19 November
+  Sydney. Weekly journal-access gaps retained; no broad daily review.
+- Default pinned build, standard-axiom audit and unchanged independent
+  rational/root readback pass. Inclusive endpoints, wrong first indices,
+  ell=2 boundary and odd-characteristic r=1 retained. No new finite box,
+  Python algorithm or full Python-suite claim. Challenge.lean:37 and assumed
+  downstream claims unused. Source proof snapshot:
+  9051cef8f180b2581277379ad395356b5d0c0841.
+- Saved START and recovery read; complete prepared gate passed twice, before
+  work and after refresh, without install/download, pin or runtime changes.
+  Expected clean origin/work at 7ef2b54 verified; fetch and ancestry safe,
+  work preserved, main created and FF-only current. No applicable AGENTS or
+  competing local writer found. Development proof/audit errors corrected.
+- [Scope, source versions, commands, timings and limitations](results/2026-11-19-odd-dilation-lean.md).
+  Next substantive step needs a replacement seed escaping this cancellation
+  before searching, or compatible covectors on the actual odd-prime rays.
+  More formalisation of this retired family is unnecessary. Coordinator owns
+  Raksasa sync and its paused local schedule; neither was changed here.
+
 ## 2026-11-18 (Wednesday, Australia/Sydney): odd-dilation construction obstruction
 
 - **Classification: MATHEMATICAL PROGRESS on a failed characteristic-two

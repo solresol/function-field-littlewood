@@ -81,6 +81,16 @@ deficiency 8; the intended exponent is plausibly 2^(n+1). See
 [the report](results/2026-10-17-lai-sprang-sharpness.md). Dated sections below
 are historical; their statements that the all-degree N-bound is open are superseded.
 
+## Odd-dilation obstruction formalised: 19 November 2026
+
+[OddDilation.lean](FunctionFieldLittlewood/OddDilation.lean) now kernel-checks
+the all-scale cancellation, exact certificates and polynomial products for
+yesterday's infinite F_2 support stream. For ell>2, N>1 and ell|N, the defect is
+(ell-2)N ell^a, so nonzero polynomials give arbitrarily small products.
+Root-sum identification and extension-field transport remain ordinary.
+This is verification/infrastructure progress; both substantive targets remain
+open. See [scope and checks](results/2026-11-19-odd-dilation-lean.md).
+
 ## Direct odd-prime dilation fails in characteristic two: 18 November 2026
 
 The direct unweighted odd-prime analogue of the Lai–Sprang root-sum stream
