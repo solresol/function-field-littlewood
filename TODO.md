@@ -23,7 +23,12 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
-## Research priorities and progress criteria (19 November update)
+## Research priorities and progress criteria (20 November update)
+
+The [20 November paired-covector lemma](results/2026-11-20-paired-covectors.md)
+forces two-child cancellation on at least one actual ray for each admissible
+prime at the first phase-3 merge. Compare the two forced internal lifts of
+tau under transport, accounting for possibly singular later charts.
 
 Latest weekly handoff: [13 November literature checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint).
 No usable new or revised result was located. Lai–Sprang's odd-characteristic

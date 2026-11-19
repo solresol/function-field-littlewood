@@ -1,5 +1,15 @@
 # Research log
 
+## Friday, 20 November 2026 (Sydney)
+
+The [paired-covector calculation](results/2026-11-20-paired-covectors.md)
+proves that neither child alone supplies a descending covector on at least one
+actual ray at the first autonomous merge for each N=4 admissible prime.
+Independent exact window determinants give product gcd 32. Coupled lift
+equality at tau remains unresolved under iteration. Auxiliary mathematical
+progress only.
+
+
 ## 2026-11-19 (Thursday, Australia/Sydney): odd-dilation obstruction in Lean
 
 - **Classification: VERIFICATION/INFRASTRUCTURE PROGRESS.** Asked before
