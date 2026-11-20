@@ -25,6 +25,13 @@ does not enable or modify any schedule.
 
 ## Research priorities and progress criteria (20 November update)
 
+The [21 November Lean criterion](FunctionFieldLittlewood/MergeResidual.lean)
+eliminates both inner splits and the shared outer split without division.
+Next specialize its paired quotient to component pairs (3,7) and (6,5)
+at the next first-square merge and evaluate the class of τ. Seek a
+prime-uniform constraint or an actual singular specialization distinguishing
+rejection within a child from incompatibility of their outer splits.
+
 The [20 November paired-covector lemma](results/2026-11-20-paired-covectors.md)
 forces two-child cancellation on at least one actual ray for each admissible
 prime at the first phase-3 merge. Compare the two forced internal lifts of

@@ -24,6 +24,7 @@ public import FunctionFieldLittlewood.RootStream
 public import FunctionFieldLittlewood.BoundaryRelation
 public import FunctionFieldLittlewood.CorrelatedState
 public import FunctionFieldLittlewood.TargetPreimage
+public import FunctionFieldLittlewood.MergeResidual
 public import FunctionFieldLittlewood.BinomialNonvanishing
 public import FunctionFieldLittlewood.TerminalDetection
 public import FunctionFieldLittlewood.EvenShift

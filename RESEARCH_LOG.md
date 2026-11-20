@@ -1,5 +1,45 @@
 # Research log
 
+## Saturday, 21 November 2026 (Sydney)
+
+**Verification progress on the auxiliary odd-characteristic target.** Asked
+whether one can transport the split compatibility test through another merge
+when a child's internal restriction is singular. In
+`TargetPreimage.two_merge_residual_iff`, Lean now proves a basis-free test
+including inconsistent child equations. Write the two child systems as
+`Uᵢ xᵢ = Aᵢ z − Bᵢ w`, with private inner splits xᵢ and shared outer split w.
+First reduce Aᵢ and Bᵢ modulo im Uᵢ. In the product of these quotients,
+reduce the paired A applied to z modulo the image of the paired B. The
+result vanishes exactly when the original three splits exist. Using the
+paired image retains the requirement that both children use the same w.
+Unlike the October affine-slice criterion, no particular solutions are
+inputs. The theorem applies to a target z=τ without invertibility or rank
+hypotheses. It gives no value for the class on an actual ray.
+
+In the residue-coordinate recurrence (`search/fraction_free_block.py`,
+`maps` and `step`), apply the first-square merge to the next state:
+its children are components 3 and 4, whose own child pairs are (3,7)
+and (6,5) in the previous state. For each pair, stack the pulled-back
+boundary equations and take Uᵢ to be their inner-split block. Compose the
+remaining boundary block with the corresponding outer child map, taking
+Aᵢ as its negative z-block and Bᵢ as its w-block. This identifies the
+inputs by ordinary block algebra. The Lean theorem concerns linear maps;
+the residue-coordinate specialization and any prime-dependent evaluation
+remain outside its proof. Friday's two determinants for component 0 alone
+do not supply the four grandchild equations.
+
+Read the [13 November weekly checkpoint](results/2026-11-06-literature-review.md#13-november-2026-checkpoint)
+with its stated coverage limits. Rechecked [Lai–Sprang v1, Theorem 1.2
+and Proposition 2.3](https://arxiv.org/html/2606.00633v1) on 21 November
+Sydney. Their bound covers arbitrary irreducible P in odd characteristic.
+Sharpness remains a separate question, including the existing r=1 comparison.
+
+Prepared Lean/mathlib pins unchanged. Guarded `lake build
+FunctionFieldLittlewood.MergeResidual` and `lake build FunctionFieldLittlewood`
+each took 4.2 s. The pinned `lake env lean` audit (3.1 s) printed only
+propext, Classical.choice and Quot.sound for both new lemmas. Universal
+linear algebra, with no finite search, seed or use of Challenge.lean.
+
 ## Friday, 20 November 2026 (Sydney)
 
 The [paired-covector calculation](results/2026-11-20-paired-covectors.md)
