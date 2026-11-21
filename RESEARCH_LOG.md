@@ -1,5 +1,15 @@
 # Research log
 
+## Sunday, 22 November 2026 (Sydney)
+
+**Auxiliary mathematical progress.** At length four both actual N=4 rays
+reject at every admissible prime. At least one ray always rejects through
+incompatible unique outer splits. At p=53 the other ray has two children
+that individually reject. This rules out a persistent invertible chart on
+both rays and a length-four selector. The week also retired the unweighted
+odd-dilation binary construction. Neither overall target is resolved.
+[Proof, checks and next obligation](results/2026-11-22-split-lines.md).
+
 ## Saturday, 21 November 2026 (Sydney)
 
 **Verification progress on the auxiliary odd-characteristic target.** Asked
