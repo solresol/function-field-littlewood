@@ -1,5 +1,13 @@
 # Research log
 
+## Monday, 23 November 2026 (Sydney)
+
+**Auxiliary mathematical progress.** At p=5 both prescribed repeated-digit rays
+reject at all lengths. Their full boundary states enter 15-cycles after 103
+and 48 steps. The full-minor ideal alone has no autonomous update even on
+the first ray. Ordered nonzero line-pair transport remains unresolved.
+[Proof, independent checks and next experiment](results/2026-11-23-ray-cycles.md).
+
 ## Sunday, 22 November 2026 (Sydney)
 
 **Auxiliary mathematical progress.** At length four both actual N=4 rays

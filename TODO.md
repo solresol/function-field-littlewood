@@ -23,6 +23,15 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 23 November decision
+
+Both repeated (1,1) rays reject at every length over F₅. Retire this pair
+as a selector covering all admissible primes. Test a change of digit at a
+recurrent state for a compatibility condition that can be transported across
+primes. The ideal of full minors alone already loses successor information.
+The next formal lemma remains the affine-slice criterion for nonzero cofactor
+lines, including singular first coordinates. [Cycle proof](results/2026-11-23-ray-cycles.md).
+
 ## Research priorities and progress criteria (22 November update)
 
 The [fourth-merge calculation](results/2026-11-22-split-lines.md) closes
