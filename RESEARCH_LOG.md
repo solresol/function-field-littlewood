@@ -1,5 +1,28 @@
 # Research log
 
+## Tuesday, 24 November 2026 (Sydney)
+
+**Verification progress toward the auxiliary odd-prime target.** For two
+certified homogeneous child lines, the shared-split residual vanishes at
+the target exactly when both first coordinates are nonzero and
+d₀ • v₁ = d₁ • v₀. A zero first coordinate excludes the affine slice even
+when the cross-products agree. The proof constructs the common split
+d₀⁻¹ • v₀ in the accepting case. The child-span identifications are explicit
+hypotheses. A zero cofactor vector by itself supplies no such identification.
+
+The prepared Lean 4.35.0 guarded build `lake build FunctionFieldLittlewood.MergeResidual`
+took 5.16 s. Importing the module and running `#print axioms` on
+`mem_line_slice_iff` and `two_merge_line_slice_iff` reported only
+propext, Classical.choice and Quot.sound. The proof is field-general.
+It supplies no switched-digit witness, uniform attainment proof or binary
+construction. The separate r=1 comparison stands.
+
+The 21 November weekly review is available here through the coordinator's
+handoff recorded on 22 November. The latest detailed in-tree checkpoint is
+13 November. Rechecked 24 November that Lai–Sprang's published abstract
+covers every irreducible P over every odd-characteristic field.
+[Lai–Sprang v1](https://arxiv.org/abs/2606.00633v1).
+
 ## Monday, 23 November 2026 (Sydney)
 
 **Auxiliary mathematical progress.** At p=5 both prescribed repeated-digit rays

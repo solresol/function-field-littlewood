@@ -23,6 +23,16 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 24 November decision
+
+The affine-slice decision for certified child lines is kernel-checked in
+`two_merge_line_slice_iff`. For a changed digit at a recurrent state, derive
+the projected child spans from the actual restricted matrices. A nonzero
+maximal minor should identify the kernel with the signed cofactor line,
+including a line with first coordinate zero. Where all maximal minors vanish,
+use the full residual. Seek a switch for which the resulting acceptance
+condition can be proved across primes.
+
 ## 23 November decision
 
 Both repeated (1,1) rays reject at every length over F₅. Retire this pair

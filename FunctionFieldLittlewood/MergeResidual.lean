@@ -44,4 +44,50 @@ theorem two_merge_residual_iff
     exact ⟨w, Prod.ext ((residual_eq_iff U₀ A₀ B₀ z w).mpr ⟨x₀, h₀⟩).symm
       ((residual_eq_iff U₁ A₁ B₁ z w).mpr ⟨x₁, h₁⟩).symm⟩
 
+/-- Intersect a homogeneous split line with the target chart h = 1.
+The equation for the split uses no division. -/
+theorem mem_line_slice_iff (d : K) (v w : W) :
+    ((1 : K), w) ∈ Submodule.span K {(d, v)} ↔ d ≠ 0 ∧ d • w = v := by
+  rw [Submodule.mem_span_singleton]
+  constructor
+  · rintro ⟨a, ha⟩
+    have h : a * d = 1 := congrArg Prod.fst ha
+    have hw : a • v = w := congrArg Prod.snd ha
+    refine ⟨fun hd => by simp [hd] at h, ?_⟩
+    rw [← hw, smul_smul, mul_comm, h, one_smul]
+  · rintro ⟨hd, rfl⟩
+    exact ⟨d⁻¹, Prod.ext (inv_mul_cancel₀ hd) (by
+      change d⁻¹ • d • w = w
+      rw [smul_smul, inv_mul_cancel₀ hd, one_smul])⟩
+
+/-- Evaluate the shared-split residual at a target z once both projected child
+relations on the affine slice have certified homogeneous generators. -/
+theorem two_merge_line_slice_iff
+    (U₀ : V →ₗ[K] E) (U₁ : V' →ₗ[K] E')
+    (A₀ : Z →ₗ[K] E) (A₁ : Z →ₗ[K] E')
+    (B₀ : W →ₗ[K] E) (B₁ : W →ₗ[K] E') (z : Z)
+    (d₀ d₁ : K) (v₀ v₁ : W)
+    (h₀ : ∀ w, (∃ x, U₀ x = A₀ z - B₀ w) ↔
+      ((1 : K), w) ∈ Submodule.span K {(d₀, v₀)})
+    (h₁ : ∀ w, (∃ x, U₁ x = A₁ z - B₁ w) ↔
+      ((1 : K), w) ∈ Submodule.span K {(d₁, v₁)}) :
+    residual ((residual U₀ B₀).prod (residual U₁ B₁))
+      ((residual U₀ A₀).prod (residual U₁ A₁)) z = 0 ↔
+      d₀ ≠ 0 ∧ d₁ ≠ 0 ∧ d₀ • v₁ = d₁ • v₀ := by
+  rw [two_merge_residual_iff]
+  constructor
+  · rintro ⟨w, x₀, x₁, e₀, e₁⟩
+    obtain ⟨hd₀, rfl⟩ := (mem_line_slice_iff ..).mp ((h₀ w).mp ⟨x₀, e₀⟩)
+    obtain ⟨hd₁, rfl⟩ := (mem_line_slice_iff ..).mp ((h₁ w).mp ⟨x₁, e₁⟩)
+    exact ⟨hd₀, hd₁, smul_comm ..⟩
+  · rintro ⟨hd₀, hd₁, he⟩
+    let w := d₀⁻¹ • v₀
+    have e₀ : d₀ • w = v₀ := by simp [w, smul_smul, hd₀]
+    have e₁ : d₁ • w = v₁ := by
+      change d₁ • d₀⁻¹ • v₀ = v₁
+      rw [smul_comm d₁, ← he, smul_smul, inv_mul_cancel₀ hd₀, one_smul]
+    obtain ⟨x₀, f₀⟩ := (h₀ w).mpr ((mem_line_slice_iff ..).mpr ⟨hd₀, e₀⟩)
+    obtain ⟨x₁, f₁⟩ := (h₁ w).mpr ((mem_line_slice_iff ..).mpr ⟨hd₁, e₁⟩)
+    exact ⟨w, x₀, x₁, f₀, f₁⟩
+
 end FunctionFieldLittlewood.TargetPreimage
