@@ -1,5 +1,50 @@
 # Research log
 
+## Wednesday, 25 November 2026 (Sydney)
+
+**Auxiliary mathematical progress.** Over F₅ neither seed (62,8) nor
+(126,8) can accept immediately after any number of (1,1) digits followed
+by any one digit. For (0,0) this follows by even-shift stripping and the
+previous ray exclusion. For (0,1) it follows by even-shift odd-size
+rejection. For (1,1) it is the [previous exclusion](results/2026-11-23-ray-cycles.md).
+The new case (1,0) has zero common homogeneous split at every prefix.
+
+Indeed, at prefix (q,k) the switched first square has raw start t=2q+2
+and size 2k. Its square children have raw starts q+1 and q+2 and size k.
+For each actual child, transform its root boundary plane to residue coordinates
+by evaluating the forcing polynomial on indices modulo four and applying
+the inverse finite Fourier transform to the output moments. Pull its
+annihilator equations back along the parity map at the parent boundary
+(f,s)=(0,h·1). The five unknowns are h and the four shared split entries.
+Stacking the two restricted matrices gives rank five throughout.
+Normalizing to h=1 would give four times the unit root target, an equivalent
+membership test over F₅. Independently the integral exterior recurrence,
+reduced projectively modulo five, gives nonzero target contraction after
+merging components 0 and 4 at phase t mod 8.
+
+The verified full-state returns at indices 118→103 and 63→48 identify
+all later switches with tested positions: the switch uses only two state
+components and the phase. The check exhausts n=0,…,117 and 0,…,62
+respectively. Among the 15 recurrent phases per seed, both children meet
+h=1 individually at 8 and 7 positions, respectively, yet their affine
+slices are disjoint. At 2 and 1 positions respectively a child kernel is a
+plane, so assuming both cofactors define lines would omit genuine cases.
+
+Reproduction from the repository root with Python 3.12.14, standard library,
+no random seed: `python3 -m search.repeated_ray_cycle` (5.79 s), then
+`python3 -m search.cycle_exit` (5.84 s). The integral seed endpoints
+are 80 and 144 inclusive. This is a computer-assisted ordinary exclusion.
+It leaves paths continuing after the switch, other seeds and other primes
+undecided. The separate r=1 comparison remains. No characteristic-two
+candidate or Lean claim was used.
+
+The latest weekly handoff available in-tree is summarized in the
+[22 November report](results/2026-11-22-split-lines.md), with the detailed
+13 November checkpoint linked there. Rechecked 25 November Sydney:
+for every odd-characteristic field and every irreducible P, Lai–Sprang
+prove a positive lower bound. Our question concerns its sharpness.
+[Lai–Sprang v1, Theorem 1.2](https://arxiv.org/html/2606.00633v1).
+
 ## Tuesday, 24 November 2026 (Sydney)
 
 **Verification progress toward the auxiliary odd-prime target.** For two

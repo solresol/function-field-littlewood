@@ -23,6 +23,18 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 25 November decision
+
+Retire immediate exits from both repeated rays as a prime-uniform selector.
+At five, even a prefix-dependent choice among all four final digits fails
+at every length. Next ask whether a switched state and a repeated state
+agree on their entire terminal language via a transition-closed relation.
+A separating suffix would refute that stronger obstruction. A formal
+bridge for singular switches should express common affine feasibility
+as membership of the h-column in the span of the four split columns of
+the stacked restricted matrices, with arbitrary child ranks.
+[Calculation and limits](RESEARCH_LOG.md#wednesday-25-november-2026-sydney).
+
 ## 24 November decision
 
 The affine-slice decision for certified child lines is kernel-checked in
