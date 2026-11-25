@@ -1,5 +1,30 @@
 # Research log
 
+## Thursday, 26 November 2026 (Sydney)
+
+**Verification progress toward odd-prime sharpness.** Can singular children
+be tested for a common split without certifying their kernel dimensions?
+In the restricted equations of `search/cycle_exit.py`, take the first
+column of each child as c or d and the remaining four as A or B. At h=1
+the conditions are c + Aw = 0 and d + Bw = 0 for the same w. The new
+`shared_split_iff_stacked_column_span` proves these hold for some w exactly
+when the stacked first column lies in the span of the paired split columns.
+The coefficients of that linear combination are −w. Stacking preserves the
+correlation even when either child has several admissible splits.
+
+The theorem takes the restricted matrices as input. Identifying them with
+the boundary relations of a particular digit path is a separate obligation.
+No numerical search or new suffix exclusion was used. The r=1 comparison
+remains separate. The 21 November literature handoff and binary frontier
+are recorded in the [22 November report](results/2026-11-22-split-lines.md).
+Rechecked 26 November that the published lower bound covers every irreducible
+P over every odd-characteristic field. [Lai–Sprang v1, Theorem 1.2](https://arxiv.org/html/2606.00633v1).
+
+With the prepared pinned Lean 4.35.0 environment, guarded
+`lake build FunctionFieldLittlewood.MergeResidual` took 5.19 s.
+An independent import and `#print axioms` reported only propext,
+Classical.choice and Quot.sound.
+
 ## Wednesday, 25 November 2026 (Sydney)
 
 **Auxiliary mathematical progress.** Over F₅ neither seed (62,8) nor

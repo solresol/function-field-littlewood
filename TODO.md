@@ -23,6 +23,15 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 26 November decision
+
+The rank-independent stacked-column test is formalised in
+`shared_split_iff_stacked_column_span`. Apply it to the restricted child
+matrices when comparing a switched F₅ state with a repeated state. Seek a
+distinguishing suffix or a transition-closed relation preserving that test.
+Equality of the current terminal decisions alone cannot establish equality
+of the languages.
+
 ## 25 November decision
 
 Retire immediate exits from both repeated rays as a prime-uniform selector.

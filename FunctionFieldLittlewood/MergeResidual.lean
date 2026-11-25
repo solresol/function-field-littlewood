@@ -1,6 +1,7 @@
 module
 
 public import FunctionFieldLittlewood.TargetPreimage
+public import Mathlib.LinearAlgebra.Matrix.ToLin
 
 @[expose] public section
 
@@ -89,5 +90,37 @@ theorem two_merge_line_slice_iff
     obtain ⟨x₀, f₀⟩ := (h₀ w).mpr ((mem_line_slice_iff ..).mpr ⟨hd₀, e₀⟩)
     obtain ⟨x₁, f₁⟩ := (h₁ w).mpr ((mem_line_slice_iff ..).mpr ⟨hd₁, e₁⟩)
     exact ⟨w, x₀, x₁, f₀, f₁⟩
+
+/-- On the chart h = 1 each child imposes c + A w = 0. Stack rows before
+taking the column span so the two children use the same split coefficients.
+The digit switch has four split coordinates; neither child needs maximal rank. -/
+theorem shared_split_iff_stacked_column_span {I J S : Type*} [Fintype S]
+    (A : Matrix I S K) (B : Matrix J S K) (c : I → K) (d : J → K) :
+    (∃ w, c + A.mulVec w = 0 ∧ d + B.mulVec w = 0) ↔
+      Sum.elim c d ∈ Submodule.span K
+        (Set.range (Matrix.col (Sum.elim A B : Matrix (I ⊕ J) S K))) := by
+  classical
+  rw [← Matrix.range_mulVecLin (Sum.elim A B : Matrix (I ⊕ J) S K)]
+  constructor
+  · rintro ⟨w, ha, hb⟩
+    refine ⟨-w, ?_⟩
+    funext i
+    cases i with
+    | inl i =>
+      change A.mulVec (-w) i = c i
+      rw [Matrix.mulVec_neg]
+      exact congrFun (eq_neg_of_add_eq_zero_left ha).symm i
+    | inr j =>
+      change B.mulVec (-w) j = d j
+      rw [Matrix.mulVec_neg]
+      exact congrFun (eq_neg_of_add_eq_zero_left hb).symm j
+  · rintro ⟨v, hv⟩
+    refine ⟨-v, ?_, ?_⟩
+    · rw [Matrix.mulVec_neg]
+      have ha : A.mulVec v = c := funext fun i => congrFun hv (Sum.inl i)
+      simp [ha]
+    · rw [Matrix.mulVec_neg]
+      have hb : B.mulVec v = d := funext fun j => congrFun hv (Sum.inr j)
+      simp [hb]
 
 end FunctionFieldLittlewood.TargetPreimage
