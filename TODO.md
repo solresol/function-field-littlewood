@@ -23,6 +23,17 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 27 November decision
+
+Retire terminal-language equivalence of the switched and repeated states
+on the two F₅ cycles. A shortest separator and its child equations are in
+the [27 November log](RESEARCH_LOG.md#friday-27-november-2026-sydney).
+Next isolate the equality of the two restricted row spaces on the accepting
+path. Does a symmetry of the preceding (0,1),(1,1) merges force this
+equality under explicit hypotheses on the two incoming relations? Such a
+criterion could explain acceptance without transporting a 15-cycle to
+other primes.
+
 ## 26 November decision
 
 The rank-independent stacked-column test is formalised in

@@ -1,5 +1,44 @@
 # Research log
 
+## Friday, 27 November 2026 (Sydney)
+
+**Auxiliary mathematical progress toward sharpness.** The switched and
+repeated successors can have different terminal languages at five. Start at
+(q,k)=(126,8), take n=50+15m repeated (1,1) digits, m≥0, then choose
+(1,0) or (1,1). The common suffix ((0,1),(1,1),(1,1)) rejects after the
+switch and accepts after repetition. This length is minimal across comparisons
+at all recurrent positions on both studied rays.
+
+At m=0, in the five columns (h,w), both final restricted matrices after
+repetition have reduced row basis [I₄ | c] with c=(1,3,4,0)ᵀ. The unique
+normalized lift is (1,3,4,0,4). After switching, the two last columns
+are (2,4,3,4)ᵀ and (0,2,1,4)ᵀ. The right child alone forces h=0,
+and the stacked kernel is zero. The [full-state return](results/2026-11-23-ray-cycles.md)
+at 48 and 63 transports the calculation to every m: for an arbitrary
+digit (u,v) and output component (d,i,j), its child at row parity a has
+index (⌊(u+d+a)/2⌋,⌊(v+i+1−a)/2⌋,⌊(v+j+1−b)/2⌋), where b is the
+parity of 2q+u+1+d+a. Thus both the child indices and merge phase are
+determined by the digit, component and stored phase. Equality propagates
+under the entire suffix.
+
+Run `python3 -m search.separating_suffix` (2.31 s, standard-library
+Python, no random seed). Exact root-coordinate elimination exhausts lengths
+0,1,2 over all four digits at indices 103–117 on seed 62 and 48–62 on
+seed 126. For the separator it also checks the restricted child kernels.
+A separate exterior calculation starts with integral coefficients through
+144 inclusive, reduces each nonzero form projectively modulo five, and
+checks the final target contraction on both paths. The large final windows
+are handled by parity recursion. This is a computer-assisted ordinary
+proof about these suffixes. Uniform Δₚ=2N remains unresolved, and the
+r=1 comparison is separate.
+
+The latest available weekly handoff is the 21 November review summarized
+in the [22 November report](results/2026-11-22-split-lines.md). Rechecked
+27 November Sydney: [Lai–Sprang v1, Theorem 1.2](https://arxiv.org/html/2606.00633v1)
+proves the lower product bound for every odd-characteristic field and every
+irreducible P. This experiment addresses sharpness for their stream.
+No characteristic-two candidate was investigated.
+
 ## Thursday, 26 November 2026 (Sydney)
 
 **Verification progress toward odd-prime sharpness.** Can singular children
