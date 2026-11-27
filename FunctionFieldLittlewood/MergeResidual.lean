@@ -123,4 +123,18 @@ theorem shared_split_iff_stacked_column_span {I J S : Type*} [Fintype S]
       have hb : B.mulVec v = d := funext fun j => congrFun hv (Sum.inr j)
       simp [hb]
 
+/-- In primitive-root coordinates at an even-phase terminal merge, a graph
+child maps the opposite primitive split to a prescribed nonprimitive output
+and to its own primitive split. If the first child's nonprimitive block is
+invertible, eliminate both splits. The second child may be singular. -/
+theorem primitive_graph_split_iff
+    (C₀ : W ≃ₗ[K] Z) (C₁ : W →ₗ[K] Z) (T₀ T₁ : W →ₗ[K] W) (b₀ b₁ : Z) :
+    (∃ x y, C₀ y = b₀ ∧ T₀ y = x ∧ C₁ x = b₁ ∧ T₁ x = y) ↔
+      C₁ (T₀ (C₀.symm b₀)) = b₁ ∧ T₁ (T₀ (C₀.symm b₀)) = C₀.symm b₀ := by
+  constructor
+  · rintro ⟨x, y, h, rfl, hc, ht⟩
+    simpa [← h] using And.intro hc ht
+  · rintro ⟨hc, ht⟩
+    exact ⟨_, _, C₀.apply_symm_apply b₀, rfl, hc, ht⟩
+
 end FunctionFieldLittlewood.TargetPreimage

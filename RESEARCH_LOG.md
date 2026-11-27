@@ -1,5 +1,51 @@
 # Research log
 
+## Saturday, 28 November 2026 (Sydney)
+
+At the 27 November separator the primitive-root return on the accepting path
+is a rank-one projector over F₅. Its image is the forced opposite split line.
+On the switched path the return has no nonzero fixed vector. In particular
+the accepting lift does not exchange equal primitive halves.
+
+Use the exact two endpoints from `search.separating_suffix.endpoint(126, 50,
+(d,(0,1),(1,1),(1,1)))`, with d repeated or switched. Both have phase 4.
+In root order (1,2,3,4), both incoming relations have graph bases [I|G].
+At parent input zero the parity merge feeds only primitive coordinates
+(2,3), multiplying the opposite split by −z²/2 = 3. The parent target
+at root 1 fixes each child's nonprimitive coordinates at (3,0), by adding
+and subtracting the projection equations at opposite roots. Write x,y
+for the two primitive halves. For child a let Cₐ,Tₐ be the nonprimitive
+and primitive output blocks of 3Gᵀ restricted to primitive inputs.
+The first child forces y via C₀y=(3,0), then x=T₀y. The remaining tests
+are C₁x=(3,0) and T₁x=y. Lean proves this elimination for any field with
+invertible C₀ in `primitive_graph_split_iff`. The identification of the
+blocks with the recursion here is ordinary exact arithmetic.
+
+For reproducibility, these are the two primitive input rows of each G,
+obtained by `BoundaryRelations(5).recursive(t//2+a,(k+1-a)//2,(k+1-a)//2)`,
+taking rows 1,2 and columns 4–7, zero-based, at the endpoints above.
+
+| path | child 0 rows | child 1 rows | y | x | (C₁x,T₁x) |
+|---|---|---|---|---|---|
+| repeat | 2140, 4411 | 3124, 4224 | (3,0) | (4,1) | ((3,0),(3,0)) |
+| switch | 2102, 4041 | 0130, 2311 | (4,2) | (2,4) | ((4,2),(2,0)) |
+
+Thus T₁T₀ has rows (1,4),(0,0) after repetition and (4,3),(2,1)
+after switching. On repetition both C blocks are invertible. Each child
+therefore defines a single homogeneous lift line, and their shared
+normalized lift proves equality of their annihilator row spaces.
+On switching det(I−T₁T₀)=4. Neither comparison uses a search across primes.
+
+Exact checks used standard-library Python, enumerating all 25 first-child
+primitive inputs per endpoint (under one second, no seed), and the pinned
+guarded Lean 4.35.0 build of FunctionFieldLittlewood.MergeResidual.
+The latest available 21 November human literature handoff and binary
+frontier are in the [22 November report](results/2026-11-22-split-lines.md).
+[Lai–Sprang v1](https://arxiv.org/abs/2606.00633v1), accessed 28 November
+Sydney, proves failure for every irreducible P in odd characteristic.
+This auxiliary result leaves uniform sharpness, the r=1 comparison and
+the characteristic-two frontier unchanged.
+
 ## Friday, 27 November 2026 (Sydney)
 
 **Auxiliary mathematical progress toward sharpness.** The switched and

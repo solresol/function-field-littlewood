@@ -23,6 +23,15 @@ is not evidence that a literature check occurred. Do not contact authors, change
 dependencies or broaden the research target without authorization. This section
 does not enable or modify any schedule.
 
+## 28 November decision
+
+At the accepting separator the primitive return T₁T₀ is a rank-one
+projector onto the forced line. Derive its trace-one and determinant-zero
+conditions from the two preceding merges, or find a correlated graph
+state where the accepting fixed vector survives with a different second
+eigenvalue. A fixed vector alone does not force idempotence. Check the
+nonprimitive output constraint separately.
+
 ## 27 November decision
 
 Retire terminal-language equivalence of the switched and repeated states
